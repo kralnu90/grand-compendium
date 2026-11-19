@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Thirty-five parlour, family, pub and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Thirty-six parlour, family, pub and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Thirty-five games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Thirty-six games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -560,6 +560,9 @@
   .max-h-\[92vh\] {
     max-height: 92vh;
   }
+  .max-h-full {
+    max-height: 100%;
+  }
   .min-h-\[16px\] {
     min-height: 16px;
   }
@@ -656,6 +659,9 @@
   .max-w-\[120px\] {
     max-width: 120px;
   }
+  .max-w-\[250px\] {
+    max-width: 250px;
+  }
   .max-w-\[260px\] {
     max-width: 260px;
   }
@@ -691,6 +697,9 @@
   }
   .flex-1 {
     flex: 1;
+  }
+  .shrink {
+    flex-shrink: 1;
   }
   .shrink-0 {
     flex-shrink: 0;
@@ -817,6 +826,9 @@
   .gap-7 {
     gap: calc(var(--spacing) * 7);
   }
+  .gap-\[2px\] {
+    gap: 2px;
+  }
   .gap-\[3px\] {
     gap: 3px;
   }
@@ -857,6 +869,9 @@
   .gap-y-2 {
     row-gap: calc(var(--spacing) * 2);
   }
+  .self-end {
+    align-self: flex-end;
+  }
   .justify-self-start {
     justify-self: flex-start;
   }
@@ -870,6 +885,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
   }
   .overflow-y-auto {
     overflow-y: auto;
@@ -986,6 +1004,12 @@
   }
   .bg-amber-400 {
     background-color: var(--color-amber-400);
+  }
+  .bg-amber-400\/15 {
+    background-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 15%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-amber-400) 15%, transparent);
+    }
   }
   .bg-amber-500\/25 {
     background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 25%, transparent);
@@ -1149,6 +1173,9 @@
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
+  .px-2\.5 {
+    padding-inline: calc(var(--spacing) * 2.5);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
@@ -1303,6 +1330,9 @@
   }
   .text-\[11px\] {
     font-size: 11px;
+  }
+  .text-\[12px\] {
+    font-size: 12px;
   }
   .text-\[15px\] {
     font-size: 15px;
@@ -1488,6 +1518,12 @@
       color: color-mix(in oklab, var(--color-amber-100) 80%, transparent);
     }
   }
+  .text-amber-100\/85 {
+    color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 85%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-amber-100) 85%, transparent);
+    }
+  }
   .text-amber-200 {
     color: var(--color-amber-200);
   }
@@ -1658,6 +1694,12 @@
   }
   .ring-amber-300 {
     --tw-ring-color: var(--color-amber-300);
+  }
+  .ring-amber-400\/50 {
+    --tw-ring-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-ring-color: color-mix(in oklab, var(--color-amber-400) 50%, transparent);
+    }
   }
   .ring-amber-400\/70 {
     --tw-ring-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 70%, transparent);
@@ -3047,6 +3089,22 @@ const GAME_CATALOG = [
         <li><strong>Tips:</strong> Start with lengths that only have one entry, then follow the crossings. Clashing squares turn red.</li>
         <li><strong>Modes:</strong> Numbers or Words, as a Daily puzzle or a new one. Every puzzle has exactly one answer.</li>
       </ul>`
+  },
+  {
+    id: 'duel', title: "Conjurers' Duel", subtitle: 'A Collectible-Style Card Duel', category: 'Cards', icon: '🪄',
+    players: 'vs AI, Pass & Play, Gauntlet, Draft', tagline: 'Summon creatures and sling spells from five colours of magic. Build decks, draft packs, beat the Archmage.',
+    rules: `
+      <p><strong>Objective:</strong> Bring your rival from 20 life to zero (or make them draw from an empty deck).</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Wellsprings:</strong> Play one a turn. Each pays for one cost of its colour (🔥 Ember, 💧 Tide, 🌿 Grove, ☀️ Dawn, 🌑 Dusk) or a grey number cost. Costs are paid for you automatically.</li>
+        <li><strong>Your turn:</strong> Ready everything, draw a card (not on the very first turn), then play a wellspring, summon creatures and cast spells in any order.</li>
+        <li><strong>Attacking:</strong> Tap Attack, pick your creatures and confirm. Attackers are exhausted (dimmed). Creatures can't attack on the turn they arrive unless they're Swift.</li>
+        <li><strong>Blocking:</strong> When attacked, tap one of your ready creatures, then the attacker it should block. Several can block the same attacker. Unblocked attackers hit the player.</li>
+        <li><strong>Damage:</strong> Blocked creatures trade damage at the same time; damage of at least a creature's toughness (the second number) destroys it. Damage wears off at the end of each turn.</li>
+        <li><strong>Spells:</strong> Normal spells are cast on your own turn. <b>Quick spells</b> can also be cast while blocking, after blocks are set, or at the end of your opponent's turn.</li>
+        <li><strong>Keywords:</strong> 🪽 Flying, 🏹 Reach, ⚡ First Strike, 💨 Swift, 👁️ Vigilant, ☠️ Deadly, 🩸 Drain, 🐘 Crush, 🧱 Wall. Tap any card to read what it does.</li>
+        <li><strong>Modes:</strong> Duel the AI with a starter deck or your own, pass the phone to a friend, run the five-opponent Gauntlet, or Draft: pick cards from three packs, build a deck and play three duels. The Deckbuilder lets you save up to 8 decks from the full 100-card pool.</li>
+      </ul>`
   }
 ];
 
@@ -3197,13 +3255,14 @@ const App = {
   },
   teardown() {
     this.saveNow();
+    document.querySelectorAll('[data-curtain]').forEach(e => e.remove());
     if (this.current && Games[this.current] && Games[this.current].destroy) Games[this.current].destroy();
     this.current = null;
   },
   /* Five shelves on the main menu; each opens its own sub-menu of games */
   CATS: [
     { k: 'board', n: 'Board Games', icon: '♞', blurb: 'Royal strategy and quick duels', ids: ['chess', 'go', 'shogi', 'checkers', 'reversi', 'four', 'morris', 'mancala'] },
-    { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Patience, pub classics and card crawls', ids: ['klondike', 'freecell', 'cribbage', 'gin', 'clash', 'scoundrel', 'regicide'] },
+    { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Patience, pub classics and card crawls', ids: ['klondike', 'freecell', 'cribbage', 'gin', 'clash', 'duel', 'scoundrel', 'regicide'] },
     { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'liars', 'dominoes', 'mahjong'] },
     { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
     { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] }
@@ -3326,9 +3385,16 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.6.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.7.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.7.0', '19 Nov 2026', "Conjurers' Duel", [
+    "Conjurers' Duel: a collectible-style card duel with 100 original cards across five colours of magic",
+    'Duel the AI, play a friend with Pass & Play, or take on the five-opponent Gauntlet and the Archmage',
+    'Draft mode: pick from three packs against seven AI drafters, build a deck, then play three duels',
+    'Deckbuilder: make and save up to 8 of your own decks',
+    'Fixed: leaving a Pass & Play game could leave the "pass the phone" screen showing'
+  ]],
   ['1.6.1', '19 Nov 2026', 'Fill-Ins', [
     'Fill-Ins: no clues, just a list of numbers sorted by length. Work out where each one fits in the grid',
     'A Words version too, and a daily puzzle for both',
@@ -3513,6 +3579,7 @@ const Menu = (() => {
           <li><b>Spring Mikado</b> is a digital take on the classic wooden disc-mikado tray with a spring-loaded bar.</li>
           <li><b>Murder at Marrowgate Manor</b> and <b>Torchlight Delve</b> are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.</li>
           <li>The Arrow Words clues and Word Search themes were written for this collection.</li>
+          <li><b>Conjurers' Duel</b> is an original card game in the collectible-card style; its 100 cards, names and rules text were written for this collection.</li>
           <li><b>Tilecraft, Word Lock, Word Wheel, Word Grid</b> and <b>Colour Clash</b> are original takes on much-loved word and card game ideas. They aren't connected to, or endorsed by, the makers of any other game.</li>
         </ul>
         <p class="text-xs text-amber-100/60 mt-1.5">Scoundrel and Regicide are played here as free, faithful tributes. If you love them, please support their designers.</p>
@@ -3746,6 +3813,7 @@ function curtain(who, line = 'Pass the phone. Tap when ready.') {
   return new Promise(res => {
     const ov = document.createElement('div');
     ov.className = 'fixed inset-0 z-[65] flex flex-col items-center justify-center gap-3 p-6 text-center';
+    ov.dataset.curtain = '1';
     ov.style.background = 'radial-gradient(circle at 50% 40%,#3a2316,#0f0905 75%)';
     ov.innerHTML = `<div class="text-5xl">📱</div><div class="font-display text-2xl text-amber-300">${who}</div>
       <p class="text-amber-100/70 text-sm max-w-xs">${line}</p><button class="btn-brass px-6 py-2.5 rounded-xl mt-2">I'm ready</button>`;
@@ -9579,6 +9647,965 @@ const FillIn = (() => {
 })();
 Games.fillin = FillIn;
 
+/* ============================================================================
+   CONJURERS' DUEL: card pool (all original)
+   Costs: number = any colour, letters = E Ember, T Tide, G Grove, D Dawn, K Dusk
+   ============================================================================ */
+const DCOL = {
+  E: { n: 'Ember', ic: '🔥', a: '#e0592e', b: '#4a1508' },
+  T: { n: 'Tide', ic: '💧', a: '#3d8fd6', b: '#0b2440' },
+  G: { n: 'Grove', ic: '🌿', a: '#46a04c', b: '#10331a' },
+  D: { n: 'Dawn', ic: '☀️', a: '#e3c25c', b: '#4d3a0c' },
+  K: { n: 'Dusk', ic: '🌑', a: '#a070cc', b: '#24113a' }
+};
+const DKW = {
+  fly: ['Flying', '🪽', 'Can only be blocked by creatures with Flying or Reach.'],
+  reach: ['Reach', '🏹', 'Can block creatures with Flying.'],
+  first: ['First Strike', '⚡', 'Deals combat damage before creatures without First Strike.'],
+  swift: ['Swift', '💨', 'Can attack the turn it arrives.'],
+  vig: ['Vigilant', '👁️', "Doesn't exhaust when it attacks, so it can still block."],
+  deadly: ['Deadly', '☠️', 'Any damage it deals to a creature destroys it.'],
+  drain: ['Drain', '🩸', 'Damage it deals also gains you that much life.'],
+  crush: ['Crush', '🐘', 'Spare combat damage carries through to the defending player.'],
+  wall: ['Wall', '🧱', "Can't attack."]
+};
+/* The effects helper G is defined by the engine (g_duel.js) */
+const DCARDS = (() => {
+  const L = [];
+  const CR = (id, n, cost, p, h, kw, r, ic, x = {}) => L.push(Object.assign({ id, n, cost, t: 'creature', p, h, kw, r, ic }, x));
+  const SP = (id, n, cost, quick, r, ic, txt, fx) => L.push({ id, n, cost, t: quick ? 'quick' : 'rite', r, ic, txt, kw: [], fx });
+  const dmgAny = n => ({ tg: 'any', k: 'dmg', run: (me, t) => G.dmg(t, n) });
+
+  /* ---------- EMBER: fast attackers and burn ---------- */
+  CR('e1', 'Cinder Imp', 'E', 1, 1, ['swift'], 'c', '😈');
+  CR('e2', 'Kiln Hound', '1E', 2, 1, ['swift'], 'c', '🐕');
+  CR('e3', 'Flamecaller Adept', '1E', 1, 2, [], 'u', '🧙', { enter: { tg: 'any', k: 'dmg', txt: 'When it arrives, it deals 1 damage to any target.', run: (me, t) => G.dmg(t, 1) } });
+  CR('e4', 'Ashfield Raider', '2E', 3, 2, [], 'c', '🪓');
+  CR('e5', 'Magma Brute', '3E', 4, 3, [], 'c', '🦍');
+  CR('e6', 'Ember Drake', '4E', 4, 3, ['fly'], 'u', '🐉');
+  CR('e7', 'Pyre Titan', '4EE', 6, 5, ['crush'], 'r', '🌋', { enter: { tg: 'any', k: 'dmg', txt: 'When it arrives, it deals 2 damage to any target.', run: (me, t) => G.dmg(t, 2) } });
+  CR('e8', 'Spark Sprite', '2E', 2, 1, ['fly'], 'c', '✨');
+  CR('e9', 'Blaze Charger', '2E', 3, 1, ['swift'], 'c', '🐎');
+  CR('e10', 'Furnace Golem', '4E', 5, 4, [], 'c', '🗿');
+  CR('e11', 'Smoldering Warlord', '2EE', 3, 3, [], 'r', '👹', { lord: { p: 1, h: 0, col: 'E' }, txt: 'Your other Ember creatures get +1/+0.' });
+  CR('e12', 'Fuse Rat', 'E', 1, 1, [], 'c', '🐀', { death: { txt: 'When it dies, it deals 1 damage to your opponent.', run: me => G.dmg(S_P(1 - me), 1) } });
+  SP('e13', 'Flick of Flame', 'E', true, 'c', '🔥', 'Deal 2 damage to any target.', dmgAny(2));
+  SP('e14', 'Searing Lance', '1E', false, 'c', '☄️', 'Deal 3 damage to any target.', dmgAny(3));
+  SP('e15', 'Firestorm', '3EE', false, 'r', '🎆', 'Deal 2 damage to each creature.', { k: 'sweep', run: () => G.all().forEach(c => G.dmg(c, 2)) });
+  SP('e16', 'Battle Fury', 'E', true, 'c', '💢', 'Target creature gets +3/+0 and First Strike until end of turn.', { tg: 'creature', k: 'buff', run: (me, t) => G.buff(t, 3, 0, ['first']) });
+  SP('e17', 'Reckless Charge', '1E', false, 'u', '📯', 'Your creatures get +1/+0 and Swift until end of turn.', { k: 'team', run: me => G.mine(me).forEach(c => G.buff(c, 1, 0, ['swift'])) });
+  SP('e18', 'Volcanic Bolt', '2E', true, 'u', '💥', 'Deal 4 damage to target creature.', { tg: 'creature', k: 'dmg', run: (me, t) => G.dmg(t, 4) });
+  SP('e19', 'Heat Surge', '3E', false, 'u', '🌡️', 'Deal 3 damage to target creature and 2 damage to its controller.', { tg: 'creature', k: 'dmg', run: (me, t) => { G.dmg(t, 3); G.dmg(S_P(t.o), 2); } });
+  SP('e20', 'Kindle', '1E', false, 'c', '🕯️', 'Draw two cards, then discard a random card.', { k: 'draw', run: me => { G.draw(me, 2); G.discard(me, 1); } });
+
+  /* ---------- TIDE: flyers, tricks and card draw ---------- */
+  CR('t1', 'Drifting Wisp', 'T', 1, 1, ['fly'], 'c', '👻');
+  CR('t2', 'Tidepool Sage', '2T', 1, 3, [], 'u', '🐚', { enter: { txt: 'When it arrives, draw a card.', run: me => G.draw(me, 1) } });
+  CR('t3', 'Reef Guardian', '1T', 0, 4, ['wall'], 'c', '🪸');
+  CR('t4', 'Skyray', '2T', 2, 2, ['fly'], 'c', '🪁');
+  CR('t5', 'Mistweaver', '2T', 2, 1, ['fly'], 'u', '🌫️', { enter: { tg: 'enemy', k: 'tap', txt: 'When it arrives, exhaust target enemy creature.', run: (me, t) => G.tap(t) } });
+  CR('t6', 'Storm Heron', '3T', 2, 4, ['fly'], 'c', '🦩');
+  CR('t7', 'Abyssal Leviathan', '5T', 6, 6, [], 'r', '🐙', { enter: { tg: 'enemy', k: 'bounce', txt: "When it arrives, return target enemy creature to its owner's hand.", run: (me, t) => G.bounce(t) } });
+  CR('t8', 'Wavecrest Rider', '3T', 2, 3, [], 'u', '🏄', { enter: { tg: 'enemy', k: 'bounce', txt: "When it arrives, return target enemy creature to its owner's hand.", run: (me, t) => G.bounce(t) } });
+  CR('t9', 'Coral Archon', '3TT', 4, 4, ['fly'], 'r', '🦈');
+  CR('t10', 'Brine Scout', '1T', 2, 1, [], 'c', '🦀');
+  CR('t11', 'Thundercloud Djinn', '4T', 4, 5, ['fly'], 'u', '🌩️');
+  CR('t12', 'Mirror Eel', '2T', 2, 3, [], 'c', '🐟');
+  SP('t13', 'Pull of the Deep', '1T', true, 'c', '🌀', "Return target creature to its owner's hand.", { tg: 'creature', k: 'bounce', run: (me, t) => G.bounce(t) });
+  SP('t14', 'Glimpse the Depths', '2T', true, 'u', '🔮', 'Draw two cards.', { k: 'draw', run: me => G.draw(me, 2) });
+  SP('t15', 'Frost Snare', '1T', true, 'c', '❄️', 'Exhaust target creature. Draw a card.', { tg: 'creature', k: 'tap', run: (me, t) => { G.tap(t); G.draw(me, 1); } });
+  SP('t16', 'Great Maelstrom', '4TT', false, 'r', '🌊', "Return all creatures to their owners' hands.", { k: 'sweep', run: () => G.all().forEach(c => G.bounce(c)) });
+  SP('t17', 'Gust Lift', 'T', true, 'c', '🪶', 'Target creature gets +1/+1 and Flying until end of turn.', { tg: 'creature', k: 'buff', run: (me, t) => G.buff(t, 1, 1, ['fly']) });
+  SP('t18', 'Bubble Ward', '1T', true, 'c', '🫧', 'Target creature gets +0/+4 until end of turn.', { tg: 'creature', k: 'buff', run: (me, t) => G.buff(t, 0, 4) });
+  SP('t19', 'Sea Mist', '1T', true, 'u', '🌁', 'Prevent all combat damage this turn.', { k: 'fog', run: () => G.fog() });
+  SP('t20', 'Tidal Insight', 'T', true, 'c', '💭', 'Draw a card.', { k: 'draw', run: me => G.draw(me, 1) });
+
+  /* ---------- GROVE: big creatures and growth ---------- */
+  CR('g1', 'Mossling', 'G', 1, 2, [], 'c', '🌱');
+  CR('g2', 'Grove Tender', '1G', 1, 1, [], 'u', '🍄', { enter: { txt: 'When it arrives, put a wellspring from your deck into play exhausted.', run: me => G.ramp(me, 1) } });
+  CR('g3', 'Thornback Boar', '1G', 2, 3, [], 'c', '🐗');
+  CR('g4', 'Briar Wall', '1G', 0, 5, ['wall', 'reach'], 'c', '🌵');
+  CR('g5', 'Canopy Spider', '2G', 2, 4, ['reach'], 'c', '🕷️');
+  CR('g6', 'Ironbark Bear', '3G', 4, 4, [], 'c', '🐻');
+  CR('g7', 'Elder Treant', '4GG', 6, 6, ['crush'], 'r', '🌳');
+  CR('g8', 'Stampeding Rhino', '4G', 5, 4, ['crush'], 'u', '🦏');
+  CR('g9', 'Wildwood Druid', '2G', 2, 2, [], 'u', '🧝', { enter: { txt: 'When it arrives, put a wellspring from your deck into play exhausted.', run: me => G.ramp(me, 1) } });
+  CR('g10', 'Stonehide Elemental', '3G', 3, 5, [], 'c', '🪨');
+  CR('g11', 'Packleader Wolf', '2GG', 3, 3, [], 'r', '🐺', { lord: { p: 1, h: 1, col: 'G' }, txt: 'Your other Grove creatures get +1/+1.' });
+  CR('g12', 'Riverbank Lizard', '2G', 3, 3, [], 'c', '🦎');
+  SP('g13', 'Surge of Sap', 'G', true, 'c', '💪', 'Target creature gets +3/+3 until end of turn.', { tg: 'creature', k: 'buff', run: (me, t) => G.buff(t, 3, 3) });
+  SP('g14', 'Tusk and Claw', '1G', false, 'c', '🦷', 'Your creature with the highest power deals damage equal to its power to target enemy creature.', { tg: 'enemy', k: 'bite', run: (me, t) => G.bite(me, t) });
+  SP('g15', 'Bountiful Harvest', '2G', false, 'u', '🌾', 'Put two wellsprings from your deck into play exhausted.', { k: 'ramp', run: me => G.ramp(me, 2) });
+  SP('g16', 'Verdant Mending', '1G', false, 'c', '🍃', 'Gain 5 life.', { k: 'life', run: me => G.gain(me, 5) });
+  SP('g17', 'Wild Rampage', '3G', false, 'r', '🐾', 'Your creatures get +2/+2 and Crush until end of turn.', { k: 'team', run: me => G.mine(me).forEach(c => G.buff(c, 2, 2, ['crush'])) });
+  SP('g18', 'Skyfall Thorns', '1G', true, 'u', '🌪️', 'Destroy target creature with Flying.', { tg: 'flyer', k: 'kill', run: (me, t) => G.destroy(t) });
+  SP('g19', 'Call the Pack', '3G', false, 'u', '📢', 'Create two 2/2 Wolf tokens.', { k: 'tokens', run: me => G.token(me, 'xWolf', 2) });
+  SP('g20', 'Second Spring', '1G', false, 'c', '♻️', 'Return the strongest creature card from your graveyard to your hand.', { k: 'raise', run: me => G.raise(me) });
+
+  /* ---------- DAWN: wide armies, life and protection ---------- */
+  CR('d1', 'Dawn Squire', 'D', 2, 1, [], 'c', '🗡️');
+  CR('d2', 'Lightward Acolyte', '1D', 1, 3, ['drain'], 'c', '😇');
+  CR('d3', 'Gryphon Scout', '2D', 2, 2, ['fly'], 'c', '🦅');
+  CR('d4', 'Shield Bearer', '1D', 1, 4, ['vig'], 'c', '🛡️');
+  CR('d5', 'Radiant Paladin', '3D', 3, 3, ['first'], 'u', '🤺');
+  CR('d6', 'Choir Herald', '2D', 1, 1, [], 'u', '🎺', { enter: { txt: 'When it arrives, create two 1/1 Squire tokens with Vigilant.', run: me => G.token(me, 'xSquire', 2) } });
+  CR('d7', 'Seraph of Morning', '3DD', 4, 4, ['fly', 'vig', 'drain'], 'r', '👼');
+  CR('d8', 'Lancer Captain', '2DD', 2, 2, [], 'r', '🏇', { lord: { p: 1, h: 1, col: 'D' }, txt: 'Your other Dawn creatures get +1/+1.' });
+  CR('d9', 'Lightborn Lion', '3D', 3, 4, ['vig'], 'c', '🦁');
+  CR('d10', 'Temple Warden', '4D', 3, 6, ['vig'], 'c', '⛪');
+  CR('d11', 'Mender of Dawn', '1D', 1, 1, [], 'c', '💐', { enter: { txt: 'When it arrives, gain 3 life.', run: me => G.gain(me, 3) } });
+  CR('d12', 'Sky Unicorn', '3D', 2, 3, ['fly', 'vig'], 'c', '🦄');
+  SP('d13', 'Judgement Ray', '1D', true, 'c', '🌟', 'Destroy target attacking creature.', { tg: 'attacking', k: 'kill', run: (me, t) => G.destroy(t) });
+  SP('d14', 'Call to Arms', '1D', true, 'c', '📣', 'Your creatures get +1/+1 until end of turn.', { k: 'team', run: me => G.mine(me).forEach(c => G.buff(c, 1, 1)) });
+  SP('d15', 'Valour', 'D', true, 'c', '🔆', 'Target creature gets +2/+2 until end of turn.', { tg: 'creature', k: 'buff', run: (me, t) => G.buff(t, 2, 2) });
+  SP('d16', 'Banishing Dawn', '2D', false, 'u', '☀️', 'Destroy target creature with power 4 or more.', { tg: 'big', k: 'kill', run: (me, t) => G.destroy(t) });
+  SP('d17', 'Dawnbreak', '4DD', false, 'r', '💫', 'Destroy all creatures.', { k: 'sweep', run: () => G.all().forEach(c => G.destroy(c)) });
+  SP('d18', 'Muster', '2D', false, 'c', '🏳️', 'Create two 1/1 Squire tokens with Vigilant.', { k: 'tokens', run: me => G.token(me, 'xSquire', 2) });
+  SP('d19', 'Blessing', '2D', false, 'c', '🙏', 'Gain 4 life and draw a card.', { k: 'life', run: me => { G.gain(me, 4); G.draw(me, 1); } });
+  SP('d20', 'Chains of Light', '2D', false, 'u', '⛓️', 'Target enemy creature can no longer attack or block.', { tg: 'enemy', k: 'pacify', run: (me, t) => G.pacify(t) });
+
+  /* ---------- DUSK: removal, deadly creatures and draining ---------- */
+  CR('k1', 'Dusk Bat', 'K', 1, 1, ['fly'], 'c', '🦇');
+  CR('k2', 'Venomfang Viper', '1K', 1, 1, ['deadly'], 'c', '🐍');
+  CR('k3', 'Restless Ghoul', '1K', 2, 2, [], 'c', '🧟');
+  CR('k4', 'Shadow Cat', '2K', 3, 2, [], 'c', '🐈‍⬛');
+  CR('k5', 'Soul Leech', '2K', 2, 2, [], 'u', '🧛', { enter: { txt: 'When it arrives, your opponent loses 2 life and you gain 2.', run: me => { G.lose(1 - me, 2); G.gain(me, 2); } } });
+  CR('k6', 'Bone Knight', '3K', 4, 3, [], 'c', '💀');
+  CR('k7', 'Dread Wyrm', '4KK', 5, 5, ['fly', 'drain'], 'r', '🐲');
+  CR('k8', 'Crypt Scorpion', '3K', 2, 4, ['deadly'], 'u', '🦂');
+  CR('k9', 'Wailing Shade', '3K', 3, 2, ['fly'], 'c', '👤');
+  CR('k10', 'Grave Warlock', '2KK', 2, 3, [], 'r', '🧙‍♀️', { enter: { tg: 'small2', k: 'kill', txt: 'When it arrives, destroy target enemy creature with power 2 or less.', run: (me, t) => G.destroy(t) } });
+  CR('k11', 'Necromancer', '3K', 2, 2, [], 'u', '⚰️', { enter: { txt: 'When it arrives, return the strongest creature card from your graveyard to your hand.', run: me => G.raise(me) } });
+  CR('k12', 'Night Terror', '4K', 4, 5, [], 'c', '👺');
+  SP('k13', 'Dark Rend', '2K', true, 'u', '🔪', 'Destroy target creature.', { tg: 'creature', k: 'kill', run: (me, t) => G.destroy(t) });
+  SP('k14', 'Withering Curse', 'K', true, 'c', '🥀', 'Target creature gets -2/-2 until end of turn.', { tg: 'creature', k: 'shrink', run: (me, t) => G.buff(t, -2, -2) });
+  SP('k15', 'Life Drain', '2K', false, 'c', '💉', 'Your opponent loses 3 life and you gain 3.', { k: 'drain', run: me => { G.lose(1 - me, 3); G.gain(me, 3); } });
+  SP('k16', 'Haunting Whispers', '1K', false, 'c', '🧠', 'Your opponent discards two random cards.', { k: 'discard', run: me => G.discard(1 - me, 2) });
+  SP('k17', 'Grave Call', 'K', false, 'c', '🪦', 'Return the strongest creature card from your graveyard to your hand.', { k: 'raise', run: me => G.raise(me) });
+  SP('k18', 'Blight Tide', '3KK', false, 'r', '☠️', 'All creatures get -2/-2 until end of turn.', { k: 'sweep', run: () => G.all().forEach(c => G.buff(c, -2, -2)) });
+  SP('k19', 'Ink of Night', '1K', false, 'c', '📕', 'Lose 2 life and draw two cards.', { k: 'draw', run: me => { G.lose(me, 2); G.draw(me, 2); } });
+  SP('k20', 'Soul Harvest', '3K', false, 'u', '🌒', 'Destroy target creature. Gain 2 life.', { tg: 'creature', k: 'kill', run: (me, t) => { G.destroy(t); G.gain(me, 2); } });
+
+  /* ---------- Tokens and wellsprings ---------- */
+  CR('xWolf', 'Wolf', '', 2, 2, [], 't', '🐺', { col: 'G', tok: true });
+  CR('xSquire', 'Squire', '', 1, 1, ['vig'], 't', '🛡️', { col: 'D', tok: true });
+  for (const c of 'ETGDK') L.push({ id: 'w' + c, n: DCOL[c].n + ' Wellspring', cost: '', t: 'well', col: c, r: 'w', ic: DCOL[c].ic, kw: [], txt: `Play one wellspring a turn. Exhaust it to pay for one ${DCOL[c].n} or any-colour cost.` });
+
+  const M = {};
+  for (const c of L) {
+    const m = /^(\d*)([A-Z]*)$/.exec(c.cost || '') || [];
+    c.pay = { g: +(m[1] || 0) };
+    for (const ch of (m[2] || '')) c.pay[ch] = (c.pay[ch] || 0) + 1;
+    c.cmc = c.pay.g + (m[2] || '').length;
+    if (!c.col) c.col = (m[2] || 'X')[0];
+    M[c.id] = c;
+  }
+  return M;
+})();
+const DPOOL = Object.keys(DCARDS).filter(id => !/^[xw]/.test(id));
+
+/* Ready-made decks: 23 cards each, wellsprings added to match */
+const DSTARTERS = [
+  { k: 'sunfire', name: 'Sunfire Vanguard', mage: 'Captain Sol', cards: ['e1', 'e2', 'e3', 'e4', 'e5', 'e8', 'e9', 'e11', 'e13', 'e14', 'e16', 'e18', 'd1', 'd2', 'd3', 'd5', 'd6', 'd8', 'd9', 'e6', 'd13', 'd14', 'd18'], blurb: 'Ember and Dawn. Swarm early and hit hard.' },
+  { k: 'tidewood', name: 'Tidewood Wilds', mage: 'Mirelle', cards: ['t1', 't2', 't3', 't4', 't5', 't6', 't8', 't11', 't13', 't14', 't17', 't18', 'g2', 'g3', 'g5', 'g6', 'g8', 'g9', 'g10', 'g12', 'g13', 'g14', 'g19'], blurb: 'Tide and Grove. Big beasts with flyers overhead.' },
+  { k: 'duskember', name: 'Ashen Night', mage: 'Vex', cards: ['k1', 'k2', 'k3', 'k5', 'k6', 'k9', 'k10', 'k13', 'k14', 'k15', 'k19', 'k20', 'e4', 'e5', 'e6', 'e7', 'e10', 'e12', 'e15', 'e18', 'e19', 'e20', 'e13'], blurb: 'Dusk and Ember. Burn and destroy everything in the way.' },
+  { k: 'skyward', name: 'Skyward Host', mage: 'Aurelia', cards: ['d2', 'd3', 'd4', 'd5', 'd7', 'd10', 'd12', 'd15', 'd16', 'd17', 'd19', 'd20', 't1', 't4', 't5', 't6', 't9', 't10', 't12', 't15', 't16', 't19', 't20'], blurb: 'Dawn and Tide. Rule the skies, then wipe the board.' },
+  { k: 'rotroot', name: 'Rot and Root', mage: 'Morrow', cards: ['k2', 'k3', 'k4', 'k6', 'k7', 'k8', 'k11', 'k12', 'k13', 'k5', 'k17', 'k18', 'g1', 'g4', 'g6', 'g7', 'g11', 'g13', 'g15', 'g8', 'g17', 'g18', 'g20'], blurb: 'Dusk and Grove. Huge creatures that keep coming back.' }
+];
+const DBOSS = { k: 'boss', name: "The Archmage's Grimoire", mage: 'The Archmage', cards: ['k13', 'k13', 'e18', 'e18', 'k7', 'e7', 'k10', 'e11', 'k5', 'k5', 'e6', 'e6', 'k6', 'k6', 'e5', 'e5', 'k20', 'e13', 'e13', 'k14', 'e14', 'k12', 'e10'], blurb: 'The final challenge.' };
+
+/* ============================================================================
+   CONJURERS' DUEL: engine, AI, screens (duel, deckbuilder, draft, runs)
+   ============================================================================ */
+let DS = null, DSIM = false;             // live state (JSON-safe) and "simulating" flag
+const DD = c => DCARDS[c.id];
+const S_P = i => DS.p[i];
+
+/* ---------- stats ---------- */
+function dLord(c, k) { let s = 0; for (const L of DS.p[c.o].field) { const l = DD(L).lord; if (L !== c && l && (!l.col || DD(c).col === l.col)) s += l[k]; } return s; }
+const dPw = c => DD(c).p + c.cp + c.bp + dLord(c, 'p');
+const dTh = c => DD(c).h + c.ch + c.bh + dLord(c, 'h');
+const dKw = (c, k) => DD(c).kw.includes(k) || c.kt.includes(k);
+const dCanAttack = c => !c.tapped && !c.pac && !dKw(c, 'wall') && (!c.fresh || dKw(c, 'swift'));
+const dCanBlock = (b, a) => !b.tapped && !b.pac && (!dKw(a, 'fly') || dKw(b, 'fly') || dKw(b, 'reach'));
+function dFind(u) { for (const P of DS.p) { const c = P.field.find(x => x.u === u); if (c) return c; } return null; }
+const dSV = (P, v, vs) => `${P.name} ${P.name === 'You' ? v : vs || v + 's'}`;
+function dLog(s) { if (DSIM) return; DS.log.push(s); if (DS.log.length > 40) DS.log.shift(); }
+
+/* ---------- effects used by card text ---------- */
+const G = {
+  dmg(t, n) { if (!t || n <= 0) return; if (t.life !== undefined) t.life -= n; else t.dmg += n; },
+  destroy(c) { if (c) c.doom = true; },
+  all() { return DS.p[0].field.concat(DS.p[1].field); },
+  mine(i) { return DS.p[i].field.slice(); },
+  buff(c, p, h, kws = []) { if (!c) return; c.bp += p; c.bh += h; c.kt.push(...kws); },
+  tap(c) { if (c) c.tapped = true; },
+  pacify(c) { if (c) c.pac = true; },
+  bounce(c) { if (!c) return; const P = DS.p[c.o], i = P.field.indexOf(c); if (i < 0) return; P.field.splice(i, 1); if (!DD(c).tok) P.hand.push({ u: c.u, id: c.id }); },
+  gain(i, n) { DS.p[i].life += n; },
+  lose(i, n) { DS.p[i].life -= n; },
+  draw(i, n) { const P = DS.p[i]; for (let k = 0; k < n; k++) { if (!P.deck.length) { P.decked = true; return; } P.hand.push(P.deck.pop()); } },
+  discard(i, n) { const P = DS.p[i]; for (let k = 0; k < n && P.hand.length; k++) P.grave.push(P.hand.splice(Math.floor(Math.random() * P.hand.length), 1)[0]); },
+  token(i, id, n) { for (let k = 0; k < n; k++) dEnter(i, { u: ++DS.uc, id }); },
+  ramp(i, n) {
+    const P = DS.p[i];
+    for (let k = 0; k < n; k++) {
+      const need = dNeed(P), ids = P.deck.map((c, j) => [c, j]).filter(([c]) => DD(c).t === 'well');
+      if (!ids.length) return;
+      ids.sort((a, b) => (need[DD(b[0]).col] || 0) - (need[DD(a[0]).col] || 0));
+      const [c, j] = ids[0]; P.deck.splice(j, 1); P.wells.push({ u: c.u, id: c.id, col: DD(c).col, tapped: true });
+    }
+  },
+  raise(i) { const P = DS.p[i]; let best = -1; P.grave.forEach((c, j) => { const d = DD(c); if (d.t === 'creature' && (best < 0 || d.p > DD(P.grave[best]).p)) best = j; }); if (best >= 0) P.hand.push(P.grave.splice(best, 1)[0]); },
+  bite(i, t) { const mine = DS.p[i].field.filter(c => !c.pac); if (!mine.length || !t) return; const s = mine.reduce((a, b) => dPw(b) > dPw(a) ? b : a); G.dmg(t, dPw(s)); if (dKw(s, 'deadly') && dPw(s) > 0) t.doom = true; },
+  fog() { DS.fog = true; }
+};
+function dNeed(P) { const n = {}; for (const c of P.hand) { const d = DD(c); if (d.t === 'well') continue; for (const k in d.pay) if (k !== 'g') n[k] = (n[k] || 0) + d.pay[k]; } for (const w of P.wells) n[w.col] = (n[w.col] || 0) - .6; return n; }
+function dEnter(i, c) { const o = { u: c.u, id: c.id, o: i, tapped: false, fresh: true, dmg: 0, cp: 0, ch: 0, bp: 0, bh: 0, kt: [], pac: false }; DS.p[i].field.push(o); return o; }
+
+/* ---------- paying costs ---------- */
+function dCanPay(P, pay) {
+  const free = {}; let total = 0;
+  for (const w of P.wells) if (!w.tapped) { free[w.col] = (free[w.col] || 0) + 1; total++; }
+  let colour = 0;
+  for (const k in pay) if (k !== 'g') { if ((free[k] || 0) < pay[k]) return false; colour += pay[k]; }
+  return total - colour >= pay.g;
+}
+function dPay(P, pay) {
+  for (const k in pay) if (k !== 'g') for (let n = 0; n < pay[k]; n++) P.wells.find(w => !w.tapped && w.col === k).tapped = true;
+  const need = dNeed(P);
+  for (let n = 0; n < pay.g; n++) {
+    const free = P.wells.filter(w => !w.tapped);
+    free.sort((a, b) => (need[a.col] || 0) - (need[b.col] || 0));
+    free[0].tapped = true;
+  }
+}
+
+/* ---------- targets ---------- */
+const dTgOf = d => d.t === 'creature' ? (d.enter && d.enter.tg) : (d.fx && d.fx.tg);
+function dTargets(i, tg) {
+  if (!tg) return [];
+  const mine = DS.p[i].field, theirs = DS.p[1 - i].field, all = mine.concat(theirs), R = c => ({ c: c.u });
+  switch (tg) {
+    case 'any': return all.map(R).concat([{ p: 1 - i }, { p: i }]);
+    case 'creature': return all.map(R);
+    case 'enemy': return theirs.map(R);
+    case 'own': return mine.map(R);
+    case 'flyer': return all.filter(c => dKw(c, 'fly')).map(R);
+    case 'big': return all.filter(c => dPw(c) >= 4).map(R);
+    case 'small2': return theirs.filter(c => dPw(c) <= 2).map(R);
+    case 'attacking': return DS.combat ? DS.combat.atk.map(dFind).filter(Boolean).map(R) : [];
+  }
+  return [];
+}
+const dRef = r => r ? (r.p !== undefined ? DS.p[r.p] : dFind(r.c)) : null;
+const dSameRef = (a, b) => a && b && a.p === b.p && a.c === b.c;
+
+/* ---------- casting ---------- */
+function dTiming(i, d, ctx) {
+  if (!ctx) return false;
+  if (d.t === 'well') return ctx === 'main' && !DS.p[i].wp;
+  if (d.t === 'quick') return true;
+  return ctx === 'main';
+}
+function dCastable(i, c, ctx) {
+  const d = DD(c); if (!dTiming(i, d, ctx)) return false;
+  if (d.t === 'well') return true;
+  if (!dCanPay(DS.p[i], d.pay)) return false;
+  if (d.t !== 'creature' && d.fx.tg && !dTargets(i, d.fx.tg).length) return false;
+  return true;
+}
+function dCast(i, u, ref) {
+  const P = DS.p[i], j = P.hand.findIndex(h => h.u === u); if (j < 0) return;
+  const c = P.hand.splice(j, 1)[0], d = DD(c);
+  if (d.t === 'well') { P.wells.push({ u: c.u, id: c.id, col: d.col, tapped: false }); P.wp = true; dLog(`${dSV(P, 'play')} a ${d.n}.`); if (!DSIM) Sfx.play('place'); return; }
+  dPay(P, d.pay);
+  const t = dRef(ref);
+  if (d.t === 'creature') {
+    const fc = dEnter(i, c);
+    dLog(`${dSV(P, 'summon')} ${d.n}${t && d.enter && d.enter.tg ? ' targeting ' + dName(t) : ''}.`);
+    if (d.enter && (!d.enter.tg || t)) d.enter.run(i, t, fc);
+  } else {
+    dLog(`${dSV(P, 'cast')} ${d.n}${t ? ' on ' + dName(t) : ''}.`);
+    d.fx.run(i, t); P.grave.push({ u: c.u, id: c.id });
+  }
+  if (!DSIM) Sfx.play(d.t === 'creature' ? 'card' : 'match');
+  dCleanup();
+}
+const dName = t => t.life !== undefined ? t.name : DD(t).n;
+function dCleanup() {
+  for (let loop = 0; loop < 20; loop++) {
+    const dead = [];
+    for (const P of DS.p) for (const c of P.field.slice()) if (c.doom || c.dmg >= dTh(c)) { P.field.splice(P.field.indexOf(c), 1); dead.push(c); }
+    if (!dead.length) break;
+    for (const c of dead) {
+      const d = DD(c); if (!d.tok) DS.p[c.o].grave.push({ u: c.u, id: c.id });
+      if (DS.combat) { DS.combat.atk = DS.combat.atk.filter(u => u !== c.u); delete DS.combat.blk[c.u]; }
+    }
+    for (const c of dead) { const d = DD(c); if (d.death) d.death.run(c.o); }
+  }
+  dCheckOver();
+}
+function dCheckOver() {
+  if (DS.over) return;
+  const l0 = DS.p[0].life <= 0 || DS.p[0].decked, l1 = DS.p[1].life <= 0 || DS.p[1].decked;
+  if (l0 || l1) DS.over = { w: l0 && l1 ? -1 : l0 ? 1 : 0 };
+}
+
+/* ---------- combat ---------- */
+function dResolveCombat() {
+  const C = DS.combat; if (!C) return;
+  if (DS.fog) { dLog('The mist prevents all combat damage.'); return; }
+  const A = DS.p[C.att], Df = DS.p[1 - C.att];
+  const blockedAt = new Set(C.bl || Object.values(C.blk));
+  const before = Df.life;
+  for (const step of [1, 0]) {
+    const ev = [];
+    const atks = C.atk.map(dFind).filter(c => c && c.o === C.att);
+    for (const at of atks) {
+      const bs = Object.keys(C.blk).filter(b => C.blk[b] === at.u).map(b => dFind(+b)).filter(Boolean);
+      if ((dKw(at, 'first') ? 1 : 0) === step) {
+        let dm = dPw(at);
+        if (dm > 0) {
+          if (!blockedAt.has(at.u)) ev.push([Df, dm, at]);
+          else if (!bs.length) { if (dKw(at, 'crush')) ev.push([Df, dm, at]); }
+          else {
+            for (let k = 0; k < bs.length && dm > 0; k++) {
+              const b = bs[k], need = dKw(at, 'deadly') ? 1 : Math.max(0, dTh(b) - b.dmg), last = k === bs.length - 1;
+              const give = last && !dKw(at, 'crush') ? dm : Math.min(dm, need);
+              if (give > 0) ev.push([b, give, at]); dm -= give;
+            }
+            if (dm > 0 && dKw(at, 'crush')) ev.push([Df, dm, at]);
+          }
+        }
+      }
+      for (const b of bs) if ((dKw(b, 'first') ? 1 : 0) === step && dPw(b) > 0) ev.push([at, dPw(b), b]);
+    }
+    for (const [t, n, src] of ev) {
+      if (t.life !== undefined) t.life -= n; else { t.dmg += n; if (dKw(src, 'deadly')) t.doom = true; }
+      if (dKw(src, 'drain')) DS.p[src.o].life += n;
+    }
+    dCleanup();
+  }
+  if (Df.life < before) dLog(`${dSV(Df, 'take')} ${before - Df.life} damage.`);
+}
+function dFight(a, b) { // would a (attacker) and b (blocker) die in a one-on-one fight?
+  const ak = dPw(a) > 0 && (dKw(a, 'deadly') || dPw(a) >= dTh(b) - b.dmg), bk = dPw(b) > 0 && (dKw(b, 'deadly') || dPw(b) >= dTh(a) - a.dmg);
+  const af = dKw(a, 'first'), bf = dKw(b, 'first');
+  if (af && !bf) return { aDies: !ak && bk, bDies: ak };
+  if (bf && !af) return { aDies: bk, bDies: !bk && ak };
+  return { aDies: bk, bDies: ak };
+}
+
+/* ---------- AI ---------- */
+function dVal(c) {
+  if (c.pac) return .3;
+  const p = Math.max(0, dPw(c)), h = Math.max(0, dTh(c) - c.dmg), d = DD(c);
+  let v = (dKw(c, 'wall') ? 0 : p) + h * .6;
+  if (dKw(c, 'fly')) v += p * .4 + .5; if (dKw(c, 'first')) v += .5; if (dKw(c, 'deadly')) v += 1.2; if (dKw(c, 'drain')) v += p * .3;
+  if (dKw(c, 'vig')) v += .3; if (dKw(c, 'crush')) v += p * .2; if (dKw(c, 'reach')) v += .3; if (d.lord) v += 1.5;
+  return v;
+}
+const dLifeScore = l => l <= 0 ? -1000 : l <= 6 ? l * 1.6 : 9.6 + (l - 6) * .5;
+function dSide(i) { const P = DS.p[i]; if (P.life <= 0 || P.decked) return -1000; return dLifeScore(P.life) + P.field.reduce((s, c) => s + dVal(c), 0) + P.hand.length * .7 + P.wells.length * .25; }
+function dEval(me) { if (DS.over) return DS.over.w === me ? 2000 : DS.over.w === -1 ? 0 : -2000; return dSide(me) - dSide(1 - me); }
+function dSim(fn, me) {
+  const keep = DS, ks = DSIM; DS = JSON.parse(JSON.stringify(keep)); DSIM = true;
+  try { const x = fn() || 0; if (!DS.over) { for (const Q of DS.p) Q.field.forEach(c => { c.bp = 0; c.bh = 0; c.kt = []; c.dmg = 0; }); dCleanup(); } return dEval(me) + x; } catch (e) { console.warn(e); return -9999; } finally { DS = keep; DSIM = ks; }
+}
+const dNoise = () => Settings.diff === 'easy' ? (Math.random() - .5) * 4 : Settings.diff === 'normal' ? (Math.random() - .5) * .8 : 0;
+/* best card to cast now: ctx 'main' or 'quick'; combat=true scores the coming fight too */
+function dAiBest(me, ctx, combat) {
+  const P = DS.p[me], base = dSim(() => { if (combat) dResolveCombat(); }, me);
+  let best = null;
+  for (const c of P.hand) {
+    if (!dCastable(me, c, ctx)) continue;
+    const d = DD(c); if (d.t === 'well') continue;
+    const tg = dTgOf(d), refs = tg ? dTargets(me, tg) : [null];
+    for (const r of (refs.length ? refs : [null])) {
+      let g = dSim(() => { dCast(me, c.u, r); if (combat) dResolveCombat(); }, me) - base;
+      if (d.t === 'quick' && ctx === 'main' && !combat) g -= d.fx.k === 'draw' ? 2 : 1.2;
+      g += dNoise();
+      if (!best || g > best.g) best = { u: c.u, r, g, d };
+    }
+  }
+  return best;
+}
+function dAiWell(me) {
+  const P = DS.p[me]; if (P.wp) return false;
+  const ws = P.hand.filter(c => DD(c).t === 'well'); if (!ws.length) return false;
+  const need = dNeed(P); ws.sort((a, b) => (need[DD(b).col] || 0) - (need[DD(a).col] || 0));
+  dCast(me, ws[0].u); return true;
+}
+function dAiBlocks(def, atkU) {
+  const atks = atkU.map(dFind).filter(Boolean).sort((a, b) => dPw(b) - dPw(a));
+  let avail = DS.p[def].field.filter(c => !c.tapped && !c.pac); const blk = {}, life = DS.p[def].life;
+  const easy = Settings.diff === 'easy';
+  for (const a of atks) {
+    const opts = avail.filter(b => dCanBlock(b, a)); if (!opts.length) continue;
+    const by = f => opts.filter(f).sort((x, y) => dVal(x) - dVal(y))[0];
+    const pick = by(b => { const f = dFight(a, b); return f.aDies && !f.bDies; })
+      || by(b => { const f = dFight(a, b); return f.aDies && f.bDies && dVal(b) <= dVal(a) + .3; })
+      || by(b => !dFight(a, b).bDies);
+    if (pick && !(easy && Math.random() < .4)) { blk[pick.u] = a.u; avail = avail.filter(x => x !== pick); }
+  }
+  let incoming = atks.filter(a => !Object.values(blk).includes(a.u)).reduce((s, a) => s + dPw(a), 0);
+  for (const a of atks) {
+    if (incoming < life) break;
+    if (Object.values(blk).includes(a.u)) continue;
+    const ch = avail.filter(b => dCanBlock(b, a)).sort((x, y) => dVal(x) - dVal(y))[0];
+    if (ch) { blk[ch.u] = a.u; avail = avail.filter(x => x !== ch); incoming -= dPw(a); }
+  }
+  return blk;
+}
+function dCrackBack(me) {
+  const opp = DS.p[1 - me].field.filter(c => !c.pac && !dKw(c, 'wall')).map(dPw).sort((a, b) => b - a);
+  const blockers = DS.p[me].field.filter(c => !c.tapped && !c.pac).length;
+  const hit = opp.slice(blockers).reduce((s, x) => s + x, 0);
+  return hit >= DS.p[me].life ? -200 : -hit * .15;
+}
+function dAiAttack(me) {
+  const cands = DS.p[me].field.filter(dCanAttack).sort((a, b) => dVal(b) - dVal(a)).map(c => c.u);
+  if (!cands.length) return [];
+  const score = list => dSim(() => {
+    if (list.length) {
+      DS.combat = { att: me, atk: list.slice(), blk: {} };
+      list.forEach(u => { const c = dFind(u); if (!dKw(c, 'vig')) c.tapped = true; });
+      DS.combat.blk = dAiBlocks(1 - me, list); dResolveCombat(); DS.combat = null;
+    }
+    return dCrackBack(me);
+  }, me) + dNoise();
+  let chosen = [], best = score([]);
+  for (const u of cands) { const s = score(chosen.concat(u)); if (s > best + .05) { best = s; chosen = chosen.concat(u); } }
+  const all = score(cands); if (all > best + .05) chosen = cands;
+  return chosen;
+}
+
+/* ============================================================================
+   GAME CONTROLLER + SCREENS
+   ============================================================================ */
+const Duel = (() => {
+  let root, sid = 0, waiter = null, safe = null, ui = {};
+  const ABORT = { abort: true };
+  const me = () => DS.viewer;
+  /* ---------- decks ---------- */
+  function wellsFor(cards, total) {
+    const pips = {}; let sum = 0;
+    for (const id of cards) { const d = DCARDS[id]; for (const k in d.pay) if (k !== 'g') { pips[k] = (pips[k] || 0) + d.pay[k]; sum += d.pay[k]; } }
+    const cols = Object.keys(pips); if (!cols.length) return { E: total };
+    const out = {}; let left = total;
+    cols.sort((a, b) => pips[b] - pips[a]).forEach((k, j) => { const n = j === cols.length - 1 ? left : Math.max(2, Math.round(total * pips[k] / sum)); out[k] = n; left -= n; });
+    return out;
+  }
+  const deckCols = cards => [...new Set(cards.map(id => DCARDS[id].col))].filter(c => DCOL[c]).map(c => DCOL[c].ic).join('');
+  function customDecks() { return Store.get('duel_decks', []); }
+  function deckById(k) { return DSTARTERS.find(d => d.k === k) || (k === 'boss' ? DBOSS : null) || customDecks().find(d => d.k === k); }
+  function makePlayer(i, name, deck, ai) {
+    const n = Math.max(15, 40 - deck.cards.length), wl = wellsFor(deck.cards, n), list = deck.cards.slice();
+    for (const k in wl) for (let j = 0; j < wl[k]; j++) list.push('w' + k);
+    return { i, name, ai, deckName: deck.name, life: 20, deck: Util.shuffle(list.map(id => ({ u: ++DS.uc, id }))), hand: [], field: [], wells: [], grave: [], wp: false, decked: false };
+  }
+  function openingHand(P) {
+    for (let t = 0; t < 30; t++) { const w = P.deck.slice(-7).filter(c => DD(c).t === 'well').length; if (w >= 2 && w <= 4) break; P.deck = Util.shuffle(P.deck); }
+    G.draw(P.i, 7);
+  }
+  /* cfg: {mode:'ai'|'pp'|'aivai', decks:[a,b], names, run} */
+  function newDuel(cfg) {
+    sid++; waiter = null; ui = {};
+    const run = DS && DS.run && cfg.keepRun ? DS.run : (cfg.run || null);
+    DS = { mode: cfg.mode, uc: 0, p: [], turn: 0, turnNo: 0, viewer: 0, log: [], ask: null, window: null, combat: null, fog: false, over: null, view: 'duel', run, first: 0 };
+    const ai0 = cfg.mode === 'aivai', ai1 = cfg.mode !== 'pp';
+    DS.p = [makePlayer(0, cfg.names[0], cfg.decks[0], ai0), makePlayer(1, cfg.names[1], cfg.decks[1], ai1)];
+    DS.p.forEach(openingHand);
+    DS.first = DS.turn = Math.random() < .5 ? 0 : 1;
+    dLog(`${dSV(DS.p[DS.turn], 'go', 'goes')} first.`);
+    loop(false);
+  }
+  /* ---------- turn loop ---------- */
+  const gate = my => { if (my !== sid || !root && !Duel._headless) throw ABORT; };
+  async function pause(my, ms) { await Util.sleep(Duel._fast ? 0 : Util.delay(ms)); gate(my); }
+  function ask(kind, who) { DS.ask = kind; DS.window = who; if (kind === 'main' && !DS.p[who].ai) safe = JSON.parse(JSON.stringify(DS)); render(); return new Promise(r => waiter = r); }
+  function answer(v) { if (!waiter) return; const w = waiter; waiter = null; DS.ask = null; DS.window = null; ui = {}; w(v); }
+  async function loop(resume) {
+    const my = sid;
+    try {
+      let skip = resume;
+      while (!DS.over) {
+        if (!skip) startTurn();
+        skip = false; if (DS.over) break;
+        const P = DS.p[DS.turn];
+        if (P.ai) await aiTurn(my); else await humanTurn(my, resume); resume = false;
+        if (DS.over) break;
+        endTurn();
+      }
+      finish();
+    } catch (e) { if (e !== ABORT) console.error(e); }
+  }
+  function startTurn() {
+    DS.turnNo++;
+    const P = DS.p[DS.turn]; P.wp = false;
+    P.wells.forEach(w => w.tapped = false); P.field.forEach(c => { c.tapped = false; c.fresh = false; });
+    if (!(DS.turnNo === 1)) G.draw(DS.turn, 1);
+    dCheckOver();
+  }
+  function endTurn() {
+    const P = DS.p[DS.turn];
+    while (P.hand.length > 7) { const j = P.hand.reduce((b, c, k) => DD(c).cmc > DD(P.hand[b]).cmc ? k : b, 0); P.grave.push(P.hand.splice(j, 1)[0]); }
+    for (const Q of DS.p) Q.field.forEach(c => { c.bp = 0; c.bh = 0; c.kt = []; c.dmg = 0; });
+    DS.fog = false; dCleanup();
+    DS.turn = 1 - DS.turn;
+  }
+  async function humanTurn(my, resumed) {
+    const i = DS.turn;
+    if (DS.mode === 'pp' && !resumed) { DS.viewer = i; render(); await curtain(DS.p[i].name, 'Your turn. Pass the phone and tap when ready.'); gate(my); }
+    DS.viewer = i; if (!resumed) DS.attacked = false;
+    for (;;) {
+      const a = await ask('main', i); gate(my);
+      if (DS.over) return;
+      if (a === 'end') break;
+      if (a === 'attack') {
+        const sel = await ask('attack', i); gate(my);
+        if (sel && sel.length) { DS.attacked = true; await combat(my, i, sel); if (DS.over) return; }
+      }
+    }
+    const opp = 1 - i;
+    if (DS.p[opp].ai) await aiQuick(my, opp, false);
+  }
+  async function aiTurn(my) {
+    const i = DS.turn; render(); await pause(my, 600);
+    if (dAiWell(i)) { render(); await pause(my, 500); }
+    await aiCast(my, i);
+    if (DS.over) return;
+    const atk = dAiAttack(i);
+    if (atk.length) { await combat(my, i, atk); if (DS.over) return; }
+    await aiCast(my, i);
+    if (DS.over) return;
+    const h = 1 - i;
+    if (!DS.p[h].ai && DS.p[h].hand.some(c => dCastable(h, c, 'quick'))) { DS.viewer = h; await ask('eot', h); gate(my); }
+  }
+  async function aiCast(my, i) {
+    for (let n = 0; n < 8 && !DS.over; n++) {
+      const b = dAiBest(i, 'main', false);
+      if (!b || b.g < .4) break;
+      dCast(i, b.u, b.r); render(); await pause(my, 800);
+    }
+  }
+  async function aiQuick(my, i, combatNow) {
+    for (let n = 0; n < 3 && !DS.over; n++) {
+      const b = dAiBest(i, 'quick', combatNow);
+      if (!b || b.g < (combatNow ? .8 : .5)) break;
+      dCast(i, b.u, b.r); render(); await pause(my, 900);
+    }
+  }
+  async function combat(my, a, list) {
+    const d = 1 - a, A = DS.p[a];
+    DS.combat = { att: a, atk: list.slice(), blk: {} };
+    list.forEach(u => { const c = dFind(u); if (c && !dKw(c, 'vig')) c.tapped = true; });
+    dLog(`${dSV(A, 'attack')} with ${list.map(u => DD(dFind(u)).n).join(', ')}.`); Sfx.play('card');
+    render(); await pause(my, 500);
+    if (DS.p[d].ai) {
+      DS.combat.blk = dAiBlocks(d, DS.combat.atk);
+      const nb = Object.keys(DS.combat.blk).length; dLog(nb ? `${dSV(DS.p[d], 'block')} with ${nb} creature${nb > 1 ? 's' : ''}.` : `${dSV(DS.p[d], "don't", "doesn't")} block.`);
+      render(); await pause(my, 700);
+      await aiQuick(my, d, true);
+    } else {
+      if (DS.mode === 'pp') { DS.viewer = d; render(); await curtain(DS.p[d].name, `${A.name} is attacking! Choose your blocks.`); gate(my); }
+      DS.viewer = d; await ask('block', d); gate(my);
+    }
+    if (DS.over || !DS.combat) return endCombat();
+    DS.combat.bl = [...new Set(Object.values(DS.combat.blk))];
+    if (A.ai) await aiQuick(my, a, true);
+    else {
+      if (DS.mode === 'pp') { DS.viewer = a; render(); await curtain(A.name, 'Blocks are in. Tap to see them.'); gate(my); }
+      DS.viewer = a; await ask('respond', a); gate(my);
+    }
+    if (!DS.over && DS.combat) { dResolveCombat(); Sfx.play('hit'); }
+    endCombat();
+    render(); await pause(my, 600);
+  }
+  function endCombat() { DS.combat = null; if (DS.mode !== 'pp' && DS.mode !== 'aivai') DS.viewer = 0; else if (DS.mode === 'pp') DS.viewer = DS.turn; }
+  function finish() {
+    render(); safe = null;
+    const w = DS.over.w, run = DS.run;
+    if (DS.mode === 'aivai') { Duel._results = (Duel._results || []).concat(w); return; }
+    Sfx.play(w === 0 || (DS.mode === 'pp' && w >= 0) ? 'win' : 'lose');
+    if (run) { runResult(w === 0); return; }
+    const title = w === -1 ? 'A draw!' : DS.mode === 'pp' ? `${DS.p[w].name} wins!` : w === 0 ? 'Victory!' : 'Defeated';
+    App.endGame('duel', DS.mode === 'pp' ? w >= 0 : w === 0, title, `After ${Math.ceil(DS.turnNo / 2)} rounds. ${DS.p[0].name}: ${Math.max(0, DS.p[0].life)} life, ${DS.p[1].name}: ${Math.max(0, DS.p[1].life)} life.`, () => newDuel(lastCfg));
+  }
+  let lastCfg = null;
+  function startDuel(cfg) { lastCfg = cfg; newDuel(cfg); }
+
+  /* ---------- human actions ---------- */
+  function ctxFor(i) {
+    if (DS.window !== i || DS.over) return null;
+    if (DS.ask === 'main') return 'main';
+    if (['block', 'respond', 'eot'].includes(DS.ask)) return 'quick';
+    return null;
+  }
+  function act(a) {
+    if (a === 'attack' && DS.ask === 'main') { if (!DS.p[DS.window].field.some(dCanAttack)) return Util.toast('Nothing can attack right now.'); answer('attack'); ui.atk = []; render(); }
+    else if (a === 'end' && DS.ask === 'main') answer('end');
+    else if (a === 'confirmAtk' && DS.ask === 'attack') answer(ui.atk || []);
+    else if (a === 'cancelAtk' && DS.ask === 'attack') answer(null);
+    else if (a === 'allAtk' && DS.ask === 'attack') { ui.atk = DS.p[DS.window].field.filter(dCanAttack).map(c => c.u); render(); }
+    else if (a === 'blocks' && DS.ask === 'block') answer(true);
+    else if (a === 'damage' && DS.ask === 'respond') answer(true);
+    else if (a === 'eot' && DS.ask === 'eot') answer(true);
+  }
+  function tapField(u) {
+    const c = dFind(u); if (!c) return;
+    if (ui.target) return pickTarget({ c: u });
+    const w = DS.window;
+    if (DS.ask === 'attack' && c.o === w) { if (!dCanAttack(c)) return Util.toast(c.fresh ? 'It only just arrived, so it can attack next turn.' : "It can't attack."); ui.atk = ui.atk || []; ui.atk = ui.atk.includes(u) ? ui.atk.filter(x => x !== u) : ui.atk.concat(u); Sfx.play('tap'); return render(); }
+    if (DS.ask === 'block' && DS.combat) {
+      if (c.o === w) {
+        if (DS.combat.blk[u] !== undefined) { delete DS.combat.blk[u]; ui.blocker = null; return render(); }
+        if (c.tapped || c.pac) return Util.toast(c.pac ? "It can't block." : "It's exhausted, so it can't block.");
+        ui.blocker = ui.blocker === u ? null : u; Sfx.play('tap');
+        if (ui.blocker && DS.combat.atk.length === 1) { const a = dFind(DS.combat.atk[0]); if (dCanBlock(c, a)) { DS.combat.blk[u] = a.u; ui.blocker = null; } }
+        return render();
+      }
+      if (DS.combat.atk.includes(u)) {
+        if (!ui.blocker) return Util.toast('First tap one of your creatures, then the attacker it should block.');
+        const b = dFind(ui.blocker); if (!dCanBlock(b, c)) return Util.toast('It needs Flying or Reach to block a flyer.');
+        DS.combat.blk[ui.blocker] = u; ui.blocker = null; Sfx.play('place'); return render();
+      }
+    }
+    showField(c);
+  }
+  function tapPlayer(i) { if (ui.target) return pickTarget({ p: i }); }
+  function pickTarget(ref) {
+    const t = ui.target, i = DS.window;
+    if (!dTargets(i, t.tg).some(r => dSameRef(r, ref))) return Util.toast('That isn\'t a valid target.');
+    ui = {}; dCast(i, t.u, ref); render();
+  }
+  function cast(u) {
+    const i = DS.window, P = DS.p[i], c = P.hand.find(h => h.u === u); if (!c) return;
+    const d = DD(c), ctx = ctxFor(i);
+    if (!dCastable(i, c, ctx)) return;
+    const tg = dTgOf(d);
+    if (tg && dTargets(i, tg).length) { ui = Object.assign({}, ui, { target: { u, tg } }); return render(); }
+    dCast(i, u, null); render();
+  }
+  function why(i, c) {
+    const d = DD(c), ctx = ctxFor(i);
+    if (!ctx) return DS.window === null ? 'Wait for your turn.' : "You can't play cards right now.";
+    if (d.t === 'well') return DS.p[i].wp ? 'You can only play one wellspring a turn.' : ctx !== 'main' ? 'Wellsprings can only be played on your own turn.' : '';
+    if (d.t !== 'quick' && ctx !== 'main') return 'Only quick spells can be cast right now.';
+    if (!dCanPay(DS.p[i], d.pay)) return "You don't have the wellsprings to pay for it.";
+    if (d.t !== 'creature' && d.fx.tg && !dTargets(i, d.fx.tg).length) return 'There is nothing it can target.';
+    return '';
+  }
+
+  /* ---------- card art ---------- */
+  function pips(d, big) {
+    if (d.t === 'well' || !d.cost) return '';
+    const s = big ? 18 : 12, out = [];
+    if (d.pay.g) out.push(`<span class="inline-flex items-center justify-center rounded-full font-bold" style="width:${s}px;height:${s}px;background:#cfc6b4;color:#222;font-size:${s * .7}px">${d.pay.g}</span>`);
+    for (const k in d.pay) if (k !== 'g') for (let n = 0; n < d.pay[k]; n++) out.push(big ? `<span style="font-size:${s * .9}px">${DCOL[k].ic}</span>` : `<span class="inline-block rounded-full" style="width:${s - 2}px;height:${s - 2}px;background:${DCOL[k].a};border:1px solid rgba(0,0,0,.4)"></span>`);
+    return `<span class="inline-flex items-center gap-[2px]">${out.join('')}</span>`;
+  }
+  const frame = d => { const c = DCOL[d.col]; return c ? `linear-gradient(165deg,${c.a},${c.b} 70%)` : 'linear-gradient(165deg,#888,#333)'; };
+  function cardText(d, inst) {
+    const kws = d.kw.concat(inst ? inst.kt.filter(k => !d.kw.includes(k)) : []);
+    const parts = [...new Set(kws)].map(k => `<b>${DKW[k][1]} ${DKW[k][0]}</b> <span class="opacity-70">${DKW[k][2]}</span>`);
+    if (d.enter) parts.push(d.enter.txt); if (d.death) parts.push(d.death.txt);
+    if (d.txt) parts.push(d.txt);
+    if (inst && inst.pac) parts.push('<b>⛓️ Chained:</b> it can no longer attack or block.');
+    return parts.map(p => `<div>${p}</div>`).join('');
+  }
+  function bigCard(d, inst) {
+    const type = { creature: 'Creature', rite: 'Spell', quick: 'Quick spell (cast it any time you could act, even in combat)', well: 'Wellspring' }[d.t] + (d.tok ? ' token' : '');
+    const pt = d.t === 'creature' ? (inst ? `${dPw(inst)}/${dTh(inst) - inst.dmg}` : `${d.p}/${d.h}`) : '';
+    return `<div class="rounded-2xl p-2 flex flex-col gap-1.5 text-left" style="width:250px;background:${frame(d)};border:3px solid #1a110b;box-shadow:0 12px 30px rgba(0,0,0,.6)">
+      <div class="flex items-center justify-between gap-2 rounded-lg px-2 py-1" style="background:rgba(0,0,0,.35)"><span class="font-display font-bold text-amber-50 text-sm leading-tight">${d.n}</span>${pips(d, true)}</div>
+      <div class="flex items-center justify-center rounded-lg" style="height:110px;background:radial-gradient(circle,rgba(255,255,255,.25),rgba(0,0,0,.25));font-size:64px">${d.ic}</div>
+      <div class="text-[11px] text-amber-100/85 px-1">${type}${d.r !== 't' && d.r !== 'w' ? ` · ${{ c: 'Common', u: 'Uncommon', r: 'Rare' }[d.r]}` : ''}</div>
+      <div class="rounded-lg p-2 text-[12px] leading-snug text-stone-900 space-y-1" style="background:#f6efdf;min-height:60px">${cardText(d, inst) || '<span class="opacity-50">No special abilities.</span>'}</div>
+      ${pt ? `<div class="self-end rounded-md px-2 font-bold text-stone-900" style="background:#f6efdf">${pt}</div>` : ''}</div>`;
+  }
+  function mini(c, o = {}) {
+    const d = DD(c), field = o.field, w = o.w || 64, h = o.h || 84;
+    const pt = d.t === 'creature' ? (field ? [dPw(c), dTh(c) - c.dmg, dTh(c)] : [d.p, d.h, d.h]) : null;
+    const ptHtml = pt ? `<span class="absolute bottom-0.5 right-0.5 rounded px-1 font-bold leading-tight" style="background:#f6efdf;font-size:${w * .17}px;color:${pt[1] < pt[2] ? '#c0261c' : field && pt[0] > d.p ? '#1d6b2f' : '#1d120c'}">${pt[0]}/${pt[1]}</span>` : '';
+    const kws = [...new Set(d.kw.concat(field ? c.kt : []))].map(k => DKW[k][1]).join('');
+    const style = `width:${w}px;height:${h}px;background:${frame(d)};${o.ring ? `box-shadow:0 0 0 3px ${o.ring};` : ''}${field && c.tapped ? 'transform:rotate(9deg);filter:brightness(.6);' : ''}${o.dim ? 'filter:saturate(.35) brightness(.7);' : ''}`;
+    return `<div onclick="${o.click || ''}" class="relative shrink-0 rounded-lg overflow-hidden cursor-pointer select-none transition-transform" style="${style};border:2px solid #1a110b">
+      ${!field ? `<div class="absolute top-0.5 left-0.5 right-0.5 flex justify-end">${pips(d)}</div>` : ''}
+      <div class="flex items-center justify-center" style="height:${h * .5}px;padding-top:${field ? 2 : 10}px;font-size:${w * .42}px">${d.ic}</div>
+      <div class="px-1 text-center font-semibold leading-[1.05] text-amber-50" style="font-size:${Math.max(8, w * .13)}px;text-shadow:0 1px 2px #000">${d.n}</div>
+      ${kws ? `<div class="absolute bottom-0.5 left-0.5" style="font-size:${w * .15}px">${kws}</div>` : ''}${ptHtml}
+      ${field && c.pac ? '<div class="absolute top-0.5 left-0.5 text-xs">⛓️</div>' : ''}
+      ${o.badge ? `<div class="absolute top-0 left-0 right-0 text-center text-[10px] font-bold text-white" style="background:${o.badgeBg || '#b91c1c'}">${o.badge}</div>` : ''}</div>`;
+  }
+  function modal(inner, btns) {
+    document.getElementById('duel-modal')?.remove();
+    const ov = document.createElement('div'); ov.id = 'duel-modal';
+    ov.className = 'fixed inset-0 z-[60] flex items-center justify-center bg-black/75 p-4';
+    ov.innerHTML = `<div class="flex flex-col items-center gap-3 max-h-full overflow-y-auto">${inner}<div class="flex gap-2 flex-wrap justify-center">${btns.map((b, i) => `<button data-i="${i}" class="${b.primary ? 'btn-brass' : 'btn-wood'} px-4 py-2 rounded-xl text-sm ${b.off ? 'opacity-50' : ''}">${b.label}</button>`).join('')}</div></div>`;
+    ov.onclick = e => { const i = e.target.closest('button')?.dataset.i; if (i !== undefined) { ov.remove(); btns[+i].fn && btns[+i].fn(); } else if (e.target === ov) ov.remove(); };
+    document.body.appendChild(ov);
+  }
+  function showHand(u) {
+    const i = DS.viewer, c = DS.p[i].hand.find(h => h.u === u); if (!c) return;
+    const d = DD(c), w = why(i, c);
+    modal(bigCard(d) + (w ? `<div class="text-amber-200/80 text-xs text-center max-w-[250px]">${w}</div>` : ''), w ? [{ label: 'Close' }] : [{ label: d.t === 'well' ? '🌀 Play it' : '✨ Cast', primary: true, fn: () => cast(u) }, { label: 'Close' }]);
+  }
+  function showField(c) { modal(bigCard(DD(c), c) + (c.fresh && !dKw(c, 'swift') && c.o === DS.turn ? '<div class="text-amber-200/80 text-xs">Just arrived: it can attack next turn.</div>' : ''), [{ label: 'Close' }]); }
+  function showGrave(i) {
+    const g = DS.p[i].grave;
+    modal(`<div class="walnut-panel rounded-2xl p-3 max-w-sm w-full"><div class="font-display text-amber-200 mb-2">${DS.p[i].name}'s graveyard (${g.length})</div><div class="flex flex-wrap gap-1.5 justify-center">${g.length ? g.map(c => mini(c, { w: 56, h: 74 })).join('') : '<span class="text-amber-100/60 text-sm">Empty</span>'}</div></div>`, [{ label: 'Close' }]);
+  }
+  function showLog() { modal(`<div class="walnut-panel rounded-2xl p-3 max-w-sm w-full text-left text-sm text-amber-50/90 space-y-1">${DS.log.slice(-25).map(l => `<div>${l}</div>`).join('')}</div>`, [{ label: 'Close' }]); }
+
+  /* ---------- duel screen ---------- */
+  function wellChips(P) {
+    const by = {}; for (const w of P.wells) { by[w.col] = by[w.col] || [0, 0]; by[w.col][1]++; if (!w.tapped) by[w.col][0]++; }
+    return Object.keys(by).map(k => `<span class="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[11px] font-bold" style="background:${DCOL[k].b};color:#fff;border:1px solid ${DCOL[k].a}">${DCOL[k].ic}${by[k][0]}/${by[k][1]}</span>`).join('') || '<span class="text-[11px] text-amber-100/40">No wellsprings</span>';
+  }
+  function playerBar(i, top) {
+    const P = DS.p[i], tgt = ui.target && dTargets(DS.window, ui.target.tg).some(r => r.p === i);
+    return `<div onclick="Duel.tapPlayer(${i})" class="flex items-center gap-2 rounded-xl px-2 py-1.5 ${tgt ? 'ring-2 ring-amber-300 animate-pulse' : ''}" style="background:rgba(0,0,0,.35)">
+      <div class="flex flex-col leading-tight min-w-0"><span class="font-display text-amber-200 text-sm truncate">${DS.turn === i ? '▶ ' : ''}${P.name}</span><span class="text-[10px] text-amber-100/50 truncate">${P.deckName}</span></div>
+      <span class="ml-auto font-bold text-lg ${P.life <= 5 ? 'text-red-400' : 'text-amber-50'}">❤️${P.life}</span>
+      <div class="flex flex-col items-end gap-0.5"><div class="flex flex-wrap gap-0.5 justify-end">${wellChips(P)}</div>
+      <div class="flex gap-2 text-[10px] text-amber-100/70">${top ? `<span>🂠 ${P.hand.length}</span>` : ''}<span>📚 ${P.deck.length}</span><button onclick="event.stopPropagation();Duel.grave(${i})">🪦 ${P.grave.length}</button></div></div></div>`;
+  }
+  function fieldRow(i) {
+    const P = DS.p[i], C = DS.combat, w = Math.min(66, Math.floor(((root.clientWidth || 380) - 24) / 5.4)), h = Math.round(w * 1.3);
+    const letters = C ? Object.fromEntries(C.atk.map((u, k) => [u, 'ABCDEFGHIJ'[k]])) : {};
+    const validT = ui.target ? new Set(dTargets(DS.window, ui.target.tg).filter(r => r.c).map(r => r.c)) : null;
+    const cards = P.field.map(c => {
+      let ring = '', badge = '', bb;
+      if (validT && validT.has(c.u)) ring = '#facc15';
+      if (DS.ask === 'attack' && (ui.atk || []).includes(c.u)) { ring = '#ef4444'; badge = '⚔️ Attack'; }
+      else if (DS.ask === 'attack' && c.o === DS.window && dCanAttack(c) && !ring) ring = 'rgba(239,68,68,.45)';
+      if (C && letters[c.u]) { ring = ring || '#ef4444'; badge = `⚔️ ${letters[c.u]}`; }
+      if (C && C.blk[c.u] !== undefined) { badge = `🛡 blocks ${letters[C.blk[c.u]] || ''}`; bb = '#1d4ed8'; ring = ring || '#3b82f6'; }
+      if (ui.blocker === c.u) ring = '#22d3ee';
+      return mini(c, { field: true, w, h, ring, badge, badgeBg: bb, click: `Duel.tapField(${c.u})` });
+    }).join('');
+    return `<div class="flex flex-wrap gap-1.5 justify-center items-center" style="min-height:${h + 8}px">${cards || `<span class="text-[11px] text-amber-100/30">No creatures</span>`}</div>`;
+  }
+  function prompt() {
+    const w = DS.window, B = Util.btn, P = w !== null ? DS.p[w] : null;
+    if (DS.over) return ['The duel is over.', ''];
+    if (ui.target) return [`Choose a target for <b>${DD(DS.p[w].hand.find(h => h.u === ui.target.u)).n}</b>.`, B('Cancel', 'Duel.cancelTarget()')];
+    if (w === null || P.ai) return [`${DS.p[DS.turn].name} is thinking…`, ''];
+    switch (DS.ask) {
+      case 'main': return [DS.attacked ? 'Combat done. Cast more cards or end your turn.' : 'Your turn: play a wellspring, cast cards, then attack or end your turn.', `${!DS.attacked && P.field.some(dCanAttack) ? B('⚔️ Attack', "Duel.act('attack')", 'brass') : ''}${B('⏭ End turn', "Duel.act('end')")}`];
+      case 'attack': return [`Tap the creatures you want to attack with. (${(ui.atk || []).length} chosen)`, `${B('⚔️ Confirm', "Duel.act('confirmAtk')", 'brass')}${B('All', "Duel.act('allAtk')")}${B('Cancel', "Duel.act('cancelAtk')")}`];
+      case 'block': return [`${DS.p[DS.combat.att].name} attacks! Tap your creature, then the attacker it blocks. Quick spells are allowed.`, B('🛡 Done blocking', "Duel.act('blocks')", 'brass')];
+      case 'respond': return ['Blocks are in. Cast quick spells now, or deal the damage.', B('💥 Deal damage', "Duel.act('damage')", 'brass')];
+      case 'eot': return [`${DS.p[1 - w].name}'s turn is ending. You can cast quick spells.`, B('Continue', "Duel.act('eot')", 'brass')];
+    }
+    return ['', ''];
+  }
+  function renderDuel() {
+    const v = DS.viewer, o = 1 - v, P = DS.p[v], ctx = ctxFor(v);
+    const [msg, btns] = prompt();
+    const hw = 72, hh = 100;
+    const hand = P.hand.map(c => mini(c, { w: hw, h: hh, click: `Duel.hand(${c.u})`, ring: ctx && dCastable(v, c, ctx) ? '#4ade80' : '', dim: ctx && !dCastable(v, c, ctx) })).join('');
+    const last = DS.log.slice(-2).map(l => `<div class="truncate">${l}</div>`).join('');
+    root.innerHTML = `<div class="flex flex-col gap-1.5 mx-auto w-full" style="max-width:560px">
+      ${playerBar(o, true)}
+      <div class="rounded-xl py-1.5 px-1" style="background:rgba(0,0,0,.18)">${fieldRow(o)}</div>
+      <div onclick="Duel.logView()" class="text-[11px] text-amber-100/60 px-2 leading-tight cursor-pointer">${last}</div>
+      <div class="rounded-xl py-1.5 px-1" style="background:rgba(255,255,255,.04)">${fieldRow(v)}</div>
+      ${playerBar(v, false)}
+      <div class="flex gap-1.5 overflow-x-auto pb-1 pt-1 px-1" style="scrollbar-width:thin">${hand || '<span class="text-xs text-amber-100/40 px-2">Your hand is empty</span>'}</div>
+      <div class="walnut-panel rounded-xl px-3 py-2 flex flex-col gap-2 items-center text-center"><div class="text-sm text-amber-50/90">${msg}</div><div class="flex gap-2 flex-wrap justify-center">${btns}</div></div>
+    </div>`;
+  }
+  function render() {
+    if (!root || DSIM || !DS) return;
+    if (DS.view === 'duel') renderDuel();
+    else if (DS.view === 'builder') renderBuilder();
+    else if (DS.view === 'draft') renderDraft();
+    else if (DS.view === 'dbuild') renderDraftBuild();
+    else if (DS.view === 'between') renderBetween();
+  }
+
+  /* ---------- runs: gauntlet and draft ---------- */
+  function startGauntlet(deckK) {
+    const deck = deckById(deckK), opps = DSTARTERS.filter(d => d.k !== deckK).concat([DBOSS]);
+    DS = { view: 'between', run: { type: 'gauntlet', deck: { name: deck.name, cards: deck.cards }, opps: opps.map(d => ({ name: d.mage, deck: { name: d.name, cards: d.cards } })), idx: 0, results: [] } };
+    render();
+  }
+  function runDuel() {
+    const R = DS.run, op = R.opps[R.idx];
+    startDuel({ mode: 'ai', decks: [R.deck, op.deck], names: ['You', op.name], run: R });
+  }
+  function runResult(won) {
+    const R = DS.run; R.results.push(won); if (won) App.recordWin('duel');
+    const last = R.type === 'gauntlet' ? won && R.idx === R.opps.length - 1 : R.idx === R.opps.length - 1;
+    if (R.type === 'gauntlet' && !won) { R.lost = true; }
+    else if (last) R.done = true;
+    else R.idx++;
+    DS = { view: 'between', run: R }; render();
+  }
+  function renderBetween() {
+    const R = DS.run, title = R.type === 'gauntlet' ? '🏆 Gauntlet' : '📦 Draft run';
+    const rows = R.opps.map((o, k) => `<div class="flex items-center gap-2 rounded-lg px-3 py-2 ${k === R.idx && !R.done ? 'bg-amber-400/15 ring-1 ring-amber-400/50' : 'bg-black/20'}"><span class="w-5 text-amber-300 font-bold">${k + 1}</span><span class="flex-1 text-left"><span class="text-amber-100">${o.name}</span><span class="block text-[11px] text-amber-100/50">${o.deck.name} ${deckCols(o.deck.cards)}</span></span><span>${R.results[k] === true ? '✅' : R.results[k] === false ? '❌' : k === R.idx ? '⚔️' : '🔒'}</span></div>`).join('');
+    const wins = R.results.filter(Boolean).length;
+    let msg, btns;
+    if (R.done) { msg = R.type === 'gauntlet' ? 'You beat every opponent, the Archmage included. A true conjurer!' : `Run complete: ${wins} win${wins === 1 ? '' : 's'} from ${R.opps.length}.`; btns = Util.btn('🏠 Back to games', 'App.backToShelf()', 'brass') + Util.btn('🔁 New run', 'Duel.restartRun()'); }
+    else if (R.lost) { msg = `${R.opps[R.idx].name} won this time. Try them again, or give up the run.`; btns = Util.btn('🔁 Try again', 'Duel.retry()', 'brass') + Util.btn('Give up', 'Duel.giveUp()'); }
+    else { msg = `Next: ${R.opps[R.idx].name}.`; btns = Util.btn('⚔️ Start duel', 'Duel.runDuel()', 'brass') + (R.type === 'draft' ? Util.btn('🃏 My deck', 'Duel.viewRunDeck()') : ''); }
+    root.innerHTML = `<div class="flex flex-col gap-3 mx-auto w-full" style="max-width:460px">${Util.panel(`<div class="font-display text-xl text-amber-300 mb-1">${title}</div><div class="text-sm text-amber-100/70 mb-3">Your deck: ${R.deck.name} ${deckCols(R.deck.cards)}</div><div class="flex flex-col gap-1.5">${rows}</div><div class="text-amber-50/90 text-sm my-3">${msg}</div><div class="flex gap-2 flex-wrap justify-center">${btns}</div>`, 'text-center')}</div>`;
+  }
+
+  /* draft: 8 seats, 3 packs of 14 */
+  const rating = id => { const d = DCARDS[id]; let s = { c: 1, u: 1.7, r: 2.5 }[d.r]; if (d.t === 'creature') s += (d.p + d.h * .6 + d.kw.length * .6 + (d.enter ? 1 : 0)) / (d.cmc + 1.5); else s += ['kill', 'dmg', 'bite', 'pacify', 'sweep'].includes(d.fx.k) ? 1.3 : .5; return s; };
+  function makePack() {
+    const by = r => Util.shuffle(DPOOL.filter(id => DCARDS[id].r === r));
+    return by('r').slice(0, 1).concat(by('u').slice(0, 3), by('c').slice(0, 10));
+  }
+  function topCols(pool, n = 2) { const s = {}; pool.forEach(id => { const c = DCARDS[id].col; s[c] = (s[c] || 0) + rating(id); }); return Object.keys(s).sort((a, b) => s[b] - s[a]).slice(0, n); }
+  function aiPick(pool, pack) { const cols = pool.length >= 4 ? topCols(pool) : []; let b = 0, bs = -1; pack.forEach((id, k) => { const s = rating(id) + (cols.includes(DCARDS[id].col) ? 1.4 : 0) + Math.random() * .3; if (s > bs) { bs = s; b = k; } }); return b; }
+  function autoBuild(pool) {
+    let cols = topCols(pool), cand = pool.filter(id => cols.includes(DCARDS[id].col)).sort((a, b) => rating(b) - rating(a));
+    if (cand.length < 23) { cols = topCols(pool, 3); cand = pool.filter(id => cols.includes(DCARDS[id].col)).sort((a, b) => rating(b) - rating(a)); }
+    const cr = cand.filter(id => DCARDS[id].t === 'creature'), sp = cand.filter(id => DCARDS[id].t !== 'creature');
+    const deck = cr.slice(0, 15); for (const id of sp) { if (deck.length >= 23) break; deck.push(id); }
+    for (const id of cr.slice(15)) { if (deck.length >= 23) break; deck.push(id); }
+    return deck;
+  }
+  function startDraft() { DS = { view: 'draft', draft: { round: 0, picks: 0, packs: Array.from({ length: 8 }, makePack), pools: Array.from({ length: 8 }, () => []) } }; render(); }
+  function draftPick(k) {
+    const D = DS.draft; D.pools[0].push(D.packs[0].splice(k, 1)[0]); Sfx.play('card');
+    for (let s = 1; s < 8; s++) if (D.packs[s].length) D.pools[s].push(D.packs[s].splice(aiPick(D.pools[s], D.packs[s]), 1)[0]);
+    D.picks++;
+    if (!D.packs[0].length) {
+      D.round++;
+      if (D.round >= 3) { DS = { view: 'dbuild', db: { pool: D.pools[0], deck: autoBuild(D.pools[0]), rivals: D.pools.slice(1, 4) } }; return render(); }
+      D.packs = Array.from({ length: 8 }, makePack);
+    } else D.packs = D.round % 2 ? D.packs.slice(1).concat([D.packs[0]]) : [D.packs[7]].concat(D.packs.slice(0, 7));
+    render();
+  }
+  function renderDraft() {
+    const D = DS.draft, pack = D.packs[0], w = Math.min(84, Math.floor(((root.clientWidth || 380) - 30) / 4.3));
+    const tally = {}; D.pools[0].forEach(id => { const c = DCARDS[id].col; tally[c] = (tally[c] || 0) + 1; });
+    root.innerHTML = `<div class="flex flex-col gap-2 mx-auto w-full" style="max-width:560px">
+      <div class="flex gap-2 flex-wrap justify-center"><span class="stat-chip">📦 Pack ${D.round + 1} of 3</span><span class="stat-chip">Pick ${D.picks % 14 + 1}</span><span class="stat-chip">${Object.keys(tally).map(k => DCOL[k].ic + tally[k]).join(' ') || 'No picks yet'}</span></div>
+      <div class="text-xs text-amber-100/70 text-center">Tap a card to look at it, then pick one. The rest of the pack goes to the next drafter.</div>
+      <div class="flex flex-wrap gap-1.5 justify-center">${pack.map((id, k) => mini({ id }, { w, h: Math.round(w * 1.38), click: `Duel.draftLook(${k})` })).join('')}</div>
+      ${D.pools[0].length ? `<div class="text-xs text-amber-300/80 mt-1">Your picks (${D.pools[0].length})</div><div class="flex flex-wrap gap-1">${D.pools[0].map(id => mini({ id }, { w: 40, h: 54 })).join('')}</div>` : ''}
+    </div>`;
+  }
+  function draftLook(k) { const id = DS.draft.packs[0][k]; modal(bigCard(DCARDS[id]), [{ label: '✋ Pick this', primary: true, fn: () => draftPick(k) }, { label: 'Back' }]); }
+  function renderDraftBuild() {
+    const B = DS.db, w = Math.min(64, Math.floor(((root.clientWidth || 380) - 30) / 5.5));
+    const inDeck = {}; B.deck.forEach(id => inDeck[id] = (inDeck[id] || 0) + 1);
+    const used = {}; const cards = B.pool.map((id, k) => { used[id] = (used[id] || 0) + 1; const on = used[id] <= (inDeck[id] || 0); return mini({ id }, { w, h: Math.round(w * 1.38), ring: on ? '#4ade80' : '', dim: !on, click: `Duel.dbToggle(${k})` }); }).join('');
+    const n = B.deck.length, wl = wellsFor(B.deck, 40 - n);
+    root.innerHTML = `<div class="flex flex-col gap-2 mx-auto w-full" style="max-width:560px">
+      ${Util.panel(`<div class="font-display text-amber-300">Build your draft deck</div><div class="text-sm text-amber-100/80">${n} cards + ${40 - n} wellsprings (${Object.keys(wl).map(k => DCOL[k].ic + wl[k]).join(' ')}). Aim for 22 to 24 cards.</div><div class="flex gap-2 flex-wrap justify-center mt-2">${Util.btn('🪄 Auto-build', 'Duel.dbAuto()')}${Util.btn('⚔️ Start the run', 'Duel.dbStart()', 'brass')}</div>`, 'text-center')}
+      <div class="text-xs text-amber-100/70 text-center">Green cards are in your deck. Tap a card to add or remove it.</div>
+      <div class="flex flex-wrap gap-1.5 justify-center">${cards}</div></div>`;
+  }
+  function dbToggle(k) {
+    const B = DS.db, id = B.pool[k], cnt = B.pool.slice(0, k + 1).filter(x => x === id).length, inD = B.deck.filter(x => x === id).length;
+    if (cnt <= inD) B.deck.splice(B.deck.indexOf(id), 1); else B.deck.push(id);
+    Sfx.play('tap'); render();
+  }
+  function dbStart() {
+    const B = DS.db; if (B.deck.length < 18 || B.deck.length > 28) return Util.toast('Pick between 18 and 28 cards for your deck.');
+    const names = ['Rival Wren', 'Rival Thorne', 'Rival Ash'];
+    const opps = B.rivals.map((p, k) => { const cards = autoBuild(p); return { name: names[k], deck: { name: `${names[k].split(' ')[1]}'s draft`, cards } }; });
+    DS = { view: 'between', run: { type: 'draft', deck: { name: 'My draft deck', cards: B.deck.slice() }, opps, idx: 0, results: [] } }; render();
+  }
+  function viewRunDeck() { const c = DS.run.deck.cards; modal(`<div class="walnut-panel rounded-2xl p-3 max-w-sm w-full"><div class="font-display text-amber-200 mb-2">Your deck (${c.length})</div><div class="flex flex-wrap gap-1 justify-center">${c.map(id => mini({ id }, { w: 50, h: 68 })).join('')}</div></div>`, [{ label: 'Close' }]); }
+
+  /* ---------- deckbuilder ---------- */
+  function startBuilder(k) {
+    const ex = k ? customDecks().find(d => d.k === k) : null, cards = {};
+    (ex ? ex.cards : []).forEach(id => cards[id] = (cards[id] || 0) + 1);
+    DS = { view: 'builder', bld: { k: ex ? ex.k : 'c' + Date.now(), name: ex ? ex.name : `My Deck ${customDecks().length + 1}`, cards, filter: 'all', show: 'pool' } }; render();
+  }
+  const bCount = B => Object.values(B.cards).reduce((s, n) => s + n, 0);
+  const bList = B => Object.entries(B.cards).flatMap(([id, n]) => Array(n).fill(id));
+  function renderBuilder() {
+    const B = DS.bld, n = bCount(B), w = Math.min(70, Math.floor(((root.clientWidth || 380) - 30) / 5.2));
+    const ids = B.show === 'deck' ? Object.keys(B.cards).sort((a, b) => DCARDS[a].cmc - DCARDS[b].cmc) : DPOOL.filter(id => B.filter === 'all' || DCARDS[id].col === B.filter).sort((a, b) => DCARDS[a].cmc - DCARDS[b].cmc);
+    const wl = wellsFor(bList(B), Math.max(15, 40 - n));
+    const chip = (k, label) => `<button onclick="Duel.bFilter('${k}')" class="px-2.5 py-1 rounded-full text-xs font-bold ${B.filter === k && B.show === 'pool' ? 'bg-amber-400 text-stone-900' : 'bg-black/30 text-amber-100'}">${label}</button>`;
+    root.innerHTML = `<div class="flex flex-col gap-2 mx-auto w-full" style="max-width:560px">
+      ${Util.panel(`<div class="flex items-center gap-2"><button onclick="Duel.bRename()" class="font-display text-amber-300 text-lg">✏️ ${B.name}</button><span class="ml-auto stat-chip ${n >= 20 && n <= 26 ? '' : 'text-red-300'}">${n} cards</span></div>
+        <div class="text-xs text-amber-100/70 mt-1">Pick 20 to 26 cards (up to 3 of each). Wellsprings are added to make 40: ${Object.keys(wl).map(k => DCOL[k].ic + wl[k]).join(' ') || 'none yet'}.</div>
+        <div class="flex gap-2 flex-wrap mt-2">${Util.btn('💾 Save', 'Duel.bSave()', 'brass')}${Util.btn(B.show === 'deck' ? '📚 All cards' : '🃏 My deck', 'Duel.bShow()')}${customDecks().some(d => d.k === B.k) ? Util.btn('🗑 Delete', 'Duel.bDelete()') : ''}</div>`)}
+      ${B.show === 'pool' ? `<div class="flex gap-1.5 flex-wrap justify-center">${chip('all', 'All')}${Object.keys(DCOL).map(k => chip(k, DCOL[k].ic + ' ' + DCOL[k].n)).join('')}</div>` : ''}
+      <div class="flex flex-wrap gap-1.5 justify-center">${ids.map(id => mini({ id }, { w, h: Math.round(w * 1.38), click: `Duel.bLook('${id}')`, badge: B.cards[id] ? `×${B.cards[id]}` : '', badgeBg: '#15803d', ring: B.cards[id] ? '#4ade80' : '' })).join('') || '<span class="text-amber-100/50 text-sm">No cards yet. Switch to All cards and tap some to add them.</span>'}</div></div>`;
+  }
+  function bLook(id) {
+    const B = DS.bld, n = B.cards[id] || 0;
+    modal(bigCard(DCARDS[id]) + `<div class="text-amber-200 text-sm">In deck: ${n}</div>`, [{ label: '➕ Add', primary: true, fn: () => { if (n >= 3) Util.toast('Up to 3 copies of each card.'); else if (bCount(B) >= 26) Util.toast('That\'s the 26-card limit.'); else B.cards[id] = n + 1; render(); bLook(id); } }, { label: '➖ Remove', fn: () => { if (n > 1) B.cards[id] = n - 1; else delete B.cards[id]; render(); if (n > 1) bLook(id); } }, { label: 'Done' }]);
+  }
+  async function bRename() {
+    const names = ['Spellfire', 'Moonlit Host', 'Wild Hunt', 'Storm Court', 'Iron Vigil', 'Night Garden', 'Ember Tide', 'Thornwall', 'Starfall', 'Gravewind'];
+    const v = await Util.choose('Name your deck', 'Pick a name:', names.map(n => ({ label: n, value: n })).concat([{ label: 'Cancel', value: null }]));
+    if (v) { DS.bld.name = v; render(); }
+  }
+  function bSave() {
+    const B = DS.bld, n = bCount(B); if (n < 20 || n > 26) return Util.toast('A deck needs 20 to 26 cards.');
+    const list = customDecks().filter(d => d.k !== B.k); if (list.length >= 8) return Util.toast('You can keep up to 8 decks. Delete one first.');
+    list.push({ k: B.k, name: B.name, mage: 'You', cards: bList(B), custom: true }); Store.set('duel_decks', list); Util.toast(`Saved "${B.name}". Pick it when you start a duel.`);
+    render();
+  }
+  async function bDelete() { const v = await Util.choose('Delete this deck?', DS.bld.name, [{ label: 'Delete', value: 1 }, { label: 'Keep', value: 0, primary: true }]); if (!v) return; Store.set('duel_decks', customDecks().filter(d => d.k !== DS.bld.k)); startBuilder(null); }
+
+  /* ---------- setup flow ---------- */
+  async function pickDeck(title, exclude) {
+    const decks = DSTARTERS.concat(customDecks()).filter(d => d.k !== exclude);
+    return Util.choose(title, 'Each starter deck mixes two colours of magic.', decks.map(d => ({ label: `${deckCols(d.cards)} ${d.name}`, value: d.k })).concat([{ label: 'Cancel', value: null }]));
+  }
+  return {
+    async setup() {
+      const m = await Util.choose("🪄 Conjurers' Duel", 'Summon creatures, cast spells and bring your rival from 20 life to zero.', [
+        { label: '🤖 vs AI', value: 'ai', primary: true }, { label: '👥 Pass & Play', value: 'pp' }, { label: '🏆 Gauntlet', value: 'gauntlet' }, { label: '📦 Draft', value: 'draft' }, { label: '🛠️ Deckbuilder', value: 'builder' }, { label: 'Cancel', value: null }]);
+      if (!m) return null;
+      if (m === 'draft') return { m };
+      if (m === 'builder') {
+        const ds = customDecks();
+        const k = ds.length ? await Util.choose('🛠️ Deckbuilder', 'Make a new deck or change one you saved.', [{ label: '➕ New deck', value: '_new', primary: true }].concat(ds.map(d => ({ label: `✏️ ${d.name}`, value: d.k })), [{ label: 'Cancel', value: null }])) : '_new';
+        return k ? { m, k: k === '_new' ? null : k } : null;
+      }
+      if (m === 'pp') { const a = await pickDeck('Player 1: choose a deck'); if (!a) return null; const b = await pickDeck('Player 2: choose a deck'); if (!b) return null; return { m, a, b }; }
+      const a = await pickDeck(m === 'gauntlet' ? 'Gauntlet: choose your deck' : 'Choose your deck'); if (!a) return null;
+      return { m, a };
+    },
+    mount(el, o = {}) {
+      root = el; Duel._headless = false;
+      if (o.resume) { DS = o.resume; ui = {}; waiter = null; sid++; if (DS.view === 'duel') { lastCfg = DS.cfg || null; loop(true); } else render(); return; }
+      const m = o.m || 'ai';
+      if (m === 'draft') return startDraft();
+      if (m === 'builder') return startBuilder(o.k);
+      if (m === 'gauntlet') return startGauntlet(o.a || 'sunfire');
+      if (m === 'pp') { const a = deckById(o.a), b = deckById(o.b); return startDuel({ mode: 'pp', decks: [a, b], names: ['Player 1', 'Player 2'] }); }
+      const a = deckById(o.a || 'sunfire'), others = DSTARTERS.filter(d => d.k !== a.k), b = others[Math.floor(Math.random() * others.length)];
+      startDuel({ mode: 'ai', decks: [a, b], names: ['You', b.mage] });
+    },
+    snapshot() {
+      if (!DS || DS.mode === 'aivai') return null;
+      if (DS.view !== 'duel') return DS.view === 'builder' ? null : DS;
+      if (DS.over) return null;
+      if (DS.ask === 'main' && DS.window !== null && !DS.p[DS.window].ai && !ui.target) { const c = JSON.parse(JSON.stringify(DS)); c.cfg = lastCfg; return c; }
+      if (!safe) return null;
+      safe.cfg = lastCfg; return safe;
+    },
+    destroy() { sid++; waiter = null; root = null; document.getElementById('duel-modal')?.remove(); },
+    newGame() { if (lastCfg) startDuel(lastCfg); },
+    act, tapField, tapPlayer, hand: showHand, grave: showGrave, logView: showLog, cancelTarget() { ui = {}; render(); },
+    runDuel, retry() { DS.run.lost = false; DS.run.results.pop(); runDuel(); }, giveUp() { DS.run.done = true; DS.run.lost = false; render(); }, restartRun() { if (DS.run.type === 'draft') startDraft(); else startGauntlet(DSTARTERS.find(d => d.name === DS.run.deck.name)?.k || 'sunfire'); }, viewRunDeck,
+    draftLook, dbToggle, dbAuto() { DS.db.deck = autoBuild(DS.db.pool); render(); }, dbStart,
+    bLook, bFilter(k) { DS.bld.filter = k; DS.bld.show = 'pool'; render(); }, bShow() { DS.bld.show = DS.bld.show === 'deck' ? 'pool' : 'deck'; render(); }, bSave, bRename, bDelete,
+    /* test hooks */
+    _aivai(a, b) { Duel._headless = true; startDuel({ mode: 'aivai', decks: [deckById(a), deckById(b)], names: ['A', 'B'] }); }, _fast: false, _headless: false, _results: [], wellsFor, autoBuild, makePack, startDuel
+  };
+})();
+Games.duel = Duel;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -9631,7 +10658,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.6.1",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.7.0",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

@@ -1,12 +1,12 @@
 # The Grand Tabletop Compendium
 
-*Thirty-five classic, esoteric, family, pub and word games, one table.*
+*Thirty-six classic, esoteric, family, pub and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.6.1**
+**Current version: 1.7.0**
 
 ## The games
 
@@ -20,6 +20,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | 🀄 **Mahjong Solitaire** | The 144-tile turtle. Every deal can be solved, with hint, shuffle, undo and zoom | Solo |
 | 🃏 **Klondike** | Draw 1 or Draw 3, Auto-Send, Auto-Finish and undo | Solo |
 | 🂡 **FreeCell** | Every card face-up. Four free cells and supermoves | Solo |
+| 🪄 **Conjurers' Duel** | A collectible-style card duel: 100 original cards in five colours, starter decks, deckbuilder, booster draft and a Gauntlet | vs AI or 2 players |
 | ⚔️ **Scoundrel** | A roguelike dungeon crawl through a 44-card deck. Weapons go dull as you use them | Solo |
 | 👑 **Regicide** | Fight 12 royal bosses with suit powers, combos and solo Jesters | Solo |
 | 🐍 **Snakes & Ladders** | The classic race to 100, with a bounce-back finish | 2–4, people or AI |
@@ -99,6 +100,11 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.7.0 · Conjurers' Duel (19 November 2026)
+- Conjurers' Duel: a collectible-style card duel with 100 original cards across five colours of magic
+- vs AI, Pass & Play, a five-opponent Gauntlet ending with the Archmage, a booster Draft and a Deckbuilder
+- Fixed: leaving a Pass & Play game could leave the "pass the phone" screen showing
 
 ### 1.6.1 · Fill-Ins (19 November 2026)
 - Fill-Ins: a list of numbers sorted by length to fit into a crossword grid, with a Words version too
