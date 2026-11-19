@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Thirty-four parlour, family, pub and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Word Search, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Thirty-five parlour, family, pub and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Thirty-four games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Thirty-five games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -563,6 +563,9 @@
   .min-h-\[16px\] {
     min-height: 16px;
   }
+  .min-h-\[18px\] {
+    min-height: 18px;
+  }
   .min-h-\[20px\] {
     min-height: 20px;
   }
@@ -1002,6 +1005,12 @@
       background-color: color-mix(in oklab, var(--color-amber-500) 90%, transparent);
     }
   }
+  .bg-black\/20 {
+    background-color: color-mix(in srgb, #000 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 20%, transparent);
+    }
+  }
   .bg-black\/25 {
     background-color: color-mix(in srgb, #000 25%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1417,6 +1426,12 @@
     color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 25%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-amber-100) 25%, transparent);
+    }
+  }
+  .text-amber-100\/30 {
+    color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-amber-100) 30%, transparent);
     }
   }
   .text-amber-100\/35 {
@@ -3020,6 +3035,18 @@ const GAME_CATALOG = [
         <li><strong>Levels:</strong> Easy 10×10, words run across and down. Medium 12×12, adds diagonals. Hard 14×14, words can run in all eight directions, including backwards.</li>
         <li><strong>Themes:</strong> A random theme each time, or pick your own. There's also a Daily puzzle.</li>
       </ul>`
+  },
+  {
+    id: 'fillin', title: 'Fill-Ins', subtitle: 'Number & Word Fit-Ins', category: 'Word Games', icon: '🧩',
+    players: 'Solo, numbers or words', tagline: 'No clues, just a list. Fit every number into the crossword grid.',
+    rules: `
+      <p><strong>Objective:</strong> Place every entry from the list into the grid so that all the crossings agree.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>The list:</strong> Entries are grouped by length (3 digits, 4 digits and so on). One is already in the grid to start you off.</li>
+        <li><strong>Placing:</strong> Tap a space in the grid (tap again where two cross to switch direction), then tap an entry of the same length. You can also tap the entry first, then the space.</li>
+        <li><strong>Tips:</strong> Start with lengths that only have one entry, then follow the crossings. Clashing squares turn red.</li>
+        <li><strong>Modes:</strong> Numbers or Words, as a Daily puzzle or a new one. Every puzzle has exactly one answer.</li>
+      </ul>`
   }
 ];
 
@@ -3179,7 +3206,7 @@ const App = {
     { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Patience, pub classics and card crawls', ids: ['klondike', 'freecell', 'cribbage', 'gin', 'clash', 'scoundrel', 'regicide'] },
     { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'liars', 'dominoes', 'mahjong'] },
     { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
-    { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] }
+    { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] }
   ],
   catOf(id) { return this.CATS.find(c => c.ids.includes(id)); },
   hubChrome(sub) {
@@ -3299,9 +3326,14 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.6.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.6.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.6.1', '19 Nov 2026', 'Fill-Ins', [
+    'Fill-Ins: no clues, just a list of numbers sorted by length. Work out where each one fits in the grid',
+    'A Words version too, and a daily puzzle for both',
+    'Every puzzle is checked to have exactly one answer'
+  ]],
   ['1.6.0', '19 Nov 2026', 'The puzzle page', [
     'Arrow Words: clues inside the grid, with arrows showing which way each answer runs',
     'Codeword: a crossword where every letter is a number. Crack the code from two starter letters',
@@ -9403,6 +9435,150 @@ const WordSearch = (() => {
 })();
 Games.wordsearch = WordSearch;
 
+/* ============================================================================
+   FILL-INS: fit every number (or word) from the list into the grid
+   ============================================================================ */
+const FillIn = (() => {
+  let S, root;
+  const cellsOf = (w, W) => { const dr = w.d === 2 ? 1 : 0, dc = w.d === 1 ? 1 : 0; return [...w.w].map((_, k) => (w.r + dr * k) * W + w.c + dc * k); };
+  function numberPool(rng) {
+    const set = new Set(), lens = [3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 7, 7, 8];
+    while (set.size < 140) { const L = lens[Math.floor(rng() * lens.length)]; let s = String(1 + Math.floor(rng() * 9)); while (s.length < L) s += Math.floor(rng() * 10); set.add(s); }
+    return [...set].map(w => ({ w, clue: '' }));
+  }
+  const wordPool = () => [...new Set(Object.keys(CLUES).concat(WORD_ANSWERS))].filter(w => w.length >= 3 && w.length <= 9).map(w => ({ w, clue: '' }));
+  /* count solutions (stops at 2) given the slots already filled in */
+  function countSolutions(g, given) {
+    const slots = g.words.map(w => cellsOf(w, g.W)), vals = Array(g.W * g.H).fill(null), used = new Set(), filled = new Set();
+    given.forEach(k => { slots[k].forEach((c, j) => vals[c] = g.words[k].w[j]); used.add(k); filled.add(k); });
+    const items = g.words.map(w => w.w); let count = 0, steps = 0;
+    const fits = (s, str) => slots[s].length === str.length && slots[s].every((c, j) => vals[c] === null || vals[c] === str[j]);
+    function go() {
+      if (count > 1 || ++steps > 200000) return;
+      let best = -1, bestC = null;
+      for (let s = 0; s < slots.length; s++) {
+        if (filled.has(s)) continue;
+        const c = []; for (let i = 0; i < items.length; i++) if (!used.has(i) && fits(s, items[i])) c.push(i);
+        if (!c.length) return;
+        if (!bestC || c.length < bestC.length) { best = s; bestC = c; if (c.length === 1) break; }
+      }
+      if (best < 0) { count++; return; }
+      for (const i of bestC) {
+        const before = slots[best].map(c => vals[c]);
+        slots[best].forEach((c, j) => vals[c] = items[i][j]); used.add(i); filled.add(best);
+        go();
+        slots[best].forEach((c, j) => vals[c] = before[j]); used.delete(i); filled.delete(best);
+        if (count > 1) return;
+      }
+    }
+    go(); return steps > 200000 ? 2 : count;
+  }
+  function start(mode, daily) {
+    const rng = daily ? seeded(todayKey() * 41 + (mode === 'words' ? 5 : 3)) : Math.random;
+    let g = null, given = null;
+    for (let a = 0; a < 6 && (!given || given.length > 2); a++) {
+      let cg = null;
+      for (let t = 0; t < 6 && (!cg || cg.words.length < 14); t++) cg = XGen.best(11, 11, mode === 'words' ? wordPool() : numberPool(rng), rng, { target: 22 }, 6);
+      // one starter answer, more only if needed to make the solution unique
+      const order = cg.words.map((_, k) => k).sort((x, y) => cg.words[y].w.length - cg.words[x].w.length || rng() - .5);
+      const gv = [order[0]], rest = order.slice(1);
+      for (let k = rest.length - 1; k > 0; k--) { const j = Math.floor(rng() * (k + 1)); [rest[k], rest[j]] = [rest[j], rest[k]]; }
+      for (let k = 0; k < rest.length && countSolutions(cg, gv) > 1; k++) gv.push(rest[k]);
+      if (!given || gv.length < given.length) { g = cg; given = gv; }
+    }
+    S = { mode, daily, g, given: [...new Set(given)], place: {}, sel: null, chip: null, wrong: [], checks: 0, over: false, t0: Date.now() };
+    S.given.forEach(k => S.place[k] = k);
+    render();
+  }
+  const slotsAt = i => S.g.words.map((w, k) => cellsOf(w, S.g.W).includes(i) ? k : -1).filter(k => k >= 0);
+  function cellVals() { // what each cell shows, and which cells clash
+    const v = {}, clash = new Set();
+    for (const [s, n] of Object.entries(S.place)) cellsOf(S.g.words[s], S.g.W).forEach((c, j) => { const ch = S.g.words[n].w[j]; if (v[c] !== undefined && v[c] !== ch) clash.add(c); v[c] = ch; });
+    return { v, clash };
+  }
+  function tap(i) {
+    const ks = slotsAt(i); if (!ks.length) return;
+    if (S.chip !== null) { const L = S.g.words[S.chip].w.length, k = ks.find(s => S.g.words[s].w.length === L); if (k !== undefined) { S.sel = k; return put(S.chip); } }
+    S.sel = ks.length > 1 && ks.includes(S.sel) ? ks[(ks.indexOf(S.sel) + 1) % ks.length] : ks[0];
+    Sfx.play('tap'); render();
+  }
+  function chip(n) {
+    if (S.over) return;
+    const placedAt = Object.keys(S.place).find(s => S.place[s] === n);
+    if (placedAt !== undefined && S.given.includes(+placedAt)) return;
+    if (S.sel !== null && !S.given.includes(S.sel) && S.g.words[S.sel].w.length === S.g.words[n].w.length) return put(n);
+    S.chip = S.chip === n ? null : n;
+    if (S.chip !== null) Util.toast(`Now tap a space ${S.g.words[n].w.length} squares long.`, 1400);
+    render();
+  }
+  function put(n) {
+    if (S.given.includes(S.sel)) return Util.toast('That one was given to start you off.');
+    for (const s of Object.keys(S.place)) if (S.place[s] === n) delete S.place[s];
+    S.place[S.sel] = n; S.chip = null; S.wrong = []; Sfx.play('place');
+    const { clash } = cellVals();
+    if (Object.keys(S.place).length === S.g.words.length && !clash.size) return win();
+    render();
+  }
+  function remove() { if (S.sel === null || S.given.includes(S.sel) || S.place[S.sel] === undefined) return; delete S.place[S.sel]; S.wrong = []; render(); }
+  function check() {
+    S.checks++; S.wrong = Object.keys(S.place).map(Number).filter(s => S.place[s] !== s);
+    Util.toast(S.wrong.length ? `${S.wrong.length} ${S.wrong.length > 1 ? 'are' : 'is'} in the wrong place.` : 'Everything placed so far is right!');
+    render();
+  }
+  function hint() {
+    const s = (S.sel !== null && S.place[S.sel] !== S.sel) ? S.sel : S.g.words.findIndex((_, k) => S.place[k] !== k); if (s < 0) return;
+    for (const k of Object.keys(S.place)) if (S.place[k] === s) delete S.place[k];
+    S.place[s] = s; S.given.push(s); S.sel = s; S.wrong = []; S.checks++;
+    if (Object.keys(S.place).length === S.g.words.length && !cellVals().clash.size) return win();
+    render();
+  }
+  function win() {
+    S.over = true; S.sel = null; render(); Sfx.play('win');
+    const secs = Math.round((Date.now() - S.t0) / 1000);
+    App.endGame('fillin', true, 'All fitted!', `${S.g.words.length} ${S.mode === 'words' ? 'words' : 'numbers'} in ${Math.floor(secs / 60)}m ${secs % 60}s${S.checks ? '' : ', no help needed'}.`, () => start(S.mode, false));
+  }
+  function render() {
+    if (!root || !S) return;
+    const g = S.g, cw = Math.floor(Math.min((root.clientWidth || 360) - 8, 480) / g.W), { v, clash } = cellVals();
+    const hl = new Set(S.sel !== null ? cellsOf(g.words[S.sel], g.W) : []);
+    const givenCells = new Set(S.given.flatMap(k => cellsOf(g.words[k], g.W)));
+    const wrongCells = new Set(S.wrong.flatMap(k => cellsOf(g.words[k], g.W)));
+    let cells = '';
+    for (let i = 0; i < g.W * g.H; i++) {
+      if (!g.letters[i]) { cells += `<div></div>`; continue; }
+      const bad = clash.has(i) || wrongCells.has(i);
+      cells += `<div onclick="FillIn.tap(${i})" class="flex items-center justify-center font-bold uppercase cursor-pointer" style="background:${hl.has(i) ? '#f3e1a8' : '#fbf7ee'};border:1px solid #bfae8c;color:${bad ? '#c0261c' : givenCells.has(i) ? '#1d120c' : '#1d4f8f'};font-size:${cw * .55}px">${v[i] ?? ''}</div>`;
+    }
+    const usedN = new Set(Object.values(S.place)), byLen = {};
+    g.words.forEach((w, k) => (byLen[w.w.length] = byLen[w.w.length] || []).push(k));
+    const unit = S.mode === 'words' ? 'letters' : 'digits';
+    const list = Object.keys(byLen).map(Number).sort((a, b) => a - b).map(L => `<div class="mb-1.5"><div class="text-[11px] text-amber-300/80 mb-0.5">${L} ${unit}</div><div class="flex flex-wrap gap-1">${byLen[L].sort((a, b) => g.words[a].w < g.words[b].w ? -1 : 1).map(k => {
+      const used = usedN.has(k), on = S.chip === k;
+      return `<button onclick="FillIn.chip(${k})" class="px-2 py-1 rounded-md font-bold tracking-wider uppercase text-sm ${on ? 'bg-amber-400 text-stone-900' : used ? 'bg-black/20 text-amber-100/30 line-through' : 'bg-black/35 text-amber-100'}" style="font-variant-numeric:tabular-nums">${g.words[k].w}</button>`; }).join('')}</div></div>`).join('');
+    const selLen = S.sel !== null ? g.words[S.sel].w.length : 0;
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-3 items-center lg:items-start justify-center mx-auto" style="max-width:900px">
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex gap-2 flex-wrap justify-center"><span class="stat-chip">${S.daily ? '📅 Daily' : '🎲'} ${S.mode === 'words' ? 'word' : 'number'} fill-in</span><span class="stat-chip">${usedN.size}/${g.words.length} placed</span></div>
+          <div class="grid" style="grid-template-columns:repeat(${g.W},${cw}px);grid-template-rows:repeat(${g.H},${cw}px)">${cells}</div>
+          <div class="text-xs text-amber-100/70 min-h-[18px] text-center">${S.sel !== null ? `Space: ${selLen} squares. Tap a ${selLen}-${unit.slice(0, -1)} ${S.mode === 'words' ? 'word' : 'number'} to put it here.` : 'Tap a space in the grid, then an entry from the list.'}</div>
+        </div>
+        ${Util.panel(`<div class="font-display text-amber-200 text-sm mb-2">Fit every ${S.mode === 'words' ? 'word' : 'number'} into the grid</div>${list}
+          <div class="flex flex-wrap gap-2 mt-2">${Util.btn('↩ Remove', 'FillIn.remove()')}${Util.btn('✔ Check', 'FillIn.check()')}${Util.btn('💡 Hint', 'FillIn.hint()')}</div>
+          <div class="flex flex-wrap gap-2 mt-2">${Util.btn(S.mode === 'words' ? '🔢 Numbers' : '🔤 Words', `FillIn.mode('${S.mode === 'words' ? 'numbers' : 'words'}')`)}${Util.btn('📅 Daily', 'FillIn.daily()')}${Util.btn('🎲 New', 'FillIn.fresh()', 'brass')}</div>`, 'w-full lg:w-80 !p-3')}
+      </div>`;
+  }
+  return {
+    async setup() { const v = await Util.choose('🧩 Fill-Ins', 'No clues: just a list. Work out where every entry fits in the grid.', [{ label: '🔢 Daily numbers', value: 'numbers', primary: true }, { label: '🔤 Daily words', value: 'words' }, { label: '🎲 New numbers', value: 'numbers-new' }, { label: 'Cancel', value: null }]); return v ? { fi: v } : null; },
+    mount(el, o = {}) { root = el; if (o.resume) { S = o.resume; render(); } else { const v = o.fi || 'numbers'; start(v.startsWith('words') ? 'words' : 'numbers', !v.endsWith('-new')); } },
+    snapshot() { return S && !S.over ? S : null; },
+    destroy() { root = null; },
+    tap, chip, remove, check, hint, mode(m) { start(m, false); }, daily() { start(S.mode, true); }, fresh() { start(S.mode, false); }, newGame() { start(S.mode, false); },
+    _test: { get S() { return S; }, countSolutions }
+  };
+})();
+Games.fillin = FillIn;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -9455,7 +9631,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.6.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.6.1",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}
