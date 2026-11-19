@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Twenty-nine parlour, family, pub and word games in one: Chess, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Cribbage, Gin Rummy, Sudoku, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Thirty-one parlour, family, pub and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Cribbage, Gin Rummy, Sudoku, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Twenty-nine games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Thirty-one games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -1713,6 +1713,9 @@
     .lg\:h-56 {
       height: calc(var(--spacing) * 56);
     }
+    .lg\:w-60 {
+      width: calc(var(--spacing) * 60);
+    }
     .lg\:w-64 {
       width: calc(var(--spacing) * 64);
     }
@@ -2308,7 +2311,7 @@
           <h1 class="font-display text-lg sm:text-xl font-bold tracking-wide text-amber-300 leading-tight">
             The Grand Tabletop Compendium
           </h1>
-          <p id="header-subtitle" class="text-xs text-amber-100/70">Twenty-Nine Classic & Esoteric Parlor Games</p>
+          <p id="header-subtitle" class="text-xs text-amber-100/70">Thirty-One Classic & Esoteric Parlor Games</p>
         </div>
       </div>
 
@@ -2836,6 +2839,34 @@ const GAME_CATALOG = [
         <li><strong>Help:</strong> Undo, Erase and Hint are always there. Matching numbers and the selected row, column and box are highlighted.</li>
         <li><strong>Puzzles:</strong> Each one is made fresh with a single solution. There's a Daily (the same for everyone) and four difficulty levels.</li>
       </ul>`
+  },
+  {
+    id: 'go', title: 'Go (囲碁)', subtitle: 'The Game of Surrounding', category: 'Strategy Board Games', icon: '⚪',
+    players: '1P vs AI / 2P Pass & Play', tagline: 'Simple rules, endless depth. Surround territory and capture stones on a 9×9, 13×13 or 19×19 board.',
+    rules: `
+      <p><strong>Objective:</strong> Control more of the board than your opponent. Black plays first. White gets 7.5 points (<em>komi</em>) for going second.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Placing:</strong> Take turns placing a stone on any empty point. Stones never move once placed.</li>
+        <li><strong>Liberties and capture:</strong> The empty points next to a group of stones are its liberties. Fill a group's last liberty and it's captured and removed.</li>
+        <li><strong>No suicide:</strong> You can't play where your own stones would have no liberties, unless the move captures.</li>
+        <li><strong>Ko:</strong> You can't immediately retake a single stone that just captured one of yours. Play elsewhere first.</li>
+        <li><strong>Ending:</strong> When both players pass in a row, the game ends. Tap any dead groups to mark them (the game suggests them), then confirm.</li>
+        <li><strong>Scoring:</strong> Area scoring: your stones on the board plus the empty points only you surround.</li>
+      </ul>`
+  },
+  {
+    id: 'springmikado', title: 'Spring Mikado', subtitle: 'A Steady-Hand Tray Game', category: 'Family & Party Games', icon: '🌀',
+    players: '1–4 players, people or AI', tagline: 'A spring-loaded wooden tray packed with discs. Draw them out one by one without making the others jump.',
+    rules: `
+      <p><strong>Objective:</strong> Lift out the most points of discs. Inspired by the classic wooden disc-mikado trays with a spring-loaded bar.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Lifting:</strong> Press a disc and draw it slowly out of the tray. It's yours once it's pulled clear.</li>
+        <li><strong>Tension:</strong> Discs squeezed by lots of neighbours, or by the spring bar, need a gentler pull. Small yellow discs are fiddly to grip.</li>
+        <li><strong>Steadiness:</strong> Pull too fast and the steadiness bar turns red. The neighbouring discs jump, and that's a fault.</li>
+        <li><strong>The spring:</strong> Each time a disc comes out, the spring pushes the bar in and the tray tightens up.</li>
+        <li><strong>Turns:</strong> Keep lifting until you cause a fault, then the tray passes on. Let go early to put a disc back safely.</li>
+        <li><strong>Points:</strong> Pink 5, grey 10, yellow 15. Solo games give you three lives.</li>
+      </ul>`
   }
 ];
 
@@ -2928,7 +2959,7 @@ const App = {
     });
   },
   meta(id) { return GAME_CATALOG.find(g => g.id === id); },
-  MODES: { chess: 1, shogi: 1, checkers: 1, backgammon: 1, mancala: 1, reversi: 1, four: 1, morris: 1, battleships: 1, cribbage: 1, gin: 1 },
+  MODES: { chess: 1, shogi: 1, checkers: 1, backgammon: 1, mancala: 1, reversi: 1, four: 1, morris: 1, battleships: 1, cribbage: 1, gin: 1, go: 1 },
   splash() {
     const sp = document.createElement('div');
     sp.className = 'fixed inset-0 z-[70] flex flex-col items-center justify-center gap-3 text-center p-6';
@@ -2995,14 +3026,14 @@ const App = {
     ['btn-rules', 'btn-back-hub', 'btn-settings'].forEach(b => document.getElementById(b).classList.add('hidden'));
     document.getElementById('ver-corner').classList.remove('hidden');
     const lastId = Store.get('last', null), lastSave = lastId && Store.get('save_' + lastId, null), lm = lastSave && this.meta(lastId);
-    document.getElementById('header-subtitle').textContent = 'Twenty-Nine Classic & Esoteric Parlor Games';
+    document.getElementById('header-subtitle').textContent = 'Thirty-One Classic & Esoteric Parlor Games';
     const cats = [...new Set(GAME_CATALOG.map(g => g.category))];
     const root = document.getElementById('app-root');
     root.innerHTML = `
       <section class="text-center py-6 sm:py-10">
         <p class="text-amber-400/80 tracking-[0.3em] text-xs uppercase mb-2">Est. by candlelight</p>
         <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-amber-300 drop-shadow">Welcome to the Parlor</h2>
-        <p class="mt-3 text-amber-100/75 max-w-xl mx-auto text-sm sm:text-base">Pull up a chair. Twenty-nine tables are set: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.</p>
+        <p class="mt-3 text-amber-100/75 max-w-xl mx-auto text-sm sm:text-base">Pull up a chair. Thirty-one tables are set: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.</p>
       </section>
       ${lm ? `<div class="w-full max-w-md mx-auto mb-5"><button onclick="App.launch('${lastId}')" class="btn-brass w-full py-3.5 rounded-2xl text-lg font-display flex items-center justify-center gap-3"><span class="text-2xl">${lm.icon}</span><span>Continue ${lm.title.replace(/ \(.*\)/, '')}</span></button></div>` : ''}
       ${Menu.tilesHTML()}
@@ -3090,9 +3121,13 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.4.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.5.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.5.0', '19 Nov 2026', 'Stones and springs', [
+    'Go: 9×9, 13×13 and 19×19 boards, with captures, ko, dead-stone marking and area scoring. The AI thinks hardest on 9×9',
+    'Spring Mikado: draw discs out of a spring-loaded wooden tray without making the others jump. Solo with three lives, or up to four players'
+  ]],
   ['1.4.0', '19 Nov 2026', 'A fuller parlour', [
     'Nine new games: Reversi, Four in a Row, Nine Men\'s Morris, Yacht, Liar\'s Dice, Cribbage, Gin Rummy, Battleships and Sudoku',
     'Cribbage and Gin Rummy with full scoring, against the AI or pass and play',
@@ -3252,7 +3287,8 @@ const Menu = (() => {
         <ul class="text-sm space-y-1">
           <li><b>Scoundrel</b> was designed by Zach Gage and Kurt Bieg.</li>
           <li><b>Regicide</b> was designed by Paul Abrahams, Luke Badger and Andy Richdale (Badgers From Mars).</li>
-          <li><b>Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes &amp; Ladders, Ludo, Dominoes, Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships</b> and <b>Sudoku</b> are traditional games, enjoyed for generations.</li>
+          <li><b>Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes &amp; Ladders, Ludo, Dominoes, Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships, Sudoku</b> and <b>Go</b> are traditional games, enjoyed for generations.</li>
+          <li><b>Spring Mikado</b> is a digital take on the classic wooden disc-mikado tray with a spring-loaded bar.</li>
           <li><b>Murder at Marrowgate Manor</b> and <b>Torchlight Delve</b> are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.</li>
           <li><b>Tilecraft, Word Lock, Word Wheel, Word Grid</b> and <b>Colour Clash</b> are original takes on much-loved word and card game ideas. They aren't connected to, or endorsed by, the makers of any other game.</li>
         </ul>
@@ -8456,6 +8492,392 @@ const Sudoku = (() => {
 })();
 Games.sudoku = Sudoku;
 
+/* ============================================================================
+   GO (9×9, 13×13, 19×19). Area scoring, 7.5 komi. Monte Carlo AI on 9×9, heuristic AI on larger boards.
+   ============================================================================ */
+const Go = (() => {
+  let S, root, mode = Store.get('go_mode', 'ai'), size = Store.get('go_size', 9), timer = null, thinking = false;
+  let N, NB, DIAG;
+  function geom(n) {
+    N = n; NB = []; DIAG = [];
+    for (let i = 0; i < n * n; i++) {
+      const r = Math.floor(i / n), c = i % n, a = [], d = [];
+      if (r > 0) a.push(i - n); if (r < n - 1) a.push(i + n); if (c > 0) a.push(i - 1); if (c < n - 1) a.push(i + 1);
+      for (const [dr, dc] of [[-1, -1], [-1, 1], [1, -1], [1, 1]]) { const rr = r + dr, cc = c + dc; if (rr >= 0 && rr < n && cc >= 0 && cc < n) d.push(rr * n + cc); }
+      NB.push(a); DIAG.push(d);
+    }
+  }
+  /* group + liberties by flood fill */
+  function group(b, i) {
+    const col = b[i], stones = [i], seen = new Set([i]), libs = new Set();
+    for (let k = 0; k < stones.length; k++) for (const j of NB[stones[k]]) { if (b[j] === 0) libs.add(j); else if (b[j] === col && !seen.has(j)) { seen.add(j); stones.push(j); } }
+    return { stones, libs };
+  }
+  /* returns { b, cap, ko } or null when illegal */
+  function play(b, i, col, ko) {
+    if (b[i] !== 0 || i === ko) return null;
+    const n = b.slice(); n[i] = col; const opp = 3 - col; let cap = [];
+    for (const j of NB[i]) if (n[j] === opp) { const g = group(n, j); if (!g.libs.size) { g.stones.forEach(s => n[s] = 0); cap = cap.concat(g.stones); } }
+    const me = group(n, i); if (!me.libs.size) return null; // suicide
+    const newKo = cap.length === 1 && me.stones.length === 1 && me.libs.size === 1 ? cap[0] : -1;
+    return { b: n, cap, ko: newKo };
+  }
+  const isEye = (b, i, col) => NB[i].every(j => b[j] === col) && DIAG[i].filter(j => b[j] === 3 - col).length < (DIAG[i].length < 4 ? 1 : 2);
+  function area(b) {
+    const own = new Int8Array(N * N); let bl = 0, wh = 0; const seen = new Uint8Array(N * N);
+    for (let i = 0; i < N * N; i++) {
+      if (b[i] === 1) { bl++; own[i] = 1; } else if (b[i] === 2) { wh++; own[i] = 2; }
+      else if (!seen[i]) {
+        const reg = [i], border = new Set(); seen[i] = 1;
+        for (let k = 0; k < reg.length; k++) for (const j of NB[reg[k]]) { if (b[j] === 0 && !seen[j]) { seen[j] = 1; reg.push(j); } else if (b[j]) border.add(b[j]); }
+        if (border.size === 1) { const o = [...border][0]; reg.forEach(r => own[r] = o); if (o === 1) bl += reg.length; else wh += reg.length; }
+      }
+    }
+    return { bl, wh, own };
+  }
+  /* quick random playout to the end; returns final board */
+  function playout(b, col, ko) {
+    b = b.slice(); let passes = 0, moves = 0; const max = N * N * 3;
+    while (passes < 2 && moves < max) {
+      const empties = []; for (let i = 0; i < N * N; i++) if (!b[i]) empties.push(i);
+      let played = false;
+      for (let t = empties.length; t > 0; t--) {
+        const k = Math.floor(Math.random() * t), i = empties[k]; empties[k] = empties[t - 1];
+        if (isEye(b, i, col)) continue;
+        const r = play(b, i, col, ko); if (!r) continue;
+        b = r.b; ko = r.ko; played = true; break;
+      }
+      passes = played ? 0 : passes + 1; col = 3 - col; moves++;
+    }
+    return b;
+  }
+  /* heuristic move score */
+  function heur(b, i, col) {
+    const r = play(b, i, col, S.ko); if (!r) return -1e9;
+    if (isEye(b, i, col)) return -500;
+    let s = r.cap.length * 12;
+    const me = group(r.b, i);
+    if (me.libs.size === 1) s -= 25 + me.stones.length * 4;
+    else s += Math.min(me.libs.size, 4) * 1.5;
+    for (const j of NB[i]) {
+      if (b[j] === col) { const g = group(b, j); if (g.libs.size === 1) s += 15 + g.stones.length * 4; }
+      if (b[j] === 3 - col) { const g = group(r.b, j); if (g.libs.size === 1) s += 8; if (g.libs.size === 2) s += 2; }
+    }
+    const row = Math.floor(i / N), c = i % N, edge = Math.min(row, c, N - 1 - row, N - 1 - c);
+    const stones = S.b.filter(Boolean).length;
+    if (stones < N * 1.2) s += edge === 2 || edge === 3 ? 4 : edge <= 1 ? -4 : 1;
+    else if (edge === 0) s -= 2;
+    if (NB[i].concat(DIAG[i]).some(j => b[j])) s += 1.5;
+    return s + Math.random() * 1.5;
+  }
+  function aiMove() {
+    const col = S.turn, b = S.b, cand = [];
+    for (let i = 0; i < N * N; i++) if (!b[i]) { const h = heur(b, i, col); if (h > -400) cand.push({ i, h }); }
+    if (!cand.length) return -1;
+    cand.sort((a, c) => c.h - a.h);
+    if (Settings.diff === 'easy' || N > 9) {
+      const pick = Settings.diff === 'easy' ? cand[Math.floor(Math.random() * Math.min(cand.length, 6))] : cand[0];
+      if (pick.h < -10 && S.passes) return -1;
+      return pick.i;
+    }
+    // Monte Carlo on 9×9
+    const top = cand.slice(0, Settings.diff === 'hard' ? 16 : 10), budget = Settings.diff === 'hard' ? 1600 : 700, t0 = performance.now();
+    top.forEach(m => { m.w = 0; m.n = 0; m.r = play(b, m.i, col, S.ko); });
+    let k = 0;
+    while (performance.now() - t0 < budget) {
+      const m = top[k++ % top.length];
+      const end = playout(m.r.b, 3 - col, m.r.ko), a = area(end), lead = col === 1 ? a.bl - a.wh - 7.5 : a.wh + 7.5 - a.bl;
+      m.n++; if (lead > 0) m.w++;
+    }
+    top.forEach(m => m.v = m.w / Math.max(1, m.n) + m.h * .004);
+    top.sort((a, c) => c.v - a.v);
+    if (top[0].v < .05 && S.passes) return -1;
+    return top[0].i;
+  }
+  function newGame() {
+    clearTimeout(timer); thinking = false; geom(size);
+    S = { n: size, b: new Array(size * size).fill(0), turn: 1, ko: -1, caps: [0, 0], passes: 0, last: null, hist: [], phase: 'play', dead: [], over: null };
+    render();
+  }
+  function move(i) {
+    S.hist.push({ b: S.b, turn: S.turn, ko: S.ko, caps: S.caps.slice(), passes: S.passes, last: S.last });
+    if (i < 0) { S.passes++; S.last = null; Util.toast(`${S.turn === 1 ? 'Black' : 'White'} passes.`); Sfx.play('card'); }
+    else { const r = play(S.b, i, S.turn, S.ko); S.b = r.b; S.ko = r.ko; S.caps[S.turn - 1] += r.cap.length; S.passes = 0; S.last = i; Sfx.play(r.cap.length ? 'capture' : 'place'); }
+    S.turn = 3 - S.turn;
+    if (S.passes >= 2) return startCount();
+    render();
+    if (mode === 'ai' && S.turn === 2) { thinking = true; render(); timer = setTimeout(() => { thinking = false; move(aiMove()); }, Util.delay(250)); }
+  }
+  function startCount() {
+    // suggest dead stones: groups that mostly end up captured in a few random playouts
+    const own = new Array(N * N).fill(0);
+    for (let k = 0; k < 40; k++) { const end = playout(S.b, S.turn, S.ko); const a = area(end); for (let i = 0; i < N * N; i++) if (a.own[i] === 1) own[i]++; else if (a.own[i] === 2) own[i]--; }
+    S.dead = []; for (let i = 0; i < N * N; i++) if ((S.b[i] === 1 && own[i] < -24) || (S.b[i] === 2 && own[i] > 24)) S.dead.push(i);
+    S.phase = 'count'; render();
+  }
+  function scoreNow() { const b = S.b.slice(); S.dead.forEach(i => b[i] = 0); const a = area(b); return { bl: a.bl, wh: a.wh + 7.5, own: a.own }; }
+  function finish() {
+    const sc = scoreNow(), bw = sc.bl > sc.wh;
+    S.over = `${bw ? 'Black' : 'White'} wins by ${Math.abs(sc.bl - sc.wh)}`; S.phase = 'done'; render(); Sfx.play(mode === 'ai' && !bw ? 'lose' : 'win');
+    App.endGame('go', mode === 'ai' && bw, S.over, `Black ${sc.bl} · White ${sc.wh} (including 7.5 komi).`, newGame);
+  }
+  function click(i) {
+    if (S.phase === 'count') { if (!S.b[i]) return; const g = group(S.b, i).stones, on = S.dead.includes(i); S.dead = on ? S.dead.filter(x => !g.includes(x)) : S.dead.concat(g); Sfx.play('tap'); return render(); }
+    if (S.over || thinking || S.phase !== 'play' || (mode === 'ai' && S.turn !== 1)) return;
+    if (!play(S.b, i, S.turn, S.ko)) { if (!S.b[i]) Util.toast(i === S.ko ? 'Ko: you can’t retake straight away. Play elsewhere first.' : 'That move would have no liberties.', 1800); return; }
+    move(i);
+  }
+  function pass() { if (S.phase === 'play' && !thinking && !S.over && (mode === '2p' || S.turn === 1)) move(-1); }
+  function undo() { if (thinking || !S.hist.length || S.phase !== 'play') return; let h = S.hist.pop(); if (mode === 'ai' && h.turn === 2 && S.hist.length) h = S.hist.pop(); Object.assign(S, h); render(); }
+  function resume() { S.phase = 'play'; S.passes = 0; S.dead = []; render(); if (mode === 'ai' && S.turn === 2) { thinking = true; render(); timer = setTimeout(() => { thinking = false; move(aiMove()); }, 300); } }
+  function render() {
+    if (!root || !S) return;
+    const n = N, cell = 100 / (n + 1), xy = i => [cell * (i % n + 1), cell * (Math.floor(i / n) + 1)];
+    let lines = ''; for (let k = 0; k < n; k++) { const p = cell * (k + 1); lines += `<line x1="${cell}" y1="${p}" x2="${cell * n}" y2="${p}"/><line x1="${p}" y1="${cell}" x2="${p}" y2="${cell * n}"/>`; }
+    const star = n === 9 ? [2, 6, 4] : n === 13 ? [3, 9, 6] : [3, 15, 9];
+    let hoshi = ''; for (const a of star) for (const b of star) if (n !== 9 || (a === 4) === (b === 4)) { hoshi += `<circle cx="${cell * (b + 1)}" cy="${cell * (a + 1)}" r="${cell * .12}" fill="#2a1a10"/>`; }
+    const sc = S.phase !== 'play' ? scoreNow() : null;
+    let stones = '';
+    for (let i = 0; i < n * n; i++) {
+      const [x, y] = xy(i), v = S.b[i], dead = S.dead.includes(i);
+      if (v) stones += `<circle cx="${x}" cy="${y}" r="${cell * .47}" fill="url(#go${v})" opacity="${dead ? .4 : 1}" style="filter:drop-shadow(0 ${cell * .06}px ${cell * .05}px rgba(0,0,0,.5))"/>${S.last === i ? `<circle cx="${x}" cy="${y}" r="${cell * .18}" fill="none" stroke="${v === 1 ? '#fff' : '#000'}" stroke-width="${cell * .06}"/>` : ''}${dead ? `<path d="M${x - cell * .2} ${y - cell * .2}L${x + cell * .2} ${y + cell * .2}M${x + cell * .2} ${y - cell * .2}L${x - cell * .2} ${y + cell * .2}" stroke="#c0261c" stroke-width="${cell * .08}"/>` : ''}`;
+      if (sc && (!v || dead) && sc.own[i]) stones += `<rect x="${x - cell * .16}" y="${y - cell * .16}" width="${cell * .32}" height="${cell * .32}" fill="${sc.own[i] === 1 ? '#111' : '#f4f0e6'}" opacity=".8"/>`;
+      stones += `<rect x="${x - cell / 2}" y="${y - cell / 2}" width="${cell}" height="${cell}" fill="transparent" onclick="Go.click(${i})" style="cursor:pointer"/>`;
+    }
+    const status = S.over || (S.phase === 'count' ? 'Tap any dead groups to mark them, then confirm the score' : thinking ? 'White (AI) is thinking…' : `${S.turn === 1 ? 'Black' : 'White'} to play${mode === 'ai' && S.turn === 1 ? ' (you)' : ''}`);
+    const mine = S.phase === 'play' && !thinking && !S.over && (mode === '2p' || S.turn === 1);
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="flex flex-col items-center gap-2"><div class="stat-chip text-center">${status}</div>
+          <svg viewBox="0 0 100 100" style="width:min(95vw,560px,calc(100vh - 230px));min-width:290px;border-radius:8px;background:linear-gradient(160deg,#e9c27a,#d0a253);box-shadow:0 12px 28px rgba(0,0,0,.6);border:5px solid #4a2e1d">
+            <defs><radialGradient id="go1" cx=".35" cy=".3"><stop offset="0" stop-color="#666"/><stop offset="1" stop-color="#0d0d0d"/></radialGradient><radialGradient id="go2" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d9d2c4"/></radialGradient></defs>
+            <g stroke="#3a2416" stroke-width="${n > 13 ? .22 : .3}">${lines}</g>${hoshi}${stones}</svg></div>
+        ${Util.panel(`
+          <div class="flex flex-wrap gap-2 mb-2">${mine ? Util.btn('Pass', 'Go.pass()', 'brass') : ''}${S.phase === 'play' ? Util.btn('↶ Undo', 'Go.undo()') : ''}${S.phase === 'count' ? Util.btn('✔ Confirm score', 'Go.finish()', 'brass') + Util.btn('Keep playing', 'Go.resume()') : ''}</div>
+          ${sc ? `<div class="text-sm text-amber-100 mb-2">Black <b>${sc.bl}</b> · White <b>${sc.wh}</b></div>` : ''}
+          <div class="grid grid-cols-2 gap-2 text-center text-xs mb-3"><div class="bg-black/30 rounded-lg p-2">⚫ ${mode === 'ai' ? 'You' : 'Black'}<div class="text-amber-300">captured ${S.caps[0]}</div></div><div class="bg-black/30 rounded-lg p-2">⚪ ${mode === 'ai' ? 'AI' : 'White'}<div class="text-amber-300">captured ${S.caps[1]}</div></div></div>
+          <div class="text-[11px] text-amber-100/60 mb-1">Board size</div><div class="flex gap-2 mb-3">${[9, 13, 19].map(z => Util.btn(`${z}×${z}`, `Go.size(${z})`, z === size ? 'brass' : 'wood')).join('')}</div>
+          <div class="flex flex-wrap gap-2 mb-3">${Util.btn('vs AI', "Go.setMode('ai')", mode === 'ai' ? 'brass' : 'wood')}${Util.btn('Pass & Play', "Go.setMode('2p')", mode === '2p' ? 'brass' : 'wood')}${Util.btn('New Game', 'Go.newGame()')}</div>
+          <p class="text-[11px] text-amber-100/55">${mode === 'ai' && size > 9 ? 'The AI is strongest on 9×9. On bigger boards it plays a simpler style.' : 'Surround territory and capture stones by taking away all their liberties. Two passes in a row end the game.'}</p>`, 'w-full lg:w-64')}
+      </div>`;
+  }
+  return {
+    mount(el, o = {}) { root = el; if (o.mode) { mode = o.mode; Store.set('go_mode', mode); } if (o.resume) { S = o.resume.S; mode = o.resume.mode; size = S.n; geom(size); S.hist = []; thinking = false; resume(); } else newGame(); },
+    snapshot() { return S && !S.over && S.phase === 'play' && !thinking ? { S: { ...S, hist: [] }, mode } : null; },
+    destroy() { clearTimeout(timer); root = null; },
+    click, pass, undo, finish, resume, newGame,
+    size(z) { size = z; Store.set('go_size', z); newGame(); }, setMode(m) { mode = m; Store.set('go_mode', m); newGame(); },
+    _test: { get S() { return S; }, play, playout, area, aiMove, geom }
+  };
+})();
+Games.go = Go;
+
+/* ============================================================================
+   SPRING MIKADO: lift discs out of a spring-packed tray without disturbing the rest (1-4 players, people or AI)
+   ============================================================================ */
+const SpringMikado = (() => {
+  const TW = 306, TH = 156;               // tray interior (virtual units)
+  const KINDS = {
+    pink: { n: 'Pink', r: 13, c: '#e0457b', d: '#8f1d48', pts: 5, count: 15, grip: 0 },
+    grey: { n: 'Grey', r: 10.5, c: '#93a0b2', d: '#4d5868', pts: 10, count: 16, grip: .1 },
+    yellow: { n: 'Yellow', r: 8, c: '#ecc12e', d: '#8a6a0c', pts: 15, count: 14, grip: .25 }
+  };
+  const PULL = 58;                        // how far a disc must be drawn out
+  let S, root, sid = 0, busy = false, drag = null;
+
+  /* ---------- packing and the spring ---------- */
+  function relax(ps, iters, push) {
+    for (let it = 0; it < iters; it++) {
+      for (const p of ps) p.x -= push;
+      for (let a = 0; a < ps.length; a++) for (let b = a + 1; b < ps.length; b++) {
+        const A = ps[a], B = ps[b], dx = B.x - A.x, dy = B.y - A.y, d = Math.hypot(dx, dy) || .01, min = A.r + B.r + .6;
+        if (d < min) { const o = (min - d) / 2, ux = dx / d, uy = dy / d; A.x -= ux * o; A.y -= uy * o; B.x += ux * o; B.y += uy * o; }
+      }
+      for (const p of ps) { p.x = Math.max(p.r, p.x); p.y = Math.min(TH - p.r, Math.max(p.r, p.y)); }
+    }
+  }
+  function build() {
+    const ps = []; let id = 0;
+    for (const [k, K] of Object.entries(KINDS)) for (let n = 0; n < K.count; n++) ps.push({ id: id++, k, r: K.r, x: 20 + Math.random() * 200, y: K.r + Math.random() * (TH - 2 * K.r) });
+    Util.shuffle(ps);
+    relax(ps, 260, .55);
+    return ps;
+  }
+  const barX = ps => ps.length ? Math.max(...ps.map(p => p.x + p.r)) + .5 : 40;
+  function tension(p, ps) {
+    const bx = barX(ps); let t = .35 + KINDS[p.k].grip;
+    for (const q of ps) if (q !== p && Math.hypot(q.x - p.x, q.y - p.y) < p.r + q.r + 1.6) t += .2;
+    if (p.x + p.r > bx - 3) t += .5;
+    if (p.x - p.r < 1.5) t += .1; if (p.y - p.r < 1.5 || p.y + p.r > TH - 1.5) t += .1;
+    return Math.min(2.4, t);
+  }
+  /* ---------- flow ---------- */
+  function newGame(seats) {
+    sid++; busy = false; drag = null;
+    S = { seats, pieces: build(), scores: seats.map(() => 0), taken: seats.map(() => []), turn: 0, lives: 3, faults: seats.map(() => 0), over: null, msg: 'Draw a disc out slowly. Tighter discs need a gentler pull.', streak: 0 };
+    next();
+  }
+  const solo = () => S.seats.length === 1;
+  async function next() {
+    if (!root || S.over) return;
+    render();
+    if (S.seats[S.turn].type === 'ai') { const my = sid; await Util.sleep(Util.delay(700)); if (my === sid) aiTurn(); }
+  }
+  function success(p) {
+    const i = S.turn;
+    S.pieces = S.pieces.filter(q => q !== p);
+    S.scores[i] += KINDS[p.k].pts; S.taken[i].push(p.k); S.streak++;
+    Sfx.play('match');
+    S.msg = `${S.seats[i].name} ${S.seats[i].name === 'You' ? 'lift' : 'lifts'} a ${KINDS[p.k].n.toLowerCase()} disc (+${KINDS[p.k].pts}).`;
+    springSettle();
+    if (!S.pieces.length) return finish();
+  }
+  function springSettle() { // the spring pushes the bar in, closing the gap
+    const my = sid; let n = 0;
+    const step = () => { if (my !== sid || !root) return; relax(S.pieces, 3, .35); render(); if (++n < 14) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }
+  function fault(p) {
+    const i = S.turn; S.faults[i]++; S.streak = 0;
+    Sfx.play('lose');
+    // the neighbours jump
+    S.pieces.forEach(q => { if (q !== p && Math.hypot(q.x - p.x, q.y - p.y) < p.r + q.r + 6) { q.x += (Math.random() - .5) * 6; q.y += (Math.random() - .5) * 6; q.jolt = 1; } });
+    relax(S.pieces, 20, .1);
+    if (solo()) {
+      S.lives--; S.msg = `Something moved! ${S.lives} ${S.lives === 1 ? 'life' : 'lives'} left.`;
+      if (S.lives <= 0) return finish();
+    } else {
+      S.msg = `Something moved! ${S.seats[i].name}'s turn is over.`;
+      S.turn = (S.turn + 1) % S.seats.length;
+    }
+    render(); setTimeout(() => { S.pieces.forEach(q => delete q.jolt); next(); }, 650);
+  }
+  function finish() {
+    const best = Math.max(...S.scores), wi = S.scores.indexOf(best), w = S.seats[wi];
+    S.over = solo() ? `${best} points` : `${w.name} wins!`; render(); Sfx.play('win');
+    if (solo()) {
+      const pb = Store.get('sm_best', 0); if (best > pb) Store.set('sm_best', best);
+      const cleared = !S.pieces.length;
+      return App.endGame('springmikado', cleared || best >= 300, cleared ? 'Tray cleared! 🌀' : 'Out of lives', `You scored <b>${best}</b>${best > pb ? ', a new best!' : `. Your best is ${Math.max(pb, best)}.`} ${cleared ? '' : 'Clear the tray or score 300+ for a trophy.'}`, () => newGame(S.seats));
+    }
+    App.endGame('springmikado', w.type === 'human' && S.seats.some(s => s.type === 'ai'), `${w.name} wins!`, `<div class="text-left space-y-1">${S.seats.map((s, k) => `<div class="flex justify-between"><span>${s.name}</span><b class="text-amber-300">${S.scores[k]}</b></div>`).join('')}</div>`, () => newGame(S.seats));
+  }
+  /* ---------- AI ---------- */
+  async function aiTurn() {
+    const my = sid; busy = true;
+    for (;;) {
+      if (!S.pieces.length || S.over) break;
+      const k = Settings.diff === 'easy' ? .34 : Settings.diff === 'hard' ? .11 : .19;
+      let best = null, bv = -1e9;
+      for (const p of S.pieces) { const t = tension(p, S.pieces), risk = Math.min(.92, Math.max(.03, (t - .45) * k)); const v = KINDS[p.k].pts * (1 - risk) - risk * 12 + Math.random() * 2; if (v > bv) { bv = v; best = { p, risk }; } }
+      const ok = Math.random() > best.risk;
+      // animate the lift
+      const p = best.p, x0 = p.x, y0 = p.y, dir = p.y < TH / 2 ? -1 : 1, frames = 22;
+      for (let f = 1; f <= frames; f++) { p.x = x0; p.y = y0 + dir * PULL * (f / frames) * (ok ? 1 : .45); p.lift = 1; render(); await Util.sleep(Util.delay(28)); if (my !== sid) return; if (!ok && f > frames * .45) break; }
+      delete p.lift;
+      if (!ok) { p.x = x0; p.y = y0; busy = false; return fault(p); }
+      success(p); await Util.sleep(Util.delay(500)); if (my !== sid) return;
+    }
+    busy = false;
+  }
+  /* ---------- touch dragging ---------- */
+  function toTray(svg, e) { const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const m = svg.getScreenCTM().inverse(); const q = pt.matrixTransform(m); return { x: q.x - 12, y: q.y - 12 }; }
+  function bind() {
+    const svg = root && root.querySelector('#sm-svg'); if (!svg) return;
+    svg.onpointerdown = e => {
+      const el = e.target.closest('[data-p]'); if (!el || busy || S.over || S.seats[S.turn].type !== 'human') return;
+      const p = S.pieces.find(q => q.id === +el.dataset.p); if (!p) return;
+      const at = toTray(svg, e);
+      drag = { t0: performance.now(), p, sx: p.x, sy: p.y, ox: at.x - p.x, oy: at.y - p.y, lx: at.x, ly: at.y, lt: performance.now(), v: 0, strain: 0, t: tension(p, S.pieces) };
+      try { svg.setPointerCapture(e.pointerId); } catch (_) {}
+      Sfx.play('tap'); p.lift = 1;
+      el.parentNode.appendChild(el); el.querySelector('circle').setAttribute('r', p.r * 1.08);
+      const nearIds = S.pieces.filter(q => q !== p && Math.hypot(q.x - p.x, q.y - p.y) < p.r + q.r + 4).map(q => q.id);
+      nearIds.forEach(id => { const g = svg.querySelector(`[data-p="${id}"]`); if (g) g.setAttribute('data-near', '1'); });
+    };
+    svg.onpointermove = e => {
+      if (!drag) return;
+      const at = toTray(svg, e), now = performance.now(), dt = Math.max(.001, (now - drag.lt) / 1000);
+      const step = Math.hypot(at.x - drag.lx, at.y - drag.ly), sp = step / dt;
+      drag.v = drag.v ? drag.v * .5 + sp * .5 : sp;
+      const allowed = 150 / drag.t;
+      // strain builds with every bit of distance pulled faster than the disc allows
+      if (drag.v > allowed) drag.strain += Math.min(6, drag.v / allowed - 1) * (step / PULL) * .55; else drag.strain = Math.max(0, drag.strain - dt * .45);
+      drag.lx = at.x; drag.ly = at.y; drag.lt = now;
+      drag.p.x = at.x - drag.ox; drag.p.y = at.y - drag.oy;
+      const dist = Math.hypot(drag.p.x - drag.sx, drag.p.y - drag.sy);
+      if (drag.strain >= 1) { const p = drag.p; p.x = drag.sx; p.y = drag.sy; delete p.lift; drag = null; return fault(p); }
+      if (dist >= PULL) {
+        const p = drag.p, took = (now - drag.t0) / 1000, minT = PULL / (150 / drag.t) * .55;
+        delete p.lift;
+        if (took < minT) { p.x = drag.sx; p.y = drag.sy; drag = null; return fault(p); } // yanked out
+        drag = null; success(p); if (!S.over) render(); return;
+      }
+      paintDrag(dist);
+    };
+    const up = () => { if (!drag) return; const p = drag.p; p.x = drag.sx; p.y = drag.sy; delete p.lift; drag = null; S.msg = 'Put back gently. Draw it all the way out to take it.'; render(); };
+    svg.onpointerup = up; svg.onpointercancel = up;
+  }
+  function paintDrag(dist) { // fast update while dragging, without a full redraw
+    const g = root.querySelector(`[data-p="${drag.p.id}"]`); if (g) g.setAttribute('transform', `translate(${drag.p.x + 12} ${drag.p.y + 12})`);
+    const m = root.querySelector('#sm-meter'), lbl = root.querySelector('#sm-meter-l'), pr = root.querySelector('#sm-pull');
+    const s = Math.min(1, drag.strain); if (m) { m.style.width = `${s * 100}%`; m.style.background = s < .45 ? '#2f8f4e' : s < .75 ? '#e8b923' : '#c0261c'; }
+    if (lbl) lbl.textContent = s < .45 ? 'Steady…' : s < .75 ? 'Careful!' : 'Too fast!';
+    if (pr) pr.style.width = `${Math.min(100, dist / PULL * 100)}%`;
+    root.querySelectorAll('[data-near]').forEach(el => { const j = (Math.random() - .5) * s * 2.5; el.style.translate = `${j}px ${-j}px`; });
+  }
+  /* ---------- render ---------- */
+  function disc(p, near) {
+    const K = KINDS[p.k], lifted = p.lift;
+    return `<g data-p="${p.id}" ${near ? 'data-near="1"' : ''} transform="translate(${p.x + 12} ${p.y + 12})" style="cursor:grab">
+      ${lifted ? `<circle r="${p.r}" cx="3" cy="5" fill="rgba(0,0,0,.35)"/>` : ''}
+      <circle r="${p.r * (lifted ? 1.08 : 1)}" fill="url(#sm-${p.k})" stroke="${K.d}" stroke-width=".8" ${p.jolt ? 'class="animate-pulse"' : ''}/>
+      <circle r="${p.r * .45}" fill="${K.c}" stroke="${K.d}" stroke-width=".6"/><circle r="${p.r * .2}" cx="${-p.r * .12}" cy="${-p.r * .12}" fill="rgba(255,255,255,.45)"/></g>`;
+  }
+  function render() {
+    if (!root || !S) return;
+    const bx = barX(S.pieces), seat = S.seats[S.turn], mine = seat.type === 'human' && !busy && !S.over;
+    const near = drag ? new Set(S.pieces.filter(q => q !== drag.p && Math.hypot(q.x - drag.sx, q.y - drag.sy) < drag.p.r + q.r + 4).map(q => q.id)) : new Set();
+    const coils = []; const sx0 = bx + 26, sx1 = TW + 12, n = 22; for (let k = 0; k <= n; k++) { const x = sx0 + (sx1 - sx0) * k / n; coils.push(`${x},${12 + TH / 2 + (k % 2 ? -7 : 7)}`); }
+    const pieces = S.pieces.filter(p => !(drag && drag.p === p)).map(p => disc(p, near.has(p.id))).join('') + (drag ? disc(drag.p, false) : '');
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="flex flex-col items-center gap-2 w-full" style="max-width:600px">
+          <div class="flex gap-2 flex-wrap justify-center">${S.seats.map((s, k) => `<span class="stat-chip ${k === S.turn && !S.over ? '!border-amber-300' : ''}"><span class="inline-block w-2.5 h-2.5 rounded-full mr-1" style="background:${s.col.hex}"></span>${s.name}${s.type === 'ai' ? ' 🤖' : ''}: <b>${S.scores[k]}</b></span>`).join('')}${solo() ? `<span class="stat-chip">❤️ ${'●'.repeat(Math.max(0, S.lives))}${'○'.repeat(3 - Math.max(0, S.lives))}</span>` : ''}</div>
+          <svg id="sm-svg" viewBox="0 0 ${TW + 24 + 18} ${TH + 24}" class="w-full select-none" style="touch-action:none;filter:drop-shadow(0 10px 18px rgba(0,0,0,.55))">
+            <defs>${Object.entries(KINDS).map(([k, K]) => `<radialGradient id="sm-${k}" cx=".38" cy=".32"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".35" stop-color="${K.c}"/><stop offset="1" stop-color="${K.d}"/></radialGradient>`).join('')}
+              <linearGradient id="sm-wood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c98a4b"/><stop offset="1" stop-color="#8a5526"/></linearGradient></defs>
+            <rect x="0" y="0" width="${TW + 24}" height="${TH + 24}" rx="6" fill="url(#sm-wood)"/>
+            <rect x="12" y="12" width="${TW}" height="${TH}" fill="#e9dcc4"/><rect x="${bx + 12}" y="12" width="${TW - bx}" height="${TH}" fill="#dfe6ea" opacity=".75"/>
+            <line x1="${sx0}" y1="${12 + TH / 2}" x2="${TW + 12 + 18}" y2="${12 + TH / 2}" stroke="#8a5526" stroke-width="3" stroke-linecap="round"/><circle cx="${TW + 12 + 18}" cy="${12 + TH / 2}" r="4" fill="#c98a4b"/>
+            <polyline points="${coils.join(' ')}" fill="none" stroke="#9aa4ad" stroke-width="1.6"/>
+            <path d="M${bx + 12} 12 h14 v${TH * .38} q-6 ${TH * .12} 0 ${TH * .24} v${TH * .38} h-14 z" fill="#b97a3c" stroke="#7a4a1e" stroke-width="1"/>
+            ${pieces}
+          </svg>
+          <div class="w-full grid grid-cols-2 gap-2 text-[11px] text-amber-100/70">
+            <div>Steadiness <span id="sm-meter-l" class="text-amber-200">${drag ? 'Steady…' : ''}</span><div class="h-2 bg-black/40 rounded mt-0.5 overflow-hidden"><div id="sm-meter" class="h-full" style="width:0%;background:#2f8f4e"></div></div></div>
+            <div>Pulled out<div class="h-2 bg-black/40 rounded mt-0.5 overflow-hidden"><div id="sm-pull" class="h-full" style="width:0%;background:#d4af37"></div></div></div>
+          </div>
+          <div class="text-sm text-center text-amber-100 min-h-[20px]">${S.over || (seat.type === 'ai' ? `${seat.name} is lifting…` : S.msg)}</div>
+        </div>
+        ${Util.panel(`<div class="font-display text-amber-200 text-sm mb-2">Disc values</div>
+          ${Object.values(KINDS).map(K => `<div class="flex items-center gap-2 text-sm mb-1"><span class="rounded-full inline-block" style="width:${K.r * 1.5}px;height:${K.r * 1.5}px;background:${K.c};box-shadow:inset 0 -2px 0 ${K.d}"></span>${K.n}<span class="ml-auto text-amber-300 font-bold">${K.pts}</span></div>`).join('')}
+          <p class="text-[11px] text-amber-100/60 mt-2">Press a disc and draw it slowly out of the tray. Discs pressed by the spring bar or packed by neighbours need a gentler pull. Watch the steadiness bar: if it goes red, the others jump and your turn ends.</p>
+          <div class="mt-3 flex gap-2">${Util.btn('New Tray', 'SpringMikado.restart()')}</div>`, 'w-full lg:w-60 !p-3')}
+      </div>`;
+    if (mine || drag) bind();
+  }
+  return {
+    async setup() { const seats = await Seats.choose({ title: 'Spring Mikado', min: 1, max: 4, def: 2, note: 'Solo: three lives, beat your best. With others: keep lifting until something moves, then pass the tray.' }); return seats ? { seats } : null; },
+    mount(el, o = {}) { root = el; if (o.resume) { sid++; busy = false; drag = null; S = o.resume; next(); } else newGame(o.seats || [{ name: 'You', col: PCOL[0], type: 'human' }]); },
+    snapshot() { return S && !S.over && !busy && !drag ? S : null; },
+    destroy() { sid++; drag = null; root = null; },
+    restart() { newGame(S.seats); }, newGame() { newGame(S.seats); },
+    _test: { get S() { return S; }, tension, build, success: p => success(p), fault: p => fault(p) }
+  };
+})();
+Games.springmikado = SpringMikado;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -8508,7 +8930,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.4.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.5.0",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

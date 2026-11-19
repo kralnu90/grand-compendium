@@ -1,12 +1,12 @@
 # The Grand Tabletop Compendium
 
-*Twenty-nine classic, esoteric, family, pub and word games, one table.*
+*Thirty-one classic, esoteric, family, pub and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.4.0**
+**Current version: 1.5.0**
 
 ## The games
 
@@ -26,6 +26,8 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | 🎯 **Ludo** | Break out on a 6, capture rivals and race all four pieces home | 2–4, people or AI |
 | 🁫 **Dominoes** | Double-six draw game, first to 50 points | 2–4, people or AI |
 | 🕵️ **Murder at Marrowgate Manor** | An original whodunit: suggest, deduce with your notebook, then accuse | 3–6, people or AI |
+| ⚪ **Go** | 9×9, 13×13 or 19×19, with ko, dead-stone marking and area scoring | vs AI or 2 players |
+| 🌀 **Spring Mikado** | Draw discs out of a spring-loaded tray without making the others jump | 1–4, people or AI |
 | ⚫ **Reversi** | Flip lines of discs and fight for the corners | vs AI or 2 players |
 | 🔴 **Four in a Row** | Drop discs and connect four before your rival | vs AI or 2 players |
 | ⬡ **Nine Men's Morris** | The ancient game of mills: place, slide, then fly | vs AI or 2 players |
@@ -76,7 +78,8 @@ Ideas, design and testing by Kris. Built with Claude, an AI by Anthropic.
 
 - **Scoundrel** was designed by Zach Gage and Kurt Bieg.
 - **Regicide** was designed by Paul Abrahams, Luke Badger and Andy Richdale (Badgers From Mars).
-- Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes & Ladders, Ludo, Dominoes, Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships and Sudoku are traditional games.
+- Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes & Ladders, Ludo, Dominoes, Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships, Sudoku and Go are traditional games.
+- Spring Mikado is a digital take on the classic wooden disc-mikado tray with a spring-loaded bar.
 - Murder at Marrowgate Manor and Torchlight Delve are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.
 - Tilecraft, Word Lock, Word Wheel, Word Grid and Colour Clash are original takes on much-loved word and card game ideas, not connected to or endorsed by the makers of any other game.
 - Word list: SCOWL, copyright 2000–2011 Kevin Atkinson, used under its permissive licence (see `WORDS-LICENSE.txt`), with British spellings added.
@@ -91,6 +94,10 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.5.0 · Stones and springs (19 November 2026)
+- Go: 9×9, 13×13 and 19×19 boards, with captures, ko, dead-stone marking and area scoring. The AI thinks hardest on 9×9
+- Spring Mikado: draw discs out of a spring-loaded wooden tray without making the others jump. Solo with three lives, or up to four players
 
 ### 1.4.0 · A fuller parlour (19 November 2026)
 - Nine new games: Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships and Sudoku
