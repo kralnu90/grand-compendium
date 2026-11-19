@@ -1,6 +1,6 @@
 // Grand Tabletop Compendium service worker: lets the game install and play offline.
 // Game files load network-first, so uploading a new index.html still updates players.
-const CACHE = "gtc-1.2.0";
+const CACHE = "gtc-1.3.0";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png"];
 
 self.addEventListener("install", e => {

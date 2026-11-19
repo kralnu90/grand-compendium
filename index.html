@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fifteen parlour and family games in one: Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong, Klondike, FreeCell, Scoundrel, Regicide, Snakes &amp; Ladders, Ludo, Dominoes, a murder mystery and a dungeon crawl. Free, from Kralnu Games.">
+  <meta name="description" content="Twenty parlour, family and word games in one: Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong, Klondike, FreeCell, Scoundrel, Regicide, Snakes &amp; Ladders, Ludo, Dominoes, a murder mystery, a dungeon crawl, a crossword tile game, three more word games and a wild card game. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Fifteen games at one table: royal strategy, tumbling dice, quiet patience, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Twenty games at one table: royal strategy, tumbling dice, quiet patience, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -70,10 +70,13 @@
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
+    --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    --tracking-normal: 0em;
     --tracking-wide: 0.025em;
     --tracking-wider: 0.05em;
     --leading-tight: 1.25;
@@ -259,8 +262,20 @@
   .inset-0 {
     inset: 0px;
   }
+  .inset-\[1px\] {
+    inset: 1px;
+  }
+  .inset-\[14\%\] {
+    inset: 14%;
+  }
+  .inset-x-0 {
+    inset-inline: 0px;
+  }
   .top-0 {
     top: 0px;
+  }
+  .top-0\.5 {
+    top: calc(var(--spacing) * 0.5);
   }
   .top-1 {
     top: var(--spacing);
@@ -274,11 +289,17 @@
   .right-1 {
     right: var(--spacing);
   }
+  .right-\[2px\] {
+    right: 2px;
+  }
   .-bottom-2 {
     bottom: calc(var(--spacing) * -2);
   }
   .bottom-0 {
     bottom: 0px;
+  }
+  .bottom-0\.5 {
+    bottom: calc(var(--spacing) * 0.5);
   }
   .bottom-1 {
     bottom: var(--spacing);
@@ -288,6 +309,9 @@
   }
   .bottom-5 {
     bottom: calc(var(--spacing) * 5);
+  }
+  .bottom-24 {
+    bottom: calc(var(--spacing) * 24);
   }
   .left-0 {
     left: 0px;
@@ -313,6 +337,9 @@
   .z-50 {
     z-index: 50;
   }
+  .z-\[55\] {
+    z-index: 55;
+  }
   .z-\[60\] {
     z-index: 60;
   }
@@ -331,6 +358,9 @@
   .my-3 {
     margin-block: calc(var(--spacing) * 3);
   }
+  .mt-0\.5 {
+    margin-top: calc(var(--spacing) * 0.5);
+  }
   .mt-1 {
     margin-top: var(--spacing);
   }
@@ -348,6 +378,9 @@
   }
   .mt-auto {
     margin-top: auto;
+  }
+  .mr-1 {
+    margin-right: var(--spacing);
   }
   .mr-auto {
     margin-right: auto;
@@ -373,6 +406,9 @@
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
   }
+  .ml-0\.5 {
+    margin-left: calc(var(--spacing) * 0.5);
+  }
   .ml-auto {
     margin-left: auto;
   }
@@ -388,11 +424,20 @@
   .hidden {
     display: none;
   }
+  .hidden\! {
+    display: none !important;
+  }
+  .inline-block {
+    display: inline-block;
+  }
   .inline-flex {
     display: inline-flex;
   }
   .table {
     display: table;
+  }
+  .h-1\.5 {
+    height: calc(var(--spacing) * 1.5);
   }
   .h-2 {
     height: calc(var(--spacing) * 2);
@@ -405,6 +450,9 @@
   }
   .h-3\.5 {
     height: calc(var(--spacing) * 3.5);
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
   }
   .h-5 {
     height: calc(var(--spacing) * 5);
@@ -421,6 +469,9 @@
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
+  .h-11 {
+    height: calc(var(--spacing) * 11);
+  }
   .h-14 {
     height: calc(var(--spacing) * 14);
   }
@@ -436,11 +487,17 @@
   .h-px {
     height: 1px;
   }
+  .max-h-\[60vh\] {
+    max-height: 60vh;
+  }
   .max-h-\[88vh\] {
     max-height: 88vh;
   }
   .max-h-\[92vh\] {
     max-height: 92vh;
+  }
+  .min-h-\[20px\] {
+    min-height: 20px;
   }
   .min-h-\[22px\] {
     min-height: 22px;
@@ -453,6 +510,12 @@
   }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-1\.5 {
+    width: calc(var(--spacing) * 1.5);
+  }
+  .w-2\.5 {
+    width: calc(var(--spacing) * 2.5);
   }
   .w-3 {
     width: calc(var(--spacing) * 3);
@@ -573,6 +636,12 @@
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
   .grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
@@ -632,6 +701,9 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
   }
   .gap-7 {
     gap: calc(var(--spacing) * 7);
@@ -696,8 +768,14 @@
   .rounded-3xl {
     border-radius: var(--radius-3xl);
   }
+  .rounded-\[3px\] {
+    border-radius: 3px;
+  }
   .rounded-\[40px\] {
     border-radius: 40px;
+  }
+  .rounded-\[50\%\] {
+    border-radius: 50%;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -726,6 +804,10 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
+  .border-4 {
+    border-style: var(--tw-border-style);
+    border-width: 4px;
+  }
   .border-t {
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
@@ -733,6 +815,9 @@
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
+  }
+  .\!border-amber-300 {
+    border-color: var(--color-amber-300) !important;
   }
   .border-amber-300 {
     border-color: var(--color-amber-300);
@@ -777,6 +862,12 @@
     border-color: color-mix(in srgb, #000 40%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-black) 40%, transparent);
+    }
+  }
+  .border-white\/80 {
+    border-color: color-mix(in srgb, #fff 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-white) 80%, transparent);
     }
   }
   .bg-amber-500\/25 {
@@ -837,6 +928,12 @@
     background-color: color-mix(in srgb, #000 80%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-black) 80%, transparent);
+    }
+  }
+  .bg-black\/85 {
+    background-color: color-mix(in srgb, #000 85%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 85%, transparent);
     }
   }
   .bg-emerald-400 {
@@ -920,6 +1017,9 @@
   .\!py-2\.5 {
     padding-block: calc(var(--spacing) * 2.5) !important;
   }
+  .py-0\.5 {
+    padding-block: calc(var(--spacing) * 0.5);
+  }
   .py-1 {
     padding-block: var(--spacing);
   }
@@ -953,6 +1053,12 @@
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
   }
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20);
+  }
+  .py-24 {
+    padding-block: calc(var(--spacing) * 24);
+  }
   .pt-1 {
     padding-top: var(--spacing);
   }
@@ -979,6 +1085,9 @@
   }
   .text-right {
     text-align: right;
+  }
+  .align-middle {
+    vertical-align: middle;
   }
   .font-mono {
     font-family: var(--font-mono);
@@ -1039,6 +1148,10 @@
     --tw-leading: var(--leading-tight);
     line-height: var(--leading-tight);
   }
+  .font-black {
+    --tw-font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-black);
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -1051,17 +1164,37 @@
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
   }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .tracking-\[0\.2em\] {
+    --tw-tracking: 0.2em;
+    letter-spacing: 0.2em;
   }
   .tracking-\[0\.3em\] {
     --tw-tracking: 0.3em;
     letter-spacing: 0.3em;
   }
+  .tracking-\[0\.5em\] {
+    --tw-tracking: 0.5em;
+    letter-spacing: 0.5em;
+  }
+  .tracking-\[0\.25em\] {
+    --tw-tracking: 0.25em;
+    letter-spacing: 0.25em;
+  }
   .tracking-\[0\.35em\] {
     --tw-tracking: 0.35em;
     letter-spacing: 0.35em;
+  }
+  .tracking-normal {
+    --tw-tracking: var(--tracking-normal);
+    letter-spacing: var(--tracking-normal);
   }
   .tracking-wide {
     --tw-tracking: var(--tracking-wide);
@@ -1147,6 +1280,12 @@
     color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 75%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-amber-100) 75%, transparent);
+    }
+  }
+  .text-amber-100\/80 {
+    color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-amber-100) 80%, transparent);
     }
   }
   .text-amber-200 {
@@ -1236,6 +1375,18 @@
   .text-sky-300 {
     color: var(--color-sky-300);
   }
+  .text-white {
+    color: var(--color-white);
+  }
+  .text-white\/90 {
+    color: color-mix(in srgb, #fff 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-white) 90%, transparent);
+    }
+  }
+  .normal-case {
+    text-transform: none;
+  }
   .uppercase {
     text-transform: uppercase;
   }
@@ -1250,6 +1401,9 @@
   }
   .opacity-40 {
     opacity: 40%;
+  }
+  .opacity-50 {
+    opacity: 50%;
   }
   .opacity-60 {
     opacity: 60%;
@@ -1321,7 +1475,15 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
   @media (hover: hover) {
+    .hover\:-translate-y-1:hover {
+      --tw-translate-y: calc(var(--spacing) * -1);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
     .hover\:scale-110:hover {
       --tw-scale-x: 110%;
       --tw-scale-y: 110%;
@@ -2029,7 +2191,7 @@
           <h1 class="font-display text-lg sm:text-xl font-bold tracking-wide text-amber-300 leading-tight">
             The Grand Tabletop Compendium
           </h1>
-          <p id="header-subtitle" class="text-xs text-amber-100/70">Fifteen Classic & Esoteric Parlor Games</p>
+          <p id="header-subtitle" class="text-xs text-amber-100/70">Twenty Classic & Esoteric Parlor Games</p>
         </div>
       </div>
 
@@ -2276,7 +2438,7 @@ const GAME_CATALOG = [
     id: 'snakes',
     title: 'Snakes & Ladders',
     subtitle: 'The Classic Race to 100',
-    category: 'Family & Adventure Board Games',
+    category: 'Family & Party Games',
     icon: '🐍',
     players: '2–4 players, people or AI',
     tagline: 'Climb the ladders, dodge the snakes and be first to square 100.',
@@ -2294,7 +2456,7 @@ const GAME_CATALOG = [
     id: 'ludo',
     title: 'Ludo',
     subtitle: 'Race Your Four Home',
-    category: 'Family & Adventure Board Games',
+    category: 'Family & Party Games',
     icon: '🎯',
     players: '2–4 players, people or AI',
     tagline: 'Roll a six to break out, knock rivals back to base and race all four pieces home.',
@@ -2312,7 +2474,7 @@ const GAME_CATALOG = [
     id: 'dominoes',
     title: 'Dominoes',
     subtitle: 'Double-Six Draw Game',
-    category: 'Family & Adventure Board Games',
+    category: 'Family & Party Games',
     icon: '🁫',
     players: '2–4 players, people or AI',
     tagline: 'Match the ends, empty your hand and race to 50 points.',
@@ -2330,7 +2492,7 @@ const GAME_CATALOG = [
     id: 'manor',
     title: 'Murder at Marrowgate Manor',
     subtitle: 'A Whodunit of Deduction',
-    category: 'Family & Adventure Board Games',
+    category: 'Family & Party Games',
     icon: '🕵️',
     players: '3–6 players, people or AI',
     tagline: 'Who did it, with what, and where? Question your fellow suspects and crack the case.',
@@ -2349,7 +2511,7 @@ const GAME_CATALOG = [
     id: 'delve',
     title: 'Torchlight Delve',
     subtitle: 'Dungeon-Crawl Board Game',
-    category: 'Family & Adventure Board Games',
+    category: 'Family & Party Games',
     icon: '🕯️',
     players: '1–4 heroes, solo or pass & play',
     tagline: 'Lead a party of heroes through a dark dungeon, roll the combat dice and slay the Bone King.',
@@ -2362,6 +2524,94 @@ const GAME_CATALOG = [
         <li><strong>Exploring:</strong> Rooms light up as you enter them, and any monsters there wake up. Search a cleared room once for gold, potions or a better weapon, but beware of traps.</li>
         <li><strong>Monsters:</strong> After every hero has gone, each awake monster moves towards the nearest hero and attacks.</li>
         <li><strong>Defeat:</strong> If every hero falls, the delve is over.</li>
+      </ul>`
+  },
+  {
+    id: 'clash',
+    title: 'Colour Clash',
+    subtitle: 'Fast-Paced Shedding Card Game',
+    category: 'Family & Party Games',
+    icon: '🃏',
+    players: '2–6 players, people or AI',
+    tagline: 'Match colours, fire off Skips and +4s, and shout "Last card!" before anyone else.',
+    rules: `
+      <p><strong>Objective:</strong> Be the first to get rid of all your cards.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Playing:</strong> Play a card that matches the top card's colour, number or symbol, or play a Wild.</li>
+        <li><strong>Can't go?</strong> Draw a card. If it can be played, you may play it straight away or keep it.</li>
+        <li><strong>Action cards:</strong> ⊘ Skip makes the next player miss a turn, ⇄ Reverse changes direction (with two players it works like a Skip), +2 makes the next player draw two and miss a turn.</li>
+        <li><strong>Wilds:</strong> ★ Wild lets you pick the colour. +4 picks the colour, and the next player draws four and misses a turn.</li>
+        <li><strong>Last card!</strong> When you're down to one card, tap 📣 <em>Last card!</em> within a couple of seconds or draw two as a penalty.</li>
+      </ul>`
+  },
+  {
+    id: 'tilecraft',
+    title: 'Tilecraft',
+    subtitle: 'The Crossword Tile Game',
+    category: 'Word Games',
+    icon: '🔤',
+    players: '2–4 players, people or AI',
+    tagline: 'Build crossing words from seven letter tiles and hunt down the bonus squares.',
+    rules: `
+      <p><strong>Objective:</strong> Score the most points by building words on the board, crossword style.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Your letters:</strong> Everyone holds seven tiles, topped up from the bag after each turn. The two blank tiles can be any letter but score nothing.</li>
+        <li><strong>Placing:</strong> Tap a letter, then a square. All tiles in one turn go in a single row or column, with no gaps, and must join onto words already on the board. The first word covers the ★.</li>
+        <li><strong>Scoring:</strong> Add up the letter values. 2L and 3L double or triple a letter, 2W and 3W double or triple the whole word, but only on the turn they're first covered. Every new word you form scores.</li>
+        <li><strong>All seven:</strong> Use every tile in one turn for a 50-point bonus.</li>
+        <li><strong>Other moves:</strong> Swap all your letters (while the bag holds 7 or more) or pass.</li>
+        <li><strong>The end:</strong> When the bag is empty and someone plays their last tile, or after six scoreless turns in a row. Letters left on your rack are taken off your score.</li>
+      </ul>`
+  },
+  {
+    id: 'wordlock',
+    title: 'Word Lock',
+    subtitle: 'Crack the Five-Letter Word',
+    category: 'Word Games',
+    icon: '🔒',
+    players: 'Solo, daily or pass & play',
+    tagline: 'Six guesses to crack a hidden word. Play the daily puzzle, practise, or set one for a friend.',
+    rules: `
+      <p><strong>Objective:</strong> Guess the hidden five-letter word in six tries.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Guessing:</strong> Type any real five-letter word and press Enter.</li>
+        <li><strong>Clues:</strong> 🟩 green means the right letter in the right spot, 🟨 yellow means the letter is in the word but somewhere else, and ⬛ grey means it isn't in the word.</li>
+        <li><strong>Modes:</strong> one Daily puzzle a day (the same for everyone), unlimited Practice, or Friend mode, where one person secretly sets a word for another.</li>
+        <li><strong>Stats:</strong> Your wins and streaks are kept, and you can copy your result to share.</li>
+      </ul>`
+  },
+  {
+    id: 'wordwheel',
+    title: 'Word Wheel',
+    subtitle: 'Nine Letters, One Centre',
+    category: 'Word Games',
+    icon: '🎡',
+    players: 'Solo, daily or random',
+    tagline: 'How many words can you make from nine letters? One of them uses all nine.',
+    rules: `
+      <p><strong>Objective:</strong> Find as many words as you can from the nine letters in the wheel.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Rules:</strong> Words must have at least four letters and must use the gold centre letter. Each letter can only be used once per word.</li>
+        <li><strong>The big one:</strong> At least one word uses all nine letters.</li>
+        <li><strong>Ranks:</strong> Good at 25% of the words, Very good at 50%, Excellent at 75%. Reaching Excellent counts as a win.</li>
+        <li><strong>Modes:</strong> a Daily wheel, or as many random wheels as you like.</li>
+      </ul>`
+  },
+  {
+    id: 'wordgrid',
+    title: 'Word Grid',
+    subtitle: 'Three-Minute Letter Hunt',
+    category: 'Word Games',
+    icon: '🔠',
+    players: '1–4 players, people or AI',
+    tagline: 'Swipe across neighbouring letters to find words before the sand runs out.',
+    rules: `
+      <p><strong>Objective:</strong> Find as many words as you can in a 4×4 grid in three minutes.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Making words:</strong> Swipe (or tap) letters that touch, including diagonally. Each square can only be used once per word. Words need at least three letters.</li>
+        <li><strong>Scoring:</strong> 3–4 letters score 1, 5 letters 2, 6 letters 3, 7 letters 5 and 8 or more 11.</li>
+        <li><strong>Players:</strong> Play solo to beat your best, or take turns on the same grid against friends or the AI. When everyone's done, every possible word is revealed.</li>
+        <li><strong>Solo trophy:</strong> Score 15 or more.</li>
       </ul>`
   }
 ];
@@ -2522,14 +2772,14 @@ const App = {
     ['btn-rules', 'btn-back-hub', 'btn-settings'].forEach(b => document.getElementById(b).classList.add('hidden'));
     document.getElementById('ver-corner').classList.remove('hidden');
     const lastId = Store.get('last', null), lastSave = lastId && Store.get('save_' + lastId, null), lm = lastSave && this.meta(lastId);
-    document.getElementById('header-subtitle').textContent = 'Fifteen Classic & Esoteric Parlor Games';
+    document.getElementById('header-subtitle').textContent = 'Twenty Classic & Esoteric Parlor Games';
     const cats = [...new Set(GAME_CATALOG.map(g => g.category))];
     const root = document.getElementById('app-root');
     root.innerHTML = `
       <section class="text-center py-6 sm:py-10">
         <p class="text-amber-400/80 tracking-[0.3em] text-xs uppercase mb-2">Est. by candlelight</p>
         <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-amber-300 drop-shadow">Welcome to the Parlor</h2>
-        <p class="mt-3 text-amber-100/75 max-w-xl mx-auto text-sm sm:text-base">Pull up a chair. Fifteen tables are set: royal strategy, tumbling dice, quiet patience, family favourites, a murder to solve and a dungeon to delve.</p>
+        <p class="mt-3 text-amber-100/75 max-w-xl mx-auto text-sm sm:text-base">Pull up a chair. Twenty tables are set: royal strategy, tumbling dice, quiet patience, word games, family favourites, a murder to solve and a dungeon to delve.</p>
       </section>
       ${lm ? `<div class="w-full max-w-md mx-auto mb-5"><button onclick="App.launch('${lastId}')" class="btn-brass w-full py-3.5 rounded-2xl text-lg font-display flex items-center justify-center gap-3"><span class="text-2xl">${lm.icon}</span><span>Continue ${lm.title.replace(/ \(.*\)/, '')}</span></button></div>` : ''}
       ${Menu.tilesHTML()}
@@ -2616,9 +2866,17 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.2.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.3.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.3.0', '19 Nov 2026', 'Words and wild cards', [
+    'Tilecraft: a crossword tile game for 2 to 4 players, with AI opponents that know over 110,000 words',
+    'Word Lock: crack the five-letter word in six guesses, with a daily puzzle, practice and a set-a-word-for-a-friend mode',
+    'Word Wheel: find words in nine letters, always using the centre one',
+    'Word Grid: swipe across a 4×4 letter grid against a three-minute clock',
+    'Colour Clash: a fast shedding card game with Skips, Reverses, +2s, Wilds and a "Last card!" call',
+    'British spellings like colour and centre are welcome in every word game'
+  ]],
   ['1.2.0', '19 Nov 2026', 'Family game night', [
     'Five new games: Snakes & Ladders, Ludo, Dominoes, Murder at Marrowgate Manor and Torchlight Delve',
     'Murder at Marrowgate Manor: an original whodunit for 3 to 6 players with a detective notebook and AI detectives',
@@ -2766,8 +3024,13 @@ const Menu = (() => {
           <li><b>Regicide</b> was designed by Paul Abrahams, Luke Badger and Andy Richdale (Badgers From Mars).</li>
           <li><b>Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes &amp; Ladders, Ludo</b> and <b>Dominoes</b> are traditional games, enjoyed for generations.</li>
           <li><b>Murder at Marrowgate Manor</b> and <b>Torchlight Delve</b> are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.</li>
+          <li><b>Tilecraft, Word Lock, Word Wheel, Word Grid</b> and <b>Colour Clash</b> are original takes on much-loved word and card game ideas. They aren't connected to, or endorsed by, the makers of any other game.</li>
         </ul>
         <p class="text-xs text-amber-100/60 mt-1.5">Scoundrel and Regicide are played here as free, faithful tributes. If you love them, please support their designers.</p>
+      </div>
+      <div>
+        <h3 class="font-display text-amber-300 mb-1">Word list</h3>
+        <p class="text-sm">Words from SCOWL (Spell Checker Oriented Word Lists), copyright 2000–2011 Kevin Atkinson, used with permission under its licence, with British spellings added. SCOWL draws on public-domain word lists and on WordNet, copyright 1997 Princeton University. See WORDS-LICENSE.txt in the game's files.</p>
       </div>
       <div>
         <h3 class="font-display text-amber-300 mb-1">Made with</h3>
@@ -3009,6 +3272,36 @@ Util.die = (v, cls = '') => {
 };
 Util.d6 = () => 1 + Math.floor(Math.random() * 6);
 Util.sleep = ms => new Promise(r => setTimeout(r, ms));
+
+/* ============================================================================
+   WORD GAMES: shared dictionary (words.txt, loaded on first use and cached offline)
+   ============================================================================ */
+const Dict = (() => {
+  let set = null, list = null, byLen = null, prom = null;
+  function load() {
+    if (prom) return prom;
+    prom = fetch('words.txt').then(r => { if (!r.ok) throw new Error('missing'); return r.text(); }).then(t => {
+      list = t.split('\n').filter(Boolean); set = new Set(list);
+      byLen = {}; list.forEach(w => (byLen[w.length] = byLen[w.length] || []).push(w));
+      return set;
+    }).catch(e => { prom = null; throw e; });
+    return prom;
+  }
+  return { load, has: w => !!set && set.has(w.toLowerCase()), get list() { return list; }, len: n => (byLen && byLen[n]) || [], get ready() { return !!set; } };
+})();
+/* Show a loading card, then run the game once the dictionary is in */
+function withDict(root, start) {
+  if (Dict.ready) return start();
+  root.innerHTML = `<div class="flex flex-col items-center justify-center gap-3 py-24 text-amber-100/80"><div class="text-4xl animate-pulse">📖</div><div class="font-display text-amber-300">Opening the dictionary…</div></div>`;
+  Dict.load().then(() => { if (root.isConnected) start(); }).catch(() => {
+    if (root.isConnected) root.innerHTML = `<div class="text-center py-20 text-amber-100/80 space-y-3"><div class="text-4xl">📕</div><p>Couldn't open the word list. Check your connection and try again.<br><span class="text-xs text-amber-100/50">Once it's loaded once, word games work offline.</span></p>${Util.btn('Try again', `App.launch('${App.current}')`, 'brass')}</div>`;
+  });
+}
+const WORD_ANSWERS = 'about above actor acute adapt admit adopt adult after again agent agree ahead alarm album alert alike alive allow alone along alter amber among angel anger angle angry ankle apart apple apply apron arena argue arise armor aroma arrow aside asset attic audio avoid awake award aware awful bacon badge bagel baker basic basin batch beach beard beast begin being belly bench berry bible birth black blade blame bland blank blast blaze bleak blend bless blind blink block bloom blown board boast bonus boost booth bored bound brain brake brand brass brave bread break brick bride brief bring brisk broad broke brook broom brown brush buddy build built bunch burst cabin cable camel candy canoe cargo carry catch cause cedar chain chair chalk charm chart chase cheap check cheek cheer chess chest chick chief child chili chill choir chord civic claim clash class clean clear clerk click cliff climb cling clock close cloth cloud clown coach coast cocoa colon color comet comic coral couch cough count court cover crack craft crane crash crawl crazy cream creek crest crisp crowd crown crumb crust cubic curve cycle daily dairy daisy dance dealt death debut decay delay delta dense depth diary dirty disco ditch diver dizzy dodge doing donor doubt dough dozen draft drain drama drank drawn dream dress dried drift drill drink drive drown eager eagle early earth easel eaten eight elbow elder elect empty enemy enjoy enter entry equal error essay event every exact exist extra fable faint fairy faith false fancy feast fence ferry fetch fever fiber field fifth fifty fight final first flame flash flask fleet flesh float flock flood floor flour fluid flute focus foggy force forge forth forty forum found frame fresh fried front frost fruit fudge funny gamer gauge ghost giant given glass gleam globe glory glove goose grace grade grain grand grant grape graph grasp grass grave gravy great greed green greet grill grind groom group grove growl grown guard guess guest guide habit happy harsh haste hatch haunt heart heavy hedge hello hinge hobby holly honey honor horse hotel hound house human humor hurry ideal image index inner input irony issue ivory jelly jewel joint joker jolly judge juice juicy kayak knife knock known label labor large laser later laugh layer learn lease least leave lemon level lever light limit linen liver local lodge logic loose lorry lover lower loyal lucky lunar lunch magic major maker mango manor maple march marsh match mayor medal media melon mercy merry metal meter midst might minor minus mixer model moist money month moral motor mount mouse mouth movie muddy music naive nerve never night noble noise north novel nurse nutty ocean offer often olive onion opera orbit order organ other otter ought ounce outer owner oxide paint panel panic paper party pasta paste patch pause peace peach pearl pedal penny perch phase phone photo piano piece pilot pinch pitch pizza place plain plane plant plate plaza plead pluck plumb plump point polar porch pound power press price pride prime print prize probe proof proud prove pulse punch pupil puppy purse queen query quest quick quiet quilt quite quota quote radar radio rainy raise rally ranch range rapid raven razor reach react ready realm rebel refer relax relay reply rhyme ridge rifle right rigid rinse risky rival river roast robin robot rocky rough round route royal rugby ruler rural rusty saint salad salon sandy sauce scale scare scarf scene scent scone scoop scope score scout scrap screw sense serve seven shade shake shall shame shape share shark sharp sheep sheet shelf shell shift shine shiny shirt shock shore short shout shrug sight silly since skate skill skirt skull slate sleep slice slide slope smart smell smile smoke snack snake sneak solar solid solve sorry sound south space spare spark speak spear speed spell spend spice spicy spill spine spoon sport spray squad stack staff stage stair stake stale stamp stand stare start state steak steal steam steel steep stick still sting stone stool storm story stove straw strip stuck study stuff style sugar suite sunny super swamp swear sweat sweet swell swift swing sword table taken taste teach tempo thank theme thick thief thing think third thorn those three threw throw thumb tiger tight timer tired title toast today token tooth topic torch total touch tough towel tower toxic trace track trade trail train trait treat trend trial tribe trick tried troop truck truly trunk trust truth tulip tutor twice twist ultra uncle under union unite unity until upper upset urban usage usual valid value vapor vault verse video vigor vinyl viola virus visit vital vivid vocal voice voter wagon waist waste watch water weary weave wedge weigh weird whale wheat wheel where which while whisk white whole widen width witch woman world worry worse worst worth would wound woven wrist write wrong yacht yearn yeast yield young youth zebra'.split(' ');
+/* Seeded random for daily puzzles */
+function seeded(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const todayKey = () => { const d = new Date(); return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate(); };
+const dayNumber = () => Math.floor((Date.now() - new Date(2026, 0, 1).getTime()) / 864e5);
 
 /* ============================================================================
    CHESS
@@ -6000,6 +6293,846 @@ const Delve = (() => {
 })();
 Games.delve = Delve;
 
+/* ============================================================================
+   COLOUR CLASH: an original shedding card game in the UNO style (2-6 players, people or AI)
+   ============================================================================ */
+const Clash = (() => {
+  const COL = { r: { n: 'Red', h: '#d63a3a' }, y: { n: 'Yellow', h: '#e8b923' }, g: { n: 'Green', h: '#2fa05a' }, b: { n: 'Blue', h: '#2f6fd6' } };
+  const SYM = { skip: '⊘', rev: '⇄', d2: '+2', wild: '★', w4: '+4' };
+  let S, root, sid = 0, busy = false, shownFor = -1, lastCallT = null;
+  const humans = () => S.seats.filter(s => s.type === 'human').length;
+  function deck() {
+    const d = []; let id = 0;
+    for (const c of 'rygb') {
+      d.push({ c, v: '0', id: id++ });
+      for (let k = 0; k < 2; k++) { for (let n = 1; n <= 9; n++) d.push({ c, v: String(n), id: id++ }); ['skip', 'rev', 'd2'].forEach(v => d.push({ c, v, id: id++ })); }
+    }
+    for (let k = 0; k < 4; k++) { d.push({ c: 'w', v: 'wild', id: id++ }); d.push({ c: 'w', v: 'w4', id: id++ }); }
+    return Util.shuffle(d);
+  }
+  function newGame(seats) {
+    sid++; busy = false; shownFor = -1;
+    const d = deck(), hands = seats.map(() => d.splice(0, 7));
+    let top; do { top = d.shift(); if (top.c === 'w' || isNaN(+top.v)) { d.push(top); top = null; } } while (!top);
+    S = { seats, hands, deck: d, pile: [top], colour: top.c, turn: 0, dir: 1, drawn: null, called: seats.map(() => false), over: null, log: ['Match the colour or the symbol. First to empty their hand wins!'] };
+    next();
+  }
+  const log = m => { S.log.unshift(m); S.log = S.log.slice(0, 5); };
+  const top = () => S.pile[S.pile.length - 1];
+  const playable = c => c.c === 'w' || c.c === S.colour || c.v === top().v;
+  const nxt = (k = 1) => ((S.turn + S.dir * k) % S.seats.length + S.seats.length) % S.seats.length;
+  function draw(i, n) {
+    const got = [];
+    for (let k = 0; k < n; k++) {
+      if (!S.deck.length) { const t = S.pile.pop(); S.deck = Util.shuffle(S.pile); S.pile = [t]; if (!S.deck.length) break; }
+      got.push(S.deck.shift());
+    }
+    S.hands[i].push(...got); S.called[i] = false; Sfx.play('card');
+    return got;
+  }
+  async function next() {
+    if (!root || S.over) return;
+    const my = sid, seat = S.seats[S.turn]; S.drawn = null;
+    if (seat.type === 'human' && humans() > 1 && shownFor !== S.turn) { render(true); await curtain(`${seat.name}'s turn`, 'Pass the phone. Keep your cards hidden!'); if (my !== sid) return; }
+    if (seat.type === 'human') shownFor = S.turn;
+    render();
+    if (seat.type === 'ai') { await Util.sleep(Util.delay(800)); if (my === sid) aiTurn(); }
+  }
+  function bestColour(h) { const c = { r: 0, y: 0, g: 0, b: 0 }; h.forEach(x => { if (x.c !== 'w') c[x.c] += 1 + (isNaN(+x.v) ? .5 : 0); }); return Object.keys(c).sort((a, b) => c[b] - c[a])[0]; }
+  async function aiTurn() {
+    const my = sid, i = S.turn, h = S.hands[i];
+    let opts = h.filter(playable);
+    if (!opts.length) {
+      const [c] = draw(i, 1); log(`${S.seats[i].name} draws a card.`); render();
+      await Util.sleep(Util.delay(500)); if (my !== sid) return;
+      if (c && playable(c)) opts = [c]; else return advance();
+    }
+    const nextCount = S.hands[nxt()].length, easy = Settings.diff === 'easy';
+    const val = c => (c.c === 'w' ? (c.v === 'w4' ? (nextCount <= 2 ? 30 : -6) : -4) : 0) + (['skip', 'd2', 'rev'].includes(c.v) ? (nextCount <= 3 ? 14 : 4) : 0) + (isNaN(+c.v) ? 0 : +c.v * .4) + (c.c === S.colour ? 2 : 0) + (easy ? Math.random() * 20 : 0);
+    opts.sort((a, b) => val(b) - val(a));
+    play(i, opts[0], opts[0].c === 'w' ? bestColour(h.filter(x => x !== opts[0])) : null, !easy || Math.random() < .7);
+  }
+  function play(i, card, colour, callIt) {
+    const h = S.hands[i]; h.splice(h.indexOf(card), 1); S.pile.push(card);
+    S.colour = card.c === 'w' ? colour : card.c;
+    const seat = S.seats[i];
+    log(`${seat.name} plays ${label(card)}${card.c === 'w' ? ` and picks ${COL[colour].n}` : ''}.`);
+    Sfx.play(isNaN(+card.v) ? 'capture' : 'place');
+    if (!h.length) return win(i);
+    if (h.length === 1) {
+      if (seat.type === 'ai') { if (callIt) { S.called[i] = true; log(`📣 ${seat.name}: "Last card!"`); } else { log(`${seat.name} forgot to call "Last card!" and draws 2.`); draw(i, 2); } }
+      else return lastCall(i, card);
+    }
+    effects(card);
+  }
+  function effects(card) {
+    const n = S.seats.length;
+    if (card.v === 'rev') { S.dir *= -1; if (n === 2) { S.turn = nxt(); } }
+    if (card.v === 'skip') { log(`${S.seats[nxt()].name} is skipped.`); S.turn = nxt(); }
+    if (card.v === 'd2') { const v = nxt(); draw(v, 2); log(`${S.seats[v].name} draws 2 and misses a turn.`); S.turn = v; }
+    if (card.v === 'w4') { const v = nxt(); draw(v, 4); log(`${S.seats[v].name} draws 4 and misses a turn.`); S.turn = v; }
+    advance();
+  }
+  function advance() { S.turn = nxt(); next(); }
+  function lastCall(i, card) {
+    busy = true; const my = sid; render();
+    const bar = document.createElement('div');
+    bar.className = 'fixed inset-x-0 bottom-24 z-[55] flex justify-center';
+    bar.innerHTML = `<button class="btn-brass px-6 py-3 rounded-2xl text-lg animate-pulse">📣 Last card!</button>`;
+    document.body.appendChild(bar);
+    let done = false;
+    const finish = called => { if (done) return; done = true; bar.remove(); if (my !== sid) return; busy = false;
+      if (called) { S.called[i] = true; log(`📣 ${S.seats[i].name}: "Last card!"`); Sfx.play('match'); }
+      else { log(`😬 ${S.seats[i].name} forgot to call "Last card!" and draws 2.`); draw(i, 2); Sfx.play('lose'); }
+      effects(card); };
+    bar.querySelector('button').onclick = () => finish(true);
+    lastCallT = setTimeout(() => finish(false), 2600);
+  }
+  function win(i) {
+    const seat = S.seats[i]; S.over = `${seat.name} wins!`; shownFor = -2; render(); Sfx.play('win');
+    const pts = S.hands.reduce((a, h) => a + h.reduce((b, c) => b + (c.c === 'w' ? 50 : isNaN(+c.v) ? 20 : +c.v), 0), 0);
+    App.endGame('clash', seat.type === 'human' && S.seats.some(s => s.type === 'ai'), `${seat.name} wins!`, `${seat.name} played their last card. Cards left in other hands were worth <b>${pts}</b> points.`, () => newGame(S.seats));
+  }
+  const myTurn = () => S.seats[S.turn].type === 'human' && shownFor === S.turn && !busy && !S.over;
+  async function tap(id) {
+    if (!myTurn()) return;
+    const h = S.hands[S.turn], c = h.find(x => x.id === id); if (!c) return;
+    if (S.drawn && c !== S.drawn) return Util.toast('Play the card you drew, or keep it.');
+    if (!playable(c)) { Util.toast(`That doesn't match ${COL[S.colour].n} or ${label(top())}.`, 1500); Sfx.play('lose'); return; }
+    let colour = null;
+    if (c.c === 'w') { colour = await Util.choose('Pick a colour', '', Object.entries(COL).map(([k, v]) => ({ label: `<span style="color:${v.h}">●</span> ${v.n}`, value: k }))); if (!colour) return; }
+    play(S.turn, c, colour);
+  }
+  function drawBtn() {
+    if (!myTurn() || S.drawn) return;
+    if (S.hands[S.turn].some(playable)) Util.toast('You have a card you can play, but drawing is allowed.', 1500);
+    const [c] = draw(S.turn, 1); log(`${S.seats[S.turn].name} draws a card.`);
+    if (c && playable(c)) { S.drawn = c; render(); }
+    else advance();
+  }
+  function keep() { if (!myTurn() || !S.drawn) return; S.drawn = null; advance(); }
+  const label = c => c.c === 'w' ? (c.v === 'w4' ? 'Wild +4' : 'Wild') : `${COL[c.c].n} ${({ skip: 'Skip', rev: 'Reverse', d2: '+2' })[c.v] || c.v}`;
+  function cardHTML(c, o = {}) {
+    const w = o.w || 58, h = w * 1.45, wild = c.c === 'w';
+    const bg = wild ? 'conic-gradient(#d63a3a 0 25%,#e8b923 0 50%,#2fa05a 0 75%,#2f6fd6 0)' : COL[c.c].h;
+    const sym = SYM[c.v] || c.v;
+    return `<div ${o.attrs || ''} class="relative rounded-lg shrink-0 ${o.cls || ''}" style="width:${w}px;height:${h}px;background:#fff;padding:3px;box-shadow:0 3px 6px rgba(0,0,0,.5)${o.glow ? ',0 0 0 3px #f3d266' : ''};${o.dim ? 'filter:brightness(.55)' : ''}">
+      <div class="w-full h-full rounded-md relative overflow-hidden" style="background:${wild ? '#1b1b1b' : bg}">
+        <div class="absolute inset-[14%] rounded-[50%] flex items-center justify-center font-black" style="background:${wild ? bg : '#fff'};transform:rotate(-20deg);color:${wild ? '#fff' : bg};font-size:${w * .42}px;text-shadow:${wild ? '0 1px 2px #000' : 'none'}"><span style="transform:rotate(20deg)">${sym}</span></div>
+        <span class="absolute top-0.5 left-1 font-black text-white" style="font-size:${w * .22}px;text-shadow:0 1px 1px rgba(0,0,0,.6)">${sym}</span>
+      </div></div>`;
+  }
+  const backHTML = w => `<div class="rounded-lg shrink-0" style="width:${w}px;height:${w * 1.45}px;background:#fff;padding:3px;box-shadow:0 2px 4px rgba(0,0,0,.5)"><div class="w-full h-full rounded-md flex items-center justify-center font-black" style="background:radial-gradient(circle,#3a2316,#1b1b1b);color:#f3d266;font-size:${w * .3}px">CC</div></div>`;
+  function render(hideAll) {
+    if (!root) return;
+    const viewer = hideAll ? -1 : shownFor === -2 ? -2 : humans() === 1 ? S.seats.findIndex(s => s.type === 'human') : shownFor;
+    const mine = myTurn(), seat = S.seats[S.turn];
+    const opp = S.seats.map((s, i) => i === viewer ? '' : `<div class="bg-black/25 rounded-xl px-2 py-1.5 flex items-center gap-2 ${i === S.turn && !S.over ? 'ring-2 ring-amber-400/70' : ''}">
+      <span class="w-3 h-3 rounded-full" style="background:${s.col.hex}"></span><span class="text-xs text-amber-100">${s.name}${s.type === 'ai' ? ' 🤖' : ''}</span>
+      <span class="ml-auto text-xs font-bold ${S.hands[i].length === 1 ? 'text-red-300' : 'text-amber-300'}">🂠 ${S.hands[i].length}${S.called[i] && S.hands[i].length === 1 ? ' 📣' : ''}</span></div>`).join('');
+    const hand = viewer >= 0 ? S.hands[viewer] : viewer === -2 ? [] : [];
+    const n = Math.max(7, Math.min(hand.length, 9)), cw = Math.max(40, Math.min(64, Math.floor(((root.clientWidth || 360) - 44) / (n * .75 + .25))));
+    root.innerHTML = `
+      <div class="flex flex-col gap-3 mx-auto w-full" style="max-width:640px">
+        <div class="grid gap-1.5" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">${opp}</div>
+        <div class="felt-surface rounded-2xl p-4 flex items-center justify-center gap-6 relative">
+          <button onclick="Clash.draw()" class="${mine && !S.drawn ? 'hover:-translate-y-1 transition-transform' : 'cursor-default'}">${backHTML(70)}<div class="text-[10px] text-amber-100/60 mt-1">${S.deck.length} left</div></button>
+          <div>${cardHTML(top(), { w: 84 })}</div>
+          <div class="flex flex-col items-center gap-1"><div class="w-9 h-9 rounded-full border-4 border-white/80" style="background:${COL[S.colour].h}"></div><div class="text-[10px] text-amber-100/70">${COL[S.colour].n}</div><div class="text-lg text-amber-200" title="Direction">${S.dir === 1 ? '↻' : '↺'}</div></div>
+        </div>
+        <div class="text-center text-sm text-amber-100">${S.over || (seat.type === 'ai' ? `${seat.name} is playing…` : mine ? (S.drawn ? 'You drew a card you can play: play it or keep it' : 'Your turn: play a card or draw') : busy ? '' : `${seat.name}'s turn`)}</div>
+        ${viewer >= 0 ? Util.panel(`<div class="flex items-center gap-2 mb-2"><span class="w-3 h-3 rounded-full" style="background:${S.seats[viewer].col.hex}"></span><span class="font-display text-amber-200 text-sm">${S.seats[viewer].name}'s hand (${hand.length})</span>${mine && S.drawn ? `<span class="ml-auto">${Util.btn('Keep it', 'Clash.keep()')}</span>` : ''}</div>
+          <div class="flex flex-wrap justify-center" style="gap:4px 0;padding-left:${cw * .25}px">${hand.map(c => `<div style="margin-left:-${cw * .25}px">${cardHTML(c, { w: cw, glow: mine && (S.drawn ? c === S.drawn : playable(c)), dim: mine && !(S.drawn ? c === S.drawn : playable(c)), attrs: `onclick="Clash.tap(${c.id})"`, cls: 'cursor-pointer hover:-translate-y-1 transition-transform' })}</div>`).join('')}</div>`, '!p-3') : ''}
+        <div class="text-xs space-y-1 text-amber-50/70 text-center">${S.log.map((l, k) => `<div class="${k ? 'opacity-60' : ''}">${l}</div>`).join('')}</div>
+        <div class="flex justify-center">${Util.btn('New Game', 'Clash.restart()')}</div>
+      </div>`;
+  }
+  return {
+    async setup() { const seats = await Seats.choose({ title: 'Colour Clash', min: 2, max: 6, def: 3, note: 'Match colours and symbols, play action cards, and shout "Last card!" in time.' }); return seats ? { seats } : null; },
+    mount(el, o = {}) {
+      root = el;
+      if (o.resume) { sid++; busy = false; shownFor = -1; S = o.resume; S.drawn = null; next(); }
+      else newGame(o.seats || [{ name: 'Red', col: PCOL[0], type: 'human' }, { name: 'Green', col: PCOL[1], type: 'ai' }, { name: 'Yellow', col: PCOL[2], type: 'ai' }]);
+    },
+    snapshot() { return S && !S.over && !busy ? { ...S, drawn: null } : null; },
+    destroy() { sid++; clearTimeout(lastCallT); document.querySelectorAll('.fixed.bottom-24').forEach(e => e.remove()); root = null; },
+    tap, draw: drawBtn, keep,
+    restart() { newGame(S.seats); }, newGame() { newGame(S.seats); },
+    _test: { get S() { return S; } }
+  };
+})();
+Games.clash = Clash;
+
+/* ============================================================================
+   TILECRAFT: an original crossword tile game (2-4 players, people or AI)
+   ============================================================================ */
+const Tilecraft = (() => {
+  const N = 15, CENTER = 112;
+  const VAL = { a: 1, b: 3, c: 3, d: 2, e: 1, f: 4, g: 3, h: 3, i: 1, j: 9, k: 5, l: 2, m: 3, n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1, u: 2, v: 5, w: 4, x: 8, y: 4, z: 10 };
+  const DIST = { a: 9, b: 2, c: 2, d: 4, e: 12, f: 2, g: 3, h: 3, i: 8, j: 1, k: 1, l: 4, m: 2, n: 6, o: 8, p: 2, q: 1, r: 6, s: 4, t: 6, u: 4, v: 2, w: 2, x: 1, y: 2, z: 1 };
+  const PREM = (() => {
+    const p = Array(N * N).fill('');
+    const oct = { TW: [[0, 3]], TL: [[1, 6], [3, 3], [5, 5]], DW: [[1, 1], [2, 5], [4, 7]], DL: [[0, 0], [2, 2], [1, 4], [6, 6], [3, 7]] };
+    for (const [t, cells] of Object.entries(oct)) cells.forEach(([r, c]) => {
+      for (const [a, b] of [[r, c], [c, r]]) for (const [x, y] of [[a, b], [14 - a, b], [a, 14 - b], [14 - a, 14 - b]]) p[x * N + y] = t;
+    });
+    p[CENTER] = 'ST';
+    return p;
+  })();
+  let S, root, sid = 0, busy = false, sel = null, shownFor = -1;
+  const humans = () => S.seats.filter(s => s.type === 'human').length;
+  const bagFresh = () => { const b = []; for (const [l, n] of Object.entries(DIST)) for (let k = 0; k < n; k++) b.push({ l, v: VAL[l] }); b.push({ l: '', v: 0, blank: true }, { l: '', v: 0, blank: true }); return Util.shuffle(b); };
+  function newGame(seats) {
+    sid++; busy = false; sel = null; shownFor = -1;
+    const bag = bagFresh();
+    S = { seats, racks: seats.map(() => bag.splice(0, 7)), bag, board: Array(N * N).fill(null), scores: seats.map(() => 0), turn: 0, place: [], idle: 0, last: [], log: ['Make words across or down. The first word must cover the ★ in the middle.'], over: null };
+    next();
+  }
+  const log = m => { S.log.unshift(m); S.log = S.log.slice(0, 6); };
+
+  /* ---------- rules: score a set of new tiles [{i, l, v}] ---------- */
+  function evaluate(board, tiles) {
+    if (!tiles.length) return { ok: false, err: 'Place some tiles first.' };
+    const at = i => board[i] || tiles.find(t => t.i === i) || null;
+    const rows = new Set(tiles.map(t => Math.floor(t.i / N))), cols = new Set(tiles.map(t => t.i % N));
+    if (rows.size > 1 && cols.size > 1) return { ok: false, err: 'Tiles must be in one row or column.' };
+    const empty = board.every(x => !x);
+    if (empty && !tiles.some(t => t.i === CENTER)) return { ok: false, err: 'The first word must cover the ★.' };
+    if (empty && tiles.length < 2) return { ok: false, err: 'The first word needs at least two letters.' };
+    let dir = rows.size === 1 && tiles.length > 1 ? 1 : cols.size === 1 && tiles.length > 1 ? N : 0;
+    if (!dir) { const i = tiles[0].i, c = i % N; dir = (c > 0 && board[i - 1]) || (c < N - 1 && board[i + 1]) ? 1 : N; }
+    const stepOk = (i, d) => d === 1 ? Math.floor((i + d) / N) === Math.floor(i / N) && i + d >= 0 : i + d >= 0 && i + d < N * N;
+    const span = (i, d) => { let s = i; while (stepOk(s, -d) && at(s - d)) s -= d; const cells = []; let k = s; while (k >= 0 && k < N * N && at(k)) { cells.push(k); if (!stepOk(k, d)) break; k += d; } return cells; };
+    const sorted = tiles.map(t => t.i).sort((a, b) => a - b);
+    for (let k = sorted[0]; k <= sorted[sorted.length - 1]; k += dir) if (!at(k)) return { ok: false, err: 'Leave no gaps in your word.' };
+    const words = [];
+    const scoreWord = cells => {
+      let sum = 0, mult = 1, w = '';
+      cells.forEach(i => { const t = at(i), isNew = !board[i]; w += t.l; let v = t.v; if (isNew) { if (PREM[i] === 'DL') v *= 2; if (PREM[i] === 'TL') v *= 3; if (PREM[i] === 'DW' || PREM[i] === 'ST') mult *= 2; if (PREM[i] === 'TW') mult *= 3; } sum += v; });
+      return { w, s: sum * mult };
+    };
+    const main = span(tiles[0].i, dir);
+    if (main.length > 1) words.push(scoreWord(main));
+    const perp = dir === 1 ? N : 1;
+    tiles.forEach(t => { const c = span(t.i, perp); if (c.length > 1) words.push(scoreWord(c)); });
+    if (!words.length) return { ok: false, err: 'Words need at least two letters.' };
+    if (!empty) {
+      const touches = words.some(w => w.w.length > 0) && (main.some(i => board[i]) || tiles.some(t => { const c = span(t.i, perp); return c.length > 1; }));
+      if (!touches) return { ok: false, err: 'Your word must join onto the tiles already on the board.' };
+    }
+    const bad = words.filter(w => !Dict.has(w.w));
+    let score = words.reduce((a, w) => a + w.s, 0) + (tiles.length === 7 ? 50 : 0);
+    return { ok: !bad.length, err: bad.length ? `Not in the dictionary: ${bad.map(w => w.w.toUpperCase()).join(', ')}` : '', words, score, bingo: tiles.length === 7 };
+  }
+
+  /* ---------- AI move search ---------- */
+  let NEED = null; // letter counts for every dictionary word, worked out once
+  const MASK = new Map();
+  const needOf = w => { if (!NEED) NEED = new Map(); let n = NEED.get(w); if (!n) { n = {}; let m = 0; for (const ch of w) { n[ch] = (n[ch] || 0) + 1; m |= 1 << (ch.charCodeAt(0) - 97); } NEED.set(w, n); MASK.set(w, m); } return n; };
+  const bits = x => { let c = 0; while (x) { x &= x - 1; c++; } return c; };
+  function findMoves(rack, board, useBlanks = true) {
+    const rc = {}; let blanks = 0; rack.forEach(t => { if (t.blank) { if (useBlanks) blanks++; } else rc[t.l] = (rc[t.l] || 0) + 1; });
+    const rset = new Set(Object.keys(rc));
+    let rmask = 0; for (const ch in rc) rmask |= 1 << (ch.charCodeAt(0) - 97);
+    const bc = {}; let bn = 0; board.forEach(t => { if (t) { bc[t.l] = (bc[t.l] || 0) + 1; bn++; } });
+    const empty = bn === 0, maxLen = Math.min(15, rack.length + (empty ? 0 : 8));
+    const cand = [];
+    for (let L = 2; L <= maxLen; L++) for (const w of Dict.len(L)) {
+      if (!blanks && !rset.has(w[0]) && !(bc[w[0]]) ) continue;
+      if (blanks && L > rack.length + 3) continue;
+      const need = needOf(w);
+      let over = 0, fromRack = 0;
+      for (const ch in need) { const d = need[ch] - (rc[ch] || 0); if (d > 0) over += Math.max(0, d - (empty ? 0 : (bc[ch] || 0))); fromRack += Math.min(need[ch], rc[ch] || 0); }
+      if (over <= blanks && (fromRack > 0 || blanks)) {
+        let def = 0; for (const ch in need) def += Math.max(0, need[ch] - (rc[ch] || 0));
+        cand.push({ w, need, m: MASK.get(w), rackOnly: def <= blanks });
+      }
+    }
+    const anchor = i => { const r = Math.floor(i / N), c = i % N; return (c > 0 && board[i - 1]) || (c < N - 1 && board[i + 1]) || (r > 0 && board[i - N]) || (r < N - 1 && board[i + N]); };
+    const moves = [], seen = new Set();
+    const tryLine = (cells, perpStep) => {
+      if (!empty && !cells.some(i => board[i] || anchor(i))) return;
+      const lc = {}; let lineTiles = 0, lmask = rmask; cells.forEach(i => { if (board[i]) { lc[board[i].l] = (lc[board[i].l] || 0) + 1; lineTiles++; lmask |= 1 << (board[i].l.charCodeAt(0) - 97); } });
+      // which letters may go in each empty square without making a bad crossing word
+      const cross = cells.map(i => {
+        if (board[i]) return null;
+        let up = '', dn = '', k = i - perpStep;
+        const inLine = (a, b) => perpStep === 1 ? Math.floor(a / N) === Math.floor(b / N) : true;
+        while (k >= 0 && k < N * N && inLine(k, i) && board[k]) { up = board[k].l + up; k -= perpStep; }
+        k = i + perpStep;
+        while (k >= 0 && k < N * N && inLine(k, i) && board[k]) { dn += board[k].l; k += perpStep; }
+        if (!up && !dn) return undefined;
+        const ok = new Set(); for (const ch of 'abcdefghijklmnopqrstuvwxyz') if (Dict.has(up + ch + dn)) ok.add(ch);
+        return ok;
+      });
+      // word slots: no tile straight before or after, at least one empty square, joined to the board
+      const slots = {};
+      for (let L = 2; L <= N; L++) for (let st = 0; st + L <= N; st++) {
+        if (st > 0 && board[cells[st - 1]]) continue;
+        if (st + L < N && board[cells[st + L]]) continue;
+        let hasEmpty = false, link = empty, fixed = [];
+        for (let k = st; k < st + L; k++) { const i = cells[k]; if (board[i]) { fixed.push([k - st, board[i].l]); link = true; } else { hasEmpty = true; if (cross[k] !== undefined) link = true; } }
+        if (!hasEmpty || !link) continue;
+        if (empty && !cells.slice(st, st + L).includes(CENTER)) continue;
+        (slots[L] = slots[L] || []).push({ st, fixed });
+      }
+      for (const c of cand) {
+        const out = c.m & ~lmask; if (out && (!blanks || bits(out) > blanks)) continue;
+        const w = c.w, L = w.length, sl = slots[L]; if (!sl) continue;
+        if (!c.rackOnly) {
+          if (!lineTiles) continue;
+          let over = 0; for (const ch in c.need) over += Math.max(0, c.need[ch] - (rc[ch] || 0) - (lc[ch] || 0));
+          if (over > blanks) continue;
+        }
+        for (const { st, fixed } of sl) {
+          let ok = true;
+          for (const [o, ch] of fixed) if (w[o] !== ch) { ok = false; break; }
+          if (!ok) continue;
+          const avail = { ...rc }; let bl = blanks; const tiles = [];
+          for (let k = 0; k < L; k++) {
+            const i = cells[st + k]; if (board[i]) continue;
+            const ch = w[k], cs = cross[st + k];
+            if (cs && !cs.has(ch)) { ok = false; break; }
+            if (avail[ch]) { avail[ch]--; tiles.push({ i, l: ch, v: VAL[ch] }); }
+            else if (bl) { bl--; tiles.push({ i, l: ch, v: 0, blank: true }); }
+            else { ok = false; break; }
+          }
+          if (!ok) continue;
+          const key = tiles.map(t => t.i + t.l).join();
+          if (seen.has(key)) continue; seen.add(key);
+          const ev = evaluate(board, tiles);
+          if (ev.ok) moves.push({ tiles, score: ev.score, word: ev.words[0].w });
+        }
+      }
+    };
+    for (let r = 0; r < N; r++) tryLine([...Array(N)].map((_, c) => r * N + c), N);
+    if (!empty) for (let c = 0; c < N; c++) tryLine([...Array(N)].map((_, r) => r * N + c), 1);
+    return moves;
+  }
+
+  /* ---------- turn flow ---------- */
+  async function next() {
+    if (!root || S.over) return;
+    const my = sid, seat = S.seats[S.turn]; sel = null;
+    if (seat.type === 'human' && humans() > 1 && shownFor !== S.turn) {
+      render(true); await curtain(`${seat.name}'s turn`, 'Pass the phone. Keep your letters hidden!'); if (my !== sid) return;
+    }
+    if (seat.type === 'human') shownFor = S.turn;
+    render();
+    if (seat.type === 'ai') { await Util.sleep(Util.delay(500)); if (my === sid) aiTurn(); }
+  }
+  async function aiTurn() {
+    const my = sid; busy = true; render();
+    await Util.sleep(30);
+    const rack = S.racks[S.turn];
+    let moves = findMoves(rack, S.board, false);
+    const hasBlank = rack.some(t => t.blank);
+    if (hasBlank && (!moves.length || (Settings.diff === 'hard' && Math.max(...moves.map(m => m.score)) < 30))) moves = moves.concat(findMoves(rack, S.board, true));
+    if (my !== sid) return;
+    busy = false;
+    if (!moves.length) {
+      if (S.bag.length >= 7) { const back = rack.splice(0, rack.length); S.bag.push(...back); Util.shuffle(S.bag); rack.push(...S.bag.splice(0, 7)); log(`${S.seats[S.turn].name} swaps letters.`); }
+      else log(`${S.seats[S.turn].name} passes.`);
+      S.idle++; return endTurn();
+    }
+    moves.sort((a, b) => b.score - a.score);
+    const pick = Settings.diff === 'hard' ? moves[0] : Settings.diff === 'easy' ? moves[Math.floor(moves.length * (.5 + Math.random() * .45))] : moves[Math.floor(Math.min(moves.length - 1, Math.random() * Math.max(1, moves.length * .15)))];
+    commit(pick.tiles);
+  }
+  function commit(tiles) {
+    const ev = evaluate(S.board, tiles), i = S.turn, seat = S.seats[i], rack = S.racks[i];
+    tiles.forEach(t => {
+      const k = t.blank ? rack.findIndex(x => x.blank) : rack.findIndex(x => !x.blank && x.l === t.l);
+      rack.splice(k, 1);
+      S.board[t.i] = { l: t.l, v: t.blank ? 0 : VAL[t.l], blank: !!t.blank };
+    });
+    S.scores[i] += ev.score; S.last = tiles.map(t => t.i); S.place = []; S.idle = 0;
+    rack.push(...S.bag.splice(0, 7 - rack.length));
+    Sfx.play(ev.bingo ? 'win' : 'place');
+    log(`${seat.name} plays ${ev.words.map(w => w.w.toUpperCase()).join(', ')} for ${ev.score}${ev.bingo ? ' (all seven tiles: +50!)' : ''}.`);
+    if (!rack.length && !S.bag.length) return finish(i);
+    endTurn();
+  }
+  function endTurn() {
+    if (S.idle >= 6) return finish(null);
+    S.turn = (S.turn + 1) % S.seats.length; next();
+  }
+  function finish(out) {
+    const rv = S.racks.map(r => r.reduce((a, t) => a + t.v, 0));
+    S.seats.forEach((_, j) => { if (j !== out) S.scores[j] -= rv[j]; });
+    if (out !== null) S.scores[out] += rv.reduce((a, v, j) => j === out ? a : a + v, 0);
+    const best = Math.max(...S.scores), wi = S.scores.indexOf(best), w = S.seats[wi];
+    S.over = `${w.name} wins!`; shownFor = -2; render(); Sfx.play('win');
+    const table = S.seats.map((s, j) => `<div class="flex justify-between"><span>${s.name}</span><b class="text-amber-300">${S.scores[j]}</b></div>`).join('');
+    App.endGame('tilecraft', w.type === 'human' && S.seats.some(s => s.type === 'ai'), `${w.name} wins!`, `<div class="text-left space-y-1">${table}</div>`, () => newGame(S.seats));
+  }
+
+  /* ---------- human controls ---------- */
+  const myTurn = () => S.seats[S.turn].type === 'human' && !busy && !S.over && shownFor === S.turn;
+  function pickRack(k) { if (!myTurn() || S.place.some(p => p.k === k)) return; sel = sel === k ? null : k; Sfx.play('tap'); render(); }
+  async function cell(i) {
+    if (!myTurn()) return;
+    const pi = S.place.findIndex(p => p.i === i);
+    if (pi >= 0) { S.place.splice(pi, 1); Sfx.play('card'); return render(); }
+    if (S.board[i] || sel === null) return;
+    const used = new Set(S.place.map(p => p.k));
+    if (used.has(sel)) { sel = null; return render(); }
+    const t = S.racks[S.turn][sel]; let l = t.l;
+    if (t.blank) {
+      const k = sel;
+      l = await Util.choose('Blank tile', 'Which letter should it be?', 'abcdefghijklmnopqrstuvwxyz'.split('').map(c => ({ label: c.toUpperCase(), value: c })));
+      if (!l) return; sel = k;
+    }
+    S.place.push({ i, k: sel, l, v: t.blank ? 0 : t.v, blank: !!t.blank });
+    Sfx.play('place');
+    sel = null;
+    render();
+  }
+  function play() {
+    if (!myTurn()) return;
+    const ev = evaluate(S.board, S.place);
+    if (!ev.ok) { Util.toast(ev.err, 2600); Sfx.play('lose'); return; }
+    commit(S.place.map(p => ({ i: p.i, l: p.l, v: p.v, blank: p.blank })));
+  }
+  function recall() { if (!myTurn()) return; S.place = []; sel = null; render(); }
+  function shuffle() { if (!myTurn()) return; S.place = []; sel = null; Util.shuffle(S.racks[S.turn]); Sfx.play('card'); render(); }
+  async function swap() {
+    if (!myTurn()) return;
+    if (S.bag.length < 7) return Util.toast('You can only swap while there are at least 7 tiles in the bag.');
+    const ok = await Util.choose('Swap all your letters?', 'You put your letters back in the bag, draw seven new ones and miss this turn.', [{ label: 'Swap them', value: 1, primary: true }, { label: 'Cancel', value: 0 }]);
+    if (!ok) return;
+    const r = S.racks[S.turn]; S.place = []; S.bag.push(...r.splice(0)); Util.shuffle(S.bag); r.push(...S.bag.splice(0, 7));
+    log(`${S.seats[S.turn].name} swaps letters.`); S.idle++; Sfx.play('card'); endTurn();
+  }
+  async function pass() {
+    if (!myTurn()) return;
+    const ok = await Util.choose('Pass this turn?', 'Six scoreless turns in a row ends the game.', [{ label: 'Pass', value: 1, primary: true }, { label: 'Cancel', value: 0 }]);
+    if (!ok) return; S.place = []; log(`${S.seats[S.turn].name} passes.`); S.idle++; endTurn();
+  }
+
+  function render(hideAll) {
+    if (!root) return;
+    const viewer = hideAll ? -1 : shownFor === -2 ? -2 : humans() === 1 ? S.seats.findIndex(s => s.type === 'human') : shownFor;
+    const mine = myTurn(), cw = Math.floor(Math.min((root.clientWidth || 360) - 6, 600) / N);
+    const ev = mine && S.place.length ? evaluate(S.board, S.place) : null;
+    const plabel = { TW: '3W', DW: '2W', TL: '3L', DL: '2L', ST: '★' }, pcol = { TW: '#b3121f', DW: '#d9737d', TL: '#1d5fa8', DL: '#7fb2e5', ST: '#d9737d' };
+    let cells = '';
+    for (let i = 0; i < N * N; i++) {
+      const b = S.board[i], p = S.place.find(x => x.i === i), t = b || p, prem = PREM[i];
+      const inner = t ? `<div class="absolute inset-[1px] rounded-[3px] flex items-center justify-center font-bold" style="background:linear-gradient(160deg,#f6e3b4,#dcbd7e);color:#2a1a10;box-shadow:0 1px 1px rgba(0,0,0,.5)${p ? ',0 0 0 2px #f3d266' : S.last.includes(i) ? ',inset 0 0 0 2px rgba(179,18,31,.55)' : ''};font-size:${cw * .55}px">${t.l.toUpperCase()}<span class="absolute bottom-0 right-[2px] font-semibold" style="font-size:${cw * .26}px">${t.blank ? '' : t.v}</span></div>`
+        : prem ? `<span class="font-bold text-white/90" style="font-size:${cw * .32}px">${plabel[prem]}</span>` : '';
+      cells += `<div onclick="Tilecraft.cell(${i})" class="relative flex items-center justify-center" style="background:${t ? '#2a1a10' : prem ? pcol[prem] : '#1e623f'};border:1px solid rgba(0,0,0,.25)">${inner}</div>`;
+    }
+    const rack = viewer >= 0 ? S.racks[viewer] : [];
+    const rackHTML = rack.map((t, k) => {
+      const used = mine && S.place.some(p => p.k === k);
+      return `<button onclick="Tilecraft.pick(${k})" class="relative rounded-md font-bold flex items-center justify-center" style="width:42px;height:46px;font-size:22px;background:linear-gradient(160deg,#f6e3b4,#dcbd7e);color:#2a1a10;box-shadow:0 3px 0 #8f6a2a${sel === k && mine ? ',0 0 0 3px #f3d266' : ''};${used ? 'opacity:.25' : ''}">${t.blank ? '' : t.l.toUpperCase()}<span class="absolute bottom-0.5 right-1 text-[10px]">${t.blank ? '' : t.v}</span></button>`;
+    }).join('');
+    const seat = S.seats[S.turn];
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-3 items-center lg:items-start justify-center">
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex flex-wrap gap-1.5 justify-center">${S.seats.map((s, j) => `<span class="stat-chip ${j === S.turn && !S.over ? '!border-amber-300' : ''}"><span class="inline-block w-2.5 h-2.5 rounded-full mr-1" style="background:${s.col.hex}"></span>${s.name}${s.type === 'ai' ? ' 🤖' : ''}: <b>${S.scores[j]}</b></span>`).join('')}<span class="stat-chip">👜 ${S.bag.length}</span></div>
+          <div class="grid" style="grid-template-columns:repeat(${N},${cw}px);grid-template-rows:repeat(${N},${cw}px);border:5px solid #4a2e1d;border-radius:6px;box-shadow:0 10px 24px rgba(0,0,0,.6)">${cells}</div>
+          <div class="text-sm min-h-[20px] text-center ${ev && !ev.ok ? 'text-red-300' : 'text-amber-100'}">${S.over || (busy || seat.type === 'ai' ? `${seat.name} is thinking…` : !mine ? `${seat.name}'s turn` : ev ? (ev.ok ? `${ev.words.map(w => w.w.toUpperCase()).join(' + ')} scores <b class="text-amber-300">${ev.score}</b>` : ev.err) : 'Tap a letter, then tap a square')}</div>
+          ${viewer >= 0 ? `<div class="flex gap-1.5 justify-center flex-wrap">${rackHTML}</div>` : ''}
+          ${mine ? `<div class="flex flex-wrap gap-2 justify-center">${Util.btn('▶ Play', 'Tilecraft.play()', 'brass', ev && ev.ok ? '' : 'opacity-50')}${Util.btn('↩ Recall', 'Tilecraft.recall()')}${Util.btn('🔀 Shuffle', 'Tilecraft.shuffle()')}${Util.btn('🔁 Swap', 'Tilecraft.swap()')}${Util.btn('⏭ Pass', 'Tilecraft.pass()')}</div>` : ''}
+        </div>
+        ${Util.panel(`<div class="text-xs space-y-1 text-amber-50/80">${S.log.map((l, k) => `<div class="${k ? 'opacity-60' : 'text-amber-200'}">${l}</div>`).join('')}</div>
+          <div class="mt-3">${Util.btn('New Game', 'Tilecraft.restart()')}</div>`, 'w-full lg:w-64 !p-3')}
+      </div>`;
+  }
+  return {
+    async setup() { const seats = await Seats.choose({ title: 'Tilecraft', min: 2, max: 4, def: 2, note: 'Each person keeps their letters hidden behind a pass-the-phone screen.' }); return seats ? { seats } : null; },
+    mount(el, o = {}) {
+      root = el;
+      withDict(el, () => {
+        if (o.resume) { sid++; busy = false; sel = null; shownFor = -1; S = o.resume; S.place = []; next(); }
+        else newGame(o.seats || [{ name: 'Red', col: PCOL[0], type: 'human' }, { name: 'Green', col: PCOL[1], type: 'ai' }]);
+      });
+    },
+    snapshot() { return S && !S.over ? { ...S, place: [] } : null; },
+    destroy() { sid++; root = null; },
+    pick: pickRack, cell, play, recall, shuffle, swap, pass,
+    restart() { newGame(S.seats); }, newGame() { newGame(S.seats); },
+    _test: { get S() { return S; }, findMoves, evaluate }
+  };
+})();
+Games.tilecraft = Tilecraft;
+
+/* ============================================================================
+   WORD LOCK: crack the five-letter word in six guesses (daily, practice, or set one for a friend)
+   ============================================================================ */
+const WordLock = (() => {
+  let S, root, onKey = null, busy = false;
+  const ORDER = (() => { const r = seeded(20261119), a = WORD_ANSWERS.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; })();
+  const dailyWord = () => ORDER[((dayNumber() % ORDER.length) + ORDER.length) % ORDER.length];
+
+  function start(mode, answer) {
+    busy = false;
+    S = { mode, answer, guesses: [], cur: '', over: null, day: mode === 'daily' ? todayKey() : null };
+    if (mode === 'daily') { const d = Store.get('wl_daily', null); if (d && d.day === S.day) { S.guesses = d.guesses; S.over = d.over; } }
+    render();
+  }
+  function score(g, a) {
+    const res = Array(5).fill('x'), left = {};
+    for (let i = 0; i < 5; i++) { if (g[i] === a[i]) res[i] = 'g'; else left[a[i]] = (left[a[i]] || 0) + 1; }
+    for (let i = 0; i < 5; i++) if (res[i] !== 'g' && left[g[i]]) { res[i] = 'y'; left[g[i]]--; }
+    return res;
+  }
+  function key(k) {
+    if (!S || S.over || busy) return;
+    if (k === 'enter') return submit();
+    if (k === 'back') { S.cur = S.cur.slice(0, -1); return render(); }
+    if (/^[a-z]$/.test(k) && S.cur.length < 5) { S.cur += k; Sfx.play('tap'); render(); }
+  }
+  function submit() {
+    if (S.cur.length < 5) return shake('Not enough letters');
+    if (!Dict.has(S.cur)) return shake('Not in the word list');
+    S.guesses.push(S.cur); S.cur = '';
+    const win = S.guesses[S.guesses.length - 1] === S.answer;
+    Sfx.play(win ? 'win' : 'card');
+    if (win || S.guesses.length === 6) {
+      S.over = win ? 'won' : 'lost';
+      if (S.mode !== 'friend') {
+        const st = Store.get('wl_stats', { played: 0, won: 0, streak: 0, best: 0, dist: [0, 0, 0, 0, 0, 0] });
+        st.played++; if (win) { st.won++; st.streak++; st.best = Math.max(st.best, st.streak); st.dist[S.guesses.length - 1]++; } else st.streak = 0;
+        Store.set('wl_stats', st);
+      }
+    }
+    if (S.mode === 'daily') Store.set('wl_daily', { day: S.day, guesses: S.guesses, over: S.over });
+    render();
+    if (S.over) setTimeout(() => endCard(), 900);
+  }
+  function shake(msg) { Util.toast(msg, 1300); Sfx.play('lose'); const row = root && root.querySelector('[data-cur]'); if (row) { row.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-8px)' }, { transform: 'translateX(8px)' }, { transform: 'translateX(0)' }], { duration: 260 }); } }
+  function grid() { return S.guesses.map(g => score(g, S.answer).map(r => r === 'g' ? '🟩' : r === 'y' ? '🟨' : '⬛').join('')).join('\n'); }
+  function endCard() {
+    const won = S.over === 'won', st = Store.get('wl_stats', null);
+    const stats = S.mode !== 'friend' && st ? `<div class="grid grid-cols-4 gap-2 my-3 text-center">${[['Played', st.played], ['Win %', st.played ? Math.round(st.won / st.played * 100) : 0], ['Streak', st.streak], ['Best', st.best]].map(([l, v]) => `<div><div class="text-xl font-bold text-amber-300">${v}</div><div class="text-[10px] text-amber-100/60">${l}</div></div>`).join('')}</div>` : '';
+    const msg = `${won ? `Cracked in ${S.guesses.length}!` : `The word was <b class="text-amber-300">${S.answer.toUpperCase()}</b>.`}${stats}<pre class="text-lg leading-tight">${grid()}</pre>`;
+    App.endGame('wordlock', won && S.mode !== 'friend', won ? 'Unlocked! 🔓' : 'Locked out 🔒', msg, () => S.mode === 'daily' ? start('practice', pickRandom()) : S.mode === 'friend' ? friendSetup() : start('practice', pickRandom()));
+  }
+  const pickRandom = () => WORD_ANSWERS[Math.floor(Math.random() * WORD_ANSWERS.length)];
+  async function friendSetup() {
+    root.innerHTML = '';
+    await curtain('Word setter', 'Hand the phone to whoever is picking the secret word. The guesser looks away!');
+    const w = await askWord(); if (w === null) return App.goHome();
+    await curtain('Over to the guesser', 'Pass the phone to the person guessing. Six tries to crack it.');
+    start('friend', w);
+  }
+  function askWord() {
+    return new Promise(res => {
+      const ov = document.createElement('div');
+      ov.className = 'fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4';
+      ov.innerHTML = `<div class="walnut-panel rounded-2xl p-5 max-w-sm w-full text-center border-2 border-amber-500/40">
+        <h3 class="font-display text-xl text-amber-300">Pick a secret word</h3><p class="text-xs text-amber-100/60 mb-3">Any five-letter word in the dictionary.</p>
+        <input id="wl-set" type="password" maxlength="5" autocomplete="off" autocapitalize="none" class="w-full text-center text-2xl tracking-[0.5em] uppercase rounded-lg bg-black/40 border border-amber-500/40 p-2 text-amber-50">
+        <p id="wl-err" class="text-xs text-red-300 h-4 mt-1"></p>
+        <div class="flex gap-2 justify-center mt-2"><button data-a="x" class="btn-wood px-4 py-2 rounded-xl text-sm">Cancel</button><button data-a="ok" class="btn-brass px-5 py-2 rounded-xl text-sm">Lock it in</button></div></div>`;
+      const inp = ov.querySelector('input');
+      ov.addEventListener('click', e => {
+        const a = e.target.closest('button')?.dataset.a; if (!a) return;
+        if (a === 'x') { ov.remove(); return res(null); }
+        const w = inp.value.toLowerCase().trim();
+        if (!/^[a-z]{5}$/.test(w) || !Dict.has(w)) { ov.querySelector('#wl-err').textContent = 'That needs to be a real five-letter word.'; return; }
+        ov.remove(); res(w);
+      });
+      document.body.appendChild(ov); setTimeout(() => inp.focus(), 50);
+    });
+  }
+  function render() {
+    if (!root || !S) return;
+    const keyState = {};
+    S.guesses.forEach(g => score(g, S.answer).forEach((r, i) => { const c = g[i], p = keyState[c]; if (r === 'g' || (r === 'y' && p !== 'g') || (!p)) keyState[c] = r === 'x' && p ? p : r; }));
+    const col = r => r === 'g' ? '#2f8f4e' : r === 'y' ? '#c9a227' : '#3a3330';
+    let rows = '';
+    for (let r = 0; r < 6; r++) {
+      const g = S.guesses[r], isCur = !g && r === S.guesses.length && !S.over, sc = g ? score(g, S.answer) : null;
+      rows += `<div class="grid grid-cols-5 gap-1.5" ${isCur ? 'data-cur' : ''}>${[0, 1, 2, 3, 4].map(i => {
+        const ch = g ? g[i] : isCur ? (S.cur[i] || '') : '';
+        return `<div class="flex items-center justify-center font-bold uppercase rounded-md" style="aspect-ratio:1;font-size:clamp(20px,7vw,30px);${g ? `background:${col(sc[i])};color:#fff;border:2px solid ${col(sc[i])}` : `background:rgba(0,0,0,.25);color:#fbf7ee;border:2px solid ${ch ? 'rgba(243,210,102,.7)' : 'rgba(212,175,55,.25)'}`}">${ch}</div>`;
+      }).join('')}</div>`;
+    }
+    const kb = ['qwertyuiop', 'asdfghjkl', '+zxcvbnm-'].map(line => `<div class="flex gap-1 justify-center">${line.split('').map(c => {
+      if (c === '+') return `<button onclick="WordLock.key('enter')" class="rounded-md px-2 text-xs font-bold btn-brass" style="height:52px;min-width:52px">ENTER</button>`;
+      if (c === '-') return `<button onclick="WordLock.key('back')" class="rounded-md px-2 font-bold btn-wood" style="height:52px;min-width:46px">⌫</button>`;
+      const st = keyState[c];
+      return `<button onclick="WordLock.key('${c}')" class="rounded-md font-bold uppercase" style="height:52px;flex:1;max-width:40px;background:${st ? col(st) : '#6b5340'};color:#fff;${st === 'x' ? 'opacity:.55' : ''}">${c}</button>`;
+    }).join('')}</div>`).join('');
+    const title = S.mode === 'daily' ? `Daily puzzle #${dayNumber() + 1}` : S.mode === 'friend' ? "A friend's word" : 'Practice';
+    root.innerHTML = `
+      <div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:420px">
+        <div class="flex gap-2 flex-wrap justify-center"><span class="stat-chip">${title}</span>
+          ${Util.btn('📅 Daily', "WordLock.mode('daily')", S.mode === 'daily' ? 'brass' : 'wood')}${Util.btn('🎲 Practice', "WordLock.mode('practice')", S.mode === 'practice' ? 'brass' : 'wood')}${Util.btn('👥 Friend', "WordLock.mode('friend')", S.mode === 'friend' ? 'brass' : 'wood')}</div>
+        <div class="flex flex-col gap-1.5 w-full px-6">${rows}</div>
+        ${S.over ? `<div class="text-center text-sm">${S.over === 'won' ? '🔓 Unlocked!' : `🔒 It was <b class="text-amber-300">${S.answer.toUpperCase()}</b>`} ${Util.btn('📋 Copy result', 'WordLock.copy()')}</div>` : ''}
+        <div class="flex flex-col gap-1.5 w-full">${kb}</div>
+        <p class="text-[11px] text-amber-100/50 text-center">🟩 right letter, right spot · 🟨 in the word, wrong spot · ⬛ not in the word</p>
+      </div>`;
+  }
+  return {
+    async setup() {
+      const v = await Util.choose('🔒 Word Lock', "Crack the five-letter word in six guesses.", [{ label: '📅 Daily puzzle', value: 'daily', primary: true }, { label: '🎲 Practice', value: 'practice' }, { label: '👥 Set a word for a friend', value: 'friend' }, { label: 'Cancel', value: null }]);
+      return v ? { wl: v } : null;
+    },
+    mount(el, o = {}) {
+      root = el;
+      onKey = e => { if (e.ctrlKey || e.metaKey || e.altKey || document.querySelector('.fixed.inset-0 input')) return; const k = e.key === 'Enter' ? 'enter' : e.key === 'Backspace' ? 'back' : e.key.toLowerCase(); if (k === 'enter' || k === 'back' || /^[a-z]$/.test(k)) { e.preventDefault(); key(k); } };
+      document.addEventListener('keydown', onKey);
+      withDict(el, () => {
+        if (o.resume) { S = o.resume; render(); }
+        else if (o.wl === 'friend') friendSetup();
+        else if (o.wl === 'practice') start('practice', pickRandom());
+        else start('daily', dailyWord());
+      });
+    },
+    snapshot() { return S && !S.over && S.mode !== 'daily' ? S : null; },
+    destroy() { document.removeEventListener('keydown', onKey); root = null; },
+    key,
+    mode(m) { if (m === 'daily') start('daily', dailyWord()); else if (m === 'practice') start('practice', pickRandom()); else friendSetup(); },
+    copy() { const t = `Word Lock ${S.mode === 'daily' ? '#' + (dayNumber() + 1) : ''} ${S.over === 'won' ? S.guesses.length : 'X'}/6\n${grid()}\nkralnugames.com/grand-compendium`; try { navigator.clipboard.writeText(t).then(() => Util.toast('Copied!'), () => Util.toast('Couldn’t copy here.')); } catch (e) { Util.toast('Couldn’t copy here.'); } },
+    newGame() { start('practice', pickRandom()); },
+    _test: { get S() { return S; }, score, dailyWord }
+  };
+})();
+Games.wordlock = WordLock;
+
+/* ============================================================================
+   WORD WHEEL: make words of 4+ letters from nine, always using the centre letter
+   ============================================================================ */
+const WordWheel = (() => {
+  let S, root, onKey = null;
+  const counts = w => { const c = {}; for (const ch of w) c[ch] = (c[ch] || 0) + 1; return c; };
+  function make(rng) {
+    const nines = Dict.len(9).filter(w => (w.match(/[aeiou]/g) || []).length >= 3 && !/(.)\1\1/.test(w));
+    for (let t = 0; t < 60; t++) {
+      const base = nines[Math.floor(rng() * nines.length)], bc = counts(base);
+      const letters = base.split(''); for (let i = 8; i > 0; i--) { const j = Math.floor(rng() * (i + 1)); [letters[i], letters[j]] = [letters[j], letters[i]]; }
+      const center = letters[4];
+      const sols = [];
+      for (let L = 4; L <= 9; L++) for (const w of Dict.len(L)) {
+        if (!w.includes(center)) continue;
+        const c = counts(w); let ok = true; for (const ch in c) if ((bc[ch] || 0) < c[ch]) { ok = false; break; }
+        if (ok) sols.push(w);
+      }
+      if (sols.length >= 18 && sols.length <= 140) return { letters, center, sols, nine: sols.filter(w => w.length === 9) };
+    }
+    return null;
+  }
+  function start(daily) {
+    const rng = daily ? seeded(todayKey() * 7 + 3) : Math.random;
+    const p = make(rng);
+    S = { ...p, daily, found: [], cur: [], over: false, day: daily ? todayKey() : null, rewarded: false };
+    if (daily) { const d = Store.get('ww_daily', null); if (d && d.day === S.day) { S.found = d.found; S.over = d.over; S.rewarded = d.rewarded; } }
+    render();
+  }
+  const pct = () => S.found.length / S.sols.length;
+  const rank = () => { const p = pct(); return p >= 1 ? '🏆 Every word!' : p >= .75 ? '🌟 Excellent' : p >= .5 ? '✨ Very good' : p >= .25 ? '👍 Good' : '🌱 Getting started'; };
+  function tap(k) { if (S.over || S.cur.includes(k)) return; S.cur.push(k); Sfx.play('tap'); render(); }
+  function back() { S.cur.pop(); render(); }
+  function clear() { S.cur = []; render(); }
+  function shuffle() {
+    const outer = [0, 1, 2, 3, 5, 6, 7, 8].map(i => S.letters[i]); Util.shuffle(outer);
+    [0, 1, 2, 3, 5, 6, 7, 8].forEach((i, k) => S.letters[i] = outer[k]); S.cur = []; render();
+  }
+  function enter() {
+    const w = S.cur.map(k => S.letters[k]).join(''); S.cur = [];
+    if (w.length < 4) { Util.toast('Words need at least 4 letters.'); return render(); }
+    if (!w.includes(S.center)) { Util.toast(`Every word must use the centre letter, ${S.center.toUpperCase()}.`); return render(); }
+    if (S.found.includes(w)) { Util.toast('Already found!'); return render(); }
+    if (!S.sols.includes(w)) { Util.toast('Not in the word list.'); Sfx.play('lose'); return render(); }
+    S.found.push(w); S.found.sort();
+    Sfx.play(w.length === 9 ? 'win' : 'match');
+    if (w.length === 9) Util.toast('🌟 The nine-letter word!', 2500);
+    save(); render();
+    if (!S.rewarded && pct() >= .75) { S.rewarded = true; save(); App.recordWin('wordwheel'); Util.toast('🌟 Excellent! That counts as a win in your Trophy Cabinet.', 3000); }
+  }
+  function save() { if (S.daily) Store.set('ww_daily', { day: S.day, found: S.found, over: S.over, rewarded: S.rewarded }); }
+  async function reveal() {
+    const ok = await Util.choose('Reveal all the words?', 'This ends the puzzle.', [{ label: 'Reveal', value: 1, primary: true }, { label: 'Keep going', value: 0 }]);
+    if (!ok) return; S.over = true; save(); render();
+  }
+  function wheel() {
+    const pos = [0, 1, 2, 5, 8, 7, 6, 3], R = 39;
+    const btn = (k, x, y, center) => {
+      const used = S.cur.includes(k);
+      return `<button onclick="WordWheel.tap(${k})" class="absolute rounded-full flex items-center justify-center font-bold uppercase" style="left:${x}%;top:${y}%;width:${center ? 26 : 20}%;height:${center ? 26 : 20}%;transform:translate(-50%,-50%);font-size:clamp(20px,6.5vw,30px);background:${center ? 'linear-gradient(160deg,#e5c358,#b99124)' : 'linear-gradient(160deg,#fbf7ee,#dfd4be)'};color:#1f1409;box-shadow:0 3px 0 ${center ? '#75590d' : '#a8957a'},0 5px 10px rgba(0,0,0,.4);${used ? 'opacity:.3' : ''}">${S.letters[k]}</button>`;
+    };
+    return `<div class="relative mx-auto felt-surface rounded-full" style="width:min(78vw,300px);aspect-ratio:1">${pos.map((k, n) => { const a = n / 8 * Math.PI * 2 - Math.PI / 2; return btn(k, 50 + Math.cos(a) * R, 50 + Math.sin(a) * R, false); }).join('')}${btn(4, 50, 50, true)}</div>`;
+  }
+  function render() {
+    if (!root || !S) return;
+    const word = S.cur.map(k => S.letters[k]).join('');
+    const groups = {}; (S.over ? S.sols : S.found).forEach(w => (groups[w.length] = groups[w.length] || []).push(w));
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="flex flex-col items-center gap-3 w-full" style="max-width:380px">
+          <div class="flex gap-2 flex-wrap justify-center"><span class="stat-chip">${S.daily ? '📅 Daily wheel' : '🎲 Random wheel'}</span><span class="stat-chip">${rank()}</span></div>
+          ${wheel()}
+          <div class="h-11 flex items-center justify-center font-bold uppercase tracking-[0.25em] text-2xl text-amber-200">${word || '<span class="text-sm tracking-normal font-normal normal-case text-amber-100/50">Tap letters to make a word</span>'}</div>
+          <div class="flex gap-2 flex-wrap justify-center">${Util.btn('⌫', 'WordWheel.back()')}${Util.btn('✕ Clear', 'WordWheel.clear()')}${Util.btn('🔀', 'WordWheel.shuffle()')}${Util.btn('✔ Enter', 'WordWheel.enter()', 'brass')}</div>
+          <div class="w-full"><div class="flex justify-between text-xs text-amber-100/70 mb-1"><span>${S.found.length} of ${S.sols.length} words</span><span>${S.nine.some(w => S.found.includes(w)) ? '🌟 Nine-letter word found' : '★ One word uses all nine'}</span></div>
+            <div class="h-2.5 bg-black/40 rounded-full overflow-hidden"><div class="h-full" style="width:${pct() * 100}%;background:linear-gradient(90deg,#b99124,#f3d266)"></div></div></div>
+          <div class="flex gap-2">${S.over ? '' : Util.btn('👁️ Reveal', 'WordWheel.reveal()')}${Util.btn('📅 Daily', 'WordWheel.daily()')}${Util.btn('🎲 New wheel', 'WordWheel.fresh()')}</div>
+        </div>
+        ${Util.panel(`<div class="font-display text-amber-200 text-sm mb-2">${S.over ? 'All the words' : 'Your words'}</div>
+          ${Object.keys(groups).sort((a, b) => b - a).map(L => `<div class="mb-2"><div class="text-[10px] uppercase tracking-wider text-amber-200/60">${L} letters</div><div class="flex flex-wrap gap-1 mt-0.5">${groups[L].map(w => `<span class="text-xs rounded px-1.5 py-0.5 ${S.found.includes(w) ? 'bg-amber-500/25 text-amber-100' : 'bg-black/30 text-amber-100/50'}">${w}</span>`).join('')}</div></div>`).join('') || '<p class="text-xs text-amber-100/50">Nothing yet. Every word uses the gold centre letter.</p>'}`, 'w-full lg:w-72 !p-3')}
+      </div>`;
+  }
+  return {
+    async setup() {
+      const v = await Util.choose('🎡 Word Wheel', 'Find words of four or more letters. Every word must use the centre letter, and each letter only once.', [{ label: '📅 Daily wheel', value: 'daily', primary: true }, { label: '🎲 Random wheel', value: 'random' }, { label: 'Cancel', value: null }]);
+      return v ? { ww: v } : null;
+    },
+    mount(el, o = {}) {
+      root = el;
+      onKey = e => {
+        if (!S || S.over || e.ctrlKey || e.metaKey) return;
+        if (e.key === 'Enter') return enter(); if (e.key === 'Backspace') return back();
+        const ch = e.key.toLowerCase(); if (!/^[a-z]$/.test(ch)) return;
+        const k = S.letters.findIndex((l, i) => l === ch && !S.cur.includes(i)); if (k >= 0) tap(k);
+      };
+      document.addEventListener('keydown', onKey);
+      withDict(el, () => { if (o.resume) { S = o.resume; S.cur = []; render(); } else start(o.ww !== 'random'); });
+    },
+    snapshot() { return S && !S.over && !S.daily ? { ...S, cur: [] } : null; },
+    destroy() { document.removeEventListener('keydown', onKey); root = null; },
+    tap, back, clear, shuffle, enter, reveal, daily() { start(true); }, fresh() { start(false); }, newGame() { start(false); },
+    _test: { get S() { return S; } }
+  };
+})();
+Games.wordwheel = WordWheel;
+
+/* ============================================================================
+   WORD GRID: chain neighbouring letters into words against a 3-minute clock (1-4 players, people or AI)
+   ============================================================================ */
+const WordGrid = (() => {
+  const POOL = 'eeeeeeeeeeeaaaaaaaaiiiiiiioooooooonnnnnnrrrrrrttttttllllssssssuuuddddgggbbccmmppffhhvvwwyykjxqz';
+  const PTS = L => L <= 4 ? 1 : L === 5 ? 2 : L === 6 ? 3 : L === 7 ? 5 : 11;
+  let S, root, timer = null, sid = 0, drag = false, gest = 0;
+  function lower(p) { const a = Dict.list; let lo = 0, hi = a.length; while (lo < hi) { const m = (lo + hi) >> 1; if (a[m] < p) lo = m + 1; else hi = m; } return lo < a.length && a[lo].startsWith(p); }
+  const nb = i => { const r = Math.floor(i / 4), c = i % 4, o = []; for (let dr = -1; dr <= 1; dr++) for (let dc = -1; dc <= 1; dc++) { if (!dr && !dc) continue; const rr = r + dr, cc = c + dc; if (rr >= 0 && rr < 4 && cc >= 0 && cc < 4) o.push(rr * 4 + cc); } return o; };
+  const face = l => l === 'q' ? 'qu' : l;
+  function solve(grid) {
+    const found = new Set();
+    const dfs = (i, w, used) => {
+      w += face(grid[i]);
+      if (w.length > 10 || !lower(w)) return;
+      if (w.length >= 3 && Dict.has(w)) found.add(w);
+      used.add(i); nb(i).forEach(j => { if (!used.has(j)) dfs(j, w, used); }); used.delete(i);
+    };
+    for (let i = 0; i < 16; i++) dfs(i, '', new Set());
+    return [...found].sort((a, b) => b.length - a.length || a.localeCompare(b));
+  }
+  function newGame(seats) {
+    sid++; clearInterval(timer);
+    let grid, all;
+    for (let t = 0; t < 20; t++) { grid = Array.from({ length: 16 }, () => POOL[Math.floor(Math.random() * POOL.length)]); all = solve(grid); if (all.length >= 40) break; }
+    S = { seats, grid, all, turn: 0, found: seats.map(() => []), phase: 'ready', path: [], left: 180, over: null };
+    nextPlayer();
+  }
+  async function nextPlayer() {
+    const my = sid;
+    while (S.turn < S.seats.length && S.seats[S.turn].type === 'ai') { aiPlay(S.turn); S.turn++; }
+    if (S.turn >= S.seats.length) return results();
+    const seat = S.seats[S.turn];
+    S.phase = 'ready'; render();
+    const humans = S.seats.filter(s => s.type === 'human').length;
+    if (humans > 1) { await curtain(`${seat.name}'s go`, 'Pass the phone. You get three minutes on this grid.'); if (my !== sid) return; }
+    startClock();
+  }
+  function aiPlay(i) {
+    const share = Settings.diff === 'easy' ? .12 : Settings.diff === 'hard' ? .5 : .28;
+    S.found[i] = S.all.filter(w => Math.random() < share * (w.length <= 4 ? 1.4 : w.length <= 6 ? .9 : .5));
+  }
+  function startClock() {
+    const my = sid; S.phase = 'play'; S.left = 180; S.path = []; render();
+    timer = setInterval(() => {
+      if (my !== sid) return clearInterval(timer);
+      S.left--; const t = root && root.querySelector('#wg-time'); if (t) t.textContent = fmt(S.left);
+      if (S.left <= 10 && S.left > 0) Sfx.play('tap');
+      if (S.left <= 0) { clearInterval(timer); Sfx.play('card'); S.turn++; nextPlayer(); }
+    }, 1000);
+  }
+  const fmt = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+  function touch(i) {
+    if (S.phase !== 'play') return;
+    const p = S.path;
+    if (p.length && p[p.length - 1] === i) return;
+    if (p.length > 1 && p[p.length - 2] === i) { p.pop(); return render(); }
+    if (p.includes(i)) return;
+    if (p.length && !nb(p[p.length - 1]).includes(i)) return;
+    p.push(i); Sfx.play('tap'); render();
+  }
+  function submit() {
+    if (S.phase !== 'play') return;
+    const w = S.path.map(i => face(S.grid[i])).join(''); S.path = [];
+    const mine = S.found[S.turn];
+    if (w.length < 3) { render(); return; }
+    if (mine.includes(w)) Util.toast('Already found', 900);
+    else if (S.all.includes(w)) { mine.push(w); Sfx.play('match'); }
+    else { Util.toast('Not a word', 900); Sfx.play('lose'); }
+    render();
+  }
+  const scoreOf = ws => ws.reduce((a, w) => a + PTS(w.length), 0);
+  function results() {
+    S.phase = 'done'; clearInterval(timer);
+    const sc = S.found.map(scoreOf), best = Math.max(...sc), wi = sc.indexOf(best), w = S.seats[wi];
+    S.over = true; render(); Sfx.play('win');
+    const solo = S.seats.length === 1;
+    const table = S.seats.map((s, i) => `<div class="flex justify-between"><span>${s.name}${s.type === 'ai' ? ' 🤖' : ''}</span><span>${S.found[i].length} words · <b class="text-amber-300">${sc[i]}</b></span></div>`).join('');
+    const pb = Store.get('wg_best', 0); if (solo && sc[0] > pb) Store.set('wg_best', sc[0]);
+    App.endGame('wordgrid', solo ? sc[0] >= 15 : (w.type === 'human' && S.seats.some(s => s.type === 'ai')), solo ? `${sc[0]} points!` : `${w.name} wins!`,
+      `${solo ? `You found ${S.found[0].length} of ${S.all.length} words. ${sc[0] > pb ? 'A new personal best!' : `Your best is ${Math.max(pb, sc[0])}.`} Score 15+ for a trophy.` : ''}<div class="text-left space-y-1 mt-2">${table}</div>`, () => newGame(S.seats));
+  }
+  function render() {
+    if (!root || !S) return;
+    const seat = S.seats[Math.min(S.turn, S.seats.length - 1)], playing = S.phase === 'play';
+    const word = S.path.map(i => face(S.grid[i])).join('');
+    const cells = S.grid.map((l, i) => {
+      const on = S.path.includes(i), last = S.path[S.path.length - 1] === i;
+      return `<div data-i="${i}" class="wg-cell flex items-center justify-center font-bold uppercase rounded-xl select-none" style="aspect-ratio:1;font-size:clamp(24px,9vw,40px);background:${on ? 'linear-gradient(160deg,#e5c358,#b99124)' : 'linear-gradient(160deg,#fbf7ee,#dfd4be)'};color:#1f1409;box-shadow:0 4px 0 ${on ? '#75590d' : '#a8957a'}${last ? ',0 0 0 3px #f3d266' : ''};${playing ? '' : 'filter:blur(' + (S.phase === 'ready' ? 6 : 0) + 'px)'}">${l === 'q' ? 'Qu' : l}</div>`;
+    }).join('');
+    const showAll = S.phase === 'done';
+    const list = showAll ? S.all : S.found[Math.min(S.turn, S.seats.length - 1)];
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="flex flex-col items-center gap-3 w-full" style="max-width:380px">
+          <div class="flex gap-2 flex-wrap justify-center"><span class="stat-chip">${showAll ? 'Round over' : seat.name === 'You' ? 'Your go' : `${seat.name}'s go`}</span><span class="stat-chip">⏱️ <b id="wg-time">${fmt(S.left)}</b></span><span class="stat-chip">⭐ ${scoreOf(S.found[Math.min(S.turn, S.seats.length - 1)] || [])}</span></div>
+          <div id="wg-board" class="grid grid-cols-4 gap-2 w-full p-3 felt-surface rounded-2xl" style="touch-action:none">${cells}</div>
+          <div class="h-9 flex items-center font-bold uppercase tracking-[0.2em] text-2xl text-amber-200">${word || `<span class="text-sm tracking-normal font-normal normal-case text-amber-100/50">${playing ? 'Drag across neighbouring letters' : ''}</span>`}</div>
+          ${playing ? `<div class="flex gap-2">${Util.btn('✕ Clear', 'WordGrid.clear()')}${Util.btn('✔ Enter word', 'WordGrid.submit()', 'brass')}${Util.btn('🏁 Finish early', 'WordGrid.stop()')}</div>` : ''}
+          ${showAll ? Util.btn('New Grid', 'WordGrid.restart()', 'brass') : ''}
+        </div>
+        ${Util.panel(`<div class="font-display text-amber-200 text-sm mb-2">${showAll ? `All ${S.all.length} words` : 'Found'}</div>
+          <div class="flex flex-wrap gap-1">${list.map(w => { const who = showAll ? S.seats.map((s, i) => S.found[i].includes(w) ? s.col.hex : null).filter(Boolean) : []; return `<span class="text-xs rounded px-1.5 py-0.5 ${!showAll || who.length ? 'bg-amber-500/25 text-amber-100' : 'bg-black/30 text-amber-100/45'}">${w}${who.map(c => `<span class="inline-block w-1.5 h-1.5 rounded-full ml-0.5 align-middle" style="background:${c}"></span>`).join('')}</span>`; }).join('') || '<span class="text-xs text-amber-100/50">3+ letters. Longer words score more: 3–4 letters 1 point, 5 → 2, 6 → 3, 7 → 5, 8+ → 11.</span>'}</div>`, 'w-full lg:w-72 !p-3 max-h-[60vh] overflow-y-auto')}
+      </div>`;
+    const board = root.querySelector('#wg-board');
+    if (board && playing) {
+      const cellAt = e => { const el = document.elementFromPoint(e.clientX, e.clientY); const c = el && el.closest('.wg-cell'); return c ? +c.dataset.i : null; };
+      board.onpointerdown = e => {
+        const i = cellAt(e); drag = true; gest = 0; if (i === null) return;
+        const last = S.path[S.path.length - 1];
+        if (!(S.path.length && (nb(last).includes(i) || S.path.includes(i)))) S.path = [];
+        const before = S.path.length; touch(i); gest += S.path.length > before ? 1 : 0;
+      };
+      board.onpointermove = e => { if (!drag) return; const el = document.elementFromPoint(e.clientX, e.clientY), c = el && el.closest('.wg-cell'); if (!c) return; const r = c.getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2); if (Math.hypot(dx, dy) < r.width * .38) { const n = S.path.length; touch(+c.dataset.i); if (S.path.length > n) gest++; } };
+      board.onpointerup = () => { if (drag) { drag = false; if (gest >= 2 && S.path.length >= 3) submit(); } };
+      board.onpointercancel = () => { drag = false; };
+    }
+  }
+  return {
+    async setup() { const seats = await Seats.choose({ title: 'Word Grid', min: 1, max: 4, def: 1, note: 'Play solo for a high score, or take turns on the same grid against people or the AI.' }); return seats ? { seats } : null; },
+    mount(el, o = {}) { root = el; withDict(el, () => newGame(o.seats || [{ name: 'You', col: PCOL[0], type: 'human' }])); },
+    snapshot() { return null; },
+    destroy() { sid++; clearInterval(timer); root = null; },
+    clear() { S.path = []; render(); }, submit, stop() { if (S.phase === 'play') { clearInterval(timer); S.turn++; nextPlayer(); } },
+    restart() { newGame(S.seats); }, newGame() { newGame(S.seats); },
+    _test: { get S() { return S; }, solve }
+  };
+})();
+Games.wordgrid = WordGrid;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -6052,7 +7185,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.2.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.3.0",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

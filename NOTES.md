@@ -2,8 +2,8 @@
 
 Kralnu Games ten-in-one parlour collection. Live at https://kralnugames.com/grand-compendium/ (GitHub Pages from `main`, root).
 
-## Current state: v1.2.0 (19 Nov 2026)
-- Fifteen games: Chess, Shogi, Checkers, Mancala, Backgammon (vs AI or Pass & Play); Mahjong Solitaire, Klondike, FreeCell, Scoundrel, Regicide (solo); Snakes & Ladders, Ludo, Dominoes, Murder at Marrowgate Manor, Torchlight Delve (family, 1-6 players)
+## Current state: v1.3.0 (19 Nov 2026)
+- Twenty games (1.3.0 added Colour Clash, Tilecraft, Word Lock, Word Wheel, Word Grid). Fifteen before that: Chess, Shogi, Checkers, Mancala, Backgammon (vs AI or Pass & Play); Mahjong Solitaire, Klondike, FreeCell, Scoundrel, Regicide (solo); Snakes & Ladders, Ludo, Dominoes, Murder at Marrowgate Manor, Torchlight Delve (family, 1-6 players)
 - Family games use `Seats.choose()` for player setup (person/AI per seat) and `curtain()` for pass-the-phone privacy; games with a `setup()` get it from the Play button
 - Marrowgate Manor is an original Cluedo-style game (Cluedo is a Hasbro trademark, so no Cluedo names/characters). Torchlight Delve is an original HeroQuest-style crawl
 - Kralnu Standard: splash, main menu (Continue, Settings, Trophies, More, Install), More panel (How to play, What's new, Credits, Review, Support, Get latest), version in the corner, ⚙️ in-game settings
@@ -11,6 +11,13 @@ Kralnu Games ten-in-one parlour collection. Live at https://kralnugames.com/gran
 - Auto-save every 4 s and on hide/close (`gtc_save_<game>` in localStorage); Continue resumes
 - Sound and music are synthesised with Web Audio (no audio files)
 - Reviews go to the shared Kralnu Google Form, version field "Grand Tabletop Compendium x.y.z"
+
+## Word games
+- `words.txt` (113k words) is built from SCOWL/hunspell en_US: affixes expanded, abbreviations, roman numerals and slurs removed, proper two-letter list, British spellings added. Licence in `WORDS-LICENSE.txt` (credit is in the Credits screen too)
+- `Dict.load()` fetches it on first use; the service worker keeps a copy for offline play
+- Word Lock answers are a hand-picked list of 812 everyday five-letter words (in the page as `WORD_ANSWERS`); guesses accept any dictionary word
+- Tilecraft AI: per-row cross-checks, word slots and a letter bitmask filter (~0.2 s per move on desktop). Easy picks weaker moves; Hard always plays its best
+- Original names on purpose: Scrabble, Wordle, Boggle and UNO are other companies' trademarks
 
 ## How the code is laid out
 - Single `index.html`. Tailwind is compiled and inlined (no CDN), so it works offline

@@ -1,12 +1,12 @@
 # The Grand Tabletop Compendium
 
-*Fifteen classic, esoteric and family games, one table.*
+*Twenty classic, esoteric, family and word games, one table.*
 
-Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, quiet patience, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
+Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, quiet patience, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.2.0**
+**Current version: 1.3.0**
 
 ## The games
 
@@ -26,6 +26,11 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | 🎯 **Ludo** | Break out on a 6, capture rivals and race all four pieces home | 2–4, people or AI |
 | 🁫 **Dominoes** | Double-six draw game, first to 50 points | 2–4, people or AI |
 | 🕵️ **Murder at Marrowgate Manor** | An original whodunit: suggest, deduce with your notebook, then accuse | 3–6, people or AI |
+| 🃏 **Colour Clash** | A fast shedding card game: Skips, Reverses, +2s, Wilds and a "Last card!" call | 2–6, people or AI |
+| 🔤 **Tilecraft** | A crossword tile game with bonus squares and AI opponents that know 110,000+ words | 2–4, people or AI |
+| 🔒 **Word Lock** | Crack the five-letter word in six guesses: daily, practice or set one for a friend | Solo / pass & play |
+| 🎡 **Word Wheel** | Make words from nine letters, always using the centre one | Solo |
+| 🔠 **Word Grid** | Swipe neighbouring letters into words against a three-minute clock | 1–4, people or AI |
 | 🕯️ **Torchlight Delve** | An original dungeon crawl: a party of heroes, combat dice, fog of war and the Bone King | 1–4 heroes, solo or pass & play |
 
 Every board game can be played against the AI or as **Pass & Play**: people sharing one phone. The family games take 2 to 6 players in any mix of people and AI, and a pass-the-phone screen keeps hands secret. Tap **Play** on a game to choose.
@@ -46,7 +51,7 @@ On Android (Chrome), tap **Install** on the main menu. On iPhone or iPad, open i
 
 ## Notes
 
-- The game is the single `index.html` file. `manifest.webmanifest`, `sw.js` and the `icons` folder make it installable and playable offline. No accounts needed.
+- The game is the single `index.html` file, plus `words.txt` (the dictionary, loaded the first time you open a word game and then kept for offline play). `manifest.webmanifest`, `sw.js` and the `icons` folder make it installable and playable offline. No accounts needed.
 - Wins, settings and games in progress are saved in your browser on each device.
 - Built phone-first, but it plays in a desktop browser too.
 
@@ -64,6 +69,8 @@ Ideas, design and testing by Kris. Built with Claude, an AI by Anthropic.
 - **Regicide** was designed by Paul Abrahams, Luke Badger and Andy Richdale (Badgers From Mars).
 - Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes & Ladders, Ludo and Dominoes are traditional games.
 - Murder at Marrowgate Manor and Torchlight Delve are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.
+- Tilecraft, Word Lock, Word Wheel, Word Grid and Colour Clash are original takes on much-loved word and card game ideas, not connected to or endorsed by the makers of any other game.
+- Word list: SCOWL, copyright 2000–2011 Kevin Atkinson, used under its permissive licence (see `WORDS-LICENSE.txt`), with British spellings added.
 - Fonts: Cinzel, Inter and Noto Serif JP (SIL Open Font License). Styles: Tailwind CSS (MIT). Sound effects and music are generated live in the browser.
 
 ## Feedback and support
@@ -75,6 +82,14 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.3.0 · Words and wild cards (19 November 2026)
+- Tilecraft: a crossword tile game for 2 to 4 players, with AI opponents that know over 110,000 words
+- Word Lock: crack the five-letter word in six guesses, with a daily puzzle, practice and a set-a-word-for-a-friend mode
+- Word Wheel: find words in nine letters, always using the centre one
+- Word Grid: swipe across a 4×4 letter grid against a three-minute clock
+- Colour Clash: a fast shedding card game with Skips, Reverses, +2s, Wilds and a "Last card!" call
+- British spellings like colour and centre are welcome in every word game
 
 ### 1.2.0 · Family game night (19 November 2026)
 - Five new games: Snakes & Ladders, Ludo, Dominoes, Murder at Marrowgate Manor and Torchlight Delve
