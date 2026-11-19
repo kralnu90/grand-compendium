@@ -1,12 +1,12 @@
 # The Grand Tabletop Compendium
 
-*Thirty-six classic, esoteric, family, pub and word games, one table.*
+*Thirty-seven classic, esoteric, family, pub and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.7.0**
+**Current version: 1.7.1**
 
 ## The games
 
@@ -17,6 +17,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | ⛃ **Checkers** | Captures are forced and multi-jump chains are played one tap at a time | vs AI or 2 players |
 | ◎ **Mancala (Kalah)** | Sow seeds, chain extra turns and capture across the board | vs AI or 2 players |
 | 🎲 **Backgammon** | Full dice rules, hitting blots, the bar, bearing off and gammons | vs AI or 2 players |
+| 🦴 **Knucklebones** | Roll, place in a column, and knock out your rival's matching dice. Matching dice multiply | vs AI or 2 players |
 | 🀄 **Mahjong Solitaire** | The 144-tile turtle. Every deal can be solved, with hint, shuffle, undo and zoom | Solo |
 | 🃏 **Klondike** | Draw 1 or Draw 3, Auto-Send, Auto-Finish and undo | Solo |
 | 🂡 **FreeCell** | Every card face-up. Four free cells and supermoves | Solo |
@@ -100,6 +101,10 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.7.1 · Knucklebones (19 November 2026)
+- Knucklebones: the bone-dice duel. Matching dice multiply, and placing a die knocks out your rival's matching dice
+- vs AI (with a one-roll lookahead on Normal and Hard) or Pass & Play
 
 ### 1.7.0 · Conjurers' Duel (19 November 2026)
 - Conjurers' Duel: a collectible-style card duel with 100 original cards across five colours of magic

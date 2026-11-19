@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Thirty-six parlour, family, pub and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Thirty-seven parlour, family, pub and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Thirty-six games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Thirty-seven games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -454,6 +454,9 @@
   }
   .ml-0\.5 {
     margin-left: calc(var(--spacing) * 0.5);
+  }
+  .ml-1 {
+    margin-left: var(--spacing);
   }
   .ml-auto {
     margin-left: auto;
@@ -1695,6 +1698,12 @@
   .ring-amber-300 {
     --tw-ring-color: var(--color-amber-300);
   }
+  .ring-amber-300\/70 {
+    --tw-ring-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-ring-color: color-mix(in oklab, var(--color-amber-300) 70%, transparent);
+    }
+  }
   .ring-amber-400\/50 {
     --tw-ring-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1719,6 +1728,9 @@
   .ring-red-400 {
     --tw-ring-color: var(--color-red-400);
   }
+  .ring-red-500 {
+    --tw-ring-color: var(--color-red-500);
+  }
   .drop-shadow {
     --tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.1))) drop-shadow(0 1px 1px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.06)));
     --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow( 0 1px 1px rgb(0 0 0 / 0.06));
@@ -1731,6 +1743,11 @@
     --tw-backdrop-blur: blur(var(--blur-sm));
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .transition-all {
     transition-property: all;
@@ -1764,6 +1781,14 @@
       --tw-scale-y: 110%;
       --tw-scale-z: 110%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .hover\:bg-amber-300\/10:hover {
+      background-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 10%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-amber-300\/10:hover {
+        background-color: color-mix(in oklab, var(--color-amber-300) 10%, transparent);
+      }
     }
     .hover\:bg-amber-500\/10:hover {
       background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 10%, transparent);
@@ -3105,6 +3130,18 @@ const GAME_CATALOG = [
         <li><strong>Keywords:</strong> 🪽 Flying, 🏹 Reach, ⚡ First Strike, 💨 Swift, 👁️ Vigilant, ☠️ Deadly, 🩸 Drain, 🐘 Crush, 🧱 Wall. Tap any card to read what it does.</li>
         <li><strong>Modes:</strong> Duel the AI with a starter deck or your own, pass the phone to a friend, run the five-opponent Gauntlet, or Draft: pick cards from three packs, build a deck and play three duels. The Deckbuilder lets you save up to 8 decks from the full 100-card pool.</li>
       </ul>`
+  },
+  {
+    id: 'knucklebones', title: 'Knucklebones', subtitle: 'The Bone-Dice Duel', category: 'Dice', icon: '🦴',
+    players: 'vs AI or 2 players', tagline: 'Roll, pick a column, and knock your rival\'s matching dice clean off the board.',
+    rules: `
+      <p><strong>Objective:</strong> Have the higher total when either board is full.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Your turn:</strong> A die is rolled for you. Tap one of your three columns to place it. Each column holds three dice.</li>
+        <li><strong>Scoring:</strong> A column scores the sum of its dice, but matching dice multiply: two of a kind score the value × 2 × 2, three of a kind score the value × 3 × 3. So three 6s in one column are worth 162 instead of 18.</li>
+        <li><strong>Knock-outs:</strong> When you place a die, every die of the same number in your rival's facing column is destroyed.</li>
+        <li><strong>The end:</strong> As soon as either player fills all nine spaces, the game ends and the higher total wins.</li>
+      </ul>`
   }
 ];
 
@@ -3197,7 +3234,7 @@ const App = {
     });
   },
   meta(id) { return GAME_CATALOG.find(g => g.id === id); },
-  MODES: { chess: 1, shogi: 1, checkers: 1, backgammon: 1, mancala: 1, reversi: 1, four: 1, morris: 1, battleships: 1, cribbage: 1, gin: 1, go: 1 },
+  MODES: { chess: 1, shogi: 1, checkers: 1, backgammon: 1, mancala: 1, reversi: 1, four: 1, morris: 1, battleships: 1, cribbage: 1, gin: 1, go: 1, knucklebones: 1 },
   splash() {
     const sp = document.createElement('div');
     sp.className = 'fixed inset-0 z-[70] flex flex-col items-center justify-center gap-3 text-center p-6';
@@ -3263,7 +3300,7 @@ const App = {
   CATS: [
     { k: 'board', n: 'Board Games', icon: '♞', blurb: 'Royal strategy and quick duels', ids: ['chess', 'go', 'shogi', 'checkers', 'reversi', 'four', 'morris', 'mancala'] },
     { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Patience, pub classics and card crawls', ids: ['klondike', 'freecell', 'cribbage', 'gin', 'clash', 'duel', 'scoundrel', 'regicide'] },
-    { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'liars', 'dominoes', 'mahjong'] },
+    { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'knucklebones', 'liars', 'dominoes', 'mahjong'] },
     { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
     { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] }
   ],
@@ -3385,9 +3422,14 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.7.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.7.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.7.1', '19 Nov 2026', 'Knucklebones', [
+    'Knucklebones: roll a die, pick a column, and knock out your rival\'s matching dice',
+    'Matching dice in a column multiply, so three of a kind scores big',
+    'Play the AI or pass the phone to a friend'
+  ]],
   ['1.7.0', '19 Nov 2026', "Conjurers' Duel", [
     "Conjurers' Duel: a collectible-style card duel with 100 original cards across five colours of magic",
     'Duel the AI, play a friend with Pass & Play, or take on the five-opponent Gauntlet and the Archmage',
@@ -10606,6 +10648,124 @@ const Duel = (() => {
 })();
 Games.duel = Duel;
 
+/* ============================================================================
+   KNUCKLEBONES: roll, place, knock out your rival's matching dice
+   ============================================================================ */
+const Knucklebones = (() => {
+  let S, root, mode = Store.get('kb_mode', 'ai'), sid = 0, busy = false;
+  const colScore = col => { const n = {}; col.forEach(v => n[v] = (n[v] || 0) + 1); return Object.entries(n).reduce((s, [v, k]) => s + v * k * k, 0); };
+  const total = g => g.reduce((s, c) => s + colScore(c), 0);
+  const full = g => g.every(c => c.length >= 3);
+  const names = () => mode === 'ai' ? ['You', 'The Bone Keeper'] : ['Player 1', 'Player 2'];
+  function newGame() { sid++; busy = false; S = { g: [[[], [], []], [[], [], []]], turn: Math.random() < .5 ? 0 : 1, die: 0, over: false, last: null, knocked: null }; startTurn(); }
+  /* the change in (my total - rival total) from putting die v in column c */
+  function gain(st, p, c, v) {
+    const mine = st.g[p][c], theirs = st.g[1 - p][c];
+    if (mine.length >= 3) return null;
+    return colScore(mine.concat(v)) - colScore(mine) + colScore(theirs) - colScore(theirs.filter(x => x !== v));
+  }
+  function aiPick(p, v) {
+    const opts = [0, 1, 2].filter(c => S.g[p][c].length < 3);
+    if (Settings.diff === 'easy' && Math.random() < .45) return opts[Math.floor(Math.random() * opts.length)];
+    let best = opts[0], bs = -1e9;
+    for (const c of opts) {
+      let s = gain(S, p, c, v);
+      if (Settings.diff !== 'easy') {
+        // look one roll ahead: how well can the rival answer, on average?
+        const st = { g: S.g.map(g => g.map(col => col.slice())) };
+        st.g[p][c].push(v); st.g[1 - p][c] = st.g[1 - p][c].filter(x => x !== v);
+        if (full(st.g[p])) s += total(st.g[p]) > total(st.g[1 - p]) ? 500 : -500;
+        else {
+          let reply = 0;
+          for (let r = 1; r <= 6; r++) { let m = -1e9; for (let k = 0; k < 3; k++) { const x = gain(st, 1 - p, k, r); if (x !== null && x > m) m = x; } reply += m / 6; }
+          s -= reply * (Settings.diff === 'hard' ? .9 : .6);
+        }
+        s += Math.random() * .3;
+      }
+      if (s > bs) { bs = s; best = c; }
+    }
+    return best;
+  }
+  async function startTurn() {
+    if (S.over) return;
+    const my = sid; busy = true; S.die = 0; render();
+    await Util.sleep(Util.delay(250)); if (my !== sid) return;
+    for (let k = 0; k < 6; k++) { S.die = 1 + Math.floor(Math.random() * 6); render(); await Util.sleep(Util.delay(55)); if (my !== sid) return; }
+    Sfx.play('dice'); busy = false; render();
+    if (mode === 'ai' && S.turn === 1) {
+      busy = true; render(); await Util.sleep(Util.delay(650)); if (my !== sid) return;
+      busy = false; place(aiPick(1, S.die), true);
+    }
+  }
+  function place(c, ai) {
+    if (S.over || busy || !S.die) return;
+    if (!ai && mode === 'ai' && S.turn === 1) return;
+    const p = S.turn, v = S.die, col = S.g[p][c];
+    if (col.length >= 3) return Util.toast('That column is full.');
+    col.push(v);
+    const before = S.g[1 - p][c].length; S.g[1 - p][c] = S.g[1 - p][c].filter(x => x !== v);
+    const lost = before - S.g[1 - p][c].length;
+    S.last = { p, c }; S.knocked = lost ? { p: 1 - p, c, n: lost, v } : null;
+    Sfx.play(lost ? 'capture' : 'place');
+    if (lost) Util.toast(`Knocked out ${lost === 1 ? 'a ' + v : (lost === 2 ? 'two ' : 'three ') + v + 's'}!`, 1100);
+    S.die = 0;
+    if (full(S.g[p])) return finish();
+    S.turn = 1 - p; startTurn();
+  }
+  function finish() {
+    S.over = true; render();
+    const a = total(S.g[0]), b = total(S.g[1]), n = names();
+    const w = a === b ? -1 : a > b ? 0 : 1;
+    Sfx.play(mode === '2p' || w === 0 ? 'win' : 'lose');
+    App.endGame('knucklebones', mode === 'ai' ? w === 0 : w >= 0, w < 0 ? "It's a draw!" : mode === 'ai' ? (w === 0 ? 'You win!' : 'The Bone Keeper wins') : `${n[w]} wins!`, `${n[0]}: ${a} · ${n[1]}: ${b}`, newGame);
+  }
+  function dieHtml(v, size, glow) {
+    const pip = { 1: [4], 2: [0, 8], 3: [0, 4, 8], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] }[v] || [];
+    const bg = glow === 3 ? 'linear-gradient(160deg,#cfe6ff,#7fb2ea)' : glow === 2 ? 'linear-gradient(160deg,#fff4c2,#f0c95a)' : 'linear-gradient(160deg,#fffdf6,#e2d4b5)';
+    return `<div class="grid" style="width:${size}px;height:${size}px;border-radius:${size * .22}px;background:${bg};box-shadow:0 3px 0 #8f7a4f,0 5px 8px rgba(0,0,0,.45);grid-template:repeat(3,1fr)/repeat(3,1fr);padding:${size * .13}px">${Array.from({ length: 9 }, (_, i) => pip.includes(i) ? `<span style="width:${size * .18}px;height:${size * .18}px;border-radius:50%;background:#2a1a10;place-self:center"></span>` : '<span></span>').join('')}</div>`;
+  }
+  function board(p, flip) {
+    const sz = Math.min(58, Math.floor(((root.clientWidth || 360) - 60) / 3 * .62)), me = S.turn === p && !S.over, canTap = me && S.die && !busy && !(mode === 'ai' && p === 1);
+    const cols = S.g[p].map((col, c) => {
+      const cnt = {}; col.forEach(v => cnt[v] = (cnt[v] || 0) + 1);
+      const cells = [0, 1, 2].map(k => { const v = col[k]; return `<div class="flex items-center justify-center rounded-lg" style="width:${sz + 12}px;height:${sz + 12}px;background:rgba(0,0,0,.25)">${v ? dieHtml(v, sz, cnt[v] > 1 ? cnt[v] : 0) : ''}</div>`; });
+      if (flip) cells.reverse();
+      const hit = S.knocked && S.knocked.p === p && S.knocked.c === c;
+      return `<button ${canTap ? `onclick="Knucklebones.place(${c})"` : 'disabled'} class="flex flex-col items-center gap-1.5 rounded-2xl p-1.5 transition ${canTap && col.length < 3 ? 'ring-2 ring-amber-300/70 hover:bg-amber-300/10' : ''} ${hit ? 'ring-2 ring-red-500' : ''}" style="background:rgba(0,0,0,.18)">
+        ${flip ? '' : `<span class="font-bold text-amber-200 text-sm">${colScore(col)}</span>`}${cells.join('')}${flip ? `<span class="font-bold text-amber-200 text-sm">${colScore(col)}</span>` : ''}</button>`;
+    }).join('');
+    const n = names()[p];
+    const head = `<div class="flex items-center justify-between w-full px-1"><span class="font-display ${me ? 'text-amber-300' : 'text-amber-100/70'}">${me ? '▶ ' : ''}${n}</span><span class="stat-chip">Total <b class="text-amber-200 text-base ml-1">${total(S.g[p])}</b></span></div>`;
+    return `<div class="flex flex-col items-center gap-1.5 w-full">${flip ? head : ''}<div class="flex gap-2 justify-center">${cols}</div>${flip ? '' : head}</div>`;
+  }
+  function render() {
+    if (!root || !S) return;
+    const p = S.turn, n = names(), aiTurn = mode === 'ai' && p === 1;
+    const msg = S.over ? 'Game over' : !S.die ? 'Rolling…' : aiTurn ? 'The Bone Keeper is choosing a column…' : `${n[p]}: tap a column for your ${S.die}.`;
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:440px">
+      ${board(1, true)}
+      <div class="flex items-center gap-3 walnut-panel rounded-2xl px-4 py-2 w-full justify-center">
+        <div style="min-width:56px;min-height:56px" class="flex items-center justify-center">${S.die ? dieHtml(S.die, 52) : ''}</div>
+        <div class="text-sm text-amber-50/90 text-left flex-1">${msg}</div>
+      </div>
+      ${board(0, false)}
+      <div class="flex gap-2 flex-wrap justify-center">${Util.btn(mode === 'ai' ? '👥 Pass & Play' : '🤖 vs AI', `Knucklebones.setMode('${mode === 'ai' ? '2p' : 'ai'}')`)}${Util.btn('🔄 New game', 'Knucklebones.newGame()', 'brass')}</div>
+      <p class="text-[11px] text-amber-100/50 text-center max-w-sm">Matching dice in your column multiply (two 4s score 16, three score 36). Placing a die knocks out every matching die in your rival's facing column.</p>
+    </div>`;
+  }
+  return {
+    mount(el, o = {}) {
+      root = el; if (o.mode) { mode = o.mode; Store.set('kb_mode', mode); }
+      if (o.resume) { mode = o.resume.mode; S = o.resume.S; sid++; busy = false; S.die = 0; startTurn(); } else newGame();
+    },
+    snapshot() { return S && !S.over ? { S: { ...S, die: 0 }, mode } : null; },
+    destroy() { sid++; root = null; },
+    place: c => place(c, false), newGame, setMode(m) { mode = m; Store.set('kb_mode', m); newGame(); },
+    _test: { get S() { return S; }, colScore, aiPick }
+  };
+})();
+Games.knucklebones = Knucklebones;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -10658,7 +10818,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.7.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.7.1",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}
