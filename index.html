@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Thirty-seven parlour, family, pub and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Forty-four parlour, family, pub, casino and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Thirty-seven games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Forty-four games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -38,6 +38,7 @@
     --color-amber-500: oklch(76.9% 0.188 70.08);
     --color-amber-900: oklch(41.4% 0.112 45.904);
     --color-amber-950: oklch(27.9% 0.077 45.635);
+    --color-emerald-100: oklch(95% 0.052 163.051);
     --color-emerald-300: oklch(84.5% 0.143 164.978);
     --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-emerald-500: oklch(69.6% 0.17 162.48);
@@ -82,6 +83,7 @@
     --tracking-normal: 0em;
     --tracking-wide: 0.025em;
     --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
     --leading-tight: 1.25;
     --leading-snug: 1.375;
     --leading-relaxed: 1.625;
@@ -278,6 +280,12 @@
   .inset-x-0 {
     inset-inline: 0px;
   }
+  .-top-1 {
+    top: calc(var(--spacing) * -1);
+  }
+  .-top-2 {
+    top: calc(var(--spacing) * -2);
+  }
   .top-0 {
     top: 0px;
   }
@@ -289,6 +297,9 @@
   }
   .top-2 {
     top: calc(var(--spacing) * 2);
+  }
+  .-right-1 {
+    right: calc(var(--spacing) * -1);
   }
   .-right-2 {
     right: calc(var(--spacing) * -2);
@@ -341,6 +352,9 @@
   .left-2 {
     left: calc(var(--spacing) * 2);
   }
+  .z-10 {
+    z-index: 10;
+  }
   .z-40 {
     z-index: 40;
   }
@@ -361,6 +375,9 @@
   }
   .col-span-2 {
     grid-column: span 2 / span 2;
+  }
+  .col-span-3 {
+    grid-column: span 3 / span 3;
   }
   .container {
     width: 100%;
@@ -409,6 +426,9 @@
   }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
   }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
@@ -539,6 +559,9 @@
   .h-11 {
     height: calc(var(--spacing) * 11);
   }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
   .h-14 {
     height: calc(var(--spacing) * 14);
   }
@@ -547,6 +570,9 @@
   }
   .h-\[3px\] {
     height: 3px;
+  }
+  .h-\[22px\] {
+    height: 22px;
   }
   .h-full {
     height: 100%;
@@ -565,6 +591,9 @@
   }
   .max-h-full {
     max-height: 100%;
+  }
+  .min-h-\[14px\] {
+    min-height: 14px;
   }
   .min-h-\[16px\] {
     min-height: 16px;
@@ -617,6 +646,9 @@
   .w-3\.5 {
     width: calc(var(--spacing) * 3.5);
   }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
   .w-5 {
     width: calc(var(--spacing) * 5);
   }
@@ -634,6 +666,9 @@
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
+  }
+  .w-12 {
+    width: calc(var(--spacing) * 12);
   }
   .w-14 {
     width: calc(var(--spacing) * 14);
@@ -724,6 +759,18 @@
     --tw-scale-z: 75%;
     scale: var(--tw-scale-x) var(--tw-scale-y);
   }
+  .scale-110 {
+    --tw-scale-x: 110%;
+    --tw-scale-y: 110%;
+    --tw-scale-z: 110%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-125 {
+    --tw-scale-x: 125%;
+    --tw-scale-y: 125%;
+    --tw-scale-z: 125%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -804,6 +851,9 @@
   }
   .justify-items-center {
     justify-items: center;
+  }
+  .gap-0 {
+    gap: 0px;
   }
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
@@ -910,6 +960,9 @@
   .rounded-\[9px\] {
     border-radius: 9px;
   }
+  .rounded-\[28px\] {
+    border-radius: 28px;
+  }
   .rounded-\[40px\] {
     border-radius: 40px;
   }
@@ -953,6 +1006,18 @@
   }
   .\!border-amber-300 {
     border-color: var(--color-amber-300) !important;
+  }
+  .border-amber-100\/25 {
+    border-color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 25%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-amber-100) 25%, transparent);
+    }
+  }
+  .border-amber-200\/30 {
+    border-color: color-mix(in srgb, oklch(92.4% 0.12 95.746) 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-amber-200) 30%, transparent);
+    }
   }
   .border-amber-300 {
     border-color: var(--color-amber-300);
@@ -1005,6 +1070,24 @@
       border-color: color-mix(in oklab, var(--color-white) 80%, transparent);
     }
   }
+  .bg-amber-300\/10 {
+    background-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-amber-300) 10%, transparent);
+    }
+  }
+  .bg-amber-300\/25 {
+    background-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 25%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-amber-300) 25%, transparent);
+    }
+  }
+  .bg-amber-300\/40 {
+    background-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-amber-300) 40%, transparent);
+    }
+  }
   .bg-amber-400 {
     background-color: var(--color-amber-400);
   }
@@ -1012,6 +1095,12 @@
     background-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 15%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-amber-400) 15%, transparent);
+    }
+  }
+  .bg-amber-400\/20 {
+    background-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-amber-400) 20%, transparent);
     }
   }
   .bg-amber-500\/25 {
@@ -1095,6 +1184,12 @@
   .bg-emerald-400 {
     background-color: var(--color-emerald-400);
   }
+  .bg-emerald-400\/10 {
+    background-color: color-mix(in srgb, oklch(76.5% 0.177 163.223) 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-emerald-400) 10%, transparent);
+    }
+  }
   .bg-emerald-500 {
     background-color: var(--color-emerald-500);
   }
@@ -1113,6 +1208,9 @@
       background-color: color-mix(in oklab, var(--color-stone-950) 95%, transparent);
     }
   }
+  .bg-white {
+    background-color: var(--color-white);
+  }
   .bg-white\/10 {
     background-color: color-mix(in srgb, #fff 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1123,6 +1221,12 @@
     background-color: color-mix(in srgb, #fff 60%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-white) 60%, transparent);
+    }
+  }
+  .bg-white\/90 {
+    background-color: color-mix(in srgb, #fff 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
     }
   }
   .\!p-2 {
@@ -1163,6 +1267,12 @@
   }
   .\!px-1\.5 {
     padding-inline: calc(var(--spacing) * 1.5) !important;
+  }
+  .\!px-6 {
+    padding-inline: calc(var(--spacing) * 6) !important;
+  }
+  .\!px-8 {
+    padding-inline: calc(var(--spacing) * 8) !important;
   }
   .px-0\.5 {
     padding-inline: calc(var(--spacing) * 0.5);
@@ -1289,6 +1399,10 @@
     font-size: var(--text-3xl) !important;
     line-height: var(--tw-leading, var(--text-3xl--line-height)) !important;
   }
+  .\!text-base {
+    font-size: var(--text-base) !important;
+    line-height: var(--tw-leading, var(--text-base--line-height)) !important;
+  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -1387,6 +1501,10 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .tracking-\[\.25em\] {
+    --tw-tracking: .25em;
+    letter-spacing: .25em;
+  }
   .tracking-\[0\.2em\] {
     --tw-tracking: 0.2em;
     letter-spacing: 0.2em;
@@ -1418,6 +1536,13 @@
   .tracking-wider {
     --tw-tracking: var(--tracking-wider);
     letter-spacing: var(--tracking-wider);
+  }
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
   }
   .text-amber-50 {
     color: var(--color-amber-50);
@@ -1605,6 +1730,24 @@
   .text-amber-950 {
     color: var(--color-amber-950);
   }
+  .text-emerald-100\/50 {
+    color: color-mix(in srgb, oklch(95% 0.052 163.051) 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-emerald-100) 50%, transparent);
+    }
+  }
+  .text-emerald-100\/60 {
+    color: color-mix(in srgb, oklch(95% 0.052 163.051) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-emerald-100) 60%, transparent);
+    }
+  }
+  .text-emerald-100\/70 {
+    color: color-mix(in srgb, oklch(95% 0.052 163.051) 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-emerald-100) 70%, transparent);
+    }
+  }
   .text-emerald-300 {
     color: var(--color-emerald-300);
   }
@@ -1658,6 +1801,9 @@
   }
   .opacity-40 {
     opacity: 40%;
+  }
+  .opacity-45 {
+    opacity: 45%;
   }
   .opacity-50 {
     opacity: 50%;
@@ -1718,6 +1864,9 @@
   }
   .ring-emerald-300 {
     --tw-ring-color: var(--color-emerald-300);
+  }
+  .ring-emerald-400 {
+    --tw-ring-color: var(--color-emerald-400);
   }
   .ring-emerald-400\/40 {
     --tw-ring-color: color-mix(in srgb, oklch(76.5% 0.177 163.223) 40%, transparent);
@@ -3142,6 +3291,94 @@ const GAME_CATALOG = [
         <li><strong>Knock-outs:</strong> When you place a die, every die of the same number in your rival's facing column is destroyed.</li>
         <li><strong>The end:</strong> As soon as either player fills all nine spaces, the game ends and the higher total wins.</li>
       </ul>`
+  },
+  {
+    id: 'blackjack', title: "Blackjack", subtitle: "Twenty-One", category: 'Casino', icon: '🂡',
+    players: "Solo vs the dealer", tagline: "Beat the dealer to 21 without going bust. Hit, stand, double and split.",
+    rules: `
+      <p><strong>Objective:</strong> Finish closer to 21 than the dealer without going over.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Values:</strong> Number cards count as shown, J/Q/K are 10, an Ace is 1 or 11.</li>
+        <li><strong>Play:</strong> Hit for another card, Stand to stop, Double to double your bet for exactly one more card, or Split a pair into two hands.</li>
+        <li><strong>Dealer:</strong> Draws to 16 and stands on every 17. A win pays 1 to 1, a two-card 21 (Blackjack) pays 3 to 2, and ties push.</li>
+        <li><strong>Help:</strong> With hints on, the basic strategy move is shown under the buttons.</li>
+        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+      </ul>`
+  },
+  {
+    id: 'roulette', title: "Roulette", subtitle: "The Single-Zero Wheel", category: 'Casino', icon: '🎡',
+    players: "Solo", tagline: "Place your chips, spin the wheel and watch where the ball lands.",
+    rules: `
+      <p><strong>Objective:</strong> Bet on where the ball will land.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Betting:</strong> Pick a chip, then tap numbers or outside bets. Tap again to stack more.</li>
+        <li><strong>Payouts:</strong> A single number pays 35 to 1. Dozens and columns pay 2 to 1. Red/black, odd/even and 1-18/19-36 pay 1 to 1. Zero loses every outside bet.</li>
+        <li><strong>Rebet:</strong> Repeats your last spin's bets.</li>
+        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+      </ul>`
+  },
+  {
+    id: 'videopoker', title: "Video Poker", subtitle: "Jacks or Better", category: 'Casino', icon: '🎴',
+    players: "Solo", tagline: "Five cards, one draw. Hold the best, swap the rest, and chase the royal flush.",
+    rules: `
+      <p><strong>Objective:</strong> Make the best poker hand after one draw.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Play:</strong> Set your bet and Deal. Tap cards to hold them, then Draw to replace the rest.</li>
+        <li><strong>Payouts:</strong> Shown in the table at the top, from a pair of Jacks or better (your bet back) up to a royal flush (800 times your bet).</li>
+        <li><strong>Help:</strong> Best hold works out which cards give the best average return.</li>
+        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+      </ul>`
+  },
+  {
+    id: 'baccarat', title: "Baccarat", subtitle: "Punto Banco", category: 'Casino', icon: '💠',
+    players: "Solo", tagline: "Player or Banker: bet on which hand lands closest to nine.",
+    rules: `
+      <p><strong>Objective:</strong> Bet on the hand that finishes closest to 9.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Values:</strong> Aces are 1, 2 to 9 count as shown, 10s and face cards are 0. Only the last digit counts (7 + 8 = 5).</li>
+        <li><strong>Drawing:</strong> Both hands get two cards. A third card is drawn automatically by the fixed baccarat rules, so there are no decisions after betting.</li>
+        <li><strong>Payouts:</strong> Player pays 1 to 1, Banker pays 0.95 to 1, Tie pays 8 to 1 (Player and Banker bets push on a tie).</li>
+        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+      </ul>`
+  },
+  {
+    id: 'craps', title: "Craps", subtitle: "The Dice Table", category: 'Casino', icon: '🎲',
+    players: "Solo", tagline: "Roll the bones: pass line, odds and the field.",
+    rules: `
+      <p><strong>Objective:</strong> Win bets by predicting the dice.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Come-out roll:</strong> With no point set, 7 or 11 wins the Pass Line and 2, 3 or 12 loses. Any other total becomes the point.</li>
+        <li><strong>The point:</strong> Keep rolling. The point again before a 7 wins the Pass Line. A 7 first (a seven-out) loses it.</li>
+        <li><strong>Don't Pass:</strong> The opposite of the Pass Line (12 on the come-out is a push).</li>
+        <li><strong>Odds:</strong> Once a point is set, add up to 3 times your Pass bet. Pays true odds (2:1 on 4/10, 3:2 on 5/9, 6:5 on 6/8).</li>
+        <li><strong>One-roll bets:</strong> Field wins on 2, 3, 4, 9, 10, 11 or 12. Any 7 pays 4 to 1.</li>
+        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+      </ul>`
+  },
+  {
+    id: 'slots', title: "Lucky Lantern", subtitle: "The Slot Machine", category: 'Casino', icon: '🎰',
+    players: "Solo", tagline: "A 3-reel, five-line slot. Line up three lanterns for the jackpot.",
+    rules: `
+      <p><strong>Objective:</strong> Line up matching symbols on the five paylines.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Lines:</strong> The three rows and two diagonals all pay. Your bet is split evenly across the five lines.</li>
+        <li><strong>Pays:</strong> Three of a kind on a line, from cherries (12x the line bet) up to lanterns (600x). Two cherries on the left of a line pay 2x.</li>
+        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+      </ul>`
+  },
+  {
+    id: 'holdem', title: "Texas Hold'em", subtitle: "No-Limit Poker", category: 'Casino', icon: '♠️',
+    players: "You vs 5 AI players", tagline: "Sit down at a no-limit table and outplay five AI regulars.",
+    rules: `
+      <p><strong>Objective:</strong> Win chips by holding the best hand at showdown, or by making everyone else fold.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>The deal:</strong> Everyone gets two private cards. Five shared cards come out in stages: the flop (3), the turn (1) and the river (1).</li>
+        <li><strong>Betting:</strong> Rounds happen before the flop and after each new card. Fold, Check or Call, or Raise (min, half pot, pot or all in).</li>
+        <li><strong>Blinds:</strong> 2 and 4 chips, moving round the table with the dealer button.</li>
+        <li><strong>Showdown:</strong> The best five-card hand from your two cards plus the board wins. All-ins create side pots automatically.</li>
+        <li><strong>Table chips:</strong> You buy in for 200 from your bank. Cash out to put your stack back in the bank (it also goes back if you leave).</li>
+        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+      </ul>`
   }
 ];
 
@@ -3302,7 +3539,8 @@ const App = {
     { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Patience, pub classics and card crawls', ids: ['klondike', 'freecell', 'cribbage', 'gin', 'clash', 'duel', 'scoundrel', 'regicide'] },
     { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'knucklebones', 'liars', 'dominoes', 'mahjong'] },
     { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
-    { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] }
+    { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] },
+    { k: 'casino', n: 'Casino', icon: '🎰', blurb: 'Play-chip tables: cards, wheel, dice and slots', ids: ['blackjack', 'holdem', 'roulette', 'videopoker', 'baccarat', 'craps', 'slots'] }
   ],
   catOf(id) { return this.CATS.find(c => c.ids.includes(id)); },
   hubChrome(sub) {
@@ -3422,9 +3660,15 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.7.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.8.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.8.0', '19 Nov 2026', 'The Casino', [
+    'A new Casino shelf with seven tables, all played with free pretend chips',
+    "Blackjack (with basic strategy hints), Texas Hold'em against five AI players, and single-zero Roulette",
+    'Video Poker (Jacks or Better, with a best-hold helper), Baccarat, Craps and the Lucky Lantern slot machine',
+    'One shared chip bank, topped up by the house whenever you run dry. Chips can never be bought'
+  ]],
   ['1.7.1', '19 Nov 2026', 'Knucklebones', [
     'Knucklebones: roll a die, pick a column, and knock out your rival\'s matching dice',
     'Matching dice in a column multiply, so three of a kind scores big',
@@ -10766,6 +11010,787 @@ const Knucklebones = (() => {
 })();
 Games.knucklebones = Knucklebones;
 
+/* ============================================================================
+   CASINO: shared chip bank, poker hand evaluator, Blackjack, Baccarat, Video Poker
+   Play chips only: nothing here can be bought or cashed out.
+   ============================================================================ */
+const Chips = {
+  get() { return Store.get('chips', 1000); },
+  set(n) { Store.set('chips', Math.max(0, Math.round(n))); },
+  add(n) { this.set(this.get() + n); },
+  /* top the player up when they run dry, so the fun never stops */
+  ensure() { if (this.get() < 5) { this.set(500); Util.toast('The house tops you up to 500 chips. On us!', 2600); return true; } return false; }
+};
+const CHIP_VALS = [5, 25, 100, 500];
+const CHIP_COL = { 5: '#c0392b', 25: '#2f8f4e', 100: '#222', 500: '#7b3fb8' };
+function chipDisc(v, size = 34, on = false, click = '') {
+  const c = CHIP_COL[v] || '#9a7b2f';
+  const tag = click ? 'button' : 'span';
+  return `<${tag} ${click ? `onclick="${click}"` : ''} class="shrink-0 rounded-full flex items-center justify-center font-bold text-white ${on ? 'ring-2 ring-amber-300 scale-110' : ''} transition" style="width:${size}px;height:${size}px;background:radial-gradient(circle,${c} 52%,#fff 53%,#fff 60%,${c} 61%);border:2px dashed rgba(255,255,255,.75);font-size:${size * .3}px;box-shadow:0 2px 4px rgba(0,0,0,.5)">${v}</${tag}>`;
+}
+const bankChip = () => `<span class="stat-chip">🪙 <b class="text-amber-200 ml-1">${Chips.get().toLocaleString()}</b></span>`;
+/* add-to-bet chip row used by single-bet games */
+function betRow(ns, bet, extra = '') {
+  return `<div class="flex items-center gap-2 flex-wrap justify-center">${CHIP_VALS.map(v => chipDisc(v, 38, false, `${ns}.addBet(${v})`)).join('')}
+    ${Util.btn('Clear', `${ns}.clearBet()`)}<span class="stat-chip">Bet <b class="text-amber-200 ml-1">${bet}</b></span>${extra}</div>`;
+}
+/* chip picker used by table games where you place chips on spots */
+function chipPicker(ns, sel) { return `<div class="flex items-center gap-2 justify-center">${CHIP_VALS.map(v => chipDisc(v, 36, v === sel, `${ns}.pickChip(${v})`)).join('')}</div>`; }
+const cardRow = (cards, cw, hideFrom = 99) => `<div class="flex gap-1 justify-center flex-wrap" style="--cw:${cw}px">${cards.map((c, i) => Util.card(c, { down: i >= hideFrom })).join('')}</div>`;
+function shoe(decks) { const s = []; for (let d = 0; d < decks; d++) s.push(...Util.deck()); return Util.shuffle(s); }
+
+/* ---------- poker hands ---------- */
+const PK_NAMES = ['High card', 'Pair', 'Two pair', 'Three of a kind', 'Straight', 'Flush', 'Full house', 'Four of a kind', 'Straight flush'];
+function pkEval5(cs) {
+  const rs = cs.map(c => c.r === 1 ? 14 : c.r).sort((a, b) => b - a);
+  const flush = cs.every(c => c.s === cs[0].s);
+  const cnt = {}; rs.forEach(r => cnt[r] = (cnt[r] || 0) + 1);
+  const groups = Object.entries(cnt).map(([r, n]) => [+r, n]).sort((a, b) => b[1] - a[1] || b[0] - a[0]);
+  let straight = 0;
+  if (groups.length === 5) { if (rs[0] - rs[4] === 4) straight = rs[0]; else if (rs[0] === 14 && rs[1] === 5) straight = 5; }
+  let cat, tb;
+  if (straight && flush) { cat = 8; tb = [straight]; }
+  else if (groups[0][1] === 4) { cat = 7; tb = groups.map(g => g[0]); }
+  else if (groups[0][1] === 3 && groups[1][1] === 2) { cat = 6; tb = groups.map(g => g[0]); }
+  else if (flush) { cat = 5; tb = rs; }
+  else if (straight) { cat = 4; tb = [straight]; }
+  else if (groups[0][1] === 3) { cat = 3; tb = groups.map(g => g[0]); }
+  else if (groups[0][1] === 2 && groups[1][1] === 2) { cat = 2; tb = groups.map(g => g[0]); }
+  else if (groups[0][1] === 2) { cat = 1; tb = groups.map(g => g[0]); }
+  else { cat = 0; tb = rs; }
+  let s = cat; for (let k = 0; k < 5; k++) s = s * 16 + (tb[k] || 0);
+  return s;
+}
+const pkCat = s => Math.floor(s / 1048576);
+function pkBest(cs) {
+  const n = cs.length; if (n <= 5) return pkEval5(cs);
+  let best = 0;
+  if (n === 6) { for (let a = 0; a < 6; a++) { const v = pkEval5(cs.filter((_, i) => i !== a)); if (v > best) best = v; } return best; }
+  for (let a = 0; a < n; a++) for (let b = a + 1; b < n; b++) { const v = pkEval5(cs.filter((_, i) => i !== a && i !== b)); if (v > best) best = v; }
+  return best;
+}
+
+/* ============================================================================
+   BLACKJACK
+   ============================================================================ */
+const Blackjack = (() => {
+  let S, root, sid = 0;
+  const cv = c => c.r === 1 ? 11 : Math.min(10, c.r);
+  function total(cards) { let t = 0, aces = 0; for (const c of cards) { t += cv(c); if (c.r === 1) aces++; } while (t > 21 && aces) { t -= 10; aces--; } return { t, soft: aces > 0 }; }
+  const isBJ = h => h.c.length === 2 && total(h.c).t === 21 && !h.split;
+  function draw() { if (S.shoe.length < 80) { S.shoe = shoe(6); Util.toast('Fresh shoe shuffled.', 1200); } return S.shoe.pop(); }
+  function newGame() { sid++; S = { shoe: shoe(6), bet: Math.min(25, Chips.get()), phase: 'bet', hands: [], cur: 0, dealer: [], msg: 'Place your bet and deal.', res: [] }; Chips.ensure(); render(); }
+  function addBet(v) { if (S.phase !== 'bet') return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many chips."); S.bet += v; Sfx.play('place'); render(); }
+  function clearBet() { if (S.phase === 'bet') { S.bet = 0; render(); } }
+  async function deal() {
+    if (S.phase !== 'bet') return;
+    if (Chips.ensure()) { S.bet = Math.min(S.bet, Chips.get()); }
+    if (!S.bet) return Util.toast('Add some chips to your bet first.');
+    if (S.bet > Chips.get()) S.bet = Chips.get();
+    Chips.add(-S.bet);
+    S.hands = [{ c: [draw(), draw()], bet: S.bet, done: false }]; S.dealer = [draw(), draw()]; S.cur = 0; S.phase = 'play'; S.res = [];
+    Sfx.play('card');
+    const dBJ = total(S.dealer).t === 21, pBJ = isBJ(S.hands[0]);
+    if (dBJ || pBJ) { S.hands[0].done = true; return settle(); }
+    S.msg = ''; render();
+  }
+  const hand = () => S.hands[S.cur];
+  function canSplit() { const h = hand(); return h && h.c.length === 2 && cv(h.c[0]) === cv(h.c[1]) && S.hands.length < 4 && Chips.get() >= h.bet; }
+  const canDouble = () => { const h = hand(); return h && h.c.length === 2 && Chips.get() >= h.bet; };
+  function act(a) {
+    if (S.phase !== 'play') return; const h = hand();
+    if (a === 'hit') { h.c.push(draw()); Sfx.play('card'); if (total(h.c).t >= 21) h.done = true; }
+    else if (a === 'stand') h.done = true;
+    else if (a === 'double') { if (!canDouble()) return; Chips.add(-h.bet); h.bet *= 2; h.dbl = true; h.c.push(draw()); Sfx.play('card'); h.done = true; }
+    else if (a === 'split') {
+      if (!canSplit()) return; Chips.add(-h.bet);
+      const b = { c: [h.c.pop(), draw()], bet: h.bet, done: false, split: true }; h.c.push(draw()); h.split = true;
+      S.hands.splice(S.cur + 1, 0, b); Sfx.play('card');
+      if (h.c[0].r === 1) { h.done = true; b.done = true; }
+      else { if (total(h.c).t === 21) h.done = true; if (total(b.c).t === 21) b.done = true; }
+    }
+    while (S.cur < S.hands.length && S.hands[S.cur].done) S.cur++;
+    if (S.cur >= S.hands.length) return dealerPlay();
+    render();
+  }
+  async function dealerPlay() {
+    S.phase = 'dealer'; render(); const my = sid;
+    const live = S.hands.some(h => total(h.c).t <= 21);
+    while (live && total(S.dealer).t < 17) { await Util.sleep(Util.delay(650)); if (my !== sid) return; S.dealer.push(draw()); Sfx.play('card'); render(); }
+    await Util.sleep(Util.delay(400)); if (my !== sid) return;
+    settle();
+  }
+  function settle() {
+    const d = total(S.dealer).t, dBJ = S.dealer.length === 2 && d === 21; let net = 0;
+    S.res = S.hands.map(h => {
+      const p = total(h.c).t, bj = isBJ(h);
+      let pay = 0, r;
+      if (p > 21) r = 'Bust';
+      else if (bj && !dBJ) { pay = h.bet * 2.5; r = 'Blackjack!'; }
+      else if (dBJ && !bj) r = 'Dealer blackjack';
+      else if (bj && dBJ) { pay = h.bet; r = 'Push'; }
+      else if (d > 21 || p > d) { pay = h.bet * 2; r = 'Win'; }
+      else if (p === d) { pay = h.bet; r = 'Push'; }
+      else r = 'Lose';
+      Chips.add(pay); net += pay - h.bet; return r;
+    });
+    S.phase = 'done';
+    S.msg = net > 0 ? `You win ${net} chips!` : net < 0 ? `You lose ${-net} chips.` : 'Push: your bet comes back.';
+    Sfx.play(net > 0 ? 'win' : net < 0 ? 'lose' : 'flip');
+    if (net > 0) App.recordWin('blackjack');
+    S.bet = Math.min(S.hands[0].dbl ? S.hands[0].bet / 2 : S.hands[0].bet, Chips.get()) || Math.min(25, Chips.get());
+    render();
+  }
+  function hint() {
+    const h = hand(); if (!h) return '';
+    const up = cv(S.dealer[0]), { t, soft } = total(h.c), two = h.c.length === 2;
+    const D = two && Chips.get() >= h.bet;
+    if (two && cv(h.c[0]) === cv(h.c[1]) && canSplit()) {
+      const v = cv(h.c[0]);
+      if (v === 11 || v === 8) return 'Split';
+      if (v === 9 && ![7, 10, 11].includes(up)) return 'Split';
+      if (v === 7 && up <= 7) return 'Split';
+      if (v === 6 && up <= 6) return 'Split';
+      if (v === 4 && (up === 5 || up === 6)) return 'Split';
+      if ((v === 2 || v === 3) && up <= 7) return 'Split';
+    }
+    if (soft && t <= 21) {
+      if (t >= 19) return 'Stand';
+      if (t === 18) return up >= 3 && up <= 6 && D ? 'Double' : up <= 8 ? 'Stand' : 'Hit';
+      if (t === 17) return up >= 3 && up <= 6 && D ? 'Double' : 'Hit';
+      if (t >= 15) return up >= 4 && up <= 6 && D ? 'Double' : 'Hit';
+      return up >= 5 && up <= 6 && D ? 'Double' : 'Hit';
+    }
+    if (t >= 17) return 'Stand';
+    if (t >= 13) return up <= 6 ? 'Stand' : 'Hit';
+    if (t === 12) return up >= 4 && up <= 6 ? 'Stand' : 'Hit';
+    if (t === 11) return up <= 10 && D ? 'Double' : 'Hit';
+    if (t === 10) return up <= 9 && D ? 'Double' : 'Hit';
+    if (t === 9) return up >= 3 && up <= 6 && D ? 'Double' : 'Hit';
+    return 'Hit';
+  }
+  function render() {
+    if (!root || !S) return;
+    const cw = Math.min(64, Math.floor(((root.clientWidth || 360) - 40) / 5.5)), B = Util.btn;
+    const showD = S.phase === 'dealer' || S.phase === 'done';
+    const dTot = showD ? total(S.dealer).t : S.dealer.length ? cv(S.dealer[0]) : '';
+    const hands = S.hands.map((h, k) => `<div class="flex flex-col items-center gap-1 rounded-xl p-1.5 ${k === S.cur && S.phase === 'play' && S.hands.length > 1 ? 'ring-2 ring-amber-300' : ''}">
+      ${cardRow(h.c, cw)}<div class="flex gap-1.5 items-center"><span class="stat-chip">${total(h.c).t}${total(h.c).soft && total(h.c).t < 21 ? ' soft' : ''}</span>${chipDisc(h.bet >= 500 ? 500 : h.bet >= 100 ? 100 : h.bet >= 25 ? 25 : 5, 24)}<span class="text-xs text-amber-200">${h.bet}</span>${S.res[k] ? `<span class="text-xs font-bold ${/Win|Black/.test(S.res[k]) ? 'text-emerald-300' : S.res[k] === 'Push' ? 'text-amber-200' : 'text-red-300'}">${S.res[k]}</span>` : ''}</div></div>`).join('');
+    let ctrl;
+    if (S.phase === 'bet' || S.phase === 'done') ctrl = `${betRow('Blackjack', S.bet)}<div class="flex gap-2 justify-center mt-2">${B('🃏 Deal', 'Blackjack.deal()', 'brass', '!text-base !px-6')}</div>`;
+    else if (S.phase === 'play') ctrl = `<div class="flex gap-2 flex-wrap justify-center">${B('👆 Hit', "Blackjack.act('hit')", 'brass')}${B('✋ Stand', "Blackjack.act('stand')")}${canDouble() ? B('✖2 Double', "Blackjack.act('double')") : ''}${canSplit() ? B('✂️ Split', "Blackjack.act('split')") : ''}</div>${Settings.hints ? `<div class="text-[11px] text-amber-100/55 mt-1">Basic strategy says: <b>${hint()}</b></div>` : ''}`;
+    else ctrl = '<div class="text-sm text-amber-100/70">Dealer plays…</div>';
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:520px">
+      <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">Blackjack pays 3 to 2</span></div>
+      <div class="w-full rounded-3xl p-3 flex flex-col items-center gap-3" style="background:radial-gradient(ellipse at 50% 0%,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d;box-shadow:inset 0 0 30px rgba(0,0,0,.5)">
+        <div class="flex flex-col items-center gap-1"><span class="text-[11px] uppercase tracking-widest text-emerald-100/60">Dealer ${dTot !== '' ? '· ' + dTot : ''}</span>${S.dealer.length ? cardRow(S.dealer, cw, showD ? 99 : 1) : `<div style="height:${cw * 1.4}px"></div>`}</div>
+        <div class="text-[10px] uppercase tracking-[.25em] text-amber-200/40">Dealer stands on all 17s</div>
+        <div class="flex flex-wrap gap-2 justify-center">${hands || `<div style="height:${cw * 1.4 + 30}px" class="flex items-center text-emerald-100/50 text-sm">${S.msg}</div>`}</div>
+      </div>
+      ${S.msg && S.hands.length ? `<div class="font-display text-amber-200">${S.msg}</div>` : ''}
+      ${Util.panel(ctrl, 'w-full text-center')}
+    </div>`;
+  }
+  return {
+    mount(el, o = {}) { root = el; if (o.resume && o.resume.phase === 'play') { S = o.resume; sid++; render(); } else newGame(); },
+    snapshot() { return S && S.phase === 'play' ? S : null; },
+    destroy() { sid++; root = null; },
+    addBet, clearBet, deal, act, newGame, _test: { get S() { return S; }, total, settle, hint }
+  };
+})();
+Games.blackjack = Blackjack;
+
+/* ============================================================================
+   BACCARAT
+   ============================================================================ */
+const Baccarat = (() => {
+  let S, root, sid = 0;
+  const pv = c => c.r >= 10 ? 0 : c.r;
+  const tot = cs => cs.reduce((s, c) => s + pv(c), 0) % 10;
+  function newGame() { sid++; S = { shoe: shoe(8), bets: { player: 0, banker: 0, tie: 0 }, chip: 25, p: [], b: [], phase: 'bet', road: [], msg: 'Bet on Player, Banker or Tie.' }; Chips.ensure(); render(); }
+  function place(k) {
+    if (S.phase === 'deal') return;
+    if (S.phase === 'done') { S.phase = 'bet'; S.p = []; S.b = []; }
+    const staked = S.bets.player + S.bets.banker + S.bets.tie;
+    if (staked + S.chip > Chips.get()) return Util.toast("You don't have that many chips.");
+    S.bets[k] += S.chip; Sfx.play('place'); render();
+  }
+  async function deal() {
+    if (S.phase === 'deal') return;
+    const staked = S.bets.player + S.bets.banker + S.bets.tie;
+    if (!staked) return Util.toast('Place a bet first: tap Player, Banker or Tie.');
+    if (staked > Chips.get()) return Util.toast("You don't have enough chips for those bets.");
+    Chips.add(-staked);
+    if (S.shoe.length < 30) S.shoe = shoe(8);
+    S.phase = 'deal'; S.p = []; S.b = []; const my = sid;
+    const step = async (arr) => { arr.push(S.shoe.pop()); Sfx.play('card'); render(); await Util.sleep(Util.delay(420)); if (my !== sid) throw 0; };
+    try {
+      await step(S.p); await step(S.b); await step(S.p); await step(S.b);
+      let pt = tot(S.p), bt = tot(S.b);
+      if (pt < 8 && bt < 8) {
+        let p3 = null;
+        if (pt <= 5) { await step(S.p); p3 = pv(S.p[2]); }
+        bt = tot(S.b);
+        const bDraw = p3 === null ? bt <= 5 : bt <= 2 || (bt === 3 && p3 !== 8) || (bt === 4 && p3 >= 2 && p3 <= 7) || (bt === 5 && p3 >= 4 && p3 <= 7) || (bt === 6 && (p3 === 6 || p3 === 7));
+        if (bDraw) await step(S.b);
+      }
+    } catch (e) { return; }
+    const pt = tot(S.p), bt = tot(S.b), w = pt > bt ? 'player' : bt > pt ? 'banker' : 'tie';
+    let pay = 0;
+    if (w === 'tie') pay = S.bets.tie * 9 + S.bets.player + S.bets.banker;
+    else if (w === 'player') pay = S.bets.player * 2;
+    else pay = S.bets.banker * 1.95;
+    pay = Math.round(pay); Chips.add(pay);
+    const net = pay - (S.bets.player + S.bets.banker + S.bets.tie);
+    S.road.push(w); if (S.road.length > 30) S.road.shift();
+    S.msg = `${w === 'tie' ? 'Tie' : w === 'player' ? 'Player wins' : 'Banker wins'} ${pt}–${bt}. ${net > 0 ? `You win ${net}!` : net < 0 ? `You lose ${-net}.` : 'Your chips come back.'}`;
+    Sfx.play(net > 0 ? 'win' : net < 0 ? 'lose' : 'flip'); if (net > 0) App.recordWin('baccarat');
+    S.phase = 'done'; render();
+  }
+  function clear() { if (S.phase !== 'deal') { S.bets = { player: 0, banker: 0, tie: 0 }; render(); } }
+  function render() {
+    if (!root || !S) return;
+    const cw = Math.min(58, Math.floor(((root.clientWidth || 360) - 60) / 6.5));
+    const spot = (k, label, pays, col) => `<button onclick="Baccarat.place('${k}')" class="flex-1 flex flex-col items-center justify-center gap-1 rounded-2xl py-3 border-2 ${S.bets[k] ? 'border-amber-300' : 'border-amber-200/30'}" style="background:${col}">
+      <span class="font-display text-amber-50 text-lg">${label}</span><span class="text-[10px] text-amber-100/60">${pays}</span>${S.bets[k] ? `<span class="flex items-center gap-1">${chipDisc(S.chip, 22)}<b class="text-amber-200 text-sm">${S.bets[k]}</b></span>` : '<span class="h-[22px]"></span>'}</button>`;
+    const side = (name, cs, win) => `<div class="flex-1 flex flex-col items-center gap-1 rounded-xl p-2 ${win ? 'ring-2 ring-amber-300 bg-amber-300/10' : ''}"><span class="text-[11px] uppercase tracking-widest text-emerald-100/70">${name} ${cs.length ? '· ' + tot(cs) : ''}</span>${cs.length ? cardRow(cs, cw) : `<div style="height:${cw * 1.4}px"></div>`}</div>`;
+    const w = S.phase === 'done' ? S.road[S.road.length - 1] : null;
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:520px">
+      <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">Banker pays 19 to 20</span></div>
+      <div class="w-full rounded-3xl p-3 flex flex-col gap-3" style="background:radial-gradient(ellipse at 50% 0%,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d">
+        <div class="flex gap-2">${side('Player', S.p, w === 'player')}${side('Banker', S.b, w === 'banker')}</div>
+        <div class="flex gap-2">${spot('player', 'Player', 'pays 1 to 1', 'rgba(37,99,235,.25)')}${spot('tie', 'Tie', 'pays 8 to 1', 'rgba(22,163,74,.25)')}${spot('banker', 'Banker', 'pays 0.95 to 1', 'rgba(220,38,38,.25)')}</div>
+        <div class="flex flex-wrap gap-1 justify-center min-h-[14px]">${S.road.map(r => `<span class="w-3.5 h-3.5 rounded-full" style="background:${r === 'player' ? '#3b82f6' : r === 'banker' ? '#ef4444' : '#22c55e'}" title="${r}"></span>`).join('')}</div>
+      </div>
+      <div class="text-sm text-amber-50/90 text-center min-h-[20px]">${S.msg}</div>
+      ${Util.panel(`${chipPicker('Baccarat', S.chip)}<div class="flex gap-2 justify-center mt-2">${Util.btn('🃏 Deal', 'Baccarat.deal()', 'brass', '!text-base !px-6')}${Util.btn('Clear bets', 'Baccarat.clear()')}</div><p class="text-[11px] text-amber-100/50 mt-2">Pick a chip, tap a spot to bet. Cards are drawn by the fixed baccarat rules: closest to 9 wins.</p>`, 'w-full text-center')}
+    </div>`;
+  }
+  return {
+    mount(el) { root = el; newGame(); }, snapshot() { return null; }, destroy() { sid++; root = null; },
+    place, deal, clear, pickChip(v) { S.chip = v; render(); }, newGame, _test: { get S() { return S; } }
+  };
+})();
+Games.baccarat = Baccarat;
+
+/* ============================================================================
+   VIDEO POKER: Jacks or Better
+   ============================================================================ */
+const VideoPoker = (() => {
+  let S, root;
+  const PAYS = [['Royal flush', 800], ['Straight flush', 50], ['Four of a kind', 25], ['Full house', 9], ['Flush', 6], ['Straight', 4], ['Three of a kind', 3], ['Two pair', 2], ['Jacks or better', 1]];
+  function payout(cs) {
+    const s = pkEval5(cs), cat = pkCat(s), rs = cs.map(c => c.r === 1 ? 14 : c.r);
+    if (cat === 8) return Math.min(...rs) === 10 ? 0 : 1;
+    if (cat === 7) return 2; if (cat === 6) return 3; if (cat === 5) return 4; if (cat === 4) return 5; if (cat === 3) return 6; if (cat === 2) return 7;
+    if (cat === 1) { const cnt = {}; rs.forEach(r => cnt[r] = (cnt[r] || 0) + 1); const pr = +Object.keys(cnt).find(r => cnt[r] === 2); return pr >= 11 ? 8 : -1; }
+    return -1;
+  }
+  function newGame() { S = { bet: Math.min(25, Chips.get()), hand: [], held: [false, false, false, false, false], phase: 'bet', deck: [], res: -1, msg: 'Set your bet and deal.' }; Chips.ensure(); render(); }
+  function deal() {
+    if (S.phase === 'draw') return draw();
+    Chips.ensure(); if (!S.bet) return Util.toast('Add chips to your bet first.'); if (S.bet > Chips.get()) S.bet = Chips.get();
+    Chips.add(-S.bet); S.deck = Util.shuffle(Util.deck()); S.hand = S.deck.splice(0, 5); S.held = [false, false, false, false, false]; S.phase = 'draw'; S.res = payout(S.hand); S.msg = 'Tap the cards you want to keep, then Draw.'; Sfx.play('card'); render();
+  }
+  function hold(i) { if (S.phase !== 'draw') return; S.held[i] = !S.held[i]; Sfx.play('tap'); render(); }
+  function draw() {
+    S.hand = S.hand.map((c, i) => S.held[i] ? c : S.deck.pop()); S.phase = 'bet';
+    S.res = payout(S.hand); const win = S.res >= 0 ? S.bet * PAYS[S.res][1] : 0;
+    Chips.add(win);
+    S.msg = S.res >= 0 ? `${PAYS[S.res][0]}! You win ${win} chips.` : 'No win this time.';
+    Sfx.play(S.res >= 0 ? (S.res <= 3 ? 'win' : 'match') : 'flip'); if (S.res >= 0) App.recordWin('videopoker');
+    if (S.bet > Chips.get()) S.bet = Math.min(25, Chips.get());
+    render();
+  }
+  /* estimate the best cards to hold by sampling the draw */
+  function bestHold() {
+    const rest = Util.deck().filter(c => !S.hand.some(h => h.id === c.id)); let best = null;
+    for (let m = 0; m < 32; m++) {
+      const keep = S.hand.filter((_, i) => m >> i & 1), need = 5 - keep.length; let ev = 0;
+      const N = need === 0 ? 1 : 260;
+      for (let t = 0; t < N; t++) {
+        const d = rest.slice(); const hand = keep.slice();
+        for (let k = 0; k < need; k++) hand.push(d.splice(Math.floor(Math.random() * d.length), 1)[0]);
+        const r = payout(hand); ev += r >= 0 ? PAYS[r][1] : 0;
+      }
+      ev /= N; if (!best || ev > best.ev) best = { m, ev };
+    }
+    return best.m;
+  }
+  function hint() { if (S.phase !== 'draw') return; const m = bestHold(); S.held = S.held.map((_, i) => !!(m >> i & 1)); Util.toast('Held the best cards to keep.', 1300); render(); }
+  function render() {
+    if (!root || !S) return;
+    const cw = Math.min(76, Math.floor(((root.clientWidth || 360) - 40) / 5.3));
+    const table = PAYS.map(([n, x], k) => `<div class="flex justify-between px-2 py-0.5 rounded ${S.res === k && S.phase === 'bet' && S.hand.length ? 'bg-amber-400 text-stone-900 font-bold' : S.res === k ? 'bg-amber-400/20' : ''}"><span>${n}</span><span>${(x * S.bet).toLocaleString()}</span></div>`).join('');
+    const cards = S.hand.length ? S.hand.map((c, i) => `<div onclick="VideoPoker.hold(${i})" class="flex flex-col items-center gap-1 cursor-pointer" style="--cw:${cw}px"><span class="text-[11px] font-bold h-4 ${S.held[i] ? 'text-amber-300' : 'text-transparent'}">HELD</span><div style="transform:translateY(${S.held[i] ? -6 : 0}px);transition:transform .15s">${Util.card(c, { sel: S.held[i] })}</div></div>`).join('') : Array(5).fill(`<div style="--cw:${cw}px" class="mt-5">${Util.card(null, { down: true })}</div>`).join('');
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:520px">
+      <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">Jacks or Better</span></div>
+      <div class="w-full rounded-2xl p-2 text-xs text-amber-100 grid grid-cols-1 gap-0" style="background:#101a3a;border:3px solid #c9a227">${table}</div>
+      <div class="flex gap-1.5 justify-center">${cards}</div>
+      <div class="text-sm text-amber-50/90 text-center min-h-[20px] font-display">${S.msg}</div>
+      ${Util.panel(`${S.phase === 'bet' ? betRow('VideoPoker', S.bet) : ''}<div class="flex gap-2 justify-center mt-2">${Util.btn(S.phase === 'draw' ? '🔄 Draw' : '🃏 Deal', 'VideoPoker.deal()', 'brass', '!text-base !px-6')}${S.phase === 'draw' && Settings.hints ? Util.btn('💡 Best hold', 'VideoPoker.hint()') : ''}</div>`, 'w-full text-center')}
+    </div>`;
+  }
+  return {
+    mount(el) { root = el; newGame(); }, snapshot() { return null; }, destroy() { root = null; },
+    deal, hold, hint, newGame,
+    addBet(v) { if (S.phase !== 'bet') return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many chips."); S.bet += v; Sfx.play('place'); render(); },
+    clearBet() { if (S.phase === 'bet') { S.bet = 0; render(); } },
+    _test: { get S() { return S; }, payout, bestHold }
+  };
+})();
+Games.videopoker = VideoPoker;
+
+/* ============================================================================
+   ROULETTE (single-zero wheel)
+   ============================================================================ */
+const Roulette = (() => {
+  const ORDER = [0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26];
+  const RED = new Set([1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]);
+  const colOf = n => n === 0 ? '#178a45' : RED.has(n) ? '#c0262d' : '#1a1a1a';
+  let S, root, sid = 0;
+  function newGame() { sid++; S = { bets: {}, last: {}, chip: 25, rot: 0, hist: [], spinning: false, msg: 'Pick a chip and tap the table to bet.', result: null }; Chips.ensure(); render(); }
+  const staked = () => Object.values(S.bets).reduce((a, b) => a + b, 0);
+  function bet(k) {
+    if (S.spinning) return;
+    if (staked() + S.chip > Chips.get()) return Util.toast("You don't have that many chips.");
+    S.bets[k] = (S.bets[k] || 0) + S.chip; Sfx.play('place'); render();
+  }
+  function wins(k, n) {
+    if (k[0] === 'n') return +k.slice(1) === n ? 35 : -1;
+    if (n === 0) return -1;
+    switch (k) {
+      case 'red': return RED.has(n) ? 1 : -1; case 'black': return !RED.has(n) ? 1 : -1;
+      case 'odd': return n % 2 ? 1 : -1; case 'even': return n % 2 ? -1 : 1;
+      case 'low': return n <= 18 ? 1 : -1; case 'high': return n >= 19 ? 1 : -1;
+      case 'd1': return n <= 12 ? 2 : -1; case 'd2': return n > 12 && n <= 24 ? 2 : -1; case 'd3': return n > 24 ? 2 : -1;
+      case 'c1': return n % 3 === 1 ? 2 : -1; case 'c2': return n % 3 === 2 ? 2 : -1; case 'c3': return n % 3 === 0 ? 2 : -1;
+    }
+    return -1;
+  }
+  async function spin() {
+    if (S.spinning) return;
+    const st = staked(); if (!st) return Util.toast('Place a bet first.');
+    if (st > Chips.get()) return Util.toast("You don't have enough chips.");
+    Chips.add(-st); S.last = { ...S.bets }; S.spinning = true; S.result = null; S.msg = 'No more bets!';
+    const n = ORDER[Math.floor(Math.random() * 37)], i = ORDER.indexOf(n), seg = 360 / 37;
+    const target = -(i * seg); const cur = ((S.rot % 360) + 360) % 360;
+    S.rot = S.rot - cur + 360 * 5 + ((target % 360) + 360) % 360 + (S.rot % 360 === 0 ? 0 : 0);
+    render(); Sfx.play('dice');
+    const my = sid; await Util.sleep(Settings.fast ? 1400 : 3800); if (my !== sid) return;
+    let pay = 0; for (const [k, a] of Object.entries(S.bets)) { const x = wins(k, n); if (x >= 0) pay += a * (x + 1); }
+    Chips.add(pay); const net = pay - st;
+    S.hist.unshift(n); S.hist = S.hist.slice(0, 14); S.result = n; S.spinning = false; S.bets = {};
+    S.msg = `${n} ${n === 0 ? 'green' : RED.has(n) ? 'red' : 'black'}. ${net > 0 ? `You win ${net}!` : pay ? `You get ${pay} back.` : `You lose ${st}.`}`;
+    Sfx.play(net > 0 ? 'win' : 'flip'); if (net > 0) App.recordWin('roulette');
+    render();
+  }
+  function wheelSvg(size) {
+    const r = size / 2, seg = 360 / 37, pts = [];
+    ORDER.forEach((n, i) => {
+      const a0 = (i * seg - seg / 2 - 90) * Math.PI / 180, a1 = (i * seg + seg / 2 - 90) * Math.PI / 180;
+      const x0 = r + r * Math.cos(a0), y0 = r + r * Math.sin(a0), x1 = r + r * Math.cos(a1), y1 = r + r * Math.sin(a1);
+      const am = (i * seg - 90) * Math.PI / 180, tx = r + r * .82 * Math.cos(am), ty = r + r * .82 * Math.sin(am);
+      pts.push(`<path d="M${r},${r} L${x0},${y0} A${r},${r} 0 0 1 ${x1},${y1} Z" fill="${colOf(n)}" stroke="#c9a227" stroke-width=".6"/><text x="${tx}" y="${ty}" fill="#fff" font-size="${size * .055}" font-weight="700" text-anchor="middle" dominant-baseline="middle" transform="rotate(${i * seg},${tx},${ty})">${n}</text>`);
+    });
+    return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">${pts.join('')}<circle cx="${r}" cy="${r}" r="${r * .62}" fill="#5a3a22" stroke="#c9a227" stroke-width="2"/><circle cx="${r}" cy="${r}" r="${r * .2}" fill="#c9a227"/></svg>`;
+  }
+  function render() {
+    if (!root || !S) return;
+    const w = Math.min(480, (root.clientWidth || 360) - 8), cell = Math.floor((w - 70) / 3), ch = 30, wheel = Math.min(190, w * .5);
+    const chipOn = k => S.bets[k] ? `<span class="absolute -top-1 -right-1">${chipDisc(S.bets[k] >= 500 ? 500 : S.bets[k] >= 100 ? 100 : S.bets[k] >= 25 ? 25 : 5, 20)}</span><span class="absolute bottom-0 right-0.5 text-[9px] font-bold text-amber-200">${S.bets[k]}</span>` : '';
+    const nb = n => `<button onclick="Roulette.bet('n${n}')" class="relative flex items-center justify-center font-bold text-white text-sm ${S.result === n ? 'ring-2 ring-amber-300 z-10' : ''}" style="height:${ch}px;background:${colOf(n)};border:1px solid rgba(201,162,39,.5)">${n}${chipOn('n' + n)}</button>`;
+    const out = (k, label, bg = 'transparent') => `<button onclick="Roulette.bet('${k}')" class="relative flex items-center justify-center text-[11px] font-bold text-amber-50 ${S.result !== null && wins(k, S.result) >= 0 ? 'bg-amber-300/25' : ''}" style="height:${ch}px;border:1px solid rgba(201,162,39,.5);background:${bg}">${label}${chipOn(k)}</button>`;
+    let grid = '';
+    for (let row = 0; row < 12; row++) grid += [1, 2, 3].map(c => nb(row * 3 + c)).join('');
+    root.innerHTML = `<div class="flex flex-col items-center gap-2 mx-auto w-full" style="max-width:500px">
+      <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">On the table <b class="ml-1 text-amber-200">${staked()}</b></span></div>
+      <div class="flex items-center gap-3">
+        <div class="relative" style="width:${wheel}px;height:${wheel}px">
+          <div style="width:${wheel}px;height:${wheel}px;transform:rotate(${S.rot}deg);transition:transform ${S.spinning ? (Settings.fast ? 1.3 : 3.6) : 0}s cubic-bezier(.15,.7,.2,1);border-radius:50%;border:5px solid #4a2e1d;box-shadow:0 8px 20px rgba(0,0,0,.6)">${wheelSvg(wheel - 10)}</div>
+          <div class="absolute left-1/2 -translate-x-1/2 -top-2 text-xl" style="filter:drop-shadow(0 2px 2px #000)">🔻</div>
+          ${S.result !== null && !S.spinning ? `<div class="absolute inset-0 flex items-center justify-center"><span class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl text-white" style="background:${colOf(S.result)};border:2px solid #c9a227">${S.result}</span></div>` : ''}
+        </div>
+        <div class="flex flex-col gap-1 items-start max-w-[120px]"><span class="text-[10px] uppercase tracking-widest text-amber-100/50">Last spins</span><div class="flex flex-wrap gap-1">${S.hist.map(n => `<span class="w-6 h-6 rounded-full text-[10px] font-bold flex items-center justify-center text-white" style="background:${colOf(n)}">${n}</span>`).join('') || '<span class="text-xs text-amber-100/40">None yet</span>'}</div></div>
+      </div>
+      <div class="text-sm text-amber-50/90 text-center min-h-[20px] font-display">${S.msg}</div>
+      <div class="rounded-xl p-1.5" style="background:#0f3d27;border:4px solid #4a2e1d">
+        <div class="flex">
+          <div class="grid" style="grid-template-columns:repeat(3,${cell}px)">
+            <button onclick="Roulette.bet('n0')" class="relative col-span-3 flex items-center justify-center font-bold text-white ${S.result === 0 ? 'ring-2 ring-amber-300' : ''}" style="height:${ch}px;background:${colOf(0)};border:1px solid rgba(201,162,39,.5)">0${chipOn('n0')}</button>
+            ${grid}${out('c1', '2:1')}${out('c2', '2:1')}${out('c3', '2:1')}
+          </div>
+          <div class="grid ml-1" style="grid-template-rows:${ch}px repeat(3,${ch * 4}px);width:56px">
+            <div></div>${['d1', 'd2', 'd3'].map((k, j) => `<button onclick="Roulette.bet('${k}')" class="relative flex items-center justify-center text-[11px] font-bold text-amber-50" style="border:1px solid rgba(201,162,39,.5);writing-mode:vertical-rl">${['1st 12', '2nd 12', '3rd 12'][j]}${chipOn(k)}</button>`).join('')}
+          </div>
+        </div>
+        <div class="grid grid-cols-6 mt-1">${out('low', '1-18')}${out('even', 'Even')}${out('red', '', '#c0262d')}${out('black', '', '#1a1a1a')}${out('odd', 'Odd')}${out('high', '19-36')}</div>
+      </div>
+      ${Util.panel(`${chipPicker('Roulette', S.chip)}<div class="flex gap-2 justify-center mt-2 flex-wrap">${Util.btn('🎡 Spin', 'Roulette.spin()', 'brass', '!text-base !px-6')}${Util.btn('🔁 Rebet', 'Roulette.rebet()')}${Util.btn('Clear', 'Roulette.clear()')}</div><p class="text-[11px] text-amber-100/50 mt-2">A number pays 35 to 1, dozens and columns 2 to 1, and red/black, odd/even, high/low pay 1 to 1.</p>`, 'w-full text-center')}
+    </div>`;
+  }
+  return {
+    mount(el) { root = el; newGame(); }, snapshot() { return null; }, destroy() { sid++; root = null; },
+    bet, spin, newGame, pickChip(v) { S.chip = v; render(); },
+    clear() { if (!S.spinning) { S.bets = {}; render(); } },
+    rebet() { if (S.spinning) return; const t = Object.values(S.last).reduce((a, b) => a + b, 0); if (!t) return Util.toast('No previous bets yet.'); if (t > Chips.get()) return Util.toast("You don't have enough chips to repeat that."); S.bets = { ...S.last }; render(); },
+    _test: { get S() { return S; }, wins }
+  };
+})();
+Games.roulette = Roulette;
+
+/* ============================================================================
+   CRAPS (pass line, don't pass, odds, field, any seven)
+   ============================================================================ */
+const Craps = (() => {
+  let S, root, sid = 0;
+  const ODDS = { 4: [2, 1], 10: [2, 1], 5: [3, 2], 9: [3, 2], 6: [6, 5], 8: [6, 5] };
+  function newGame() { sid++; S = { bets: { pass: 0, dp: 0, odds: 0, field: 0, any7: 0 }, point: null, dice: [3, 4], chip: 25, rolling: false, msg: 'Come-out roll. Bet the Pass Line and roll!', log: [] }; Chips.ensure(); render(); }
+  function bet(k) {
+    if (S.rolling) return;
+    if ((k === 'pass' || k === 'dp') && S.point) return Util.toast('Pass and Don\'t Pass bets go down before the come-out roll.');
+    if (k === 'odds' && (!S.point || !S.bets.pass)) return Util.toast('Odds can be added behind a Pass bet once a point is set.');
+    if (k === 'odds' && S.bets.odds + S.chip > S.bets.pass * 3) return Util.toast('Odds are limited to 3 times your Pass bet.');
+    if (S.chip > Chips.get()) return Util.toast("You don't have that many chips.");
+    Chips.add(-S.chip); S.bets[k] += S.chip; Sfx.play('place'); render();
+  }
+  function clear() {
+    if (S.rolling) return; let back = S.bets.field + S.bets.any7; S.bets.field = 0; S.bets.any7 = 0;
+    if (!S.point) { back += S.bets.pass + S.bets.dp; S.bets.pass = 0; S.bets.dp = 0; }
+    back += S.bets.odds; S.bets.odds = 0;
+    Chips.add(back); render();
+  }
+  async function roll() {
+    if (S.rolling) return;
+    if (!Object.values(S.bets).some(Boolean)) return Util.toast('Put a bet on the table first.');
+    S.rolling = true; const my = sid;
+    for (let k = 0; k < 8; k++) { S.dice = [Util.d6(), Util.d6()]; render(); await Util.sleep(Util.delay(70)); if (my !== sid) return; }
+    Sfx.play('dice');
+    const [a, b] = S.dice, s = a + b, notes = []; let net = 0;
+    const pay = (k, mult) => { const x = S.bets[k]; if (!x) return; const back = x + Math.floor(x * mult); Chips.add(back); net += back - x; notes.push(`${label(k)} wins ${back - x}`); S.bets[k] = 0; };
+    const lose = k => { if (!S.bets[k]) return; net -= S.bets[k]; notes.push(`${label(k)} loses`); S.bets[k] = 0; };
+    const push = k => { if (!S.bets[k]) return; Chips.add(S.bets[k]); notes.push(`${label(k)} pushes`); S.bets[k] = 0; };
+    if (S.bets.field) { if ([3, 4, 9, 10, 11].includes(s)) pay('field', 1); else if (s === 2) pay('field', 2); else if (s === 12) pay('field', 3); else lose('field'); }
+    if (S.bets.any7) { if (s === 7) pay('any7', 4); else lose('any7'); }
+    let head;
+    if (!S.point) {
+      if (s === 7 || s === 11) { head = `${s}: a natural!`; pay('pass', 1); lose('dp'); }
+      else if (s === 2 || s === 3 || s === 12) { head = `${s}: craps.`; lose('pass'); if (s === 12) push('dp'); else pay('dp', 1); }
+      else { S.point = s; head = `The point is ${s}.`; }
+    } else if (s === S.point) {
+      head = `${s}: point made!`; const [n, d] = ODDS[s]; pay('pass', 1); pay('odds', n / d); lose('dp'); S.point = null;
+    } else if (s === 7) {
+      head = 'Seven out.'; lose('pass'); lose('odds'); pay('dp', 1); S.point = null;
+    } else head = `${s}. Still looking for ${S.point}.`;
+    S.msg = `${head}${notes.length ? ' ' + notes.join(', ') + '.' : ''}`;
+    S.rolling = false; Sfx.play(net > 0 ? 'win' : net < 0 ? 'flip' : 'tap'); if (net > 0) App.recordWin('craps');
+    render();
+  }
+  const label = k => ({ pass: 'Pass', dp: "Don't Pass", odds: 'Odds', field: 'Field', any7: 'Any 7' })[k];
+  function render() {
+    if (!root || !S) return;
+    const spot = (k, title, sub, cls = '') => `<button onclick="Craps.bet('${k}')" class="relative flex flex-col items-center justify-center rounded-xl py-2 px-2 border-2 ${S.bets[k] ? 'border-amber-300 bg-amber-300/10' : 'border-amber-100/25'} ${cls}"><span class="font-display text-amber-50">${title}</span><span class="text-[10px] text-amber-100/60">${sub}</span>${S.bets[k] ? `<span class="flex items-center gap-1 mt-1">${chipDisc(S.bets[k] >= 500 ? 500 : S.bets[k] >= 100 ? 100 : S.bets[k] >= 25 ? 25 : 5, 20)}<b class="text-amber-200 text-xs">${S.bets[k]}</b></span>` : ''}</button>`;
+    const pts = [4, 5, 6, 8, 9, 10].map(n => `<div class="flex-1 flex items-center justify-center rounded-lg font-bold text-lg py-1.5 ${S.point === n ? 'bg-white text-stone-900' : 'text-amber-50/80'}" style="border:1px solid rgba(255,255,255,.25)">${n}</div>`).join('');
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:500px">
+      <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">${S.point ? `Point: <b class="ml-1 text-amber-200">${S.point}</b>` : 'Come-out roll'}</span></div>
+      <div class="w-full rounded-3xl p-3 flex flex-col gap-2" style="background:radial-gradient(ellipse at 50% 0%,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d">
+        <div class="flex gap-1">${pts}</div>
+        <div class="flex justify-center gap-4 py-2">${Util.die(S.dice[0], 'scale-125')}${Util.die(S.dice[1], 'scale-125')}</div>
+        <div class="grid grid-cols-2 gap-2">${spot('field', 'Field', '3,4,9,10,11 pay 1:1 · 2 pays 2:1 · 12 pays 3:1', 'col-span-2')}${spot('pass', 'Pass Line', 'wins on 7/11, then the point')}${spot('dp', "Don't Pass", 'wins on 2/3, then a 7')}${spot('odds', 'Pass Odds', 'true odds, up to 3×')}${spot('any7', 'Any 7', 'one roll, pays 4 to 1')}</div>
+      </div>
+      <div class="text-sm text-amber-50/90 text-center min-h-[20px] font-display">${S.msg}</div>
+      ${Util.panel(`${chipPicker('Craps', S.chip)}<div class="flex gap-2 justify-center mt-2">${Util.btn('🎲 Roll', 'Craps.roll()', 'brass', '!text-base !px-6')}${Util.btn('Take back bets', 'Craps.clear()')}</div><p class="text-[11px] text-amber-100/50 mt-2">Come-out: 7 or 11 wins the Pass Line, 2, 3 or 12 loses. Any other number becomes the point: roll it again before a 7 to win.</p>`, 'w-full text-center')}
+    </div>`;
+  }
+  return {
+    mount(el) { root = el; newGame(); }, snapshot() { return null; },
+    destroy() { sid++; if (S) { const b = S.bets; const back = b.field + b.any7 + b.odds + b.pass + b.dp; if (back) Chips.add(back); } root = null; },
+    bet, roll, clear, newGame, pickChip(v) { S.chip = v; render(); }, _test: { get S() { return S; } }
+  };
+})();
+Games.craps = Craps;
+
+/* ============================================================================
+   SLOTS: Lucky Lantern, a 3x3 machine with five paylines
+   ============================================================================ */
+const Slots = (() => {
+  const SYM = [['🍒', 7, 12], ['🍋', 6, 16], ['🍇', 5, 28], ['🔔', 4, 45], ['⭐', 3, 90], ['💎', 2, 220], ['🏮', 1, 600]];
+  const W = SYM.reduce((s, x) => s + x[1], 0);
+  const LINES = [[[0, 0], [0, 1], [0, 2]], [[1, 0], [1, 1], [1, 2]], [[2, 0], [2, 1], [2, 2]], [[0, 0], [1, 1], [2, 2]], [[2, 0], [1, 1], [0, 2]]];
+  let S, root, sid = 0;
+  const pick = () => { let r = Math.random() * W; for (let i = 0; i < SYM.length; i++) { r -= SYM[i][1]; if (r < 0) return i; } return 0; };
+  function newGame() { sid++; S = { grid: [[0, 1, 2], [3, 4, 5], [6, 0, 1]], bet: Math.min(25, Chips.get()), spinning: false, wins: [], msg: 'Five lines, one spin. Good luck!', stop: 3 }; Chips.ensure(); render(); }
+  function score(g) {
+    const wins = [];
+    LINES.forEach((L, k) => { const s = L.map(([r, c]) => g[r][c]); if (s[0] === s[1] && s[1] === s[2]) wins.push([k, SYM[s[0]][2]]); else if (s[0] === 0 && s[1] === 0) wins.push([k, 2]); });
+    return wins;
+  }
+  async function spin() {
+    if (S.spinning) return; Chips.ensure();
+    if (S.bet < 5) return Util.toast('Bet at least 5 chips.'); if (S.bet > Chips.get()) S.bet = Chips.get() - Chips.get() % 5;
+    Chips.add(-S.bet); S.spinning = true; S.wins = []; S.msg = ''; const my = sid;
+    const final = [[pick(), pick(), pick()], [pick(), pick(), pick()], [pick(), pick(), pick()]];
+    for (S.stop = 0; S.stop < 3; S.stop++) {
+      const frames = Settings.fast ? 5 : 12;
+      for (let f = 0; f < frames; f++) {
+        for (let c = S.stop; c < 3; c++) for (let r = 0; r < 3; r++) S.grid[r][c] = Math.floor(Math.random() * SYM.length);
+        render(); await Util.sleep(70); if (my !== sid) return;
+      }
+      for (let r = 0; r < 3; r++) S.grid[r][S.stop] = final[r][S.stop];
+      Sfx.play('place'); render();
+    }
+    S.wins = score(S.grid); const lb = S.bet / 5, win = Math.floor(S.wins.reduce((s, w) => s + w[1] * lb, 0));
+    Chips.add(win); S.spinning = false;
+    S.msg = win ? `${S.wins.length} winning line${S.wins.length > 1 ? 's' : ''}: you win ${win}!` : 'No luck this spin.';
+    Sfx.play(win >= S.bet * 10 ? 'win' : win ? 'match' : 'flip'); if (win > S.bet) App.recordWin('slots');
+    render();
+  }
+  function render() {
+    if (!root || !S) return;
+    const cell = Math.min(92, Math.floor(((root.clientWidth || 360) - 70) / 3));
+    const onLine = new Set(S.wins.flatMap(([k]) => LINES[k].map(([r, c]) => r * 3 + c)));
+    const cells = [0, 1, 2].map(r => [0, 1, 2].map(c => `<div class="flex items-center justify-center rounded-xl ${onLine.has(r * 3 + c) && !S.spinning ? 'bg-amber-300/40 ring-2 ring-amber-300' : 'bg-white/90'}" style="width:${cell}px;height:${cell}px;font-size:${cell * .55}px;${S.spinning && c >= S.stop ? 'filter:blur(1.5px)' : ''}">${SYM[S.grid[r][c]][0]}</div>`).join('')).join('');
+    const pays = SYM.slice().reverse().map(([e, , p]) => `<span class="whitespace-nowrap">${e}${e}${e} ×${p}</span>`).join(' · ');
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:460px">
+      <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">🏮 Lucky Lantern</span></div>
+      <div class="rounded-[28px] p-3" style="background:linear-gradient(160deg,#b0262d,#5e0f14);border:6px solid #c9a227;box-shadow:0 12px 30px rgba(0,0,0,.6)">
+        <div class="text-center font-display text-amber-200 tracking-widest text-sm mb-2">✦ LUCKY LANTERN ✦</div>
+        <div class="grid grid-cols-3 gap-2 rounded-2xl p-2" style="background:#2a0d0f">${cells}</div>
+      </div>
+      <div class="text-sm text-amber-50/90 text-center min-h-[20px] font-display">${S.msg}</div>
+      ${Util.panel(`${betRow('Slots', S.bet)}<div class="flex gap-2 justify-center mt-2">${Util.btn('🎰 Spin', 'Slots.spin()', 'brass', '!text-base !px-8')}</div><p class="text-[10px] text-amber-100/55 mt-2">Your bet is split across 5 lines (3 rows and 2 diagonals). Pays per line: ${pays} · 🍒🍒 on the left ×2.</p>`, 'w-full text-center')}
+    </div>`;
+  }
+  return {
+    mount(el) { root = el; newGame(); }, snapshot() { return null; }, destroy() { sid++; root = null; },
+    spin, newGame,
+    addBet(v) { if (S.spinning) return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many chips."); S.bet += v; Sfx.play('place'); render(); },
+    clearBet() { if (!S.spinning) { S.bet = 0; render(); } },
+    _test: { get S() { return S; }, score, pick, SYM, LINES }
+  };
+})();
+Games.slots = Slots;
+
+/* ============================================================================
+   TEXAS HOLD'EM: no-limit cash table against AI players
+   ============================================================================ */
+const Holdem = (() => {
+  const SB = 2, BB = 4, BUYIN = 200;
+  const NAMES = [['Dusty', .9, .2], ['Marlow', 1.2, .35], ['Queenie', 1.05, .25], ['Rook', .8, .1], ['Sable', 1.35, .45], ['Tilly', 1, .3], ['Bram', .95, .15], ['Ottilie', 1.15, .4]];
+  let S, root, sid = 0, waiter = null, ui = { raise: false };
+  const stackKey = 'holdem_stack';
+  function saveStack() { if (S) Store.set(stackKey, S.p[0].chips + S.p[0].bet + (S.inHand ? 0 : 0)); }
+  function recoverStack() { const s = Store.get(stackKey, 0); if (s > 0) { Chips.add(s); Store.set(stackKey, 0); } }
+  function newAI(used) { const pool = NAMES.filter(n => !used.includes(n[0])); const [name, agg, bluff] = pool[Math.floor(Math.random() * pool.length)]; return { name, ai: true, agg, bluff, chips: BUYIN, cards: [], bet: 0, total: 0, folded: false, allin: false, acted: false }; }
+  function newTable(opps = 5) {
+    sid++; recoverStack(); Chips.ensure();
+    const buy = Math.min(BUYIN, Chips.get()); Chips.add(-buy);
+    const p = [{ name: 'You', ai: false, chips: buy, cards: [], bet: 0, total: 0, folded: false, allin: false, acted: false }];
+    for (let k = 0; k < opps; k++) p.push(newAI(p.map(x => x.name)));
+    S = { p, dealer: Math.floor(Math.random() * p.length), board: [], deck: [], phase: 'between', cur: -1, curBet: 0, minRaise: BB, log: [], res: null, hands: 0, inHand: false };
+    saveStack(); nextHand();
+  }
+  const log = s => { S.log.push(s); if (S.log.length > 30) S.log.shift(); };
+  const live = () => S.p.filter(x => !x.folded && !x.out);
+  const pot = () => S.p.reduce((s, x) => s + x.total + x.bet, 0);
+  const nextSeat = (i, f) => { for (let k = 1; k <= S.p.length; k++) { const j = (i + k) % S.p.length; if (f(S.p[j])) return j; } return -1; };
+  async function nextHand() {
+    const my = sid;
+    // replace broke AI players, stop if the human is out of chips
+    S.p.forEach((x, k) => { if (k > 0 && x.chips <= 0) { const n = newAI(S.p.map(y => y.name)); S.p[k] = n; log(`${n.name} sits down with ${BUYIN} chips.`); } });
+    if (S.p[0].chips <= 0) { S.phase = 'broke'; render(); return; }
+    S.p.forEach(x => Object.assign(x, { cards: [], bet: 0, total: 0, folded: false, allin: false, acted: false, show: false, out: false }));
+    S.deck = Util.shuffle(Util.deck()); S.board = []; S.res = null; S.hands++; S.inHand = true;
+    S.dealer = nextSeat(S.dealer, x => x.chips > 0);
+    const heads = S.p.length === 2;
+    const sb = heads ? S.dealer : nextSeat(S.dealer, x => x.chips > 0), bb = nextSeat(sb, x => x.chips > 0);
+    post(sb, SB); post(bb, BB); S.curBet = BB; S.minRaise = BB;
+    for (let r = 0; r < 2; r++) S.p.forEach(x => x.cards.push(S.deck.pop()));
+    Sfx.play('card');
+    S.phase = 'preflop'; S.cur = nextSeat(bb, x => !x.folded && !x.allin);
+    saveStack(); render();
+    try { await playHand(my); } catch (e) { if (e !== 'abort') console.error(e); }
+  }
+  function post(i, amt) { const x = S.p[i], a = Math.min(amt, x.chips); x.chips -= a; x.bet += a; if (!x.chips) x.allin = true; }
+  const gate = my => { if (my !== sid) throw 'abort'; };
+  async function playHand(my) {
+    for (const street of ['preflop', 'flop', 'turn', 'river']) {
+      if (street !== 'preflop') {
+        S.p.forEach(x => { x.total += x.bet; x.bet = 0; x.acted = false; }); S.curBet = 0; S.minRaise = BB;
+        S.board.push(...S.deck.splice(-(street === 'flop' ? 3 : 1)));
+        S.phase = street; Sfx.play('card'); render(); await Util.sleep(Util.delay(600)); gate(my);
+        S.cur = nextSeat(S.dealer, x => !x.folded && !x.allin);
+      }
+      if (live().length > 1 && live().filter(x => !x.allin).length > 1 || (live().filter(x => !x.allin).length === 1 && S.p.some(x => !x.folded && !x.allin && x.bet < S.curBet))) await bettingRound(my);
+      if (live().length === 1) return award();
+    }
+    S.p.forEach(x => { x.total += x.bet; x.bet = 0; });
+    showdown();
+  }
+  function roundDone() {
+    const act = S.p.filter(x => !x.folded && !x.out && !x.allin);
+    if (live().length <= 1) return true;
+    return act.every(x => x.acted && x.bet === S.curBet);
+  }
+  async function bettingRound(my) {
+    let guard = 0, raises = 0;
+    while (!roundDone() && guard++ < 200) {
+      const i = S.cur, x = S.p[i];
+      if (i < 0) break;
+      if (x.folded || x.allin || x.out) { S.cur = nextSeat(i, y => !y.folded && !y.allin && !y.out); continue; }
+      render();
+      let a;
+      if (x.ai) { await Util.sleep(Util.delay(700)); gate(my); a = aiAct(i, raises); }
+      else { a = await new Promise(r => { waiter = r; render(); }); gate(my); }
+      if (a.t === 'raise') raises++;
+      apply(i, a); render(); await Util.sleep(Util.delay(250)); gate(my);
+      if (live().length <= 1) break;
+      S.cur = nextSeat(i, y => !y.folded && !y.allin && !y.out);
+    }
+  }
+  function apply(i, a) {
+    const x = S.p[i], toCall = S.curBet - x.bet;
+    if (a.t === 'fold') { x.folded = true; log(`${x.name} folds.`); }
+    else if (a.t === 'check' || (a.t === 'call' && toCall <= 0)) log(`${x.name} checks.`);
+    else if (a.t === 'call') { const c = Math.min(toCall, x.chips); x.chips -= c; x.bet += c; if (!x.chips) x.allin = true; log(`${x.name} calls ${c}${x.allin ? ' (all in)' : ''}.`); Sfx.play('place'); }
+    else if (a.t === 'raise') {
+      const to = Math.min(a.to, x.bet + x.chips), add = to - x.bet;
+      x.chips -= add; x.bet = to; if (!x.chips) x.allin = true;
+      if (to > S.curBet) { if (to - S.curBet >= S.minRaise) S.minRaise = to - S.curBet; S.curBet = to; S.p.forEach(y => { if (y !== x) y.acted = false; }); }
+      log(`${x.name} ${x.allin ? 'goes all in for' : S.curBet === to && toCall === 0 && S.phase !== 'preflop' ? 'bets' : 'raises to'} ${to}.`); Sfx.play('capture');
+    }
+    x.acted = true;
+    if (i === 0) saveStack();
+  }
+  /* AI: estimate the chance of winning by dealing out random hands */
+  function equity(i, n) {
+    const x = S.p[i], opps = live().length - 1, known = x.cards.concat(S.board);
+    const rest = Util.deck().filter(c => !known.some(k => k.id === c.id)); let win = 0;
+    for (let t = 0; t < n; t++) {
+      const d = rest.slice(); const take = () => d.splice(Math.floor(Math.random() * d.length), 1)[0];
+      const board = S.board.concat(Array.from({ length: 5 - S.board.length }, take));
+      const mine = pkBest(x.cards.concat(board)); let best = 0, ties = 1;
+      for (let o = 0; o < opps; o++) { const v = pkBest([take(), take()].concat(board)); if (v > best) { best = v; ties = 1; } else if (v === best) ties++; }
+      if (mine > best) win += 1; else if (mine === best) win += 1 / (ties + 1);
+    }
+    return win / n;
+  }
+  function aiAct(i, raises) {
+    const x = S.p[i], toCall = S.curBet - x.bet, P = pot(), opps = live().length - 1;
+    const n = Settings.diff === 'hard' ? 260 : Settings.diff === 'easy' ? 80 : 160;
+    let eq = equity(i, n) + (Settings.diff === 'easy' ? (Math.random() - .5) * .3 : 0);
+    const fair = 1 / (opps + 1), strong = fair + .22 / x.agg + .05, odds = toCall / (P + toCall);
+    const sizeTo = f => Math.max(S.curBet + S.minRaise, Math.round(S.curBet + (P + toCall) * f));
+    const raise = to => (to - x.bet >= x.chips * .8) ? { t: 'raise', to: x.bet + x.chips } : { t: 'raise', to };
+    const r = Math.random();
+    if (toCall <= 0) {
+      if (eq > strong && raises < 3) return raise(sizeTo(.55 + Math.random() * .4));
+      if (r < x.bluff * .25 && raises < 1) return raise(sizeTo(.5));
+      return { t: 'check' };
+    }
+    if (eq > strong + .12 && raises < 3 && r < .7 * x.agg) return raise(sizeTo(.75));
+    if (eq >= odds + .02 || (toCall <= BB && eq > fair * .7)) return { t: 'call' };
+    if (r < x.bluff * .08 && raises < 1 && S.phase !== 'river') return raise(sizeTo(.7));
+    return { t: 'fold' };
+  }
+  function award() {
+    S.p.forEach(x => { x.total += x.bet; x.bet = 0; });
+    const w = live()[0], amt = pot(); w.chips += amt; S.p.forEach(x => x.total = 0);
+    S.res = { lines: [`${w.name} wins ${amt} chips.`], winners: [S.p.indexOf(w)] };
+    log(S.res.lines[0]); endHand(w === S.p[0]);
+  }
+  function showdown() {
+    const contenders = live(); contenders.forEach(x => { x.show = true; x.score = pkBest(x.cards.concat(S.board)); });
+    const levels = [...new Set(S.p.filter(x => x.total > 0).map(x => x.total))].sort((a, b) => a - b);
+    let prev = 0; const won = new Map(); const lines = [];
+    for (const L of levels) {
+      const slice = S.p.reduce((s, x) => s + Math.max(0, Math.min(x.total, L) - prev), 0);
+      const elig = contenders.filter(x => x.total >= L);
+      if (slice > 0 && elig.length) {
+        const best = Math.max(...elig.map(x => x.score)), ws = elig.filter(x => x.score === best), share = Math.floor(slice / ws.length);
+        ws.forEach((x, k) => won.set(x, (won.get(x) || 0) + share + (k === 0 ? slice - share * ws.length : 0)));
+      }
+      prev = L;
+    }
+    for (const [x, a] of won) { x.chips += a; lines.push(`${x.name} wins ${a} with ${PK_NAMES[pkCat(x.score)].toLowerCase()}.`); }
+    S.p.forEach(x => x.total = 0);
+    S.res = { lines, winners: [...won.keys()].map(x => S.p.indexOf(x)) };
+    lines.forEach(log); endHand(won.has(S.p[0]));
+  }
+  function endHand(humanWon) {
+    S.phase = 'between'; S.inHand = false; S.cur = -1; waiter = null; ui.raise = false;
+    Sfx.play(humanWon ? 'win' : 'flip'); if (humanWon) App.recordWin('holdem');
+    saveStack(); render();
+  }
+  /* human input */
+  function act(t, f) {
+    if (!waiter || S.cur !== 0) return;
+    const x = S.p[0], toCall = S.curBet - x.bet; let a;
+    if (t === 'fold') a = { t: 'fold' };
+    else if (t === 'call') a = { t: toCall > 0 ? 'call' : 'check' };
+    else if (t === 'raise') {
+      const P = pot(), minTo = Math.min(S.curBet + S.minRaise, x.bet + x.chips);
+      const to = f === 'all' ? x.bet + x.chips : f === 'min' ? minTo : Math.max(minTo, Math.round(S.curBet + (P + toCall) * f));
+      a = { t: 'raise', to: Math.min(to, x.bet + x.chips) };
+    }
+    const w = waiter; waiter = null; ui.raise = false; w(a);
+  }
+  function cashOut() {
+    if (S && S.inHand) return Util.toast('Finish this hand first.');
+    if (S) { Chips.add(S.p[0].chips); Util.toast(`You cash out ${S.p[0].chips} chips.`); S.p[0].chips = 0; Store.set(stackKey, 0); }
+    sid++; S = null; App.backToShelf();
+  }
+  function rebuy() { Chips.ensure(); const b = Math.min(BUYIN, Chips.get()); Chips.add(-b); S.p[0].chips = b; saveStack(); nextHand(); }
+  /* ---------- drawing ---------- */
+  function seat(i, cw) {
+    const x = S.p[i], turn = S.cur === i && S.inHand, win = S.res && S.res.winners.includes(i);
+    const cards = x.cards.length ? `<div class="flex gap-0.5" style="--cw:${cw}px">${x.cards.map(c => Util.card(c, { down: !(x.show && !x.folded) })).join('')}</div>` : '';
+    return `<div class="flex flex-col items-center gap-0.5 rounded-xl px-1.5 py-1 ${turn ? 'ring-2 ring-amber-300 bg-amber-300/10' : ''} ${win ? 'ring-2 ring-emerald-400 bg-emerald-400/10' : ''} ${x.folded ? 'opacity-45' : ''}" style="background-color:rgba(0,0,0,.25)">
+      <div class="flex items-center gap-1 text-[11px]"><span class="font-semibold text-amber-100">${x.name}</span>${S.dealer === i ? '<span class="w-4 h-4 rounded-full bg-white text-stone-900 text-[9px] font-bold flex items-center justify-center">D</span>' : ''}</div>
+      ${cards}<div class="text-[11px] text-amber-200">🪙${x.chips}</div>
+      <div class="text-[10px] h-3.5 ${x.allin ? 'text-red-300 font-bold' : 'text-amber-100/70'}">${x.folded ? 'Folded' : x.allin ? 'ALL IN' : x.bet ? 'Bet ' + x.bet : ''}</div></div>`;
+  }
+  function render() {
+    if (!root || !S) return;
+    const w = (root.clientWidth || 360), ocw = Math.min(30, Math.floor((w - 40) / 12)), bcw = Math.min(54, Math.floor((w - 50) / 5.4)), mcw = Math.min(70, Math.floor(w / 5.2));
+    const me = S.p[0], toCall = Math.max(0, S.curBet - me.bet), myTurn = S.cur === 0 && S.inHand && waiter;
+    const opps = S.p.slice(1).map((_, k) => seat(k + 1, ocw)).join('');
+    const board = Array.from({ length: 5 }, (_, k) => S.board[k] ? Util.card(S.board[k]) : Util.card(null)).join('');
+    const best = me.cards.length && !me.folded && S.board.length >= 3 ? PK_NAMES[pkCat(pkBest(me.cards.concat(S.board)))] : '';
+    let ctrl;
+    if (S.phase === 'broke') ctrl = `<div class="text-sm text-amber-50/90 mb-2">You're out of chips at this table.</div><div class="flex gap-2 justify-center">${Util.btn(`🪙 Buy in again (${Math.min(BUYIN, Math.max(Chips.get(), 500))})`, 'Holdem.rebuy()', 'brass')}${Util.btn('Leave table', 'Holdem.cashOut()')}</div>`;
+    else if (!S.inHand) ctrl = `<div class="text-sm text-amber-50/90 mb-2">${S.res ? S.res.lines.join('<br>') : ''}</div><div class="flex gap-2 justify-center">${Util.btn('🃏 Next hand', 'Holdem.next()', 'brass', '!px-6')}${Util.btn('💰 Cash out', 'Holdem.cashOut()')}</div>`;
+    else if (myTurn && ui.raise) {
+      const P = pot(), mx = me.bet + me.chips, minTo = Math.min(S.curBet + S.minRaise, mx), opt = (l, f) => Util.btn(l, `Holdem.act('raise',${typeof f === 'string' ? `'${f}'` : f})`);
+      ctrl = `<div class="text-xs text-amber-100/70 mb-2">Raise to how much? (pot ${P})</div><div class="flex gap-2 flex-wrap justify-center">${opt(`Min ${minTo}`, 'min')}${opt(`½ pot ${Math.min(mx, Math.max(minTo, Math.round(S.curBet + (P + toCall) * .5)))}`, .5)}${opt(`Pot ${Math.min(mx, Math.max(minTo, Math.round(S.curBet + (P + toCall))))}`, 1)}${Util.btn(`All in ${mx}`, "Holdem.act('raise','all')", 'brass')}${Util.btn('Back', 'Holdem.raiseMenu(false)')}</div>`;
+    }
+    else if (myTurn) ctrl = `<div class="flex gap-2 flex-wrap justify-center">${Util.btn('🏳️ Fold', "Holdem.act('fold')")}${Util.btn(toCall ? `📞 Call ${Math.min(toCall, me.chips)}` : '✋ Check', "Holdem.act('call')", 'brass')}${me.chips > toCall ? Util.btn(S.curBet ? '⬆️ Raise' : '⬆️ Bet', 'Holdem.raiseMenu(true)') : ''}</div>`;
+    else ctrl = `<div class="text-sm text-amber-100/70">${S.cur >= 0 ? S.p[S.cur].name + ' is thinking…' : '…'}</div>`;
+    root.innerHTML = `<div class="flex flex-col items-center gap-2 mx-auto w-full" style="max-width:560px">
+      <div class="flex gap-2 justify-center flex-wrap">${bankChip()}<span class="stat-chip">Blinds ${SB}/${BB}</span><span class="stat-chip">Hand ${S.hands}</span></div>
+      <div class="grid grid-cols-3 gap-1.5 w-full">${opps}</div>
+      <div class="w-full rounded-[40px] py-3 px-2 flex flex-col items-center gap-2" style="background:radial-gradient(ellipse,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d">
+        <div class="flex gap-1" style="--cw:${bcw}px">${board}</div>
+        <div class="flex items-center gap-2"><span class="stat-chip">Pot <b class="ml-1 text-amber-200">${pot()}</b></span>${S.curBet && S.inHand ? `<span class="text-[11px] text-emerald-100/70">to call ${toCall}</span>` : ''}</div>
+      </div>
+      <div class="flex items-end gap-3">
+        <div class="flex gap-1 ${me.folded ? 'opacity-40' : ''}" style="--cw:${mcw}px">${me.cards.map(c => Util.card(c)).join('')}</div>
+        <div class="flex flex-col items-start gap-0.5 pb-1"><span class="font-display text-amber-200 ${S.cur === 0 && S.inHand ? 'animate-pulse' : ''}">You ${S.dealer === 0 ? '🔘' : ''}</span><span class="text-amber-100 text-sm">🪙 ${me.chips} at the table</span>${me.bet ? `<span class="text-[11px] text-amber-100/70">Bet ${me.bet}</span>` : ''}${best ? `<span class="text-[11px] text-emerald-300">${best}</span>` : ''}</div>
+      </div>
+      ${Util.panel(ctrl, 'w-full text-center')}
+      <div class="text-[11px] text-amber-100/50 w-full text-center leading-tight">${S.log.slice(-2).join('<br>')}</div>
+    </div>`;
+  }
+  return {
+    mount(el, o = {}) { root = el; if (o.resume && o.resume.phase === 'between') { recoverStack(); S = o.resume; const b = Math.min(S.p[0].chips, Chips.get()); Chips.add(-b); S.p[0].chips = b; saveStack(); sid++; render(); } else newTable(5); },
+    snapshot() { return S && !S.inHand && S.phase === 'between' ? S : null; },
+    destroy() { sid++; waiter = null; if (S && S.p[0].chips > 0) { Chips.add(S.p[0].chips + (S.inHand ? S.p[0].bet : 0)); Store.set(stackKey, 0); } root = null; },
+    act, raiseMenu(v) { ui.raise = v; render(); }, next() { if (!S.inHand) nextHand(); }, cashOut, rebuy, newGame() { newTable(5); },
+    _test: { get S() { return S; }, equity, showdown, pot }
+  };
+})();
+Games.holdem = Holdem;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -10818,7 +11843,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.7.1",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.8.0",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

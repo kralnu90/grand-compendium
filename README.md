@@ -1,17 +1,24 @@
 # The Grand Tabletop Compendium
 
-*Thirty-seven classic, esoteric, family, pub and word games, one table.*
+*Forty-four classic, esoteric, family, pub, casino and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.7.1**
+**Current version: 1.8.0**
 
 ## The games
 
 | Game | Type | Players |
 | --- | --- | --- |
+| 🂡 **Blackjack** | Hit, stand, double and split against a dealer who stands on 17. Basic strategy hints | Solo (play chips) |
+| ♠️ **Texas Hold'em** | No-limit cash table with blinds, side pots and five AI players | You vs 5 AI (play chips) |
+| 🎡 **Roulette** | Single-zero wheel with numbers, dozens, columns and even-money bets | Solo (play chips) |
+| 🎴 **Video Poker** | Jacks or Better with a best-hold helper | Solo (play chips) |
+| 💠 **Baccarat** | Player, Banker or Tie with the standard drawing rules | Solo (play chips) |
+| 🎲 **Craps** | Pass line, don't pass, true odds, field and any seven | Solo (play chips) |
+| 🎰 **Lucky Lantern** | A 3-reel, five-line slot machine | Solo (play chips) |
 | ♞ **Chess** | Castling, en passant and your choice of promotion piece. Legal moves are highlighted | vs AI or 2 players |
 | ☖ **Shogi (将棋)** | Japanese chess on a 9×9 board. Captured pieces join your hand and can be dropped back in | vs AI or 2 players |
 | ⛃ **Checkers** | Captures are forced and multi-jump chains are played one tap at a time | vs AI or 2 players |
@@ -101,6 +108,10 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.8.0 · The Casino (19 November 2026)
+- New Casino shelf: Blackjack, Texas Hold'em, Roulette, Video Poker, Baccarat, Craps and the Lucky Lantern slot machine
+- One shared bank of free play chips, topped up whenever you run dry. Chips can never be bought or cashed out
 
 ### 1.7.1 · Knucklebones (19 November 2026)
 - Knucklebones: the bone-dice duel. Matching dice multiply, and placing a die knocks out your rival's matching dice
