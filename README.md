@@ -1,12 +1,12 @@
 # The Grand Tabletop Compendium
 
-*Forty-four classic, esoteric, family, pub, casino and word games, one table.*
+*Forty-five classic, esoteric, family, pub, casino and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.8.1**
+**Current version: 1.8.2**
 
 ## The games
 
@@ -14,6 +14,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | --- | --- | --- |
 | 🂡 **Blackjack** | Hit, stand, double and split against a dealer who stands on 17. Basic strategy hints | Solo (play chips) |
 | ♠️ **Texas Hold'em** | No-limit cash table with blinds, side pots and five AI players | You vs 5 AI (play chips) |
+| 🃏 **Three Card Poker** | Ante, Play and Pair Plus against a dealer who needs Queen high, with ante bonuses | Solo (play chips) |
 | 🎡 **Roulette** | Single-zero wheel with numbers, dozens, columns and even-money bets | Solo (play chips) |
 | 🎴 **Video Poker** | Jacks or Better with a best-hold helper | Solo (play chips) |
 | 💠 **Baccarat** | Player, Banker or Tie with the standard drawing rules | Solo (play chips) |
@@ -108,6 +109,9 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.8.2 · Three Card Poker (19 November 2026)
+- Three Card Poker: Ante, Play and Pair Plus, ante bonus, Queen-6-4 strategy hint, bets stay up between hands
 
 ### 1.8.1 · Blackjack fix (19 November 2026)
 - Fixed: the Deal button and bet chips stopped working after a Blackjack hand finished

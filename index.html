@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Forty-four parlour, family, pub, casino and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Forty-five parlour, family, pub, casino and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Forty-four games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Forty-five games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -42,6 +42,7 @@
     --color-emerald-300: oklch(84.5% 0.143 164.978);
     --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-sky-100: oklch(95.1% 0.026 236.824);
     --color-sky-300: oklch(82.8% 0.111 230.318);
     --color-stone-900: oklch(21.6% 0.006 56.043);
     --color-stone-950: oklch(14.7% 0.004 49.25);
@@ -511,6 +512,9 @@
   .table {
     display: table;
   }
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
   .\!h-9 {
     height: calc(var(--spacing) * 9) !important;
   }
@@ -693,6 +697,9 @@
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
+  }
+  .max-w-\[96px\] {
+    max-width: 96px;
   }
   .max-w-\[120px\] {
     max-width: 120px;
@@ -963,6 +970,9 @@
   .rounded-\[28px\] {
     border-radius: 28px;
   }
+  .rounded-\[36px\] {
+    border-radius: 36px;
+  }
   .rounded-\[40px\] {
     border-radius: 40px;
   }
@@ -1011,6 +1021,12 @@
     border-color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 25%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-amber-100) 25%, transparent);
+    }
+  }
+  .border-amber-100\/30 {
+    border-color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-amber-100) 30%, transparent);
     }
   }
   .border-amber-200\/30 {
@@ -1762,6 +1778,18 @@
   }
   .text-red-400 {
     color: var(--color-red-400);
+  }
+  .text-sky-100\/70 {
+    color: color-mix(in srgb, oklch(95.1% 0.026 236.824) 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-sky-100) 70%, transparent);
+    }
+  }
+  .text-sky-100\/80 {
+    color: color-mix(in srgb, oklch(95.1% 0.026 236.824) 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-sky-100) 80%, transparent);
+    }
   }
   .text-sky-300 {
     color: var(--color-sky-300);
@@ -3379,6 +3407,22 @@ const GAME_CATALOG = [
         <li><strong>Table chips:</strong> You buy in for 200 from your bank. Cash out to put your stack back in the bank (it also goes back if you leave).</li>
         <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
       </ul>`
+  },
+  {
+    id: 'threecard', title: "Three Card Poker", subtitle: "Ante, Play & Pair Plus", category: 'Casino', icon: '🃏',
+    players: "Solo vs the dealer", tagline: "Three cards each. Play or fold, beat a dealer who needs Queen high, and chase the Pair Plus bonus.",
+    rules: `
+      <p><strong>Objective:</strong> Beat the dealer's three-card hand, or land a big hand for the bonuses.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Bets:</strong> Put chips on the Ante. Pair Plus is an optional side bet on your own hand.</li>
+        <li><strong>Play or fold:</strong> After you see your cards, Play (place a bet equal to your Ante) or Fold (lose the Ante).</li>
+        <li><strong>The dealer:</strong> Needs Queen high or better to qualify. If not, your Ante pays 1 to 1 and your Play bet comes back. If they qualify, the better hand wins: you get 1 to 1 on Ante and Play, or lose both. Ties push.</li>
+        <li><strong>Hand ranks (best first):</strong> Straight flush, Three of a kind, Straight, Flush, Pair, High card. With only three cards, a straight beats a flush.</li>
+        <li><strong>Ante bonus:</strong> Paid whenever you Play, even if the dealer wins: straight 1 to 1, three of a kind 4 to 1, straight flush 5 to 1.</li>
+        <li><strong>Pair Plus:</strong> Pays on your hand alone: pair 1, flush 3, straight 6, three of a kind 30, straight flush 40 (to 1).</li>
+        <li><strong>Tip:</strong> The standard strategy is to play Queen-6-4 or better. With hints on, the table tells you.</li>
+        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+      </ul>`
   }
 ];
 
@@ -3540,7 +3584,7 @@ const App = {
     { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'knucklebones', 'liars', 'dominoes', 'mahjong'] },
     { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
     { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] },
-    { k: 'casino', n: 'Casino', icon: '🎰', blurb: 'Play-chip tables: cards, wheel, dice and slots', ids: ['blackjack', 'holdem', 'roulette', 'videopoker', 'baccarat', 'craps', 'slots'] }
+    { k: 'casino', n: 'Casino', icon: '🎰', blurb: 'Play-chip tables: cards, wheel, dice and slots', ids: ['blackjack', 'holdem', 'threecard', 'roulette', 'videopoker', 'baccarat', 'craps', 'slots'] }
   ],
   catOf(id) { return this.CATS.find(c => c.ids.includes(id)); },
   hubChrome(sub) {
@@ -3660,9 +3704,14 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.8.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.8.2'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.8.2', '19 Nov 2026', 'Three Card Poker', [
+    'Three Card Poker joins the Casino: Ante, Play and Pair Plus against a dealer who needs Queen high',
+    'Ante bonus for straights and better, plus a strategy hint telling you when to play or fold',
+    'Your bets stay on the table between hands'
+  ]],
   ['1.8.1', '19 Nov 2026', 'Blackjack fix', [
     'Fixed: in Blackjack, the Deal button and bet chips stopped working after a hand finished'
   ]],
@@ -11795,6 +11844,106 @@ const Holdem = (() => {
 })();
 Games.holdem = Holdem;
 
+/* ============================================================================
+   THREE CARD POKER: ante, play and pair plus against the dealer
+   ============================================================================ */
+const ThreeCard = (() => {
+  const CATS = ['High card', 'Pair', 'Flush', 'Straight', 'Three of a kind', 'Straight flush'];
+  const PAIRPLUS = { 1: 1, 2: 3, 3: 6, 4: 30, 5: 40 }, BONUS = { 3: 1, 4: 4, 5: 5 };
+  let S, root, sid = 0;
+  function eval3(cs) {
+    let rs = cs.map(c => c.r === 1 ? 14 : c.r).sort((a, b) => b - a);
+    const flush = cs.every(c => c.s === cs[0].s);
+    let straight = rs[0] - rs[1] === 1 && rs[1] - rs[2] === 1;
+    if (!straight && rs[0] === 14 && rs[1] === 3 && rs[2] === 2) { straight = true; rs = [3, 2, 1]; }
+    const pair = rs[0] === rs[1] || rs[1] === rs[2], trips = rs[0] === rs[2];
+    let cat = 0;
+    if (straight && flush) cat = 5; else if (trips) cat = 4; else if (straight) cat = 3; else if (flush) cat = 2;
+    else if (pair) { cat = 1; if (rs[1] === rs[2]) rs = [rs[1], rs[2], rs[0]]; }
+    return { cat, score: ((cat * 16 + rs[0]) * 16 + rs[1]) * 16 + rs[2], hi: rs[0], rs };
+  }
+  const qualifies = h => h.cat > 0 || h.hi >= 12;
+  /* standard strategy: play anything Queen-6-4 or better */
+  const shouldPlay = h => h.cat > 0 || h.rs[0] > 12 || (h.rs[0] === 12 && (h.rs[1] > 6 || (h.rs[1] === 6 && h.rs[2] >= 4)));
+  function newGame() { sid++; S = { ante: Math.min(25, Chips.get()), pp: 0, chip: 25, phase: 'bet', you: [], dealer: [], res: null, msg: 'Set your Ante (and Pair Plus if you like), then deal.' }; Chips.ensure(); render(); }
+  const open = () => S.phase === 'bet' || S.phase === 'done';
+  function addTo(k) {
+    if (!open()) return;
+    if (S.phase === 'done') { S.phase = 'bet'; S.you = []; S.dealer = []; S.res = null; }
+    if (S.ante + S.pp + S.chip > Chips.get()) return Util.toast("You don't have that many chips.");
+    S[k] += S.chip; Sfx.play('place'); render();
+  }
+  function clear() { if (!open()) return; S.ante = 0; S.pp = 0; if (S.phase === 'done') { S.phase = 'bet'; S.you = []; S.dealer = []; S.res = null; } render(); }
+  function deal() {
+    if (!open()) return;
+    if (Chips.ensure()) { S.ante = Math.min(S.ante || 25, Chips.get()); S.pp = 0; }
+    if (!S.ante) return Util.toast('Put chips on the Ante first.');
+    // you need enough left to match the ante with a Play bet
+    if (S.ante * 2 + S.pp > Chips.get()) { S.pp = 0; S.ante = Math.floor(Chips.get() / 2 / 5) * 5; if (S.ante < 5) return Util.toast('Not enough chips to cover the Play bet.'); Util.toast('Bet lowered so you can still match it with a Play bet.'); }
+    Chips.add(-(S.ante + S.pp));
+    const d = Util.shuffle(Util.deck()); S.you = d.splice(0, 3); S.dealer = d.splice(0, 3);
+    S.phase = 'decide'; S.res = null; S.msg = 'Play (match your Ante) or Fold?'; Sfx.play('card'); render();
+  }
+  async function decide(play) {
+    if (S.phase !== 'decide') return;
+    const my = sid, yh = eval3(S.you), dh = eval3(S.dealer), lines = []; let back = 0, staked = S.ante + S.pp;
+    if (play) { Chips.add(-S.ante); staked += S.ante; }
+    S.phase = 'reveal'; render(); Sfx.play('flip');
+    await Util.sleep(Util.delay(700)); if (my !== sid) return;
+    if (S.pp) {
+      if (yh.cat >= 1) { const w = S.pp * PAIRPLUS[yh.cat]; back += S.pp + w; lines.push(`Pair Plus: ${CATS[yh.cat]} pays ${w}`); }
+      else lines.push('Pair Plus loses');
+    }
+    if (!play) lines.push('You fold: Ante lost');
+    else {
+      if (BONUS[yh.cat]) { const w = S.ante * BONUS[yh.cat]; back += w; lines.push(`Ante bonus: ${CATS[yh.cat]} pays ${w}`); }
+      if (!qualifies(dh)) { back += S.ante * 2 + S.ante; lines.push("Dealer doesn't qualify: Ante wins, Play pushes"); }
+      else if (yh.score > dh.score) { back += S.ante * 4; lines.push('You beat the dealer: Ante and Play win'); }
+      else if (yh.score === dh.score) { back += S.ante * 2; lines.push('A tie: Ante and Play push'); }
+      else lines.push('Dealer wins: Ante and Play lost');
+    }
+    Chips.add(back); const net = back - staked;
+    S.res = { yh, dh, lines, net, play }; S.phase = 'done';
+    S.msg = net > 0 ? `You win ${net} chips!` : net < 0 ? `You lose ${-net} chips.` : 'You break even.';
+    Sfx.play(net > 0 ? 'win' : net < 0 ? 'lose' : 'flip'); if (net > 0) App.recordWin('threecard');
+    if (S.ante * 2 + S.pp > Chips.get()) { S.pp = 0; S.ante = Math.min(S.ante, Math.floor(Chips.get() / 2 / 5) * 5); }
+    render();
+  }
+  function render() {
+    if (!root || !S) return;
+    const cw = Math.min(70, Math.floor(((root.clientWidth || 360) - 60) / 4)), B = Util.btn;
+    const reveal = S.phase === 'reveal' || S.phase === 'done';
+    const yh = S.you.length ? eval3(S.you) : null, dh = S.dealer.length && reveal ? eval3(S.dealer) : null;
+    const spot = (k, label, sub, playOn) => `<button ${k ? `onclick="ThreeCard.addTo('${k}')"` : 'disabled'} class="flex-1 flex flex-col items-center justify-center rounded-full aspect-square max-w-[96px] border-2 ${(k ? S[k] : playOn) ? 'border-amber-300 bg-amber-300/10' : 'border-amber-100/30'}">
+      <span class="font-display text-amber-50 text-sm">${label}</span><span class="text-[9px] text-amber-100/60 leading-tight">${sub}</span>${(k ? S[k] : playOn) ? `<span class="text-amber-200 font-bold text-sm">${k ? S[k] : playOn}</span>` : ''}</button>`;
+    const playAmt = S.res ? (S.res.play ? S.ante : 0) : 0;
+    let ctrl;
+    if (S.phase === 'decide') ctrl = `<div class="flex gap-2 justify-center">${B(`▶ Play (${S.ante})`, 'ThreeCard.decide(true)', 'brass', '!text-base !px-6')}${B('🏳️ Fold', 'ThreeCard.decide(false)')}</div>${Settings.hints ? `<div class="text-[11px] text-amber-100/55 mt-1">Standard strategy: play Queen-6-4 or better. Here: <b>${shouldPlay(yh) ? 'Play' : 'Fold'}</b></div>` : ''}`;
+    else if (S.phase === 'reveal') ctrl = '<div class="text-sm text-amber-100/70">Dealer reveals…</div>';
+    else ctrl = `${chipPicker('ThreeCard', S.chip)}<div class="flex gap-2 justify-center mt-2">${B('🃏 Deal', 'ThreeCard.deal()', 'brass', '!text-base !px-6')}${B('Clear bets', 'ThreeCard.clear()')}</div><p class="text-[11px] text-amber-100/50 mt-2">Pick a chip, then tap Ante or Pair Plus. Your bets stay on the table for the next hand.</p>`;
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:520px">
+      <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">Dealer qualifies with Queen high</span></div>
+      <div class="w-full rounded-[36px] p-3 flex flex-col items-center gap-3" style="background:radial-gradient(ellipse at 50% 0%,#1d5f8a,#0c2f4a 75%);border:6px solid #4a2e1d;box-shadow:inset 0 0 30px rgba(0,0,0,.5)">
+        <div class="flex flex-col items-center gap-1"><span class="text-[11px] uppercase tracking-widest text-sky-100/70">Dealer${dh ? ' · ' + CATS[dh.cat] + (qualifies(dh) ? '' : " (doesn't qualify)") : ''}</span>${S.dealer.length ? cardRow(S.dealer, cw, reveal ? 99 : 0) : `<div style="height:${cw * 1.4}px"></div>`}</div>
+        <div class="flex gap-3 justify-center w-full">${spot('pp', 'Pair Plus', 'pair or better')}${spot('ante', 'Ante', 'vs the dealer')}${spot(null, 'Play', 'matches Ante', playAmt || (S.phase === 'decide' ? 0 : 0))}</div>
+        <div class="flex flex-col items-center gap-1">${S.you.length ? cardRow(S.you, cw) : `<div style="height:${cw * 1.4}px"></div>`}<span class="text-[11px] uppercase tracking-widest text-sky-100/80">You${yh ? ' · ' + CATS[yh.cat] : ''}</span></div>
+      </div>
+      <div class="font-display text-amber-200 text-center">${S.msg}</div>
+      ${S.res ? `<div class="text-[11px] text-amber-100/70 text-center leading-snug">${S.res.lines.join('<br>')}</div>` : ''}
+      ${Util.panel(ctrl, 'w-full text-center')}
+      <details class="w-full text-[11px] text-amber-100/70"><summary class="cursor-pointer text-center">Paytables</summary><div class="grid grid-cols-2 gap-3 mt-2">
+        <div><b class="text-amber-200">Pair Plus</b>${[5, 4, 3, 2, 1].map(c => `<div class="flex justify-between"><span>${CATS[c]}</span><span>${PAIRPLUS[c]} to 1</span></div>`).join('')}</div>
+        <div><b class="text-amber-200">Ante bonus</b>${[5, 4, 3].map(c => `<div class="flex justify-between"><span>${CATS[c]}</span><span>${BONUS[c]} to 1</span></div>`).join('')}<div class="mt-1 opacity-70">Paid whenever you Play, win or lose.</div></div></div></details>
+    </div>`;
+  }
+  return {
+    mount(el) { root = el; newGame(); }, snapshot() { return null; }, destroy() { sid++; root = null; },
+    addTo, clear, deal, decide, newGame, pickChip(v) { S.chip = v; render(); },
+    _test: { get S() { return S; }, eval3, qualifies, shouldPlay }
+  };
+})();
+Games.threecard = ThreeCard;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -11847,7 +11996,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.8.1",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.8.2",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}
