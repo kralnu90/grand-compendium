@@ -6,7 +6,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.9.0**
+**Current version: 1.9.1**
 
 ## The games
 
@@ -118,6 +118,9 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.9.1 · Spring Mikado gets tougher (19 November 2026)
+- A steady-pace sweet spot: too slow or stopping makes the disc stick; scraping neighbours adds strain
 
 ### 1.9.0 · The patience pack (19 November 2026)
 - Nine new solitaires: Spider, Yukon, Scorpion, Forty Thieves, Canfield, Pyramid, Golf, TriPeaks and Aces Up

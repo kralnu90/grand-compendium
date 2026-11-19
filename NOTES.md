@@ -13,7 +13,8 @@ At 54 after 1.9.0 (batch 1, the patience pack, is done). Revised plan, original 
 - Open slots for Kris's own picks: 6
 54 + 14 + 8 + 10 + 6 + 3 + 6 = 101
 
-## Current state: v1.9.0 (19 Nov 2026)
+## Current state: v1.9.1 (19 Nov 2026)
+- 1.9.1: Spring Mikado was too easy (pulling slowly always won). Now: speed sweet spot [lo, hi] with hi = SPEED(90)/tension and lo = hi*DIFF().lo; below lo strain builds (judder), idle while held builds strain via an rAF watcher, overlap with neighbours in the first 70% of the pull adds strain (rub). DIFF() per Settings.diff. Fault messages name the cause.
 - 1.9.0: Fifty-four games (roadmap batch 1 done). src/g_patience.js = PatienceKit(ns, cfg): a reusable tableau-solitaire engine (build alt/suit/any, move run/suitrun/group/single, empty any/king, wrap, removeRuns, stock row/three/waste with draw+redeals, reserve auto-fill). New patience games are ~10 lines of config. src/g_patience2.js = Pyramid, Golf, TriPeaks, Aces Up. New "patience" shelf in App.CATS (7 shelves; the last tile spans when the count is odd). Fuzz test: random taps checking the card count never changes.
 - 1.8.2: Forty-five games. Added Three Card Poker (src/g_threecard.js; Kris asked for poker "like GTA Online", which is Three Card Poker). Pair Plus 1/3/6/30/40, ante bonus 1/4/5, dealer qualifies Q-high, hint = Q-6-4. Simulated edges: ante ~3%, pair plus ~6.5%. Phase "done" accepts Deal and bet changes (lesson from the 1.8.1 Blackjack bug).
 - 1.8.1: Blackjack deal/addBet/clearBet now accept phase "done" as well as "bet" (Kris found Deal dead after a hand). Test casino games with real button taps across several hands, not by resetting S.phase.

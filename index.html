@@ -3820,9 +3820,15 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.9.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.9.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.9.1', '19 Nov 2026', 'Spring Mikado gets tougher', [
+    'Going slowly is no longer a sure thing: creep too slowly, or stop mid-pull, and the disc sticks and judders',
+    'Steer through a gap: scraping past neighbouring discs now strains the tray',
+    'Tight discs have a narrower sweet spot, and the difficulty setting changes how forgiving it is',
+    'The steadiness bar now tells you what is going wrong'
+  ]],
   ['1.9.0', '19 Nov 2026', 'The patience pack', [
     'Nine new solitaire games: Spider (1, 2 or 4 suits), Yukon, Scorpion, Forty Thieves and Canfield',
     'Plus Pyramid, Golf, TriPeaks and Aces Up',
@@ -9434,6 +9440,7 @@ const SpringMikado = (() => {
     yellow: { n: 'Yellow', r: 8, c: '#ecc12e', d: '#8a6a0c', pts: 15, count: 14, grip: .25 }
   };
   const PULL = 58;                        // how far a disc must be drawn out
+  const SPEED = 90;                       // safe pull speed for a loose disc (tray units a second, divided by tension)
   let S, root, sid = 0, busy = false, drag = null;
 
   /* ---------- packing and the spring ---------- */
@@ -9465,7 +9472,7 @@ const SpringMikado = (() => {
   /* ---------- flow ---------- */
   function newGame(seats) {
     sid++; busy = false; drag = null;
-    S = { seats, pieces: build(), scores: seats.map(() => 0), taken: seats.map(() => []), turn: 0, lives: 3, faults: seats.map(() => 0), over: null, msg: 'Draw a disc out slowly. Tighter discs need a gentler pull.', streak: 0 };
+    S = { seats, pieces: build(), scores: seats.map(() => 0), taken: seats.map(() => []), turn: 0, lives: 3, faults: seats.map(() => 0), over: null, msg: 'Draw a disc out at a steady pace, through a gap. Not too fast, not too slow!', streak: 0 };
     next();
   }
   const solo = () => S.seats.length === 1;
@@ -9488,17 +9495,18 @@ const SpringMikado = (() => {
     const step = () => { if (my !== sid || !root) return; relax(S.pieces, 3, .35); render(); if (++n < 14) requestAnimationFrame(step); };
     requestAnimationFrame(step);
   }
-  function fault(p) {
+  function fault(p, why) {
     const i = S.turn; S.faults[i]++; S.streak = 0;
+    const cause = why === 'slow' ? 'It stuck and juddered' : why === 'rub' ? 'It scraped its neighbours' : why === 'fast' ? 'Too quick' : 'Something moved';
     Sfx.play('lose');
     // the neighbours jump
     S.pieces.forEach(q => { if (q !== p && Math.hypot(q.x - p.x, q.y - p.y) < p.r + q.r + 6) { q.x += (Math.random() - .5) * 6; q.y += (Math.random() - .5) * 6; q.jolt = 1; } });
     relax(S.pieces, 20, .1);
     if (solo()) {
-      S.lives--; S.msg = `Something moved! ${S.lives} ${S.lives === 1 ? 'life' : 'lives'} left.`;
+      S.lives--; S.msg = `${cause}! ${S.lives} ${S.lives === 1 ? 'life' : 'lives'} left.`;
       if (S.lives <= 0) return finish();
     } else {
-      S.msg = `Something moved! ${S.seats[i].name}'s turn is over.`;
+      S.msg = `${cause}! ${S.seats[i].name}'s turn is over.`;
       S.turn = (S.turn + 1) % S.seats.length;
     }
     render(); setTimeout(() => { S.pieces.forEach(q => delete q.jolt); next(); }, 650);
@@ -9532,6 +9540,20 @@ const SpringMikado = (() => {
     busy = false;
   }
   /* ---------- touch dragging ---------- */
+  // lo: the slowest safe speed as a share of the fastest; slow: how much judder hurts; rub: how much scraping hurts; idle: seconds you can hold still
+  const DIFF = () => ({ easy: { lo: .2, slow: 1.3, rub: .0016, idle: .7 }, normal: { lo: .32, slow: 2, rub: .0026, idle: .45 }, hard: { lo: .45, slow: 2.6, rub: .0036, idle: .3 } })[Settings.diff] || { lo: .32, slow: 2, rub: .0026, idle: .45 };
+  function watch(d) { // holding still makes the disc stick, even without moving
+    let last = performance.now();
+    const tick = now => {
+      if (drag !== d) return;
+      const dt = Math.min(.1, (now - last) / 1000); last = now;
+      const idle = (now - d.lmove) / 1000, grace = d.moved ? DIFF().idle : 1.1;
+      if (idle > grace) { d.strain += dt * (.55 + .25 * d.t) * (1 + (idle - grace)); d.why = 'slow'; paintDrag(Math.hypot(d.p.x - d.sx, d.p.y - d.sy)); }
+      if (d.strain >= 1) { const p = d.p; p.x = d.sx; p.y = d.sy; delete p.lift; drag = null; return fault(p, 'slow'); }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
   function toTray(svg, e) { const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const m = svg.getScreenCTM().inverse(); const q = pt.matrixTransform(m); return { x: q.x - 12, y: q.y - 12 }; }
   function bind() {
     const svg = root && root.querySelector('#sm-svg'); if (!svg) return;
@@ -9539,7 +9561,8 @@ const SpringMikado = (() => {
       const el = e.target.closest('[data-p]'); if (!el || busy || S.over || S.seats[S.turn].type !== 'human') return;
       const p = S.pieces.find(q => q.id === +el.dataset.p); if (!p) return;
       const at = toTray(svg, e);
-      drag = { t0: performance.now(), p, sx: p.x, sy: p.y, ox: at.x - p.x, oy: at.y - p.y, lx: at.x, ly: at.y, lt: performance.now(), v: 0, strain: 0, t: tension(p, S.pieces) };
+      drag = { t0: performance.now(), p, sx: p.x, sy: p.y, ox: at.x - p.x, oy: at.y - p.y, lx: at.x, ly: at.y, lt: performance.now(), lmove: performance.now(), moved: false, v: 0, strain: 0, t: tension(p, S.pieces), why: '' };
+      watch(drag);
       try { svg.setPointerCapture(e.pointerId); } catch (_) {}
       Sfx.play('tap'); p.lift = 1;
       el.parentNode.appendChild(el); el.querySelector('circle').setAttribute('r', p.r * 1.08);
@@ -9551,17 +9574,25 @@ const SpringMikado = (() => {
       const at = toTray(svg, e), now = performance.now(), dt = Math.max(.001, (now - drag.lt) / 1000);
       const step = Math.hypot(at.x - drag.lx, at.y - drag.ly), sp = step / dt;
       drag.v = drag.v ? drag.v * .5 + sp * .5 : sp;
-      const allowed = 150 / drag.t;
-      // strain builds with every bit of distance pulled faster than the disc allows
-      if (drag.v > allowed) drag.strain += Math.min(6, drag.v / allowed - 1) * (step / PULL) * .55; else drag.strain = Math.max(0, drag.strain - dt * .45);
-      drag.lx = at.x; drag.ly = at.y; drag.lt = now;
+      if (step < .25) return; // ignore tiny jitter
+      const D = DIFF(), hi = SPEED / drag.t, lo = hi * D.lo;
+      // too fast jerks the disc, too slow makes it stick and judder; only the sweet spot lets strain settle
+      if (drag.v > hi) { drag.strain += Math.min(6, drag.v / hi - 1) * (step / PULL) * .55; drag.why = 'fast'; }
+      else if (drag.v < lo) { drag.strain += (1 - drag.v / lo) * (step / PULL) * D.slow; drag.why = 'slow'; }
+      else { drag.strain = Math.max(0, drag.strain - dt * .45); drag.why = ''; }
+      drag.lx = at.x; drag.ly = at.y; drag.lt = now; drag.lmove = now; drag.moved = true;
       drag.p.x = at.x - drag.ox; drag.p.y = at.y - drag.oy;
       const dist = Math.hypot(drag.p.x - drag.sx, drag.p.y - drag.sy);
-      if (drag.strain >= 1) { const p = drag.p; p.x = drag.sx; p.y = drag.sy; delete p.lift; drag = null; return fault(p); }
+      // rubbing: pushing through neighbours while still in the tray adds strain
+      if (dist < PULL * .7) {
+        let rub = 0; for (const q of S.pieces) if (q !== drag.p) { const o = drag.p.r + q.r - Math.hypot(q.x - drag.p.x, q.y - drag.p.y); if (o > 1.5) rub += o - 1.5; }
+        if (rub > 0) { drag.strain += rub * step * D.rub; if (!drag.why) drag.why = 'rub'; }
+      }
+      if (drag.strain >= 1) { const p = drag.p, w = drag.why; p.x = drag.sx; p.y = drag.sy; delete p.lift; drag = null; return fault(p, w); }
       if (dist >= PULL) {
-        const p = drag.p, took = (now - drag.t0) / 1000, minT = PULL / (150 / drag.t) * .55;
+        const p = drag.p, took = (now - drag.t0) / 1000, minT = PULL / (SPEED / drag.t) * .55;
         delete p.lift;
-        if (took < minT) { p.x = drag.sx; p.y = drag.sy; drag = null; return fault(p); } // yanked out
+        if (took < minT) { p.x = drag.sx; p.y = drag.sy; drag = null; return fault(p, 'fast'); } // yanked out
         drag = null; success(p); if (!S.over) render(); return;
       }
       paintDrag(dist);
@@ -9573,7 +9604,7 @@ const SpringMikado = (() => {
     const g = root.querySelector(`[data-p="${drag.p.id}"]`); if (g) g.setAttribute('transform', `translate(${drag.p.x + 12} ${drag.p.y + 12})`);
     const m = root.querySelector('#sm-meter'), lbl = root.querySelector('#sm-meter-l'), pr = root.querySelector('#sm-pull');
     const s = Math.min(1, drag.strain); if (m) { m.style.width = `${s * 100}%`; m.style.background = s < .45 ? '#2f8f4e' : s < .75 ? '#e8b923' : '#c0261c'; }
-    if (lbl) lbl.textContent = s < .45 ? 'Steady…' : s < .75 ? 'Careful!' : 'Too fast!';
+    if (lbl) lbl.textContent = drag.why === 'slow' ? (s < .45 ? 'Keep it moving…' : 'It\'s sticking!') : drag.why === 'rub' ? (s < .45 ? 'Rubbing…' : 'Scraping its neighbours!') : drag.why === 'fast' ? (s < .45 ? 'Easy…' : 'Too fast!') : (s < .45 ? 'Steady…' : 'Careful!');
     if (pr) pr.style.width = `${Math.min(100, dist / PULL * 100)}%`;
     root.querySelectorAll('[data-near]').forEach(el => { const j = (Math.random() - .5) * s * 2.5; el.style.translate = `${j}px ${-j}px`; });
   }
@@ -9613,7 +9644,7 @@ const SpringMikado = (() => {
         </div>
         ${Util.panel(`<div class="font-display text-amber-200 text-sm mb-2">Disc values</div>
           ${Object.values(KINDS).map(K => `<div class="flex items-center gap-2 text-sm mb-1"><span class="rounded-full inline-block" style="width:${K.r * 1.5}px;height:${K.r * 1.5}px;background:${K.c};box-shadow:inset 0 -2px 0 ${K.d}"></span>${K.n}<span class="ml-auto text-amber-300 font-bold">${K.pts}</span></div>`).join('')}
-          <p class="text-[11px] text-amber-100/60 mt-2">Press a disc and draw it slowly out of the tray. Discs pressed by the spring bar or packed by neighbours need a gentler pull. Watch the steadiness bar: if it goes red, the others jump and your turn ends.</p>
+          <p class="text-[11px] text-amber-100/60 mt-2">Press a disc and draw it out at a smooth, steady pace. Too fast and it jerks; too slow, or stopping, and it sticks. Steer it through a gap so it doesn't scrape its neighbours. Tight discs have a narrower sweet spot. If the steadiness bar goes red, the others jump.</p>
           <div class="mt-3 flex gap-2">${Util.btn('New Tray', 'SpringMikado.restart()')}</div>`, 'w-full lg:w-60 !p-3')}
       </div>`;
     if (mine || drag) bind();
@@ -12507,7 +12538,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.9.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.9.1",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}
