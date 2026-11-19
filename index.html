@@ -3660,9 +3660,12 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.8.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.8.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.8.1', '19 Nov 2026', 'Blackjack fix', [
+    'Fixed: in Blackjack, the Deal button and bet chips stopped working after a hand finished'
+  ]],
   ['1.8.0', '19 Nov 2026', 'The Casino', [
     'A new Casino shelf with seven tables, all played with free pretend chips',
     "Blackjack (with basic strategy hints), Texas Hold'em against five AI players, and single-zero Roulette",
@@ -11080,10 +11083,11 @@ const Blackjack = (() => {
   const isBJ = h => h.c.length === 2 && total(h.c).t === 21 && !h.split;
   function draw() { if (S.shoe.length < 80) { S.shoe = shoe(6); Util.toast('Fresh shoe shuffled.', 1200); } return S.shoe.pop(); }
   function newGame() { sid++; S = { shoe: shoe(6), bet: Math.min(25, Chips.get()), phase: 'bet', hands: [], cur: 0, dealer: [], msg: 'Place your bet and deal.', res: [] }; Chips.ensure(); render(); }
-  function addBet(v) { if (S.phase !== 'bet') return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many chips."); S.bet += v; Sfx.play('place'); render(); }
-  function clearBet() { if (S.phase === 'bet') { S.bet = 0; render(); } }
+  const open = () => S.phase === 'bet' || S.phase === 'done';
+  function addBet(v) { if (!open()) return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many chips."); S.bet += v; Sfx.play('place'); render(); }
+  function clearBet() { if (open()) { S.bet = 0; render(); } }
   async function deal() {
-    if (S.phase !== 'bet') return;
+    if (!open()) return;
     if (Chips.ensure()) { S.bet = Math.min(S.bet, Chips.get()); }
     if (!S.bet) return Util.toast('Add some chips to your bet first.');
     if (S.bet > Chips.get()) S.bet = Chips.get();
@@ -11843,7 +11847,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.8.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.8.1",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

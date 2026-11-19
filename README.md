@@ -6,7 +6,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.8.0**
+**Current version: 1.8.1**
 
 ## The games
 
@@ -108,6 +108,9 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.8.1 · Blackjack fix (19 November 2026)
+- Fixed: the Deal button and bet chips stopped working after a Blackjack hand finished
 
 ### 1.8.0 · The Casino (19 November 2026)
 - New Casino shelf: Blackjack, Texas Hold'em, Roulette, Video Poker, Baccarat, Craps and the Lucky Lantern slot machine
