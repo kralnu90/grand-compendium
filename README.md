@@ -1,12 +1,12 @@
 # The Grand Tabletop Compendium
 
-*Thirty-one classic, esoteric, family, pub and word games, one table.*
+*Thirty-four classic, esoteric, family, pub and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.5.1**
+**Current version: 1.6.0**
 
 ## The games
 
@@ -30,6 +30,9 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | 🌀 **Spring Mikado** | Draw discs out of a spring-loaded tray without making the others jump | 1–4, people or AI |
 | ⚫ **Reversi** | Flip lines of discs and fight for the corners | vs AI or 2 players |
 | 🔴 **Four in a Row** | Drop discs and connect four before your rival | vs AI or 2 players |
+| ➡️ **Arrow Words** | Clues sit inside the grid, with arrows showing which way each answer runs. Daily or new | Solo |
+| 🔢 **Codeword** | A crossword where every letter is a number. Crack the code from two starter letters | Solo |
+| 🔍 **Word Search** | Nineteen themes on three levels, from across-and-down to all eight directions | Solo |
 | ⬡ **Nine Men's Morris** | The ancient game of mills: place, slide, then fly | vs AI or 2 players |
 | 🎲 **Yacht** | Five dice, three rolls, thirteen boxes to fill | 1–4, people or AI |
 | 🤥 **Liar's Dice** | Bid on the dice under everyone's cups, or call "Liar!" | 2–6, people or AI |
@@ -95,6 +98,12 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.6.0 · The puzzle page (19 November 2026)
+- Arrow Words: clues inside the grid, with arrows showing which way each answer runs
+- Codeword: a crossword where every letter is a number, with two starter letters
+- Word Search: nineteen themes on three levels, swipe to circle
+- Each has a daily puzzle, plus as many new ones as you like
 
 ### 1.5.1 · A tidier parlour (19 November 2026)
 - The main menu is now five shelves, each opening its own page of games

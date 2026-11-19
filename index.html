@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Thirty-one parlour, family, pub and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Cribbage, Gin Rummy, Sudoku, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Thirty-four parlour, family, pub and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Word Search, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Thirty-one games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Thirty-four games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -37,6 +37,7 @@
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-500: oklch(76.9% 0.188 70.08);
     --color-amber-900: oklch(41.4% 0.112 45.904);
+    --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-emerald-300: oklch(84.5% 0.143 164.978);
     --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-emerald-500: oklch(69.6% 0.17 162.48);
@@ -361,6 +362,24 @@
   .col-span-2 {
     grid-column: span 2 / span 2;
   }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -529,6 +548,9 @@
   .h-full {
     height: 100%;
   }
+  .h-px {
+    height: 1px;
+  }
   .max-h-\[60vh\] {
     max-height: 60vh;
   }
@@ -549,6 +571,9 @@
   }
   .min-h-\[26px\] {
     min-height: 26px;
+  }
+  .min-h-\[44px\] {
+    min-height: 44px;
   }
   .min-h-\[120px\] {
     min-height: 120px;
@@ -820,6 +845,12 @@
     margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
   }
+  .gap-x-3 {
+    column-gap: calc(var(--spacing) * 3);
+  }
+  .gap-y-1 {
+    row-gap: var(--spacing);
+  }
   .gap-y-2 {
     row-gap: calc(var(--spacing) * 2);
   }
@@ -949,6 +980,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-white) 80%, transparent);
     }
+  }
+  .bg-amber-400 {
+    background-color: var(--color-amber-400);
   }
   .bg-amber-500\/25 {
     background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 25%, transparent);
@@ -1093,6 +1127,9 @@
   }
   .\!px-1\.5 {
     padding-inline: calc(var(--spacing) * 1.5) !important;
+  }
+  .px-0\.5 {
+    padding-inline: calc(var(--spacing) * 0.5);
   }
   .px-1 {
     padding-inline: var(--spacing);
@@ -1264,6 +1301,10 @@
   .text-\[70\%\] {
     font-size: 70%;
   }
+  .leading-\[1\.05\] {
+    --tw-leading: 1.05;
+    line-height: 1.05;
+  }
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
@@ -1357,6 +1398,12 @@
       color: color-mix(in oklab, var(--color-amber-50) 80%, transparent);
     }
   }
+  .text-amber-50\/85 {
+    color: color-mix(in srgb, oklch(98.7% 0.022 95.277) 85%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-amber-50) 85%, transparent);
+    }
+  }
   .text-amber-50\/90 {
     color: color-mix(in srgb, oklch(98.7% 0.022 95.277) 90%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1370,6 +1417,12 @@
     color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 25%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-amber-100) 25%, transparent);
+    }
+  }
+  .text-amber-100\/35 {
+    color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 35%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-amber-100) 35%, transparent);
     }
   }
   .text-amber-100\/40 {
@@ -1495,6 +1548,9 @@
       color: color-mix(in oklab, var(--color-amber-900) 70%, transparent);
     }
   }
+  .text-amber-950 {
+    color: var(--color-amber-950);
+  }
   .text-emerald-300 {
     color: var(--color-emerald-300);
   }
@@ -1554,6 +1610,9 @@
   }
   .opacity-60 {
     opacity: 60%;
+  }
+  .opacity-70 {
+    opacity: 70%;
   }
   .opacity-80 {
     opacity: 80%;
@@ -2926,6 +2985,41 @@ const GAME_CATALOG = [
         <li><strong>Turns:</strong> Keep lifting until you cause a fault, then the tray passes on. Let go early to put a disc back safely.</li>
         <li><strong>Points:</strong> Pink 5, grey 10, yellow 15. Solo games give you three lives.</li>
       </ul>`
+  },
+  {
+    id: 'arrowwords', title: 'Arrow Words', subtitle: 'Clues Inside the Grid', category: 'Word Games', icon: '➡️',
+    players: 'Solo, daily or new', tagline: 'The puzzle-page favourite: clues sit in the grid and arrows show where each answer goes.',
+    rules: `
+      <p><strong>Objective:</strong> Fill every white square.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Clues:</strong> Each dark square holds a clue (sometimes two). The answer starts in the next square along and runs the way the arrow points: ▶ right or ▼ down.</li>
+        <li><strong>Selecting:</strong> Tap a clue square, or tap a white square (tap it again to switch between across and down). The clue shows in the bar above the keyboard.</li>
+        <li><strong>Help:</strong> Check marks wrong letters in red. Letter and Word reveal answers if you're stuck.</li>
+        <li><strong>Puzzles:</strong> A Daily puzzle (the same for everyone) or as many new ones as you like.</li>
+      </ul>`
+  },
+  {
+    id: 'codeword', title: 'Codeword', subtitle: 'The Crossword in Numbers', category: 'Word Games', icon: '🔢',
+    players: 'Solo, daily or new', tagline: 'Every letter is a secret number. Crack the code from two starter letters.',
+    rules: `
+      <p><strong>Objective:</strong> Work out which letter each number stands for, until the whole crossword is filled.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>The code:</strong> Each number from 1 to 26 always means the same letter, everywhere in the grid. Two letters are given to start you off.</li>
+        <li><strong>Entering letters:</strong> Tap a square (or a number in the key) and type a letter. It fills in every square with that number.</li>
+        <li><strong>Tips:</strong> Look for short words, double letters and common endings like -ING and -ED. The alphabet strip shows which letters you've used.</li>
+        <li><strong>Help:</strong> Check shows wrong letters in red. Hint reveals one letter.</li>
+      </ul>`
+  },
+  {
+    id: 'wordsearch', title: 'Word Search', subtitle: 'Themed Letter Hunts', category: 'Word Games', icon: '🔍',
+    players: 'Solo, daily or three levels', tagline: 'Nineteen themes, from golf and car parts to space and breakfast. Swipe to circle each word.',
+    rules: `
+      <p><strong>Objective:</strong> Find every word in the list hidden in the grid.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Circling:</strong> Swipe across a word in a straight line. Found words are marked on the grid and crossed off the list.</li>
+        <li><strong>Levels:</strong> Easy 10×10, words run across and down. Medium 12×12, adds diagonals. Hard 14×14, words can run in all eight directions, including backwards.</li>
+        <li><strong>Themes:</strong> A random theme each time, or pick your own. There's also a Daily puzzle.</li>
+      </ul>`
   }
 ];
 
@@ -3085,7 +3179,7 @@ const App = {
     { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Patience, pub classics and card crawls', ids: ['klondike', 'freecell', 'cribbage', 'gin', 'clash', 'scoundrel', 'regicide'] },
     { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'liars', 'dominoes', 'mahjong'] },
     { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
-    { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, daily puzzles and Sudoku', ids: ['tilecraft', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] }
+    { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] }
   ],
   catOf(id) { return this.CATS.find(c => c.ids.includes(id)); },
   hubChrome(sub) {
@@ -3205,9 +3299,15 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.5.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.6.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.6.0', '19 Nov 2026', 'The puzzle page', [
+    'Arrow Words: clues inside the grid, with arrows showing which way each answer runs',
+    'Codeword: a crossword where every letter is a number. Crack the code from two starter letters',
+    'Word Search: nineteen themes (including golf, car parts and space) on three levels, swipe to circle',
+    'Each has a daily puzzle, plus as many new ones as you like'
+  ]],
   ['1.5.1', '19 Nov 2026', 'A tidier parlour', [
     'The main menu is now five shelves: Board Games, Cards, Dice & Tiles, Family & Party, and Words & Puzzles',
     'Each shelf opens its own page of games, with rules one tap away on every game',
@@ -3380,6 +3480,7 @@ const Menu = (() => {
           <li><b>Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes &amp; Ladders, Ludo, Dominoes, Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships, Sudoku</b> and <b>Go</b> are traditional games, enjoyed for generations.</li>
           <li><b>Spring Mikado</b> is a digital take on the classic wooden disc-mikado tray with a spring-loaded bar.</li>
           <li><b>Murder at Marrowgate Manor</b> and <b>Torchlight Delve</b> are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.</li>
+          <li>The Arrow Words clues and Word Search themes were written for this collection.</li>
           <li><b>Tilecraft, Word Lock, Word Wheel, Word Grid</b> and <b>Colour Clash</b> are original takes on much-loved word and card game ideas. They aren't connected to, or endorsed by, the makers of any other game.</li>
         </ul>
         <p class="text-xs text-amber-100/60 mt-1.5">Scoundrel and Regicide are played here as free, faithful tributes. If you love them, please support their designers.</p>
@@ -8968,6 +9069,340 @@ const SpringMikado = (() => {
 })();
 Games.springmikado = SpringMikado;
 
+/* ============================================================================
+   CROSSWORD GRID BUILDER (shared by Arrow Words and Codeword)
+   ============================================================================ */
+const CLUES = {"ace": "Top card", "act": "Perform on stage", "add": "Total up", "age": "Years lived", "ago": "In the past", "aid": "Help", "aim": "Point at a target", "air": "What we breathe", "ale": "Pub pint", "all": "Every one", "ant": "Busy insect", "ape": "Gorilla, say", "apt": "Fitting", "arc": "Curved line", "arm": "Limb with an elbow", "art": "Paintings and sculpture", "ash": "Fireplace dust", "ate": "Had dinner", "awe": "Wonder", "bad": "Not good", "bag": "Sack", "bat": "Cricket club", "bay": "Curved coastline", "bed": "Place to sleep", "bee": "Honey maker", "beg": "Plead", "bet": "Wager", "bib": "Baby's napkin", "big": "Large", "bin": "Rubbish container", "bit": "Small piece", "bow": "Ribbon knot", "box": "Cardboard container", "boy": "Young lad", "bud": "Flower about to open", "bug": "Small insect", "bun": "Sweet bread roll", "bus": "Double-decker", "buy": "Purchase", "cab": "Taxi", "can": "Tin", "cap": "Peaked hat", "car": "Motor vehicle", "cat": "Purring pet", "cod": "Fish in batter", "cow": "Dairy animal", "cry": "Shed tears", "cub": "Young bear", "cup": "Saucer's partner", "cut": "Slice", "dad": "Father", "day": "Twenty-four hours", "den": "Lion's lair", "dew": "Morning droplets", "dig": "Use a spade", "dim": "Not bright", "dog": "Barking pet", "dot": "Full stop", "dry": "Not wet", "due": "Owed", "dug": "Excavated", "ear": "Organ of hearing", "eat": "Have a meal", "egg": "Hen's produce", "elf": "Santa's helper", "elm": "Tree", "end": "Finish", "era": "Period of history", "eve": "Night before", "eye": "Organ of sight", "fan": "Supporter", "far": "A long way", "fat": "Not thin", "fed": "Gave food to", "few": "Not many", "fig": "Fruit", "fin": "Fish's paddle", "fir": "Christmas tree", "fit": "Healthy", "fix": "Repair", "fly": "Buzzing insect", "fog": "Thick mist", "fox": "Sly animal", "fry": "Cook in oil", "fun": "Enjoyment", "fur": "Animal coat", "gap": "Opening", "gas": "Fuel for a hob", "gem": "Jewel", "get": "Obtain", "gin": "Juniper spirit", "gum": "Chewing sweet", "gym": "Workout place", "hat": "Head covering", "hay": "Dried grass", "hen": "Female chicken", "hit": "Strike", "hop": "Jump on one leg", "hot": "Very warm", "hug": "Cuddle", "hut": "Small shed", "ice": "Frozen water", "ink": "Pen fluid", "inn": "Country pub", "ivy": "Climbing plant", "jam": "Fruit spread", "jar": "Glass pot", "jaw": "Chin bone", "jet": "Aeroplane", "jog": "Gentle run", "joy": "Delight", "jug": "Pouring vessel", "key": "Lock opener", "kid": "Child", "kit": "Gear", "lab": "Science room", "lad": "Young man", "lap": "Circuit of a track", "law": "Rule of the land", "leg": "Limb with a knee", "lid": "Pan cover", "lip": "Mouth edge", "log": "Piece of firewood", "lot": "A great deal", "low": "Not high", "mad": "Crazy", "map": "Atlas page", "mat": "Floor covering", "mix": "Blend", "mop": "Floor cleaner", "mud": "Wet earth", "mug": "Big cup", "nap": "Short sleep", "net": "Goal mesh", "new": "Not old", "nod": "Agree silently", "nut": "Acorn, say", "oak": "Acorn tree", "oar": "Rowing blade", "odd": "Strange", "oil": "Engine lubricant", "old": "Not young", "one": "Single", "orb": "Sphere", "owl": "Night bird", "own": "Possess", "pad": "Notebook", "pan": "Frying vessel", "paw": "Animal's foot", "pay": "Wages", "pea": "Green veg", "pen": "Writing tool", "pet": "Tame animal", "pie": "Pastry dish", "pig": "Farm animal", "pin": "Tailor's sharp fastener", "pit": "Coal mine", "pot": "Cooking vessel", "pub": "Local boozer", "pup": "Young dog", "put": "Place", "rag": "Old cloth", "ram": "Male sheep", "rat": "Rodent", "raw": "Uncooked", "ray": "Beam of light", "red": "Colour of a rose", "rib": "Chest bone", "rid": "Get ___ of", "rim": "Edge", "rip": "Tear", "rod": "Fishing pole", "row": "Line", "rub": "Massage", "rug": "Small carpet", "run": "Sprint", "rye": "Bread grain", "sad": "Unhappy", "sap": "Tree fluid", "saw": "Carpenter's tool", "sea": "Ocean", "see": "Look", "set": "Group", "sew": "Stitch", "shy": "Timid", "sip": "Small drink", "sit": "Take a seat", "sky": "Blue above", "son": "Male child", "spy": "Secret agent", "sum": "Total", "sun": "Our star", "tab": "Bill", "tap": "Water outlet", "tea": "British brew", "ten": "Number after nine", "tie": "Neckwear", "tin": "Metal can", "tip": "Gratuity", "toe": "Foot digit", "ton": "Heavy weight", "top": "Summit", "toy": "Plaything", "tub": "Bath", "tug": "Pull", "two": "Pair", "urn": "Tea vessel", "van": "Delivery vehicle", "vet": "Animal doctor", "war": "Conflict", "wax": "Candle material", "way": "Route", "web": "Spider's home", "wet": "Soaked", "win": "Victory", "wit": "Humour", "yes": "Opposite of no", "yet": "So far", "zoo": "Animal park", "able": "Competent", "acre": "Area of land", "aunt": "Mum's sister", "away": "Not here", "baby": "Infant", "back": "Rear", "bake": "Cook in an oven", "ball": "Round toy", "band": "Group of musicians", "bank": "Money place", "barn": "Farm building", "bath": "Tub", "beak": "Bird's bill", "bean": "Baked veg", "bear": "Grizzly", "beef": "Roast meat", "bell": "Ringer", "belt": "Waist strap", "bike": "Two-wheeler", "bird": "Robin, say", "blue": "Colour of the sky", "boat": "Small vessel", "bone": "Skeleton part", "book": "Novel", "boot": "Wellington", "bowl": "Cereal dish", "bread": "Loaf", "bush": "Shrub", "cake": "Birthday treat", "calf": "Young cow", "call": "Phone", "calm": "Peaceful", "camp": "Site for tents", "card": "Birthday greeting", "cart": "Wagon", "cave": "Underground hollow", "chef": "Head cook", "chin": "Below the mouth", "chip": "Fried potato", "city": "Large town", "clay": "Potter's material", "coat": "Outer garment", "coin": "Pound, say", "cold": "Chilly", "cook": "Make dinner", "cool": "Chilled", "corn": "Maize", "crab": "Pincered creature", "crow": "Black bird", "dark": "Without light", "dart": "Pub game missile", "dawn": "Daybreak", "deer": "Stag", "desk": "Writing table", "dice": "Gaming cubes", "dish": "Plate", "dive": "Plunge", "door": "Entrance", "dove": "Peace bird", "down": "Not up", "drum": "Beat instrument", "duck": "Quacker", "dust": "Fine dirt", "east": "Sunrise side", "easy": "Not hard", "edge": "Brink", "farm": "Agricultural land", "fast": "Quick", "fern": "Leafy plant", "film": "Movie", "fire": "Blaze", "fish": "Swimmer with gills", "flag": "Banner", "foal": "Young horse", "food": "Grub", "foot": "Lower limb end", "fork": "Cutlery prong", "frog": "Pond hopper", "game": "Match", "gate": "Garden entrance", "gift": "Present", "goal": "Net result", "goat": "Kid's mother", "gold": "Precious metal", "golf": "Tee sport", "good": "Fine", "gown": "Long dress", "hair": "Locks", "hall": "Corridor", "hand": "Palm and fingers", "harp": "Angel's instrument", "hare": "Fast rabbit relative", "heat": "Warmth", "herb": "Basil, say", "hill": "Small mountain", "hive": "Bee home", "hole": "Gap", "home": "Where you live", "hood": "Coat cover", "hook": "Coat peg", "horn": "Car warning", "hose": "Garden pipe", "idea": "Thought", "iron": "Pressing tool", "isle": "Island", "jazz": "Music style", "jump": "Leap", "kite": "Windy-day toy", "knee": "Leg joint", "knot": "Tied loop", "lake": "Inland water", "lamb": "Young sheep", "lamp": "Light", "lane": "Narrow road", "leaf": "Part of a tree", "lime": "Green citrus", "lion": "Big cat", "loaf": "Bread unit", "lock": "Key's partner", "love": "Adore", "mail": "Post", "meal": "Dinner", "milk": "Dairy drink", "mint": "Fresh herb", "moon": "Night light", "moth": "Night flier", "nail": "Hammer target", "neck": "Head support", "nest": "Bird's home", "news": "Latest reports", "nose": "Smelling organ", "oven": "Baking box", "page": "Book sheet", "park": "Green space", "path": "Footway", "pear": "Fruit", "pine": "Evergreen tree", "pipe": "Tube", "plum": "Purple fruit", "pond": "Duck water", "pool": "Swimming spot", "port": "Harbour", "race": "Contest of speed", "rain": "Wet weather", "road": "Street", "rock": "Stone", "roof": "House top", "room": "Chamber", "rope": "Thick cord", "rose": "Thorny flower", "ruby": "Red gem", "sail": "Boat canvas", "salt": "Seasoning", "sand": "Beach grains", "seed": "Plant starter", "ship": "Large vessel", "shoe": "Footwear", "shop": "Store", "sink": "Kitchen basin", "snow": "White flakes", "sock": "Foot warmer", "sofa": "Settee", "song": "Tune", "soup": "Starter in a bowl", "star": "Twinkler", "swan": "Graceful bird", "tail": "Dog's wagger", "team": "Side", "tent": "Camping shelter", "tide": "Sea's ebb and flow", "tile": "Roof slab", "time": "Clock reading", "toad": "Warty hopper", "town": "Small city", "tree": "Oak, say", "tuna": "Tinned fish", "vase": "Flower holder", "vest": "Undershirt", "wall": "Brick barrier", "wave": "Sea swell", "west": "Sunset side", "wind": "Breeze", "wing": "Bird's arm", "wolf": "Pack animal", "wood": "Timber", "wool": "Sheep's coat", "worm": "Wriggly garden creature", "yard": "Three feet", "year": "Twelve months", "apple": "Orchard fruit", "beach": "Seaside sand", "bench": "Park seat", "berry": "Small fruit", "black": "Darkest colour", "bloom": "Flower", "board": "Plank", "brain": "Thinking organ", "brave": "Courageous", "brick": "Building block", "brush": "Paint tool", "cabin": "Log hut", "camel": "Desert animal", "candy": "Sweets", "chair": "Seat", "chalk": "Blackboard writer", "charm": "Appeal", "cheek": "Side of the face", "chess": "Game of kings", "child": "Youngster", "clock": "Timepiece", "cloud": "Rain bringer", "coast": "Shoreline", "crown": "Royal headwear", "cream": "Dairy topping", "dance": "Waltz", "daisy": "Small flower", "diary": "Daily journal", "dream": "Sleep vision", "drink": "Beverage", "eagle": "Bird of prey", "earth": "Our planet", "fairy": "Winged sprite", "feast": "Banquet", "field": "Meadow", "flame": "Fire tongue", "flute": "Woodwind", "frost": "Icy coating", "fruit": "Apple or pear", "ghost": "Spook", "glass": "Window pane", "globe": "World map ball", "glove": "Hand warmer", "goose": "Honking bird", "grape": "Vine fruit", "grass": "Lawn", "heart": "Love symbol", "honey": "Bee product", "horse": "Stallion", "house": "Home", "jelly": "Wobbly dessert", "juice": "Orange drink", "knife": "Cutter", "lemon": "Sour citrus", "light": "Not heavy", "lunch": "Midday meal", "magic": "Wizardry", "maple": "Syrup tree", "melon": "Big fruit", "money": "Cash", "month": "Thirty days or so", "mouse": "Small rodent", "music": "Melodies", "night": "Dark hours", "ocean": "Vast sea", "onion": "Teary veg", "otter": "River swimmer", "paint": "Colour coat", "paper": "Writing sheet", "party": "Celebration", "peach": "Fuzzy fruit", "pearl": "Oyster gem", "piano": "Keyboard instrument", "pilot": "Flier", "pizza": "Italian dish", "plant": "Greenery", "queen": "Royal lady", "quiet": "Hushed", "radio": "Wireless", "river": "Thames, say", "robin": "Red-breasted bird", "salad": "Lettuce dish", "scarf": "Neck warmer", "sheep": "Woolly animal", "shell": "Seaside find", "shirt": "Top with a collar", "skirt": "Lower garment", "smile": "Grin", "snake": "Slitherer", "spoon": "Soup utensil", "sport": "Game", "storm": "Gale", "sugar": "Sweetener", "sweet": "Sugary", "table": "Dining furniture", "tiger": "Striped cat", "toast": "Browned bread", "tooth": "Biter", "tower": "Tall structure", "train": "Railway vehicle", "tulip": "Spring flower", "uncle": "Aunt's husband", "water": "Tap liquid", "whale": "Ocean giant", "wheel": "Tyre holder", "world": "Globe", "zebra": "Striped horse", "anchor": "Ship holder", "autumn": "Fall season", "banana": "Yellow fruit", "basket": "Wicker carrier", "bottle": "Glass container", "bridge": "River crossing", "butter": "Toast spread", "candle": "Wax light", "carrot": "Orange veg", "castle": "Fortress", "cheese": "Cheddar, say", "cherry": "Red fruit", "circle": "Round shape", "coffee": "Morning brew", "cookie": "Biscuit", "dinner": "Evening meal", "doctor": "Medic", "dragon": "Fire breather", "farmer": "Crop grower", "flower": "Bloom", "forest": "Woodland", "garden": "Back yard", "guitar": "Six-string", "hammer": "Nail driver", "island": "Land in the sea", "jacket": "Short coat", "kettle": "Water boiler", "ladder": "Climbing aid", "letter": "Postal message", "lizard": "Reptile", "market": "Stalls place", "mirror": "Reflector", "monkey": "Banana lover", "orange": "Citrus fruit", "parrot": "Talking bird", "pencil": "Drawing tool", "pepper": "Spice", "pirate": "Sea robber", "planet": "Mars, say", "rabbit": "Bunny", "rocket": "Space vehicle", "saddle": "Horse seat", "school": "Place of learning", "silver": "Second place metal", "spider": "Web spinner", "spring": "Season of growth", "square": "Four-sided shape", "summer": "Warm season", "supper": "Light meal", "teapot": "Brewing vessel", "tomato": "Red salad fruit", "turtle": "Shelled reptile", "violin": "Fiddle", "walnut": "Wrinkly nut", "window": "Glass opening", "winter": "Cold season", "wizard": "Magician", "yellow": "Colour of a lemon", "blanket": "Bed cover", "chicken": "Clucking bird", "dolphin": "Clever sea mammal", "giraffe": "Long-necked animal", "holiday": "Time off", "kitchen": "Cooking room", "lettuce": "Salad leaf", "library": "Book place", "morning": "Before noon", "octopus": "Eight-armed creature", "penguin": "Antarctic bird", "picture": "Painting", "pyramid": "Egyptian tomb", "rainbow": "Colourful arc", "sausage": "Banger", "teacher": "School tutor", "thunder": "Storm rumble", "trumpet": "Brass instrument", "weather": "Rain or shine", "avocado": "Green fruit", "biscuit": "Teatime treat", "compass": "Direction finder", "cricket": "Bat-and-ball sport", "crystal": "Clear gem", "lantern": "Hand lamp", "mermaid": "Sea maiden", "panther": "Black big cat", "pancake": "Flat batter treat", "pumpkin": "Halloween veg", "seaside": "Coast resort", "volcano": "Erupting mountain", "elephant": "Trunked giant", "umbrella": "Rain shield", "mountain": "Peak", "sandwich": "Lunch bread snack", "dinosaur": "Extinct reptile", "football": "Beautiful game", "calendar": "Date chart", "treasure": "Buried gold", "squirrel": "Nut collector", "kangaroo": "Hopping marsupial", "axe": "Woodcutter's tool"};
+const XGen = (() => {
+  /* opts.reserve: keep the square before every word free for its clue (arrow words) */
+  function build(W, H, pool, rng, opts = {}) {
+    const N = W * H, letters = Array(N).fill(null), dirs = new Uint8Array(N), clueAt = {}, words = [];
+    const inB = (r, c) => r >= 0 && r < H && c >= 0 && c < W;
+    function check(w, r, c, d) {
+      const dr = d === 2 ? 1 : 0, dc = d === 1 ? 1 : 0, L = w.length;
+      const br = r - dr, bc = c - dc, ar = r + dr * L, ac = c + dc * L;
+      if (opts.reserve) { if (!inB(br, bc) || letters[br * W + bc] || (clueAt[br * W + bc] && clueAt[br * W + bc][d] !== undefined)) return -1; }
+      else if (inB(br, bc) && letters[br * W + bc]) return -1;
+      if (inB(ar, ac) && letters[ar * W + ac]) return -1;
+      if (!inB(r + dr * (L - 1), c + dc * (L - 1)) || !inB(r, c)) return -1;
+      let cross = 0;
+      for (let k = 0; k < L; k++) {
+        const rr = r + dr * k, cc = c + dc * k, i = rr * W + cc;
+        if (clueAt[i]) return -1;
+        if (letters[i]) { if (letters[i] !== w[k] || dirs[i] & d) return -1; cross++; }
+        else { const p1r = rr + dc, p1c = cc + dr, p2r = rr - dc, p2c = cc - dr; if ((inB(p1r, p1c) && letters[p1r * W + p1c]) || (inB(p2r, p2c) && letters[p2r * W + p2c])) return -1; }
+      }
+      if (cross === L) return -1;
+      return cross;
+    }
+    function place(w, clue, r, c, d) {
+      const dr = d === 2 ? 1 : 0, dc = d === 1 ? 1 : 0;
+      for (let k = 0; k < w.length; k++) { const i = (r + dr * k) * W + c + dc * k; letters[i] = w[k]; dirs[i] |= d; }
+      if (opts.reserve) { const b = (r - dr) * W + c - dc; (clueAt[b] = clueAt[b] || {})[d] = words.length; }
+      words.push({ w, clue, r, c, d });
+    }
+    const used = new Set(), list = pool.slice();
+    for (let k = list.length - 1; k > 0; k--) { const j = Math.floor(rng() * (k + 1)); [list[k], list[j]] = [list[j], list[k]]; }
+    const first = list.find(x => x.w.length >= Math.min(7, W - 2) && x.w.length <= W - 1) || list[0];
+    const fr = Math.floor(H / 2) - (opts.reserve ? 0 : 0), fc = Math.max(opts.reserve ? 1 : 0, Math.floor((W - first.w.length) / 2));
+    if (check(first.w, fr, fc, 1) < 0 && !opts.reserve) return null;
+    place(first.w, first.clue, fr, fc, 1); used.add(first.w);
+    const target = opts.target || 22;
+    for (let pass = 0; pass < 6 && words.length < target; pass++) {
+      let added = 0;
+      for (const cand of list) {
+        if (words.length >= target) break;
+        if (used.has(cand.w) || cand.w.length > Math.max(W, H)) continue;
+        let best = null;
+        for (let i = 0; i < N; i++) {
+          if (!letters[i]) continue;
+          const r = Math.floor(i / W), c = i % W;
+          for (let k = 0; k < cand.w.length; k++) {
+            if (cand.w[k] !== letters[i]) continue;
+            for (const d of [1, 2]) {
+              if (dirs[i] & d) continue;
+              const sr = d === 2 ? r - k : r, sc = d === 1 ? c - k : c;
+              const x = check(cand.w, sr, sc, d);
+              if (x > 0) { const s = x * 10 + rng() * 5; if (!best || s > best.s) best = { s, r: sr, c: sc, d }; }
+            }
+          }
+        }
+        if (best) { place(cand.w, cand.clue, best.r, best.c, best.d); used.add(cand.w); added++; }
+      }
+      if (!added) break;
+    }
+    return { W, H, letters, words, clueAt };
+  }
+  function best(W, H, pool, rng, opts, tries = 8) {
+    let top = null;
+    for (let t = 0; t < tries; t++) { const g = build(W, H, pool, rng, opts); if (g && (!top || g.letters.filter(Boolean).length > top.letters.filter(Boolean).length)) top = g; }
+    return top;
+  }
+  return { build, best };
+})();
+
+/* Shared on-screen keyboard */
+function xwKeyboard(ns) {
+  return ['qwertyuiop', 'asdfghjkl', 'zxcvbnm-'].map(line => `<div class="flex gap-1 justify-center">${line.split('').map(c => c === '-'
+    ? `<button onclick="${ns}.key('back')" class="rounded-md font-bold btn-wood" style="height:46px;min-width:52px">⌫</button>`
+    : `<button onclick="${ns}.key('${c}')" class="rounded-md font-bold uppercase text-white" style="height:46px;flex:1;max-width:38px;background:#6b5340">${c}</button>`).join('')}</div>`).join('');
+}
+
+/* ============================================================================
+   ARROW WORDS
+   ============================================================================ */
+const ArrowWords = (() => {
+  let S, root, onKey = null;
+  const POOL = Object.entries(CLUES).map(([w, clue]) => ({ w, clue }));
+  function start(daily) {
+    const rng = daily ? seeded(todayKey() * 31 + 7) : Math.random;
+    let g = null; for (let t = 0; t < 5 && (!g || g.words.length < 16); t++) g = XGen.best(10, 12, POOL, rng, { reserve: true, target: 26 }, 6);
+    S = { g, daily, entry: Array(g.W * g.H).fill(''), sel: null, dir: 1, wrong: [], reveals: 0, over: false, t0: Date.now() };
+    const w0 = g.words[0]; S.sel = w0.r * g.W + w0.c; S.dir = w0.d;
+    render();
+  }
+  const wordAt = (i, d) => S.g.words.findIndex(w => { const dr = w.d === 2 ? 1 : 0, dc = w.d === 1 ? 1 : 0; for (let k = 0; k < w.w.length; k++) if ((w.r + dr * k) * S.g.W + w.c + dc * k === i) return w.d === d; return false; });
+  const cellsOf = w => { const dr = w.d === 2 ? 1 : 0, dc = w.d === 1 ? 1 : 0; return [...w.w].map((_, k) => (w.r + dr * k) * S.g.W + w.c + dc * k); };
+  function curWord() { let k = wordAt(S.sel, S.dir); if (k < 0) { S.dir = 3 - S.dir; k = wordAt(S.sel, S.dir); } return k >= 0 ? S.g.words[k] : null; }
+  function tap(i) {
+    const g = S.g;
+    if (g.clueAt[i]) { const ks = Object.entries(g.clueAt[i]); let pick = ks[0]; if (ks.length > 1 && curWord() && g.words[ks[0][1]] === curWord()) pick = ks[1]; const w = g.words[pick[1]]; S.dir = w.d; S.sel = w.r * g.W + w.c; return render(); }
+    if (!g.letters[i]) return;
+    if (S.sel === i) S.dir = 3 - S.dir; S.sel = i;
+    if (wordAt(i, S.dir) < 0) S.dir = 3 - S.dir;
+    Sfx.play('tap'); render();
+  }
+  function key(k) {
+    if (!S || S.over || S.sel === null) return;
+    const w = curWord(); if (!w) return;
+    const cells = cellsOf(w), pos = cells.indexOf(S.sel);
+    if (k === 'back') {
+      if (S.entry[S.sel]) S.entry[S.sel] = ''; else if (pos > 0) { S.sel = cells[pos - 1]; S.entry[S.sel] = ''; }
+      S.wrong = S.wrong.filter(x => x !== S.sel); return render();
+    }
+    if (!/^[a-z]$/.test(k)) return;
+    S.entry[S.sel] = k; S.wrong = S.wrong.filter(x => x !== S.sel); Sfx.play('tap');
+    if (pos < cells.length - 1) S.sel = cells[pos + 1];
+    if (done()) return win();
+    render();
+  }
+  const done = () => S.g.letters.every((l, i) => !l || S.entry[i] === l);
+  function check() { S.wrong = S.g.letters.map((l, i) => l && S.entry[i] && S.entry[i] !== l ? i : -1).filter(i => i >= 0); Util.toast(S.wrong.length ? `${S.wrong.length} square${S.wrong.length > 1 ? 's' : ''} need another look.` : 'Everything so far is right!'); render(); }
+  function reveal(all) { const w = curWord(); if (!w) return; const cs = all ? cellsOf(w) : [S.sel]; cs.forEach(i => { if (S.entry[i] !== S.g.letters[i]) { S.entry[i] = S.g.letters[i]; S.reveals++; } }); S.wrong = S.wrong.filter(i => !cs.includes(i)); if (done()) return win(); render(); }
+  function win() {
+    S.over = true; render(); Sfx.play('win');
+    const secs = Math.round((Date.now() - S.t0) / 1000);
+    App.endGame('arrowwords', true, 'Puzzle complete!', `${S.g.words.length} answers in ${Math.floor(secs / 60)}m ${secs % 60}s${S.reveals ? ` with ${S.reveals} letter${S.reveals > 1 ? 's' : ''} revealed` : ', no help needed'}.`, () => start(false));
+  }
+  function render() {
+    if (!root || !S) return;
+    const g = S.g, w = curWord(), hl = new Set(w ? cellsOf(w) : []), cw = Math.floor(Math.min((root.clientWidth || 360) - 8, 520) / g.W), big = cw >= 44;
+    let cells = '';
+    for (let i = 0; i < g.W * g.H; i++) {
+      const l = g.letters[i], cl = g.clueAt[i];
+      if (cl) {
+        const parts = Object.entries(cl).map(([d, k]) => `<div class="flex-1 flex items-center justify-center gap-0.5 px-0.5 leading-[1.05] text-center ${w && g.words[k] === w ? 'text-amber-200' : 'text-amber-50/85'}" style="font-size:${big ? 8.5 : 0}px">${big ? g.words[k].clue : ''}<span style="font-size:${big ? 9 : Math.max(10, cw * .34)}px">${d === '1' ? '▶' : '▼'}</span></div>`).join('<div class="h-px bg-amber-500/30"></div>');
+        cells += `<div onclick="ArrowWords.tap(${i})" class="flex flex-col cursor-pointer overflow-hidden" style="background:linear-gradient(160deg,#5a3a26,#3a2316);border:1px solid #2a1a10">${parts}</div>`;
+      } else if (l) {
+        const sel = i === S.sel, on = hl.has(i), wrong = S.wrong.includes(i);
+        cells += `<div onclick="ArrowWords.tap(${i})" class="flex items-center justify-center font-bold uppercase cursor-pointer" style="background:${sel ? '#e5c358' : on ? '#f3e1a8' : '#fbf7ee'};color:${wrong ? '#c0261c' : '#1d120c'};border:1px solid #bfae8c;font-size:${cw * .52}px">${S.entry[i]}</div>`;
+      } else cells += `<div style="background:rgba(0,0,0,.25)"></div>`;
+    }
+    root.innerHTML = `
+      <div class="flex flex-col items-center gap-2 mx-auto w-full" style="max-width:540px">
+        <div class="flex gap-2 flex-wrap justify-center"><span class="stat-chip">${S.daily ? '📅 Daily arrow words' : '🎲 Arrow words'}</span><span class="stat-chip">${g.words.length} answers</span></div>
+        <div class="grid" style="grid-template-columns:repeat(${g.W},${cw}px);grid-template-rows:repeat(${g.H},${cw}px);border:4px solid #4a2e1d;border-radius:6px;box-shadow:0 10px 24px rgba(0,0,0,.6)">${cells}</div>
+        <div class="w-full walnut-panel rounded-xl px-3 py-2 text-center min-h-[44px] flex items-center justify-center"><span class="text-amber-100">${w ? `<b class="text-amber-300">${w.d === 1 ? '▶' : '▼'}</b> ${w.clue} <span class="text-amber-100/50">(${w.w.length})</span>` : 'Tap a square or a clue'}</span></div>
+        <div class="flex flex-col gap-1 w-full">${xwKeyboard('ArrowWords')}</div>
+        <div class="flex gap-2 flex-wrap justify-center">${Util.btn('✔ Check', 'ArrowWords.check()')}${Util.btn('💡 Letter', 'ArrowWords.reveal(false)')}${Util.btn('📖 Word', 'ArrowWords.reveal(true)')}${Util.btn('📅 Daily', 'ArrowWords.daily()')}${Util.btn('🎲 New', 'ArrowWords.fresh()', 'brass')}</div>
+      </div>`;
+  }
+  return {
+    async setup() { const v = await Util.choose('➡️ Arrow Words', 'Each clue sits in a dark square. Its answer runs in the direction of the arrow.', [{ label: '📅 Daily puzzle', value: 'daily', primary: true }, { label: '🎲 New puzzle', value: 'new' }, { label: 'Cancel', value: null }]); return v ? { aw: v } : null; },
+    mount(el, o = {}) {
+      root = el;
+      onKey = e => { if (e.ctrlKey || e.metaKey || e.altKey) return; const k = e.key === 'Backspace' ? 'back' : e.key.toLowerCase(); if (k === 'back' || /^[a-z]$/.test(k)) { e.preventDefault(); key(k); } };
+      document.addEventListener('keydown', onKey);
+      if (o.resume) { S = o.resume; render(); } else start(o.aw !== 'new');
+    },
+    snapshot() { return S && !S.over ? S : null; },
+    destroy() { document.removeEventListener('keydown', onKey); root = null; },
+    tap, key, check, reveal, daily() { start(true); }, fresh() { start(false); }, newGame() { start(false); },
+    _test: { get S() { return S; } }
+  };
+})();
+Games.arrowwords = ArrowWords;
+
+/* ============================================================================
+   CODEWORD: a filled crossword where every letter is a number
+   ============================================================================ */
+const Codeword = (() => {
+  let S, root, onKey = null;
+  const POOL = [...new Set(Object.keys(CLUES).concat(WORD_ANSWERS))].filter(w => w.length >= 3).map(w => ({ w, clue: '' }));
+  function start(daily) {
+    const rng = daily ? seeded(todayKey() * 17 + 11) : Math.random;
+    const g = XGen.best(11, 11, POOL, rng, { target: 34 }, 10);
+    const present = [...new Set(g.letters.filter(Boolean))];
+    const nums = present.slice(); for (let k = nums.length - 1; k > 0; k--) { const j = Math.floor(rng() * (k + 1)); [nums[k], nums[j]] = [nums[j], nums[k]]; }
+    const code = {}; nums.forEach((l, k) => code[l] = k + 1);
+    // two starter letters, chosen from the more common ones so there is a way in
+    const freq = present.map(l => [l, g.letters.filter(x => x === l).length]).sort((a, b) => b[1] - a[1]);
+    const givens = [freq[Math.min(1, freq.length - 1)][0], freq[Math.min(4, freq.length - 1)][0]];
+    const guess = {}; givens.forEach(l => guess[code[l]] = l);
+    S = { g, code, rev: Object.fromEntries(Object.entries(code).map(([l, n]) => [n, l])), guess, givens: givens.map(l => code[l]), sel: null, wrong: [], hints: 0, daily, over: false, t0: Date.now() };
+    render();
+  }
+  function tap(i) { if (!S.g.letters[i]) return; S.sel = S.code[S.g.letters[i]]; Sfx.play('tap'); render(); }
+  function pickNum(n) { S.sel = n; render(); }
+  function key(k) {
+    if (!S || S.over || S.sel === null || S.givens.includes(S.sel)) return;
+    if (k === 'back') { delete S.guess[S.sel]; S.wrong = S.wrong.filter(n => n !== S.sel); return render(); }
+    if (!/^[a-z]$/.test(k)) return;
+    const other = Object.keys(S.guess).find(n => S.guess[n] === k && +n !== S.sel);
+    if (other && S.givens.includes(+other)) return Util.toast(`${k.toUpperCase()} is already a starter letter.`);
+    if (other) { delete S.guess[other]; Util.toast(`Moved ${k.toUpperCase()} from ${other} to ${S.sel}.`, 1400); }
+    S.guess[S.sel] = k; S.wrong = S.wrong.filter(n => n !== S.sel); Sfx.play('place');
+    if (Object.keys(S.rev).every(n => S.guess[n] === S.rev[n])) return win();
+    render();
+  }
+  function check() { S.wrong = Object.keys(S.guess).map(Number).filter(n => S.guess[n] !== S.rev[n]); Util.toast(S.wrong.length ? `${S.wrong.length} letter${S.wrong.length > 1 ? 's are' : ' is'} wrong.` : 'All correct so far!'); render(); }
+  function hint() { const n = S.sel && S.guess[S.sel] !== S.rev[S.sel] ? S.sel : +Object.keys(S.rev).find(m => S.guess[m] !== S.rev[m]); if (!n) return; const l = S.rev[n]; const other = Object.keys(S.guess).find(m => S.guess[m] === l); if (other) delete S.guess[other]; S.guess[n] = l; S.hints++; S.sel = n; S.wrong = S.wrong.filter(m => m !== n); if (Object.keys(S.rev).every(m => S.guess[m] === S.rev[m])) return win(); render(); }
+  function win() {
+    S.over = true; render(); Sfx.play('win');
+    const secs = Math.round((Date.now() - S.t0) / 1000);
+    App.endGame('codeword', true, 'Code cracked!', `All ${Object.keys(S.rev).length} letters in ${Math.floor(secs / 60)}m ${secs % 60}s${S.hints ? ` with ${S.hints} hint${S.hints > 1 ? 's' : ''}` : ''}.`, () => start(false));
+  }
+  function render() {
+    if (!root || !S) return;
+    const g = S.g, cw = Math.floor(Math.min((root.clientWidth || 360) - 8, 500) / g.W);
+    let cells = '';
+    for (let i = 0; i < g.W * g.H; i++) {
+      const l = g.letters[i];
+      if (!l) { cells += `<div style="background:#1d120c"></div>`; continue; }
+      const n = S.code[l], gs = S.guess[n], sel = S.sel === n, wrong = S.wrong.includes(n), given = S.givens.includes(n);
+      cells += `<div onclick="Codeword.tap(${i})" class="relative flex items-center justify-center font-bold uppercase cursor-pointer" style="background:${sel ? '#e5c358' : '#fbf7ee'};border:1px solid #bfae8c;color:${wrong ? '#c0261c' : given ? '#1d120c' : '#1d4f8f'};font-size:${cw * .5}px"><span class="absolute top-0 left-0.5 font-semibold text-amber-900/60" style="font-size:${Math.max(8, cw * .26)}px">${n}</span>${gs || ''}</div>`;
+    }
+    const total = Object.keys(S.rev).length, used = new Set(Object.values(S.guess));
+    const keyRow = Object.keys(S.rev).map(Number).sort((a, b) => a - b).map(n => `<button onclick="Codeword.pick(${n})" class="flex flex-col items-center rounded-md py-0.5 ${S.sel === n ? 'bg-amber-400 text-stone-900' : 'bg-black/30 text-amber-100'} ${S.wrong.includes(n) ? 'ring-1 ring-red-400' : ''}" style="width:calc((100% - 12*4px)/13)"><span class="text-[9px] opacity-70">${n}</span><span class="font-bold uppercase text-sm h-5">${S.guess[n] || ''}</span></button>`).join('');
+    root.innerHTML = `
+      <div class="flex flex-col items-center gap-2 mx-auto w-full" style="max-width:520px">
+        <div class="flex gap-2 flex-wrap justify-center"><span class="stat-chip">${S.daily ? '📅 Daily codeword' : '🎲 Codeword'}</span><span class="stat-chip">${Object.keys(S.guess).length}/${total} letters</span></div>
+        <div class="grid" style="grid-template-columns:repeat(${g.W},${cw}px);grid-template-rows:repeat(${g.H},${cw}px);border:4px solid #4a2e1d;border-radius:6px;box-shadow:0 10px 24px rgba(0,0,0,.6)">${cells}</div>
+        <div class="flex flex-wrap gap-1 w-full justify-center">${keyRow}</div>
+        <div class="flex flex-wrap gap-1 justify-center text-xs">${'abcdefghijklmnopqrstuvwxyz'.split('').map(c => `<span class="w-5 text-center uppercase font-bold ${used.has(c) ? 'text-amber-100/25 line-through' : 'text-amber-200'}">${c}</span>`).join('')}</div>
+        <div class="flex flex-col gap-1 w-full">${xwKeyboard('Codeword')}</div>
+        <div class="flex gap-2 flex-wrap justify-center">${Util.btn('✔ Check', 'Codeword.check()')}${Util.btn('💡 Hint', 'Codeword.hint()')}${Util.btn('📅 Daily', 'Codeword.daily()')}${Util.btn('🎲 New', 'Codeword.fresh()', 'brass')}</div>
+      </div>`;
+  }
+  return {
+    async setup() { const v = await Util.choose('🔢 Codeword', 'Every letter has been swapped for a number. Two are given to start you off.', [{ label: '📅 Daily puzzle', value: 'daily', primary: true }, { label: '🎲 New puzzle', value: 'new' }, { label: 'Cancel', value: null }]); return v ? { cw: v } : null; },
+    mount(el, o = {}) {
+      root = el;
+      onKey = e => { if (e.ctrlKey || e.metaKey || e.altKey) return; const k = e.key === 'Backspace' ? 'back' : e.key.toLowerCase(); if (k === 'back' || /^[a-z]$/.test(k)) { e.preventDefault(); key(k); } };
+      document.addEventListener('keydown', onKey);
+      if (o.resume) { S = o.resume; render(); } else start(o.cw !== 'new');
+    },
+    snapshot() { return S && !S.over ? S : null; },
+    destroy() { document.removeEventListener('keydown', onKey); root = null; },
+    tap, pick: pickNum, key, check, hint, daily() { start(true); }, fresh() { start(false); }, newGame() { start(false); },
+    _test: { get S() { return S; } }
+  };
+})();
+Games.codeword = Codeword;
+
+/* ============================================================================
+   WORD SEARCH: themed grids, swipe to circle words
+   ============================================================================ */
+const WS_THEMES = {"Animals": ["elephant", "giraffe", "tiger", "zebra", "monkey", "kangaroo", "rabbit", "badger", "hedgehog", "squirrel", "otter", "beaver", "panda", "koala", "lion", "camel", "donkey", "walrus", "jaguar", "ferret"], "Fruit & Veg": ["apple", "banana", "cherry", "grape", "lemon", "mango", "melon", "orange", "peach", "plum", "carrot", "potato", "onion", "pepper", "cabbage", "turnip", "parsnip", "broccoli", "spinach", "leek"], "In the Kitchen": ["kettle", "toaster", "spatula", "whisk", "ladle", "colander", "grater", "oven", "fridge", "freezer", "teapot", "saucepan", "blender", "rolling", "sieve", "peeler", "tongs", "mixer", "apron", "cupboard"], "In the Garden": ["shed", "spade", "rake", "hose", "trowel", "seeds", "lawn", "hedge", "compost", "greenhouse", "daisy", "tulip", "rose", "bench", "pond", "gnome", "fence", "patio", "mower", "barrow"], "Sports": ["football", "cricket", "tennis", "rugby", "golf", "hockey", "boxing", "rowing", "cycling", "swimming", "darts", "snooker", "netball", "archery", "judo", "skiing", "sailing", "bowls", "squash", "diving"], "Weather": ["rain", "snow", "sleet", "hail", "thunder", "lightning", "drizzle", "fog", "mist", "breeze", "gale", "storm", "sunshine", "cloud", "frost", "rainbow", "humid", "shower", "tornado", "blizzard"], "Colours": ["red", "orange", "yellow", "green", "blue", "purple", "violet", "pink", "brown", "black", "white", "grey", "silver", "gold", "crimson", "scarlet", "teal", "navy", "amber", "magenta"], "Space": ["planet", "comet", "galaxy", "nebula", "rocket", "orbit", "asteroid", "meteor", "mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "moon", "star", "astronaut", "telescope"], "Under the Sea": ["dolphin", "whale", "shark", "octopus", "squid", "coral", "seahorse", "jellyfish", "crab", "lobster", "starfish", "turtle", "seaweed", "oyster", "clam", "shrimp", "eel", "stingray", "plankton", "walrus"], "Music": ["guitar", "piano", "violin", "drum", "trumpet", "flute", "cello", "harp", "melody", "rhythm", "chorus", "tempo", "choir", "banjo", "organ", "bass", "tuba", "lyric", "concert", "orchestra"], "Jobs": ["teacher", "doctor", "nurse", "chef", "pilot", "farmer", "plumber", "builder", "baker", "dentist", "vet", "lawyer", "banker", "artist", "writer", "actor", "mechanic", "driver", "postman", "police"], "Getting About": ["car", "bus", "train", "tram", "taxi", "bicycle", "scooter", "lorry", "van", "ferry", "yacht", "canoe", "plane", "helicopter", "rocket", "subway", "coach", "tractor", "motorbike", "caravan"], "Under the Bonnet": ["engine", "piston", "clutch", "gearbox", "radiator", "battery", "exhaust", "turbo", "brakes", "spark", "plug", "alternator", "camshaft", "crankshaft", "axle", "tyre", "bonnet", "fuel", "filter", "coolant"], "On the Golf Course": ["birdie", "eagle", "bogey", "fairway", "green", "bunker", "putter", "driver", "wedge", "iron", "caddie", "tee", "hole", "rough", "par", "flag", "links", "clubhouse", "handicap", "mulligan"], "Parlour Games": ["chess", "draughts", "dominoes", "cribbage", "bridge", "poker", "rummy", "backgammon", "mahjong", "solitaire", "ludo", "mancala", "checkers", "whist", "snap", "patience", "bingo", "dice", "cards", "shogi"], "Breakfast": ["toast", "bacon", "eggs", "sausage", "beans", "porridge", "cereal", "muesli", "yoghurt", "croissant", "jam", "marmalade", "butter", "coffee", "tea", "juice", "pancake", "waffle", "kipper", "muffin"], "Birds": ["robin", "sparrow", "blackbird", "thrush", "wren", "owl", "eagle", "falcon", "heron", "swan", "goose", "duck", "magpie", "crow", "pigeon", "starling", "puffin", "penguin", "parrot", "kingfisher"], "Winter Fun": ["snowman", "sledge", "mittens", "scarf", "cocoa", "fireplace", "icicle", "skates", "blanket", "slippers", "carols", "tinsel", "holly", "presents", "mince", "cracker", "stocking", "reindeer", "frosty", "cosy"], "Fantasy Quest": ["wizard", "dragon", "knight", "castle", "potion", "sword", "shield", "quest", "goblin", "crystal", "summon", "mage", "dungeon", "treasure", "airship", "griffin", "phoenix", "elixir", "armour", "spell"]};
+const WordSearch = (() => {
+  const LEVELS = { easy: { n: 'Easy', size: 10, words: 10, dirs: [[0, 1], [1, 0]] }, medium: { n: 'Medium', size: 12, words: 13, dirs: [[0, 1], [1, 0], [1, 1], [-1, 1]] }, hard: { n: 'Hard', size: 14, words: 16, dirs: [[0, 1], [1, 0], [1, 1], [-1, 1], [0, -1], [-1, 0], [-1, -1], [1, -1]] } };
+  const COLS = ['#e0457b', '#2f8f4e', '#2f6fd6', '#e8772e', '#8e4ec6', '#c9a227', '#1f9aa6', '#c0392b'];
+  let S, root, timer = null, drag = null;
+  function start(level, theme, daily) {
+    clearInterval(timer);
+    const rng = daily ? seeded(todayKey() * 23 + 1) : Math.random, L = LEVELS[level], n = L.size;
+    const names = Object.keys(WS_THEMES); theme = theme || names[Math.floor(rng() * names.length)];
+    const pool = WS_THEMES[theme].filter(w => w.length <= n).slice().sort(() => rng() - .5).slice(0, L.words + 4).sort((a, b) => b.length - a.length);
+    const grid = Array(n * n).fill(''), placed = [];
+    for (const w of pool) {
+      if (placed.length >= L.words) break;
+      for (let t = 0; t < 300; t++) {
+        const [dr, dc] = L.dirs[Math.floor(rng() * L.dirs.length)], r = Math.floor(rng() * n), c = Math.floor(rng() * n);
+        const er = r + dr * (w.length - 1), ec = c + dc * (w.length - 1); if (er < 0 || er >= n || ec < 0 || ec >= n) continue;
+        let ok = true; for (let k = 0; k < w.length; k++) { const g = grid[(r + dr * k) * n + c + dc * k]; if (g && g !== w[k]) { ok = false; break; } }
+        if (!ok) continue;
+        for (let k = 0; k < w.length; k++) grid[(r + dr * k) * n + c + dc * k] = w[k];
+        placed.push({ w, r, c, dr, dc }); break;
+      }
+    }
+    const fill = 'eeeeaaaiiioooonnnrrrtttssslllcuudmhgpbfywkvxzjq';
+    for (let i = 0; i < n * n; i++) if (!grid[i]) grid[i] = fill[Math.floor(rng() * fill.length)];
+    S = { level, theme, daily, n, grid, words: placed, found: [], time: 0, over: false };
+    timer = setInterval(() => { if (!S || S.over || document.hidden) return; S.time++; const t = root && root.querySelector('#ws-time'); if (t) t.textContent = fmt(S.time); }, 1000);
+    render();
+  }
+  const fmt = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+  function line(a, b) { // cells from a to b if straight (8 directions)
+    const n = S.n, ar = Math.floor(a / n), ac = a % n, br = Math.floor(b / n), bc = b % n, dr = Math.sign(br - ar), dc = Math.sign(bc - ac);
+    const len = Math.max(Math.abs(br - ar), Math.abs(bc - ac));
+    if (!(ar === br || ac === bc || Math.abs(br - ar) === Math.abs(bc - ac))) return null;
+    return Array.from({ length: len + 1 }, (_, k) => (ar + dr * k) * n + ac + dc * k);
+  }
+  function finishDrag(cells) {
+    if (!cells || cells.length < 2) return;
+    const str = cells.map(i => S.grid[i]).join(''), rev = [...str].reverse().join('');
+    const hit = S.words.find(w => !S.found.includes(w.w) && (w.w === str || w.w === rev));
+    if (!hit) { Sfx.play('card'); return; }
+    S.found.push(hit.w); Sfx.play('match');
+    if (S.found.length === S.words.length) { S.over = true; clearInterval(timer); render(); Sfx.play('win'); return App.endGame('wordsearch', true, 'All found!', `${S.words.length} ${S.theme.toLowerCase()} words in ${fmt(S.time)}.`, () => start(S.level, null, false)); }
+  }
+  function render() {
+    if (!root || !S) return;
+    const n = S.n, cw = Math.floor(Math.min((root.clientWidth || 360) - 12, 520) / n);
+    const sel = drag && drag.cells ? new Set(drag.cells) : new Set();
+    const cells = S.grid.map((l, i) => `<div data-i="${i}" class="flex items-center justify-center font-bold uppercase select-none ${sel.has(i) ? 'text-stone-900' : 'text-amber-950'}" style="font-size:${cw * .55}px;${sel.has(i) ? 'background:rgba(243,210,102,.8);border-radius:6px' : ''}">${l}</div>`).join('');
+    const caps = S.found.map((w, k) => { const p = S.words.find(x => x.w === w), x1 = (p.c + .5) * cw, y1 = (p.r + .5) * cw, x2 = (p.c + p.dc * (w.length - 1) + .5) * cw, y2 = (p.r + p.dr * (w.length - 1) + .5) * cw; return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${COLS[k % COLS.length]}" stroke-width="${cw * .72}" stroke-linecap="round" opacity=".38"/>`; }).join('');
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex gap-2 flex-wrap justify-center"><span class="stat-chip">${S.daily ? '📅 ' : ''}${S.theme}</span><span class="stat-chip">${LEVELS[S.level].n}</span><span class="stat-chip">⏱️ <b id="ws-time">${fmt(S.time)}</b></span><span class="stat-chip">${S.found.length}/${S.words.length}</span></div>
+          <div class="relative rounded-xl p-1.5" style="background:linear-gradient(160deg,#fbf7ee,#ece2cc);box-shadow:0 10px 24px rgba(0,0,0,.55);border:4px solid #4a2e1d">
+            <svg class="absolute pointer-events-none" style="left:6px;top:6px" width="${cw * n}" height="${cw * n}">${caps}</svg>
+            <div id="ws-grid" class="relative grid" style="grid-template-columns:repeat(${n},${cw}px);grid-template-rows:repeat(${n},${cw}px);touch-action:none">${cells}</div>
+          </div>
+        </div>
+        ${Util.panel(`<div class="font-display text-amber-200 text-sm mb-2">Find these words</div>
+          <div class="grid grid-cols-2 gap-x-3 gap-y-1">${S.words.map(w => `<span class="text-sm uppercase tracking-wide ${S.found.includes(w.w) ? 'line-through text-amber-100/35' : 'text-amber-100'}">${w.w}</span>`).join('')}</div>
+          <div class="flex flex-wrap gap-2 mt-3">${Object.entries(LEVELS).map(([k, l]) => Util.btn(l.n, `WordSearch.level('${k}')`, k === S.level && !S.daily ? 'brass' : 'wood')).join('')}</div>
+          <div class="flex flex-wrap gap-2 mt-2">${Util.btn('🎨 Theme', 'WordSearch.pickTheme()')}${Util.btn('📅 Daily', 'WordSearch.daily()')}${Util.btn('🎲 New', 'WordSearch.fresh()', 'brass')}</div>
+          <p class="text-[11px] text-amber-100/55 mt-2">Swipe across a word in a straight line. ${S.level === 'hard' ? 'Words can run backwards too.' : S.level === 'medium' ? 'Words run across, down and diagonally.' : 'Words run across and down.'}</p>`, 'w-full lg:w-64 !p-3')}
+      </div>`;
+    const g = root.querySelector('#ws-grid');
+    const cellAt = e => { const el = document.elementFromPoint(e.clientX, e.clientY); const c = el && el.closest('#ws-grid [data-i]'); return c ? +c.dataset.i : null; };
+    g.onpointerdown = e => { if (S.over) return; const i = cellAt(e); if (i === null) return; drag = { a: i, cells: [i] }; try { g.setPointerCapture(e.pointerId); } catch (_) {} paint(); };
+    g.onpointermove = e => { if (!drag) return; const i = cellAt(e); if (i === null) return; const l = line(drag.a, i); if (l) { drag.cells = l; paint(); } };
+    const up = () => { if (!drag) return; const c = drag.cells; drag = null; finishDrag(c); if (!S.over) render(); };
+    g.onpointerup = up; g.onpointercancel = up;
+  }
+  function paint() { // highlight the current swipe without redrawing everything
+    const sel = new Set(drag.cells);
+    root.querySelectorAll('#ws-grid [data-i]').forEach(el => { const on = sel.has(+el.dataset.i); el.style.background = on ? 'rgba(243,210,102,.8)' : ''; el.style.borderRadius = on ? '6px' : ''; });
+  }
+  async function pickTheme() {
+    const t = await Util.choose('Pick a theme', '', Object.keys(WS_THEMES).map(k => ({ label: k, value: k })).concat([{ label: 'Cancel', value: null }]));
+    if (t) start(S.level, t, false);
+  }
+  return {
+    async setup() { const v = await Util.choose('🔍 Word Search', 'Find every word hidden in the grid. Swipe across a word to circle it.', [{ label: '📅 Daily puzzle', value: 'daily', primary: true }, { label: 'Easy', value: 'easy' }, { label: 'Medium', value: 'medium' }, { label: 'Hard', value: 'hard' }, { label: 'Cancel', value: null }]); return v ? { ws: v } : null; },
+    mount(el, o = {}) { root = el; if (o.resume) { S = o.resume; start(S.level, S.theme, false); } else if (o.ws === 'daily' || !o.ws) start('medium', null, true); else start(o.ws, null, false); },
+    snapshot() { return S && !S.over ? { level: S.level, theme: S.theme } : null; },
+    destroy() { clearInterval(timer); drag = null; root = null; },
+    level(l) { start(l, S.theme, false); }, daily() { start('medium', null, true); }, fresh() { start(S.level, null, false); }, pickTheme, newGame() { start(S.level, null, false); },
+    _test: { get S() { return S; }, finishDrag }
+  };
+})();
+Games.wordsearch = WordSearch;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -9020,7 +9455,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.5.1",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.6.0",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}
