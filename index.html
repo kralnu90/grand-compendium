@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fifty-four parlour, patience, family, pub, casino and word games in one: Chess, Go, Shogi, Spider, Pyramid, TriPeaks, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Fifty-five parlour, patience, family, pub, casino and word games in one: Chess, Go, Shogi, Spider, Pyramid, TriPeaks, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Fifty-four games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Fifty-five games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -44,6 +44,7 @@
     --color-emerald-500: oklch(69.6% 0.17 162.48);
     --color-sky-100: oklch(95.1% 0.026 236.824);
     --color-sky-300: oklch(82.8% 0.111 230.318);
+    --color-fuchsia-400: oklch(74% 0.238 322.16);
     --color-stone-900: oklch(21.6% 0.006 56.043);
     --color-stone-950: oklch(14.7% 0.004 49.25);
     --color-black: #000;
@@ -1749,6 +1750,12 @@
   .text-amber-950 {
     color: var(--color-amber-950);
   }
+  .text-emerald-100\/40 {
+    color: color-mix(in srgb, oklch(95% 0.052 163.051) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-emerald-100) 40%, transparent);
+    }
+  }
   .text-emerald-100\/50 {
     color: color-mix(in srgb, oklch(95% 0.052 163.051) 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1875,6 +1882,12 @@
   .ring-amber-300 {
     --tw-ring-color: var(--color-amber-300);
   }
+  .ring-amber-300\/60 {
+    --tw-ring-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-ring-color: color-mix(in oklab, var(--color-amber-300) 60%, transparent);
+    }
+  }
   .ring-amber-300\/70 {
     --tw-ring-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 70%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1904,6 +1917,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       --tw-ring-color: color-mix(in oklab, var(--color-emerald-400) 40%, transparent);
     }
+  }
+  .ring-fuchsia-400 {
+    --tw-ring-color: var(--color-fuchsia-400);
   }
   .ring-red-400 {
     --tw-ring-color: var(--color-red-400);
@@ -3538,6 +3554,22 @@ const GAME_CATALOG = [
         <li><strong>Stock:</strong> Deals one card onto each of the four columns.</li>
         <li><strong>Controls:</strong> Tap a card to pick it up, then tap where it should go. Tap a picked-up card again to send it to a foundation. Undo is unlimited.</li>
       </ul>`
+  },
+  {
+    id: 'dogrummy', title: "Dog Rummy", subtitle: "Kris's Family Wild-Card Rummy", category: 'Cards', icon: '🐶',
+    players: "2-4, people or AI", tagline: "A new wild rank every round, from Aces to Kings. Take the whole pile if you dare.",
+    rules: `
+      <p><strong>Objective:</strong> Have the lowest total score after the last round.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>The dog:</strong> Each round has a wild card, the "dog". Round 1 Aces are dogs, round 2 the 2s, and so on up to Kings. A dog can be any card in any suit.</li>
+        <li><strong>The deal:</strong> 7 cards each, and one card turned up to start the discard pile.</li>
+        <li><strong>Your turn:</strong> Take the top card of the deck, or pick up the <b>whole</b> discard pile. Then lay down any completed hands, add cards to any hands already on the table (anyone's), and finish by discarding one card.</li>
+        <li><strong>Completed hands:</strong> Sets of 3 or 4 of a kind, or runs of 3 or more in the same suit (Aces can be low or high, but don't go round the corner). Dogs can fill in anywhere.</li>
+        <li><strong>The risk:</strong> Taking the pile can win you a round, but anything you can't lay down before someone chips out counts against you.</li>
+        <li><strong>Chipping out:</strong> Lay down everything except your last card, then discard it. You score 0 for the round.</li>
+        <li><strong>Scoring:</strong> Everyone else scores the cards left in their hand: Ace 11, 2 to 10 face value, Jack/Queen/King 10, and every dog in hand is its value <b>plus 15</b>. Hands on the table never count.</li>
+        <li><strong>Game length:</strong> Full (13 rounds, Aces to Kings) or Quick (6 rounds, Aces to 6s).</li>
+      </ul>`
   }
 ];
 
@@ -3695,7 +3727,7 @@ const App = {
   /* Five shelves on the main menu; each opens its own sub-menu of games */
   CATS: [
     { k: 'board', n: 'Board Games', icon: '♞', blurb: 'Royal strategy and quick duels', ids: ['chess', 'go', 'shogi', 'checkers', 'reversi', 'four', 'morris', 'mancala'] },
-    { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Pub classics, duels and card crawls', ids: ['cribbage', 'gin', 'clash', 'duel', 'scoundrel', 'regicide'] },
+    { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Pub classics, duels and card crawls', ids: ['dogrummy', 'cribbage', 'gin', 'clash', 'duel', 'scoundrel', 'regicide'] },
     { k: 'patience', n: 'Patience', icon: '🂡', blurb: 'Solitaire card games, from classic to devilish', ids: ['klondike', 'freecell', 'spider', 'yukon', 'scorpion', 'fortythieves', 'canfield', 'pyramid', 'golf', 'tripeaks', 'acesup'] },
     { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'knucklebones', 'liars', 'dominoes', 'mahjong'] },
     { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
@@ -3820,9 +3852,15 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.9.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.10.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.10.0', '19 Nov 2026', 'Dog Rummy', [
+    "Dog Rummy: Kris's family wild-card rummy, for 2 to 4 players against the AI or with Pass & Play",
+    'A new dog (wild) rank every round, from Aces up to Kings, with a quick 6-round option',
+    'Draw from the deck or risk taking the whole discard pile, lay sets and runs, and add to anyone\'s hands',
+    'Chip out to score zero; dogs left in your hand cost an extra 15'
+  ]],
   ['1.9.1', '19 Nov 2026', 'Spring Mikado gets tougher', [
     'Going slowly is no longer a sure thing: creep too slowly, or stop mid-pull, and the disc sticks and judders',
     'Steer through a gap: scraping past neighbouring discs now strains the tray',
@@ -4044,6 +4082,7 @@ const Menu = (() => {
           <li><b>Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes &amp; Ladders, Ludo, Dominoes, Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships, Sudoku</b> and <b>Go</b> are traditional games, enjoyed for generations.</li>
           <li><b>Spring Mikado</b> is a digital take on the classic wooden disc-mikado tray with a spring-loaded bar.</li>
           <li><b>Murder at Marrowgate Manor</b> and <b>Torchlight Delve</b> are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.</li>
+          <li><b>Dog Rummy</b> is a family card game shared by Kris.</li>
           <li>The Arrow Words clues and Word Search themes were written for this collection.</li>
           <li><b>Conjurers' Duel</b> is an original card game in the collectible-card style; its 100 cards, names and rules text were written for this collection.</li>
           <li><b>Tilecraft, Word Lock, Word Wheel, Word Grid</b> and <b>Colour Clash</b> are original takes on much-loved word and card game ideas. They aren't connected to, or endorsed by, the makers of any other game.</li>
@@ -12486,6 +12525,268 @@ const AcesUp = (() => {
 })();
 Games.acesup = AcesUp;
 
+/* ============================================================================
+   DOG RUMMY: Kris's family rummy game. The wild ("dog") rank climbs each round,
+   Aces to Kings. Draw from the deck or take the WHOLE discard pile, lay sets and
+   suited runs, lay off on anyone's hands, chip out by discarding your last card.
+   ============================================================================ */
+const DogRummy = (() => {
+  let S, root, sid = 0, sel = [], busy = false;
+  const RN = r => ({ 1: 'Ace', 11: 'Jack', 12: 'Queen', 13: 'King' })[r] || String(r);
+  const isDog = c => c.r === S.wild;
+  const val = c => (c.r === 1 ? 11 : Math.min(10, c.r)) + (isDog(c) ? 15 : 0);
+  const handPts = h => h.reduce((s, c) => s + val(c), 0);
+  /* ---------- melds ---------- */
+  function makeMeld(cards) {
+    if (cards.length < 3) return null;
+    const nat = cards.filter(c => !isDog(c)), w = cards.length - nat.length;
+    if (!nat.length) return cards.length <= 4 ? { type: 'set', rank: S.wild, cards } : null;
+    if (cards.length <= 4 && nat.every(c => c.r === nat[0].r)) return { type: 'set', rank: nat[0].r, cards };
+    if (!nat.every(c => c.s === nat[0].s)) return null;
+    for (const hiAce of [false, true]) {
+      const rs = nat.map(c => c.r === 1 && hiAce ? 14 : c.r).sort((a, b) => a - b);
+      if (new Set(rs).size !== rs.length) continue;
+      let lo = rs[0], hi = rs[rs.length - 1]; const gaps = hi - lo + 1 - rs.length;
+      if (gaps > w) continue;
+      let extra = w - gaps; while (extra > 0 && hi < 14) { hi++; extra--; } while (extra > 0 && lo > 1) { lo--; extra--; }
+      if (extra === 0 && hi - lo + 1 === cards.length) return { type: 'run', suit: nat[0].s, lo, hi, cards };
+    }
+    return null;
+  }
+  function fits(m, c) {
+    if (m.type === 'set') return m.cards.length < 4 && (isDog(c) || c.r === m.rank);
+    if (isDog(c)) return m.hi < 14 || m.lo > 1;
+    if (c.s !== m.suit) return false;
+    if (c.r === 1) return m.lo === 2 || m.hi === 13;
+    return c.r === m.hi + 1 || c.r === m.lo - 1;
+  }
+  function addTo(m, c) {
+    m.cards.push(c);
+    if (m.type === 'run') {
+      if (isDog(c)) { if (m.hi < 14) m.hi++; else m.lo--; }
+      else if (c.r === 1) { if (m.hi === 13) m.hi = 14; else m.lo = 1; }
+      else if (c.r === m.hi + 1) m.hi++; else m.lo--;
+      m.cards.sort((a, b) => runPos(m, a) - runPos(m, b));
+    }
+  }
+  function runPos(m, c) { if (isDog(c)) return 99; return c.r === 1 ? (m.hi === 14 ? 14 : 1) : c.r; }
+  /* ---------- AI meld search ---------- */
+  function candidates(hand) {
+    const dogs = hand.filter(isDog), nat = hand.filter(c => !isDog(c)), out = [];
+    const byRank = {}; nat.forEach(c => (byRank[c.r] = byRank[c.r] || []).push(c));
+    for (const g of Object.values(byRank)) {
+      if (g.length >= 3) out.push({ nat: g.slice(0, 4), w: 0 });
+      if (g.length === 4) for (let k = 0; k < 4; k++) out.push({ nat: g.filter((_, j) => j !== k), w: 0 });
+      if (g.length < 3) out.push({ nat: g, w: 3 - g.length });
+      if (g.length === 3) out.push({ nat: g, w: 1 });
+    }
+    if (dogs.length >= 3) out.push({ nat: [], w: Math.min(4, dogs.length) });
+    for (const s of SUITS) {
+      const cs = nat.filter(c => c.s === s);
+      for (const hiAce of [false, true]) {
+        const rk = c => c.r === 1 && hiAce ? 14 : c.r;
+        const sorted = cs.slice().sort((a, b) => rk(a) - rk(b)).filter((c, i, a) => i === 0 || rk(c) !== rk(a[i - 1]));
+        for (let a = 0; a < sorted.length; a++) for (let b = a; b < sorted.length; b++) {
+          const win = sorted.slice(a, b + 1), span = rk(win[win.length - 1]) - rk(win[0]) + 1, gaps = span - win.length;
+          const need = Math.max(gaps, 3 - win.length);
+          if (need <= dogs.length && need <= 6) out.push({ nat: win, w: need });
+        }
+      }
+    }
+    return out;
+  }
+  /* best melds from a hand (most points melded), keeping at least `keep` cards */
+  function bestMelds(hand, keep = 0) {
+    const cands = candidates(hand).map(c => ({ ...c, pts: c.nat.reduce((s, x) => s + val(x), 0), ids: new Set(c.nat.map(x => x.id)) })).sort((a, b) => b.pts - a.pts);
+    const dogs = hand.filter(isDog).sort((a, b) => val(b) - val(a));
+    let best = { pts: 0, melds: [] }, nodes = 0;
+    const used = new Set();
+    function dfs(i, wLeft, pts, melds, count) {
+      if (++nodes > 6000) return;
+      if (pts + wLeft * 0 > best.pts && hand.length - count >= keep) best = { pts, melds: melds.slice() };
+      for (let k = i; k < cands.length; k++) {
+        const c = cands[k]; if (c.w > wLeft) continue;
+        let clash = false; for (const id of c.ids) if (used.has(id)) { clash = true; break; } if (clash) continue;
+        const n = c.nat.length + c.w; if (hand.length - count - n < keep) continue;
+        c.ids.forEach(id => used.add(id));
+        const dogsUsed = dogs.slice(dogs.length - wLeft, dogs.length - wLeft + c.w);
+        melds.push({ nat: c.nat, dogs: dogsUsed });
+        dfs(k + 1, wLeft - c.w, pts + c.pts + dogsUsed.reduce((s, d) => s + val(d), 0), melds, count + n);
+        melds.pop(); c.ids.forEach(id => used.delete(id));
+      }
+    }
+    dfs(0, dogs.length, 0, [], 0);
+    return best;
+  }
+  function leftoverAfter(hand, keep) { // points left after the best melds and laying off on the table
+    const b = bestMelds(hand, keep), usedIds = new Set(b.melds.flatMap(m => m.nat.concat(m.dogs).map(c => c.id)));
+    let rest = hand.filter(c => !usedIds.has(c.id));
+    const table = S.melds.map(m => ({ ...m, cards: m.cards.slice() }));
+    let changed = true;
+    while (changed && rest.length > keep) { changed = false; for (const c of rest.slice()) { const m = table.find(t => fits(t, c)); if (m && rest.length > keep) { addTo(m, c); rest = rest.filter(x => x !== c); changed = true; } } }
+    return handPts(rest);
+  }
+  /* ---------- game flow ---------- */
+  function newGame(seats, rounds) {
+    sid++; busy = false; sel = [];
+    S = { seats, rounds, round: 1, wild: 1, scores: seats.map(() => 0), hist: [], dealer: Math.floor(Math.random() * seats.length) };
+    deal();
+  }
+  function deal() {
+    const d = Util.shuffle(Util.deck());
+    S.wild = S.round; S.hands = S.seats.map(() => d.splice(0, 7)); S.stock = d; S.pile = [S.stock.pop()];
+    S.melds = []; S.turn = (S.dealer + S.round) % S.seats.length; S.phase = 'draw'; S.out = null;
+    S.msg = `Round ${S.round}: ${RN(S.wild)}s are dogs (wild).`;
+    sel = []; next();
+  }
+  const humans = () => S.seats.filter(s => s.type === 'human').length;
+  async function next() {
+    if (!root) return;
+    const seat = S.seats[S.turn]; render();
+    if (seat.type === 'ai') { const my = sid; busy = true; render(); await Util.sleep(Util.delay(700)); if (my !== sid) return; await aiTurn(my); }
+    else if (humans() > 1 && S.lastHuman !== S.turn) { await curtain(seat.name, `${seat.name}'s turn. ${RN(S.wild)}s are wild.`); S.lastHuman = S.turn; render(); }
+    else S.lastHuman = S.turn;
+  }
+  function drawDeck() {
+    if (!S.stock.length) {
+      if (S.pile.length <= 1) return endRound(null);
+      const top = S.pile.pop(); S.stock = Util.shuffle(S.pile); S.pile = [top]; Util.toast('The discard pile is shuffled back in.', 1200);
+    }
+    S.hands[S.turn].push(S.stock.pop());
+  }
+  function takePile() { S.hands[S.turn].push(...S.pile); S.pile = []; }
+  function discard(c) {
+    const h = S.hands[S.turn]; h.splice(h.indexOf(c), 1); S.pile.push(c);
+    if (!h.length) return endRound(S.turn);
+    S.turn = (S.turn + 1) % S.seats.length; S.phase = 'draw'; sel = []; next();
+  }
+  function endRound(outBy) {
+    const pts = S.seats.map((_, i) => i === outBy ? 0 : handPts(S.hands[i]));
+    pts.forEach((p, i) => S.scores[i] += p);
+    S.hist.push(pts); S.phase = 'over'; S.out = outBy; busy = false; render();
+    Sfx.play(outBy === null ? 'flip' : S.seats[outBy].type === 'human' ? 'win' : 'lose');
+    const rows = S.seats.map((s, i) => `<div class="flex justify-between gap-4"><span>${s.name}${i === outBy ? ' 🏁' : ''}</span><span>+${pts[i]} <b class="text-amber-300">(${S.scores[i]})</b></span></div>`).join('');
+    const last = S.round >= S.rounds;
+    if (last) {
+      const low = Math.min(...S.scores), w = S.scores.indexOf(low), ws = S.seats[w];
+      return App.endGame('dogrummy', ws.type === 'human', `${ws.name} ${ws.name === 'You' ? 'win' : 'wins'}!`, `<div class="text-left space-y-1 mb-2">${rows}</div><div class="text-xs opacity-70">Lowest total wins.</div>`, () => newGame(S.seats, S.rounds));
+    }
+    Util.choose(outBy === null ? 'Round over: no cards left' : `${S.seats[outBy].name} ${S.seats[outBy].name === 'You' ? 'chip' : 'chips'} out!`, `<div class="text-left space-y-1">${rows}</div><div class="text-xs opacity-70 mt-2">Next round: ${RN(S.round + 1)}s are dogs.</div>`, [{ label: 'Next round', value: 1, primary: true }]).then(() => { S.round++; deal(); });
+  }
+  /* ---------- AI ---------- */
+  async function aiTurn(my) {
+    const i = S.turn, h = S.hands[i], sleep = async ms => { await Util.sleep(Util.delay(ms)); if (my !== sid) throw 'abort'; };
+    try {
+      // draw: take the whole pile only if it leaves less in hand afterwards
+      const now = leftoverAfter(h, 1), withPile = S.pile.length ? leftoverAfter(h.concat(S.pile), 1) : 1e9;
+      const margin = Settings.diff === 'easy' ? 8 : Settings.diff === 'hard' ? -2 : 3;
+      const take = S.pile.length && withPile + margin < now + 7;
+      if (take) { S.msg = `${S.seats[i].name} takes the whole pile (${S.pile.length} card${S.pile.length > 1 ? 's' : ''})!`; takePile(); Sfx.play('capture'); }
+      else { drawDeck(); if (S.phase === 'over') return; S.msg = `${S.seats[i].name} draws from the deck.`; Sfx.play('card'); }
+      S.phase = 'play'; render(); await sleep(600);
+      // lay down melds
+      const b = bestMelds(h, 1);
+      for (const m of b.melds) {
+        const cards = m.nat.concat(m.dogs), meld = makeMeld(cards);
+        if (!meld || h.length - cards.length < 1) continue;
+        cards.forEach(c => h.splice(h.indexOf(c), 1)); meld.owner = i; S.melds.push(meld);
+        S.msg = `${S.seats[i].name} lays down ${meld.type === 'set' ? 'a set' : 'a run'}.`; Sfx.play('place'); render(); await sleep(500);
+      }
+      // lay off on anyone's hands
+      let changed = true;
+      while (changed && h.length > 1) {
+        changed = false;
+        for (const c of h.slice().sort((a, b) => val(b) - val(a))) { if (h.length <= 1) break; const m = S.melds.find(t => fits(t, c)); if (m) { h.splice(h.indexOf(c), 1); addTo(m, c); changed = true; S.msg = `${S.seats[i].name} adds a card to a hand on the table.`; render(); await sleep(350); } }
+      }
+      // discard
+      const keepScore = c => { if (isDog(c)) return 100; let k = 0; for (const o of h) if (o !== c) { if (o.r === c.r) k += 7; else if (o.s === c.s && Math.abs(o.r - c.r) <= 2) k += 4; } if (S.melds.some(m => fits(m, c))) k -= 3; return k; };
+      const d = h.slice().sort((a, b) => (val(b) - keepScore(b)) - (val(a) - keepScore(a)))[0];
+      S.msg = `${S.seats[i].name} discards the ${RN(d.r)} of ${({ S: 'spades', H: 'hearts', D: 'diamonds', C: 'clubs' })[d.s]}.`;
+      busy = false; Sfx.play('card'); discard(d);
+    } catch (e) { if (e !== 'abort') console.error(e); }
+  }
+  /* ---------- human actions ---------- */
+  const me = () => S.turn;
+  const myTurn = () => S.seats[S.turn].type === 'human' && !busy && S.phase !== 'over';
+  function act(a) {
+    if (!myTurn()) return;
+    const h = S.hands[me()];
+    if (a === 'deck' && S.phase === 'draw') { drawDeck(); if (S.phase === 'over') return; S.phase = 'play'; Sfx.play('card'); S.msg = 'Lay down hands, add to hands on the table, then discard.'; sel = []; return render(); }
+    if (a === 'pile' && S.phase === 'draw') { if (!S.pile.length) return; const n = S.pile.length; takePile(); S.phase = 'play'; Sfx.play('capture'); S.msg = `You take all ${n} card${n > 1 ? 's' : ''}. Make as many hands as you can!`; sel = []; return render(); }
+    if (S.phase !== 'play') return Util.toast('Draw first: the deck or the whole pile.');
+    const cards = sel.map(id => h.find(c => c.id === id)).filter(Boolean);
+    if (a === 'meld') {
+      const m = makeMeld(cards);
+      if (!m) return Util.toast(cards.length < 3 ? 'Pick at least 3 cards.' : 'Those cards don\'t make a set (3 or 4 of a kind) or a run (3+ in a row, same suit).', 2200);
+      if (h.length - cards.length < 1) return Util.toast('Keep one card back: you have to finish by discarding.');
+      cards.forEach(c => h.splice(h.indexOf(c), 1)); m.owner = me(); S.melds.push(m); sel = []; Sfx.play('place'); return render();
+    }
+    if (a === 'discard') { if (cards.length !== 1) return Util.toast('Pick exactly one card to discard.'); return discard(cards[0]); }
+  }
+  function tapMeld(k) {
+    if (!myTurn() || S.phase !== 'play') return;
+    const h = S.hands[me()], m = S.melds[k]; if (!sel.length) return Util.toast('Pick a card from your hand first, then tap the hand on the table to add it.', 1800);
+    const cards = sel.map(id => h.find(c => c.id === id)).filter(Boolean);
+    if (h.length - cards.length < 1) return Util.toast('Keep one card back to discard.');
+    for (const c of cards) { if (!fits(m, c)) return Util.toast(`The ${RN(c.r)} doesn't fit that hand.`); addTo(m, c); h.splice(h.indexOf(c), 1); }
+    sel = []; Sfx.play('place'); render();
+  }
+  function tapCard(id) { if (!myTurn()) return; sel = sel.includes(id) ? sel.filter(x => x !== id) : sel.concat(id); Sfx.play('tap'); render(); }
+  function sortKey(c) { return isDog(c) ? 1000 : ({ S: 0, H: 100, C: 200, D: 300 })[c.s] + (c.r === 1 ? 14 : c.r); }
+  function suggest() { // highlight the best set or run in your hand
+    if (!myTurn() || S.phase !== 'play') return; const b = bestMelds(S.hands[me()], 1);
+    if (!b.melds.length) return Util.toast('No complete hands to lay down yet.');
+    const m = b.melds[0]; sel = m.nat.concat(m.dogs).map(c => c.id); render(); Util.toast('Selected a hand you can lay down. Tap Lay down.', 1600);
+  }
+  /* ---------- drawing ---------- */
+  function meldHtml(m, k, cw) {
+    const canTap = myTurn() && S.phase === 'play' && sel.length;
+    return `<button onclick="DogRummy.tapMeld(${k})" class="flex rounded-lg p-1 ${canTap ? 'ring-1 ring-amber-300/60' : ''}" style="background:rgba(0,0,0,.2);--cw:${cw}px">${m.cards.map((c, j) => `<div style="margin-left:${j ? -cw * .55 : 0}px">${Util.card(c, { cls: isDog(c) ? 'ring-2 ring-fuchsia-400' : '' })}</div>`).join('')}</button>`;
+  }
+  function render() {
+    if (!root || !S) return;
+    const W = Math.min(560, (root.clientWidth || 360) - 4), viewer = S.seats[S.turn].type === 'human' ? S.turn : S.seats.findIndex(s => s.type === 'human');
+    const hand = (S.hands[viewer] || []).slice().sort((a, b) => sortKey(a) - sortKey(b)), cw = Math.min(52, Math.floor((W - 20) / 8)), mcw = 30;
+    const players = S.seats.map((s, i) => `<span class="stat-chip ${i === S.turn && S.phase !== 'over' ? '!border-amber-300' : ''}">${i === S.turn ? '▶ ' : ''}${s.name}: <b class="ml-1 text-amber-200">${S.scores[i]}</b><span class="ml-1 opacity-60">🂠${S.hands[i].length}</span></span>`).join('');
+    const meldsBy = S.seats.map((s, i) => { const ms = S.melds.map((m, k) => [m, k]).filter(([m]) => m.owner === i); return ms.length ? `<div class="flex flex-col gap-1"><span class="text-[10px] text-amber-100/50">${s.name}</span><div class="flex flex-wrap gap-1.5">${ms.map(([m, k]) => meldHtml(m, k, mcw)).join('')}</div></div>` : ''; }).join('');
+    const pileTop = S.pile[S.pile.length - 1];
+    const draw = myTurn() && S.phase === 'draw';
+    const ctrl = !myTurn() ? `<div class="text-sm text-amber-100/70">${S.phase === 'over' ? 'Round over' : S.seats[S.turn].name + ' is playing…'}</div>`
+      : S.phase === 'draw' ? `<div class="flex gap-2 justify-center flex-wrap">${Util.btn('🂠 Draw from the deck', "DogRummy.act('deck')", 'brass')}${S.pile.length ? Util.btn(`🗂️ Take the whole pile (${S.pile.length})`, "DogRummy.act('pile')") : ''}</div>`
+      : `<div class="flex gap-2 justify-center flex-wrap">${Util.btn(`🃏 Lay down${sel.length ? ` (${sel.length})` : ''}`, "DogRummy.act('meld')", 'brass')}${Util.btn('🗑️ Discard', "DogRummy.act('discard')")}${Settings.hints ? Util.btn('💡 Find a hand', 'DogRummy.suggest()') : ''}</div><div class="text-[11px] text-amber-100/55 mt-1">To add to a hand on the table, pick card(s), then tap that hand.</div>`;
+    root.innerHTML = `<div class="flex flex-col gap-2 mx-auto w-full" style="max-width:${W}px">
+      <div class="flex gap-1.5 flex-wrap justify-center">${players}</div>
+      <div class="flex items-center justify-center gap-2"><span class="stat-chip">Round ${S.round}/${S.rounds}</span><span class="stat-chip">🐶 ${RN(S.wild)}s are wild</span></div>
+      <div class="rounded-2xl p-2 flex flex-col gap-2" style="background:radial-gradient(ellipse at 50% 0%,#1f6b45,#0f3d27 80%);border:4px solid #4a2e1d">
+        <div class="flex items-center gap-3 justify-center" style="--cw:${Math.min(56, cw)}px">
+          <div class="relative">${S.stock.length ? Util.card({ r: 1, s: 'S' }, { down: true, attrs: draw ? `onclick="DogRummy.act('deck')"` : '' }) : Util.card(null, { label: '' })}<span class="absolute -bottom-1 -right-1 stat-chip !px-1.5 !py-0 text-[10px]">${S.stock.length}</span></div>
+          <div class="relative">${pileTop ? Util.card(pileTop, { cls: isDog(pileTop) ? 'ring-2 ring-fuchsia-400' : '', attrs: draw ? `onclick="DogRummy.act('pile')"` : '' }) : Util.card(null, { label: 'Pile' })}${S.pile.length ? `<span class="absolute -bottom-1 -right-1 stat-chip !px-1.5 !py-0 text-[10px]">${S.pile.length}</span>` : ''}</div>
+          <div class="flex-1 min-w-0"><div class="text-[10px] text-emerald-100/60 mb-0.5">The pile (${S.pile.length})</div><div class="flex overflow-x-auto pb-1" style="--cw:24px">${S.pile.map((c, j) => `<div style="margin-left:${j ? -10 : 0}px">${Util.card(c, { cls: isDog(c) ? 'ring-1 ring-fuchsia-400' : '' })}</div>`).join('')}</div></div>
+        </div>
+        ${meldsBy ? `<div class="flex flex-col gap-1.5">${meldsBy}</div>` : '<div class="text-center text-[11px] text-emerald-100/40">No hands on the table yet</div>'}
+      </div>
+      <div class="text-sm text-amber-50/90 text-center min-h-[20px]">${S.msg}</div>
+      ${viewer >= 0 ? `<div class="flex flex-wrap gap-1 justify-center" style="--cw:${cw}px">${hand.map(c => `<div style="transform:translateY(${sel.includes(c.id) ? -8 : 0}px);transition:transform .12s">${Util.card(c, { sel: sel.includes(c.id), cls: isDog(c) ? 'ring-2 ring-fuchsia-400' : '', attrs: `onclick="DogRummy.tapCard('${c.id}')"` })}</div>`).join('')}</div>
+      <div class="text-center text-[11px] text-amber-100/60">${S.seats[viewer].name === 'You' ? 'Your' : S.seats[viewer].name + "'s"} hand · ${handPts(S.hands[viewer])} points if caught</div>` : ''}
+      ${Util.panel(ctrl, 'w-full text-center')}
+    </div>`;
+  }
+  return {
+    async setup() {
+      const seats = await Seats.choose({ title: 'Dog Rummy', min: 2, max: 4, def: 3, note: 'Each round a new rank is the dog (wild): Aces first, then 2s and so on. Lowest score after the last round wins.' });
+      if (!seats) return null;
+      const r = await Util.choose('🐶 How long a game?', 'The dog rank climbs one step each round.', [{ label: 'Full game: Aces to Kings (13 rounds)', value: 13, primary: true }, { label: 'Quick game: Aces to 6s (6 rounds)', value: 6 }, { label: 'Cancel', value: null }]);
+      return r ? { seats, rounds: r } : null;
+    },
+    mount(el, o = {}) { root = el; if (o.resume) { S = o.resume; sid++; busy = false; sel = []; S.lastHuman = null; next(); } else newGame(o.seats || [{ name: 'You', col: PCOL[0], type: 'human' }, { name: 'Dusty', col: PCOL[1], type: 'ai' }, { name: 'Marlow', col: PCOL[2], type: 'ai' }], o.rounds || 13); },
+    snapshot() { return S && S.phase !== 'over' && !busy ? S : null; },
+    destroy() { sid++; root = null; },
+    act, tapCard, tapMeld, suggest, newGame() { newGame(S.seats, S.rounds); },
+    _test: { get S() { return S; }, makeMeld, fits, bestMelds, leftoverAfter, val }
+  };
+})();
+Games.dogrummy = DogRummy;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -12538,7 +12839,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.9.1",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.10.0",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

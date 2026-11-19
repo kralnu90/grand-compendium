@@ -10,10 +10,11 @@ At 54 after 1.9.0 (batch 1, the patience pack, is done). Revised plan, original 
 - Puzzles (10): Mines, Nonograms, Killer Sudoku, Kakuro, Bridges, 15 Puzzle, Peg Solitaire, Codebreaker, Lamplighter (lights-out), Hangman
 - Party and casino extras (6): Bingo, Pub Quiz, Keno, Sic Bo, Money Wheel, Scratchcards
 - Card games, capped (3): Hearts, Spades, Crazy Eights
-- Open slots for Kris's own picks: 6
+- Open slots for Kris's own picks: 6 (1 used: Dog Rummy, 5 left)
 54 + 14 + 8 + 10 + 6 + 3 + 6 = 101
 
-## Current state: v1.9.1 (19 Nov 2026)
+## Current state: v1.10.0 (19 Nov 2026)
+- 1.10.0: Fifty-five games. Dog Rummy (src/g_dogrummy.js), Kris's own family game and his first "open slot" pick (6 left -> now 5). His rules: wild ("dog") rank = round number (A..K, 13 rounds; quick option 6), 7 cards, draw top of deck OR take the whole discard pile, sets of 3-4 / same-suit runs of 3+, lay off on anyone's melds, must end with a discard to chip out (0 points), others score hand: A=11, 2-10 face, JQK 10, dogs +15 on top. Table melds never score. Our defaults he didn't specify: Ace low or high in runs (no wrap), pile reshuffled into the stock when it runs out, dogs can be laid off anywhere. AI: bestMelds DFS over candidate melds (6000-node cap), takes the pile when leftover points drop enough.
 - 1.9.1: Spring Mikado was too easy (pulling slowly always won). Now: speed sweet spot [lo, hi] with hi = SPEED(90)/tension and lo = hi*DIFF().lo; below lo strain builds (judder), idle while held builds strain via an rAF watcher, overlap with neighbours in the first 70% of the pull adds strain (rub). DIFF() per Settings.diff. Fault messages name the cause.
 - 1.9.0: Fifty-four games (roadmap batch 1 done). src/g_patience.js = PatienceKit(ns, cfg): a reusable tableau-solitaire engine (build alt/suit/any, move run/suitrun/group/single, empty any/king, wrap, removeRuns, stock row/three/waste with draw+redeals, reserve auto-fill). New patience games are ~10 lines of config. src/g_patience2.js = Pyramid, Golf, TriPeaks, Aces Up. New "patience" shelf in App.CATS (7 shelves; the last tile spans when the count is odd). Fuzz test: random taps checking the card count never changes.
 - 1.8.2: Forty-five games. Added Three Card Poker (src/g_threecard.js; Kris asked for poker "like GTA Online", which is Three Card Poker). Pair Plus 1/3/6/30/40, ante bonus 1/4/5, dealer qualifies Q-high, hint = Q-6-4. Simulated edges: ante ~3%, pair plus ~6.5%. Phase "done" accepts Deal and bet changes (lesson from the 1.8.1 Blackjack bug).

@@ -1,17 +1,18 @@
 # The Grand Tabletop Compendium
 
-*Fifty-four classic, esoteric, patience, family, pub, casino and word games, one table.*
+*Fifty-five classic, esoteric, patience, family, pub, casino and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.9.1**
+**Current version: 1.10.0**
 
 ## The games
 
 | Game | Type | Players |
 | --- | --- | --- |
+| 🐶 **Dog Rummy** | Kris's family wild-card rummy: a new wild rank each round, take the whole pile if you dare | 2-4, people or AI |
 | 🂡 **Blackjack** | Hit, stand, double and split against a dealer who stands on 17. Basic strategy hints | Solo (play chips) |
 | ♠️ **Texas Hold'em** | No-limit cash table with blinds, side pots and five AI players | You vs 5 AI (play chips) |
 | 🃏 **Three Card Poker** | Ante, Play and Pair Plus against a dealer who needs Queen high, with ante bonuses | Solo (play chips) |
@@ -118,6 +119,9 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.10.0 · Dog Rummy (19 November 2026)
+- Dog Rummy, a family rummy game shared by Kris: wild rank climbs Aces to Kings, take the deck or the whole pile, chip out for zero
 
 ### 1.9.1 · Spring Mikado gets tougher (19 November 2026)
 - A steady-pace sweet spot: too slow or stopping makes the disc stick; scraping neighbours adds strain
