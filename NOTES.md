@@ -3,13 +3,15 @@
 Kralnu Games ten-in-one parlour collection. Live at https://kralnugames.com/grand-compendium/ (GitHub Pages from `main`, root).
 
 ## Roadmap to 101 games (Kris's goal, Nov 2026: "like the old 101-games-in-a-box sets", no rush)
-At 45 after 1.8.2. Planned batches (original names only, avoid trademarks such as Mastermind, Pictionary, Picross, KenKen, Let It Ride):
-1. Patience pack (9): Spider, Yukon, Scorpion, Forty Thieves, Canfield, Pyramid, Golf, TriPeaks, Aces Up -> 54
-2. Card night (10): Hearts, Spades, Knockout Whist, Rummy, Crazy Eights, Go Fish, Old Maid, Snap, Beggar-My-Neighbour, Cheat -> 64
-3. More board games (9): Chinese Checkers, Xiangqi, Hnefatafl, Dots and Boxes, Gomoku, Hex, Fox and Geese, Nim, Ultimate Noughts and Crosses -> 73
-4. Dice and dominoes (8): Farkle, Pig, Shut the Box, Ship Captain & Crew, Poker Dice, Mexico, Bunco, Fives and Threes -> 81
-5. Puzzles (10): Mines, Nonograms, Killer Sudoku, Kakuro, Bridges, 15 Puzzle, Peg Solitaire, Codebreaker, Lamplighter (lights-out), Hangman -> 91
-6. Casino and party (10): Keno, Sic Bo, Money Wheel, Red Dog, Casino War, Scratchcards, Bingo, Pub Quiz, Euchre, Canasta -> 101
+Kris's steer (19 Nov 2026): NOT a load more card games. A few are fine, but lean on board games, dice, puzzles and party games. He will suggest board games over time, so his picks take priority and fill the open slots.
+At 54 after 1.9.0 (batch 1, the patience pack, is done). Revised plan, original names only (avoid trademarks such as Mastermind, Pictionary, Picross, KenKen, Pente):
+- Board games (14): Chinese Checkers, Xiangqi, Hnefatafl, Royal Game of Ur, Senet, Dots and Boxes, Gomoku, Hex, Fox and Geese, Ultimate Noughts and Crosses, Alquerque, Lines of Action, Surakarta, Konane
+- Dice and dominoes (8): Farkle, Pig, Shut the Box, Ship Captain & Crew, Poker Dice, Mexico, Bunco, Fives and Threes
+- Puzzles (10): Mines, Nonograms, Killer Sudoku, Kakuro, Bridges, 15 Puzzle, Peg Solitaire, Codebreaker, Lamplighter (lights-out), Hangman
+- Party and casino extras (6): Bingo, Pub Quiz, Keno, Sic Bo, Money Wheel, Scratchcards
+- Card games, capped (3): Hearts, Spades, Crazy Eights
+- Open slots for Kris's own picks: 6
+54 + 14 + 8 + 10 + 6 + 3 + 6 = 101
 
 ## Current state: v1.9.0 (19 Nov 2026)
 - 1.9.0: Fifty-four games (roadmap batch 1 done). src/g_patience.js = PatienceKit(ns, cfg): a reusable tableau-solitaire engine (build alt/suit/any, move run/suitrun/group/single, empty any/king, wrap, removeRuns, stock row/three/waste with draw+redeals, reserve auto-fill). New patience games are ~10 lines of config. src/g_patience2.js = Pyramid, Golf, TriPeaks, Aces Up. New "patience" shelf in App.CATS (7 shelves; the last tile spans when the count is odd). Fuzz test: random taps checking the card count never changes.
