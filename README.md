@@ -6,7 +6,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.5.0**
+**Current version: 1.5.1**
 
 ## The games
 
@@ -48,7 +48,8 @@ Every board game can be played against the AI or as **Pass & Play**: people shar
 
 ## Main menu
 
-- **Continue**: jump straight back into your last game. Games save as you play
+- **Five shelves**: Board Games, Cards, Dice & Tiles, Family & Party, and Words & Puzzles. Each opens its own page of games (link straight to one with `#board`, `#cards`, `#dice`, `#family` or `#words`)
+- **Continue** and **Recently played**: jump straight back in. Games save as you play
 - **Settings**: music and sound effect volume, AI difficulty (Easy, Normal, Hard), AI speed, move hints and reset save data. Also on the ⚙️ button in every game
 - **Trophies**: your wins in every game
 - **More**: How to play, What's new, Credits, Review, Support and Get latest version
@@ -94,6 +95,11 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.5.1 · A tidier parlour (19 November 2026)
+- The main menu is now five shelves, each opening its own page of games
+- Rules one tap away on every game, a Recently played row and "In progress" badges
+- The Games button in a game goes back to that game's shelf
 
 ### 1.5.0 · Stones and springs (19 November 2026)
 - Go: 9×9, 13×13 and 19×19 boards, with captures, ko, dead-stone marking and area scoring. The AI thinks hardest on 9×9

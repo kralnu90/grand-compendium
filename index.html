@@ -41,6 +41,7 @@
     --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-emerald-500: oklch(69.6% 0.17 162.48);
     --color-sky-300: oklch(82.8% 0.111 230.318);
+    --color-stone-900: oklch(21.6% 0.006 56.043);
     --color-stone-950: oklch(14.7% 0.004 49.25);
     --color-black: #000;
     --color-white: #fff;
@@ -51,6 +52,7 @@
     --container-lg: 32rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
+    --container-4xl: 56rem;
     --container-7xl: 80rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
@@ -80,6 +82,7 @@
     --tracking-wide: 0.025em;
     --tracking-wider: 0.05em;
     --leading-tight: 1.25;
+    --leading-snug: 1.375;
     --leading-relaxed: 1.625;
     --radius-sm: 0.25rem;
     --radius-md: 0.375rem;
@@ -283,14 +286,23 @@
   .top-1 {
     top: var(--spacing);
   }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
+  }
   .-right-2 {
     right: calc(var(--spacing) * -2);
+  }
+  .right-0 {
+    right: 0px;
   }
   .right-0\.5 {
     right: calc(var(--spacing) * 0.5);
   }
   .right-1 {
     right: var(--spacing);
+  }
+  .right-2 {
+    right: calc(var(--spacing) * 2);
   }
   .right-\[2px\] {
     right: 2px;
@@ -306,9 +318,6 @@
   }
   .bottom-1 {
     bottom: var(--spacing);
-  }
-  .bottom-1\.5 {
-    bottom: calc(var(--spacing) * 1.5);
   }
   .bottom-5 {
     bottom: calc(var(--spacing) * 5);
@@ -331,9 +340,6 @@
   .left-2 {
     left: calc(var(--spacing) * 2);
   }
-  .z-30 {
-    z-index: 30;
-  }
   .z-40 {
     z-index: 40;
   }
@@ -351,6 +357,9 @@
   }
   .z-\[70\] {
     z-index: 70;
+  }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
   }
   .mx-auto {
     margin-inline: auto;
@@ -382,6 +391,9 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
   .mt-auto {
     margin-top: auto;
   }
@@ -399,6 +411,9 @@
   }
   .mb-1 {
     margin-bottom: var(--spacing);
+  }
+  .mb-1\.5 {
+    margin-bottom: calc(var(--spacing) * 1.5);
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
@@ -423,6 +438,12 @@
   }
   .ml-auto {
     margin-left: auto;
+  }
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
   .block {
     display: block;
@@ -451,6 +472,12 @@
   .\!h-9 {
     height: calc(var(--spacing) * 9) !important;
   }
+  .\!h-14 {
+    height: calc(var(--spacing) * 14) !important;
+  }
+  .\!h-16 {
+    height: calc(var(--spacing) * 16) !important;
+  }
   .h-1\.5 {
     height: calc(var(--spacing) * 1.5);
   }
@@ -475,6 +502,9 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
+  .h-7 {
+    height: calc(var(--spacing) * 7);
+  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -498,9 +528,6 @@
   }
   .h-full {
     height: 100%;
-  }
-  .h-px {
-    height: 1px;
   }
   .max-h-\[60vh\] {
     max-height: 60vh;
@@ -535,6 +562,12 @@
   .\!w-9 {
     width: calc(var(--spacing) * 9) !important;
   }
+  .\!w-14 {
+    width: calc(var(--spacing) * 14) !important;
+  }
+  .\!w-16 {
+    width: calc(var(--spacing) * 16) !important;
+  }
   .w-1\.5 {
     width: calc(var(--spacing) * 1.5);
   }
@@ -556,6 +589,9 @@
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
+  .w-7 {
+    width: calc(var(--spacing) * 7);
+  }
   .w-8 {
     width: calc(var(--spacing) * 8);
   }
@@ -571,6 +607,9 @@
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
+  .w-\[23\%\] {
+    width: 23%;
+  }
   .w-\[84px\] {
     width: 84px;
   }
@@ -579,6 +618,9 @@
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
@@ -656,9 +698,6 @@
   }
   .resize {
     resize: both;
-  }
-  .scroll-mt-24 {
-    scroll-margin-top: calc(var(--spacing) * 24);
   }
   .list-disc {
     list-style-type: disc;
@@ -837,10 +876,6 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
-  .\!border-2 {
-    border-style: var(--tw-border-style) !important;
-    border-width: 2px !important;
-  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -925,6 +960,12 @@
     background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-amber-500) 30%, transparent);
+    }
+  }
+  .bg-amber-500\/90 {
+    background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-amber-500) 90%, transparent);
     }
   }
   .bg-black\/25 {
@@ -1107,9 +1148,6 @@
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
   }
-  .py-6 {
-    padding-block: calc(var(--spacing) * 6);
-  }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
@@ -1131,8 +1169,17 @@
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
   }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
+  }
   .pb-1 {
     padding-bottom: var(--spacing);
+  }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pb-5 {
+    padding-bottom: calc(var(--spacing) * 5);
   }
   .pl-2 {
     padding-left: calc(var(--spacing) * 2);
@@ -1158,6 +1205,14 @@
   .font-mono {
     font-family: var(--font-mono);
   }
+  .\!text-2xl {
+    font-size: var(--text-2xl) !important;
+    line-height: var(--tw-leading, var(--text-2xl--line-height)) !important;
+  }
+  .\!text-3xl {
+    font-size: var(--text-3xl) !important;
+    line-height: var(--tw-leading, var(--text-3xl--line-height)) !important;
+  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -1173,6 +1228,10 @@
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -1199,6 +1258,9 @@
   .text-\[11px\] {
     font-size: 11px;
   }
+  .text-\[15px\] {
+    font-size: 15px;
+  }
   .text-\[70\%\] {
     font-size: 70%;
   }
@@ -1209,6 +1271,10 @@
   .leading-relaxed {
     --tw-leading: var(--leading-relaxed);
     line-height: var(--leading-relaxed);
+  }
+  .leading-snug {
+    --tw-leading: var(--leading-snug);
+    line-height: var(--leading-snug);
   }
   .leading-tight {
     --tw-leading: var(--leading-tight);
@@ -1447,6 +1513,9 @@
   .text-sky-300 {
     color: var(--color-sky-300);
   }
+  .text-stone-900 {
+    color: var(--color-stone-900);
+  }
   .text-transparent {
     color: transparent;
   }
@@ -1552,11 +1621,6 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .transition-colors {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
   .transition-transform {
     transition-property: transform, translate, scale, rotate;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -1584,17 +1648,6 @@
       --tw-scale-y: 110%;
       --tw-scale-z: 110%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-    .hover\:border-amber-300:hover {
-      border-color: var(--color-amber-300);
-    }
-    .hover\:border-amber-400\/60:hover {
-      border-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 60%, transparent);
-    }
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:border-amber-400\/60:hover {
-        border-color: color-mix(in oklab, var(--color-amber-400) 60%, transparent);
-      }
     }
     .hover\:bg-amber-500\/10:hover {
       background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 10%, transparent);
@@ -1648,14 +1701,17 @@
     outline-style: none;
   }
   @media (width >= 40rem) {
+    .sm\:col-span-1 {
+      grid-column: span 1 / span 1;
+    }
     .sm\:flex {
       display: flex;
     }
     .sm\:w-\[110px\] {
       width: 110px;
     }
-    .sm\:grid-cols-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .sm\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .sm\:gap-2 {
       gap: calc(var(--spacing) * 2);
@@ -1675,8 +1731,8 @@
     .sm\:p-6 {
       padding: calc(var(--spacing) * 6);
     }
-    .sm\:py-10 {
-      padding-block: calc(var(--spacing) * 10);
+    .sm\:pt-8 {
+      padding-top: calc(var(--spacing) * 8);
     }
     .sm\:text-4xl {
       font-size: var(--text-4xl);
@@ -1728,8 +1784,11 @@
     .lg\:w-96 {
       width: calc(var(--spacing) * 96);
     }
-    .lg\:grid-cols-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .lg\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .lg\:grid-cols-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
     .lg\:flex-row {
       flex-direction: row;
@@ -2323,8 +2382,8 @@
         <button id="btn-rules" onclick="App.openRulesModal()" class="hidden btn-wood px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-1.5">
           <span>📜</span><span>How to Play</span>
         </button>
-        <button id="btn-back-hub" onclick="App.goHome()" class="hidden btn-brass px-3 py-1.5 rounded-lg text-xs sm:text-sm flex items-center gap-1.5">
-          <span>🏛️</span><span>Parlor Hub</span>
+        <button id="btn-back-hub" onclick="App.backToShelf()" class="hidden btn-brass px-3 py-1.5 rounded-lg text-xs sm:text-sm flex items-center gap-1.5">
+          <span>🏛️</span><span>Games</span>
         </button>
       </div>
     </div>
@@ -2543,7 +2602,7 @@ const GAME_CATALOG = [
     subtitle: 'Ancient Sowing Game',
     category: 'Strategy Board Games',
     icon: '◎',
-    players: '1P vs AI / 2P Local',
+    players: '1P vs AI / 2P Pass & Play',
     tagline: 'Sow seeds around the board, chain extra turns and capture your rival’s harvest.',
     rules: `
       <p><strong>Objective:</strong> Finish with more seeds in your Store (the big pit on your right) than your opponent.</p>
@@ -2944,18 +3003,18 @@ const App = {
     // In-game settings button (pause menu) beside How to Play
     const rb = document.getElementById('btn-rules');
     rb.insertAdjacentHTML('beforebegin', `<button id="btn-settings" onclick="Menu.settings()" class="hidden btn-wood px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold" aria-label="Settings">⚙️</button>`);
-    document.body.insertAdjacentHTML('beforeend', `<div id="ver-corner" class="fixed bottom-1.5 left-2 z-30 text-[10px] text-amber-100/45 pointer-events-none">v${GAME_VERSION}</div>`);
+    document.body.insertAdjacentHTML('beforeend', `<div id="ver-corner" class="hidden"></div>`);
     this.splash();
     // Auto-save: every few seconds in a game, and whenever the app is hidden or closed
     setInterval(() => this.saveNow(), 4000);
     document.addEventListener('visibilitychange', () => { if (document.hidden) this.saveNow(); });
     addEventListener('pagehide', () => this.saveNow());
     const h = (location.hash || '').slice(1);
-    if (h && Games[h]) this.launch(h); else this.goHome();
+    if (h && Games[h]) this.launch(h); else if (this.CATS.some(c => c.k === h)) this.openCat(h); else this.goHome();
     window.addEventListener('hashchange', () => {
       const id = (location.hash || '').slice(1);
-      if (id === (this.current || '')) return;
-      if (id && Games[id]) this.launch(id); else this.goHome();
+      if (id === (this.current || '') || (!this.current && id === this._shelf)) return;
+      if (id && Games[id]) this.launch(id); else if (this.CATS.some(c => c.k === id)) this.openCat(id); else this.goHome();
     });
   },
   meta(id) { return GAME_CATALOG.find(g => g.id === id); },
@@ -3020,55 +3079,79 @@ const App = {
     if (this.current && Games[this.current] && Games[this.current].destroy) Games[this.current].destroy();
     this.current = null;
   },
-  goHome() {
+  /* Five shelves on the main menu; each opens its own sub-menu of games */
+  CATS: [
+    { k: 'board', n: 'Board Games', icon: '♞', blurb: 'Royal strategy and quick duels', ids: ['chess', 'go', 'shogi', 'checkers', 'reversi', 'four', 'morris', 'mancala'] },
+    { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Patience, pub classics and card crawls', ids: ['klondike', 'freecell', 'cribbage', 'gin', 'clash', 'scoundrel', 'regicide'] },
+    { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'liars', 'dominoes', 'mahjong'] },
+    { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
+    { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, daily puzzles and Sudoku', ids: ['tilecraft', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] }
+  ],
+  catOf(id) { return this.CATS.find(c => c.ids.includes(id)); },
+  hubChrome(sub) {
     this.teardown();
-    this.setHash('');
     ['btn-rules', 'btn-back-hub', 'btn-settings'].forEach(b => document.getElementById(b).classList.add('hidden'));
     document.getElementById('ver-corner').classList.remove('hidden');
-    const lastId = Store.get('last', null), lastSave = lastId && Store.get('save_' + lastId, null), lm = lastSave && this.meta(lastId);
-    document.getElementById('header-subtitle').textContent = 'Thirty-One Classic & Esoteric Parlor Games';
-    const cats = [...new Set(GAME_CATALOG.map(g => g.category))];
-    const root = document.getElementById('app-root');
-    root.innerHTML = `
-      <section class="text-center py-6 sm:py-10">
-        <p class="text-amber-400/80 tracking-[0.3em] text-xs uppercase mb-2">Est. by candlelight</p>
-        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-amber-300 drop-shadow">Welcome to the Parlor</h2>
-        <p class="mt-3 text-amber-100/75 max-w-xl mx-auto text-sm sm:text-base">Pull up a chair. Thirty-one tables are set: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.</p>
-      </section>
-      ${lm ? `<div class="w-full max-w-md mx-auto mb-5"><button onclick="App.launch('${lastId}')" class="btn-brass w-full py-3.5 rounded-2xl text-lg font-display flex items-center justify-center gap-3"><span class="text-2xl">${lm.icon}</span><span>Continue ${lm.title.replace(/ \(.*\)/, '')}</span></button></div>` : ''}
-      ${Menu.tilesHTML()}
-      <div class="flex flex-wrap justify-center gap-1.5 mb-6">${cats.map((c, k) => `<button onclick="document.getElementById('cat-${k}').scrollIntoView({behavior:'smooth'})" class="text-xs px-3 py-1.5 rounded-full bg-black/30 border border-amber-500/25 text-amber-200 hover:border-amber-300">${c}</button>`).join('')}</div>
-      ${cats.map((cat, k) => `
-        <section class="mb-8 scroll-mt-24" id="cat-${k}">
-          <h3 class="font-display text-amber-400 text-lg sm:text-xl font-bold mb-3 flex items-center gap-3">
-            <span class="h-px flex-1 bg-amber-500/25"></span>${cat}<span class="h-px flex-1 bg-amber-500/25"></span></h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            ${GAME_CATALOG.filter(g => g.category === cat).map(g => `
-              <div class="walnut-panel rounded-2xl p-4 flex flex-col hover:border-amber-400/60 transition-colors">
-                <div class="flex items-start gap-3">
-                  <div class="felt-surface w-14 h-14 shrink-0 rounded-xl flex items-center justify-center text-3xl !border-2">${g.icon}</div>
-                  <div class="min-w-0">
-                    <h4 class="font-display text-lg font-bold text-amber-200 leading-tight">${g.title}</h4>
-                    <p class="text-xs text-amber-100/60">${g.subtitle}</p>
-                  </div>
-                </div>
-                <p class="text-sm text-amber-50/80 mt-3 flex-1">${g.tagline}</p>
-                <div class="flex items-center justify-between mt-3 text-xs text-amber-200/70">
-                  <span>👥 ${g.players}</span><span>🏆 ${this.wins[g.id] || 0}</span>
-                </div>
-                <div class="flex gap-2 mt-3">
-                  <button onclick="App.play('${g.id}')" class="btn-brass flex-1 py-2 rounded-xl text-sm">${this.hasSave(g.id) ? '▶ Continue' : 'Play'}</button>
-                  <button onclick="App.openRulesModal('${g.id}')" class="btn-wood px-4 py-2 rounded-xl text-sm">Rules</button>
-                </div>
-              </div>`).join('')}
-          </div>
-        </section>`).join('')}
-      <footer class="text-center text-xs text-amber-100/50 py-8 space-y-1 border-t border-amber-500/15 mt-4">
+    document.getElementById('header-subtitle').textContent = sub;
+  },
+  footer() {
+    return `<footer class="text-center text-xs text-amber-100/50 py-8 space-y-1 border-t border-amber-500/15 mt-6">
         <p>Ideas, design and testing by Kris. Built with Claude, an AI by Anthropic.</p>
         <p>A <a href="https://kralnugames.com" target="_blank" rel="noopener" class="text-amber-300/80 hover:text-amber-300">Kralnu Games</a> game · free, no ads · v${GAME_VERSION} · hello@kralnugames.com</p>
       </footer>`;
+  },
+  goHome() {
+    this.hubChrome(`${GAME_CATALOG.length} Classic & Esoteric Parlor Games`);
+    this._shelf = ''; this.setHash('');
+    const lastId = Store.get('last', null), lastSave = lastId && Store.get('save_' + lastId, null), lm = lastSave && this.meta(lastId);
+    const recent = Store.get('recent', []).filter(id => this.meta(id) && id !== (lm && lastId)).slice(0, 4);
+    const root = document.getElementById('app-root');
+    root.innerHTML = `
+      <section class="relative text-center pt-5 pb-5 sm:pt-8"><span class="absolute top-1 right-0 text-[10px] text-amber-100/40">v${GAME_VERSION}</span>
+        <p class="text-amber-400/80 tracking-[0.3em] text-[10px] sm:text-xs uppercase mb-1">Est. by candlelight</p>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-amber-300 drop-shadow">Welcome to the Parlor</h2>
+        <p class="mt-2 text-amber-100/70 text-sm">${GAME_CATALOG.length} tables are set. Pull up a chair.</p>
+      </section>
+      ${lm ? `<div class="w-full max-w-md mx-auto mb-4"><button onclick="App.launch('${lastId}')" class="btn-brass w-full py-3.5 rounded-2xl text-lg font-display flex items-center justify-center gap-3"><span class="text-2xl">${lm.icon}</span><span>Continue ${lm.title.replace(/ \(.*\)/, '')}</span></button></div>` : ''}
+      ${recent.length ? `<div class="w-full max-w-md mx-auto mb-5"><div class="text-[10px] uppercase tracking-wider text-amber-200/60 mb-1.5 text-center">Recently played</div>
+        <div class="flex justify-center gap-2">${recent.map(id => { const g = this.meta(id); return `<button onclick="App.play('${id}')" class="walnut-panel rounded-xl py-2 px-1 flex flex-col items-center gap-1 menu-tile w-[23%]"><span class="text-xl">${g.icon}</span><span class="text-[10px] text-amber-100 leading-tight text-center line-clamp-2">${g.title.replace(/ \(.*\)/, '')}</span></button>`; }).join('')}</div></div>` : ''}
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 max-w-4xl mx-auto mb-6">
+        ${this.CATS.map((c, k) => `<button onclick="App.openCat('${c.k}')" class="menu-tile walnut-panel rounded-2xl p-4 flex flex-col items-center text-center gap-2 ${k === 4 && this.CATS.length % 2 ? 'col-span-2 sm:col-span-1' : ''}">
+          <span class="menu-ico felt-surface !w-16 !h-16 !text-3xl">${c.icon}</span>
+          <span class="font-display text-amber-200 text-base leading-tight">${c.n}</span>
+          <span class="text-[11px] text-amber-100/60 leading-snug">${c.blurb}</span>
+          <span class="text-[10px] text-amber-300/80">${c.ids.length} games</span></button>`).join('')}
+      </div>
+      ${Menu.tilesHTML()}
+      ${this.footer()}`;
     window.scrollTo(0, 0);
   },
+  openCat(k) {
+    const c = this.CATS.find(x => x.k === k); if (!c) return this.goHome();
+    this.hubChrome(`${c.icon} ${c.n}`);
+    this._shelf = k; this.setHash(k);
+    const root = document.getElementById('app-root');
+    root.innerHTML = `
+      <div class="flex items-center gap-3 pt-2 pb-4">
+        <button onclick="App.goHome()" class="btn-wood px-3 py-2 rounded-xl text-sm shrink-0">← Back</button>
+        <div class="min-w-0"><h2 class="font-display text-2xl text-amber-300 leading-tight">${c.icon} ${c.n}</h2><p class="text-xs text-amber-100/60">${c.blurb}</p></div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        ${c.ids.map(id => { const g = this.meta(id), saved = this.hasSave(id); return `
+          <div class="relative walnut-panel rounded-2xl p-3 flex flex-col items-center text-center gap-1.5 menu-tile" onclick="App.play('${id}')">
+            <button onclick="event.stopPropagation();App.openRulesModal('${id}')" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/35 text-amber-200 text-xs font-bold border border-amber-500/30" aria-label="Rules for ${g.title}">?</button>
+            ${saved ? '<span class="absolute top-2 left-2 text-[9px] font-bold uppercase tracking-wide bg-amber-500/90 text-stone-900 rounded px-1.5 py-0.5">In progress</span>' : ''}
+            <span class="menu-ico felt-surface !w-14 !h-14 !text-2xl mt-2">${g.icon}</span>
+            <span class="font-display text-amber-200 text-[15px] leading-tight">${g.title}</span>
+            <span class="text-[11px] text-amber-100/60 leading-snug">${g.subtitle}</span>
+            <span class="mt-auto pt-1 text-[10px] text-amber-200/70">👥 ${g.players}</span>
+            <span class="text-[10px] text-amber-300/80">🏆 ${this.wins[id] || 0}</span>
+          </div>`; }).join('')}
+      </div>
+      ${this.footer()}`;
+    window.scrollTo(0, 0);
+  },
+  backToShelf() { const c = this.current && this.catOf(this.current); if (c) this.openCat(c.k); else this.goHome(); },
   launch(id, opts) {
     if (!Games[id]) return;
     if (!opts) { const sv = Store.get('save_' + id, null); opts = sv ? { resume: sv } : {}; }
@@ -3076,6 +3159,7 @@ const App = {
     this.teardown();
     this.current = id;
     this.setHash(id);
+    Store.set('recent', [id].concat(Store.get('recent', []).filter(x => x !== id)).slice(0, 6));
     const m = this.meta(id);
     ['btn-rules', 'btn-back-hub', 'btn-settings'].forEach(b => document.getElementById(b).classList.remove('hidden'));
     document.getElementById('ver-corner').classList.add('hidden');
@@ -3092,7 +3176,7 @@ const App = {
     if (!m) return;
     document.getElementById('modal-icon').textContent = m.icon;
     document.getElementById('modal-title').textContent = m.title;
-    document.getElementById('modal-category').textContent = m.category + ' · ' + m.players;
+    document.getElementById('modal-category').textContent = (this.catOf(id) ? this.catOf(id).n : m.category) + ' · ' + m.players;
     document.getElementById('modal-body').innerHTML = m.rules;
     const pb = document.getElementById('modal-play-btn');
     if (id !== this.current) { pb.classList.remove('hidden'); pb.onclick = () => { this.closeRulesModal(); this.play(id); }; }
@@ -3110,20 +3194,26 @@ const App = {
     Store.del('save_' + id);
     const v = await Util.choose(title, msg, [
       { label: 'Play Again', value: 'again', primary: true },
-      { label: 'Parlor Hub', value: 'hub' },
+      { label: 'Back to games', value: 'hub' },
       { label: 'Stay', value: 'stay' }
     ]);
     if (v === 'again') replay();
-    else if (v === 'hub') this.goHome();
+    else if (v === 'hub') this.backToShelf();
   }
 };
 
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.5.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.5.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.5.1', '19 Nov 2026', 'A tidier parlour', [
+    'The main menu is now five shelves: Board Games, Cards, Dice & Tiles, Family & Party, and Words & Puzzles',
+    'Each shelf opens its own page of games, with rules one tap away on every game',
+    'A Recently played row and "In progress" badges help you jump back in',
+    'The Games button in a game takes you back to that game\'s shelf'
+  ]],
   ['1.5.0', '19 Nov 2026', 'Stones and springs', [
     'Go: 9×9, 13×13 and 19×19 boards, with captures, ko, dead-stone marking and area scoring. The AI thinks hardest on 9×9',
     'Spring Mikado: draw discs out of a spring-loaded wooden tray without making the others jump. Solo with three lives, or up to four players'
@@ -3255,8 +3345,8 @@ const Menu = (() => {
   /* ---------- How to play (parlour basics) ---------- */
   function howto() {
     open('How to play', '❓', `
-      <p><b class="text-amber-300">Pick a table.</b> Every game is on the main menu, grouped by type. Tap <b>Play</b> to sit down, or <b>Rules</b> to read up first.</p>
-      <p><b class="text-amber-300">In a game.</b> Tap a piece or card to pick it up, then tap where it should go. The <b>📜 How to Play</b> button at the top shows that game's rules at any time, and <b>🏛️ Parlor Hub</b> brings you back here.</p>
+      <p><b class="text-amber-300">Pick a table.</b> The main menu has five shelves of games. Tap one to see its games, tap a game to sit down, or tap its <b>?</b> to read the rules first.</p>
+      <p><b class="text-amber-300">In a game.</b> Tap a piece or card to pick it up, then tap where it should go. The <b>📜 How to Play</b> button at the top shows that game's rules at any time, and <b>🏛️ Games</b> takes you back to its shelf.</p>
       <p><b class="text-amber-300">Opponents.</b> Chess, Shogi, Checkers, Mancala and Backgammon can be played against the AI or as Pass &amp; Play, two people sharing one phone. The family games take 2 to 6 players in any mix of people and AI. Pick when you tap Play. When cards or tiles need to stay secret, a pass-the-phone screen hides them between turns. Set how tough the AI is in <b>Settings</b>.</p>
       <p><b class="text-amber-300">Saving.</b> Your game saves as you play. Leave whenever you like and tap Continue to pick it back up.</p>
       <p><b class="text-amber-300">Undo.</b> Most games have an Undo button, so experiment freely.</p>
@@ -8930,7 +9020,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.5.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.5.1",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}
