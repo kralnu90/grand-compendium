@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ten classic and esoteric parlour games in one: Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Scoundrel and Regicide. Free, from Kralnu Games.">
+  <meta name="description" content="Fifteen parlour and family games in one: Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong, Klondike, FreeCell, Scoundrel, Regicide, Snakes &amp; Ladders, Ludo, Dominoes, a murder mystery and a dungeon crawl. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Ten parlour games in one: royal strategy, tumbling dice, quiet patience and two dungeon-crawling card games.">
+  <meta property="og:description" content="Fifteen games at one table: royal strategy, tumbling dice, quiet patience, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -29,17 +29,23 @@
       "Courier New", monospace;
     --color-red-300: oklch(80.8% 0.114 19.571);
     --color-red-400: oklch(70.4% 0.191 22.216);
+    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-amber-100: oklch(96.2% 0.059 95.617);
     --color-amber-200: oklch(92.4% 0.12 95.746);
     --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-500: oklch(76.9% 0.188 70.08);
+    --color-amber-900: oklch(41.4% 0.112 45.904);
     --color-emerald-300: oklch(84.5% 0.143 164.978);
+    --color-emerald-400: oklch(76.5% 0.177 163.223);
+    --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-sky-300: oklch(82.8% 0.111 230.318);
     --color-stone-950: oklch(14.7% 0.004 49.25);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-xs: 20rem;
     --container-sm: 24rem;
     --container-md: 28rem;
     --container-lg: 32rem;
@@ -72,10 +78,13 @@
     --tracking-wider: 0.05em;
     --leading-tight: 1.25;
     --leading-relaxed: 1.625;
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
+    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --blur-sm: 8px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -253,14 +262,26 @@
   .top-0 {
     top: 0px;
   }
+  .top-1 {
+    top: var(--spacing);
+  }
   .-right-2 {
     right: calc(var(--spacing) * -2);
+  }
+  .right-0\.5 {
+    right: calc(var(--spacing) * 0.5);
+  }
+  .right-1 {
+    right: var(--spacing);
   }
   .-bottom-2 {
     bottom: calc(var(--spacing) * -2);
   }
   .bottom-0 {
     bottom: 0px;
+  }
+  .bottom-1 {
+    bottom: var(--spacing);
   }
   .bottom-1\.5 {
     bottom: calc(var(--spacing) * 1.5);
@@ -270,6 +291,12 @@
   }
   .left-0 {
     left: 0px;
+  }
+  .left-0\.5 {
+    left: calc(var(--spacing) * 0.5);
+  }
+  .left-1 {
+    left: var(--spacing);
   }
   .left-1\/2 {
     left: calc(1 / 2 * 100%);
@@ -289,11 +316,17 @@
   .z-\[60\] {
     z-index: 60;
   }
+  .z-\[65\] {
+    z-index: 65;
+  }
   .z-\[70\] {
     z-index: 70;
   }
   .mx-auto {
     margin-inline: auto;
+  }
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
   }
   .my-3 {
     margin-block: calc(var(--spacing) * 3);
@@ -312,6 +345,9 @@
   }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-auto {
+    margin-top: auto;
   }
   .mr-auto {
     margin-right: auto;
@@ -337,6 +373,9 @@
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
   }
+  .ml-auto {
+    margin-left: auto;
+  }
   .block {
     display: block;
   }
@@ -349,14 +388,35 @@
   .hidden {
     display: none;
   }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .table {
+    display: table;
+  }
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
   .h-2\.5 {
     height: calc(var(--spacing) * 2.5);
   }
   .h-3 {
     height: calc(var(--spacing) * 3);
   }
+  .h-3\.5 {
+    height: calc(var(--spacing) * 3.5);
+  }
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
   .h-8 {
     height: calc(var(--spacing) * 8);
+  }
+  .h-9 {
+    height: calc(var(--spacing) * 9);
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
@@ -367,6 +427,9 @@
   .h-28 {
     height: calc(var(--spacing) * 28);
   }
+  .h-\[3px\] {
+    height: 3px;
+  }
   .h-full {
     height: 100%;
   }
@@ -376,17 +439,38 @@
   .max-h-\[88vh\] {
     max-height: 88vh;
   }
+  .max-h-\[92vh\] {
+    max-height: 92vh;
+  }
   .min-h-\[22px\] {
     min-height: 22px;
   }
   .min-h-\[26px\] {
     min-height: 26px;
   }
+  .min-h-\[150px\] {
+    min-height: 150px;
+  }
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-3 {
+    width: calc(var(--spacing) * 3);
+  }
+  .w-3\.5 {
+    width: calc(var(--spacing) * 3.5);
+  }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
   .w-8 {
     width: calc(var(--spacing) * 8);
+  }
+  .w-9 {
+    width: calc(var(--spacing) * 9);
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
@@ -409,11 +493,17 @@
   .max-w-\[260px\] {
     max-width: 260px;
   }
+  .max-w-\[560px\] {
+    max-width: 560px;
+  }
   .max-w-\[760px\] {
     max-width: 760px;
   }
   .max-w-\[820px\] {
     max-width: 820px;
+  }
+  .max-w-full {
+    max-width: 100%;
   }
   .max-w-lg {
     max-width: var(--container-lg);
@@ -427,6 +517,9 @@
   .max-w-xl {
     max-width: var(--container-xl);
   }
+  .max-w-xs {
+    max-width: var(--container-xs);
+  }
   .min-w-0 {
     min-width: 0px;
   }
@@ -436,6 +529,9 @@
   .shrink-0 {
     flex-shrink: 0;
   }
+  .origin-right {
+    transform-origin: 100%;
+  }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -444,8 +540,20 @@
     --tw-translate-y: calc(var(--spacing) * 4);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .scale-75 {
+    --tw-scale-x: 75%;
+    --tw-scale-y: 75%;
+    --tw-scale-z: 75%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .animate-pulse {
+    animation: var(--animate-pulse);
+  }
+  .cursor-default {
+    cursor: default;
   }
   .cursor-pointer {
     cursor: pointer;
@@ -544,6 +652,11 @@
     margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse)));
   }
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
   :where(.space-y-3 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
@@ -574,6 +687,9 @@
   .overflow-y-auto {
     overflow-y: auto;
   }
+  .rounded {
+    border-radius: 0.25rem;
+  }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }
@@ -588,6 +704,12 @@
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
+  }
+  .rounded-sm {
+    border-radius: var(--radius-sm);
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
@@ -611,6 +733,9 @@
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
+  }
+  .border-amber-300 {
+    border-color: var(--color-amber-300);
   }
   .border-amber-400\/60 {
     border-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 60%, transparent);
@@ -660,6 +785,12 @@
       background-color: color-mix(in oklab, var(--color-amber-500) 25%, transparent);
     }
   }
+  .bg-amber-500\/30 {
+    background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-amber-500) 30%, transparent);
+    }
+  }
   .bg-black\/25 {
     background-color: color-mix(in srgb, #000 25%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -690,6 +821,12 @@
       background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
     }
   }
+  .bg-black\/60 {
+    background-color: color-mix(in srgb, #000 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
+    }
+  }
   .bg-black\/75 {
     background-color: color-mix(in srgb, #000 75%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -701,6 +838,15 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-black) 80%, transparent);
     }
+  }
+  .bg-emerald-400 {
+    background-color: var(--color-emerald-400);
+  }
+  .bg-emerald-500 {
+    background-color: var(--color-emerald-500);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
   }
   .bg-stone-950\/95 {
     background-color: color-mix(in srgb, oklch(14.7% 0.004 49.25) 95%, transparent);
@@ -716,6 +862,15 @@
   }
   .\!p-2 {
     padding: calc(var(--spacing) * 2) !important;
+  }
+  .\!p-3 {
+    padding: calc(var(--spacing) * 3) !important;
+  }
+  .p-0\.5 {
+    padding: calc(var(--spacing) * 0.5);
+  }
+  .p-1\.5 {
+    padding: calc(var(--spacing) * 1.5);
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
@@ -741,6 +896,9 @@
   .px-1 {
     padding-inline: var(--spacing);
   }
+  .px-1\.5 {
+    padding-inline: calc(var(--spacing) * 1.5);
+  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -758,6 +916,12 @@
   }
   .\!py-0 {
     padding-block: 0px !important;
+  }
+  .\!py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5) !important;
+  }
+  .py-1 {
+    padding-block: var(--spacing);
   }
   .py-1\.5 {
     padding-block: calc(var(--spacing) * 1.5);
@@ -813,6 +977,9 @@
   .text-left {
     text-align: left;
   }
+  .text-right {
+    text-align: right;
+  }
   .font-mono {
     font-family: var(--font-mono);
   }
@@ -827,6 +994,10 @@
   .text-4xl {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -852,6 +1023,9 @@
   }
   .text-\[11px\] {
     font-size: 11px;
+  }
+  .text-\[70\%\] {
+    font-size: 70%;
   }
   .leading-none {
     --tw-leading: 1;
@@ -899,6 +1073,18 @@
   }
   .text-amber-50 {
     color: var(--color-amber-50);
+  }
+  .text-amber-50\/70 {
+    color: color-mix(in srgb, oklch(98.7% 0.022 95.277) 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-amber-50) 70%, transparent);
+    }
+  }
+  .text-amber-50\/75 {
+    color: color-mix(in srgb, oklch(98.7% 0.022 95.277) 75%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-amber-50) 75%, transparent);
+    }
   }
   .text-amber-50\/80 {
     color: color-mix(in srgb, oklch(98.7% 0.022 95.277) 80%, transparent);
@@ -972,6 +1158,12 @@
       color: color-mix(in oklab, var(--color-amber-200) 40%, transparent);
     }
   }
+  .text-amber-200\/50 {
+    color: color-mix(in srgb, oklch(92.4% 0.12 95.746) 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-amber-200) 50%, transparent);
+    }
+  }
   .text-amber-200\/60 {
     color: color-mix(in srgb, oklch(92.4% 0.12 95.746) 60%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1020,6 +1212,12 @@
       color: color-mix(in oklab, var(--color-amber-400) 80%, transparent);
     }
   }
+  .text-amber-900\/60 {
+    color: color-mix(in srgb, oklch(41.4% 0.112 45.904) 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-amber-900) 60%, transparent);
+    }
+  }
   .text-emerald-300 {
     color: var(--color-emerald-300);
   }
@@ -1034,6 +1232,9 @@
   }
   .text-red-400 {
     color: var(--color-red-400);
+  }
+  .text-sky-300 {
+    color: var(--color-sky-300);
   }
   .uppercase {
     text-transform: uppercase;
@@ -1053,6 +1254,9 @@
   .opacity-60 {
     opacity: 60%;
   }
+  .opacity-80 {
+    opacity: 80%;
+  }
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -1064,6 +1268,22 @@
   .ring {
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .ring-2 {
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .ring-amber-400\/70 {
+    --tw-ring-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-ring-color: color-mix(in oklab, var(--color-amber-400) 70%, transparent);
+    }
+  }
+  .ring-emerald-300 {
+    --tw-ring-color: var(--color-emerald-300);
+  }
+  .ring-red-400 {
+    --tw-ring-color: var(--color-red-400);
   }
   .drop-shadow {
     --tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.1))) drop-shadow(0 1px 1px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.06)));
@@ -1093,6 +1313,10 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .duration-150 {
+    --tw-duration: 150ms;
+    transition-duration: 150ms;
+  }
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
@@ -1118,6 +1342,14 @@
     @supports (color: color-mix(in lab, red, red)) {
       .hover\:bg-black\/45:hover {
         background-color: color-mix(in oklab, var(--color-black) 45%, transparent);
+      }
+    }
+    .hover\:bg-white\/5:hover {
+      background-color: color-mix(in srgb, #fff 5%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-white\/5:hover {
+        background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
       }
     }
     .hover\:bg-white\/20:hover {
@@ -1194,8 +1426,14 @@
       font-size: var(--text-xs);
       line-height: var(--tw-leading, var(--text-xs--line-height));
     }
+    .sm\:text-\[11px\] {
+      font-size: 11px;
+    }
   }
   @media (width >= 64rem) {
+    .lg\:mx-0 {
+      margin-inline: 0px;
+    }
     .lg\:h-56 {
       height: calc(var(--spacing) * 56);
     }
@@ -1204,6 +1442,9 @@
     }
     .lg\:w-72 {
       width: calc(var(--spacing) * 72);
+    }
+    .lg\:w-80 {
+      width: calc(var(--spacing) * 80);
     }
     .lg\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1230,6 +1471,21 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
 }
 @property --tw-rotate-x {
   syntax: "*";
@@ -1431,20 +1687,10 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
 }
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
@@ -1452,6 +1698,9 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
@@ -1499,9 +1748,6 @@
       --tw-backdrop-saturate: initial;
       --tw-backdrop-sepia: initial;
       --tw-duration: initial;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
     }
   }
 }
@@ -1783,7 +2029,7 @@
           <h1 class="font-display text-lg sm:text-xl font-bold tracking-wide text-amber-300 leading-tight">
             The Grand Tabletop Compendium
           </h1>
-          <p id="header-subtitle" class="text-xs text-amber-100/70">Ten Classic & Esoteric Parlor Games</p>
+          <p id="header-subtitle" class="text-xs text-amber-100/70">Fifteen Classic & Esoteric Parlor Games</p>
         </div>
       </div>
 
@@ -2025,6 +2271,98 @@ const GAME_CATALOG = [
         <li><strong>Capture:</strong> If your last seed lands in an empty pit on your side, you capture it plus every seed in the pit directly opposite.</li>
         <li><strong>Game End:</strong> When either side's six pits are all empty, the other player banks their remaining seeds. Most seeds wins.</li>
       </ul>`
+  },
+  {
+    id: 'snakes',
+    title: 'Snakes & Ladders',
+    subtitle: 'The Classic Race to 100',
+    category: 'Family & Adventure Board Games',
+    icon: '🐍',
+    players: '2–4 players, people or AI',
+    tagline: 'Climb the ladders, dodge the snakes and be first to square 100.',
+    rules: `
+      <p><strong>Objective:</strong> Be the first to land exactly on square 100.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Moving:</strong> Roll the die and move that many squares, snaking back and forth up the board.</li>
+        <li><strong>Ladders:</strong> Land at the foot of a ladder and climb straight to the top.</li>
+        <li><strong>Snakes:</strong> Land on a snake's head and slide down to its tail.</li>
+        <li><strong>Sixes:</strong> Roll a 6 and you take another turn.</li>
+        <li><strong>Finishing:</strong> You need the exact number to reach 100. Roll too high and you bounce back the extra squares.</li>
+      </ul>`
+  },
+  {
+    id: 'ludo',
+    title: 'Ludo',
+    subtitle: 'Race Your Four Home',
+    category: 'Family & Adventure Board Games',
+    icon: '🎯',
+    players: '2–4 players, people or AI',
+    tagline: 'Roll a six to break out, knock rivals back to base and race all four pieces home.',
+    rules: `
+      <p><strong>Objective:</strong> Be the first to get all four of your pieces round the board and into the centre.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Leaving base:</strong> You need a 6 to bring a piece onto your coloured start square.</li>
+        <li><strong>Moving:</strong> Move one piece the number rolled, clockwise round the track, then up your own coloured home column.</li>
+        <li><strong>Extra rolls:</strong> Rolling a 6 or capturing a piece earns another roll. Three 6s in a row and you lose the turn.</li>
+        <li><strong>Capturing:</strong> Land on an opponent's piece to send it back to their base, unless it's on a safe square (★ or a coloured start square).</li>
+        <li><strong>Finishing:</strong> You need the exact roll to reach the centre.</li>
+      </ul>`
+  },
+  {
+    id: 'dominoes',
+    title: 'Dominoes',
+    subtitle: 'Double-Six Draw Game',
+    category: 'Family & Adventure Board Games',
+    icon: '🁫',
+    players: '2–4 players, people or AI',
+    tagline: 'Match the ends, empty your hand and race to 50 points.',
+    rules: `
+      <p><strong>Objective:</strong> Be first to 50 points over several rounds.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>The deal:</strong> 7 tiles each with 2 players, 5 each with 3 or 4. The rest form the boneyard.</li>
+        <li><strong>Opening:</strong> In the first round, the highest double opens. After that, the last round's winner leads any tile.</li>
+        <li><strong>Playing:</strong> On your turn, play a tile whose number matches either open end of the line.</li>
+        <li><strong>Can't go?</strong> Draw from the boneyard until you can. If it's empty, you pass.</li>
+        <li><strong>Scoring:</strong> Play your last tile to win the round and score the pips left in everyone else's hands. If nobody can go, the player with the fewest pips wins the round.</li>
+      </ul>`
+  },
+  {
+    id: 'manor',
+    title: 'Murder at Marrowgate Manor',
+    subtitle: 'A Whodunit of Deduction',
+    category: 'Family & Adventure Board Games',
+    icon: '🕵️',
+    players: '3–6 players, people or AI',
+    tagline: 'Who did it, with what, and where? Question your fellow suspects and crack the case.',
+    rules: `
+      <p><strong>Objective:</strong> Work out the three cards hidden in the envelope: the <em>murderer</em>, the <em>weapon</em> and the <em>room</em>.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>The cards:</strong> 6 suspects, 6 weapons and 9 rooms. One of each is hidden away; the rest are dealt out, so any card you hold can't be the answer.</li>
+        <li><strong>Moving:</strong> Roll the die to move through the manor: 1–2 moves one room, 3–4 up to two, 5–6 up to three. The corner rooms have secret passages (🕳️) to the opposite corner.</li>
+        <li><strong>Suggesting:</strong> In a room, name a suspect and a weapon. Going round the table, the first player who holds one of those cards must secretly show you one.</li>
+        <li><strong>Dragged in:</strong> If you're named in someone's suggestion, you're brought to that room and may stay there next turn.</li>
+        <li><strong>Your notebook:</strong> Cards you hold and cards you're shown are crossed off automatically. Tap any card to add your own marks.</li>
+        <li><strong>Accusing:</strong> On your turn, accuse any suspect, weapon and room. Right and you win. Wrong and you're out, though you still show cards when asked.</li>
+      </ul>`
+  },
+  {
+    id: 'delve',
+    title: 'Torchlight Delve',
+    subtitle: 'Dungeon-Crawl Board Game',
+    category: 'Family & Adventure Board Games',
+    icon: '🕯️',
+    players: '1–4 heroes, solo or pass & play',
+    tagline: 'Lead a party of heroes through a dark dungeon, roll the combat dice and slay the Bone King.',
+    rules: `
+      <p><strong>Objective:</strong> Defeat the <em>Bone King</em> 👑 in the deepest room, then step onto the stairs to escape.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>The party:</strong> Warrior (tough, 3 attack dice), Mage (frail, 3 Fireballs that hit from up to 6 squares), Rogue (moves 2 extra, disarms traps, finds more gold) and Cleric (3 Heals of 4 HP).</li>
+        <li><strong>Your turn:</strong> Each hero rolls 2 dice to move, and takes one action: attack, cast, search the room or drink a potion. Tap a monster next to you to attack it.</li>
+        <li><strong>Combat dice:</strong> Attackers count 💀 skulls. Heroes block with 🛡️ white shields, monsters only with rarer ⚫ black shields.</li>
+        <li><strong>Exploring:</strong> Rooms light up as you enter them, and any monsters there wake up. Search a cleared room once for gold, potions or a better weapon, but beware of traps.</li>
+        <li><strong>Monsters:</strong> After every hero has gone, each awake monster moves towards the nearest hero and attacks.</li>
+        <li><strong>Defeat:</strong> If every hero falls, the delve is over.</li>
+      </ul>`
   }
 ];
 
@@ -2143,6 +2481,15 @@ const App = {
   /* Play button: choose a mode (and offer Continue when there's a saved game) */
   async play(id) {
     const m = this.meta(id), save = Store.get('save_' + id, null), modes = this.MODES[id];
+    if (Games[id].setup) {
+      if (save) {
+        const v = await Util.choose(`${m.icon} ${m.title}`, 'You have a game in progress.', [{ label: '▶ Continue', value: 'resume', primary: true }, { label: 'New game', value: 'new' }, { label: 'Cancel', value: null }]);
+        if (!v) return;
+        if (v === 'resume') return this.launch(id, { resume: save });
+      }
+      const cfg = await Games[id].setup(); if (!cfg) return;
+      Store.del('save_' + id); return this.launch(id, cfg);
+    }
     if (!save && !modes) return this.launch(id);
     const btns = [];
     if (save) btns.push({ label: `▶ Continue${save.mode ? (save.mode === '2p' ? ' (Pass & Play)' : ' (vs AI)') : ''}`, value: 'resume', primary: true });
@@ -2175,14 +2522,14 @@ const App = {
     ['btn-rules', 'btn-back-hub', 'btn-settings'].forEach(b => document.getElementById(b).classList.add('hidden'));
     document.getElementById('ver-corner').classList.remove('hidden');
     const lastId = Store.get('last', null), lastSave = lastId && Store.get('save_' + lastId, null), lm = lastSave && this.meta(lastId);
-    document.getElementById('header-subtitle').textContent = 'Ten Classic & Esoteric Parlor Games';
+    document.getElementById('header-subtitle').textContent = 'Fifteen Classic & Esoteric Parlor Games';
     const cats = [...new Set(GAME_CATALOG.map(g => g.category))];
     const root = document.getElementById('app-root');
     root.innerHTML = `
       <section class="text-center py-6 sm:py-10">
         <p class="text-amber-400/80 tracking-[0.3em] text-xs uppercase mb-2">Est. by candlelight</p>
         <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-amber-300 drop-shadow">Welcome to the Parlor</h2>
-        <p class="mt-3 text-amber-100/75 max-w-xl mx-auto text-sm sm:text-base">Pull up a chair. Ten tables are set: royal strategy, tumbling dice, quiet patience, and a pair of dungeon-crawling card games that don't play by the old rules.</p>
+        <p class="mt-3 text-amber-100/75 max-w-xl mx-auto text-sm sm:text-base">Pull up a chair. Fifteen tables are set: royal strategy, tumbling dice, quiet patience, family favourites, a murder to solve and a dungeon to delve.</p>
       </section>
       ${lm ? `<div class="w-full max-w-md mx-auto mb-5"><button onclick="App.launch('${lastId}')" class="btn-brass w-full py-3.5 rounded-2xl text-lg font-display flex items-center justify-center gap-3"><span class="text-2xl">${lm.icon}</span><span>Continue ${lm.title.replace(/ \(.*\)/, '')}</span></button></div>` : ''}
       ${Menu.tilesHTML()}
@@ -2269,9 +2616,15 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.1.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.2.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.2.0', '19 Nov 2026', 'Family game night', [
+    'Five new games: Snakes & Ladders, Ludo, Dominoes, Murder at Marrowgate Manor and Torchlight Delve',
+    'Murder at Marrowgate Manor: an original whodunit for 3 to 6 players with a detective notebook and AI detectives',
+    'Torchlight Delve: an original dungeon-crawl board game for a party of 1 to 4 heroes',
+    'Play with 2 to 6 people and AI players in any mix, with a pass-the-phone screen to keep hands secret'
+  ]],
   ['1.1.0', '19 Nov 2026', 'Pass and play, sound and saves', [
     'Pass and play for Shogi, Checkers and Backgammon, so every board game can now be played by two people on one phone',
     'Tap Play on a board game to pick vs AI or Pass & Play, or carry on where you left off',
@@ -2381,7 +2734,7 @@ const Menu = (() => {
     open('How to play', '❓', `
       <p><b class="text-amber-300">Pick a table.</b> Every game is on the main menu, grouped by type. Tap <b>Play</b> to sit down, or <b>Rules</b> to read up first.</p>
       <p><b class="text-amber-300">In a game.</b> Tap a piece or card to pick it up, then tap where it should go. The <b>📜 How to Play</b> button at the top shows that game's rules at any time, and <b>🏛️ Parlor Hub</b> brings you back here.</p>
-      <p><b class="text-amber-300">Opponents.</b> Chess, Shogi, Checkers, Mancala and Backgammon can be played against the AI or as Pass &amp; Play, two people sharing one phone. Pick when you tap Play. Set how tough the AI is in <b>Settings</b>.</p>
+      <p><b class="text-amber-300">Opponents.</b> Chess, Shogi, Checkers, Mancala and Backgammon can be played against the AI or as Pass &amp; Play, two people sharing one phone. The family games take 2 to 6 players in any mix of people and AI. Pick when you tap Play. When cards or tiles need to stay secret, a pass-the-phone screen hides them between turns. Set how tough the AI is in <b>Settings</b>.</p>
       <p><b class="text-amber-300">Saving.</b> Your game saves as you play. Leave whenever you like and tap Continue to pick it back up.</p>
       <p><b class="text-amber-300">Undo.</b> Most games have an Undo button, so experiment freely.</p>
       <p><b class="text-amber-300">Trophies.</b> Every win is counted in the Trophy Cabinet.</p>
@@ -2411,7 +2764,8 @@ const Menu = (() => {
         <ul class="text-sm space-y-1">
           <li><b>Scoundrel</b> was designed by Zach Gage and Kurt Bieg.</li>
           <li><b>Regicide</b> was designed by Paul Abrahams, Luke Badger and Andy Richdale (Badgers From Mars).</li>
-          <li><b>Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike</b> and <b>FreeCell</b> are traditional games, enjoyed for generations.</li>
+          <li><b>Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes &amp; Ladders, Ludo</b> and <b>Dominoes</b> are traditional games, enjoyed for generations.</li>
+          <li><b>Murder at Marrowgate Manor</b> and <b>Torchlight Delve</b> are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.</li>
         </ul>
         <p class="text-xs text-amber-100/60 mt-1.5">Scoundrel and Regicide are played here as free, faithful tributes. If you love them, please support their designers.</p>
       </div>
@@ -2572,6 +2926,89 @@ const Sfx = (() => {
   document.addEventListener('visibilitychange', () => { if (!ctx) return; if (document.hidden) ctx.suspend().catch(() => {}); else ctx.resume().catch(() => {}); });
   return { play, apply, ensure };
 })();
+
+/* ============================================================================
+   FAMILY GAMES: shared player setup, pass-the-phone screen, dice
+   ============================================================================ */
+const PCOL = [
+  { id: 'red', name: 'Red', hex: '#d63a3a', dark: '#7d1616' },
+  { id: 'green', name: 'Green', hex: '#2fa05a', dark: '#145a2e' },
+  { id: 'yellow', name: 'Yellow', hex: '#e8b923', dark: '#86650a' },
+  { id: 'blue', name: 'Blue', hex: '#2f6fd6', dark: '#163a7a' },
+  { id: 'purple', name: 'Purple', hex: '#8e4ec6', dark: '#4a2370' },
+  { id: 'orange', name: 'Orange', hex: '#e8772e', dark: '#7d3a10' }
+];
+
+/* Player setup: pick how many players and whether each seat is a person or the AI. Resolves to seats or null. */
+const Seats = {
+  choose({ title, min = 2, max = 4, def = 2, names, colors, note = '', aiAllowed = true, subs }) {
+    const o_sub = subs;
+    const saved = Store.get('seats_' + title, null);
+    let n = saved ? Math.min(max, Math.max(min, saved.n)) : def;
+    let types = saved ? saved.types.slice() : Array.from({ length: max }, (_, i) => i === 0 ? 'human' : 'ai');
+    while (types.length < max) types.push('ai');
+    if (!aiAllowed) types = types.map(() => 'human');
+    return new Promise(res => {
+      const ov = document.createElement('div');
+      ov.className = 'fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-4 fade-in';
+      const draw = () => {
+        const cols = colors || PCOL;
+        ov.innerHTML = `<div class="walnut-panel rounded-2xl p-5 max-w-sm w-full border-2 border-amber-500/40">
+          <h3 class="font-display text-xl text-amber-300 font-bold text-center mb-1">${title}</h3>
+          <p class="text-xs text-amber-100/60 text-center mb-3">${note || 'Tap a seat to switch between a person and the AI. Pass the phone between people.'}</p>
+          <div class="flex items-center justify-center gap-3 mb-3">
+            <button data-a="minus" class="btn-wood w-9 h-9 rounded-lg text-lg" ${n <= min ? 'disabled' : ''}>−</button>
+            <span class="font-display text-amber-200 text-lg">${n} ${aiAllowed ? 'players' : (n === 1 ? 'hero' : 'heroes')}</span>
+            <button data-a="plus" class="btn-wood w-9 h-9 rounded-lg text-lg" ${n >= max ? 'disabled' : ''}>+</button>
+          </div>
+          <div class="space-y-2 mb-4">${Array.from({ length: n }, (_, i) => `
+            <button data-a="seat" data-i="${i}" class="w-full flex items-center gap-3 bg-black/30 hover:bg-black/45 rounded-xl px-3 py-2 border border-amber-500/15 ${aiAllowed ? '' : 'cursor-default'}">
+              <span class="w-6 h-6 rounded-full shrink-0" style="background:${cols[i].hex};box-shadow:inset 0 -3px 0 ${cols[i].dark}"></span>
+              <span class="flex-1 text-left text-amber-100 text-sm">${names ? names[i] : cols[i].name}</span>
+              ${aiAllowed ? `<span class="text-sm font-semibold ${types[i] === 'human' ? 'text-emerald-300' : 'text-amber-300'}">${types[i] === 'human' ? '🙂 Person' : '🤖 AI'}</span>` : `<span class="text-xs text-amber-100/60">${(o_sub && o_sub[i]) || ''}</span>`}
+            </button>`).join('')}</div>
+          <div class="flex gap-2 justify-center"><button data-a="cancel" class="btn-wood px-4 py-2 rounded-xl text-sm">Cancel</button><button data-a="go" class="btn-brass px-6 py-2 rounded-xl text-sm">Start</button></div></div>`;
+      };
+      ov.addEventListener('click', e => {
+        const b = e.target.closest('button'); if (!b || b.disabled) return;
+        const a = b.dataset.a;
+        if (a === 'minus') n--; else if (a === 'plus') n++;
+        else if (a === 'seat' && aiAllowed) { const i = +b.dataset.i; types[i] = types[i] === 'human' ? 'ai' : 'human'; }
+        else if (a === 'cancel') { ov.remove(); return res(null); }
+        else if (a === 'go') {
+          if (!types.slice(0, n).includes('human')) { Util.toast('At least one seat needs to be a person.'); return; }
+          Store.set('seats_' + title, { n, types });
+          ov.remove();
+          const cols = colors || PCOL;
+          return res(Array.from({ length: n }, (_, i) => ({ name: names ? names[i] : cols[i].name, col: cols[i], type: types[i] })));
+        }
+        draw();
+      });
+      draw(); document.body.appendChild(ov);
+    });
+  }
+};
+
+/* Pass-the-phone screen that hides private information until the next person is ready */
+function curtain(who, line = 'Pass the phone. Tap when ready.') {
+  return new Promise(res => {
+    const ov = document.createElement('div');
+    ov.className = 'fixed inset-0 z-[65] flex flex-col items-center justify-center gap-3 p-6 text-center';
+    ov.style.background = 'radial-gradient(circle at 50% 40%,#3a2316,#0f0905 75%)';
+    ov.innerHTML = `<div class="text-5xl">📱</div><div class="font-display text-2xl text-amber-300">${who}</div>
+      <p class="text-amber-100/70 text-sm max-w-xs">${line}</p><button class="btn-brass px-6 py-2.5 rounded-xl mt-2">I'm ready</button>`;
+    ov.querySelector('button').onclick = () => { ov.remove(); res(); };
+    document.body.appendChild(ov);
+  });
+}
+
+/* A single six-sided die as HTML */
+Util.die = (v, cls = '') => {
+  const P = { 1: [4], 2: [0, 8], 3: [0, 4, 8], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] }[v] || [];
+  return `<div class="die ${cls}">${Array.from({ length: 9 }, (_, i) => P.includes(i) ? '<span class="pip"></span>' : '<span></span>').join('')}</div>`;
+};
+Util.d6 = () => 1 + Math.floor(Math.random() * 6);
+Util.sleep = ms => new Promise(r => setTimeout(r, ms));
 
 /* ============================================================================
    CHESS
@@ -4458,6 +4895,1111 @@ const Mancala = (() => {
 })();
 Games.mancala = Mancala;
 
+/* ============================================================================
+   SNAKES & LADDERS (2-4 players, people or AI)
+   ============================================================================ */
+const Snakes = (() => {
+  const SNAKES = { 16: 6, 47: 26, 49: 11, 56: 53, 62: 19, 64: 60, 87: 24, 93: 73, 95: 75, 98: 78 };
+  const LADDERS = { 1: 38, 4: 14, 9: 31, 21: 42, 28: 84, 36: 44, 51: 67, 71: 91, 80: 100 };
+  let S, root, sid = 0, busy = false;
+
+  const cell = n => { const row = Math.floor((n - 1) / 10), k = (n - 1) % 10; return { col: row % 2 === 0 ? k : 9 - k, row: 9 - row }; };
+  const ctr = n => { const c = cell(n); return [c.col * 10 + 5, c.row * 10 + 5]; };
+
+  function newGame(seats) {
+    sid++; busy = false;
+    S = { seats, pos: seats.map(() => 0), turn: 0, roll: null, over: null, log: ['Everyone starts off the board. First to square 100 wins.'] };
+    render(); next();
+  }
+  const log = m => { S.log.unshift(m); S.log = S.log.slice(0, 5); };
+  function next() {
+    if (!root || S.over) return;
+    render();
+    if (S.seats[S.turn].type === 'ai') { const my = sid; setTimeout(() => { if (my === sid) roll(); }, Util.delay(700)); }
+  }
+  async function roll() {
+    if (busy || S.over) return;
+    busy = true; const my = sid, p = S.turn, seat = S.seats[p];
+    const d = Util.d6(); S.roll = d; Sfx.play('dice'); render(true);
+    await Util.sleep(Util.delay(450)); if (my !== sid) return;
+    let at = S.pos[p], target = at + d;
+    if (target > 100) { // bounce back off 100
+      let fwd = true;
+      for (let k = 0; k < d; k++) { if (at === 100) fwd = false; at += fwd ? 1 : -1; S.pos[p] = at; Sfx.play('place'); render(); await Util.sleep(Util.delay(140)); if (my !== sid) return; }
+      log(`${seat.name} rolled ${d} and bounced back off 100.`);
+    } else {
+      for (let k = 0; k < d; k++) { S.pos[p]++; Sfx.play('place'); render(); await Util.sleep(Util.delay(140)); if (my !== sid) return; }
+      log(`${seat.name} rolled ${d}.`);
+    }
+    const sq = S.pos[p];
+    if (LADDERS[sq]) { await Util.sleep(Util.delay(200)); S.pos[p] = LADDERS[sq]; Sfx.play('potion'); log(`🪜 ${seat.name} climbed a ladder from ${sq} to ${LADDERS[sq]}!`); }
+    else if (SNAKES[sq]) { await Util.sleep(Util.delay(200)); S.pos[p] = SNAKES[sq]; Sfx.play('lose'); log(`🐍 ${seat.name} slid down a snake from ${sq} to ${SNAKES[sq]}.`); }
+    render();
+    if (my !== sid) return;
+    if (S.pos[p] === 100) {
+      S.over = `${seat.name} wins!`; busy = false; render(); Sfx.play('win');
+      const humanWin = seat.type === 'human' && S.seats.some(s => s.type === 'ai');
+      return setTimeout(() => App.endGame('snakes', humanWin, `${seat.name} wins!`, `${seat.name} reached square 100 first.`, () => newGame(S.seats)), 500);
+    }
+    await Util.sleep(Util.delay(350)); if (my !== sid) return;
+    busy = false;
+    if (d !== 6) S.turn = (S.turn + 1) % S.seats.length;
+    else log(`${seat.name} rolled a 6 and goes again!`);
+    next();
+  }
+
+  function boardSVG() {
+    let out = '';
+    for (const [a, b] of Object.entries(LADDERS)) {
+      const [x1, y1] = ctr(+a), [x2, y2] = ctr(b), dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy), nx = -dy / L * 1.9, ny = dx / L * 1.9;
+      let rungs = ''; for (let t = 2.5; t < L - 1; t += 3.4) { const px = x1 + dx * t / L, py = y1 + dy * t / L; rungs += `<line x1="${px + nx}" y1="${py + ny}" x2="${px - nx}" y2="${py - ny}"/>`; }
+      out += `<g stroke="#5a3418" stroke-width="1.1" stroke-linecap="round" opacity=".95"><line x1="${x1 + nx}" y1="${y1 + ny}" x2="${x2 + nx}" y2="${y2 + ny}" stroke="#a8742f" stroke-width="1.3"/><line x1="${x1 - nx}" y1="${y1 - ny}" x2="${x2 - nx}" y2="${y2 - ny}" stroke="#a8742f" stroke-width="1.3"/><g stroke="#c9944a" stroke-width=".9">${rungs}</g></g>`;
+    }
+    const greens = ['#2e8b3e', '#7a9a1e', '#1f7a6a', '#a3462a', '#5e3f8a'];
+    Object.entries(SNAKES).forEach(([a, b], i) => {
+      const [x1, y1] = ctr(+a), [x2, y2] = ctr(b), mx = (x1 + x2) / 2, my = (y1 + y2) / 2, dx = x2 - x1, dy = y2 - y1;
+      const w = i % 2 ? 1 : -1, c1x = x1 + dx * .3 + dy * .35 * w, c1y = y1 + dy * .3 - dx * .35 * w, c2x = x1 + dx * .7 - dy * .35 * w, c2y = y1 + dy * .7 + dx * .35 * w;
+      const col = greens[i % greens.length];
+      out += `<path d="M${x1} ${y1} C${c1x} ${c1y} ${c2x} ${c2y} ${x2} ${y2}" fill="none" stroke="#10200f" stroke-width="3.6" stroke-linecap="round" opacity=".55"/>
+        <path d="M${x1} ${y1} C${c1x} ${c1y} ${c2x} ${c2y} ${x2} ${y2}" fill="none" stroke="${col}" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M${x1} ${y1} C${c1x} ${c1y} ${c2x} ${c2y} ${x2} ${y2}" fill="none" stroke="#f3e27a" stroke-width=".7" stroke-dasharray="1.2 2" stroke-linecap="round" opacity=".8"/>
+        <circle cx="${x1}" cy="${y1}" r="2.4" fill="${col}" stroke="#10200f" stroke-width=".5"/><circle cx="${x1 - .8}" cy="${y1 - .6}" r=".5" fill="#fff"/><circle cx="${x1 + .8}" cy="${y1 - .6}" r=".5" fill="#fff"/>`;
+      void mx; void my;
+    });
+    return `<svg viewBox="0 0 100 100" class="absolute inset-0 w-full h-full pointer-events-none">${out}</svg>`;
+  }
+  function render(rolling) {
+    if (!root) return;
+    let cells = '';
+    const tint = ['#f6e7c1', '#e9d3a0', '#f3d9b8', '#e3c79a'];
+    for (let r = 0; r < 10; r++) for (let c = 0; c < 10; c++) {
+      const row = 9 - r, n = row * 10 + (row % 2 === 0 ? c : 9 - c) + 1;
+      cells += `<div class="relative flex items-start justify-start p-0.5" style="background:${tint[(r + c) % 4]};border:1px solid rgba(90,58,38,.25)"><span class="text-[9px] sm:text-[11px] font-bold text-amber-900/60 leading-none">${n}</span>${n === 100 ? '<span class="absolute inset-0 flex items-center justify-center text-lg">🏆</span>' : ''}</div>`;
+    }
+    const tokens = S.seats.map((s, i) => {
+      const n = S.pos[i]; if (!n) return '';
+      const same = S.seats.map((_, j) => j).filter(j => S.pos[j] === n), k = same.indexOf(i);
+      const off = [[-1.8, -1.8], [1.8, -1.8], [-1.8, 1.8], [1.8, 1.8]][same.length > 1 ? k : 4] || [0, 0];
+      const [x, y] = ctr(n);
+      return `<div class="absolute rounded-full transition-all duration-150" style="width:6%;height:6%;left:${x + off[0] - 3}%;top:${y + off[1] - 3}%;background:radial-gradient(circle at 35% 30%,#fff8,${s.col.hex} 55%,${s.col.dark});box-shadow:0 2px 3px rgba(0,0,0,.6);border:1.5px solid #fff;z-index:${10 + i}${S.turn === i && !S.over ? ';outline:2px solid #f3d266;outline-offset:1px' : ''}"></div>`;
+    }).join('');
+    const seat = S.seats[S.turn], myTurn = seat.type === 'human' && !busy && !S.over;
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="relative" style="width:min(94vw,560px,calc(100vh - 250px));min-width:290px;aspect-ratio:1;border:6px solid #4a2e1d;border-radius:8px;box-shadow:0 12px 28px rgba(0,0,0,.6)">
+          <div class="absolute inset-0 grid" style="grid-template-columns:repeat(10,1fr);grid-template-rows:repeat(10,1fr)">${cells}</div>
+          ${boardSVG()}${tokens}
+        </div>
+        ${Util.panel(`
+          <div class="flex items-center gap-3 mb-3">
+            ${S.roll ? Util.die(S.roll, rolling ? 'dice-rolling' : '') : '<div class="die"></div>'}
+            <div class="text-sm"><div class="font-display text-amber-200">${S.over || `${seat.name}'s turn`}</div><div class="text-xs text-amber-100/60">${S.over ? '' : seat.type === 'ai' ? 'AI is rolling…' : 'Tap Roll'}</div></div>
+          </div>
+          ${Util.btn('🎲 Roll', 'Snakes.roll()', 'brass', 'w-full !py-2.5 ' + (myTurn ? '' : 'opacity-40 pointer-events-none'))}
+          <div class="mt-3 space-y-1">${S.seats.map((s, i) => `<div class="flex items-center gap-2 text-sm ${i === S.turn ? 'text-amber-200' : 'text-amber-100/70'}"><span class="w-3.5 h-3.5 rounded-full" style="background:${s.col.hex}"></span>${s.name} ${s.type === 'ai' ? '🤖' : ''}<span class="ml-auto font-bold">${S.pos[i] || 'Start'}</span></div>`).join('')}</div>
+          <div class="mt-3 text-xs space-y-1 text-amber-50/75">${S.log.map((l, i) => `<div class="${i ? 'opacity-60' : ''}">${l}</div>`).join('')}</div>
+          <div class="mt-3">${Util.btn('New Game', 'Snakes.restart()')}</div>`, 'w-full lg:w-72')}
+      </div>`;
+  }
+  return {
+    async setup() { const seats = await Seats.choose({ title: 'Snakes & Ladders', min: 2, max: 4, def: 2 }); return seats ? { seats } : null; },
+    mount(el, o = {}) {
+      root = el;
+      if (o.resume) { sid++; busy = false; S = o.resume; render(); next(); }
+      else newGame(o.seats || [{ name: 'Red', col: PCOL[0], type: 'human' }, { name: 'Green', col: PCOL[1], type: 'ai' }]);
+    },
+    snapshot() { return S && !S.over ? S : null; },
+    destroy() { sid++; root = null; },
+    roll() { if (S.seats[S.turn].type === 'human') roll(); },
+    restart() { newGame(S.seats); },
+    newGame() { newGame(S.seats); },
+    _test: { get S() { return S; } }
+  };
+})();
+Games.snakes = Snakes;
+
+/* ============================================================================
+   LUDO (2-4 players, people or AI). Corners: 0 Red TL, 1 Green TR, 2 Yellow BR, 3 Blue BL
+   Piece progress: -1 base, 0-50 main track (from own start), 51-55 home column, 56 home.
+   ============================================================================ */
+const Ludo = (() => {
+  const TRACK = [];
+  (() => {
+    const seg = (cells) => cells.forEach(c => TRACK.push(c));
+    const R = (r, a, b) => { const o = []; for (let c = a; a <= b ? c <= b : c >= b; c += a <= b ? 1 : -1) o.push([r, c]); return o; };
+    const C = (c, a, b) => { const o = []; for (let r = a; a <= b ? r <= b : r >= b; r += a <= b ? 1 : -1) o.push([r, c]); return o; };
+    seg(R(6, 1, 5)); seg(C(6, 5, 0)); seg([[0, 7], [0, 8]]);
+    seg(C(8, 1, 5)); seg(R(6, 9, 14)); seg([[7, 14], [8, 14]]);
+    seg(R(8, 13, 9)); seg(C(8, 9, 14)); seg([[14, 7], [14, 6]]);
+    seg(C(6, 13, 9)); seg(R(8, 5, 0)); seg([[7, 0], [6, 0]]);
+  })();
+  const HOME = [[1, 2, 3, 4, 5].map(c => [7, c]), [1, 2, 3, 4, 5].map(r => [r, 7]), [13, 12, 11, 10, 9].map(c => [7, c]), [13, 12, 11, 10, 9].map(r => [r, 7])];
+  const BASE0 = [[0, 0], [0, 9], [9, 9], [9, 0]];
+  const SAFE = new Set([0, 8, 13, 21, 26, 34, 39, 47]);
+  const COLS = [PCOL[0], PCOL[1], PCOL[2], PCOL[3]];
+  let S, root, sid = 0, busy = false;
+
+  const absOf = (corner, p) => (corner * 13 + p) % 52;
+  function coord(corner, p, k) {
+    if (p < 0) { const [r0, c0] = BASE0[corner], sl = [[1.75, 1.75], [1.75, 4.25], [4.25, 1.75], [4.25, 4.25]][k]; return [r0 + sl[0], c0 + sl[1]]; }
+    if (p <= 50) { const [r, c] = TRACK[absOf(corner, p)]; return [r + .5, c + .5]; }
+    if (p <= 55) { const [r, c] = HOME[corner][p - 51]; return [r + .5, c + .5]; }
+    const o = [[7.5, 6.85], [6.85, 7.5], [7.5, 8.15], [8.15, 7.5]][corner]; return [o[0] + (k % 2 - .5) * .35, o[1] + (k < 2 ? -.2 : .2)];
+  }
+  function newGame(seats) {
+    sid++; busy = false;
+    S = { seats, pieces: seats.map(() => [-1, -1, -1, -1]), turn: 0, roll: null, sixes: 0, phase: 'roll', movable: [], over: null, log: ['Roll a 6 to bring a piece out.'] };
+    next();
+  }
+  const log = m => { S.log.unshift(m); S.log = S.log.slice(0, 5); };
+  const corner = i => S.seats[i].corner;
+  function legal(i, d) { return S.pieces[i].map((p, k) => ((p === -1 && d === 6) || (p >= 0 && p + d <= 56)) ? k : -1).filter(k => k >= 0); }
+  function next() {
+    if (!root || S.over) return;
+    S.phase = 'roll'; S.movable = []; render();
+    if (S.seats[S.turn].type === 'ai') { const my = sid; setTimeout(() => { if (my === sid) roll(); }, Util.delay(650)); }
+  }
+  async function roll() {
+    if (busy || S.phase !== 'roll' || S.over) return;
+    busy = true; const my = sid, i = S.turn, seat = S.seats[i];
+    const d = Util.d6(); S.roll = d; Sfx.play('dice');
+    if (d === 6) S.sixes++; else S.sixes = 0;
+    render(true);
+    await Util.sleep(Util.delay(450)); if (my !== sid) return;
+    if (S.sixes === 3) { log(`${seat.name} rolled three 6s in a row and loses the turn.`); S.sixes = 0; busy = false; return endTurn(false); }
+    const ms = legal(i, d);
+    if (!ms.length) { log(`${seat.name} rolled ${d}: no moves.`); render(); await Util.sleep(Util.delay(650)); if (my !== sid) return; busy = false; return endTurn(d === 6); }
+    busy = false;
+    if (seat.type === 'ai') { const k = aiPick(i, d, ms); await Util.sleep(Util.delay(300)); if (my !== sid) return; return movePiece(k); }
+    S.phase = 'move'; S.movable = ms; render();
+    if (ms.length === 1) { await Util.sleep(Util.delay(450)); if (my !== sid || S.phase !== 'move') return; movePiece(ms[0]); }
+  }
+  function danger(i, absSq) { // how many enemy pieces could hit this square next turn
+    if (SAFE.has(absSq)) return 0;
+    let n = 0;
+    S.pieces.forEach((ps, j) => { if (j === i) return; ps.forEach(p => { if (p < 0 || p > 50) return; const a = absOf(corner(j), p); const dist = (absSq - a + 52) % 52; if (dist >= 1 && dist <= 6) n++; }); });
+    return n;
+  }
+  function aiPick(i, d, ms) {
+    let best = ms[0], bv = -1e9;
+    for (const k of ms) {
+      const p = S.pieces[i][k], np = p === -1 ? 0 : p + d; let v = np * 0.6;
+      if (np === 56) v += 120;
+      if (p === -1) v += 45;
+      if (np <= 50) {
+        const a = absOf(corner(i), np);
+        S.pieces.forEach((ps, j) => { if (j !== i && !SAFE.has(a)) ps.forEach(q => { if (q >= 0 && q <= 50 && absOf(corner(j), q) === a) v += 70 + q; }); });
+        if (SAFE.has(a)) v += 18;
+        v -= danger(i, a) * 28;
+      } else v += 25;
+      if (p >= 0 && p <= 50) v += danger(i, absOf(corner(i), p)) * 22;
+      if (Settings.diff === 'easy') v += Math.random() * 120; else if (Settings.diff === 'normal') v += Math.random() * 10;
+      if (v > bv) { bv = v; best = k; }
+    }
+    return best;
+  }
+  async function movePiece(k) {
+    if (busy) return; busy = true;
+    const my = sid, i = S.turn, seat = S.seats[i], d = S.roll, from = S.pieces[i][k];
+    S.phase = 'anim'; S.movable = [];
+    if (from === -1) { S.pieces[i][k] = 0; Sfx.play('place'); render(); log(`${seat.name} brings a piece out.`); }
+    else for (let s = 1; s <= d; s++) { S.pieces[i][k] = from + s; Sfx.play('place'); render(); await Util.sleep(Util.delay(110)); if (my !== sid) return; }
+    const np = S.pieces[i][k]; let captured = false;
+    if (np <= 50) {
+      const a = absOf(corner(i), np);
+      if (!SAFE.has(a)) S.pieces.forEach((ps, j) => { if (j === i) return; ps.forEach((q, qk) => { if (q >= 0 && q <= 50 && absOf(corner(j), q) === a) { ps[qk] = -1; captured = true; log(`💥 ${seat.name} sends one of ${S.seats[j].name}'s pieces home!`); } }); });
+    }
+    if (captured) Sfx.play('capture');
+    if (np === 56) { Sfx.play('match'); log(`🏠 ${seat.name} gets a piece home.`); }
+    render();
+    if (S.pieces[i].every(p => p === 56)) {
+      S.over = `${seat.name} wins!`; busy = false; render(); Sfx.play('win');
+      const humanWin = seat.type === 'human' && S.seats.some(s => s.type === 'ai');
+      return setTimeout(() => App.endGame('ludo', humanWin, `${seat.name} wins!`, `All four of ${seat.name}'s pieces made it home.`, () => newGame(S.seats)), 500);
+    }
+    await Util.sleep(Util.delay(250)); if (my !== sid) return;
+    busy = false; endTurn(d === 6 || captured);
+  }
+  function endTurn(again) {
+    if (again) log(`${S.seats[S.turn].name} goes again.`);
+    else { S.turn = (S.turn + 1) % S.seats.length; S.sixes = 0; }
+    next();
+  }
+
+  function cellStyle(r, c) {
+    const inBase = (r < 6 || r > 8) && (c < 6 || c > 8);
+    if (inBase) {
+      const cn = r < 6 ? (c < 6 ? 0 : 1) : (c < 6 ? 3 : 2), col = COLS[cn];
+      const lr = r < 6 ? r : r - 9, lc = c < 6 ? c : c - 9, inner = lr >= 1 && lr <= 4 && lc >= 1 && lc <= 4;
+      return `background:${inner ? '#fbf7ee' : col.hex}`;
+    }
+    if (r >= 6 && r <= 8 && c >= 6 && c <= 8) return 'background:transparent';
+    for (let cn = 0; cn < 4; cn++) {
+      if (HOME[cn].some(([a, b]) => a === r && b === c)) return `background:${COLS[cn].hex}`;
+      const [sr, sc] = TRACK[cn * 13]; if (sr === r && sc === c) return `background:${COLS[cn].hex}`;
+    }
+    return 'background:#fbf7ee';
+  }
+  function render(rolling) {
+    if (!root) return;
+    let cells = '';
+    for (let r = 0; r < 15; r++) for (let c = 0; c < 15; c++) {
+      const ti = TRACK.findIndex(([a, b]) => a === r && b === c);
+      const star = ti >= 0 && SAFE.has(ti) && ti % 13 !== 0;
+      cells += `<div style="${cellStyle(r, c)};border:${(r < 6 || r > 8) && (c < 6 || c > 8) ? '0' : '1px solid rgba(60,40,25,.35)'}" class="flex items-center justify-center text-[10px] text-amber-900/60">${star ? '★' : ''}</div>`;
+    }
+    const centre = `<div class="absolute" style="left:40%;top:40%;width:20%;height:20%;background:conic-gradient(from 45deg,${COLS[2].hex} 0 25%,${COLS[3].hex} 0 50%,${COLS[0].hex} 0 75%,${COLS[1].hex} 0);box-shadow:inset 0 0 0 1px rgba(0,0,0,.3)"></div>`;
+    const occ = {};
+    const tokens = S.seats.map((s, i) => S.pieces[i].map((p, k) => {
+      let [y, x] = coord(s.corner, p, k);
+      if (p >= 0 && p < 56) { const key = y + ',' + x; occ[key] = (occ[key] || 0) + 1; const n = occ[key] - 1; x += (n % 2) * .28 - (n ? .14 : 0); y += Math.floor(n / 2) * .28 - (n ? .14 : 0); }
+      const mov = S.turn === i && S.movable.includes(k) && s.type === 'human';
+      return `<div ${mov ? `onclick="Ludo.pick(${k})"` : ''} class="absolute rounded-full ${mov ? 'cursor-pointer animate-pulse' : ''}" style="width:5.2%;height:5.2%;left:${x / 15 * 100 - 2.6}%;top:${y / 15 * 100 - 2.6}%;background:radial-gradient(circle at 35% 30%,#fffa,${s.col.hex} 55%,${s.col.dark});border:2px solid ${mov ? '#f3d266' : '#fff'};box-shadow:0 2px 3px rgba(0,0,0,.6)${mov ? ',0 0 0 3px rgba(243,210,102,.6)' : ''};z-index:${mov ? 30 : 10}"></div>`;
+    }).join('')).join('');
+    const seat = S.seats[S.turn], myRoll = seat.type === 'human' && S.phase === 'roll' && !busy && !S.over;
+    const home = i => S.pieces[i].filter(p => p === 56).length;
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="relative" style="width:min(94vw,560px,calc(100vh - 250px));min-width:290px;aspect-ratio:1;border:6px solid #4a2e1d;border-radius:8px;box-shadow:0 12px 28px rgba(0,0,0,.6);background:#fbf7ee">
+          <div class="absolute inset-0 grid" style="grid-template-columns:repeat(15,1fr);grid-template-rows:repeat(15,1fr)">${cells}</div>
+          ${centre}${tokens}
+        </div>
+        ${Util.panel(`
+          <div class="flex items-center gap-3 mb-3">
+            ${S.roll ? Util.die(S.roll, rolling ? 'dice-rolling' : '') : '<div class="die"></div>'}
+            <div class="text-sm"><div class="font-display" style="color:${seat.col.hex}">${S.over || `${seat.name}'s turn`}</div><div class="text-xs text-amber-100/60">${S.over ? '' : seat.type === 'ai' ? 'AI is playing…' : S.phase === 'move' ? 'Tap a glowing piece' : 'Tap Roll'}</div></div>
+          </div>
+          ${Util.btn('🎲 Roll', 'Ludo.roll()', 'brass', 'w-full !py-2.5 ' + (myRoll ? '' : 'opacity-40 pointer-events-none'))}
+          <div class="mt-3 space-y-1">${S.seats.map((s, i) => `<div class="flex items-center gap-2 text-sm ${i === S.turn ? 'text-amber-200' : 'text-amber-100/70'}"><span class="w-3.5 h-3.5 rounded-full" style="background:${s.col.hex}"></span>${s.name} ${s.type === 'ai' ? '🤖' : ''}<span class="ml-auto font-bold">🏠 ${home(i)}/4</span></div>`).join('')}</div>
+          <div class="mt-3 text-xs space-y-1 text-amber-50/75">${S.log.map((l, i) => `<div class="${i ? 'opacity-60' : ''}">${l}</div>`).join('')}</div>
+          <p class="text-[11px] text-amber-100/50 mt-2">★ and coloured start squares are safe. A 6 or a capture earns another roll.</p>
+          <div class="mt-3">${Util.btn('New Game', 'Ludo.restart()')}</div>`, 'w-full lg:w-72')}
+      </div>`;
+  }
+  const ORDER = [PCOL[0], PCOL[2], PCOL[1], PCOL[3]];
+  return {
+    async setup() {
+      const seats = await Seats.choose({ title: 'Ludo', min: 2, max: 4, def: 2, colors: ORDER });
+      if (!seats) return null;
+      seats.forEach(s => s.corner = COLS.findIndex(c => c.id === s.col.id));
+      seats.sort((a, b) => a.corner - b.corner);
+      return { seats };
+    },
+    mount(el, o = {}) {
+      root = el;
+      if (o.resume) { sid++; busy = false; S = o.resume; S.movable = []; S.phase = 'roll'; next(); }
+      else newGame(o.seats || [{ name: 'Red', col: PCOL[0], type: 'human', corner: 0 }, { name: 'Yellow', col: PCOL[2], type: 'ai', corner: 2 }]);
+    },
+    snapshot() { return S && !S.over ? S : null; },
+    destroy() { sid++; root = null; },
+    roll() { if (S.seats[S.turn].type === 'human') roll(); },
+    pick(k) { if (S.phase === 'move' && S.movable.includes(k)) movePiece(k); },
+    restart() { newGame(S.seats); },
+    newGame() { newGame(S.seats); },
+    _test: { get S() { return S; }, TRACK }
+  };
+})();
+Games.ludo = Ludo;
+
+/* ============================================================================
+   DOMINOES (Draw game, double-six, 2-4 players, first to the target score)
+   ============================================================================ */
+const Dominoes = (() => {
+  let S, root, sid = 0, busy = false, selId = null, shownFor = -1;
+  const PIPS = { 0: [], 1: [4], 2: [0, 8], 3: [0, 4, 8], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] };
+  const total = h => h.reduce((a, t) => a + t.a + t.b, 0);
+  const L = () => S.chain.length ? S.chain[0].a : null, R = () => S.chain.length ? S.chain[S.chain.length - 1].b : null;
+  const fits = t => !S.chain.length || t.a === L() || t.b === L() || t.a === R() || t.b === R();
+  const sides = t => { if (!S.chain.length) return ['R']; const o = []; if (t.a === L() || t.b === L()) o.push('L'); if (t.a === R() || t.b === R()) o.push('R'); return o; };
+  const humans = () => S.seats.filter(s => s.type === 'human').length;
+
+  function newMatch(seats, target) {
+    S = { seats, target: target || 50, scores: seats.map(() => 0), round: 0, leader: null, over: null };
+    newRound();
+  }
+  function newRound() {
+    sid++; busy = false; selId = null; shownFor = -1;
+    const all = []; for (let a = 0; a <= 6; a++) for (let b = a; b <= 6; b++) all.push({ a, b, id: a + '' + b });
+    Util.shuffle(all);
+    const per = S.seats.length === 2 ? 7 : 5;
+    S.hands = S.seats.map(() => all.splice(0, per));
+    S.bone = all; S.chain = []; S.passes = 0; S.round++; S.log = [`Round ${S.round}. First to ${S.target} points wins the match.`];
+    if (S.leader === null) { // first round: highest double opens
+      let best = null;
+      S.hands.forEach((h, i) => h.forEach(t => { const v = (t.a === t.b ? 100 : 0) + t.a + t.b; if (!best || v > best.v) best = { i, t, v }; }));
+      S.turn = best.i; place(best.t, 'R'); log(`${S.seats[best.i].name} opens with ${best.t.a}|${best.t.b}.`);
+      S.turn = (best.i + 1) % S.seats.length;
+    } else S.turn = S.leader;
+    next();
+  }
+  const log = m => { S.log.unshift(m); S.log = S.log.slice(0, 5); };
+  function place(t, side) {
+    const h = S.hands[S.turn]; h.splice(h.findIndex(x => x.id === t.id), 1);
+    if (!S.chain.length) S.chain.push({ a: t.a, b: t.b });
+    else if (side === 'L') S.chain.unshift(t.b === L() ? { a: t.a, b: t.b } : { a: t.b, b: t.a });
+    else S.chain.push(t.a === R() ? { a: t.a, b: t.b } : { a: t.b, b: t.a });
+    S.passes = 0; Sfx.play('place');
+  }
+  async function next() {
+    if (!root || S.over) return;
+    const my = sid, seat = S.seats[S.turn];
+    selId = null;
+    if (seat.type === 'human' && humans() > 1 && shownFor !== S.turn) {
+      render(true);
+      await curtain(`${seat.name}'s turn`, 'Pass the phone. Keep your tiles hidden from the others!');
+      if (my !== sid) return;
+    }
+    if (seat.type === 'human') shownFor = S.turn;
+    render();
+    if (seat.type === 'ai') { await Util.sleep(Util.delay(700)); if (my === sid) aiTurn(); }
+  }
+  async function aiTurn() {
+    const my = sid, h = S.hands[S.turn];
+    while (!h.some(fits) && S.bone.length) { h.push(S.bone.pop()); Sfx.play('card'); render(); await Util.sleep(Util.delay(260)); if (my !== sid) return; }
+    const opts = h.filter(fits);
+    if (!opts.length) return pass();
+    let best = opts[0], bv = -1;
+    for (const t of opts) { const v = t.a + t.b + (t.a === t.b ? 4 : 0) + (Settings.diff === 'easy' ? Math.random() * 12 : 0); if (v > bv) { bv = v; best = t; } }
+    play(best, sides(best)[0]);
+  }
+  function play(t, side) {
+    const seat = S.seats[S.turn];
+    place(t, side); log(`${seat.name} plays ${t.a}|${t.b}.`);
+    if (!S.hands[S.turn].length) return roundOver(S.turn, 'domino');
+    advance();
+  }
+  function pass() {
+    log(`${S.seats[S.turn].name} can't go and passes.`); S.passes++;
+    if (S.passes >= S.seats.length) return roundOver(null, 'blocked');
+    advance();
+  }
+  function advance() { S.turn = (S.turn + 1) % S.seats.length; next(); }
+  async function roundOver(winner, how) {
+    const my = sid;
+    if (winner === null) { let lo = 1e9; S.hands.forEach((h, i) => { const v = total(h); if (v < lo) { lo = v; winner = i; } }); }
+    const pts = S.hands.reduce((a, h, i) => i === winner ? a : a + total(h), 0);
+    S.scores[winner] += pts; S.leader = winner;
+    const seat = S.seats[winner];
+    Sfx.play(how === 'domino' ? 'match' : 'card');
+    shownFor = -2; render(); // reveal everyone's tiles
+    await Util.sleep(600); if (my !== sid) return;
+    const table = S.seats.map((s, i) => `<div class="flex justify-between"><span>${s.name}</span><span>${total(S.hands[i])} left · <b class="text-amber-300">${S.scores[i]}</b></span></div>`).join('');
+    if (S.scores[winner] >= S.target) {
+      S.over = `${seat.name} wins the match!`; render(); Sfx.play('win');
+      const humanWin = seat.type === 'human' && S.seats.some(s => s.type === 'ai');
+      return App.endGame('dominoes', humanWin, `${seat.name} wins the match!`, `<div class="text-left space-y-1">${table}</div>`, () => newMatch(S.seats, S.target));
+    }
+    await Util.choose(how === 'domino' ? `${seat.name} dominoes!` : 'Blocked!', `${how === 'domino' ? `${seat.name} played their last tile` : `Nobody can go. ${seat.name} has the fewest pips`} and scores <b>${pts}</b>.<div class="text-left space-y-1 mt-3">${table}</div>`, [{ label: 'Next round', value: 1, primary: true }]);
+    if (my === sid) newRound();
+  }
+  function pick(id) {
+    const seat = S.seats[S.turn]; if (seat.type !== 'human' || busy || S.over) return;
+    const t = S.hands[S.turn].find(x => x.id === id); if (!t) return;
+    if (!fits(t)) { Util.toast("That tile doesn't match either end."); return; }
+    const sd = sides(t);
+    const same = S.chain.length && L() === R();
+    if (sd.length === 1 || same) return play(t, sd[0]);
+    selId = selId === id ? null : id; render();
+    if (selId) Util.toast('It fits both ends. Tap ◀ or ▶ on the line.', 1800);
+  }
+  function end(side) { const t = selId && S.hands[S.turn].find(x => x.id === selId); if (t && sides(t).includes(side)) play(t, side); }
+  function draw() {
+    const h = S.hands[S.turn]; if (S.seats[S.turn].type !== 'human' || h.some(fits)) return;
+    if (!S.bone.length) return pass();
+    const t = S.bone.pop(); h.push(t); Sfx.play('card'); log(`${S.seats[S.turn].name} draws a tile.`); render();
+  }
+
+  function half(v, sz) { return `<div class="grid" style="width:${sz}px;height:${sz}px;grid-template:repeat(3,1fr)/repeat(3,1fr);padding:${sz * .14}px">${Array.from({ length: 9 }, (_, i) => PIPS[v].includes(i) ? `<span style="width:${sz * .19}px;height:${sz * .19}px;border-radius:50%;background:#1d120c;place-self:center"></span>` : '<span></span>').join('')}</div>`; }
+  function tile(t, o = {}) {
+    const sz = o.sz || 26, vert = o.vert;
+    if (o.back) return `<div class="rounded-md" style="width:${vert ? sz : sz * 2}px;height:${vert ? sz * 2 : sz}px;background:linear-gradient(135deg,#7c1d24,#4a0f14);border:1.5px solid #f5efe2;box-shadow:0 2px 3px rgba(0,0,0,.5)"></div>`;
+    return `<div ${o.attrs || ''} class="rounded-md flex ${vert ? 'flex-col' : ''} items-center ${o.cls || ''}" style="background:linear-gradient(160deg,#fffdf8,#ece2cc);border:1px solid #bfae8c;box-shadow:0 2px 3px rgba(0,0,0,.5)${o.sel ? ',0 0 0 3px #f3d266' : ''}${o.dim ? ';opacity:.45' : ''}">
+      ${half(t.a, sz)}<div style="${vert ? `width:${sz * .7}px;height:1.5px` : `height:${sz * .7}px;width:1.5px`};background:#a8957a"></div>${half(t.b, sz)}</div>`;
+  }
+  function render(hideAll) {
+    if (!root) return;
+    const seat = S.seats[S.turn], cur = S.turn;
+    const viewer = hideAll ? -1 : shownFor === -2 ? -2 : humans() === 1 ? S.seats.findIndex(s => s.type === 'human') : shownFor;
+    const myTurn = seat.type === 'human' && viewer === cur && !S.over;
+    const selT = selId && S.hands[cur].find(x => x.id === selId), sd = selT ? sides(selT) : [];
+    const chain = S.chain.map(t => tile(t, { vert: t.a === t.b, sz: 22 })).join('');
+    const endBtn = (s, label) => sd.includes(s) ? `<button onclick="Dominoes.end('${s}')" class="btn-brass px-2 py-3 rounded-lg text-sm animate-pulse">${label}</button>` : '';
+    const opp = S.seats.map((s, i) => {
+      if (i === viewer) return '';
+      const reveal = viewer === -2;
+      return `<div class="bg-black/25 rounded-xl p-2 ${i === cur ? 'ring-2 ring-amber-400/70' : ''}">
+        <div class="flex items-center gap-2 text-sm mb-1"><span class="w-3 h-3 rounded-full" style="background:${s.col.hex}"></span><span class="text-amber-100">${s.name} ${s.type === 'ai' ? '🤖' : ''}</span><span class="ml-auto text-xs text-amber-300">${S.scores[i]} pts</span></div>
+        <div class="flex flex-wrap gap-1">${S.hands[i].map(t => reveal ? tile(t, { sz: 14 }) : tile(t, { back: true, sz: 12, vert: true })).join('')}</div></div>`;
+    }).join('');
+    const hand = viewer >= 0 ? S.hands[viewer] : [];
+    const canPlay = myTurn && hand.some(fits);
+    root.innerHTML = `
+      <div class="flex flex-wrap gap-2 items-center justify-center">
+        <span class="stat-chip">Round ${S.round}</span><span class="stat-chip">Target ${S.target}</span><span class="stat-chip">🦴 Boneyard: ${S.bone.length}</span>
+        ${Util.btn('New Match', 'Dominoes.restart()')}
+      </div>
+      <div class="grid gap-2" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">${opp}</div>
+      <div class="felt-surface rounded-2xl p-3 min-h-[150px] flex items-center justify-center gap-2">
+        ${endBtn('L', '◀')}<div class="flex flex-wrap items-center justify-center gap-1 max-w-full">${chain || '<span class="text-amber-100/50 text-sm">Lead any tile to start the line.</span>'}</div>${endBtn('R', '▶')}
+      </div>
+      <div class="text-center text-sm text-amber-100">${S.over || (seat.type === 'ai' ? `${seat.name} is thinking…` : myTurn ? (canPlay ? 'Your turn: tap a tile to play it' : S.bone.length ? 'No match: draw from the boneyard' : 'No match and the boneyard is empty: pass') : `${seat.name}'s turn`)}</div>
+      ${viewer >= 0 ? Util.panel(`
+        <div class="flex items-center gap-2 text-sm mb-2"><span class="w-3 h-3 rounded-full" style="background:${S.seats[viewer].col.hex}"></span><span class="font-display text-amber-200">${S.seats[viewer].name}'s tiles</span><span class="ml-auto text-xs text-amber-300">${S.scores[viewer]} pts · ${total(hand)} pips</span></div>
+        <div class="flex flex-wrap gap-2 justify-center">${hand.map(t => tile(t, { sz: 30, vert: true, sel: t.id === selId, dim: myTurn && !fits(t), cls: 'cursor-pointer', attrs: `onclick="Dominoes.pick('${t.id}')"` })).join('')}</div>
+        ${myTurn && !canPlay ? `<div class="text-center mt-3">${Util.btn(S.bone.length ? '🦴 Draw a tile' : '⏭️ Pass', 'Dominoes.draw()', 'brass')}</div>` : ''}`, '') : ''}
+      <div class="text-xs space-y-1 text-amber-50/70 text-center">${S.log.map((l, i) => `<div class="${i ? 'opacity-60' : ''}">${l}</div>`).join('')}</div>`;
+  }
+  return {
+    async setup() {
+      const seats = await Seats.choose({ title: 'Dominoes', min: 2, max: 4, def: 2, note: 'Double-six draw dominoes. First to 50 points wins. With more than one person playing, each hand stays hidden behind a pass-the-phone screen.' });
+      return seats ? { seats } : null;
+    },
+    mount(el, o = {}) {
+      root = el;
+      if (o.resume) { sid++; busy = false; S = o.resume; selId = null; shownFor = -1; next(); }
+      else newMatch(o.seats || [{ name: 'Red', col: PCOL[0], type: 'human' }, { name: 'Green', col: PCOL[1], type: 'ai' }]);
+    },
+    snapshot() { return S && !S.over ? S : null; },
+    destroy() { sid++; root = null; },
+    pick, end, draw,
+    restart() { newMatch(S.seats, S.target); },
+    newGame() { newMatch(S.seats, S.target); },
+    _test: { get S() { return S; } }
+  };
+})();
+Games.dominoes = Dominoes;
+
+/* ============================================================================
+   MURDER AT MARROWGATE MANOR: an original whodunit deduction game (3-6 players)
+   ============================================================================ */
+const Manor = (() => {
+  const SUS = [
+    { k: 'thorne', n: 'Lady Ophelia Thorne', s: 'Lady Thorne', i: '🌹', c: '#c0392b' },
+    { k: 'croft', n: 'Major Barnaby Croft', s: 'Major Croft', i: '🎖️', c: '#d4a017' },
+    { k: 'vane', n: 'Dr Silas Vane', s: 'Dr Vane', i: '🩺', c: '#2e86c1' },
+    { k: 'wren', n: 'Miss Penelope Wren', s: 'Miss Wren', i: '🪶', c: '#27ae60' },
+    { k: 'mott', n: 'Professor Elias Mott', s: 'Prof. Mott', i: '🎓', c: '#8e44ad' },
+    { k: 'roux', n: 'Gaston Roux, the Cook', s: 'Gaston Roux', i: '🍲', c: '#e67e22' }
+  ];
+  const WEP = [
+    { k: 'teacup', n: 'Poisoned Teacup', i: '☕' }, { k: 'opener', n: 'Letter Opener', i: '🗡️' }, { k: 'scope', n: 'Brass Telescope', i: '🔭' },
+    { k: 'shears', n: 'Garden Shears', i: '✂️' }, { k: 'poker', n: 'Fireplace Poker', i: '🔥' }, { k: 'pistol', n: 'Duelling Pistol', i: '🔫' }
+  ];
+  const ROOMS = [
+    { n: 'Library', i: '📖' }, { n: 'Wine Cellar', i: '🍷' }, { n: 'Observatory', i: '🌌' },
+    { n: 'Dining Hall', i: '🍽️' }, { n: 'Grand Hall', i: '🏛️' }, { n: 'Greenhouse', i: '🌿' },
+    { n: 'Music Room', i: '🎹' }, { n: 'Chapel', i: '🕯️' }, { n: 'Billiard Den', i: '🎱' }
+  ];
+  const PASS = { 0: 8, 8: 0, 2: 6, 6: 2 };
+  const CARDS = [...SUS.map(x => 's:' + x.k), ...WEP.map(x => 'w:' + x.k), ...ROOMS.map((_, i) => 'r:' + i)];
+  const cat = c => c[0];
+  const info = c => cat(c) === 's' ? SUS.find(x => 's:' + x.k === c) : cat(c) === 'w' ? WEP.find(x => 'w:' + x.k === c) : ROOMS[+c.slice(2)];
+  const cname = c => { const x = info(c); return `${x.i} ${x.n}`; };
+  const chip = (c, extra = '') => { const x = info(c); return `<span class="inline-flex items-center gap-1 bg-black/35 border border-amber-500/25 rounded-lg px-2 py-1 text-xs ${extra}">${x.i} ${x.n}</span>`; };
+
+  let S, root, sid = 0, busy = false, viewer = -1;
+
+  /* ---------- setup ---------- */
+  function newGame(seats) {
+    sid++; busy = false; viewer = -1;
+    const sol = { s: 's:' + SUS[Math.floor(Math.random() * 6)].k, w: 'w:' + WEP[Math.floor(Math.random() * 6)].k, r: 'r:' + Math.floor(Math.random() * 9) };
+    const rest = Util.shuffle(CARDS.filter(c => c !== sol.s && c !== sol.w && c !== sol.r));
+    const hands = seats.map(() => []); rest.forEach((c, i) => hands[i % seats.length].push(c));
+    S = {
+      seats: seats.map((s, i) => ({ ...s, sus: s.sus, room: Math.floor(Math.random() * 9), out: false, dragged: false })),
+      hands, sol, turn: 0, phase: 'roll', roll: null, reach: [], weapons: WEP.map(() => Math.floor(Math.random() * 9)),
+      notes: seats.map(() => ({ seen: {}, mark: {} })), know: seats.map((_, i) => mkKnow(i, hands[i])), shownTo: seats.map(() => ({})),
+      log: ['A body has been found at Marrowgate Manor. Who did it, with what, and where?'], over: null
+    };
+    next();
+  }
+  function mkKnow(i, hand) { return { E: [...hand], has: {}, not: {}, cons: [] }; }
+  const log = m => { S.log.unshift(m); S.log = S.log.slice(0, 7); };
+  const humans = () => S.seats.filter(s => s.type === 'human').length; // privacy: count every person, in or out
+  const anyHumans = () => S.seats.filter(s => s.type === 'human').length;
+  const sname = i => S.seats[i].name;
+
+  /* ---------- AI knowledge ---------- */
+  function addE(K, c) { if (!K.E.includes(c)) K.E.push(c); }
+  function learnHas(K, j, c) { (K.has[j] = K.has[j] || []); if (!K.has[j].includes(c)) K.has[j].push(c); addE(K, c); }
+  function learnNot(K, j, cs) { K.not[j] = K.not[j] || []; cs.forEach(c => { if (!K.not[j].includes(c)) K.not[j].push(c); }); }
+  function resolve(K, me) {
+    if (Settings.diff === 'easy') return;
+    for (let pass = 0; pass < 4; pass++) {
+      K.cons = K.cons.filter(({ j, cs }) => {
+        if ((K.has[j] || []).some(c => cs.includes(c))) return false;
+        const left = cs.filter(c => !(K.not[j] || []).includes(c));
+        if (left.length === 1) { learnHas(K, j, left[0]); return false; }
+        return true;
+      });
+    }
+    // a card nobody else can hold must be in the envelope
+    const others = S.seats.map((_, j) => j).filter(j => j !== me);
+    CARDS.forEach(c => { if (!K.E.includes(c) && others.every(j => (K.not[j] || []).includes(c))) K.sure = Object.assign(K.sure || {}, { [cat(c)]: c }); });
+  }
+  function candidates(K, t) {
+    if (K.sure && K.sure[t]) return [K.sure[t]];
+    return CARDS.filter(c => cat(c) === t && !K.E.includes(c));
+  }
+
+  /* ---------- turn flow ---------- */
+  async function next() {
+    if (!root || S.over) return;
+    while (S.seats[S.turn].out) S.turn = (S.turn + 1) % S.seats.length;
+    const my = sid, seat = S.seats[S.turn];
+    S.phase = 'roll'; S.reach = [];
+    if (seat.type === 'human') {
+      if (humans() > 1 && viewer !== S.turn) { viewer = -1; render(); await curtain(`${seat.name}'s turn`, 'Pass the phone. Keep your cards and notebook secret!'); if (my !== sid) return; }
+      viewer = S.turn;
+    } else if (humans() > 1) viewer = -1;
+    else viewer = S.seats.findIndex(s => s.type === 'human' && !s.out);
+    render();
+    if (seat.type === 'ai') { await Util.sleep(Util.delay(700)); if (my === sid) aiTurn(); }
+  }
+  function reachable(from, steps, canStay) {
+    const dist = { [from]: 0 }, q = [from];
+    while (q.length) {
+      const r = q.shift(), x = r % 3, y = Math.floor(r / 3);
+      const nb = []; if (x > 0) nb.push(r - 1); if (x < 2) nb.push(r + 1); if (y > 0) nb.push(r - 3); if (y < 2) nb.push(r + 3); if (PASS[r] !== undefined) nb.push(PASS[r]);
+      nb.forEach(n => { if (dist[n] === undefined && dist[r] + 1 <= steps) { dist[n] = dist[r] + 1; q.push(n); } });
+    }
+    return Object.keys(dist).map(Number).filter(r => r !== from || canStay);
+  }
+  function roll() {
+    if (S.phase !== 'roll' || busy) return;
+    const seat = S.seats[S.turn], d = Util.d6(); S.roll = d; Sfx.play('dice');
+    const steps = d <= 2 ? 1 : d <= 4 ? 2 : 3;
+    S.reach = reachable(seat.room, steps, seat.dragged);
+    S.phase = 'move'; render(true);
+    return steps;
+  }
+  async function moveTo(r) {
+    if (S.phase !== 'move' || !S.reach.includes(r)) return;
+    const seat = S.seats[S.turn]; seat.room = r; seat.dragged = false; S.reach = []; Sfx.play('move');
+    log(`${seat.name} enters the ${ROOMS[r].n}.`);
+    S.phase = 'suggest'; render();
+    if (seat.type === 'human') humanSuggest();
+  }
+  /* In-page picker: choose one suspect and one weapon (and a room for accusations) */
+  function picker(title, withRoom, sub) {
+    return new Promise(res => {
+      const sel = { s: null, w: null, r: withRoom ? null : 'r:' + S.seats[S.turn].room };
+      const ov = document.createElement('div');
+      ov.className = 'fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-3 fade-in';
+      const grid = (t, list) => `<div class="grid grid-cols-3 gap-1.5">${list.map(c => { const x = info(c); return `<button data-c="${c}" class="rounded-lg p-1.5 text-[11px] leading-tight border ${sel[t] === c ? 'bg-amber-500/30 border-amber-300' : 'bg-black/30 border-amber-500/15'}"><div class="text-xl">${x.i}</div>${x.s || x.n}</button>`; }).join('')}</div>`;
+      const draw = () => {
+        ov.innerHTML = `<div class="walnut-panel rounded-2xl p-4 max-w-md w-full border-2 border-amber-500/40 max-h-[92vh] overflow-y-auto">
+          <h3 class="font-display text-lg text-amber-300 text-center">${title}</h3><p class="text-xs text-amber-100/60 text-center mb-3">${sub}</p>
+          <div class="text-xs uppercase tracking-wider text-amber-200/70 mb-1">Who?</div>${grid('s', SUS.map(x => 's:' + x.k))}
+          <div class="text-xs uppercase tracking-wider text-amber-200/70 mt-3 mb-1">With what?</div>${grid('w', WEP.map(x => 'w:' + x.k))}
+          ${withRoom ? `<div class="text-xs uppercase tracking-wider text-amber-200/70 mt-3 mb-1">Where?</div>${grid('r', ROOMS.map((_, i) => 'r:' + i))}` : ''}
+          <div class="flex gap-2 justify-center mt-4"><button data-a="x" class="btn-wood px-4 py-2 rounded-xl text-sm">${withRoom ? 'Cancel' : 'Skip'}</button><button data-a="ok" class="btn-brass px-5 py-2 rounded-xl text-sm" ${sel.s && sel.w && sel.r ? '' : 'disabled'}>${withRoom ? '⚖️ Accuse' : '🔎 Suggest'}</button></div></div>`;
+      };
+      ov.addEventListener('click', e => {
+        const b = e.target.closest('button'); if (!b || b.disabled) return;
+        if (b.dataset.c) { sel[cat(b.dataset.c)] = b.dataset.c; Sfx.play('tap'); draw(); return; }
+        ov.remove(); res(b.dataset.a === 'ok' ? sel : null);
+      });
+      draw(); document.body.appendChild(ov);
+    });
+  }
+  async function humanSuggest() {
+    const sel = await picker(`Suggest in the ${ROOMS[S.seats[S.turn].room].n}`, false, 'Name a suspect and a weapon. Other players must show you a card if they can.');
+    if (!sel) { S.phase = 'after'; render(); return; }
+    await suggest(S.turn, sel.s, sel.w, 'r:' + S.seats[S.turn].room);
+  }
+  async function suggest(i, s, w, r) {
+    const my = sid, seat = S.seats[i], cs = [s, w, r];
+    busy = true;
+    // the named suspect and weapon are brought to the room
+    const pj = S.seats.findIndex(x => x.sus === s.slice(2)); if (pj >= 0 && pj !== i) { S.seats[pj].room = +r.slice(2); S.seats[pj].dragged = true; }
+    S.weapons[WEP.findIndex(x => 'w:' + x.k === w)] = +r.slice(2);
+    log(`🔎 ${seat.name} suggests ${info(s).s} with the ${info(w).n} in the ${info(r).n}.`);
+    render(); await Util.sleep(Util.delay(700)); if (my !== sid) return;
+    let shown = null, by = null; const noOnes = [];
+    for (let k = 1; k < S.seats.length; k++) {
+      const j = (i + k) % S.seats.length, has = S.hands[j].filter(c => cs.includes(c));
+      if (!has.length) { noOnes.push(j); continue; }
+      by = j;
+      if (S.seats[j].type === 'human') {
+        if (humans() > 1 || S.seats[i].type === 'human') { if (humans() > 1) { viewer = -1; render(); await curtain(`${sname(j)}: show a card`, `${seat.name} made a suggestion and you can disprove it. Choose one card to show only to them.`); } }
+        if (my !== sid) return;
+        shown = has.length === 1 && humans() <= 1 && S.seats[i].type === 'ai' ? has[0] : await Util.choose(`Show ${seat.name} a card`, `${seat.name} suggested ${info(s).s}, the ${info(w).n}, in the ${info(r).n}. Pick one card to reveal.`, has.map(c => ({ label: cname(c), value: c, primary: true })));
+        if (my !== sid) return;
+      } else {
+        const prev = has.find(c => (S.shownTo[j][i] || []).includes(c));
+        shown = prev || has[Math.floor(Math.random() * has.length)];
+      }
+      (S.shownTo[j][i] = S.shownTo[j][i] || []).push(shown);
+      break;
+    }
+    // everyone watching learns who couldn't disprove; the suggester learns the card
+    S.seats.forEach((_, o) => {
+      const K = S.know[o];
+      noOnes.forEach(j => { if (j !== o) learnNot(K, j, cs); });
+      if (by !== null && o !== by) { if (o === i) learnHas(K, by, shown); else K.cons.push({ j: by, cs }); }
+      resolve(K, o);
+    });
+    if (by === null) log(`Nobody could disprove it!`); else log(`${sname(by)} shows ${seat.name} a card.`);
+    if (seat.type === 'human') {
+      if (humans() > 1 && by !== null && S.seats[by].type === 'human') { viewer = -1; render(); await curtain(`Back to ${seat.name}`, 'Pass the phone back to see the card.'); if (my !== sid) return; }
+      viewer = i;
+      if (by !== null) S.notes[i].seen[shown] = sname(by);
+      busy = false; S.phase = 'after'; render();
+      await Util.choose(by === null ? 'Nobody could disprove it' : `${sname(by)} shows you…`, by === null ? 'None of the other players hold any of those three cards. Hold your nerve, or accuse now.' : `<div class="text-2xl my-2">${cname(shown)}</div><span class="text-xs text-amber-100/60">It's been ticked off in your notebook.</span>`, [{ label: 'OK', value: 1, primary: true }]);
+      if (my !== sid) return;
+      render();
+    } else { busy = false; S.phase = 'after'; render(); }
+  }
+  async function accuse(i, sel) {
+    const my = sid, seat = S.seats[i], ok = sel.s === S.sol.s && sel.w === S.sol.w && sel.r === S.sol.r;
+    log(`⚖️ ${seat.name} accuses ${info(sel.s).s} with the ${info(sel.w).n} in the ${info(sel.r).n}…`);
+    render(); await Util.sleep(Util.delay(600)); if (my !== sid) return;
+    const truth = `${info(S.sol.s).n} with the ${info(S.sol.w).n} in the ${info(S.sol.r).n}`;
+    if (ok) {
+      S.over = `${seat.name} solved it!`; render(); Sfx.play(seat.type === 'human' ? 'win' : 'lose');
+      const humanWin = seat.type === 'human' && S.seats.some(s => s.type === 'ai');
+      return App.endGame('manor', humanWin, `${seat.name} solved the murder!`, `It was <b>${truth}</b>.`, () => newGame(S.seats));
+    }
+    seat.out = true; Sfx.play('lose');
+    log(`❌ ${seat.name} was wrong and is out of the running (but still shows cards).`);
+    if (seat.type === 'human') await Util.choose('Wrong!', `The real answer was <b>${truth}</b>. Keep it to yourself: you're out of the running, but you still show cards when asked.`, [{ label: 'OK', value: 1, primary: true }]);
+    if (my !== sid) return;
+    const left = S.seats.filter(s => !s.out);
+    if (left.length === 1) { S.over = `${left[0].name} wins by default!`; render(); return App.endGame('manor', left[0].type === 'human' && S.seats.some(s => s.type === 'ai'), `${left[0].name} wins!`, `Everyone else accused wrongly. It was <b>${truth}</b>.`, () => newGame(S.seats)); }
+    if (anyHumans() && !S.seats.some(s => s.type === 'human' && !s.out)) {
+      S.over = 'Every detective has been ruled out.'; render();
+      return App.endGame('manor', false, 'Case closed without you', `The AI detectives would have got there eventually. It was <b>${truth}</b>.`, () => newGame(S.seats));
+    }
+    endTurn();
+  }
+  function endTurn() { if (busy || S.over) return; S.turn = (S.turn + 1) % S.seats.length; next(); }
+  async function humanAccuse() {
+    if (busy || S.seats[S.turn].type !== 'human' || S.over) return;
+    const sel = await picker('Make your accusation', true, 'Get all three right and you win. Get it wrong and you are out.');
+    if (sel) accuse(S.turn, sel);
+  }
+
+  async function aiTurn() {
+    const my = sid, i = S.turn, seat = S.seats[i], K = S.know[i];
+    resolve(K, i);
+    const cs = candidates(K, 's'), cw = candidates(K, 'w'), cr = candidates(K, 'r');
+    if (cs.length === 1 && cw.length === 1 && cr.length === 1) return accuse(i, { s: cs[0], w: cw[0], r: cr[0] });
+    const steps = roll(); render(); await Util.sleep(Util.delay(600)); if (my !== sid) return;
+    const crooms = cr.map(c => +c.slice(2));
+    let target = S.reach.find(r => crooms.includes(r));
+    if (target === undefined) {
+      const dists = S.reach.map(r => ({ r, d: Math.min(...crooms.map(t => Math.abs(t % 3 - r % 3) + Math.abs(Math.floor(t / 3) - Math.floor(r / 3)))) }));
+      dists.sort((a, b) => a.d - b.d); target = dists.length ? dists[0].r : seat.room;
+    }
+    if (Settings.diff === 'easy' && Math.random() < .4) target = S.reach[Math.floor(Math.random() * S.reach.length)];
+    void steps;
+    if (target !== undefined && S.reach.includes(target)) await moveTo(target); else { S.phase = 'suggest'; }
+    if (my !== sid) return;
+    await Util.sleep(Util.delay(500)); if (my !== sid) return;
+    const pickFrom = (cands, t) => { if (cands.length > 1) return cands[Math.floor(Math.random() * cands.length)]; const own = S.hands[i].filter(c => cat(c) === t); return own.length && Math.random() < .7 ? own[Math.floor(Math.random() * own.length)] : cands[0]; };
+    await suggest(i, pickFrom(cs, 's'), pickFrom(cw, 'w'), 'r:' + seat.room);
+    if (my !== sid) return;
+    resolve(K, i);
+    const a = candidates(K, 's'), b = candidates(K, 'w'), c = candidates(K, 'r');
+    if (a.length === 1 && b.length === 1 && c.length === 1) { await Util.sleep(Util.delay(500)); if (my === sid) return accuse(i, { s: a[0], w: b[0], r: c[0] }); }
+    await Util.sleep(Util.delay(600)); if (my === sid) endTurn();
+  }
+
+  /* ---------- notebook ---------- */
+  function noteStatus(v, c) {
+    if (S.hands[v].includes(c)) return { t: '✔', cls: 'text-emerald-300', tip: 'In your hand' };
+    if (S.notes[v].seen[c]) return { t: '✗', cls: 'text-red-300', tip: `Shown by ${S.notes[v].seen[c]}` };
+    const m = S.notes[v].mark[c];
+    return m === 'x' ? { t: '✗', cls: 'text-amber-200/70', tip: 'Marked' } : m === 'q' ? { t: '?', cls: 'text-sky-300', tip: 'Suspicious' } : { t: '', cls: '', tip: '' };
+  }
+  function toggleNote(c) { if (viewer < 0) return; const n = S.notes[viewer].mark; n[c] = !n[c] ? 'x' : n[c] === 'x' ? 'q' : ''; Sfx.play('tap'); render(); }
+  function notebook(v) {
+    const sec = (t, list) => `<div class="text-[10px] uppercase tracking-wider text-amber-200/60 mt-2 mb-1">${t}</div>${list.map(c => { const st = noteStatus(v, c), x = info(c); return `<button onclick="Manor.note('${c}')" class="w-full flex items-center gap-2 text-left text-xs py-1 px-1.5 rounded hover:bg-white/5"><span class="w-5">${x.i}</span><span class="flex-1 ${st.t ? 'line-through opacity-60' : ''}">${x.s || x.n}</span><span class="w-5 text-center font-bold ${st.cls}" title="${st.tip}">${st.t}</span></button>`; }).join('')}`;
+    return `<div class="font-display text-amber-200 text-sm">📓 ${sname(v)}'s notebook</div><p class="text-[10px] text-amber-100/50">✔ your card · red ✗ shown to you · tap to mark ✗ or ?</p>
+      ${sec('Suspects', SUS.map(x => 's:' + x.k))}${sec('Weapons', WEP.map(x => 'w:' + x.k))}${sec('Rooms', ROOMS.map((_, i) => 'r:' + i))}`;
+  }
+
+  /* ---------- render ---------- */
+  function render(rolling) {
+    if (!root) return;
+    const seat = S.seats[S.turn], mine = seat.type === 'human' && viewer === S.turn && !busy && !S.over;
+    const roomsHTML = ROOMS.map((r, idx) => {
+      const here = S.seats.map((s, j) => s.room === idx ? `<span title="${s.name}" class="inline-flex items-center justify-center w-6 h-6 rounded-full text-sm" style="background:${s.col.hex};box-shadow:0 0 0 2px ${j === S.turn ? '#f3d266' : 'rgba(0,0,0,.4)'};${s.out ? 'opacity:.4' : ''}">${SUS.find(x => x.k === s.sus).i}</span>` : '').join('');
+      const weps = WEP.map((w, k) => S.weapons[k] === idx ? `<span class="text-xs opacity-80" title="${w.n}">${w.i}</span>` : '').join('');
+      const can = S.phase === 'move' && S.reach.includes(idx) && mine;
+      const pass = PASS[idx] !== undefined ? `<span class="absolute ${idx === 0 ? 'bottom-1 right-1' : idx === 8 ? 'top-1 left-1' : idx === 2 ? 'bottom-1 left-1' : 'top-1 right-1'} text-[10px] text-amber-200/50" title="Secret passage to the ${ROOMS[PASS[idx]].n}">🕳️</span>` : '';
+      return `<div ${can ? `onclick="Manor.go(${idx})"` : ''} class="relative rounded-xl p-1.5 flex flex-col ${can ? 'cursor-pointer ring-2 ring-emerald-300 animate-pulse' : ''}" style="background:linear-gradient(160deg,#4e3120,#2a190f);border:1px solid rgba(212,175,55,.3);min-height:96px">
+        <div class="text-[11px] sm:text-xs font-display text-amber-200 leading-tight">${r.i} ${r.n}</div>
+        <div class="flex flex-wrap gap-1 mt-1">${here}</div><div class="mt-auto">${weps}</div>${pass}</div>`;
+    }).join('');
+    const status = S.over || (seat.type === 'ai' ? `${seat.name} is investigating…` : !mine ? `${seat.name}'s turn` : S.phase === 'roll' ? 'Roll to move through the manor' : S.phase === 'move' ? `Rolled ${S.roll}: tap a glowing room` : S.phase === 'suggest' ? 'Make a suggestion' : 'Accuse now, or end your turn');
+    const v = viewer;
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-3 items-stretch lg:items-start justify-center">
+        <div class="flex flex-col gap-2 w-full max-w-[560px] mx-auto lg:mx-0">
+          <div class="flex items-center gap-2 justify-center flex-wrap">
+            ${S.roll ? Util.die(S.roll, rolling ? 'dice-rolling' : '') : ''}<span class="stat-chip">${status}</span>
+          </div>
+          <div class="felt-surface rounded-2xl p-2 grid grid-cols-3 gap-2">${roomsHTML}</div>
+          <div class="flex flex-wrap gap-2 justify-center">
+            ${mine && S.phase === 'roll' ? Util.btn('🎲 Roll', 'Manor.roll()', 'brass') : ''}
+            ${mine && S.phase === 'roll' && seat.dragged ? Util.btn(`🔎 Stay and suggest`, 'Manor.stay()') : ''}
+            ${mine && S.phase === 'suggest' ? Util.btn('🔎 Suggest', 'Manor.suggestNow()', 'brass') : ''}
+            ${mine ? Util.btn('⚖️ Accuse', 'Manor.accuse()') : ''}
+            ${mine && S.phase === 'after' ? Util.btn('End turn ➜', 'Manor.end()', 'brass') : ''}
+            ${Util.btn('New Game', 'Manor.restart()')}
+          </div>
+          ${v >= 0 ? Util.panel(`<div class="font-display text-amber-200 text-sm mb-1">🃏 ${sname(v)}'s cards</div><div class="flex flex-wrap gap-1">${S.hands[v].map(c => chip(c)).join('')}</div>`, '!p-3') : ''}
+          ${Util.panel(`<div class="text-xs space-y-1 text-amber-50/80">${S.log.map((l, k) => `<div class="${k ? 'opacity-60' : 'text-amber-200'}">${l}</div>`).join('')}</div>`, '!p-3')}
+        </div>
+        ${v >= 0 ? Util.panel(notebook(v), 'w-full lg:w-64 !p-3') : ''}
+      </div>`;
+  }
+  return {
+    async setup() {
+      const seats = await Seats.choose({ title: 'Marrowgate Manor', min: 3, max: 6, def: 4, names: SUS.map(x => x.s), colors: SUS.map(x => ({ id: x.k, name: x.s, hex: x.c, dark: '#222' })), note: 'Each player is a suspect. With more than one person, cards and notebooks stay hidden behind a pass-the-phone screen.' });
+      if (!seats) return null;
+      seats.forEach((s, i) => s.sus = SUS[i].k);
+      return { seats };
+    },
+    mount(el, o = {}) {
+      root = el;
+      if (o.resume) { sid++; busy = false; viewer = -1; S = o.resume; S.phase = 'roll'; S.reach = []; next(); }
+      else newGame(o.seats || SUS.slice(0, 4).map((x, i) => ({ name: x.s, col: { id: x.k, name: x.s, hex: x.c, dark: '#222' }, type: i ? 'ai' : 'human', sus: x.k })));
+    },
+    snapshot() { return S && !S.over && !busy ? S : null; },
+    destroy() { sid++; root = null; },
+    roll() { if (S.seats[S.turn].type === 'human' && viewer === S.turn) roll(); },
+    stay() { const s = S.seats[S.turn]; if (S.phase !== 'roll' || !s.dragged) return; s.dragged = false; S.phase = 'suggest'; render(); humanSuggest(); },
+    go(r) { if (S.seats[S.turn].type === 'human') moveTo(r); },
+    suggestNow() { if (S.phase === 'suggest' && S.seats[S.turn].type === 'human') humanSuggest(); },
+    accuse: humanAccuse,
+    end() { if (S.seats[S.turn].type === 'human' && S.phase === 'after') endTurn(); },
+    note: toggleNote,
+    restart() { newGame(S.seats); },
+    newGame() { newGame(S.seats); },
+    _test: { get S() { return S; }, candidates, resolve }
+  };
+})();
+Games.manor = Manor;
+
+/* ============================================================================
+   TORCHLIGHT DELVE: an original dungeon-crawl board game for 1-4 heroes
+   ============================================================================ */
+const Delve = (() => {
+  const W = 15, H = 21;
+  const HEROES = [
+    { k: 'warrior', n: 'Warrior', i: '⚔️', c: '#c0392b', hp: 12, atk: 3, def: 2, mv: 0, sub: 'Tough, hits hard' },
+    { k: 'mage', n: 'Mage', i: '🔮', c: '#8e44ad', hp: 7, atk: 1, def: 1, mv: 0, sub: 'Fireball ×3' },
+    { k: 'rogue', n: 'Rogue', i: '🗡️', c: '#27ae60', hp: 9, atk: 2, def: 2, mv: 2, sub: 'Fast, disarms traps' },
+    { k: 'cleric', n: 'Cleric', i: '✚', c: '#d4a017', hp: 9, atk: 2, def: 2, mv: 0, sub: 'Heal ×3' }
+  ];
+  const MON = {
+    goblin: { n: 'Goblin', i: '👺', hp: 2, atk: 2, def: 1, mv: 6 },
+    skeleton: { n: 'Skeleton', i: '💀', hp: 2, atk: 2, def: 2, mv: 5 },
+    orc: { n: 'Orc', i: '👹', hp: 3, atk: 3, def: 2, mv: 5 },
+    boss: { n: 'The Bone King', i: '👑', hp: 8, atk: 4, def: 3, mv: 4 }
+  };
+  let S, root, sid = 0, busy = false, mode = null; // mode: 'move' | 'attack' | 'fire' | 'heal'
+  const at = (x, y) => S.map[y * W + x];
+  const key = (x, y) => y * W + x;
+  const adj8 = (a, b) => Math.max(Math.abs(a.x - b.x), Math.abs(a.y - b.y)) === 1;
+
+  /* ---------- dungeon generation ---------- */
+  function generate() {
+    for (let tries = 0; tries < 200; tries++) {
+      const map = Array(W * H).fill(0), rooms = [];
+      for (let k = 0; k < 60 && rooms.length < 7; k++) {
+        const w = 3 + Math.floor(Math.random() * 3), h = 3 + Math.floor(Math.random() * 3);
+        const x = 1 + Math.floor(Math.random() * (W - w - 1)), y = 1 + Math.floor(Math.random() * (H - h - 1));
+        if (rooms.some(r => x < r.x + r.w + 1 && x + w + 1 > r.x && y < r.y + r.h + 1 && y + h + 1 > r.y)) continue;
+        rooms.push({ x, y, w, h });
+      }
+      if (rooms.length < 6) continue;
+      rooms.sort((a, b) => (a.y + a.h / 2) - (b.y + b.h / 2));
+      rooms.forEach(r => { for (let yy = r.y; yy < r.y + r.h; yy++) for (let xx = r.x; xx < r.x + r.w; xx++) map[yy * W + xx] = 1; });
+      const ctr = r => ({ x: r.x + Math.floor(r.w / 2), y: r.y + Math.floor(r.h / 2) });
+      for (let k = 1; k < rooms.length; k++) {
+        const a = ctr(rooms[k - 1]), b = ctr(rooms[k]);
+        const hFirst = Math.random() < .5;
+        const carveH = (y, x1, x2) => { for (let x = Math.min(x1, x2); x <= Math.max(x1, x2); x++) map[y * W + x] = map[y * W + x] || 2; };
+        const carveV = (x, y1, y2) => { for (let y = Math.min(y1, y2); y <= Math.max(y1, y2); y++) map[y * W + x] = map[y * W + x] || 2; };
+        if (hFirst) { carveH(a.y, a.x, b.x); carveV(b.x, a.y, b.y); } else { carveV(a.x, a.y, b.y); carveH(b.y, a.x, b.x); }
+      }
+      // room index per tile
+      const roomOf = Array(W * H).fill(-1);
+      rooms.forEach((r, i) => { for (let yy = r.y; yy < r.y + r.h; yy++) for (let xx = r.x; xx < r.x + r.w; xx++) roomOf[yy * W + xx] = i; });
+      return { map, rooms, roomOf };
+    }
+  }
+  function newGame(party) {
+    sid++; busy = false; mode = null;
+    const g = generate(), boost = Settings.diff === 'easy' ? -1 : Settings.diff === 'hard' ? 1 : 0;
+    const r0 = g.rooms[0], last = g.rooms.length - 1, rl = g.rooms[last];
+    const free = (r) => { const o = []; for (let yy = r.y; yy < r.y + r.h; yy++) for (let xx = r.x; xx < r.x + r.w; xx++) o.push({ x: xx, y: yy }); return Util.shuffle(o); };
+    const startTiles = free(r0);
+    const heroes = party.map((p, i) => { const h = HEROES.find(x => x.k === p); const t = startTiles[i]; return { k: h.k, n: h.n, i: h.i, c: h.c, x: t.x, y: t.y, hp: h.hp, max: h.hp, atk: h.atk, def: h.def, mvb: h.mv, charges: h.k === 'mage' || h.k === 'cleric' ? 3 : 0, potions: 1 }; });
+    const mons = [];
+    g.rooms.forEach((r, i) => {
+      if (i === 0) return;
+      const tiles = free(r);
+      if (i === last) {
+        const st = tiles.pop();
+        g.stairs = { x: st.x, y: st.y };
+        const b = tiles.pop(); mons.push(mkMon('boss', b, boost + (Settings.diff === 'hard' ? 2 : 0)));
+        for (let k = 0; k < 2; k++) mons.push(mkMon('skeleton', tiles.pop(), boost));
+        return;
+      }
+      const depth = i / last, n = 1 + Math.floor(Math.random() * 2) + (depth > .5 ? 1 : 0);
+      for (let k = 0; k < n && tiles.length; k++) {
+        const roll = Math.random() + depth * .5;
+        mons.push(mkMon(roll < .6 ? 'goblin' : roll < 1.1 ? 'skeleton' : 'orc', tiles.pop(), boost));
+      }
+    });
+    S = { ...g, heroes, mons, seen: Array(W * H).fill(false), searched: g.rooms.map((_, i) => i === 0), turn: 0, mv: null, acted: false, rolled: false, gold: 0, round: 1, over: null, bossDead: false,
+      log: ['Torches lit, the party descends. Slay the Bone King and take the stairs down.'], dice: null };
+    reveal(); render();
+  }
+  function mkMon(t, pos, boost) { const m = MON[t]; return { t, x: pos.x, y: pos.y, hp: Math.max(1, m.hp + boost), max: Math.max(1, m.hp + boost), awake: false }; }
+  const log = m => { S.log.unshift(m); S.log = S.log.slice(0, 6); };
+
+  function reveal() {
+    S.heroes.forEach(h => {
+      if (h.hp <= 0) return;
+      const ri = S.roomOf[key(h.x, h.y)];
+      if (ri >= 0) { const r = S.rooms[ri]; for (let y = r.y - 1; y <= r.y + r.h; y++) for (let x = r.x - 1; x <= r.x + r.w; x++) if (x >= 0 && y >= 0 && x < W && y < H) S.seen[key(x, y)] = true; }
+      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) { const x = h.x + dx, y = h.y + dy; if (x >= 0 && y >= 0 && x < W && y < H) S.seen[key(x, y)] = true; }
+    });
+    S.mons.forEach(m => { if (!m.awake && S.seen[key(m.x, m.y)]) { m.awake = true; log(`${MON[m.t].i} A ${MON[m.t].n} notices you!`); } });
+  }
+  const hero = () => S.heroes[S.turn];
+  const occupied = (x, y, ignore) => S.heroes.some(h => h !== ignore && h.hp > 0 && h.x === x && h.y === y) || S.mons.some(m => m !== ignore && m.hp > 0 && m.x === x && m.y === y);
+  function reach(h, steps) {
+    const dist = { [key(h.x, h.y)]: 0 }, q = [[h.x, h.y]], out = [];
+    while (q.length) {
+      const [x, y] = q.shift(), d = dist[key(x, y)];
+      for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
+        const nx = x + dx, ny = y + dy; if (nx < 0 || ny < 0 || nx >= W || ny >= H || !at(nx, ny)) continue;
+        const k = key(nx, ny); if (dist[k] !== undefined || d + 1 > steps || !S.seen[k]) continue; // only walk where the torchlight reaches
+        if (S.mons.some(m => m.hp > 0 && m.x === nx && m.y === ny)) continue; // can't pass monsters
+        dist[k] = d + 1; q.push([nx, ny]);
+        if (!S.heroes.some(o => o.hp > 0 && o !== h && o.x === nx && o.y === ny)) out.push(k);
+      }
+    }
+    return { tiles: out, dist };
+  }
+  /* combat dice: skull 3/6, hero shield 2/6, monster shield 1/6 */
+  const face = () => { const r = Math.random() * 6; return r < 3 ? 'S' : r < 5 ? 'H' : 'M'; };
+  function combat(atkDice, defDice, defIsHero) {
+    const a = Array.from({ length: atkDice }, face), d = Array.from({ length: defDice }, face);
+    const hits = a.filter(f => f === 'S').length, blocks = d.filter(f => f === (defIsHero ? 'H' : 'M')).length;
+    return { a, d, dmg: Math.max(0, hits - blocks) };
+  }
+  const glyph = f => f === 'S' ? '💀' : f === 'H' ? '🛡️' : '⚫';
+
+  /* ---------- hero actions ---------- */
+  function rollMove() {
+    if (busy || S.mv !== null || S.over) return;
+    const h = hero(), a = Util.d6(), b = Util.d6(); S.mv = a + b + h.mvb; S.dice = [a, b]; Sfx.play('dice');
+    mode = 'move'; render();
+  }
+  async function stepTo(k) {
+    const h = hero(), r = reach(h, S.mv); if (!r.tiles.includes(k)) return;
+    const d = r.dist[k];
+    h.x = k % W; h.y = Math.floor(k / W); S.mv -= d; Sfx.play('move');
+    reveal();
+    if (S.mv <= 0) mode = null;
+    if (S.bossDead && S.stairs && h.x === S.stairs.x && h.y === S.stairs.y) return victory();
+    render();
+  }
+  function setMode(m) { if (busy || S.over) return; if (m !== 'move' && S.acted) return Util.toast('This hero has already acted this turn.'); mode = mode === m ? null : m; render(); }
+  async function hitMonster(m, dice, how) {
+    const h = hero(), M = MON[m.t], res = combat(dice, M.def, false);
+    m.hp -= res.dmg; S.acted = true; mode = null;
+    S.dice = null;
+    log(`${h.i} ${h.n} ${how} the ${M.n}: ${res.a.map(glyph).join('')} vs ${res.d.map(glyph).join('') || '–'} → ${res.dmg ? res.dmg + ' damage' : 'no damage'}.`);
+    Sfx.play(res.dmg ? 'hit' : 'card');
+    if (m.hp <= 0) {
+      log(`☠️ The ${M.n} falls!`); Sfx.play('capture');
+      if (m.t === 'boss') { S.bossDead = true; S.gold += 200; log('👑 The Bone King crumbles! The iron grate over the stairs grinds open. (+200 gold)'); Sfx.play('win'); }
+      else S.gold += 10;
+    }
+    render();
+  }
+  function clickTile(k) {
+    if (busy || S.over) return;
+    const x = k % W, y = Math.floor(k / W), h = hero();
+    const m = S.mons.find(mm => mm.hp > 0 && mm.x === x && mm.y === y && S.seen[key(x, y)]);
+    if (m) {
+      if (S.acted) return Util.toast('This hero has already acted this turn.');
+      if (mode === 'fire') { if (Math.max(Math.abs(m.x - h.x), Math.abs(m.y - h.y)) > 6) return Util.toast('Out of range (6 squares).'); h.charges--; return hitMonster(m, 3, 'hurls a fireball at'); }
+      if (adj8(h, m)) return hitMonster(m, h.atk, 'attacks');
+      return Util.toast('Get next to a monster to attack it.');
+    }
+    if (mode === 'heal') {
+      const t = S.heroes.find(o => o.hp > 0 && o.x === x && o.y === y);
+      if (!t) return;
+      if (t !== h && !adj8(h, t)) return Util.toast('Heal yourself or a hero next to you.');
+      const before = t.hp; t.hp = Math.min(t.max, t.hp + 4); h.charges--; S.acted = true; mode = null; Sfx.play('potion');
+      log(`✚ The Cleric heals ${t === h ? 'themself' : 'the ' + t.n} for ${t.hp - before}.`); return render();
+    }
+    if (S.mv !== null && S.mv > 0) stepTo(k);
+  }
+  function search() {
+    if (busy || S.over || S.acted) return;
+    const h = hero(), ri = S.roomOf[key(h.x, h.y)];
+    if (ri < 0) return Util.toast('Search inside a room, not in a corridor.');
+    if (S.searched[ri]) return Util.toast('This room has already been searched.');
+    if (S.mons.some(m => m.hp > 0 && m.awake && S.roomOf[key(m.x, m.y)] === ri)) return Util.toast("You can't search with monsters in the room!");
+    S.searched[ri] = true; S.acted = true; mode = null;
+    const r = Util.d6();
+    if (r === 1) { if (h.k === 'rogue') log('🗡️ The Rogue spots a pressure plate and disarms it. Inside: 30 gold.'), S.gold += 30; else { h.hp -= 2; log(`💥 A trap! Darts hit the ${h.n} for 2 damage.`); Sfx.play('hit'); } }
+    else if (r <= 3) { const g = 15 + Util.d6() * 10 + (h.k === 'rogue' ? 20 : 0); S.gold += g; log(`💰 The ${h.n} finds ${g} gold.`); Sfx.play('match'); }
+    else if (r === 4) { h.potions++; log(`🧪 The ${h.n} finds a healing potion.`); Sfx.play('potion'); }
+    else if (r === 5) { S.gold += 50; log(`💎 A hidden gem! +50 gold.`); Sfx.play('match'); }
+    else { h.atk++; log(`🗡️ A fine weapon! The ${h.n} now rolls ${h.atk} attack dice.`); Sfx.play('win'); }
+    if (h.hp <= 0) heroDown(h);
+    render();
+  }
+  function potion() {
+    const h = hero(); if (busy || S.over || S.acted || !h.potions) return;
+    if (h.hp >= h.max) return Util.toast('Already at full health.');
+    const b = h.hp; h.hp = Math.min(h.max, h.hp + 5); h.potions--; S.acted = true; mode = null; Sfx.play('potion');
+    log(`🧪 The ${h.n} drinks a potion (+${h.hp - b} HP).`); render();
+  }
+  function heroDown(h) { log(`💀 The ${h.n} has fallen!`); Sfx.play('lose'); if (S.heroes.every(x => x.hp <= 0)) defeat(); }
+  function endHeroTurn() {
+    if (busy || S.over) return;
+    mode = null; S.mv = null; S.acted = false; S.dice = null;
+    let n = S.turn + 1;
+    while (n < S.heroes.length && S.heroes[n].hp <= 0) n++;
+    if (n >= S.heroes.length) return monsterPhase();
+    S.turn = n; render();
+  }
+  async function monsterPhase() {
+    busy = true; const my = sid; render();
+    for (const m of S.mons) {
+      if (m.hp <= 0 || !m.awake || S.over) continue;
+      const M = MON[m.t], alive = S.heroes.filter(h => h.hp > 0);
+      if (!alive.length) break;
+      // walk towards the nearest hero
+      if (!alive.some(h => adj8(h, m))) {
+        const dist = { [key(m.x, m.y)]: 0 }, prev = {}, q = [[m.x, m.y]]; let goal = null;
+        while (q.length && goal === null) {
+          const [x, y] = q.shift();
+          for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
+            const nx = x + dx, ny = y + dy, k = key(nx, ny);
+            if (nx < 0 || ny < 0 || nx >= W || ny >= H || !at(nx, ny) || dist[k] !== undefined) continue;
+            if (occupied(nx, ny, m)) continue;
+            dist[k] = dist[key(x, y)] + 1; prev[k] = key(x, y); q.push([nx, ny]);
+            if (alive.some(h => adj8(h, { x: nx, y: ny }))) { goal = k; break; }
+          }
+        }
+        if (goal !== null) {
+          const path = []; for (let k = goal; k !== key(m.x, m.y); k = prev[k]) path.unshift(k);
+          for (const k of path.slice(0, M.mv)) { m.x = k % W; m.y = Math.floor(k / W); Sfx.play('place'); render(); await Util.sleep(Util.delay(110)); if (my !== sid) return; }
+        }
+      }
+      const targets = alive.filter(h => adj8(h, m));
+      if (targets.length) {
+        const t = targets.sort((a, b) => a.hp - b.hp)[0], res = combat(M.atk, t.def, true);
+        t.hp -= res.dmg;
+        log(`${M.i} The ${M.n} attacks the ${t.n}: ${res.a.map(glyph).join('')} vs ${res.d.map(glyph).join('')} → ${res.dmg ? res.dmg + ' damage' : 'blocked!'}`);
+        Sfx.play(res.dmg ? 'hit' : 'card'); render();
+        if (t.hp <= 0) heroDown(t);
+        await Util.sleep(Util.delay(450)); if (my !== sid) return;
+      }
+    }
+    if (S.over) return;
+    busy = false; S.round++; S.turn = S.heroes.findIndex(h => h.hp > 0);
+    log(`— Round ${S.round}: the heroes' turn —`); render();
+  }
+  function victory() {
+    S.over = 'Victory!'; Sfx.play('win'); render();
+    const alive = S.heroes.filter(h => h.hp > 0).length;
+    App.endGame('delve', true, 'The party escapes!', `You slew the Bone King and descended the stairs with <b>${S.gold} gold</b> in ${S.round} rounds. ${alive} of ${S.heroes.length} heroes made it out.`, () => newGame(S.heroes.map(h => h.k)));
+  }
+  function defeat() {
+    S.over = 'The party has fallen.'; busy = false; render();
+    App.endGame('delve', false, 'The torches gutter out…', `Your whole party fell in the dark on round ${S.round}, carrying ${S.gold} gold.`, () => newGame(S.heroes.map(h => h.k)));
+  }
+
+  /* ---------- render ---------- */
+  function render() {
+    if (!root) return;
+    const h = hero(), cw = Math.floor(Math.min((root.clientWidth || 360) - 8, 520) / W);
+    const rt = mode === 'move' && S.mv > 0 && !busy ? new Set(reach(h, S.mv).tiles) : new Set();
+    let cells = '';
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+      const k = key(x, y), seen = S.seen[k], t = S.map[k];
+      let bg = '#07050a', inner = '';
+      if (seen) {
+        bg = t === 0 ? 'linear-gradient(160deg,#3b3530,#24201c)' : t === 1 ? ((x + y) % 2 ? '#8a7a66' : '#80705c') : '#6e6152';
+        if (S.stairs && S.stairs.x === x && S.stairs.y === y) inner = `<span class="text-[70%]">${S.bossDead ? '🔽' : '🔒'}</span>`;
+        const m = S.mons.find(mm => mm.hp > 0 && mm.x === x && mm.y === y);
+        const hh = S.heroes.find(o => o.hp > 0 && o.x === x && o.y === y);
+        if (m) {
+          const atkable = !S.acted && !busy && !S.over && ((mode === 'fire' && Math.max(Math.abs(m.x - h.x), Math.abs(m.y - h.y)) <= 6) || (mode !== 'fire' && adj8(h, m)));
+          inner = `<span class="relative leading-none" style="font-size:${cw * .72}px">${MON[m.t].i}</span><span class="absolute bottom-0 left-0.5 right-0.5 h-[3px] bg-black/60"><span class="block h-full bg-red-500" style="width:${m.hp / m.max * 100}%"></span></span>${atkable ? '<span class="absolute inset-0 ring-2 ring-red-400 rounded-sm"></span>' : ''}`;
+        } else if (hh) {
+          const cur = hh === h && !busy;
+          inner = `<span class="rounded-full flex items-center justify-center leading-none" style="width:90%;height:90%;background:${hh.c};font-size:${cw * .5}px;box-shadow:0 0 0 2px ${cur ? '#f3d266' : 'rgba(0,0,0,.5)'}${cur ? ',0 0 10px #f3d266' : ''}">${hh.i}</span><span class="absolute bottom-0 left-0.5 right-0.5 h-[3px] bg-black/60"><span class="block h-full bg-emerald-400" style="width:${hh.hp / hh.max * 100}%"></span></span>`;
+        }
+      }
+      cells += `<div onclick="Delve.tile(${k})" class="relative flex items-center justify-center ${rt.has(k) ? 'cursor-pointer' : ''}" style="background:${bg}${rt.has(k) ? ';box-shadow:inset 0 0 0 2px #7ee2a8' : ''}">${inner}</div>`;
+    }
+    const heroCards = S.heroes.map((o, i) => `<div class="flex items-center gap-2 text-xs ${i === S.turn && !busy ? 'text-amber-200' : 'text-amber-100/70'} ${o.hp <= 0 ? 'opacity-40 line-through' : ''}">
+      <span class="w-5 h-5 rounded-full flex items-center justify-center" style="background:${o.c}">${o.i}</span><span class="w-14">${o.n}</span>
+      <span class="flex-1 h-2 bg-black/50 rounded"><span class="block h-full rounded bg-emerald-500" style="width:${Math.max(0, o.hp) / o.max * 100}%"></span></span><span class="w-10 text-right">${Math.max(0, o.hp)}/${o.max}</span>
+      <span title="Attack dice">⚔${o.atk}</span>${o.potions ? `<span>🧪${o.potions}</span>` : ''}${o.charges ? `<span>${o.k === 'mage' ? '🔥' : '✚'}${o.charges}</span>` : ''}</div>`).join('');
+    const can = !busy && !S.over;
+    const b = (label, fn, on, primary) => Util.btn(label, fn, primary ? 'brass' : 'wood', on ? '' : 'opacity-40 pointer-events-none');
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-3 items-center lg:items-start justify-center">
+        <div class="grid" style="grid-template-columns:repeat(${W},${cw}px);grid-template-rows:repeat(${H},${cw}px);border:5px solid #2a1a10;border-radius:6px;box-shadow:0 12px 28px rgba(0,0,0,.7)">${cells}</div>
+        <div class="w-full lg:w-80 flex flex-col gap-2">
+          ${Util.panel(`
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-8 h-8 rounded-full flex items-center justify-center text-lg" style="background:${h.c}">${h.i}</span>
+              <div><div class="font-display text-amber-200">${busy ? 'The monsters move…' : S.over || `The ${h.n}'s turn`}</div><div class="text-[11px] text-amber-100/60">Round ${S.round} · 💰 ${S.gold} gold${S.mv !== null ? ` · 👣 ${S.mv} moves left` : ''}</div></div>
+              ${S.dice ? `<div class="ml-auto flex gap-1 scale-75 origin-right">${S.dice.map(v => Util.die(v)).join('')}</div>` : ''}
+            </div>
+            <div class="grid grid-cols-3 gap-1.5">
+              ${b('🎲 Move', 'Delve.move()', can && S.mv === null, true)}
+              ${b('⚔️ Attack', "Delve.mode('attack')", can && !S.acted)}
+              ${h.k === 'mage' ? b(`🔥 Fireball`, "Delve.mode('fire')", can && !S.acted && h.charges > 0) : h.k === 'cleric' ? b('✚ Heal', "Delve.mode('heal')", can && !S.acted && h.charges > 0) : b('🔍 Search', 'Delve.search()', can && !S.acted)}
+              ${h.k === 'mage' || h.k === 'cleric' ? b('🔍 Search', 'Delve.search()', can && !S.acted) : ''}
+              ${b('🧪 Potion', 'Delve.potion()', can && !S.acted && h.potions > 0)}
+              ${b('⏭️ End turn', 'Delve.end()', can, S.acted || S.mv === 0)}
+            </div>
+            <p class="text-[11px] text-amber-100/55 mt-2">${mode === 'move' ? 'Tap a green-edged square to walk there.' : mode === 'fire' ? 'Tap a monster within 6 squares.' : mode === 'heal' ? 'Tap yourself or a hero next to you.' : 'Roll to move, then act once: tap a monster next to you to attack it.'}</p>`, '!p-3')}
+          ${Util.panel(heroCards, '!p-3 space-y-1.5')}
+          ${Util.panel(`<div class="text-xs space-y-1 text-amber-50/80">${S.log.map((l, i) => `<div class="${i ? 'opacity-60' : 'text-amber-200'}">${l}</div>`).join('')}</div>`, '!p-3')}
+          <div class="flex gap-2 justify-center">${Util.btn('New Dungeon', 'Delve.restart()')}</div>
+        </div>
+      </div>`;
+  }
+  return {
+    async setup() {
+      const seats = await Seats.choose({ title: 'Torchlight Delve', min: 1, max: 4, def: 3, names: HEROES.map(x => `${x.i} ${x.n}`), colors: HEROES.map(x => ({ id: x.k, name: x.n, hex: x.c, dark: '#222' })), aiAllowed: false, subs: HEROES.map(x => x.sub), note: 'Choose your party. Play them all yourself, or pass the phone so each person runs one hero. The monsters are always the AI.' });
+      return seats ? { party: seats.map(s => s.col.id) } : null;
+    },
+    mount(el, o = {}) {
+      root = el;
+      if (o.resume) { sid++; busy = false; mode = null; S = o.resume; S.mv = S.mv === undefined ? null : S.mv; render(); }
+      else newGame(o.party || ['warrior', 'mage', 'rogue']);
+    },
+    snapshot() { return S && !S.over && !busy ? S : null; },
+    destroy() { sid++; root = null; },
+    move: rollMove, tile: clickTile, mode: setMode, search, potion, end: endHeroTurn,
+    restart() { newGame(S.heroes.map(h => h.k)); },
+    newGame() { newGame(S.heroes.map(h => h.k)); },
+    _test: { get S() { return S; }, generate }
+  };
+})();
+Games.delve = Delve;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -4510,7 +6052,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.1.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.2.0",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

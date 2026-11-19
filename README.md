@@ -1,12 +1,12 @@
 # The Grand Tabletop Compendium
 
-*Ten classic and esoteric parlour games, one table.*
+*Fifteen classic, esoteric and family games, one table.*
 
-Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, quiet patience, and a pair of dungeon-crawling card games that don't play by the old rules. A free game from Kralnu Games.
+Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, quiet patience, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.1.0**
+**Current version: 1.2.0**
 
 ## The games
 
@@ -22,8 +22,13 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | 🂡 **FreeCell** | Every card face-up. Four free cells and supermoves | Solo |
 | ⚔️ **Scoundrel** | A roguelike dungeon crawl through a 44-card deck. Weapons go dull as you use them | Solo |
 | 👑 **Regicide** | Fight 12 royal bosses with suit powers, combos and solo Jesters | Solo |
+| 🐍 **Snakes & Ladders** | The classic race to 100, with a bounce-back finish | 2–4, people or AI |
+| 🎯 **Ludo** | Break out on a 6, capture rivals and race all four pieces home | 2–4, people or AI |
+| 🁫 **Dominoes** | Double-six draw game, first to 50 points | 2–4, people or AI |
+| 🕵️ **Murder at Marrowgate Manor** | An original whodunit: suggest, deduce with your notebook, then accuse | 3–6, people or AI |
+| 🕯️ **Torchlight Delve** | An original dungeon crawl: a party of heroes, combat dice, fog of war and the Bone King | 1–4 heroes, solo or pass & play |
 
-Every board game can be played against the AI or as **Pass & Play**: two people sharing one phone. Tap **Play** on a game to choose.
+Every board game can be played against the AI or as **Pass & Play**: people sharing one phone. The family games take 2 to 6 players in any mix of people and AI, and a pass-the-phone screen keeps hands secret. Tap **Play** on a game to choose.
 
 ## Main menu
 
@@ -57,7 +62,8 @@ Ideas, design and testing by Kris. Built with Claude, an AI by Anthropic.
 
 - **Scoundrel** was designed by Zach Gage and Kurt Bieg.
 - **Regicide** was designed by Paul Abrahams, Luke Badger and Andy Richdale (Badgers From Mars).
-- Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike and FreeCell are traditional games.
+- Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes & Ladders, Ludo and Dominoes are traditional games.
+- Murder at Marrowgate Manor and Torchlight Delve are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.
 - Fonts: Cinzel, Inter and Noto Serif JP (SIL Open Font License). Styles: Tailwind CSS (MIT). Sound effects and music are generated live in the browser.
 
 ## Feedback and support
@@ -69,6 +75,12 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.2.0 · Family game night (19 November 2026)
+- Five new games: Snakes & Ladders, Ludo, Dominoes, Murder at Marrowgate Manor and Torchlight Delve
+- Murder at Marrowgate Manor: an original whodunit for 3 to 6 players with a detective notebook and AI detectives
+- Torchlight Delve: an original dungeon-crawl board game for a party of 1 to 4 heroes
+- 2 to 6 players in any mix of people and AI, with a pass-the-phone screen for secret hands
 
 ### 1.1.0 · Pass and play, sound and saves (19 November 2026)
 - Pass and play for Shogi, Checkers and Backgammon, so every board game can now be played by two people on one phone
