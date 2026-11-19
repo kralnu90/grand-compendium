@@ -1,12 +1,12 @@
 # The Grand Tabletop Compendium
 
-*Twenty classic, esoteric, family and word games, one table.*
+*Twenty-nine classic, esoteric, family, pub and word games, one table.*
 
-Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, quiet patience, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
+Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.3.0**
+**Current version: 1.4.0**
 
 ## The games
 
@@ -26,6 +26,15 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | 🎯 **Ludo** | Break out on a 6, capture rivals and race all four pieces home | 2–4, people or AI |
 | 🁫 **Dominoes** | Double-six draw game, first to 50 points | 2–4, people or AI |
 | 🕵️ **Murder at Marrowgate Manor** | An original whodunit: suggest, deduce with your notebook, then accuse | 3–6, people or AI |
+| ⚫ **Reversi** | Flip lines of discs and fight for the corners | vs AI or 2 players |
+| 🔴 **Four in a Row** | Drop discs and connect four before your rival | vs AI or 2 players |
+| ⬡ **Nine Men's Morris** | The ancient game of mills: place, slide, then fly | vs AI or 2 players |
+| 🎲 **Yacht** | Five dice, three rolls, thirteen boxes to fill | 1–4, people or AI |
+| 🤥 **Liar's Dice** | Bid on the dice under everyone's cups, or call "Liar!" | 2–6, people or AI |
+| 🪵 **Cribbage** | The pub classic to 121, with full pegging and counting | vs AI or 2 players |
+| 🥃 **Gin Rummy** | Melds, deadwood, knocking, Gin and undercuts, first to 100 | vs AI or 2 players |
+| 🚢 **Battleships** | Hide your fleet and hunt theirs | vs AI or 2 players |
+| 🔢 **Sudoku** | Fresh puzzles with one solution, four levels, notes and a daily | Solo |
 | 🃏 **Colour Clash** | A fast shedding card game: Skips, Reverses, +2s, Wilds and a "Last card!" call | 2–6, people or AI |
 | 🔤 **Tilecraft** | A crossword tile game with bonus squares and AI opponents that know 110,000+ words | 2–4, people or AI |
 | 🔒 **Word Lock** | Crack the five-letter word in six guesses: daily, practice or set one for a friend | Solo / pass & play |
@@ -67,7 +76,7 @@ Ideas, design and testing by Kris. Built with Claude, an AI by Anthropic.
 
 - **Scoundrel** was designed by Zach Gage and Kurt Bieg.
 - **Regicide** was designed by Paul Abrahams, Luke Badger and Andy Richdale (Badgers From Mars).
-- Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes & Ladders, Ludo and Dominoes are traditional games.
+- Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes & Ladders, Ludo, Dominoes, Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships and Sudoku are traditional games.
 - Murder at Marrowgate Manor and Torchlight Delve are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.
 - Tilecraft, Word Lock, Word Wheel, Word Grid and Colour Clash are original takes on much-loved word and card game ideas, not connected to or endorsed by the makers of any other game.
 - Word list: SCOWL, copyright 2000–2011 Kevin Atkinson, used under its permissive licence (see `WORDS-LICENSE.txt`), with British spellings added.
@@ -82,6 +91,12 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.4.0 · A fuller parlour (19 November 2026)
+- Nine new games: Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships and Sudoku
+- Cribbage and Gin Rummy with full scoring, against the AI or pass and play
+- Sudoku puzzles made fresh every time with a single solution, plus a daily puzzle and notes
+- Category shortcuts on the main menu
 
 ### 1.3.0 · Words and wild cards (19 November 2026)
 - Tilecraft: a crossword tile game for 2 to 4 players, with AI opponents that know over 110,000 words

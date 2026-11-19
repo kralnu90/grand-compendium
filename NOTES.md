@@ -2,8 +2,8 @@
 
 Kralnu Games ten-in-one parlour collection. Live at https://kralnugames.com/grand-compendium/ (GitHub Pages from `main`, root).
 
-## Current state: v1.3.0 (19 Nov 2026)
-- Twenty games (1.3.0 added Colour Clash, Tilecraft, Word Lock, Word Wheel, Word Grid). Fifteen before that: Chess, Shogi, Checkers, Mancala, Backgammon (vs AI or Pass & Play); Mahjong Solitaire, Klondike, FreeCell, Scoundrel, Regicide (solo); Snakes & Ladders, Ludo, Dominoes, Murder at Marrowgate Manor, Torchlight Delve (family, 1-6 players)
+## Current state: v1.4.0 (19 Nov 2026)
+- Twenty-nine games. 1.4.0 added Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships, Sudoku (categories now include Pub Card Classics and Solitaire & Puzzles; main menu has category shortcut chips). Earlier (1.3.0 added Colour Clash, Tilecraft, Word Lock, Word Wheel, Word Grid). Fifteen before that: Chess, Shogi, Checkers, Mancala, Backgammon (vs AI or Pass & Play); Mahjong Solitaire, Klondike, FreeCell, Scoundrel, Regicide (solo); Snakes & Ladders, Ludo, Dominoes, Murder at Marrowgate Manor, Torchlight Delve (family, 1-6 players)
 - Family games use `Seats.choose()` for player setup (person/AI per seat) and `curtain()` for pass-the-phone privacy; games with a `setup()` get it from the Play button
 - Marrowgate Manor is an original Cluedo-style game (Cluedo is a Hasbro trademark, so no Cluedo names/characters). Torchlight Delve is an original HeroQuest-style crawl
 - Kralnu Standard: splash, main menu (Continue, Settings, Trophies, More, Install), More panel (How to play, What's new, Credits, Review, Support, Get latest), version in the corner, ⚙️ in-game settings
@@ -31,6 +31,8 @@ Kralnu Games ten-in-one parlour collection. Live at https://kralnugames.com/gran
 3. Post a news update on the hub (kralnu90.github.io `news.json`) and refresh the Play-page card
 
 ## Ideas / not done yet
+- Cribbage and Gin resume a saved game at the start of a fresh deal (scores kept), not mid-hand
+- Polish wanted (Kris's list): animations (sliding pieces, dealing), search/favourites/recently played, online rooms for turn-based games
 - Regicide is solo only (the real game is co-op for up to 4)
 - Chess and shogi don't detect draws by repetition
 - Torchlight Delve: one dungeon floor per run; could add more floors, more monsters and hero levelling

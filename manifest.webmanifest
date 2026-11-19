@@ -1,7 +1,7 @@
 {
   "name": "The Grand Tabletop Compendium",
   "short_name": "Compendium",
-  "description": "Twenty parlour, family and word games in one, by Kralnu Games.",
+  "description": "Twenty-nine parlour, family, pub and word games in one, by Kralnu Games.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

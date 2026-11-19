@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Twenty parlour, family and word games in one: Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong, Klondike, FreeCell, Scoundrel, Regicide, Snakes &amp; Ladders, Ludo, Dominoes, a murder mystery, a dungeon crawl, a crossword tile game, three more word games and a wild card game. Free, from Kralnu Games.">
+  <meta name="description" content="Twenty-nine parlour, family, pub and word games in one: Chess, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Cribbage, Gin Rummy, Sudoku, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Twenty games at one table: royal strategy, tumbling dice, quiet patience, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Twenty-nine games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -247,6 +247,9 @@
   .pointer-events-none {
     pointer-events: none;
   }
+  .visible {
+    visibility: visible;
+  }
   .absolute {
     position: absolute;
   }
@@ -352,6 +355,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .my-1 {
+    margin-block: var(--spacing);
+  }
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
   }
@@ -379,6 +385,9 @@
   .mt-auto {
     margin-top: auto;
   }
+  .mr-0\.5 {
+    margin-right: calc(var(--spacing) * 0.5);
+  }
   .mr-1 {
     margin-right: var(--spacing);
   }
@@ -402,6 +411,9 @@
   }
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
   }
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
@@ -435,6 +447,9 @@
   }
   .table {
     display: table;
+  }
+  .\!h-9 {
+    height: calc(var(--spacing) * 9) !important;
   }
   .h-1\.5 {
     height: calc(var(--spacing) * 1.5);
@@ -496,6 +511,9 @@
   .max-h-\[92vh\] {
     max-height: 92vh;
   }
+  .min-h-\[16px\] {
+    min-height: 16px;
+  }
   .min-h-\[20px\] {
     min-height: 20px;
   }
@@ -505,14 +523,23 @@
   .min-h-\[26px\] {
     min-height: 26px;
   }
+  .min-h-\[120px\] {
+    min-height: 120px;
+  }
   .min-h-\[150px\] {
     min-height: 150px;
   }
   .min-h-screen {
     min-height: 100vh;
   }
+  .\!w-9 {
+    width: calc(var(--spacing) * 9) !important;
+  }
   .w-1\.5 {
     width: calc(var(--spacing) * 1.5);
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
   }
   .w-2\.5 {
     width: calc(var(--spacing) * 2.5);
@@ -541,6 +568,9 @@
   .w-14 {
     width: calc(var(--spacing) * 14);
   }
+  .w-16 {
+    width: calc(var(--spacing) * 16);
+  }
   .w-\[84px\] {
     width: 84px;
   }
@@ -552,6 +582,9 @@
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
+  }
+  .max-w-\[120px\] {
+    max-width: 120px;
   }
   .max-w-\[260px\] {
     max-width: 260px;
@@ -624,6 +657,9 @@
   .resize {
     resize: both;
   }
+  .scroll-mt-24 {
+    scroll-margin-top: calc(var(--spacing) * 24);
+  }
   .list-disc {
     list-style-type: disc;
   }
@@ -651,6 +687,9 @@
   .grid-cols-8 {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
+  .grid-cols-9 {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -662,6 +701,9 @@
   }
   .items-center {
     align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
   }
   .items-start {
     align-items: flex-start;
@@ -770,6 +812,9 @@
   }
   .rounded-\[3px\] {
     border-radius: 3px;
+  }
+  .rounded-\[9px\] {
+    border-radius: 9px;
   }
   .rounded-\[40px\] {
     border-radius: 40px;
@@ -942,6 +987,12 @@
   .bg-emerald-500 {
     background-color: var(--color-emerald-500);
   }
+  .bg-emerald-500\/15 {
+    background-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 15%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-emerald-500) 15%, transparent);
+    }
+  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -957,6 +1008,12 @@
       background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
     }
   }
+  .bg-white\/60 {
+    background-color: color-mix(in srgb, #fff 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 60%, transparent);
+    }
+  }
   .\!p-2 {
     padding: calc(var(--spacing) * 2) !important;
   }
@@ -965,6 +1022,9 @@
   }
   .p-0\.5 {
     padding: calc(var(--spacing) * 0.5);
+  }
+  .p-1 {
+    padding: var(--spacing);
   }
   .p-1\.5 {
     padding: calc(var(--spacing) * 1.5);
@@ -986,6 +1046,9 @@
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
+  }
+  .p-\[1px\] {
+    padding: 1px;
   }
   .\!px-1\.5 {
     padding-inline: calc(var(--spacing) * 1.5) !important;
@@ -1070,6 +1133,9 @@
   }
   .pb-1 {
     padding-bottom: var(--spacing);
+  }
+  .pl-2 {
+    padding-left: calc(var(--spacing) * 2);
   }
   .pl-5 {
     padding-left: calc(var(--spacing) * 5);
@@ -1357,6 +1423,12 @@
       color: color-mix(in oklab, var(--color-amber-900) 60%, transparent);
     }
   }
+  .text-amber-900\/70 {
+    color: color-mix(in srgb, oklch(41.4% 0.112 45.904) 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-amber-900) 70%, transparent);
+    }
+  }
   .text-emerald-300 {
     color: var(--color-emerald-300);
   }
@@ -1374,6 +1446,9 @@
   }
   .text-sky-300 {
     color: var(--color-sky-300);
+  }
+  .text-transparent {
+    color: transparent;
   }
   .text-white {
     color: var(--color-white);
@@ -1399,6 +1474,9 @@
   .opacity-0 {
     opacity: 0%;
   }
+  .opacity-30 {
+    opacity: 30%;
+  }
   .opacity-40 {
     opacity: 40%;
   }
@@ -1410,6 +1488,10 @@
   }
   .opacity-80 {
     opacity: 80%;
+  }
+  .\!shadow-\[0_0_0_3px_\#f3d266\] {
+    --tw-shadow: 0 0 0 3px var(--tw-shadow-color, #f3d266) !important;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
   }
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
@@ -1423,9 +1505,16 @@
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
+  .ring-1 {
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
   .ring-2 {
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .ring-amber-300 {
+    --tw-ring-color: var(--color-amber-300);
   }
   .ring-amber-400\/70 {
     --tw-ring-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 70%, transparent);
@@ -1435,6 +1524,12 @@
   }
   .ring-emerald-300 {
     --tw-ring-color: var(--color-emerald-300);
+  }
+  .ring-emerald-400\/40 {
+    --tw-ring-color: color-mix(in srgb, oklch(76.5% 0.177 163.223) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-ring-color: color-mix(in oklab, var(--color-emerald-400) 40%, transparent);
+    }
   }
   .ring-red-400 {
     --tw-ring-color: var(--color-red-400);
@@ -1490,12 +1585,23 @@
       --tw-scale-z: 110%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
     }
+    .hover\:border-amber-300:hover {
+      border-color: var(--color-amber-300);
+    }
     .hover\:border-amber-400\/60:hover {
       border-color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 60%, transparent);
     }
     @supports (color: color-mix(in lab, red, red)) {
       .hover\:border-amber-400\/60:hover {
         border-color: color-mix(in oklab, var(--color-amber-400) 60%, transparent);
+      }
+    }
+    .hover\:bg-amber-500\/10:hover {
+      background-color: color-mix(in srgb, oklch(76.9% 0.188 70.08) 10%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-amber-500\/10:hover {
+        background-color: color-mix(in oklab, var(--color-amber-500) 10%, transparent);
       }
     }
     .hover\:bg-black\/45:hover {
@@ -1512,6 +1618,14 @@
     @supports (color: color-mix(in lab, red, red)) {
       .hover\:bg-white\/5:hover {
         background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
+      }
+    }
+    .hover\:bg-white\/15:hover {
+      background-color: color-mix(in srgb, #fff 15%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-white\/15:hover {
+        background-color: color-mix(in oklab, var(--color-white) 15%, transparent);
       }
     }
     .hover\:bg-white\/20:hover {
@@ -1607,6 +1721,9 @@
     }
     .lg\:w-80 {
       width: calc(var(--spacing) * 80);
+    }
+    .lg\:w-96 {
+      width: calc(var(--spacing) * 96);
     }
     .lg\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2191,7 +2308,7 @@
           <h1 class="font-display text-lg sm:text-xl font-bold tracking-wide text-amber-300 leading-tight">
             The Grand Tabletop Compendium
           </h1>
-          <p id="header-subtitle" class="text-xs text-amber-100/70">Twenty Classic & Esoteric Parlor Games</p>
+          <p id="header-subtitle" class="text-xs text-amber-100/70">Twenty-Nine Classic & Esoteric Parlor Games</p>
         </div>
       </div>
 
@@ -2342,7 +2459,7 @@ const GAME_CATALOG = [
     id: 'klondike',
     title: 'Klondike Solitaire',
     subtitle: 'Classic Patience',
-    category: 'Solitaire & Patience',
+    category: 'Solitaire & Puzzles',
     icon: '🃏',
     players: 'Solo Patience',
     tagline: 'Build four ascending suit foundations from Ace to King in Draw-1 or Draw-3 mode.',
@@ -2403,7 +2520,7 @@ const GAME_CATALOG = [
     id: 'freecell',
     title: 'FreeCell',
     subtitle: 'The Thinking Player’s Patience',
-    category: 'Solitaire & Patience',
+    category: 'Solitaire & Puzzles',
     icon: '🂡',
     players: 'Solo Patience',
     tagline: 'Every card face-up from the start. Four free cells and pure planning.',
@@ -2613,6 +2730,112 @@ const GAME_CATALOG = [
         <li><strong>Players:</strong> Play solo to beat your best, or take turns on the same grid against friends or the AI. When everyone's done, every possible word is revealed.</li>
         <li><strong>Solo trophy:</strong> Score 15 or more.</li>
       </ul>`
+  },
+  {
+    id: 'reversi', title: 'Reversi', subtitle: 'Flip Your Way to Victory', category: 'Strategy Board Games', icon: '⚫',
+    players: '1P vs AI / 2P Pass & Play', tagline: 'Trap your rival’s discs between yours and flip them. Grab the corners.',
+    rules: `
+      <p><strong>Objective:</strong> Have the most discs showing your colour when the board is full or nobody can move.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Placing:</strong> Each turn, place a disc so that one or more straight lines of your opponent's discs are trapped between it and another of your discs. Every trapped disc flips to your colour.</li>
+        <li><strong>Lines:</strong> Lines can run across, down or diagonally, and one move can flip several lines at once.</li>
+        <li><strong>Passing:</strong> If you have no legal move, you pass. When neither player can move, the game ends.</li>
+        <li><strong>Tip:</strong> Corners can never be flipped back, and the squares next to them often hand them to your opponent.</li>
+      </ul>`
+  },
+  {
+    id: 'four', title: 'Four in a Row', subtitle: 'Drop, Block, Connect', category: 'Strategy Board Games', icon: '🔴',
+    players: '1P vs AI / 2P Pass & Play', tagline: 'Drop discs into the frame and be first to line up four.',
+    rules: `
+      <p><strong>Objective:</strong> Be the first to get four of your discs in a line: across, down or diagonally.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Dropping:</strong> Tap a column to drop a disc. It falls to the lowest empty space.</li>
+        <li><strong>Blocking:</strong> Watch your opponent's lines. Three in a row with a gap is a threat.</li>
+        <li><strong>Draw:</strong> If all 42 spaces fill up with no line of four, it's a draw.</li>
+      </ul>`
+  },
+  {
+    id: 'morris', title: "Nine Men's Morris", subtitle: 'An Ancient Game of Mills', category: 'Strategy Board Games', icon: '⬡',
+    players: '1P vs AI / 2P Pass & Play', tagline: 'A game older than chess: form mills of three and pick off your opponent’s men.',
+    rules: `
+      <p><strong>Objective:</strong> Reduce your opponent to two pieces, or leave them with no legal move.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Placing:</strong> Players take turns placing their nine pieces on the empty points.</li>
+        <li><strong>Mills:</strong> Three of your pieces in a row along a line is a <em>mill</em>. Each new mill lets you remove one enemy piece, though not one that's in a mill unless every piece is.</li>
+        <li><strong>Moving:</strong> Once all pieces are placed, slide a piece along a line to a neighbouring empty point.</li>
+        <li><strong>Flying:</strong> When you're down to three pieces, you can move one to any empty point.</li>
+      </ul>`
+  },
+  {
+    id: 'yacht', title: 'Yacht', subtitle: 'Five Dice, Thirteen Boxes', category: 'Tile & Dice Classics', icon: '🎲',
+    players: '1–4 players, people or AI', tagline: 'Roll up to three times, chase straights and full houses, and fill your scorecard.',
+    rules: `
+      <p><strong>Objective:</strong> Score the most points after filling all 13 boxes on your card. Yacht is the classic public-domain dice game that many modern dice games grew from.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Your turn:</strong> Roll five dice. Tap dice to hold them, and re-roll the rest up to two more times. Then pick a box to score.</li>
+        <li><strong>Upper boxes:</strong> Ones to Sixes score the total of that number. Reach 63 between them for a 35-point bonus.</li>
+        <li><strong>Lower boxes:</strong> Three or Four of a kind (total of all dice), Full house (25), Small straight of four (30), Large straight of five (40), Yacht: five the same (50), and Chance (any total).</li>
+        <li><strong>Zeros:</strong> If nothing fits, you must still fill a box, scoring 0.</li>
+        <li><strong>Bonus Yachts:</strong> Roll another Yacht after scoring 50 for a 100-point bonus.</li>
+      </ul>`
+  },
+  {
+    id: 'liars', title: "Liar's Dice", subtitle: 'Bluff Under the Cups', category: 'Tile & Dice Classics', icon: '🤥',
+    players: '2–6 players, people or AI', tagline: 'Everyone hides five dice. Bid on what’s under all the cups, or call "Liar!"',
+    rules: `
+      <p><strong>Objective:</strong> Be the last player with dice left.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>The cups:</strong> Everyone rolls their dice in secret. Only you can see yours.</li>
+        <li><strong>Bidding:</strong> Bid how many dice of a face (2 to 6) you think are on the whole table, e.g. "five 4s". Each new bid must be higher: more dice, or the same number of a higher face.</li>
+        <li><strong>Wild ones:</strong> Every 1 counts as whatever face was bid.</li>
+        <li><strong>Liar!</strong> Instead of bidding, call the last bid a lie. All dice are revealed. If there are at least as many as bid, the caller loses a die, otherwise the bidder does.</li>
+      </ul>`
+  },
+  {
+    id: 'cribbage', title: 'Cribbage', subtitle: 'The Pub Classic to 121', category: 'Pub Card Classics', icon: '🪵',
+    players: '1P vs AI / 2P Pass & Play', tagline: 'Fifteen two, fifteen four, and a pair is six. Peg your way round the board to 121.',
+    rules: `
+      <p><strong>Objective:</strong> Be first to peg 121 points.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>The deal:</strong> Each player gets six cards and throws two into the <em>crib</em>, which belongs to the dealer. A starter card is cut; a Jack starter gives the dealer 2 (<em>his heels</em>).</li>
+        <li><strong>The play:</strong> Take turns laying cards, keeping a running count up to 31. Score 2 for making 15 or 31, 2 for a pair (6 for three, 12 for four), and the length of any run. If you can't play without passing 31, say "Go": the other player keeps going, and the last to play scores 1. The very last card scores 1.</li>
+        <li><strong>The show:</strong> Count your four cards plus the starter: 2 for each combination making 15, 2 per pair, the length of each run, 4 for a flush (5 with the starter), and 1 for the Jack matching the starter's suit (<em>his nob</em>). The non-dealer counts first, then the dealer, then the crib.</li>
+      </ul>`
+  },
+  {
+    id: 'gin', title: 'Gin Rummy', subtitle: 'Melds, Deadwood and Knocking', category: 'Pub Card Classics', icon: '🥃',
+    players: '1P vs AI / 2P Pass & Play', tagline: 'Build sets and runs, cut your deadwood, then knock, or go Gin.',
+    rules: `
+      <p><strong>Objective:</strong> Be first to 100 points.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Melds:</strong> Sets of 3–4 cards of the same rank, or runs of 3+ in the same suit. Cards not in a meld are <em>deadwood</em> (Aces 1, faces 10). Your melds are grouped and counted for you.</li>
+        <li><strong>Your turn:</strong> Draw from the stock or take the top discard, then discard one card.</li>
+        <li><strong>Knocking:</strong> With 10 or less deadwood after discarding, you can knock to end the hand. Your opponent then lays off any deadwood that fits your melds.</li>
+        <li><strong>Scoring:</strong> The knocker scores the difference in deadwood. Gin (no deadwood) scores 25 plus the opponent's deadwood. If the defender ties or beats the knocker, that's an <em>undercut</em>: 25 plus the difference to the defender.</li>
+      </ul>`
+  },
+  {
+    id: 'battleships', title: 'Battleships', subtitle: 'Hunt the Hidden Fleet', category: 'Family & Party Games', icon: '🚢',
+    players: '1P vs AI / 2P Pass & Play', tagline: 'Hide your fleet, then take turns firing into the fog until one navy is sunk.',
+    rules: `
+      <p><strong>Objective:</strong> Sink all five of your opponent's ships before they sink yours.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Your fleet:</strong> Carrier (5), Battleship (4), Cruiser (3), Submarine (3) and Destroyer (2). Shuffle them until you're happy, then tap Ready.</li>
+        <li><strong>Firing:</strong> Take turns tapping a square in enemy waters. 💥 is a hit, ⚪ a miss. You'll be told when you sink a ship.</li>
+        <li><strong>Pass and play:</strong> A pass-the-phone screen keeps each fleet secret.</li>
+      </ul>`
+  },
+  {
+    id: 'sudoku', title: 'Sudoku', subtitle: 'Nine by Nine Logic', category: 'Solitaire & Puzzles', icon: '🔢',
+    players: 'Solo, daily or four levels', tagline: 'Fresh puzzles every time, each with exactly one solution, from Easy to Expert.',
+    rules: `
+      <p><strong>Objective:</strong> Fill the grid so every row, every column and every 3×3 box contains the numbers 1 to 9 exactly once.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Entering numbers:</strong> Tap a square, then a number. Wrong numbers show in red.</li>
+        <li><strong>Notes:</strong> Turn on Notes to pencil in small candidates. They clear themselves as you place numbers.</li>
+        <li><strong>Help:</strong> Undo, Erase and Hint are always there. Matching numbers and the selected row, column and box are highlighted.</li>
+        <li><strong>Puzzles:</strong> Each one is made fresh with a single solution. There's a Daily (the same for everyone) and four difficulty levels.</li>
+      </ul>`
   }
 ];
 
@@ -2705,7 +2928,7 @@ const App = {
     });
   },
   meta(id) { return GAME_CATALOG.find(g => g.id === id); },
-  MODES: { chess: 1, shogi: 1, checkers: 1, backgammon: 1, mancala: 1 },
+  MODES: { chess: 1, shogi: 1, checkers: 1, backgammon: 1, mancala: 1, reversi: 1, four: 1, morris: 1, battleships: 1, cribbage: 1, gin: 1 },
   splash() {
     const sp = document.createElement('div');
     sp.className = 'fixed inset-0 z-[70] flex flex-col items-center justify-center gap-3 text-center p-6';
@@ -2772,19 +2995,20 @@ const App = {
     ['btn-rules', 'btn-back-hub', 'btn-settings'].forEach(b => document.getElementById(b).classList.add('hidden'));
     document.getElementById('ver-corner').classList.remove('hidden');
     const lastId = Store.get('last', null), lastSave = lastId && Store.get('save_' + lastId, null), lm = lastSave && this.meta(lastId);
-    document.getElementById('header-subtitle').textContent = 'Twenty Classic & Esoteric Parlor Games';
+    document.getElementById('header-subtitle').textContent = 'Twenty-Nine Classic & Esoteric Parlor Games';
     const cats = [...new Set(GAME_CATALOG.map(g => g.category))];
     const root = document.getElementById('app-root');
     root.innerHTML = `
       <section class="text-center py-6 sm:py-10">
         <p class="text-amber-400/80 tracking-[0.3em] text-xs uppercase mb-2">Est. by candlelight</p>
         <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-amber-300 drop-shadow">Welcome to the Parlor</h2>
-        <p class="mt-3 text-amber-100/75 max-w-xl mx-auto text-sm sm:text-base">Pull up a chair. Twenty tables are set: royal strategy, tumbling dice, quiet patience, word games, family favourites, a murder to solve and a dungeon to delve.</p>
+        <p class="mt-3 text-amber-100/75 max-w-xl mx-auto text-sm sm:text-base">Pull up a chair. Twenty-nine tables are set: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.</p>
       </section>
       ${lm ? `<div class="w-full max-w-md mx-auto mb-5"><button onclick="App.launch('${lastId}')" class="btn-brass w-full py-3.5 rounded-2xl text-lg font-display flex items-center justify-center gap-3"><span class="text-2xl">${lm.icon}</span><span>Continue ${lm.title.replace(/ \(.*\)/, '')}</span></button></div>` : ''}
       ${Menu.tilesHTML()}
-      ${cats.map(cat => `
-        <section class="mb-8">
+      <div class="flex flex-wrap justify-center gap-1.5 mb-6">${cats.map((c, k) => `<button onclick="document.getElementById('cat-${k}').scrollIntoView({behavior:'smooth'})" class="text-xs px-3 py-1.5 rounded-full bg-black/30 border border-amber-500/25 text-amber-200 hover:border-amber-300">${c}</button>`).join('')}</div>
+      ${cats.map((cat, k) => `
+        <section class="mb-8 scroll-mt-24" id="cat-${k}">
           <h3 class="font-display text-amber-400 text-lg sm:text-xl font-bold mb-3 flex items-center gap-3">
             <span class="h-px flex-1 bg-amber-500/25"></span>${cat}<span class="h-px flex-1 bg-amber-500/25"></span></h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -2866,9 +3090,15 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.3.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.4.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.4.0', '19 Nov 2026', 'A fuller parlour', [
+    'Nine new games: Reversi, Four in a Row, Nine Men\'s Morris, Yacht, Liar\'s Dice, Cribbage, Gin Rummy, Battleships and Sudoku',
+    'Cribbage and Gin Rummy with full scoring, against the AI or pass and play',
+    'Sudoku puzzles made fresh every time with a single solution, plus a daily puzzle and notes',
+    'Category shortcuts on the main menu to jump straight to the kind of game you fancy'
+  ]],
   ['1.3.0', '19 Nov 2026', 'Words and wild cards', [
     'Tilecraft: a crossword tile game for 2 to 4 players, with AI opponents that know over 110,000 words',
     'Word Lock: crack the five-letter word in six guesses, with a daily puzzle, practice and a set-a-word-for-a-friend mode',
@@ -3022,7 +3252,7 @@ const Menu = (() => {
         <ul class="text-sm space-y-1">
           <li><b>Scoundrel</b> was designed by Zach Gage and Kurt Bieg.</li>
           <li><b>Regicide</b> was designed by Paul Abrahams, Luke Badger and Andy Richdale (Badgers From Mars).</li>
-          <li><b>Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes &amp; Ladders, Ludo</b> and <b>Dominoes</b> are traditional games, enjoyed for generations.</li>
+          <li><b>Chess, Shogi, Checkers, Mancala, Backgammon, Mahjong Solitaire, Klondike, FreeCell, Snakes &amp; Ladders, Ludo, Dominoes, Reversi, Four in a Row, Nine Men's Morris, Yacht, Liar's Dice, Cribbage, Gin Rummy, Battleships</b> and <b>Sudoku</b> are traditional games, enjoyed for generations.</li>
           <li><b>Murder at Marrowgate Manor</b> and <b>Torchlight Delve</b> are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.</li>
           <li><b>Tilecraft, Word Lock, Word Wheel, Word Grid</b> and <b>Colour Clash</b> are original takes on much-loved word and card game ideas. They aren't connected to, or endorsed by, the makers of any other game.</li>
         </ul>
@@ -7133,6 +7363,1099 @@ const WordGrid = (() => {
 })();
 Games.wordgrid = WordGrid;
 
+/* ============================================================================
+   REVERSI (vs AI or pass & play). 1 = Black (moves first), 2 = White
+   ============================================================================ */
+const Reversi = (() => {
+  const W = [100, -20, 10, 5, 5, 10, -20, 100, -20, -50, -2, -2, -2, -2, -50, -20, 10, -2, 1, 1, 1, 1, -2, 10, 5, -2, 1, 0, 0, 1, -2, 5, 5, -2, 1, 0, 0, 1, -2, 5, 10, -2, 1, 1, 1, 1, -2, 10, -20, -50, -2, -2, -2, -2, -50, -20, 100, -20, 10, 5, 5, 10, -20, 100];
+  const D = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
+  let S, root, mode = Store.get('rv_mode', 'ai'), timer = null, thinking = false;
+  function flips(b, i, p) {
+    if (b[i]) return [];
+    const r = Math.floor(i / 8), c = i % 8, o = 3 - p, out = [];
+    for (const [dr, dc] of D) {
+      const line = []; let rr = r + dr, cc = c + dc;
+      while (rr >= 0 && rr < 8 && cc >= 0 && cc < 8 && b[rr * 8 + cc] === o) { line.push(rr * 8 + cc); rr += dr; cc += dc; }
+      if (line.length && rr >= 0 && rr < 8 && cc >= 0 && cc < 8 && b[rr * 8 + cc] === p) out.push(...line);
+    }
+    return out;
+  }
+  const moves = (b, p) => { const m = []; for (let i = 0; i < 64; i++) if (!b[i] && flips(b, i, p).length) m.push(i); return m; };
+  function apply(b, i, p) { const n = b.slice(), f = flips(b, i, p); n[i] = p; f.forEach(k => n[k] = p); return n; }
+  function evalB(b, p) { let s = 0; for (let i = 0; i < 64; i++) if (b[i]) s += b[i] === p ? W[i] : -W[i]; return s + (moves(b, p).length - moves(b, 3 - p).length) * 5; }
+  function negamax(b, p, d, a, be) {
+    const ms = moves(b, p);
+    if (!d || (!ms.length && !moves(b, 3 - p).length)) { if (!ms.length && !moves(b, 3 - p).length) { const me = b.filter(x => x === p).length, op = b.filter(x => x === 3 - p).length; return (me - op) * 1000; } return evalB(b, p); }
+    if (!ms.length) return -negamax(b, 3 - p, d - 1, -be, -a);
+    let best = -1e9;
+    for (const m of ms) { const v = -negamax(apply(b, m, p), 3 - p, d - 1, -be, -a); if (v > best) best = v; if (v > a) a = v; if (a >= be) break; }
+    return best;
+  }
+  function aiPick(b, p) {
+    const d = Settings.diff === 'easy' ? 1 : Settings.diff === 'hard' ? 5 : 3, ms = moves(b, p);
+    let best = ms[0], bv = -1e9;
+    for (const m of ms) { const v = -negamax(apply(b, m, p), 3 - p, d - 1, -1e9, 1e9) + Math.random() * (Settings.diff === 'easy' ? 60 : 2); if (v > bv) { bv = v; best = m; } }
+    return best;
+  }
+  function newGame() { clearTimeout(timer); thinking = false; const b = Array(64).fill(0); b[27] = b[36] = 2; b[28] = b[35] = 1; S = { b, turn: 1, last: null, over: null, hist: [] }; render(); }
+  function play(i) {
+    S.hist.push({ b: S.b, turn: S.turn, last: S.last });
+    S.b = apply(S.b, i, S.turn); S.last = i; Sfx.play('place');
+    let nt = 3 - S.turn;
+    if (!moves(S.b, nt).length) { if (moves(S.b, S.turn).length) { Util.toast(`${nt === 1 ? 'Black' : 'White'} has no move and passes.`); nt = S.turn; } else return finish(); }
+    S.turn = nt; render();
+    if (mode === 'ai' && S.turn === 2) { thinking = true; render(); timer = setTimeout(() => { thinking = false; play(aiPick(S.b, 2)); }, Util.delay(450)); }
+  }
+  function finish() {
+    const bl = S.b.filter(x => x === 1).length, wh = S.b.filter(x => x === 2).length;
+    S.over = bl === wh ? 'A draw!' : `${bl > wh ? 'Black' : 'White'} wins ${Math.max(bl, wh)}–${Math.min(bl, wh)}`;
+    render(); Sfx.play(mode === 'ai' && wh > bl ? 'lose' : 'win');
+    App.endGame('reversi', mode === 'ai' && bl > wh, S.over, mode === 'ai' ? (bl > wh ? 'You out-flanked the AI.' : bl === wh ? 'Honours even.' : 'The AI took the board.') : 'Swap colours and go again?', newGame);
+  }
+  function click(i) {
+    if (S.over || thinking || (mode === 'ai' && S.turn !== 1)) return;
+    if (!flips(S.b, i, S.turn).length) return;
+    play(i);
+  }
+  function undo() { if (thinking || !S.hist.length) return; let h = S.hist.pop(); if (mode === 'ai' && h.turn === 2 && S.hist.length) h = S.hist.pop(); Object.assign(S, h, { over: null }); render(); }
+  function render() {
+    if (!root) return;
+    const ms = !S.over && !thinking && (mode === '2p' || S.turn === 1) ? new Set(moves(S.b, S.turn)) : new Set();
+    const cnt = p => S.b.filter(x => x === p).length;
+    let cells = '';
+    for (let i = 0; i < 64; i++) {
+      const v = S.b[i];
+      cells += `<div class="sq" style="background:#1e623f;border:1px solid rgba(0,0,0,.35)" onclick="Reversi.click(${i})">
+        ${v ? `<div class="rounded-full transition-all" style="width:80%;height:80%;background:${v === 1 ? 'radial-gradient(circle at 35% 30%,#555,#111)' : 'radial-gradient(circle at 35% 30%,#fff,#d8d0c0)'};box-shadow:0 3px 4px rgba(0,0,0,.55)${S.last === i ? ',0 0 0 3px #f3d266' : ''}"></div>` : ms.has(i) && Settings.hints ? `<div class="rounded-full" style="width:26%;height:26%;background:${S.turn === 1 ? 'rgba(0,0,0,.4)' : 'rgba(255,255,255,.45)'}"></div>` : ''}</div>`;
+    }
+    const who = S.turn === 1 ? 'Black' : 'White';
+    const status = S.over || (thinking ? 'White (AI) is thinking…' : mode === 'ai' ? (S.turn === 1 ? 'Your move (Black)' : 'White to move') : `${who} to move`);
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="flex flex-col items-center gap-2"><div class="stat-chip">${status}</div>
+          <div class="sq-board" style="grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr)">${cells}</div></div>
+        ${Util.panel(`<div class="flex flex-wrap gap-2 mb-3">${Util.btn('vs AI', "Reversi.setMode('ai')", mode === 'ai' ? 'brass' : 'wood')}${Util.btn('Pass & Play', "Reversi.setMode('2p')", mode === '2p' ? 'brass' : 'wood')}${Util.btn('↶ Undo', 'Reversi.undo()')}${Util.btn('New Game', 'Reversi.newGame()')}</div>
+          <div class="grid grid-cols-2 gap-2 text-center"><div class="bg-black/30 rounded-lg p-2"><div class="text-2xl">⚫</div><div class="text-amber-100 font-bold">${cnt(1)}</div><div class="text-xs text-amber-100/60">${mode === 'ai' ? 'You' : 'Black'}</div></div><div class="bg-black/30 rounded-lg p-2"><div class="text-2xl">⚪</div><div class="text-amber-100 font-bold">${cnt(2)}</div><div class="text-xs text-amber-100/60">${mode === 'ai' ? 'AI' : 'White'}</div></div></div>
+          <p class="text-xs text-amber-100/60 mt-3">Place a disc so it traps a line of your opponent's discs between two of yours, and they all flip. Corners can never be flipped back.</p>`, 'w-full lg:w-64')}
+      </div>`;
+  }
+  return {
+    mount(el, o = {}) { root = el; if (o.mode) { mode = o.mode; Store.set('rv_mode', mode); } if (o.resume) { S = o.resume.S; mode = o.resume.mode; S.hist = []; thinking = false; render(); if (mode === 'ai' && S.turn === 2) { thinking = true; render(); timer = setTimeout(() => { thinking = false; play(aiPick(S.b, 2)); }, 400); } } else newGame(); },
+    snapshot() { return S && !S.over ? { S: { ...S, hist: [] }, mode } : null; },
+    destroy() { clearTimeout(timer); root = null; },
+    click, undo, newGame, setMode(m) { mode = m; Store.set('rv_mode', m); newGame(); },
+    _test: { get S() { return S; }, moves, aiPick, apply }
+  };
+})();
+Games.reversi = Reversi;
+
+/* ============================================================================
+   FOUR IN A ROW (7 columns × 6 rows, vs AI or pass & play). 1 = Red (first), 2 = Yellow
+   ============================================================================ */
+const Four = (() => {
+  const C = 7, R = 6;
+  let S, root, mode = Store.get('four_mode', 'ai'), timer = null, thinking = false;
+  const drop = (b, c) => { for (let r = R - 1; r >= 0; r--) if (!b[r * C + c]) return r; return -1; };
+  function winner(b) {
+    const dirs = [[0, 1], [1, 0], [1, 1], [1, -1]];
+    for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) { const p = b[r * C + c]; if (!p) continue;
+      for (const [dr, dc] of dirs) { const cells = [r * C + c]; let ok = true; for (let k = 1; k < 4; k++) { const rr = r + dr * k, cc = c + dc * k; if (rr < 0 || rr >= R || cc < 0 || cc >= C || b[rr * C + cc] !== p) { ok = false; break; } cells.push(rr * C + cc); } if (ok) return { p, cells }; } }
+    return null;
+  }
+  function score(b, p) {
+    let s = 0; const o = 3 - p;
+    for (let r = 0; r < R; r++) if (b[r * C + 3] === p) s += 3;
+    const win = (a) => { const mine = a.filter(x => x === p).length, theirs = a.filter(x => x === o).length, e = a.filter(x => !x).length;
+      if (mine === 3 && e === 1) return 6; if (mine === 2 && e === 2) return 2; if (theirs === 3 && e === 1) return -8; return 0; };
+    for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) for (const [dr, dc] of [[0, 1], [1, 0], [1, 1], [1, -1]]) {
+      const a = []; for (let k = 0; k < 4; k++) { const rr = r + dr * k, cc = c + dc * k; if (rr < 0 || rr >= R || cc < 0 || cc >= C) break; a.push(b[rr * C + cc]); }
+      if (a.length === 4) s += win(a);
+    }
+    return s;
+  }
+  function negamax(b, p, d, a, be) {
+    const w = winner(b); if (w) return w.p === p ? 10000 + d : -10000 - d;
+    if (b.every(x => x)) return 0;
+    if (!d) return score(b, p);
+    let best = -1e9;
+    for (const c of [3, 2, 4, 1, 5, 0, 6]) { const r = drop(b, c); if (r < 0) continue; const n = b.slice(); n[r * C + c] = p; const v = -negamax(n, 3 - p, d - 1, -be, -a); if (v > best) best = v; if (v > a) a = v; if (a >= be) break; }
+    return best;
+  }
+  function aiPick(b, p) {
+    const d = Settings.diff === 'easy' ? 2 : Settings.diff === 'hard' ? 7 : 5;
+    let best = 3, bv = -1e9;
+    for (const c of [3, 2, 4, 1, 5, 0, 6]) { const r = drop(b, c); if (r < 0) continue; const n = b.slice(); n[r * C + c] = p; const v = -negamax(n, 3 - p, d - 1, -1e9, 1e9) + Math.random() * (Settings.diff === 'easy' ? 40 : .5); if (v > bv) { bv = v; best = c; } }
+    return best;
+  }
+  function newGame() { clearTimeout(timer); thinking = false; S = { b: Array(C * R).fill(0), turn: 1, last: null, over: null, win: null, hist: [] }; render(); }
+  function play(c) {
+    const r = drop(S.b, c); if (r < 0) return;
+    S.hist.push({ b: S.b.slice(), turn: S.turn, last: S.last });
+    S.b[r * C + c] = S.turn; S.last = r * C + c; Sfx.play('place');
+    const w = winner(S.b);
+    if (w || S.b.every(x => x)) {
+      S.win = w; S.over = w ? `${w.p === 1 ? 'Red' : 'Yellow'} connects four!` : "It's a draw!"; render();
+      Sfx.play(mode === 'ai' && w && w.p === 2 ? 'lose' : 'win');
+      return App.endGame('four', mode === 'ai' && w && w.p === 1, S.over, mode === 'ai' ? (w ? (w.p === 1 ? 'Four in a row. Nicely done.' : 'The AI got four first.') : 'The board filled up.') : 'Another round?', newGame);
+    }
+    S.turn = 3 - S.turn; render();
+    if (mode === 'ai' && S.turn === 2) { thinking = true; render(); timer = setTimeout(() => { thinking = false; play(aiPick(S.b, 2)); }, Util.delay(400)); }
+  }
+  function click(c) { if (S.over || thinking || (mode === 'ai' && S.turn !== 1)) return; play(c); }
+  function undo() { if (thinking || !S.hist.length) return; let h = S.hist.pop(); if (mode === 'ai' && h.turn === 2 && S.hist.length) h = S.hist.pop(); Object.assign(S, h, { over: null, win: null }); render(); }
+  function render() {
+    if (!root) return;
+    const col = p => p === 1 ? 'radial-gradient(circle at 35% 30%,#ff7a6b,#c0261c 60%,#7d1616)' : 'radial-gradient(circle at 35% 30%,#fff1a8,#e8b923 60%,#86650a)';
+    let cells = '';
+    for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
+      const i = r * C + c, v = S.b[i], w = S.win && S.win.cells.includes(i);
+      cells += `<div onclick="Four.click(${c})" class="flex items-center justify-center cursor-pointer" style="aspect-ratio:1"><div class="rounded-full" style="width:84%;height:84%;background:${v ? col(v) : '#0e2a4a'};box-shadow:${v ? '0 2px 3px rgba(0,0,0,.5)' : 'inset 0 4px 6px rgba(0,0,0,.7)'}${w ? ',0 0 0 4px #fff' : S.last === i ? ',0 0 0 2px rgba(255,255,255,.6)' : ''}"></div></div>`;
+    }
+    const status = S.over || (thinking ? 'Yellow (AI) is thinking…' : mode === 'ai' ? (S.turn === 1 ? 'Your turn (Red): tap a column' : 'Yellow to move') : `${S.turn === 1 ? 'Red' : 'Yellow'} to move`);
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="flex flex-col items-center gap-2"><div class="stat-chip">${status}</div>
+          <div class="grid p-2 rounded-2xl" style="grid-template-columns:repeat(${C},1fr);width:min(94vw,520px);background:linear-gradient(160deg,#2f6fd6,#163a7a);box-shadow:0 12px 28px rgba(0,0,0,.6),inset 0 2px 0 rgba(255,255,255,.2)">${cells}</div></div>
+        ${Util.panel(`<div class="flex flex-wrap gap-2 mb-3">${Util.btn('vs AI', "Four.setMode('ai')", mode === 'ai' ? 'brass' : 'wood')}${Util.btn('Pass & Play', "Four.setMode('2p')", mode === '2p' ? 'brass' : 'wood')}${Util.btn('↶ Undo', 'Four.undo()')}${Util.btn('New Game', 'Four.newGame()')}</div>
+          <p class="text-xs text-amber-100/60">Drop discs into the columns. First to line up four in a row (across, down or diagonally) wins.</p>`, 'w-full lg:w-64')}
+      </div>`;
+  }
+  return {
+    mount(el, o = {}) { root = el; if (o.mode) { mode = o.mode; Store.set('four_mode', mode); } if (o.resume) { S = o.resume.S; mode = o.resume.mode; S.hist = []; thinking = false; render(); if (mode === 'ai' && S.turn === 2) { thinking = true; render(); timer = setTimeout(() => { thinking = false; play(aiPick(S.b, 2)); }, 400); } } else newGame(); },
+    snapshot() { return S && !S.over ? { S: { ...S, hist: [] }, mode } : null; },
+    destroy() { clearTimeout(timer); root = null; },
+    click, undo, newGame, setMode(m) { mode = m; Store.set('four_mode', m); newGame(); },
+    _test: { get S() { return S; }, aiPick, winner }
+  };
+})();
+Games.four = Four;
+
+/* ============================================================================
+   NINE MEN'S MORRIS (vs AI or pass & play). 1 = Light (first), 2 = Dark
+   ============================================================================ */
+const Morris = (() => {
+  const P = [[0, 0], [0, 3], [0, 6], [1, 1], [1, 3], [1, 5], [2, 2], [2, 3], [2, 4], [3, 0], [3, 1], [3, 2], [3, 4], [3, 5], [3, 6], [4, 2], [4, 3], [4, 4], [5, 1], [5, 3], [5, 5], [6, 0], [6, 3], [6, 6]];
+  const ADJ = [[1, 9], [0, 2, 4], [1, 14], [4, 10], [1, 3, 5, 7], [4, 13], [7, 11], [4, 6, 8], [7, 12], [0, 10, 21], [3, 9, 11, 18], [6, 10, 15], [8, 13, 17], [5, 12, 14, 20], [2, 13, 23], [11, 16], [15, 17, 19], [12, 16], [10, 19], [16, 18, 20, 22], [13, 19], [9, 22], [19, 21, 23], [14, 22]];
+  const MILLS = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11], [12, 13, 14], [15, 16, 17], [18, 19, 20], [21, 22, 23], [0, 9, 21], [3, 10, 18], [6, 11, 15], [1, 4, 7], [16, 19, 22], [8, 12, 17], [5, 13, 20], [2, 14, 23]];
+  let S, root, mode = Store.get('mor_mode', 'ai'), timer = null, thinking = false, sel = null;
+  const inMill = (b, i) => MILLS.some(m => m.includes(i) && m.every(k => b[k] === b[i]));
+  const count = (b, p) => b.filter(x => x === p).length;
+  function removable(b, p) { const o = 3 - p, all = b.map((x, i) => x === o ? i : -1).filter(i => i >= 0), free = all.filter(i => !inMill(b, i)); return free.length ? free : all; }
+  function steps(st, p) { // [from, to] pairs (from = -1 when placing)
+    const b = st.b, out = [];
+    if (st.hand[p - 1] > 0) { b.forEach((x, i) => { if (!x) out.push([-1, i]); }); return out; }
+    const fly = count(b, p) === 3;
+    b.forEach((x, i) => { if (x !== p) return; (fly ? b.map((_, k) => k) : ADJ[i]).forEach(k => { if (!b[k]) out.push([i, k]); }); });
+    return out;
+  }
+  function doStep(st, p, [f, t]) { const b = st.b.slice(), hand = st.hand.slice(); if (f < 0) hand[p - 1]--; else b[f] = 0; b[t] = p; return { b, hand, mill: inMill(b, t) }; }
+  function allMoves(st, p) {
+    const out = [];
+    for (const s of steps(st, p)) { const n = doStep(st, p, s); if (n.mill) removable(n.b, p).forEach(r => out.push({ s, r })); else out.push({ s, r: null }); }
+    return out;
+  }
+  function applyMove(st, p, m) { const n = doStep(st, p, m.s); if (m.r !== null) n.b[m.r] = 0; return { b: n.b, hand: n.hand }; }
+  function lost(st, p) { return (st.hand[p - 1] === 0 && count(st.b, p) + st.hand[p - 1] < 3) || !steps(st, p).length; }
+  function evalS(st, p) { const o = 3 - p; return (count(st.b, p) + st.hand[p - 1] - count(st.b, o) - st.hand[o - 1]) * 30 + (steps(st, p).length - steps(st, o).length) + MILLS.filter(m => m.filter(k => st.b[k] === p).length === 2 && m.some(k => !st.b[k])).length * 4 - MILLS.filter(m => m.filter(k => st.b[k] === o).length === 2 && m.some(k => !st.b[k])).length * 5; }
+  function negamax(st, p, d, a, be) {
+    if (lost(st, p)) return -10000 - d;
+    if (!d) return evalS(st, p);
+    let best = -1e9;
+    for (const m of allMoves(st, p)) { const v = -negamax(applyMove(st, p, m), 3 - p, d - 1, -be, -a); if (v > best) best = v; if (v > a) a = v; if (a >= be) break; }
+    return best;
+  }
+  function aiPick(st, p) {
+    const d = Settings.diff === 'easy' ? 1 : Settings.diff === 'hard' ? 4 : 3;
+    let best = null, bv = -1e9;
+    for (const m of allMoves(st, p)) { const v = -negamax(applyMove(st, p, m), 3 - p, d - 1, -1e9, 1e9) + Math.random() * (Settings.diff === 'easy' ? 40 : 1); if (v > bv) { bv = v; best = m; } }
+    return best;
+  }
+  function newGame() { clearTimeout(timer); thinking = false; sel = null; S = { b: Array(24).fill(0), hand: [9, 9], turn: 1, removing: false, plies: 0, last: null, over: null }; render(); }
+  const name = p => mode === 'ai' ? (p === 1 ? 'You' : 'The AI') : (p === 1 ? 'Light' : 'Dark');
+  function endTurn(milled) {
+    S.plies = milled ? 0 : S.plies + 1;
+    S.turn = 3 - S.turn; sel = null;
+    if (lost(S, S.turn)) {
+      const w = 3 - S.turn; S.over = `${name(w)} win${mode === 'ai' && w === 1 ? '' : 's'}!`; render(); Sfx.play(mode === 'ai' && w === 2 ? 'lose' : 'win');
+      return App.endGame('morris', mode === 'ai' && w === 1, mode === 'ai' ? (w === 1 ? 'Victory!' : 'Defeat') : `${name(w)} wins!`, `${name(S.turn)} ${count(S.b, S.turn) + S.hand[S.turn - 1] < 3 ? 'is down to two pieces' : 'is boxed in with no moves'}.`, newGame);
+    }
+    if (S.plies >= 80) { S.over = 'Draw: 40 moves each without a mill.'; render(); return App.endGame('morris', false, 'Draw', S.over, newGame); }
+    render();
+    if (mode === 'ai' && S.turn === 2) {
+      thinking = true; render();
+      timer = setTimeout(() => { thinking = false; const m = aiPick(S, 2); const n = applyMove(S, 2, m); S.b = n.b; S.hand = n.hand; S.last = m.s[1]; Sfx.play(m.r !== null ? 'capture' : 'place'); if (m.r !== null) Util.toast('The AI made a mill and took a piece!'); endTurn(m.r !== null); }, Util.delay(450));
+    }
+  }
+  function click(i) {
+    if (S.over || thinking || (mode === 'ai' && S.turn !== 1)) return;
+    const p = S.turn, b = S.b;
+    if (S.removing) { if (!removable(b, p).includes(i)) return Util.toast(b[i] === 3 - p ? 'That piece is safe in a mill.' : "Tap one of your opponent's pieces."); b[i] = 0; S.removing = false; Sfx.play('capture'); return endTurn(true); }
+    const legal = steps(S, p);
+    let st = null;
+    if (S.hand[p - 1] > 0) { if (!b[i]) st = [-1, i]; }
+    else if (b[i] === p) { sel = sel === i ? null : i; Sfx.play('tap'); return render(); }
+    else if (sel !== null && legal.some(([f, t]) => f === sel && t === i)) st = [sel, i];
+    if (!st) return;
+    const n = doStep(S, p, st); S.b = n.b; S.hand = n.hand; S.last = i; sel = null; Sfx.play('place');
+    if (n.mill && removable(S.b, p).length) { S.removing = true; Util.toast('A mill! Take one of your opponent\'s pieces.', 2000); return render(); }
+    endTurn(false);
+  }
+  function render() {
+    if (!root) return;
+    const legalTo = sel !== null ? steps(S, S.turn).filter(([f]) => f === sel).map(([, t]) => t) : (S.hand[S.turn - 1] > 0 && !S.removing && (mode === '2p' || S.turn === 1) ? S.b.map((x, i) => x ? -1 : i).filter(i => i >= 0) : []);
+    const rem = S.removing ? removable(S.b, S.turn) : [];
+    const xy = i => [10 + P[i][1] * 13.33, 10 + P[i][0] * 13.33];
+    const lines = MILLS.map(m => { const [a, b] = [xy(m[0]), xy(m[2])]; return `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="#3a2416" stroke-width="1.6"/>`; }).join('');
+    const pts = P.map((_, i) => {
+      const [x, y] = xy(i), v = S.b[i];
+      const piece = v ? `<circle cx="${x}" cy="${y}" r="4.6" fill="${v === 1 ? 'url(#mlight)' : 'url(#mdark)'}" stroke="${sel === i ? '#f3d266' : rem.includes(i) ? '#ff5d5d' : S.last === i ? '#f3d266' : '#1d120c'}" stroke-width="${sel === i || rem.includes(i) ? 1.4 : .6}"/>` : `<circle cx="${x}" cy="${y}" r="1.8" fill="#3a2416"/>${legalTo.includes(i) && Settings.hints ? `<circle cx="${x}" cy="${y}" r="2.6" fill="none" stroke="#2f8f4e" stroke-width=".9"/>` : ''}`;
+      return `${piece}<circle cx="${x}" cy="${y}" r="6" fill="transparent" onclick="Morris.click(${i})" style="cursor:pointer"/>`;
+    }).join('');
+    const handRow = p => Array.from({ length: S.hand[p - 1] }, () => `<span class="inline-block w-3.5 h-3.5 rounded-full" style="background:${p === 1 ? '#f1e6cf' : '#3a2a20'};box-shadow:0 1px 2px #000"></span>`).join('');
+    const status = S.over || (thinking ? 'The AI is thinking…' : S.removing ? `${name(S.turn)}: take a piece` : `${name(S.turn)}${mode === 'ai' && S.turn === 1 ? '' : ''}: ${S.hand[S.turn - 1] > 0 ? 'place a piece' : count(S.b, S.turn) === 3 ? 'fly a piece anywhere' : 'move a piece'}`);
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="flex flex-col items-center gap-2"><div class="stat-chip">${status}</div>
+          <svg viewBox="0 0 100 100" style="width:min(94vw,520px);border-radius:12px;background:linear-gradient(160deg,#e3b66b,#c9944a);box-shadow:0 12px 28px rgba(0,0,0,.6);border:6px solid #4a2e1d">
+            <defs><radialGradient id="mlight" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d8c9a8"/></radialGradient><radialGradient id="mdark" cx=".35" cy=".3"><stop offset="0" stop-color="#6b4a36"/><stop offset="1" stop-color="#1d120c"/></radialGradient></defs>
+            ${lines}${pts}</svg></div>
+        ${Util.panel(`<div class="flex flex-wrap gap-2 mb-3">${Util.btn('vs AI', "Morris.setMode('ai')", mode === 'ai' ? 'brass' : 'wood')}${Util.btn('Pass & Play', "Morris.setMode('2p')", mode === '2p' ? 'brass' : 'wood')}${Util.btn('New Game', 'Morris.newGame()')}</div>
+          <div class="text-xs text-amber-100/70 mb-1">${mode === 'ai' ? 'You (light)' : 'Light'}: ${count(S.b, 1)} on board</div><div class="flex flex-wrap gap-1 mb-2 min-h-[16px]">${handRow(1)}</div>
+          <div class="text-xs text-amber-100/70 mb-1">${mode === 'ai' ? 'AI (dark)' : 'Dark'}: ${count(S.b, 2)} on board</div><div class="flex flex-wrap gap-1 mb-3 min-h-[16px]">${handRow(2)}</div>
+          <p class="text-xs text-amber-100/60">Line up three along a line to make a mill and take an enemy piece. Place all nine, then slide along the lines. Down to three pieces, you can fly anywhere.</p>`, 'w-full lg:w-64')}
+      </div>`;
+  }
+  return {
+    mount(el, o = {}) { root = el; if (o.mode) { mode = o.mode; Store.set('mor_mode', mode); } if (o.resume) { S = o.resume.S; mode = o.resume.mode; sel = null; thinking = false; render(); if (mode === 'ai' && S.turn === 2 && !S.removing) { S.turn = 1; endTurn(false); } } else newGame(); },
+    snapshot() { return S && !S.over && !S.removing ? { S, mode } : null; },
+    destroy() { clearTimeout(timer); root = null; },
+    click, newGame, setMode(m) { mode = m; Store.set('mor_mode', m); newGame(); },
+    _test: { get S() { return S; }, aiPick, applyMove, lost }
+  };
+})();
+Games.morris = Morris;
+
+/* ============================================================================
+   YACHT: five dice, three rolls, thirteen boxes (1-4 players, people or AI)
+   ============================================================================ */
+const Yacht = (() => {
+  const CATS = [
+    { k: 'ones', n: 'Ones', up: 1 }, { k: 'twos', n: 'Twos', up: 2 }, { k: 'threes', n: 'Threes', up: 3 }, { k: 'fours', n: 'Fours', up: 4 }, { k: 'fives', n: 'Fives', up: 5 }, { k: 'sixes', n: 'Sixes', up: 6 },
+    { k: 'three', n: 'Three of a kind' }, { k: 'four', n: 'Four of a kind' }, { k: 'full', n: 'Full house' }, { k: 'small', n: 'Small straight' }, { k: 'large', n: 'Large straight' }, { k: 'yacht', n: 'Yacht' }, { k: 'chance', n: 'Chance' }
+  ];
+  let S, root, sid = 0, busy = false;
+  function score(k, d) {
+    const c = [0, 0, 0, 0, 0, 0, 0]; d.forEach(v => c[v]++); const sum = d.reduce((a, b) => a + b, 0), mx = Math.max(...c);
+    const has = s => s.every(v => c[v] > 0);
+    switch (k) {
+      case 'ones': return c[1]; case 'twos': return c[2] * 2; case 'threes': return c[3] * 3; case 'fours': return c[4] * 4; case 'fives': return c[5] * 5; case 'sixes': return c[6] * 6;
+      case 'three': return mx >= 3 ? sum : 0; case 'four': return mx >= 4 ? sum : 0;
+      case 'full': return (c.includes(3) && c.includes(2)) || mx === 5 ? 25 : 0;
+      case 'small': return has([1, 2, 3, 4]) || has([2, 3, 4, 5]) || has([3, 4, 5, 6]) ? 30 : 0;
+      case 'large': return has([1, 2, 3, 4, 5]) || has([2, 3, 4, 5, 6]) ? 40 : 0;
+      case 'yacht': return mx === 5 ? 50 : 0; case 'chance': return sum;
+    }
+  }
+  const upper = sc => CATS.slice(0, 6).reduce((a, c) => a + (sc[c.k] || 0), 0);
+  function newGame(seats) {
+    sid++; busy = false;
+    S = { seats, cards: seats.map(() => ({})), turn: 0, dice: [1, 1, 1, 1, 1], held: [false, false, false, false, false], rolls: 0, round: 1, over: null };
+    next();
+  }
+  async function next() {
+    if (!root || S.over) return;
+    S.dice = [1, 2, 3, 4, 5]; S.held = [false, false, false, false, false]; S.rolls = 0; render();
+    if (S.seats[S.turn].type === 'ai') { const my = sid; await Util.sleep(Util.delay(500)); if (my === sid) aiTurn(); }
+  }
+  function roll() {
+    if (S.rolls >= 3 || S.over) return;
+    S.dice = S.dice.map((v, i) => S.held[i] ? v : Util.d6()); S.rolls++; Sfx.play('dice'); render(true);
+  }
+  function hold(i) { if (!S.rolls || S.rolls >= 3 || S.seats[S.turn].type === 'ai' || busy) return; S.held[i] = !S.held[i]; Sfx.play('tap'); render(); }
+  function choose(k) {
+    const card = S.cards[S.turn]; if (!S.rolls || card[k] !== undefined || S.over) return;
+    const isYacht = score('yacht', S.dice) === 50;
+    if (isYacht && card.yacht === 50) { card._bonus = (card._bonus || 0) + 100; Util.toast('Another Yacht! +100 bonus', 2200); }
+    card[k] = score(k, S.dice); Sfx.play(card[k] ? 'match' : 'card');
+    const filled = s => CATS.every(c => s[c.k] !== undefined);
+    if (S.cards.every(filled)) return finish();
+    S.turn = (S.turn + 1) % S.seats.length; if (S.turn === 0) S.round++;
+    next();
+  }
+  const tot = sc => CATS.reduce((a, c) => a + (sc[c.k] || 0), 0) + (upper(sc) >= 63 ? 35 : 0) + (sc._bonus || 0);
+  function finish() {
+    const t = S.cards.map(tot), best = Math.max(...t), wi = t.indexOf(best), w = S.seats[wi];
+    S.over = `${w.name} wins with ${best}!`; render(); Sfx.play('win');
+    const solo = S.seats.length === 1, pb = Store.get('ya_best', 0); if (solo && best > pb) Store.set('ya_best', best);
+    App.endGame('yacht', solo ? best >= 200 : (w.type === 'human' && S.seats.some(s => s.type === 'ai')), solo ? `${best} points!` : `${w.name} wins!`,
+      `${solo ? `${best > pb ? 'A new personal best! ' : `Your best: ${Math.max(pb, best)}. `}Score 200+ for a trophy.` : ''}<div class="text-left space-y-1 mt-2">${S.seats.map((s, i) => `<div class="flex justify-between"><span>${s.name}</span><b class="text-amber-300">${t[i]}</b></div>`).join('')}</div>`, () => newGame(S.seats));
+  }
+  /* AI: keep the dice that best chase an open box, then fill the best box */
+  function aiHolds(d, card) {
+    const c = [0, 0, 0, 0, 0, 0, 0]; d.forEach(v => c[v]++);
+    const open = k => card[k] === undefined;
+    const run = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6], [2, 3, 4, 5], [1, 2, 3, 4]];
+    if ((open('large') || open('small')) && run.some(r => r.length === 5 && r.filter(v => c[v]).length >= 4)) { const r = run.slice(0, 2).sort((a, b) => b.filter(v => c[v]).length - a.filter(v => c[v]).length)[0]; const seen = new Set(); return d.map(v => r.includes(v) && !seen.has(v) && seen.add(v)); }
+    let face = 6, best = -1; for (let v = 6; v >= 1; v--) { const val = c[v] * 10 + v + (open(CATS[v - 1].k) ? 4 : 0); if (val > best) { best = val; face = v; } }
+    if (c[face] === 1 && open('chance')) return d.map(v => v >= 5);
+    return d.map(v => v === face);
+  }
+  function aiChoose(d, card) {
+    const exp = { ones: 2, twos: 5, threes: 8, fours: 11, fives: 14, sixes: 17, three: 15, four: 6, full: 9, small: 15, large: 10, yacht: 6, chance: 22 };
+    let best = null, bv = -1e9;
+    for (const c of CATS) { if (card[c.k] !== undefined) continue; const s = score(c.k, d); let v = s - exp[c.k] + (Settings.diff === 'easy' ? Math.random() * 15 : 0); if (c.up && s >= c.up * 3) v += 6; if (c.k === 'chance' && s < 20) v -= 6; if (v > bv) { bv = v; best = c.k; } }
+    return best;
+  }
+  async function aiTurn() {
+    const my = sid, card = S.cards[S.turn]; busy = true;
+    for (let r = 0; r < 3; r++) {
+      roll(); await Util.sleep(Util.delay(600)); if (my !== sid) return;
+      if (r < 2) {
+        const k = aiChoose(S.dice, card), s = score(k, S.dice);
+        if ((k === 'yacht' && s) || (k === 'large' && s) || (k === 'full' && s && r > 0)) break;
+        S.held = aiHolds(S.dice, card); render(); await Util.sleep(Util.delay(400)); if (my !== sid) return;
+      }
+    }
+    busy = false; choose(aiChoose(S.dice, card));
+  }
+  function render(rolling) {
+    if (!root) return;
+    const seat = S.seats[S.turn], card = S.cards[S.turn], mine = seat.type === 'human' && !busy && !S.over;
+    const dice = S.dice.map((v, i) => `<button onclick="Yacht.hold(${i})" class="flex flex-col items-center gap-1">${S.rolls ? Util.die(v, (rolling && !S.held[i] ? 'dice-rolling ' : '') + (S.held[i] ? '!shadow-[0_0_0_3px_#f3d266]' : '')) : '<div class="die opacity-30"></div>'}<span class="text-[10px] ${S.held[i] ? 'text-amber-300' : 'text-transparent'}">HELD</span></button>`).join('');
+    const rows = CATS.map((c, idx) => {
+      const filledCells = S.seats.map((s, i) => { const v = S.cards[i][c.k]; return `<td class="text-center px-1 ${i === S.turn ? 'text-amber-200' : 'text-amber-100/70'}">${v !== undefined ? v : ''}</td>`; }).join('');
+      const can = mine && S.rolls && card[c.k] === undefined, pv = S.rolls && card[c.k] === undefined ? score(c.k, S.dice) : null;
+      return `${idx === 6 ? `<tr class="border-t border-amber-500/20"><td class="py-0.5 text-[11px] text-amber-100/60">Upper bonus (63+)</td>${S.seats.map((s, i) => `<td class="text-center text-[11px] text-amber-100/60">${upper(S.cards[i]) >= 63 ? 35 : upper(S.cards[i]) + '/63'}</td>`).join('')}<td></td></tr>` : ''}
+        <tr class="${can ? 'cursor-pointer hover:bg-amber-500/10' : ''}" ${can ? `onclick="Yacht.choose('${c.k}')"` : ''}><td class="py-1 text-sm text-amber-100">${c.n}</td>${filledCells}<td class="text-right pl-2 text-sm font-bold ${can ? (pv ? 'text-emerald-300' : 'text-amber-100/40') : 'text-transparent'}">${can ? (pv ? '+' + pv : '0') : ''}</td></tr>`;
+    }).join('');
+    root.innerHTML = `
+      <div class="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center">
+        <div class="flex flex-col items-center gap-3 w-full" style="max-width:380px">
+          <div class="stat-chip">${S.over || `Round ${S.round} of 13 · ${seat.name}${seat.type === 'ai' ? ' (AI)' : ''}`}</div>
+          <div class="felt-surface rounded-2xl p-4 flex gap-2 justify-center w-full">${dice}</div>
+          ${mine ? `<div class="flex gap-2">${Util.btn(`🎲 Roll${S.rolls ? ` (${3 - S.rolls} left)` : ''}`, 'Yacht.roll()', 'brass', S.rolls >= 3 ? 'opacity-40 pointer-events-none' : '')}</div>
+            <p class="text-xs text-amber-100/60 text-center">${!S.rolls ? 'Roll the dice to start your turn.' : S.rolls < 3 ? 'Tap dice to hold them, roll again, or score a box on the card.' : 'Pick a box on the card to score.'}</p>` : `<p class="text-sm text-amber-100/70">${S.over ? '' : `${seat.name} is rolling…`}</p>`}
+        </div>
+        ${Util.panel(`<table class="w-full"><thead><tr><th></th>${S.seats.map((s, i) => `<th class="text-xs px-1 ${i === S.turn ? 'text-amber-300' : 'text-amber-100/60'}"><span class="inline-block w-2 h-2 rounded-full mr-0.5" style="background:${s.col.hex}"></span>${s.name.slice(0, 6)}</th>`).join('')}<th></th></tr></thead>
+          <tbody>${rows}<tr class="border-t border-amber-500/30"><td class="pt-1 font-display text-amber-300">Total</td>${S.seats.map((s, i) => `<td class="text-center pt-1 font-bold text-amber-300">${tot(S.cards[i])}</td>`).join('')}<td></td></tr></tbody></table>`, 'w-full lg:w-96 !p-3')}
+      </div>`;
+  }
+  return {
+    async setup() { const seats = await Seats.choose({ title: 'Yacht', min: 1, max: 4, def: 1, note: 'Play solo for a high score, or take turns with people and the AI.' }); return seats ? { seats } : null; },
+    mount(el, o = {}) { root = el; if (o.resume) { sid++; busy = false; S = o.resume; S.rolls = 0; next(); } else newGame(o.seats || [{ name: 'You', col: PCOL[0], type: 'human' }]); },
+    snapshot() { return S && !S.over ? S : null; },
+    destroy() { sid++; root = null; },
+    roll() { if (S.seats[S.turn].type === 'human' && !busy) roll(); }, hold, choose(k) { if (S.seats[S.turn].type === 'human' && !busy) choose(k); },
+    restart() { newGame(S.seats); }, newGame() { newGame(S.seats); },
+    _test: { get S() { return S; }, score }
+  };
+})();
+Games.yacht = Yacht;
+
+/* ============================================================================
+   LIAR'S DICE (2-6 players, people or AI). Ones are wild.
+   ============================================================================ */
+const Liars = (() => {
+  let S, root, sid = 0, busy = false, shownFor = -1, pick = { q: 1, f: 2 };
+  const humans = () => S.seats.filter(s => s.type === 'human').length;
+  const alive = () => S.seats.map((_, i) => i).filter(i => S.dice[i].length);
+  const nextAlive = i => { do { i = (i + 1) % S.seats.length; } while (!S.dice[i].length); return i; };
+  function newGame(seats) { sid++; busy = false; shownFor = -1; S = { seats, dice: seats.map(() => [0, 0, 0, 0, 0]), turn: 0, bid: null, bidder: null, reveal: false, over: null, log: ['Everyone shakes five dice under a cup. Ones are wild.'] }; newRound(); }
+  const log = m => { S.log.unshift(m); S.log = S.log.slice(0, 6); };
+  function newRound() { S.dice = S.dice.map(d => d.map(() => Util.d6())); S.bid = null; S.bidder = null; S.reveal = false; Sfx.play('dice'); shownFor = -1; next(); }
+  const totalDice = () => S.dice.reduce((a, d) => a + d.length, 0);
+  const higher = (q, f) => !S.bid || q > S.bid.q || (q === S.bid.q && f > S.bid.f);
+  async function next() {
+    if (!root || S.over) return;
+    const my = sid, seat = S.seats[S.turn];
+    if (seat.type === 'human' && humans() > 1 && shownFor !== S.turn) { shownFor = -1; render(); await curtain(`${seat.name}'s turn`, 'Pass the phone. Peek at your dice when nobody is looking!'); if (my !== sid) return; }
+    if (seat.type === 'human') { shownFor = S.turn; pick = S.bid ? (S.bid.f < 6 ? { q: S.bid.q, f: S.bid.f + 1 } : { q: S.bid.q + 1, f: 2 }) : { q: 1, f: 2 }; }
+    else if (humans() > 1) shownFor = -1;
+    render();
+    if (seat.type === 'ai') { await Util.sleep(Util.delay(900)); if (my === sid) aiTurn(); }
+  }
+  function expected(i, f) { // how many of face f this player believes are out there
+    const mine = S.dice[i].filter(v => v === f || v === 1).length, others = totalDice() - S.dice[i].length;
+    return mine + others / 3;
+  }
+  function aiTurn() {
+    const i = S.turn, b = S.bid;
+    const slack = Settings.diff === 'easy' ? 1.6 : Settings.diff === 'hard' ? .4 : .9;
+    if (b && b.q > expected(i, b.f) + slack + (Math.random() - .5)) return call(i);
+    // raise: favour the face we hold most of
+    let best = null, bv = -1e9;
+    for (let f = 2; f <= 6; f++) {
+      const e = expected(i, f);
+      for (let q = (b ? b.q : 1); q <= (b ? b.q + 2 : 3); q++) { if (!higher(q, f)) continue; const v = e - q + (Math.random() * (Settings.diff === 'easy' ? 1.5 : .4)); if (v > bv) { bv = v; best = { q, f }; } }
+    }
+    if (!best || (b && bv < -1.6)) return call(i);
+    bid(i, best.q, best.f);
+  }
+  function bid(i, q, f) {
+    if (!higher(q, f)) return Util.toast('Your bid must be higher: more dice, or the same number of a higher face.');
+    S.bid = { q, f }; S.bidder = i; Sfx.play('card');
+    log(`${S.seats[i].name} bids ${q} × ${'⚀⚁⚂⚃⚄⚅'[f - 1]} (${f}s).`);
+    S.turn = nextAlive(i); next();
+  }
+  async function call(i) {
+    if (!S.bid) return;
+    const my = sid, b = S.bid, bidder = S.bidder;
+    log(`${S.seats[i].name} calls "Liar!" on ${S.seats[bidder].name}.`);
+    S.reveal = true; busy = true; shownFor = -2; render(); Sfx.play('dice');
+    await Util.sleep(Util.delay(1600)); if (my !== sid) return;
+    const count = S.dice.flat().filter(v => v === b.f || v === 1).length;
+    const loser = count >= b.q ? i : bidder;
+    log(`There ${count === 1 ? 'was' : 'were'} ${count} × ${b.f} (counting wild ones). ${S.seats[loser].name} loses a die!`);
+    S.dice[loser].pop(); Sfx.play(S.seats[loser].type === 'human' ? 'lose' : 'hit');
+    await Util.choose(count >= b.q ? 'The bid was good!' : 'Caught lying!', `There ${count === 1 ? 'was' : 'were'} <b>${count}</b> ${b.f}s on the table (ones count as wild) against a bid of <b>${b.q}</b>. <b>${S.seats[loser].name}</b> loses a die.`, [{ label: 'Next round', value: 1, primary: true }]);
+    if (my !== sid) return;
+    busy = false;
+    const left = alive();
+    if (left.length === 1) {
+      const w = S.seats[left[0]]; S.over = `${w.name} wins!`; render(); Sfx.play('win');
+      return App.endGame('liars', w.type === 'human' && S.seats.some(s => s.type === 'ai'), `${w.name} wins!`, `${w.name} is the last player with dice.`, () => newGame(S.seats));
+    }
+    if (!S.dice[loser].length) { log(`${S.seats[loser].name} is out of dice!`); S.turn = nextAlive(loser); } else S.turn = loser;
+    newRound();
+  }
+  const myTurn = () => S.seats[S.turn].type === 'human' && shownFor === S.turn && !busy && !S.over;
+  function adj(k, d) { if (k === 'q') pick.q = Math.max(1, Math.min(totalDice(), pick.q + d)); else pick.f = Math.max(2, Math.min(6, pick.f + d)); Sfx.play('tap'); render(); }
+  function render() {
+    if (!root) return;
+    const viewer = shownFor === -2 ? -2 : humans() === 1 ? S.seats.findIndex(s => s.type === 'human') : shownFor;
+    const pip = v => Util.die(v, '!w-9 !h-9');
+    const seatsHTML = S.seats.map((s, i) => {
+      const show = viewer === -2 || viewer === i;
+      return `<div class="bg-black/25 rounded-xl p-2 ${i === S.turn && !S.reveal ? 'ring-2 ring-amber-400/70' : ''} ${!S.dice[i].length ? 'opacity-40' : ''}">
+        <div class="flex items-center gap-2 text-sm mb-1"><span class="w-3 h-3 rounded-full" style="background:${s.col.hex}"></span><span class="text-amber-100">${s.name}${s.type === 'ai' ? ' 🤖' : ''}</span><span class="ml-auto text-xs text-amber-300">🎲 ${S.dice[i].length}</span></div>
+        <div class="flex flex-wrap gap-1">${S.dice[i].map(v => show ? `<div class="${S.reveal && S.bid && (v === S.bid.f || v === 1) ? 'ring-2 ring-emerald-300 rounded-[9px]' : ''}">${pip(v)}</div>` : `<div class="w-9 h-9 rounded-lg" style="background:radial-gradient(circle at 35% 30%,#7c1d24,#3a0c10);box-shadow:0 2px 3px rgba(0,0,0,.5)"></div>`).join('')}</div></div>`;
+    }).join('');
+    const mine = myTurn();
+    root.innerHTML = `
+      <div class="flex flex-col gap-3 mx-auto w-full" style="max-width:640px">
+        <div class="felt-surface rounded-2xl p-4 text-center">
+          <div class="text-xs uppercase tracking-wider text-amber-200/70">Current bid</div>
+          <div class="font-display text-3xl text-amber-200 my-1">${S.bid ? `${S.bid.q} × ${S.bid.f}s` : '—'}</div>
+          <div class="text-xs text-amber-100/60">${S.bid ? `by ${S.seats[S.bidder].name} · ${totalDice()} dice in play` : `${totalDice()} dice in play · ones are wild`}</div>
+        </div>
+        <div class="grid gap-2" style="grid-template-columns:repeat(auto-fit,minmax(170px,1fr))">${seatsHTML}</div>
+        ${mine ? Util.panel(`<div class="text-center text-sm text-amber-100 mb-2">Your call: raise the bid or call "Liar!"</div>
+          <div class="flex items-center justify-center gap-4">
+            <div class="flex flex-col items-center gap-1">${Util.btn('▲', "Liars.adj('q',1)")}<div class="font-display text-2xl text-amber-200">${pick.q}</div>${Util.btn('▼', "Liars.adj('q',-1)")}<span class="text-[10px] text-amber-100/50">how many</span></div>
+            <div class="text-2xl text-amber-200">×</div>
+            <div class="flex flex-col items-center gap-1">${Util.btn('▲', "Liars.adj('f',1)")}<div>${Util.die(pick.f)}</div>${Util.btn('▼', "Liars.adj('f',-1)")}<span class="text-[10px] text-amber-100/50">face</span></div>
+          </div>
+          <div class="flex gap-2 justify-center mt-3">${Util.btn(`Bid ${pick.q} × ${pick.f}s`, 'Liars.bid()', 'brass', higher(pick.q, pick.f) ? '' : 'opacity-40')}${S.bid ? Util.btn('🤥 Liar!', 'Liars.call()') : ''}</div>`, '!p-3') : `<div class="text-center text-sm text-amber-100/70">${S.over || (S.reveal ? 'Cups up!' : `${S.seats[S.turn].name} is thinking…`)}</div>`}
+        <div class="text-xs space-y-1 text-amber-50/70 text-center">${S.log.map((l, k) => `<div class="${k ? 'opacity-60' : ''}">${l}</div>`).join('')}</div>
+        <div class="flex justify-center">${Util.btn('New Game', 'Liars.restart()')}</div>
+      </div>`;
+  }
+  return {
+    async setup() { const seats = await Seats.choose({ title: "Liar's Dice", min: 2, max: 6, def: 4, note: 'Bluff about the dice under everyone\'s cups. With more than one person, a pass-the-phone screen keeps your dice secret.' }); return seats ? { seats } : null; },
+    mount(el, o = {}) { root = el; if (o.resume) { sid++; busy = false; shownFor = -1; S = o.resume; S.reveal = false; next(); } else newGame(o.seats || [0, 1, 2, 3].map(i => ({ name: i ? PCOL[i].name : 'You', col: PCOL[i], type: i ? 'ai' : 'human' }))); },
+    snapshot() { return S && !S.over && !busy ? S : null; },
+    destroy() { sid++; root = null; },
+    adj, bid() { if (myTurn()) bid(S.turn, pick.q, pick.f); }, call() { if (myTurn()) call(S.turn); },
+    restart() { newGame(S.seats); }, newGame() { newGame(S.seats); },
+    _test: { get S() { return S; } }
+  };
+})();
+Games.liars = Liars;
+
+/* ============================================================================
+   CRIBBAGE (two players: vs AI or pass & play), first to 121
+   ============================================================================ */
+const Cribbage = (() => {
+  let S, root, mode = Store.get('crib_mode', 'ai'), sid = 0, busy = false, picked = [], shownFor = -1;
+  const val = c => Math.min(10, c.r);
+  const nameOf = i => mode === 'ai' ? (i === 0 ? 'You' : 'The AI') : (i === 0 ? 'Player 1' : 'Player 2');
+  const isHuman = i => mode === '2p' || i === 0;
+  /* ---------- counting a hand ---------- */
+  function countHand(hand, starter, crib) {
+    const all = hand.concat(starter ? [starter] : []), parts = []; let total = 0;
+    const n = all.length;
+    let fifteens = 0; for (let m = 1; m < 1 << n; m++) { let s = 0; for (let k = 0; k < n; k++) if (m >> k & 1) s += val(all[k]); if (s === 15) fifteens++; }
+    if (fifteens) { parts.push(`${fifteens} × fifteen for ${fifteens * 2}`); total += fifteens * 2; }
+    let pairs = 0; for (let a = 0; a < n; a++) for (let b = a + 1; b < n; b++) if (all[a].r === all[b].r) pairs++;
+    if (pairs) { parts.push(`${pairs} pair${pairs > 1 ? 's' : ''} for ${pairs * 2}`); total += pairs * 2; }
+    for (let L = n; L >= 3; L--) {
+      let runs = 0;
+      for (let m = 1; m < 1 << n; m++) { if (bits(m) !== L) continue; const rs = []; for (let k = 0; k < n; k++) if (m >> k & 1) rs.push(all[k].r); rs.sort((a, b) => a - b); if (rs.every((r, k) => !k || r === rs[k - 1] + 1)) runs++; }
+      if (runs) { parts.push(`${runs > 1 ? runs + ' runs' : 'a run'} of ${L} for ${runs * L}`); total += runs * L; break; }
+    }
+    if (hand.length === 4 && hand.every(c => c.s === hand[0].s)) {
+      if (starter && starter.s === hand[0].s) { parts.push('flush for 5'); total += 5; }
+      else if (!crib) { parts.push('flush for 4'); total += 4; }
+    }
+    if (starter && hand.some(c => c.r === 11 && c.s === starter.s)) { parts.push('one for his nob'); total += 1; }
+    return { total, parts };
+  }
+  const bits = x => { let c = 0; while (x) { x &= x - 1; c++; } return c; };
+  /* ---------- pegging points for the card just played ---------- */
+  function pegPoints(seq, count) {
+    let p = 0; const why = [];
+    if (count === 15) { p += 2; why.push('fifteen 2'); }
+    if (count === 31) { p += 2; why.push('thirty-one 2'); }
+    let same = 1; for (let k = seq.length - 2; k >= 0 && seq[k].r === seq[seq.length - 1].r; k--) same++;
+    if (same >= 2) { const v = { 2: 2, 3: 6, 4: 12 }[same]; p += v; why.push(`${{ 2: 'pair', 3: 'three of a kind', 4: 'four of a kind' }[same]} ${v}`); }
+    for (let L = seq.length; L >= 3; L--) { const rs = seq.slice(-L).map(c => c.r).sort((a, b) => a - b); if (rs.every((r, k) => !k || r === rs[k - 1] + 1)) { p += L; why.push(`run of ${L} for ${L}`); break; } }
+    return { p, why };
+  }
+  /* ---------- flow ---------- */
+  function newGame() { sid++; busy = false; S = { scores: [0, 0], prev: [0, 0], dealer: Math.random() < .5 ? 0 : 1, over: null, log: ['First to 121 wins. Cut for deal…'] }; deal(); }
+  const log = m => { S.log.unshift(m); S.log = S.log.slice(0, 6); };
+  function deal() {
+    const d = Util.shuffle(Util.deck());
+    S.hands = [d.splice(0, 6), d.splice(0, 6)]; S.deck = d; S.crib = []; S.starter = null; S.phase = 'discard'; S.kept = [null, null];
+    S.peg = null; picked = []; shownFor = -1;
+    S.hands.forEach(h => h.sort((a, b) => a.r - b.r || a.s.localeCompare(b.s)));
+    log(`${nameOf(S.dealer)} deal${S.dealer === 0 && mode === 'ai' ? '' : 's'}. Choose two cards for ${S.dealer === 0 && mode === 'ai' ? 'your' : nameOf(S.dealer) + "'s"} crib.`);
+    discardStep(1 - S.dealer);
+  }
+  function add(i, pts, why) {
+    if (!pts || S.over) return;
+    S.prev[i] = S.scores[i]; S.scores[i] = Math.min(121, S.scores[i] + pts);
+    log(`${nameOf(i)} ${why} (+${pts})`);
+    if (S.scores[i] >= 121) {
+      S.over = `${nameOf(i)} win${mode === 'ai' && i === 0 ? '' : 's'}!`; render(); Sfx.play(mode === 'ai' && i === 1 ? 'lose' : 'win');
+      const skunk = S.scores[1 - i] < 91 ? ' A skunk!' : '';
+      App.endGame('cribbage', mode === 'ai' && i === 0, mode === 'ai' ? (i === 0 ? 'You pegged out!' : 'The AI pegged out') : `${nameOf(i)} wins!`, `Final score ${S.scores[0]}–${S.scores[1]}.${skunk}`, newGame);
+    }
+  }
+  async function privacy(i, line) {
+    if (mode !== '2p') { shownFor = 0; return; }
+    if (shownFor === i) return;
+    shownFor = -1; render(); await curtain(`${nameOf(i)}`, line); shownFor = i;
+  }
+  async function discardStep(i) {
+    if (S.over) return; const my = sid;
+    if (!isHuman(i)) { aiDiscard(i); return discardStep2(i); }
+    await privacy(i, 'Pass the phone. Choose two cards for the crib.'); if (my !== sid) return;
+    S.phase = 'discard'; S.discarder = i; picked = []; render();
+  }
+  function discardStep2(i) { if (S.hands[0].length === 4 && S.hands[1].length === 4) return cut(); discardStep(1 - i); }
+  function aiDiscard(i) {
+    const h = S.hands[i], rest = Util.deck().filter(c => !h.some(x => x.id === c.id));
+    let best = null, bv = -1e9;
+    for (let a = 0; a < 6; a++) for (let b = a + 1; b < 6; b++) {
+      const keep = h.filter((_, k) => k !== a && k !== b), toss = [h[a], h[b]];
+      let sum = 0; const sample = Settings.diff === 'easy' ? rest.slice(0, 8) : rest;
+      for (const st of sample) sum += countHand(keep, st, false).total;
+      const tv = countHand(toss, null, true).total + (val(h[a]) + val(h[b]) === 15 ? 2 : 0) + (h[a].r === 5 || h[b].r === 5 ? 1.5 : 0);
+      const v = sum / sample.length + (S.dealer === i ? tv : -tv) + (Settings.diff === 'easy' ? Math.random() * 4 : 0);
+      if (v > bv) { bv = v; best = [a, b]; }
+    }
+    const toss = best.map(k => h[k]); S.hands[i] = h.filter(c => !toss.includes(c)); S.crib.push(...toss);
+  }
+  function sendCrib() {
+    if (S.phase !== 'discard' || picked.length !== 2 || busy) return;
+    const i = S.discarder, h = S.hands[i], toss = h.filter(c => picked.includes(c.id));
+    S.hands[i] = h.filter(c => !picked.includes(c.id)); S.crib.push(...toss); picked = []; Sfx.play('card');
+    discardStep2(i);
+  }
+  function cut() {
+    S.starter = S.deck[Math.floor(Math.random() * S.deck.length)];
+    S.kept = [S.hands[0].slice(), S.hands[1].slice()];
+    log(`The starter is ${Util.rankLabel(S.starter.r)}${SUIT_SYM[S.starter.s]}.`);
+    Sfx.play('flip');
+    if (S.starter.r === 11) add(S.dealer, 2, 'pegs two for his heels');
+    if (S.over) return;
+    S.phase = 'peg'; S.peg = { count: 0, seq: [], played: [], go: [false, false], last: null, turn: 1 - S.dealer };
+    pegNext();
+  }
+  const canPlay = i => S.hands[i].some(c => S.peg.count + val(c) <= 31);
+  async function pegNext() {
+    if (S.over || !root) return; const my = sid, P = S.peg;
+    if (!S.hands[0].length && !S.hands[1].length) {
+      if (P.count && P.count !== 31 && P.last !== null) add(P.last, 1, 'pegs one for last card');
+      return show();
+    }
+    let i = P.turn;
+    if (!canPlay(i)) {
+      if (!canPlay(1 - i)) { if (P.count !== 31 && P.last !== null) add(P.last, 1, 'pegs one for the go'); if (S.over) return; P.count = 0; P.seq = []; P.turn = P.last === null ? i : 1 - P.last; render(); await Util.sleep(Util.delay(700)); if (my !== sid) return; return pegNext(); }
+      if (S.hands[i].length) log(`${nameOf(i)} say${mode === 'ai' && i === 0 ? '' : 's'} "Go".`);
+      P.turn = 1 - i; return pegNext();
+    }
+    render();
+    if (!isHuman(i)) { await Util.sleep(Util.delay(800)); if (my !== sid) return; return pegPlay(i, aiPeg(i)); }
+    await privacy(i, 'Pass the phone. Your turn to play a card.'); if (my !== sid) return; render();
+  }
+  function aiPeg(i) {
+    const P = S.peg, opts = S.hands[i].filter(c => P.count + val(c) <= 31);
+    let best = opts[0], bv = -1e9;
+    for (const c of opts) {
+      const nc = P.count + val(c), { p } = pegPoints(P.seq.concat([c]), nc);
+      let v = p * 10 + (nc === 5 || nc === 21 ? -6 : 0) + (nc < 15 && 15 - nc <= 10 ? -2 : 0) + val(c) * .2;
+      if (Settings.diff === 'easy') v += Math.random() * 20;
+      if (v > bv) { bv = v; best = c; }
+    }
+    return best;
+  }
+  function pegPlay(i, c) {
+    const P = S.peg, h = S.hands[i]; h.splice(h.indexOf(c), 1);
+    P.count += val(c); P.seq.push(c); P.played.push({ c, i }); P.last = i; Sfx.play('place');
+    const { p, why } = pegPoints(P.seq, P.count);
+    log(`${nameOf(i)} play${mode === 'ai' && i === 0 ? '' : 's'} ${Util.rankLabel(c.r)}${SUIT_SYM[c.s]}: ${P.count}.`);
+    if (p) { add(i, p, `pegs ${why.join(', ')}`); Sfx.play('match'); }
+    if (S.over) return;
+    if (P.count === 31) { P.count = 0; P.seq = []; }
+    P.turn = 1 - i; pegNext();
+  }
+  function tapCard(id) {
+    if (busy || S.over) return;
+    if (S.phase === 'discard' && isHuman(S.discarder) && shownFor === S.discarder) {
+      if (picked.includes(id)) picked = picked.filter(x => x !== id); else if (picked.length < 2) picked.push(id);
+      Sfx.play('tap'); return render();
+    }
+    if (S.phase === 'peg' && isHuman(S.peg.turn) && shownFor === S.peg.turn) {
+      const c = S.hands[S.peg.turn].find(x => x.id === id); if (!c) return;
+      if (S.peg.count + val(c) > 31) return Util.toast('That would take the count over 31.');
+      pegPlay(S.peg.turn, c);
+    }
+  }
+  async function show() {
+    S.phase = 'show'; shownFor = -2; render(); const my = sid;
+    const pone = 1 - S.dealer;
+    const steps = [[pone, S.kept[pone], false, 'hand'], [S.dealer, S.kept[S.dealer], false, 'hand'], [S.dealer, S.crib, true, 'crib']];
+    for (const [i, hand, crib, what] of steps) {
+      const r = countHand(hand, S.starter, crib);
+      add(i, r.total, `counts ${r.total} in the ${what}`);
+      if (S.over || my !== sid) return;
+      render();
+      await Util.choose(`${nameOf(i)}: ${what === 'crib' ? 'the crib' : mode === 'ai' && i === 0 ? 'your hand' : 'hand'} scores ${r.total}`, `<div class="flex justify-center gap-1 my-2">${hand.concat([S.starter]).map(c => `<div style="--cw:42px">${Util.card(c, { attrs: 'style="cursor:default"' })}</div>`).join('')}</div>${r.parts.length ? r.parts.join('<br>') : 'Nineteen! (that means nothing)'}`, [{ label: 'Next', value: 1, primary: true }]);
+      if (my !== sid) return;
+    }
+    S.dealer = 1 - S.dealer; deal();
+  }
+  /* ---------- render ---------- */
+  function track(i) {
+    const s = S.scores[i], col = i === 0 ? '#d63a3a' : '#2f6fd6';
+    return `<div class="flex items-center gap-2"><span class="text-xs w-16 truncate text-amber-100">${nameOf(i)}</span>
+      <div class="relative flex-1 h-4 rounded-full" style="background:repeating-linear-gradient(90deg,#3a2416 0 calc(100%/121*5 - 1px),#5a3a26 0 calc(100%/121*5))">
+        <span class="absolute top-0.5 w-3 h-3 rounded-full opacity-50" style="left:calc(${S.prev[i] / 121 * 100}% - 6px);background:${col}"></span>
+        <span class="absolute top-0.5 w-3 h-3 rounded-full" style="left:calc(${s / 121 * 100}% - 6px);background:${col};box-shadow:0 0 0 1.5px #fff"></span>
+      </div><span class="font-display text-amber-300 w-9 text-right">${s}</span></div>`;
+  }
+  function render() {
+    if (!root || !S) return;
+    const viewer = shownFor === -2 ? -2 : shownFor;
+    const P = S.peg, cw = 'min(70px, calc((100vw - 60px) / 6.4))';
+    const hand = i => (viewer === i || viewer === -2) ? (S.phase === 'show' ? S.kept[i] : S.hands[i]) : null;
+    const handRow = i => {
+      const h = hand(i);
+      if (!h) return `<div class="flex gap-1 justify-center">${S.hands[i].map(() => Util.card({ r: 1, s: 'S' }, { down: true })).join('')}</div>`;
+      const active = (S.phase === 'discard' && S.discarder === i) || (S.phase === 'peg' && P.turn === i);
+      return `<div class="flex gap-1 justify-center flex-wrap">${h.map(c => Util.card(c, { sel: picked.includes(c.id), cls: active && S.phase === 'peg' && P.count + val(c) > 31 ? 'dim' : '', attrs: `onclick="Cribbage.tap(${c.id})"` })).join('')}</div>`;
+    };
+    const me = mode === 'ai' ? 0 : (viewer >= 0 ? viewer : (S.phase === 'peg' ? P.turn : S.discarder ?? 0));
+    const opp = 1 - me;
+    const status = S.over || (S.phase === 'discard' ? (isHuman(S.discarder) ? `${nameOf(S.discarder)}: pick two cards for ${S.dealer === S.discarder ? 'your' : nameOf(S.dealer) + "'s"} crib` : `${nameOf(S.discarder)} is choosing…`) : S.phase === 'peg' ? `Count: ${P.count} · ${isHuman(P.turn) ? `${nameOf(P.turn)} to play` : `${nameOf(P.turn)} is playing…`}` : 'Counting the hands…');
+    root.innerHTML = `
+      <div class="flex flex-col gap-3 mx-auto w-full" style="max-width:640px;--cw:${cw}">
+        ${Util.panel(`${track(0)}<div class="h-1.5"></div>${track(1)}`, '!p-3')}
+        <div class="text-center text-xs text-amber-100/70">${nameOf(opp)}${S.dealer === opp ? ' (dealer)' : ''}</div>
+        ${handRow(opp)}
+        <div class="felt-surface rounded-2xl p-3 flex items-center gap-3 justify-center min-h-[120px]">
+          <div class="text-center"><div class="text-[10px] text-amber-100/60 mb-1">Starter</div>${S.starter ? Util.card(S.starter, { attrs: 'style="cursor:default"' }) : Util.card({ r: 1, s: 'S' }, { down: true })}</div>
+          <div class="flex-1 text-center">${P ? `<div class="font-display text-3xl text-amber-200">${P.count}</div><div class="flex justify-center flex-wrap mt-1" style="--cw:38px">${P.seq.map(c => `<div style="margin-left:-10px">${Util.card(c, { attrs: 'style="cursor:default"' })}</div>`).join('')}</div>` : '<div class="text-xs text-amber-100/50">The count</div>'}</div>
+          <div class="text-center"><div class="text-[10px] text-amber-100/60 mb-1">Crib (${nameOf(S.dealer).replace('The ', '')})</div><div style="--cw:46px">${S.phase === 'show' ? '' : Util.card({ r: 1, s: 'S' }, { down: true })}</div><div class="text-[10px] text-amber-100/60">${S.crib.length} cards</div></div>
+        </div>
+        <div class="text-center text-sm text-amber-100">${status}</div>
+        ${handRow(me)}
+        <div class="text-center text-xs text-amber-100/70">${nameOf(me)}${S.dealer === me ? ' (dealer)' : ''}</div>
+        <div class="flex gap-2 justify-center flex-wrap">
+          ${S.phase === 'discard' && isHuman(S.discarder) && shownFor === S.discarder ? Util.btn('Send to crib', 'Cribbage.send()', 'brass', picked.length === 2 ? '' : 'opacity-40') : ''}
+          ${Util.btn('vs AI', "Cribbage.setMode('ai')", mode === 'ai' ? 'brass' : 'wood')}${Util.btn('Pass & Play', "Cribbage.setMode('2p')", mode === '2p' ? 'brass' : 'wood')}${Util.btn('New Game', 'Cribbage.newGame()')}
+        </div>
+        ${Util.panel(`<div class="text-xs space-y-1 text-amber-50/80">${S.log.map((l, k) => `<div class="${k ? 'opacity-60' : 'text-amber-200'}">${l}</div>`).join('')}</div>`, '!p-3')}
+      </div>`;
+  }
+  return {
+    mount(el, o = {}) { root = el; if (o.mode) { mode = o.mode; Store.set('crib_mode', mode); } if (o.resume) { sid++; S = o.resume.S; mode = o.resume.mode; S.log.unshift('Picking up a fresh deal.'); deal(); } else newGame(); },
+    snapshot() { return S && !S.over ? { S: { scores: S.scores, prev: S.prev, dealer: S.dealer, over: null, log: S.log.slice(0, 3) }, mode } : null; },
+    destroy() { sid++; root = null; },
+    tap: tapCard, send: sendCrib, newGame, setMode(m) { mode = m; Store.set('crib_mode', m); newGame(); },
+    _test: { countHand, pegPoints, get S() { return S; } }
+  };
+})();
+Games.cribbage = Cribbage;
+
+/* ============================================================================
+   GIN RUMMY (two players: vs AI or pass & play), first to 100
+   ============================================================================ */
+const Gin = (() => {
+  let S, root, mode = Store.get('gin_mode', 'ai'), sid = 0, busy = false, sel = null, shownFor = -1;
+  const dv = c => Math.min(10, c.r);
+  const nameOf = i => mode === 'ai' ? (i === 0 ? 'You' : 'The AI') : (i === 0 ? 'Player 1' : 'Player 2');
+  const isHuman = i => mode === '2p' || i === 0;
+  /* best melds: returns { melds: [[cards]], dead: [cards], dw } */
+  function arrange(hand) {
+    const cand = [];
+    const byRank = {}; hand.forEach(c => (byRank[c.r] = byRank[c.r] || []).push(c));
+    Object.values(byRank).forEach(g => { if (g.length >= 3) { cand.push(g.slice()); if (g.length === 4) for (let k = 0; k < 4; k++) cand.push(g.filter((_, j) => j !== k)); } });
+    for (const s of SUITS) {
+      const cs = hand.filter(c => c.s === s).sort((a, b) => a.r - b.r);
+      for (let a = 0; a < cs.length; a++) { let run = [cs[a]]; for (let b = a + 1; b < cs.length && cs[b].r === run[run.length - 1].r + 1; b++) { run = run.concat([cs[b]]); if (run.length >= 3) cand.push(run.slice()); } }
+    }
+    let best = { melds: [], dw: hand.reduce((a, c) => a + dv(c), 0) };
+    const rec = (start, used, melds) => {
+      const dw = hand.filter(c => !used.has(c.id)).reduce((a, c) => a + dv(c), 0);
+      if (dw < best.dw) best = { melds: melds.slice(), dw };
+      for (let k = start; k < cand.length; k++) { const m = cand[k]; if (m.some(c => used.has(c.id))) continue; m.forEach(c => used.add(c.id)); melds.push(m); rec(k + 1, used, melds); melds.pop(); m.forEach(c => used.delete(c.id)); }
+    };
+    rec(0, new Set(), []);
+    const usedIds = new Set(best.melds.flat().map(c => c.id));
+    return { melds: best.melds, dead: hand.filter(c => !usedIds.has(c.id)).sort((a, b) => a.r - b.r), dw: best.dw };
+  }
+  /* defender lays off deadwood on the knocker's melds */
+  function layoff(melds, dead) {
+    const ms = melds.map(m => m.slice()); let left = dead.slice(), changed = true;
+    while (changed) {
+      changed = false;
+      for (const c of left.slice()) {
+        for (const m of ms) {
+          const isSet = m.every(x => x.r === m[0].r);
+          const fits = isSet ? (c.r === m[0].r && m.length < 4) : (c.s === m[0].s && (c.r === Math.min(...m.map(x => x.r)) - 1 || c.r === Math.max(...m.map(x => x.r)) + 1));
+          if (fits) { m.push(c); left = left.filter(x => x !== c); changed = true; break; }
+        }
+      }
+    }
+    return left;
+  }
+  function newGame() { sid++; S = { scores: [0, 0], dealer: 1, over: null, log: ['First to 100 points wins. Knock with 10 or less deadwood, or go Gin with none.'] }; deal(); }
+  const log = m => { S.log.unshift(m); S.log = S.log.slice(0, 6); };
+  function deal() {
+    busy = false; sel = null; shownFor = -1;
+    const d = Util.shuffle(Util.deck());
+    S.hands = [d.splice(0, 10), d.splice(0, 10)]; S.stock = d; S.discard = [S.stock.shift()];
+    S.dealer = 1 - S.dealer; S.turn = 1 - S.dealer; S.phase = 'draw'; S.drewDiscard = null;
+    turn();
+  }
+  async function turn() {
+    if (S.over || !root) return; const my = sid, i = S.turn;
+    if (S.stock.length <= 2) { log('The stock has run low: this hand is a draw.'); await Util.choose('A dead hand', 'The stock ran out before anyone knocked, so nobody scores. Redealing.', [{ label: 'Deal again', value: 1, primary: true }]); if (my === sid) deal(); return; }
+    S.phase = 'draw'; sel = null;
+    if (!isHuman(i)) { render(); await Util.sleep(Util.delay(800)); if (my === sid) aiTurn(); return; }
+    if (mode === '2p' && shownFor !== i) { shownFor = -1; render(); await curtain(nameOf(i), 'Pass the phone. Keep your cards hidden!'); if (my !== sid) return; }
+    shownFor = i; render();
+  }
+  function draw(fromDiscard) {
+    const i = S.turn; if (S.phase !== 'draw' || !isHuman(i) || busy) return;
+    const c = fromDiscard ? S.discard.pop() : S.stock.shift(); S.hands[i].push(c); S.drewDiscard = fromDiscard ? c.id : null;
+    S.phase = 'discard'; Sfx.play('card'); log(`${nameOf(i)} draw${mode === 'ai' && i === 0 ? '' : 's'} ${fromDiscard ? `the ${Util.rankLabel(c.r)}${SUIT_SYM[c.s]} from the discard pile` : 'from the stock'}.`);
+    render();
+  }
+  function pick(id) { if (S.phase !== 'discard' || !isHuman(S.turn) || busy) return; sel = sel === id ? null : id; Sfx.play('tap'); render(); }
+  const after = (i, id) => arrange(S.hands[i].filter(c => c.id !== id));
+  function discard(knock) {
+    const i = S.turn; if (S.phase !== 'discard' || sel === null || !isHuman(i)) return;
+    if (sel === S.drewDiscard) return Util.toast("You can't throw back the card you just picked up.");
+    const res = after(i, sel);
+    if (knock && res.dw > 10) return Util.toast('You need 10 or less deadwood to knock.');
+    doDiscard(i, sel, knock);
+  }
+  function doDiscard(i, id, knock) {
+    const h = S.hands[i], c = h.find(x => x.id === id); h.splice(h.indexOf(c), 1); S.discard.push(c); Sfx.play('place'); sel = null;
+    log(`${nameOf(i)} discard${mode === 'ai' && i === 0 ? '' : 's'} ${Util.rankLabel(c.r)}${SUIT_SYM[c.s]}${knock ? ' and knocks!' : '.'}`);
+    if (knock) return resolve(i);
+    S.turn = 1 - i; turn();
+  }
+  async function resolve(k) {
+    const my = sid, d = 1 - k, A = arrange(S.hands[k]), B = arrange(S.hands[d]);
+    const gin = A.dw === 0;
+    const left = gin ? B.dead : layoff(A.melds, B.dead), ddw = left.reduce((a, c) => a + dv(c), 0);
+    let winner, pts, why;
+    if (gin) { winner = k; pts = 25 + ddw; why = `Gin! ${nameOf(k)} score${mode === 'ai' && k === 0 ? '' : 's'} 25 + ${ddw} deadwood.`; }
+    else if (ddw <= A.dw) { winner = d; pts = 25 + (A.dw - ddw); why = `Undercut! ${nameOf(d)} had ${ddw} deadwood against ${A.dw}: 25 bonus + ${A.dw - ddw}.`; }
+    else { winner = k; pts = ddw - A.dw; why = `${nameOf(k)} knocked with ${A.dw} against ${ddw} (after layoffs).`; }
+    S.scores[winner] += pts; shownFor = -2; S.phase = 'show'; render(); Sfx.play(winner === 0 || mode === '2p' ? 'win' : 'lose');
+    const showHand = (i, a) => `<div class="text-left text-xs mt-2"><b>${nameOf(i)}</b>: ${a.melds.map(m => `<span class="text-emerald-300">[${m.map(c => Util.rankLabel(c.r) + SUIT_SYM[c.s]).join(' ')}]</span>`).join(' ')} ${a.dead.map(c => Util.rankLabel(c.r) + SUIT_SYM[c.s]).join(' ')}</div>`;
+    log(why);
+    if (S.scores[winner] >= 100) {
+      S.over = `${nameOf(winner)} win${mode === 'ai' && winner === 0 ? '' : 's'} the game!`; render();
+      return App.endGame('gin', mode === 'ai' && winner === 0, S.over, `${why}<br>Final score ${S.scores[0]}–${S.scores[1]}.${showHand(k, A)}${showHand(d, B)}`, newGame);
+    }
+    await Util.choose(`${nameOf(winner)} +${pts}`, `${why}<br><span class="text-amber-300">Score ${S.scores[0]}–${S.scores[1]}</span>${showHand(k, A)}${showHand(d, B)}`, [{ label: 'Next hand', value: 1, primary: true }]);
+    if (my === sid) deal();
+  }
+  async function aiTurn() {
+    const my = sid, i = S.turn, h = S.hands[i], top = S.discard[S.discard.length - 1];
+    const base = arrange(h).dw;
+    const withTop = Math.min(...h.map(c => arrange(h.concat([top]).filter(x => x.id !== c.id)).dw));
+    const takeTop = withTop < base - (Settings.diff === 'easy' ? 6 : 2);
+    const c = takeTop ? S.discard.pop() : S.stock.shift(); h.push(c); Sfx.play('card');
+    log(`${nameOf(i)} draws ${takeTop ? `the ${Util.rankLabel(c.r)}${SUIT_SYM[c.s]} from the discard pile` : 'from the stock'}.`);
+    render(); await Util.sleep(Util.delay(700)); if (my !== sid) return;
+    let best = null, bdw = 1e9;
+    for (const x of h) { if (takeTop && x.id === c.id) continue; const dw = arrange(h.filter(y => y.id !== x.id)).dw - dv(x) * .01; if (dw < bdw) { bdw = dw; best = x; } }
+    const dw = arrange(h.filter(y => y.id !== best.id)).dw;
+    const limit = Settings.diff === 'easy' ? 10 : Settings.diff === 'hard' ? (S.stock.length < 12 ? 10 : 4) : (S.stock.length < 18 ? 10 : 7);
+    doDiscard(i, best.id, dw <= limit);
+  }
+  function render() {
+    if (!root || !S) return;
+    const cw = 'min(58px, calc((100vw - 40px) / 8.2))', me = mode === 'ai' ? 0 : (shownFor >= 0 ? shownFor : S.turn), opp = 1 - me;
+    const visible = i => shownFor === -2 || (shownFor === i);
+    const handHTML = i => {
+      if (!visible(i)) return `<div class="flex justify-center" style="padding-left:12px">${S.hands[i].map(() => `<div style="margin-left:-12px">${Util.card({ r: 1, s: 'S' }, { down: true })}</div>`).join('')}</div>`;
+      const a = arrange(S.hands[i]);
+      const grp = (cards, meld) => `<div class="flex rounded-lg p-1 ${meld ? 'bg-emerald-500/15 ring-1 ring-emerald-400/40' : ''}" style="padding-left:${meld ? 'calc(var(--cw)*.35 + 4px)' : 'calc(var(--cw)*.35)'}">${cards.map(c => `<div style="margin-left:calc(var(--cw)*-.35)">${Util.card(c, { sel: sel === c.id, attrs: `onclick="Gin.pick(${c.id})"` })}</div>`).join('')}</div>`;
+      return `<div class="flex flex-wrap gap-2 justify-center items-end">${a.melds.map(m => grp(m.sort((x, y) => x.r - y.r), true)).join('')}${a.dead.length ? grp(a.dead, false) : ''}</div><div class="text-center text-xs text-amber-100/70 mt-1">Deadwood: <b class="${a.dw <= 10 ? 'text-emerald-300' : 'text-amber-200'}">${a.dw}</b></div>`;
+    };
+    const top = S.discard[S.discard.length - 1], mine = isHuman(S.turn) && shownFor === S.turn && !S.over && S.phase !== 'show';
+    const res = mine && S.phase === 'discard' && sel !== null ? after(S.turn, sel) : null;
+    const status = S.over || (S.phase === 'show' ? 'Hand over' : !isHuman(S.turn) ? `${nameOf(S.turn)} is playing…` : !mine ? `${nameOf(S.turn)}'s turn` : S.phase === 'draw' ? 'Draw from the stock or take the discard' : sel === null ? 'Tap a card to discard' : res.dw === 0 ? 'Gin is on!' : res.dw <= 10 ? `Discard, or knock with ${res.dw} deadwood` : 'Discard this card?');
+    root.innerHTML = `
+      <div class="flex flex-col gap-3 mx-auto w-full" style="max-width:680px;--cw:${cw}">
+        <div class="flex gap-2 justify-center flex-wrap"><span class="stat-chip">${nameOf(0)}: <b>${S.scores[0]}</b></span><span class="stat-chip">${nameOf(1)}: <b>${S.scores[1]}</b></span><span class="stat-chip">Stock: ${S.stock.length}</span></div>
+        <div class="text-center text-xs text-amber-100/70">${nameOf(opp)}</div>
+        ${handHTML(opp)}
+        <div class="felt-surface rounded-2xl p-3 flex items-center justify-center gap-6">
+          <button onclick="Gin.draw(false)" class="${mine && S.phase === 'draw' ? 'ring-2 ring-amber-300 rounded-lg' : ''}">${Util.card({ r: 1, s: 'S' }, { down: true })}<div class="text-[10px] text-amber-100/60 mt-1">Stock</div></button>
+          <button onclick="Gin.draw(true)" class="${mine && S.phase === 'draw' ? 'ring-2 ring-amber-300 rounded-lg' : ''}">${top ? Util.card(top) : Util.card(null)}<div class="text-[10px] text-amber-100/60 mt-1">Discard</div></button>
+        </div>
+        <div class="text-center text-sm text-amber-100">${status}</div>
+        ${handHTML(me)}
+        <div class="flex gap-2 justify-center flex-wrap">
+          ${mine && S.phase === 'discard' ? Util.btn('Discard', 'Gin.discard(false)', 'brass', sel === null ? 'opacity-40' : '') + Util.btn(res && res.dw === 0 ? '🥃 Gin!' : '✊ Knock', 'Gin.discard(true)', res && res.dw <= 10 ? 'brass' : 'wood', res && res.dw <= 10 ? '' : 'opacity-40') : ''}
+          ${Util.btn('vs AI', "Gin.setMode('ai')", mode === 'ai' ? 'brass' : 'wood')}${Util.btn('Pass & Play', "Gin.setMode('2p')", mode === '2p' ? 'brass' : 'wood')}${Util.btn('New Game', 'Gin.newGame()')}
+        </div>
+        ${Util.panel(`<div class="text-xs space-y-1 text-amber-50/80">${S.log.map((l, k) => `<div class="${k ? 'opacity-60' : 'text-amber-200'}">${l}</div>`).join('')}</div>`, '!p-3')}
+      </div>`;
+  }
+  return {
+    mount(el, o = {}) { root = el; if (o.mode) { mode = o.mode; Store.set('gin_mode', mode); } if (o.resume) { sid++; S = o.resume.S; mode = o.resume.mode; S.dealer = 1 - S.dealer; deal(); } else newGame(); },
+    snapshot() { return S && !S.over ? { S: { scores: S.scores, dealer: S.dealer, over: null, log: S.log.slice(0, 3) }, mode } : null; },
+    destroy() { sid++; root = null; },
+    draw, pick, discard, newGame, setMode(m) { mode = m; Store.set('gin_mode', m); newGame(); },
+    _test: { arrange, layoff, get S() { return S; } }
+  };
+})();
+Games.gin = Gin;
+
+/* ============================================================================
+   BATTLESHIPS (vs AI or pass & play), 10×10 grids
+   ============================================================================ */
+const Battleships = (() => {
+  const FLEET = [['Carrier', 5], ['Battleship', 4], ['Cruiser', 3], ['Submarine', 3], ['Destroyer', 2]];
+  let S, root, mode = Store.get('bs_mode', 'ai'), sid = 0, busy = false;
+  const nameOf = i => mode === 'ai' ? (i === 0 ? 'You' : 'The AI') : (i === 0 ? 'Admiral 1' : 'Admiral 2');
+  function place() {
+    const occ = new Set(), ships = [];
+    for (const [n, L] of FLEET) {
+      for (;;) {
+        const h = Math.random() < .5, r = Math.floor(Math.random() * (h ? 10 : 11 - L)), c = Math.floor(Math.random() * (h ? 11 - L : 10));
+        const cells = Array.from({ length: L }, (_, k) => h ? r * 10 + c + k : (r + k) * 10 + c);
+        if (cells.some(i => occ.has(i) || [-1, 1, -10, 10].some(d => occ.has(i + d) && (d === 10 || d === -10 || Math.floor((i + d) / 10) === Math.floor(i / 10))))) continue;
+        cells.forEach(i => occ.add(i)); ships.push({ n, cells }); break;
+      }
+    }
+    return ships;
+  }
+  function newGame() { sid++; busy = false; S = { fleets: [place(), place()], shots: [{}, {}], turn: 0, phase: 'setup', setupFor: 0, over: null, ai: { queue: [] }, msg: '' }; setup(); }
+  async function setup() {
+    const my = sid;
+    if (mode === '2p') { render(true); await curtain(`${nameOf(S.setupFor)}: hide your fleet`, 'Pass the phone. Shuffle your ships until you like where they are.'); if (my !== sid) return; }
+    S.phase = 'setup'; render();
+  }
+  function ready() {
+    if (S.phase !== 'setup') return;
+    if (mode === '2p' && S.setupFor === 0) { S.setupFor = 1; return setup(); }
+    S.phase = 'play'; S.turn = 0; startTurn();
+  }
+  async function startTurn() {
+    if (S.over || !root) return; const my = sid;
+    if (mode === 'ai' && S.turn === 1) { busy = true; render(); await Util.sleep(Util.delay(700)); if (my !== sid) return; busy = false; return fire(1, aiTarget()); }
+    if (mode === '2p') { render(true); await curtain(`${nameOf(S.turn)}'s turn`, 'Pass the phone and take your shot.'); if (my !== sid) return; }
+    render();
+  }
+  const shipAt = (fleet, i) => fleet.find(s => s.cells.includes(i));
+  const sunk = (s, shots) => s.cells.every(i => shots[i]);
+  async function fire(i, cell) {
+    const my = sid, foe = 1 - i, shots = S.shots[i];
+    if (shots[cell]) return;
+    const ship = shipAt(S.fleets[foe], cell);
+    shots[cell] = ship ? 'hit' : 'miss';
+    let msg = ship ? 'Hit!' : 'Miss.';
+    if (ship && sunk(ship, shots)) msg = `${nameOf(i)} sank ${mode === 'ai' && i === 1 ? 'your' : nameOf(foe) + "'s"} ${ship.n}!`;
+    Sfx.play(ship ? (sunk(ship, shots) ? 'capture' : 'hit') : 'place');
+    S.msg = `${nameOf(i)}: ${msg}`;
+    if (mode === 'ai' && i === 1 && ship) { if (sunk(ship, shots)) S.ai.queue = []; else aiQueue(cell); }
+    if (S.fleets[foe].every(s => sunk(s, shots))) {
+      S.over = `${nameOf(i)} sank the whole fleet!`; render(); Sfx.play(mode === 'ai' && i === 1 ? 'lose' : 'win');
+      const n = Object.keys(shots).length;
+      return App.endGame('battleships', mode === 'ai' && i === 0, mode === 'ai' ? (i === 0 ? 'Victory at sea!' : 'Your fleet is sunk') : `${nameOf(i)} wins!`, `All five ships went down in ${n} shots.`, newGame);
+    }
+    busy = true; render(); await Util.sleep(Util.delay(mode === 'ai' && i === 1 ? 600 : 900)); if (my !== sid) return; busy = false;
+    S.turn = foe; startTurn();
+  }
+  function aiQueue(cell) {
+    const shots = S.shots[1], hits = Object.keys(shots).map(Number).filter(k => shots[k] === 'hit' && !sunk(shipAt(S.fleets[0], k), shots));
+    const r = Math.floor(cell / 10), c = cell % 10;
+    const line = hits.filter(k => k !== cell && (Math.floor(k / 10) === r || k % 10 === c));
+    let dirs = [[0, 1], [0, -1], [1, 0], [-1, 0]];
+    if (line.length) dirs = Math.floor(line[0] / 10) === r ? [[0, 1], [0, -1]] : [[1, 0], [-1, 0]];
+    const q = [];
+    for (const [dr, dc] of dirs) { let rr = r + dr, cc = c + dc; while (rr >= 0 && rr < 10 && cc >= 0 && cc < 10 && shots[rr * 10 + cc] === 'hit') { rr += dr; cc += dc; } if (rr >= 0 && rr < 10 && cc >= 0 && cc < 10 && !shots[rr * 10 + cc]) q.push(rr * 10 + cc); }
+    if (line.length) { const k = line[0], kr = Math.floor(k / 10), kc = k % 10; for (const [dr, dc] of dirs) { let rr = kr + dr, cc = kc + dc; while (rr >= 0 && rr < 10 && cc >= 0 && cc < 10 && shots[rr * 10 + cc] === 'hit') { rr += dr; cc += dc; } if (rr >= 0 && rr < 10 && cc >= 0 && cc < 10 && !shots[rr * 10 + cc]) q.push(rr * 10 + cc); } }
+    S.ai.queue = [...new Set(q.concat(S.ai.queue))].filter(k => !shots[k]);
+  }
+  function aiTarget() {
+    const shots = S.shots[1];
+    S.ai.queue = S.ai.queue.filter(k => !shots[k]);
+    if (S.ai.queue.length && Settings.diff !== 'easy') return S.ai.queue.shift();
+    const free = [...Array(100).keys()].filter(k => !shots[k]);
+    const parity = free.filter(k => (Math.floor(k / 10) + k % 10) % 2 === 0);
+    const pool = Settings.diff === 'easy' ? free : (parity.length ? parity : free);
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+  function grid(owner, shots, showShips, clickable, big) {
+    let h = '';
+    for (let k = 0; k < 100; k++) {
+      const s = shots[k], ship = showShips && shipAt(S.fleets[owner], k), sk = ship && sunk(ship, shots);
+      const enemyShip = !showShips && s === 'hit' && sunk(shipAt(S.fleets[owner], k), shots);
+      h += `<div ${clickable && !s ? `onclick="Battleships.fire(${k})"` : ''} class="flex items-center justify-center ${clickable && !s ? 'cursor-pointer hover:bg-white/15' : ''}" style="aspect-ratio:1;background:${ship ? (sk ? '#4a2020' : '#6b7a86') : enemyShip ? '#4a2020' : 'rgba(255,255,255,.04)'};border:1px solid rgba(255,255,255,.08)">
+        ${s === 'hit' ? `<span style="font-size:${big ? 'min(5vw,22px)' : '10px'}">💥</span>` : s === 'miss' ? `<span class="rounded-full bg-white/60" style="width:${big ? '22%' : '30%'};height:${big ? '22%' : '30%'}"></span>` : ''}</div>`;
+    }
+    return `<div class="grid rounded-lg overflow-hidden" style="grid-template-columns:repeat(10,1fr);background:linear-gradient(160deg,#164b6e,#0b2740);box-shadow:0 8px 20px rgba(0,0,0,.5);width:${big ? 'min(92vw,440px)' : 'min(46vw,200px)'}">${h}</div>`;
+  }
+  function render(hide) {
+    if (!root) return;
+    if (hide) { root.innerHTML = ''; return; }
+    if (S.phase === 'setup') {
+      const i = mode === 'ai' ? 0 : S.setupFor;
+      root.innerHTML = `<div class="flex flex-col items-center gap-3"><div class="stat-chip">${nameOf(i)}: position your fleet</div>${grid(i, {}, true, false, true)}
+        <div class="flex gap-2">${Util.btn('🔀 Shuffle ships', 'Battleships.shuffle()')}${Util.btn('⚓ Ready', 'Battleships.ready()', 'brass')}</div>
+        <div class="flex gap-2 flex-wrap justify-center">${Util.btn('vs AI', "Battleships.setMode('ai')", mode === 'ai' ? 'brass' : 'wood')}${Util.btn('Pass & Play', "Battleships.setMode('2p')", mode === '2p' ? 'brass' : 'wood')}</div>
+        <p class="text-xs text-amber-100/60 text-center max-w-xs">${FLEET.map(([n, L]) => `${n} (${L})`).join(' · ')}</p></div>`;
+      return;
+    }
+    const me = mode === 'ai' ? 0 : S.turn, foe = 1 - me;
+    const left = f => S.fleets[f].filter(s => !sunk(s, S.shots[1 - f])).length;
+    const myTurn = !S.over && !busy && (mode === '2p' || S.turn === 0);
+    root.innerHTML = `
+      <div class="flex flex-col items-center gap-3">
+        <div class="flex gap-2 flex-wrap justify-center"><span class="stat-chip">${S.over || (mode === 'ai' && S.turn === 1 ? 'The AI is taking aim…' : `${nameOf(me)}: fire at the enemy`)}</span><span class="stat-chip">Enemy ships left: ${left(foe)}</span></div>
+        <div class="text-xs text-amber-100/70">${mode === 'ai' ? 'Enemy waters' : `${nameOf(foe)}'s waters`}</div>
+        ${grid(foe, S.shots[me], !!S.over, myTurn, true)}
+        <div class="text-sm text-amber-200 h-5">${S.msg}</div>
+        <div class="flex items-start gap-3"><div><div class="text-[10px] text-amber-100/60 mb-1">${mode === 'ai' ? 'Your fleet' : `${nameOf(me)}'s fleet`} (${left(me)} afloat)</div>${grid(me, S.shots[foe], true, false, false)}</div>
+          <div class="flex flex-col gap-2">${Util.btn('New Game', 'Battleships.newGame()')}<div class="text-[10px] text-amber-100/50 max-w-[120px]">💥 hit · ⚪ miss · dark squares are sunk ships</div></div></div>
+      </div>`;
+  }
+  return {
+    mount(el, o = {}) { root = el; if (o.mode) { mode = o.mode; Store.set('bs_mode', mode); } if (o.resume && o.resume.S.phase === 'play') { sid++; busy = false; S = o.resume.S; mode = o.resume.mode; startTurn(); } else newGame(); },
+    snapshot() { return S && !S.over && S.phase === 'play' && !busy ? { S, mode } : null; },
+    destroy() { sid++; root = null; },
+    fire(k) { if (S.phase === 'play' && !busy && !S.over && (mode === '2p' || S.turn === 0)) fire(S.turn, k); },
+    shuffle() { const i = mode === 'ai' ? 0 : S.setupFor; S.fleets[i] = place(); Sfx.play('card'); render(); }, ready, newGame,
+    setMode(m) { mode = m; Store.set('bs_mode', m); newGame(); },
+    _test: { get S() { return S; } }
+  };
+})();
+Games.battleships = Battleships;
+
+/* ============================================================================
+   SUDOKU: generated puzzles with a single solution, four difficulties, notes and a daily puzzle
+   ============================================================================ */
+const Sudoku = (() => {
+  const LEVELS = { easy: { n: 'Easy', clues: 40 }, medium: { n: 'Medium', clues: 32 }, hard: { n: 'Hard', clues: 27 }, expert: { n: 'Expert', clues: 23 } };
+  let S, root, onKey = null, timer = null;
+  const ROW = i => Math.floor(i / 9), COL = i => i % 9, BOX = i => Math.floor(ROW(i) / 3) * 3 + Math.floor(COL(i) / 3);
+  const PEERS = [...Array(81)].map((_, i) => [...Array(81).keys()].filter(j => j !== i && (ROW(j) === ROW(i) || COL(j) === COL(i) || BOX(j) === BOX(i))));
+  function solveCount(g, limit = 2) {
+    const a = g.slice(); let count = 0;
+    const rec = () => {
+      let best = -1, bestOpts = null;
+      for (let i = 0; i < 81; i++) if (!a[i]) {
+        const used = new Set(PEERS[i].map(j => a[j])), opts = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(v => !used.has(v));
+        if (!opts.length) return;
+        if (!bestOpts || opts.length < bestOpts.length) { best = i; bestOpts = opts; if (opts.length === 1) break; }
+      }
+      if (best < 0) { count++; return; }
+      for (const v of bestOpts) { a[best] = v; rec(); if (count >= limit) return; a[best] = 0; }
+    };
+    rec(); return count;
+  }
+  function generate(level, rng = Math.random) {
+    const sol = Array(81).fill(0);
+    const fill = i => { if (i === 81) return true; const used = new Set(PEERS[i].map(j => sol[j])); const opts = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(v => !used.has(v)); for (let k = opts.length - 1; k > 0; k--) { const j = Math.floor(rng() * (k + 1)); [opts[k], opts[j]] = [opts[j], opts[k]]; } for (const v of opts) { sol[i] = v; if (fill(i + 1)) return true; } sol[i] = 0; return false; };
+    fill(0);
+    const puz = sol.slice(), order = [...Array(81).keys()]; for (let k = 80; k > 0; k--) { const j = Math.floor(rng() * (k + 1)); [order[k], order[j]] = [order[j], order[k]]; }
+    let clues = 81; const target = LEVELS[level].clues;
+    for (const i of order) { if (clues <= target) break; const v = puz[i]; puz[i] = 0; if (solveCount(puz) !== 1) puz[i] = v; else clues--; }
+    return { puz, sol };
+  }
+  function start(level, daily) {
+    clearInterval(timer);
+    const g = generate(level, daily ? seeded(todayKey() * 13 + 5) : Math.random);
+    S = { level, daily, given: g.puz.map(v => !!v), val: g.puz.slice(), sol: g.sol, notes: Array(81).fill(0), sel: null, noteMode: false, mistakes: 0, hints: 0, time: 0, hist: [], over: false };
+    tick(); render();
+  }
+  function tick() { clearInterval(timer); timer = setInterval(() => { if (!S || S.over || document.hidden) return; S.time++; const t = root && root.querySelector('#su-time'); if (t) t.textContent = fmt(S.time); }, 1000); }
+  const fmt = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+  function select(i) { S.sel = i; render(); }
+  function put(v) {
+    const i = S.sel; if (i === null || S.given[i] || S.over) return;
+    S.hist.push({ i, val: S.val[i], notes: S.notes[i] });
+    if (S.noteMode && v) { if (!S.val[i]) S.notes[i] ^= 1 << v; Sfx.play('tap'); return render(); }
+    S.val[i] = v; S.notes[i] = 0;
+    if (v) {
+      PEERS[i].forEach(j => { S.notes[j] &= ~(1 << v); });
+      if (v !== S.sol[i]) { S.mistakes++; Sfx.play('lose'); } else Sfx.play('place');
+    }
+    if (S.val.every((x, k) => x === S.sol[k])) return win();
+    render();
+  }
+  function hint() {
+    let i = S.sel; if (i === null || S.given[i] || S.val[i] === S.sol[i]) i = S.val.findIndex((x, k) => x !== S.sol[k]);
+    if (i < 0) return; S.sel = i; S.hints++; const n = S.noteMode; S.noteMode = false; put(S.sol[i]); S.noteMode = n;
+  }
+  function undo() { const h = S.hist.pop(); if (!h) return; S.val[h.i] = h.val; S.notes[h.i] = h.notes; S.sel = h.i; render(); }
+  function win() {
+    S.over = true; clearInterval(timer); render(); Sfx.play('win');
+    App.endGame('sudoku', true, 'Solved!', `${LEVELS[S.level].n}${S.daily ? ' daily' : ''} puzzle in ${fmt(S.time)}${S.mistakes ? ` with ${S.mistakes} mistake${S.mistakes > 1 ? 's' : ''}` : ', no mistakes'}${S.hints ? ` and ${S.hints} hint${S.hints > 1 ? 's' : ''}` : ''}.`, () => start(S.level, false));
+  }
+  function render() {
+    if (!root || !S) return;
+    const sv = S.sel !== null ? S.val[S.sel] : 0;
+    const cells = S.val.map((v, i) => {
+      const r = ROW(i), c = COL(i), peer = S.sel !== null && (ROW(S.sel) === r || COL(S.sel) === c || BOX(S.sel) === BOX(i));
+      const same = sv && v === sv, wrong = v && !S.given[i] && v !== S.sol[i];
+      const bg = i === S.sel ? '#e5c358' : same ? '#efd99a' : peer ? '#f3e7cc' : '#fbf7ee';
+      const notes = !v && S.notes[i] ? `<div class="grid grid-cols-3 w-full h-full p-[1px]">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => `<span class="flex items-center justify-center text-[9px] leading-none text-amber-900/70">${S.notes[i] >> n & 1 ? n : ''}</span>`).join('')}</div>` : '';
+      return `<div onclick="Sudoku.sel(${i})" class="flex items-center justify-center font-bold cursor-pointer" style="aspect-ratio:1;background:${bg};font-size:clamp(16px,5.4vw,26px);color:${S.given[i] ? '#1d120c' : wrong ? '#c0261c' : '#1d4f8f'};border-right:${c % 3 === 2 && c < 8 ? '2px solid #4a2e1d' : '1px solid #c9b896'};border-bottom:${r % 3 === 2 && r < 8 ? '2px solid #4a2e1d' : '1px solid #c9b896'}">${v || notes}</div>`;
+    }).join('');
+    const done = n => S.val.filter((v, k) => v === n && v === S.sol[k]).length >= 9;
+    root.innerHTML = `
+      <div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:440px">
+        <div class="flex gap-2 flex-wrap justify-center"><span class="stat-chip">${S.daily ? '📅 Daily · ' : ''}${LEVELS[S.level].n}</span><span class="stat-chip">⏱️ <b id="su-time">${fmt(S.time)}</b></span><span class="stat-chip">❌ ${S.mistakes}</span></div>
+        <div class="grid w-full" style="grid-template-columns:repeat(9,1fr);border:3px solid #4a2e1d;border-radius:6px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.6)">${cells}</div>
+        <div class="grid grid-cols-9 gap-1 w-full">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => `<button onclick="Sudoku.put(${n})" class="btn-wood rounded-lg py-2.5 text-xl font-bold ${done(n) ? 'opacity-30' : ''}">${n}</button>`).join('')}</div>
+        <div class="flex gap-2 flex-wrap justify-center">${Util.btn(S.noteMode ? '✏️ Notes: on' : '✏️ Notes: off', 'Sudoku.notes()', S.noteMode ? 'brass' : 'wood')}${Util.btn('⌫ Erase', 'Sudoku.put(0)')}${Util.btn('↶ Undo', 'Sudoku.undo()')}${Util.btn('💡 Hint', 'Sudoku.hint()')}</div>
+        <div class="flex gap-2 flex-wrap justify-center">${Object.entries(LEVELS).map(([k, l]) => Util.btn(l.n, `Sudoku.fresh('${k}')`, k === S.level && !S.daily ? 'brass' : 'wood')).join('')}${Util.btn('📅 Daily', 'Sudoku.daily()', S.daily ? 'brass' : 'wood')}</div>
+      </div>`;
+  }
+  return {
+    async setup() {
+      const v = await Util.choose('🔢 Sudoku', 'Fill the grid so every row, column and 3×3 box has the numbers 1 to 9.', [{ label: '📅 Daily puzzle', value: 'daily', primary: true }, ...Object.entries(LEVELS).map(([k, l]) => ({ label: l.n, value: k })), { label: 'Cancel', value: null }]);
+      return v ? { su: v } : null;
+    },
+    mount(el, o = {}) {
+      root = el;
+      onKey = e => { if (!S || e.ctrlKey || e.metaKey) return; if (/^[1-9]$/.test(e.key)) put(+e.key); else if (e.key === 'Backspace' || e.key === 'Delete' || e.key === '0') put(0); else if (e.key.startsWith('Arrow') && S.sel !== null) { const d = { ArrowUp: -9, ArrowDown: 9, ArrowLeft: -1, ArrowRight: 1 }[e.key]; S.sel = Math.max(0, Math.min(80, S.sel + d)); render(); e.preventDefault(); } else if (e.key === 'n') { S.noteMode = !S.noteMode; render(); } };
+      document.addEventListener('keydown', onKey);
+      if (o.resume) { S = o.resume; S.hist = []; tick(); render(); }
+      else if (o.su === 'daily' || !o.su) start('medium', true); else start(o.su, false);
+    },
+    snapshot() { return S && !S.over ? { ...S, hist: [] } : null; },
+    destroy() { clearInterval(timer); document.removeEventListener('keydown', onKey); root = null; },
+    sel: select, put, hint, undo, notes() { S.noteMode = !S.noteMode; render(); }, fresh(l) { start(l, false); }, daily() { start('medium', true); }, newGame() { start(S.level, false); },
+    _test: { generate, solveCount, get S() { return S; } }
+  };
+})();
+Games.sudoku = Sudoku;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -7185,7 +8508,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.3.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.4.0",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}
