@@ -2,7 +2,17 @@
 
 Kralnu Games ten-in-one parlour collection. Live at https://kralnugames.com/grand-compendium/ (GitHub Pages from `main`, root).
 
-## Current state: v1.8.2 (19 Nov 2026)
+## Roadmap to 101 games (Kris's goal, Nov 2026: "like the old 101-games-in-a-box sets", no rush)
+At 45 after 1.8.2. Planned batches (original names only, avoid trademarks such as Mastermind, Pictionary, Picross, KenKen, Let It Ride):
+1. Patience pack (9): Spider, Yukon, Scorpion, Forty Thieves, Canfield, Pyramid, Golf, TriPeaks, Aces Up -> 54
+2. Card night (10): Hearts, Spades, Knockout Whist, Rummy, Crazy Eights, Go Fish, Old Maid, Snap, Beggar-My-Neighbour, Cheat -> 64
+3. More board games (9): Chinese Checkers, Xiangqi, Hnefatafl, Dots and Boxes, Gomoku, Hex, Fox and Geese, Nim, Ultimate Noughts and Crosses -> 73
+4. Dice and dominoes (8): Farkle, Pig, Shut the Box, Ship Captain & Crew, Poker Dice, Mexico, Bunco, Fives and Threes -> 81
+5. Puzzles (10): Mines, Nonograms, Killer Sudoku, Kakuro, Bridges, 15 Puzzle, Peg Solitaire, Codebreaker, Lamplighter (lights-out), Hangman -> 91
+6. Casino and party (10): Keno, Sic Bo, Money Wheel, Red Dog, Casino War, Scratchcards, Bingo, Pub Quiz, Euchre, Canasta -> 101
+
+## Current state: v1.9.0 (19 Nov 2026)
+- 1.9.0: Fifty-four games (roadmap batch 1 done). src/g_patience.js = PatienceKit(ns, cfg): a reusable tableau-solitaire engine (build alt/suit/any, move run/suitrun/group/single, empty any/king, wrap, removeRuns, stock row/three/waste with draw+redeals, reserve auto-fill). New patience games are ~10 lines of config. src/g_patience2.js = Pyramid, Golf, TriPeaks, Aces Up. New "patience" shelf in App.CATS (7 shelves; the last tile spans when the count is odd). Fuzz test: random taps checking the card count never changes.
 - 1.8.2: Forty-five games. Added Three Card Poker (src/g_threecard.js; Kris asked for poker "like GTA Online", which is Three Card Poker). Pair Plus 1/3/6/30/40, ante bonus 1/4/5, dealer qualifies Q-high, hint = Q-6-4. Simulated edges: ante ~3%, pair plus ~6.5%. Phase "done" accepts Deal and bet changes (lesson from the 1.8.1 Blackjack bug).
 - 1.8.1: Blackjack deal/addBet/clearBet now accept phase "done" as well as "bet" (Kris found Deal dead after a hand). Test casino games with real button taps across several hands, not by resetting S.phase.
 - 1.8.0: Forty-four games. New sixth shelf "casino" in App.CATS. Files: src/g_casino.js (Chips bank in localStorage gtc_chips, default 1000, Chips.ensure() tops up to 500 below 5; chipDisc/betRow/chipPicker helpers; pkEval5/pkBest poker evaluator; Blackjack 6-deck S17 3:2 with split/double and basic-strategy hint; Baccarat 8-deck standard tableau; VideoPoker Jacks or Better 9/6 with 800 royal and Monte Carlo best-hold), src/g_casino2.js (Roulette single zero, SVG wheel; Craps pass/don't pass/odds 3x/field/any 7, bets refunded on destroy; Slots "Lucky Lantern" 3x3, 5 lines, RTP ~94.8% by simulation), src/g_holdem.js (no-limit 2/4, buy-in 200 from the bank, table stack mirrored to gtc_holdem_stack so a crash can't lose chips, returned on destroy/cash out; side pots by contribution levels; AI = Monte Carlo equity vs pot odds with per-player aggression/bluff). Play money only: never add purchases or real-money anything.

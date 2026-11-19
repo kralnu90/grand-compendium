@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Forty-five parlour, family, pub, casino and word games in one: Chess, Go, Shogi, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Fifty-four parlour, patience, family, pub, casino and word games in one: Chess, Go, Shogi, Spider, Pyramid, TriPeaks, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Forty-five games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Fifty-four games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -319,6 +319,9 @@
   }
   .right-\[2px\] {
     right: 2px;
+  }
+  .-bottom-1 {
+    bottom: calc(var(--spacing) * -1);
   }
   .-bottom-2 {
     bottom: calc(var(--spacing) * -2);
@@ -1908,6 +1911,10 @@
   .ring-red-500 {
     --tw-ring-color: var(--color-red-500);
   }
+  .brightness-75 {
+    --tw-brightness: brightness(75%);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
   .drop-shadow {
     --tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.1))) drop-shadow(0 1px 1px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.06)));
     --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow( 0 1px 1px rgb(0 0 0 / 0.06));
@@ -3423,6 +3430,114 @@ const GAME_CATALOG = [
         <li><strong>Tip:</strong> The standard strategy is to play Queen-6-4 or better. With hints on, the table tells you.</li>
         <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
       </ul>`
+  },
+  {
+    id: 'spider', title: "Spider", subtitle: "The Two-Deck Classic", category: 'Patience', icon: '🕷️',
+    players: "Solo", tagline: "Ten columns, two decks. Line up King to Ace runs to clear them away.",
+    rules: `
+      <p><strong>Objective:</strong> Clear all eight King-to-Ace runs from the table.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Building:</strong> Any card can go on one rank higher, whatever the suit. Only runs in a single suit can be moved together.</li>
+        <li><strong>Clearing:</strong> A complete King-to-Ace run in one suit is removed automatically.</li>
+        <li><strong>Stock:</strong> Deals one card onto every column. All columns must have a card before you deal.</li>
+        <li><strong>Difficulty:</strong> Choose one, two or four suits.</li>
+        <li><strong>Controls:</strong> Tap a card to pick it up, then tap where it should go. Tap a picked-up card again to send it to a foundation. Undo is unlimited.</li>
+      </ul>`
+  },
+  {
+    id: 'yukon', title: "Yukon", subtitle: "Klondike Without a Stock", category: 'Patience', icon: '🏔️',
+    players: "Solo", tagline: "Every card is dealt. Move any face-up group as long as it fits.",
+    rules: `
+      <p><strong>Objective:</strong> Build all four suits up from Ace to King on the foundations.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Building:</strong> Down in alternate colours. You can move any face-up card together with everything on top of it, as long as that card fits.</li>
+        <li><strong>Empty columns:</strong> Only a King (with anything on it) can fill them.</li>
+        <li><strong>Controls:</strong> Tap a card to pick it up, then tap where it should go. Tap a picked-up card again to send it to a foundation. Undo is unlimited.</li>
+      </ul>`
+  },
+  {
+    id: 'scorpion', title: "Scorpion", subtitle: "Build Down in Suit", category: 'Patience', icon: '🦂',
+    players: "Solo", tagline: "Untangle seven columns into four King-to-Ace suits.",
+    rules: `
+      <p><strong>Objective:</strong> Make a King-to-Ace run of each suit in the columns.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Building:</strong> Down in the same suit only. Any face-up card can move with everything on top of it.</li>
+        <li><strong>Empty columns:</strong> Kings only.</li>
+        <li><strong>Stock:</strong> The last three cards are dealt onto the first three columns when you tap it.</li>
+        <li><strong>Controls:</strong> Tap a card to pick it up, then tap where it should go. Tap a picked-up card again to send it to a foundation. Undo is unlimited.</li>
+      </ul>`
+  },
+  {
+    id: 'fortythieves', title: "Forty Thieves", subtitle: "The Two-Deck Thinker", category: 'Patience', icon: '🗝️',
+    players: "Solo", tagline: "Two decks, ten columns, one card at a time and only one pass.",
+    rules: `
+      <p><strong>Objective:</strong> Move all 104 cards to the eight foundations.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Building:</strong> Down in the same suit, one card at a time.</li>
+        <li><strong>Empty columns:</strong> Any card can go there.</li>
+        <li><strong>Stock:</strong> Turn one card at a time. There is only one pass, so plan carefully.</li>
+        <li><strong>Controls:</strong> Tap a card to pick it up, then tap where it should go. Tap a picked-up card again to send it to a foundation. Undo is unlimited.</li>
+      </ul>`
+  },
+  {
+    id: 'canfield', title: "Canfield", subtitle: "The Demon", category: 'Patience', icon: '😈',
+    players: "Solo", tagline: "A reserve of thirteen, foundations that start anywhere, and wraparound building.",
+    rules: `
+      <p><strong>Objective:</strong> Build all four foundations up in suit, starting from the rank of the first foundation card.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Foundations:</strong> Start with whatever rank is dealt to the first one, and wrap round from King to Ace.</li>
+        <li><strong>Building:</strong> Down in alternate colours, also wrapping (a King can go on an Ace).</li>
+        <li><strong>Reserve:</strong> Its top card can be played anywhere. Empty columns are filled from it automatically.</li>
+        <li><strong>Stock:</strong> Three cards at a time, with unlimited passes.</li>
+        <li><strong>Controls:</strong> Tap a card to pick it up, then tap where it should go. Tap a picked-up card again to send it to a foundation. Undo is unlimited.</li>
+      </ul>`
+  },
+  {
+    id: 'pyramid', title: "Pyramid", subtitle: "Pairs That Make Thirteen", category: 'Patience', icon: '🔺',
+    players: "Solo", tagline: "Pair off cards that add up to 13 and dig down through the pyramid.",
+    rules: `
+      <p><strong>Objective:</strong> Remove every card in the pyramid.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Pairs:</strong> Remove two uncovered cards that add up to 13 (Jack 11, Queen 12). Kings are 13 and go on their own.</li>
+        <li><strong>Uncovered:</strong> A card is free when neither card overlapping it is still there.</li>
+        <li><strong>Stock:</strong> Turn one card at a time onto the waste. Its top card can be paired too. You get three passes.</li>
+        <li><strong>Controls:</strong> Tap a card to pick it up, then tap where it should go. Tap a picked-up card again to send it to a foundation. Undo is unlimited.</li>
+      </ul>`
+  },
+  {
+    id: 'golf', title: "Golf", subtitle: "One Up, One Down", category: 'Patience', icon: '⛳',
+    players: "Solo", tagline: "Clear the course by playing cards one higher or one lower.",
+    rules: `
+      <p><strong>Objective:</strong> Clear all seven columns. Like golf, fewer cards left is better.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Playing:</strong> Move the bottom card of any column onto the pile if it is one higher or one lower. No wrapping round.</li>
+        <li><strong>Stock:</strong> When stuck, turn the next stock card onto the pile.</li>
+        <li><strong>Controls:</strong> Tap a card to pick it up, then tap where it should go. Tap a picked-up card again to send it to a foundation. Undo is unlimited.</li>
+      </ul>`
+  },
+  {
+    id: 'tripeaks', title: "TriPeaks", subtitle: "Three Peaks, Long Streaks", category: 'Patience', icon: '⛰️',
+    players: "Solo", tagline: "Clear three peaks with chains of cards one higher or lower.",
+    rules: `
+      <p><strong>Objective:</strong> Clear all three peaks.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Playing:</strong> Tap any face-up card that is one higher or lower than the pile. King and Ace connect.</li>
+        <li><strong>Uncovering:</strong> Cards turn face up when both cards covering them are gone.</li>
+        <li><strong>Streaks:</strong> Chain as many cards as you can before turning the stock.</li>
+        <li><strong>Controls:</strong> Tap a card to pick it up, then tap where it should go. Tap a picked-up card again to send it to a foundation. Undo is unlimited.</li>
+      </ul>`
+  },
+  {
+    id: 'acesup', title: "Aces Up", subtitle: "Idiot's Delight", category: 'Patience', icon: '🅰️',
+    players: "Solo", tagline: "Four columns. Discard the lower card of each suit until only the aces remain.",
+    rules: `
+      <p><strong>Objective:</strong> End with just the four aces on the table.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Discarding:</strong> Tap a top card when a higher card of the same suit is on top of another column. Aces are high.</li>
+        <li><strong>Empty columns:</strong> Move any top card into an empty column.</li>
+        <li><strong>Stock:</strong> Deals one card onto each of the four columns.</li>
+        <li><strong>Controls:</strong> Tap a card to pick it up, then tap where it should go. Tap a picked-up card again to send it to a foundation. Undo is unlimited.</li>
+      </ul>`
   }
 ];
 
@@ -3580,7 +3695,8 @@ const App = {
   /* Five shelves on the main menu; each opens its own sub-menu of games */
   CATS: [
     { k: 'board', n: 'Board Games', icon: '♞', blurb: 'Royal strategy and quick duels', ids: ['chess', 'go', 'shogi', 'checkers', 'reversi', 'four', 'morris', 'mancala'] },
-    { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Patience, pub classics and card crawls', ids: ['klondike', 'freecell', 'cribbage', 'gin', 'clash', 'duel', 'scoundrel', 'regicide'] },
+    { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Pub classics, duels and card crawls', ids: ['cribbage', 'gin', 'clash', 'duel', 'scoundrel', 'regicide'] },
+    { k: 'patience', n: 'Patience', icon: '🂡', blurb: 'Solitaire card games, from classic to devilish', ids: ['klondike', 'freecell', 'spider', 'yukon', 'scorpion', 'fortythieves', 'canfield', 'pyramid', 'golf', 'tripeaks', 'acesup'] },
     { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'knucklebones', 'liars', 'dominoes', 'mahjong'] },
     { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
     { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] },
@@ -3615,7 +3731,7 @@ const App = {
       ${recent.length ? `<div class="w-full max-w-md mx-auto mb-5"><div class="text-[10px] uppercase tracking-wider text-amber-200/60 mb-1.5 text-center">Recently played</div>
         <div class="flex justify-center gap-2">${recent.map(id => { const g = this.meta(id); return `<button onclick="App.play('${id}')" class="walnut-panel rounded-xl py-2 px-1 flex flex-col items-center gap-1 menu-tile w-[23%]"><span class="text-xl">${g.icon}</span><span class="text-[10px] text-amber-100 leading-tight text-center line-clamp-2">${g.title.replace(/ \(.*\)/, '')}</span></button>`; }).join('')}</div></div>` : ''}
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 max-w-4xl mx-auto mb-6">
-        ${this.CATS.map((c, k) => `<button onclick="App.openCat('${c.k}')" class="menu-tile walnut-panel rounded-2xl p-4 flex flex-col items-center text-center gap-2 ${k === 4 && this.CATS.length % 2 ? 'col-span-2 sm:col-span-1' : ''}">
+        ${this.CATS.map((c, k) => `<button onclick="App.openCat('${c.k}')" class="menu-tile walnut-panel rounded-2xl p-4 flex flex-col items-center text-center gap-2 ${k === this.CATS.length - 1 && this.CATS.length % 2 ? 'col-span-2 sm:col-span-1' : ''}">
           <span class="menu-ico felt-surface !w-16 !h-16 !text-3xl">${c.icon}</span>
           <span class="font-display text-amber-200 text-base leading-tight">${c.n}</span>
           <span class="text-[11px] text-amber-100/60 leading-snug">${c.blurb}</span>
@@ -3704,9 +3820,15 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.8.2'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.9.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.9.0', '19 Nov 2026', 'The patience pack', [
+    'Nine new solitaire games: Spider (1, 2 or 4 suits), Yukon, Scorpion, Forty Thieves and Canfield',
+    'Plus Pyramid, Golf, TriPeaks and Aces Up',
+    'A new Patience shelf on the main menu, with Klondike and FreeCell moved there too',
+    'Unlimited undo, tap-to-move and an Auto button to send cards up'
+  ]],
   ['1.8.2', '19 Nov 2026', 'Three Card Poker', [
     'Three Card Poker joins the Casino: Ante, Play and Pair Plus against a dealer who needs Queen high',
     'Ante bonus for straights and better, plus a strategy hint telling you when to play or fold',
@@ -11944,6 +12066,395 @@ const ThreeCard = (() => {
 })();
 Games.threecard = ThreeCard;
 
+/* ============================================================================
+   PATIENCE KIT: one engine for tableau solitaires (Spider, Yukon, Scorpion,
+   Forty Thieves, Canfield). Each game is a small config.
+   ============================================================================ */
+function PatienceKit(ns, cfg) {
+  let S, root, sel = null, hist = [], t0 = 0;
+  const top = a => a[a.length - 1];
+  const red = c => Util.isRed(c.s);
+  const down1 = (a, b) => cfg.wrap ? (a.r === 1 ? 13 : a.r - 1) === b.r : a.r - 1 === b.r;
+  function builds(a, b) { // can card b go on card a in the tableau?
+    if (!down1(a, b)) return false;
+    if (cfg.build === 'alt') return red(a) !== red(b);
+    if (cfg.build === 'suit') return a.s === b.s;
+    return true;
+  }
+  function movable(col, j) {
+    const cs = col.slice(j); if (!cs.length || !cs[0].up) return false;
+    if (cfg.move === 'single') return cs.length === 1;
+    if (cfg.move === 'group') return true;
+    for (let k = 0; k < cs.length - 1; k++) {
+      if (cfg.move === 'suitrun' ? !(cs[k].s === cs[k + 1].s && cs[k].r - 1 === cs[k + 1].r) : !builds(cs[k], cs[k + 1])) return false;
+    }
+    return true;
+  }
+  function canFound(c, f) {
+    const p = S.found[f];
+    if (!p.length) return c.r === (S.base || 1);
+    if (p.length >= 13) return false;
+    const t = top(p); return t.s === c.s && (t.r % 13) + 1 === c.r;
+  }
+  const emptyOK = c => cfg.empty === 'king' ? c.r === 13 : cfg.empty !== 'none';
+  function newGame(opts = {}) {
+    S = cfg.deal(opts); S.moves = 0; S.done = false; S.runs = S.runs || 0; S.redeals = 0; S.opts = opts;
+    sel = null; hist = []; t0 = Date.now(); render();
+  }
+  const snap = () => { hist.push(JSON.stringify(S)); if (hist.length > 200) hist.shift(); };
+  function selCards() {
+    if (!sel) return [];
+    if (sel.a === 'tab') return S.tab[sel.i].slice(sel.j);
+    if (sel.a === 'waste') return S.waste.length ? [top(S.waste)] : [];
+    if (sel.a === 'reserve') return S.reserve.length ? [top(S.reserve)] : [];
+    return [];
+  }
+  function takeSel() { if (sel.a === 'tab') S.tab[sel.i].splice(sel.j); else if (sel.a === 'waste') S.waste.pop(); else if (sel.a === 'reserve') S.reserve.pop(); }
+  function after() {
+    for (const col of S.tab) if (col.length && !top(col).up) top(col).up = true;
+    if (cfg.removeRuns) for (const col of S.tab) {
+      if (col.length < 13) continue;
+      const run = col.slice(-13);
+      if (run.every((c, k) => c.up && c.s === run[0].s && c.r === 13 - k)) { col.splice(-13); S.runs++; Sfx.play('match'); Util.toast('A full run is complete!', 1200); }
+    }
+    for (const col of S.tab) if (col.length && !top(col).up) top(col).up = true;
+    if (cfg.fillFromReserve) S.tab.forEach(col => { if (!col.length && S.reserve.length) { const c = S.reserve.pop(); c.up = true; col.push(c); } });
+    if (S.reserve && S.reserve.length) top(S.reserve).up = true;
+    const won = cfg.removeRuns ? S.runs >= cfg.runs : S.found.every(p => p.length === 13);
+    if (won && !S.done) { S.done = true; render(); Sfx.play('win'); const secs = Math.round((Date.now() - t0) / 1000); return App.endGame(cfg.id, true, `${cfg.title} solved!`, `${S.moves} moves in ${Math.floor(secs / 60)}m ${secs % 60}s.`, () => newGame(S.opts)); }
+    render();
+  }
+  function moveTo(a, i) {
+    const cards = selCards(); if (!cards.length) return false;
+    if (a === 'found') {
+      if (cards.length !== 1) return false;
+      let f = i; if (f === undefined || !canFound(cards[0], f)) f = S.found.findIndex((_, k) => canFound(cards[0], k));
+      if (f < 0) return false;
+      snap(); takeSel(); S.found[f].push(cards[0]);
+    } else if (a === 'tab') {
+      if (sel.a === 'tab' && sel.i === i) return false;
+      const dst = S.tab[i];
+      if (dst.length ? !builds(top(dst), cards[0]) : !emptyOK(cards[0])) return false;
+      snap(); takeSel(); dst.push(...cards);
+    } else return false;
+    S.moves++; sel = null; Sfx.play('card'); after(); return true;
+  }
+  function autoFound(src) { const prev = sel; sel = src; if (cfg.found && moveTo('found')) return true; sel = prev; return false; }
+  function click(a, i, j) {
+    if (S.done) return;
+    if (a === 'stock') return stock();
+    if (sel && sel.a === a && sel.i === i && sel.j === j) { if (!autoFound(sel)) { sel = null; render(); } return; }
+    if (sel && a === 'found') { if (!moveTo('found', i)) { sel = null; render(); } return; }
+    if (sel && a === 'tab' && moveTo('tab', i)) return;
+    // pick up
+    if (a === 'tab') {
+      const col = S.tab[i]; if (j === undefined || j < 0 || !col.length) { sel = null; return render(); }
+      if (!movable(col, j)) { sel = null; return render(); }
+      sel = { a, i, j };
+    } else if (a === 'waste' && S.waste.length) sel = { a, i: 0, j: 0 };
+    else if (a === 'reserve' && S.reserve.length) sel = { a, i: 0, j: 0 };
+    else sel = null;
+    Sfx.play('tap'); render();
+  }
+  function stock() {
+    sel = null;
+    if (cfg.stock === 'row') {
+      if (!S.stock.length) return Util.toast('The stock is empty.');
+      if (cfg.rowNeedsFull && S.tab.some(c => !c.length)) return Util.toast('Fill every empty column before dealing a new row.');
+      snap(); S.tab.forEach(col => { if (S.stock.length) { const c = S.stock.pop(); c.up = true; col.push(c); } });
+    } else if (cfg.stock === 'three') {
+      if (!S.stock.length) return Util.toast('The stock is empty.');
+      snap(); for (let k = 0; k < 3 && S.stock.length; k++) { const c = S.stock.pop(); c.up = true; S.tab[k].push(c); }
+    } else if (cfg.stock === 'waste') {
+      if (!S.stock.length) {
+        if (!S.waste.length) return;
+        if (S.redeals >= cfg.redeals) return Util.toast('No more passes through the stock.');
+        snap(); S.redeals++; S.stock = S.waste.reverse().map(c => ({ ...c, up: false })); S.waste = [];
+      } else { snap(); for (let k = 0; k < (cfg.draw || 1) && S.stock.length; k++) { const c = S.stock.pop(); c.up = true; S.waste.push(c); } }
+    } else return;
+    S.moves++; Sfx.play('card'); after();
+  }
+  function autoAll() {
+    if (!cfg.found || S.done) return; let moved = true, n = 0;
+    while (moved && n < 200) {
+      moved = false;
+      for (let i = 0; i < S.tab.length; i++) if (S.tab[i].length && autoFound({ a: 'tab', i, j: S.tab[i].length - 1 })) { moved = true; n++; }
+      if (S.waste && S.waste.length && autoFound({ a: 'waste', i: 0, j: 0 })) { moved = true; n++; }
+      if (S.reserve && S.reserve.length && autoFound({ a: 'reserve', i: 0, j: 0 })) { moved = true; n++; }
+      if (S.done) return;
+    }
+    if (!n) Util.toast('Nothing can go up right now.');
+  }
+  function undo() { if (!hist.length || S.done) return; S = JSON.parse(hist.pop()); sel = null; render(); }
+  /* ---------- drawing ---------- */
+  function render() {
+    if (!root || !S) return;
+    const cols = S.tab.length, W = Math.min(560, (root.clientWidth || 360) - 6);
+    const cw = Math.min(64, Math.floor((W - (cols - 1) * 4) / cols)), ch = cw * 1.4;
+    const isSel = (a, i, j) => sel && sel.a === a && sel.i === i && (a !== 'tab' || j >= sel.j);
+    const attr = (a, i, j) => `onclick="${ns}.click('${a}',${i},${j})"`;
+    const maxH = Math.max(260, (window.innerHeight || 800) - 330);
+    const tab = S.tab.map((col, i) => {
+      const nDown = col.filter(c => !c.up).length, nUp = col.length - nDown;
+      let du = cw * .42, dd = cw * .16;
+      const need = nDown * dd + Math.max(0, nUp - 1) * du + ch;
+      if (need > maxH && nUp > 1) du = Math.max(cw * .2, (maxH - ch - nDown * dd) / (nUp - 1));
+      let y = 0;
+      const cards = col.map((c, j) => { const html = `<div class="absolute left-0" style="top:${y}px">${Util.card(c, { down: !c.up, sel: isSel('tab', i, j), attrs: attr('tab', i, j) })}</div>`; y += c.up ? du : dd; return html; }).join('');
+      const h = col.length ? y - (col.length ? (top(col).up ? du : dd) : 0) + ch : ch;
+      return `<div class="relative" style="width:${cw}px;height:${h}px">${col.length ? cards : Util.card(null, { label: cfg.empty === 'king' ? 'K' : '', attrs: attr('tab', i, -1) })}</div>`;
+    }).join('');
+    const stockLabel = cfg.stock === 'waste' ? (S.stock.length ? '' : (S.redeals < cfg.redeals ? '↺' : '✕')) : '';
+    const stockEl = cfg.stock ? (S.stock.length ? `<div class="relative">${Util.card({ r: 1, s: 'S' }, { down: true, attrs: `onclick="${ns}.click('stock')"` })}${cfg.stock !== 'waste' ? `<span class="absolute -bottom-1 -right-1 stat-chip !px-1.5 !py-0 text-[10px]">${Math.ceil(S.stock.length / (cfg.stock === 'row' ? cols : cfg.stock === 'three' ? 3 : 1))}</span>` : ''}</div>` : Util.card(null, { label: stockLabel, attrs: `onclick="${ns}.click('stock')"` })) : '';
+    const wasteEl = cfg.stock === 'waste' ? (S.waste.length ? Util.card(top(S.waste), { sel: isSel('waste', 0), attrs: attr('waste', 0, 0) }) : Util.card(null, {})) : '';
+    const reserveEl = S.reserve ? `<div class="relative">${S.reserve.length ? Util.card(top(S.reserve), { sel: isSel('reserve', 0), attrs: attr('reserve', 0, 0) }) : Util.card(null, { label: '' })}<span class="absolute -bottom-1 -right-1 stat-chip !px-1.5 !py-0 text-[10px]">${S.reserve.length}</span></div>` : '';
+    const found = cfg.found ? S.found.map((p, f) => p.length ? Util.card(top(p), { attrs: attr('found', f, 0) }) : Util.card(null, { label: S.base && S.base !== 1 ? Util.rankLabel(S.base) : 'A', attrs: attr('found', f, 0) })).join('') : '';
+    const runs = cfg.removeRuns ? `<div class="flex gap-0.5 items-center">${Array.from({ length: cfg.runs }, (_, k) => `<div class="rounded-sm" style="width:${cw * .32}px;height:${cw * .45}px;background:${k < S.runs ? '#e5c358' : 'rgba(0,0,0,.3)'};border:1px solid rgba(243,210,102,.4)"></div>`).join('')}</div>` : '';
+    root.innerHTML = `<div class="flex flex-col gap-2 mx-auto w-full" style="max-width:${W}px;--cw:${cw}px">
+      <div class="flex gap-2 justify-center flex-wrap text-xs"><span class="stat-chip">${cfg.title}${S.opts && S.opts.label ? ' · ' + S.opts.label : ''}</span><span class="stat-chip">Moves ${S.moves}</span>${cfg.removeRuns ? `<span class="stat-chip">Runs ${S.runs}/${cfg.runs}</span>` : ''}</div>
+      <div class="flex gap-1 items-start justify-between flex-wrap">
+        <div class="flex gap-1">${stockEl}${wasteEl}${reserveEl}</div>
+        <div class="flex gap-1 flex-wrap justify-end">${found}${runs}</div>
+      </div>
+      <div class="flex gap-1 justify-between items-start">${tab}</div>
+      <div class="flex gap-2 justify-center flex-wrap mt-1">${Util.btn('↶ Undo', `${ns}.undo()`)}${cfg.found ? Util.btn('⬆️ Auto', `${ns}.autoAll()`) : ''}${Util.btn('🔄 New deal', `${ns}.fresh()`, 'brass')}</div>
+      <p class="text-[11px] text-amber-100/50 text-center">${cfg.tip}</p>
+    </div>`;
+  }
+  const api = {
+    mount(el, o = {}) { root = el; if (o.resume) { S = o.resume; sel = null; hist = []; t0 = Date.now(); render(); } else newGame(o.opts || cfg.defaultOpts || {}); },
+    snapshot() { return S && !S.done ? S : null; },
+    destroy() { root = null; },
+    click, undo, autoAll, fresh() { newGame(S.opts); }, newGame() { newGame(S ? S.opts : {}); },
+    _test: { get S() { return S; }, set S(v) { S = v; }, builds, movable, canFound }
+  };
+  if (cfg.setup) api.setup = cfg.setup;
+  return api;
+}
+const pkDeck = (decks = 1, suits = SUITS) => { const d = []; for (let k = 0; k < decks; k++) for (const s of suits) for (let r = 1; r <= 13; r++) d.push({ r, s, id: `${s}${r}_${k}`, up: false }); return Util.shuffle(d); };
+
+const Spider = PatienceKit('Spider', {
+  id: 'spider', title: 'Spider', build: 'any', move: 'suitrun', empty: 'any', removeRuns: true, runs: 8, stock: 'row', rowNeedsFull: true,
+  tip: 'Build down in any suit, but only same-suit runs move together. A full King-to-Ace run in one suit clears away.',
+  async setup() { const v = await Util.choose('🕷️ Spider', 'How many suits?', [{ label: '♠ One suit (gentle)', value: 1, primary: true }, { label: '♠♥ Two suits', value: 2 }, { label: '♠♥♦♣ Four suits (hard)', value: 4 }, { label: 'Cancel', value: null }]); return v ? { opts: { suits: v, label: `${v} suit${v > 1 ? 's' : ''}` } } : null; },
+  defaultOpts: { suits: 1, label: '1 suit' },
+  deal(o) {
+    const su = SUITS.slice(0, o.suits || 1), d = pkDeck(8 / su.length, su), tab = Array.from({ length: 10 }, () => []);
+    for (let k = 0; k < 54; k++) tab[k % 10].push(d.pop());
+    tab.forEach(c => c[c.length - 1].up = true);
+    return { tab, stock: d, found: [], waste: [] };
+  }
+});
+Games.spider = Spider;
+
+const Yukon = PatienceKit('Yukon', {
+  id: 'yukon', title: 'Yukon', build: 'alt', move: 'group', empty: 'king', found: 4, stock: null,
+  tip: 'Like Klondike with no stock: move any face-up group, as long as its bottom card goes on the next rank up in the other colour.',
+  deal() {
+    const d = pkDeck(), tab = Array.from({ length: 7 }, () => []);
+    tab[0].push({ ...d.pop(), up: true });
+    for (let i = 1; i < 7; i++) { for (let k = 0; k < i; k++) tab[i].push(d.pop()); for (let k = 0; k < 5; k++) tab[i].push({ ...d.pop(), up: true }); }
+    return { tab, stock: [], waste: [], found: [[], [], [], []] };
+  }
+});
+Games.yukon = Yukon;
+
+const Scorpion = PatienceKit('Scorpion', {
+  id: 'scorpion', title: 'Scorpion', build: 'suit', move: 'group', empty: 'king', removeRuns: true, runs: 4, stock: 'three',
+  tip: 'Build down in the same suit. Any face-up group can move. Line up King to Ace in each suit. The last 3 stock cards go on the first 3 columns.',
+  deal() {
+    const d = pkDeck(), tab = Array.from({ length: 7 }, () => []);
+    for (let i = 0; i < 7; i++) for (let k = 0; k < 7; k++) tab[i].push({ ...d.pop(), up: !(i < 4 && k < 3) });
+    return { tab, stock: d, waste: [], found: [] };
+  }
+});
+Games.scorpion = Scorpion;
+
+const FortyThieves = PatienceKit('FortyThieves', {
+  id: 'fortythieves', title: 'Forty Thieves', build: 'suit', move: 'single', empty: 'any', found: 8, stock: 'waste', draw: 1, redeals: 0,
+  tip: 'Two decks. Build down in suit, one card at a time. Only one pass through the stock, so plan ahead!',
+  deal() {
+    const d = pkDeck(2), tab = Array.from({ length: 10 }, () => []);
+    for (let i = 0; i < 10; i++) for (let k = 0; k < 4; k++) tab[i].push({ ...d.pop(), up: true });
+    return { tab, stock: d, waste: [], found: Array.from({ length: 8 }, () => []) };
+  }
+});
+Games.fortythieves = FortyThieves;
+
+const Canfield = PatienceKit('Canfield', {
+  id: 'canfield', title: 'Canfield', build: 'alt', move: 'run', empty: 'any', wrap: true, found: 4, stock: 'waste', draw: 3, redeals: Infinity, fillFromReserve: true,
+  tip: 'Foundations start from the rank shown and wrap round (King, Ace, 2…). Build down in alternate colours. Empty columns fill from the reserve.',
+  deal() {
+    const d = pkDeck(), reserve = d.splice(-13); reserve[reserve.length - 1].up = true;
+    const base = d.pop(); base.up = true;
+    const tab = Array.from({ length: 4 }, () => [{ ...d.pop(), up: true }]);
+    const found = [[base], [], [], []];
+    return { tab, reserve, stock: d, waste: [], found, base: base.r };
+  }
+});
+Games.canfield = Canfield;
+
+/* ============================================================================
+   CLEAR-THE-BOARD PATIENCE: Pyramid, Golf, TriPeaks, Aces Up
+   ============================================================================ */
+const Pyramid = (() => {
+  let S, root, sel = null, hist = [];
+  const val = c => c.r;
+  const idx = (r, k) => r * (r + 1) / 2 + k;
+  function newGame() { const d = Util.shuffle(Util.deck()); S = { pyr: d.splice(0, 28), gone: Array(28).fill(false), stock: d, waste: [], passes: 0, done: false, removed: 0 }; sel = null; hist = []; render(); }
+  function exposed(i) { let r = 0; while (idx(r + 1, 0) <= i) r++; const k = i - idx(r, 0); if (r === 6) return true; return S.gone[idx(r + 1, k)] && S.gone[idx(r + 1, k + 1)]; }
+  const cardOf = s => s.a === 'p' ? S.pyr[s.i] : S.waste[S.waste.length - 1];
+  function remove(s) { if (s.a === 'p') S.gone[s.i] = true; else S.waste.pop(); S.removed++; }
+  function tap(a, i) {
+    if (S.done) return;
+    const s = { a, i };
+    if (a === 'p' && (S.gone[i] || !exposed(i))) return;
+    if (a === 'w' && !S.waste.length) return;
+    const c = cardOf(s);
+    hist.push(JSON.stringify(S));
+    if (c.r === 13) { remove(s); sel = null; Sfx.play('match'); return check(); }
+    if (sel && !(sel.a === a && sel.i === i) && val(cardOf(sel)) + val(c) === 13) { const first = sel; sel = null; if (first.a === 'w') { remove(first); remove(s); } else { remove(s); remove(first); } Sfx.play('match'); return check(); }
+    hist.pop(); sel = sel && sel.a === a && sel.i === i ? null : s; Sfx.play('tap'); render();
+  }
+  function stock() {
+    sel = null;
+    if (S.stock.length) { hist.push(JSON.stringify(S)); S.waste.push(S.stock.pop()); Sfx.play('card'); }
+    else if (S.passes < 2 && S.waste.length) { hist.push(JSON.stringify(S)); S.stock = S.waste.reverse(); S.waste = []; S.passes++; Util.toast(`Pass ${S.passes + 1} of 3.`, 1000); }
+    else Util.toast('No more passes. Start a new deal if you\'re stuck.');
+    render();
+  }
+  function check() { if (S.gone.every(Boolean)) { S.done = true; render(); Sfx.play('win'); return App.endGame('pyramid', true, 'Pyramid cleared!', `You cleared it with ${S.stock.length + S.waste.length} cards to spare.`, newGame); } render(); }
+  function undo() { if (hist.length && !S.done) { S = JSON.parse(hist.pop()); sel = null; render(); } }
+  function render() {
+    if (!root || !S) return;
+    const W = Math.min(480, (root.clientWidth || 360) - 6), cw = Math.floor(W / 7.4), ch = cw * 1.4;
+    let cards = '';
+    for (let r = 0; r < 7; r++) for (let k = 0; k <= r; k++) {
+      const i = idx(r, k); if (S.gone[i]) continue;
+      const ex = exposed(i), on = sel && sel.a === 'p' && sel.i === i;
+      cards += `<div class="absolute" style="left:${(k + (6 - r) / 2) * cw * 1.04}px;top:${r * ch * .48}px">${Util.card(S.pyr[i], { sel: on, cls: ex ? '' : 'brightness-75', attrs: `onclick="Pyramid.tap('p',${i})"` })}</div>`;
+    }
+    const wt = S.waste[S.waste.length - 1];
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:${W}px;--cw:${cw}px">
+      <div class="flex gap-2 justify-center text-xs"><span class="stat-chip">Pyramid</span><span class="stat-chip">Pass ${S.passes + 1}/3</span></div>
+      <div class="relative" style="width:${cw * 7 * 1.04}px;height:${6 * ch * .48 + ch}px">${cards}</div>
+      <div class="flex gap-3 items-center">${S.stock.length ? `<div class="relative">${Util.card({ r: 1, s: 'S' }, { down: true, attrs: 'onclick="Pyramid.stock()"' })}<span class="absolute -bottom-1 -right-1 stat-chip !px-1.5 !py-0 text-[10px]">${S.stock.length}</span></div>` : Util.card(null, { label: S.passes < 2 ? '↺' : '✕', attrs: 'onclick="Pyramid.stock()"' })}${wt ? Util.card(wt, { sel: sel && sel.a === 'w', attrs: "onclick=\"Pyramid.tap('w',0)\"" }) : Util.card(null, {})}</div>
+      <div class="flex gap-2">${Util.btn('↶ Undo', 'Pyramid.undo()')}${Util.btn('🔄 New deal', 'Pyramid.newGame()', 'brass')}</div>
+      <p class="text-[11px] text-amber-100/50 text-center">Remove pairs that add up to 13 (J=11, Q=12, K=13 on its own). Only uncovered cards can be used. Three passes through the stock.</p></div>`;
+  }
+  return { mount(el, o = {}) { root = el; if (o.resume) { S = o.resume; sel = null; hist = []; render(); } else newGame(); }, snapshot() { return S && !S.done ? S : null; }, destroy() { root = null; }, tap, stock, undo, newGame, _test: { get S() { return S; }, exposed } };
+})();
+Games.pyramid = Pyramid;
+
+const Golf = (() => {
+  let S, root, hist = [];
+  function newGame() { const d = Util.shuffle(Util.deck()); const cols = Array.from({ length: 7 }, () => d.splice(0, 5)); S = { cols, stock: d, waste: [d.pop()], done: false }; hist = []; render(); }
+  const fits = c => { const t = S.waste[S.waste.length - 1]; return Math.abs(t.r - c.r) === 1; };
+  function tap(i) {
+    if (S.done) return; const col = S.cols[i]; if (!col.length) return;
+    const c = col[col.length - 1]; if (!fits(c)) { Util.toast('It must be one higher or one lower than the pile.', 1300); return; }
+    hist.push(JSON.stringify(S)); S.waste.push(col.pop()); Sfx.play('card'); check();
+  }
+  function stock() { if (!S.stock.length) return Util.toast('The stock is empty.'); hist.push(JSON.stringify(S)); S.waste.push(S.stock.pop()); Sfx.play('flip'); check(); }
+  function check() {
+    const left = S.cols.reduce((s, c) => s + c.length, 0);
+    if (!left) { S.done = true; render(); Sfx.play('win'); return App.endGame('golf', true, 'Hole in one!', `Course cleared with ${S.stock.length} stock cards left.`, newGame); }
+    if (!S.stock.length && !S.cols.some(c => c.length && fits(c[c.length - 1]))) { S.done = true; render(); return App.endGame('golf', false, 'Round over', `${left} card${left > 1 ? 's' : ''} left on the course (like golf, lower is better).`, newGame); }
+    render();
+  }
+  function render() {
+    if (!root || !S) return;
+    const W = Math.min(480, (root.clientWidth || 360) - 6), cw = Math.floor((W - 30) / 7), ch = cw * 1.4;
+    const cols = S.cols.map((col, i) => `<div class="relative" style="width:${cw}px;height:${4 * cw * .38 + ch}px">${col.map((c, j) => `<div class="absolute" style="top:${j * cw * .38}px">${Util.card(c, { attrs: j === col.length - 1 ? `onclick="Golf.tap(${i})"` : '', cls: j === col.length - 1 && fits(c) ? 'target' : '' })}</div>`).join('')}</div>`).join('');
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:${W}px;--cw:${cw}px">
+      <div class="flex gap-2 text-xs"><span class="stat-chip">Golf</span><span class="stat-chip">Cards left ${S.cols.reduce((s, c) => s + c.length, 0)}</span></div>
+      <div class="flex gap-1 justify-between w-full">${cols}</div>
+      <div class="flex gap-3 items-center">${S.stock.length ? `<div class="relative">${Util.card({ r: 1, s: 'S' }, { down: true, attrs: 'onclick="Golf.stock()"' })}<span class="absolute -bottom-1 -right-1 stat-chip !px-1.5 !py-0 text-[10px]">${S.stock.length}</span></div>` : Util.card(null, { label: '✕' })}${Util.card(S.waste[S.waste.length - 1])}</div>
+      <div class="flex gap-2">${Util.btn('↶ Undo', 'Golf.undo()')}${Util.btn('🔄 New deal', 'Golf.newGame()', 'brass')}</div>
+      <p class="text-[11px] text-amber-100/50 text-center">Play the bottom card of any column onto the pile if it's one higher or lower (no wrapping round). Flip the stock when stuck. Glowing cards can be played.</p></div>`;
+  }
+  return { mount(el, o = {}) { root = el; if (o.resume) { S = o.resume; hist = []; render(); } else newGame(); }, snapshot() { return S && !S.done ? S : null; }, destroy() { root = null; }, tap, stock, undo() { if (hist.length && !S.done) { S = JSON.parse(hist.pop()); render(); } }, newGame, _test: { get S() { return S; } } };
+})();
+Games.golf = Golf;
+
+const TriPeaks = (() => {
+  let S, root, hist = [];
+  // 28 cards: rows of 3, 6, 9, 10. Each card lists the two cards that cover it.
+  const ROWS = [3, 6, 9, 10], start = [0, 3, 9, 18];
+  function covers(row, k) {
+    if (row === 3) return [];
+    if (row === 2) return [start[3] + k, start[3] + k + 1];
+    if (row === 1) { const p = Math.floor(k / 2), q = k % 2; return [start[2] + p * 3 + q, start[2] + p * 3 + q + 1]; }
+    return [start[1] + 2 * k, start[1] + 2 * k + 1];
+  }
+  const POS = []; ROWS.forEach((n, row) => { for (let k = 0; k < n; k++) POS.push({ row, k, cov: covers(row, k), x: row === 3 ? k : row === 2 ? k + .5 : row === 1 ? Math.floor(k / 2) * 3 + k % 2 + 1 : k * 3 + 1.5 }); });
+  function newGame() { const d = Util.shuffle(Util.deck()); S = { cards: d.splice(0, 28), gone: Array(28).fill(false), stock: d, waste: [d.pop()], streak: 0, best: 0, done: false }; hist = []; render(); }
+  const free = i => POS[i].cov.every(j => S.gone[j]);
+  const fits = c => { const t = S.waste[S.waste.length - 1]; const d = Math.abs(t.r - c.r); return d === 1 || d === 12; };
+  function tap(i) {
+    if (S.done || S.gone[i] || !free(i)) return;
+    if (!fits(S.cards[i])) return Util.toast('It must be one higher or lower than the pile (Ace and King connect).', 1400);
+    hist.push(JSON.stringify(S)); S.gone[i] = true; S.waste.push(S.cards[i]); S.streak++; S.best = Math.max(S.best, S.streak); Sfx.play('card');
+    if (S.streak >= 3 && S.streak % 3 === 0) Util.toast(`${S.streak} in a row!`, 900);
+    check();
+  }
+  function stock() { if (!S.stock.length) return Util.toast('The stock is empty.'); hist.push(JSON.stringify(S)); S.waste.push(S.stock.pop()); S.streak = 0; Sfx.play('flip'); check(); }
+  function check() {
+    if (S.gone.every(Boolean)) { S.done = true; render(); Sfx.play('win'); return App.endGame('tripeaks', true, 'All three peaks cleared!', `Best streak: ${S.best}. Stock left: ${S.stock.length}.`, newGame); }
+    if (!S.stock.length && !S.cards.some((c, i) => !S.gone[i] && free(i) && fits(c))) { S.done = true; render(); const left = S.gone.filter(g => !g).length; return App.endGame('tripeaks', false, 'Out of moves', `${left} card${left > 1 ? 's' : ''} left on the peaks. Best streak: ${S.best}.`, newGame); }
+    render();
+  }
+  function render() {
+    if (!root || !S) return;
+    const W = Math.min(520, (root.clientWidth || 360) - 6), cw = Math.floor(W / 10.3), ch = cw * 1.4;
+    const cards = S.cards.map((c, i) => { if (S.gone[i]) return ''; const p = POS[i], f = free(i); return `<div class="absolute" style="left:${p.x * cw * 1.02}px;top:${p.row * ch * .5}px">${Util.card(c, { down: !f, cls: f && fits(c) ? 'target' : '', attrs: `onclick="TriPeaks.tap(${i})"` })}</div>`; }).join('');
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:${W}px;--cw:${cw}px">
+      <div class="flex gap-2 text-xs"><span class="stat-chip">TriPeaks</span><span class="stat-chip">Streak ${S.streak}</span><span class="stat-chip">Best ${S.best}</span></div>
+      <div class="relative" style="width:${10 * cw * 1.02}px;height:${3 * ch * .5 + ch}px">${cards}</div>
+      <div class="flex gap-3 items-center" style="--cw:${Math.min(64, cw * 1.4)}px">${S.stock.length ? `<div class="relative">${Util.card({ r: 1, s: 'S' }, { down: true, attrs: 'onclick="TriPeaks.stock()"' })}<span class="absolute -bottom-1 -right-1 stat-chip !px-1.5 !py-0 text-[10px]">${S.stock.length}</span></div>` : Util.card(null, { label: '✕' })}${Util.card(S.waste[S.waste.length - 1])}</div>
+      <div class="flex gap-2">${Util.btn('↶ Undo', 'TriPeaks.undo()')}${Util.btn('🔄 New deal', 'TriPeaks.newGame()', 'brass')}</div>
+      <p class="text-[11px] text-amber-100/50 text-center">Tap face-up cards one higher or lower than the pile (King and Ace connect) to build streaks. Glowing cards can be played.</p></div>`;
+  }
+  return { mount(el, o = {}) { root = el; if (o.resume) { S = o.resume; hist = []; render(); } else newGame(); }, snapshot() { return S && !S.done ? S : null; }, destroy() { root = null; }, tap, stock, undo() { if (hist.length && !S.done) { S = JSON.parse(hist.pop()); render(); } }, newGame, _test: { get S() { return S; }, POS, free } };
+})();
+Games.tripeaks = TriPeaks;
+
+const AcesUp = (() => {
+  let S, root, hist = [], sel = null;
+  const rk = c => c.r === 1 ? 14 : c.r;
+  function newGame() { const d = Util.shuffle(Util.deck()); S = { cols: [[], [], [], []], stock: d, out: 0, done: false }; S.cols.forEach(c => c.push(d.pop())); hist = []; sel = null; render(); }
+  const top = i => S.cols[i][S.cols[i].length - 1];
+  const canDiscard = i => { const c = top(i); if (!c) return false; return S.cols.some((col, j) => j !== i && col.length && top(j).s === c.s && rk(top(j)) > rk(c)); };
+  function tap(i) {
+    if (S.done) return;
+    if (sel !== null) { if (!S.cols[i].length && sel !== i) { hist.push(JSON.stringify(S)); S.cols[i].push(S.cols[sel].pop()); sel = null; Sfx.play('card'); return check(); } sel = null; }
+    if (!S.cols[i].length) return render();
+    if (canDiscard(i)) { hist.push(JSON.stringify(S)); S.cols[i].pop(); S.out++; Sfx.play('match'); return check(); }
+    if (S.cols.some(c => !c.length)) { sel = i; Util.toast('Now tap an empty column to move it there.', 1200); return render(); }
+    Util.toast("It can only go if a higher card of the same suit is on top of another column.", 1600);
+  }
+  function deal() { if (!S.stock.length) return Util.toast('The stock is empty.'); hist.push(JSON.stringify(S)); sel = null; S.cols.forEach(c => { if (S.stock.length) c.push(S.stock.pop()); }); Sfx.play('card'); check(); }
+  function check() {
+    if (S.out === 48) { S.done = true; render(); Sfx.play('win'); return App.endGame('acesup', true, 'Aces up!', 'Only the four aces remain. A perfect game!', newGame); }
+    const anyMove = [0, 1, 2, 3].some(canDiscard) || (S.cols.some(c => !c.length) && S.cols.some(c => c.length > 1));
+    if (!S.stock.length && !anyMove) { S.done = true; render(); return App.endGame('acesup', false, 'No more moves', `${52 - S.out} cards left on the table (4 is perfect).`, newGame); }
+    render();
+  }
+  function render() {
+    if (!root || !S) return;
+    const W = Math.min(400, (root.clientWidth || 360) - 6), cw = Math.min(70, Math.floor((W - 40) / 4)), ch = cw * 1.4;
+    const cols = S.cols.map((col, i) => { const du = col.length > 8 ? Math.max(cw * .18, (300 - ch) / (col.length - 1)) : cw * .38; return `<div class="relative" style="width:${cw}px;height:${Math.max(ch, (col.length - 1) * du + ch)}px">${col.length ? col.map((c, j) => `<div class="absolute" style="top:${j * du}px">${Util.card(c, { sel: sel === i && j === col.length - 1, cls: j === col.length - 1 && canDiscard(i) ? 'target' : '', attrs: `onclick="AcesUp.tap(${i})"` })}</div>`).join('') : Util.card(null, { attrs: `onclick="AcesUp.tap(${i})"` })}</div>`; }).join('');
+    root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:${W}px;--cw:${cw}px">
+      <div class="flex gap-2 text-xs"><span class="stat-chip">Aces Up</span><span class="stat-chip">Discarded ${S.out}/48</span></div>
+      <div class="flex gap-2 justify-center items-start">${S.stock.length ? `<div class="relative">${Util.card({ r: 1, s: 'S' }, { down: true, attrs: 'onclick="AcesUp.deal()"' })}<span class="absolute -bottom-1 -right-1 stat-chip !px-1.5 !py-0 text-[10px]">${S.stock.length / 4}</span></div>` : Util.card(null, { label: '✕' })}</div>
+      <div class="flex gap-2 justify-center items-start">${cols}</div>
+      <div class="flex gap-2">${Util.btn('↶ Undo', 'AcesUp.undo()')}${Util.btn('🔄 New deal', 'AcesUp.newGame()', 'brass')}</div>
+      <p class="text-[11px] text-amber-100/50 text-center">Tap a top card to discard it when a higher card of the same suit is on top of another column (Aces are high). Fill empty columns with any top card. Tap the stock to deal four more.</p></div>`;
+  }
+  return { mount(el, o = {}) { root = el; if (o.resume) { S = o.resume; hist = []; sel = null; render(); } else newGame(); }, snapshot() { return S && !S.done ? S : null; }, destroy() { root = null; }, tap, deal, undo() { if (hist.length && !S.done) { S = JSON.parse(hist.pop()); sel = null; render(); } }, newGame, _test: { get S() { return S; }, canDiscard } };
+})();
+Games.acesup = AcesUp;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -11996,7 +12507,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.8.2",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.9.0",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

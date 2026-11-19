@@ -1,12 +1,12 @@
 # The Grand Tabletop Compendium
 
-*Forty-five classic, esoteric, family, pub, casino and word games, one table.*
+*Fifty-four classic, esoteric, patience, family, pub, casino and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.8.2**
+**Current version: 1.9.0**
 
 ## The games
 
@@ -29,6 +29,15 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | 🀄 **Mahjong Solitaire** | The 144-tile turtle. Every deal can be solved, with hint, shuffle, undo and zoom | Solo |
 | 🃏 **Klondike** | Draw 1 or Draw 3, Auto-Send, Auto-Finish and undo | Solo |
 | 🂡 **FreeCell** | Every card face-up. Four free cells and supermoves | Solo |
+| 🕷️ **Spider** | Two decks, ten columns, King-to-Ace runs. One, two or four suits | Solo |
+| 🏔️ **Yukon** | Klondike with every card dealt: move any face-up group | Solo |
+| 🦂 **Scorpion** | Build down in suit and untangle four runs | Solo |
+| 🗝️ **Forty Thieves** | Two decks, single-card moves, one pass through the stock | Solo |
+| 😈 **Canfield** | Reserve of 13, foundations from any rank, wraparound building | Solo |
+| 🔺 **Pyramid** | Pair cards that add up to 13 | Solo |
+| ⛳ **Golf** | One higher or lower to clear the course | Solo |
+| ⛰️ **TriPeaks** | Clear three peaks with long streaks | Solo |
+| 🅰️ **Aces Up** | Discard lower cards of each suit until only aces remain | Solo |
 | 🪄 **Conjurers' Duel** | A collectible-style card duel: 100 original cards in five colours, starter decks, deckbuilder, booster draft and a Gauntlet | vs AI or 2 players |
 | ⚔️ **Scoundrel** | A roguelike dungeon crawl through a 44-card deck. Weapons go dull as you use them | Solo |
 | 👑 **Regicide** | Fight 12 royal bosses with suit powers, combos and solo Jesters | Solo |
@@ -109,6 +118,10 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.9.0 · The patience pack (19 November 2026)
+- Nine new solitaires: Spider, Yukon, Scorpion, Forty Thieves, Canfield, Pyramid, Golf, TriPeaks and Aces Up
+- New Patience shelf (Klondike and FreeCell moved there)
 
 ### 1.8.2 · Three Card Poker (19 November 2026)
 - Three Card Poker: Ante, Play and Pair Plus, ante bonus, Queen-6-4 strategy hint, bets stay up between hands
