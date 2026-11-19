@@ -3565,6 +3565,7 @@ const GAME_CATALOG = [
         <li><strong>The deal:</strong> 7 cards each, and one card turned up to start the discard pile.</li>
         <li><strong>Your turn:</strong> Take the top card of the deck, or pick up the <b>whole</b> discard pile. Then lay down any completed hands, add cards to any hands already on the table (anyone's), and finish by discarding one card.</li>
         <li><strong>Completed hands:</strong> Sets of 3 or 4 of a kind, or runs of 3 or more in the same suit (Aces can be low or high, but don't go round the corner). Dogs can fill in anywhere.</li>
+        <li><strong>Swapping a dog:</strong> If a hand on the table uses a dog and you hold the real card it stands for, play your card into that hand and take the dog into yours. For example, with Queens wild, the 3♥ can replace the Queen in 2♥-Q-4♥. In a set, a real card of a suit that isn't there yet can swap out a dog.</li>
         <li><strong>The risk:</strong> Taking the pile can win you a round, but anything you can't lay down before someone chips out counts against you.</li>
         <li><strong>Chipping out:</strong> Lay down everything except your last card, then discard it. You score 0 for the round.</li>
         <li><strong>Scoring:</strong> Everyone else scores the cards left in their hand: Ace 11, 2 to 10 face value, Jack/Queen/King 10, and every dog in hand is its value <b>plus 15</b>. Hands on the table never count.</li>
@@ -3852,9 +3853,14 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.10.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.10.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.10.1', '19 Nov 2026', 'Dog Rummy: swap the dog', [
+    'Hold the real card a dog is standing in for? Swap it into that hand on the table and take the dog',
+    'Dogs in runs are now shown in the gap they fill',
+    'The AI swaps for dogs too, when it helps'
+  ]],
   ['1.10.0', '19 Nov 2026', 'Dog Rummy', [
     "Dog Rummy: Kris's family wild-card rummy, for 2 to 4 players against the AI or with Pass & Play",
     'A new dog (wild) rank every round, from Aces up to Kings, with a quick 6-round option',
@@ -12570,6 +12576,23 @@ const DogRummy = (() => {
     }
   }
   function runPos(m, c) { if (isDog(c)) return 99; return c.r === 1 ? (m.hi === 14 ? 14 : 1) : c.r; }
+  /* which ranks the dogs in a run are standing in for */
+  function dogSlots(m) { if (m.type !== 'run') return []; const have = new Set(m.cards.filter(c => !isDog(c)).map(c => runPos(m, c))), out = []; for (let r = m.lo; r <= m.hi; r++) if (!have.has(r)) out.push(r); return out; }
+  /* can a real card in your hand replace a dog in this hand on the table? */
+  function canSwap(m, c) {
+    if (isDog(c) || !m.cards.some(isDog)) return false;
+    if (m.type === 'set') return m.rank !== S.wild && c.r === m.rank && !m.cards.some(x => !isDog(x) && x.s === c.s);
+    if (c.s !== m.suit) return false;
+    const slots = dogSlots(m); return slots.includes(c.r === 1 ? (slots.includes(14) ? 14 : 1) : c.r);
+  }
+  function swap(m, c, hand) { const d = m.cards.find(isDog); m.cards.splice(m.cards.indexOf(d), 1); m.cards.push(c); hand.splice(hand.indexOf(c), 1); hand.push(d); return d; }
+  /* cards in table order: dogs shown in the gap they fill */
+  function shown(m) {
+    if (m.type !== 'run') return m.cards;
+    const slots = dogSlots(m), dogs = m.cards.filter(isDog), out = [];
+    for (let r = m.lo, k = 0; r <= m.hi; r++) { const c = m.cards.find(x => !isDog(x) && runPos(m, x) === r); out.push(c || dogs[k++]); }
+    return out.filter(Boolean);
+  }
   /* ---------- AI meld search ---------- */
   function candidates(hand) {
     const dogs = hand.filter(isDog), nat = hand.filter(c => !isDog(c)), out = [];
@@ -12684,6 +12707,16 @@ const DogRummy = (() => {
       if (take) { S.msg = `${S.seats[i].name} takes the whole pile (${S.pile.length} card${S.pile.length > 1 ? 's' : ''})!`; takePile(); Sfx.play('capture'); }
       else { drawDeck(); if (S.phase === 'over') return; S.msg = `${S.seats[i].name} draws from the deck.`; Sfx.play('card'); }
       S.phase = 'play'; render(); await sleep(600);
+      // swap real cards for dogs on the table when grabbing the dog helps
+      for (let guard = 0; guard < 4; guard++) {
+        let did = false;
+        for (const c of h.slice()) for (const m of S.melds) {
+          if (!canSwap(m, c)) continue;
+          const dog = m.cards.find(isDog), after = h.filter(x => x !== c).concat(dog);
+          if (leftoverAfter(after, 1) < leftoverAfter(h, 1) - 1) { swap(m, c, h); S.msg = `${S.seats[i].name} swaps in the ${RN(c.r)} and takes a dog!`; Sfx.play('capture'); render(); await sleep(600); did = true; break; }
+        }
+        if (!did) break;
+      }
       // lay down melds
       const b = bestMelds(h, 1);
       for (const m of b.melds) {
@@ -12727,6 +12760,7 @@ const DogRummy = (() => {
     if (!myTurn() || S.phase !== 'play') return;
     const h = S.hands[me()], m = S.melds[k]; if (!sel.length) return Util.toast('Pick a card from your hand first, then tap the hand on the table to add it.', 1800);
     const cards = sel.map(id => h.find(c => c.id === id)).filter(Boolean);
+    if (cards.length === 1 && canSwap(m, cards[0])) { const d = swap(m, cards[0], h); sel = [d.id]; Sfx.play('capture'); S.msg = `You swap in the ${RN(cards[0].r)} and take the dog (${RN(d.r)}) into your hand!`; return render(); }
     if (h.length - cards.length < 1) return Util.toast('Keep one card back to discard.');
     for (const c of cards) { if (!fits(m, c)) return Util.toast(`The ${RN(c.r)} doesn't fit that hand.`); addTo(m, c); h.splice(h.indexOf(c), 1); }
     sel = []; Sfx.play('place'); render();
@@ -12741,7 +12775,7 @@ const DogRummy = (() => {
   /* ---------- drawing ---------- */
   function meldHtml(m, k, cw) {
     const canTap = myTurn() && S.phase === 'play' && sel.length;
-    return `<button onclick="DogRummy.tapMeld(${k})" class="flex rounded-lg p-1 ${canTap ? 'ring-1 ring-amber-300/60' : ''}" style="background:rgba(0,0,0,.2);--cw:${cw}px">${m.cards.map((c, j) => `<div style="margin-left:${j ? -cw * .55 : 0}px">${Util.card(c, { cls: isDog(c) ? 'ring-2 ring-fuchsia-400' : '' })}</div>`).join('')}</button>`;
+    return `<button onclick="DogRummy.tapMeld(${k})" class="flex rounded-lg p-1 ${canTap ? 'ring-1 ring-amber-300/60' : ''}" style="background:rgba(0,0,0,.2);--cw:${cw}px">${shown(m).map((c, j) => `<div style="margin-left:${j ? -cw * .55 : 0}px">${Util.card(c, { cls: isDog(c) ? 'ring-2 ring-fuchsia-400' : '' })}</div>`).join('')}</button>`;
   }
   function render() {
     if (!root || !S) return;
@@ -12753,7 +12787,7 @@ const DogRummy = (() => {
     const draw = myTurn() && S.phase === 'draw';
     const ctrl = !myTurn() ? `<div class="text-sm text-amber-100/70">${S.phase === 'over' ? 'Round over' : S.seats[S.turn].name + ' is playing…'}</div>`
       : S.phase === 'draw' ? `<div class="flex gap-2 justify-center flex-wrap">${Util.btn('🂠 Draw from the deck', "DogRummy.act('deck')", 'brass')}${S.pile.length ? Util.btn(`🗂️ Take the whole pile (${S.pile.length})`, "DogRummy.act('pile')") : ''}</div>`
-      : `<div class="flex gap-2 justify-center flex-wrap">${Util.btn(`🃏 Lay down${sel.length ? ` (${sel.length})` : ''}`, "DogRummy.act('meld')", 'brass')}${Util.btn('🗑️ Discard', "DogRummy.act('discard')")}${Settings.hints ? Util.btn('💡 Find a hand', 'DogRummy.suggest()') : ''}</div><div class="text-[11px] text-amber-100/55 mt-1">To add to a hand on the table, pick card(s), then tap that hand.</div>`;
+      : `<div class="flex gap-2 justify-center flex-wrap">${Util.btn(`🃏 Lay down${sel.length ? ` (${sel.length})` : ''}`, "DogRummy.act('meld')", 'brass')}${Util.btn('🗑️ Discard', "DogRummy.act('discard')")}${Settings.hints ? Util.btn('💡 Find a hand', 'DogRummy.suggest()') : ''}</div><div class="text-[11px] text-amber-100/55 mt-1">To add to a hand on the table, pick card(s), then tap that hand. Hold the real card a dog is standing in for? Pick it and tap that hand to swap it and take the dog.</div>`;
     root.innerHTML = `<div class="flex flex-col gap-2 mx-auto w-full" style="max-width:${W}px">
       <div class="flex gap-1.5 flex-wrap justify-center">${players}</div>
       <div class="flex items-center justify-center gap-2"><span class="stat-chip">Round ${S.round}/${S.rounds}</span><span class="stat-chip">🐶 ${RN(S.wild)}s are wild</span></div>
@@ -12782,7 +12816,7 @@ const DogRummy = (() => {
     snapshot() { return S && S.phase !== 'over' && !busy ? S : null; },
     destroy() { sid++; root = null; },
     act, tapCard, tapMeld, suggest, newGame() { newGame(S.seats, S.rounds); },
-    _test: { get S() { return S; }, makeMeld, fits, bestMelds, leftoverAfter, val }
+    _test: { get S() { return S; }, makeMeld, fits, bestMelds, leftoverAfter, val, canSwap, swap, shown, dogSlots }
   };
 })();
 Games.dogrummy = DogRummy;
@@ -12839,7 +12873,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.10.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.10.1",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

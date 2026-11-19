@@ -6,7 +6,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.10.0**
+**Current version: 1.10.1**
 
 ## The games
 
@@ -119,6 +119,9 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.10.1 · Dog Rummy: swap the dog (19 November 2026)
+- Swap the real card into a table hand to take its dog; dogs shown in the gap they fill
 
 ### 1.10.0 · Dog Rummy (19 November 2026)
 - Dog Rummy, a family rummy game shared by Kris: wild rank climbs Aces to Kings, take the deck or the whole pile, chip out for zero
