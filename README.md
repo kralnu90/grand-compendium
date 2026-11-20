@@ -1,17 +1,19 @@
 # The Grand Tabletop Compendium
 
-*Fifty-six classic, esoteric, patience, family, pub, casino and word games, one table.*
+*Fifty-eight classic, esoteric, patience, family, pub, casino and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.11.0**
+**Current version: 1.12.0**
 
 ## The games
 
 | Game | Type | Players |
 | --- | --- | --- |
+| 🎯 **Crokinole** ★ | The featured table: flick discs across a round maple board, knock your rival into the ditch and sink the 20 | vs AI or 2 players |
+| ⚪ **Carrom** | Strike the heavy striker, pocket your nine pieces and cover the red queen | vs AI or 2 players |
 | 🏘️ **Landlords of Larkford** | An original property-trading board game: buy, build, trade, auction and bankrupt your rivals | 2-6, people or AI |
 | 🐶 **Dog Rummy** | Kris's family wild-card rummy: a new wild rank each round, take the whole pile if you dare | 2-4, people or AI |
 | 🂡 **Blackjack** | Hit, stand, double and split against a dealer who stands on 17. Basic strategy hints | Solo (play chips) |
@@ -120,6 +122,12 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.12.0 · Crokinole and Carrom (20 November 2026)
+- Crokinole is the new featured table, with a banner on the home screen: real disc physics, eight brass pegs, the ditch and the 20 hole, must-hit and 15-circle rules, Quick (6 discs, to 50) or Full (12 discs, to 100)
+- Carrom: striker and pockets, cover the queen, fouls and penalty pieces, one board or first to 25
+- New Flick & Skill shelf with Crokinole, Carrom and Spring Mikado
+- Both games: vs AI (it rehearses hundreds of shots before picking one) or Pass & Play, with the board turning to face whoever's shooting
 
 ### 1.11.0 · Landlords of Larkford (20 November 2026)
 - An original property-trading board game: fictional town, original streets, cards and rents. Auctions, trading, mortgages, Timed or Classic games
