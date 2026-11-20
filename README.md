@@ -6,7 +6,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.12.0**
+**Current version: 1.12.1**
 
 ## The games
 
@@ -122,6 +122,10 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.12.1 · A touch of class (20 November 2026)
+- Graphics pass: walnut grain, polished brass, gilt titles, brass-rimmed medallions, linen-finish cards and a gilt-framed card back
+- The Casino gets its own black-and-gold room: art deco backdrop, emerald tables with leather rails and gold inlay, clay chips, a gold chip-bank plaque, a brass roulette rim and a slot machine with marquee lights
 
 ### 1.12.0 · Crokinole and Carrom (20 November 2026)
 - Crokinole is the new featured table, with a banner on the home screen: real disc physics, eight brass pegs, the ditch and the 20 hole, must-hit and 15-circle rules, Quick (6 discs, to 50) or Full (12 discs, to 100)

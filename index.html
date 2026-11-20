@@ -2728,6 +2728,162 @@
     .menu-ico { width: 44px; height: 44px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 22px; border-width: 2px !important; box-shadow: inset 0 0 12px rgba(0,0,0,.7), 0 0 0 2px rgba(212,175,55,.45); }
     html:not(.kg-can-install) [data-install] { display: none !important; }
   </style>
+  <style id="gfx-pass">
+    /* ===== Graphics pass (1.12.1): richer wood, brass and baize, plus the Casino's black-and-gold room ===== */
+    :root {
+      --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .32' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0 0 0 -.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+      --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .22 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      --linen: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='l'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .35 0 0 0 0 .2 .07 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23l)'/%3E%3C/svg%3E");
+      --deco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28'%3E%3Cg fill='none' stroke='%23d4af37' stroke-opacity='.10' stroke-width='1'%3E%3Cpath d='M0 28a28 28 0 0 1 56 0M9 28a19 19 0 0 1 38 0M18 28a10 10 0 0 1 20 0M-28 14a28 28 0 0 1 56 0M-19 14a19 19 0 0 1 38 0M-10 14a10 10 0 0 1 20 0M28 14a28 28 0 0 1 56 0M37 14a19 19 0 0 1 38 0M46 14a10 10 0 0 1 20 0'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    body {
+      background-image:
+        radial-gradient(ellipse 90% 45% at 50% -8%, rgba(240,190,90,.14), transparent 70%),
+        radial-gradient(ellipse 120% 60% at 50% 115%, rgba(0,0,0,.55), transparent 65%),
+        var(--grain),
+        linear-gradient(180deg, #2b1910 0%, #170d08 100%);
+      background-size: auto, auto, 420px 420px, auto;
+    }
+
+    /* Wood: real grain, a hairline of gilt and a soft top light */
+    .walnut-panel {
+      background-image: var(--grain), linear-gradient(150deg, #43291a 0%, #2c1a10 52%, #1f120a 100%);
+      background-size: 300px 300px, auto;
+      border: 1px solid rgba(212,175,55,.34);
+      box-shadow: inset 0 1px 0 rgba(255,232,180,.11), inset 0 0 0 1px rgba(0,0,0,.35), inset 0 0 0 3px rgba(212,175,55,.05), 0 10px 24px rgba(0,0,0,.55), 0 2px 4px rgba(0,0,0,.35);
+    }
+    header.walnut-panel {
+      background-image: var(--grain), linear-gradient(180deg, #3c2416 0%, #241509 100%);
+      border-bottom: 1px solid rgba(212,175,55,.5);
+      box-shadow: 0 1px 0 rgba(0,0,0,.6), 0 3px 0 -1px rgba(212,175,55,.2), 0 12px 26px rgba(0,0,0,.5);
+    }
+    header img { box-shadow: 0 0 0 1px rgba(212,175,55,.6), 0 4px 10px rgba(0,0,0,.5) !important; }
+
+    /* Gilt lettering on the big titles */
+    h1.font-display.text-amber-300, h2.font-display.text-amber-300 {
+      background: linear-gradient(180deg, #fff6d0 0%, #f6d670 38%, #cf9d34 70%, #f2d27a 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      filter: drop-shadow(0 2px 1px rgba(0,0,0,.55));
+    }
+
+    /* Brass: polished metal with an engraved label */
+    .btn-brass {
+      background: linear-gradient(180deg, #fff2bd 0%, #eccb63 16%, #cc9e33 50%, #b78a22 51%, #ddb54d 100%);
+      border: 1px solid #8a6412;
+      color: #2a1a06;
+      text-shadow: 0 1px 0 rgba(255,242,196,.65);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.75), inset 0 -2px 0 rgba(0,0,0,.16), 0 3px 0 #6b4c0b, 0 6px 12px rgba(0,0,0,.45);
+    }
+    .btn-brass:active:not(:disabled) { box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 1px 0 #6b4c0b, 0 2px 5px rgba(0,0,0,.4); }
+    /* Wood buttons: oiled walnut with a gilt edge */
+    .btn-wood {
+      background-image: var(--grain), linear-gradient(180deg, #553623 0%, #362114 100%);
+      background-size: 240px 240px, auto;
+      border: 1px solid rgba(212,175,55,.42);
+      box-shadow: inset 0 1px 0 rgba(255,230,180,.14), 0 3px 0 #180d07, 0 4px 8px rgba(0,0,0,.35);
+    }
+    .btn-wood:hover:not(:disabled) { background-image: var(--grain), linear-gradient(180deg, #624029 0%, #3e2617 100%); }
+
+    /* Menu tiles: brass-bezelled medallions and a warm glow on hover */
+    .menu-ico.felt-surface { border: 0 !important; }
+    .menu-ico { box-shadow: inset 0 0 14px rgba(0,0,0,.8), inset 0 2px 3px rgba(0,0,0,.5), 0 0 0 2px #d2ab45, 0 0 0 3.5px #5e400f, 0 0 0 4.5px rgba(243,210,102,.32), 0 5px 10px rgba(0,0,0,.5) !important; }
+    .menu-tile { transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
+    .menu-tile:hover { box-shadow: inset 0 1px 0 rgba(255,232,180,.12), 0 0 0 1px rgba(243,210,102,.35), 0 0 22px rgba(240,180,70,.16), 0 12px 26px rgba(0,0,0,.55); }
+
+    /* Baize with real nap and a lamp overhead */
+    .felt-surface {
+      background-color: #154a2f;
+      background-image: radial-gradient(ellipse at 50% 30%, rgba(90,180,120,.28), transparent 65%), var(--noise), radial-gradient(ellipse at center, #1b5b3a 0%, #0b2c1b 100%);
+      background-size: auto, 140px 140px, auto;
+    }
+
+    /* Cards: linen faces and a gilt-framed back */
+    .playing-card { background-image: var(--linen), linear-gradient(165deg, #fffefa 0%, #f3ecdc 100%); background-size: 120px 120px, auto; }
+    .card-back {
+      background-color: #6e1520;
+      background-image:
+        radial-gradient(circle at 50% 50%, rgba(243,210,102,.55) 0 7%, rgba(243,210,102,0) 7.5%),
+        radial-gradient(circle at 50% 50%, rgba(243,210,102,0) 0 14%, rgba(243,210,102,.4) 14.5% 16%, rgba(243,210,102,0) 16.5%),
+        repeating-linear-gradient(45deg, rgba(243,210,102,.16) 0 1px, transparent 1px 6px),
+        repeating-linear-gradient(-45deg, rgba(243,210,102,.16) 0 1px, transparent 1px 6px),
+        linear-gradient(160deg, #8d2130, #4c0b14);
+      border: 3px solid #fbf6ea;
+      box-shadow: inset 0 0 0 2px #c9a13a, inset 0 0 0 3px rgba(60,6,14,.9), 0 3px 6px rgba(0,0,0,.45);
+    }
+
+    .stat-chip { background: linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.28)); border-color: rgba(212,175,55,.38); box-shadow: inset 0 1px 0 rgba(255,235,190,.07); }
+    #toast-text { background: linear-gradient(180deg, #1d130d, #0d0806) !important; box-shadow: 0 0 0 1px rgba(0,0,0,.6), 0 0 0 2px rgba(212,175,55,.25), 0 14px 30px rgba(0,0,0,.7) !important; }
+    .fixed.inset-0 > .walnut-panel.border-2, #rules-modal > .walnut-panel { box-shadow: inset 0 0 0 1px rgba(0,0,0,.5), inset 0 0 0 4px rgba(212,175,55,.08), 0 0 0 1px rgba(0,0,0,.7), 0 0 40px rgba(240,180,70,.12), 0 24px 50px rgba(0,0,0,.75); }
+
+    /* ===================== THE CASINO: black lacquer, gold leaf and velvet ===================== */
+    body.casino {
+      background-color: #070505;
+      background-image:
+        radial-gradient(ellipse 90% 40% at 50% -6%, rgba(230,185,80,.20), transparent 70%),
+        radial-gradient(ellipse 120% 55% at 50% 112%, rgba(120,12,28,.38), transparent 65%),
+        var(--deco),
+        linear-gradient(180deg, #140d0b 0%, #060404 100%);
+      background-size: auto, auto, 56px 28px, auto;
+    }
+    body.casino .walnut-panel {
+      background-image: radial-gradient(ellipse at 30% 0%, rgba(255,230,170,.06), transparent 60%), linear-gradient(160deg, #1d1513 0%, #0d0908 100%);
+      background-size: auto;
+      border: 1px solid rgba(212,175,55,.55);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.85), inset 0 0 0 3px rgba(212,175,55,.16), inset 0 1px 0 rgba(255,235,180,.1), 0 14px 30px rgba(0,0,0,.75);
+    }
+    body.casino header.walnut-panel {
+      background-image: linear-gradient(180deg, #19110e 0%, #090605 100%);
+      border-bottom: 1px solid #c39a35;
+      box-shadow: 0 2px 0 rgba(0,0,0,.85), 0 3px 0 rgba(212,175,55,.4), 0 14px 30px rgba(0,0,0,.75);
+    }
+    body.casino .btn-wood { background-image: linear-gradient(180deg, #2b1e1a 0%, #130d0b 100%); border-color: rgba(212,175,55,.6); color: #f7e7bf; }
+    body.casino .btn-wood:hover:not(:disabled) { background-image: linear-gradient(180deg, #3a2822 0%, #1a110e 100%); }
+    body.casino .stat-chip { background: linear-gradient(180deg, #1a1210, #0a0706); border: 1px solid rgba(212,175,55,.6); box-shadow: inset 0 0 0 2px rgba(0,0,0,.6), inset 0 0 0 3px rgba(212,175,55,.14); color: #f6dfa0; }
+    body.casino .bank-plaque { background: linear-gradient(180deg, #f8e3a0 0%, #d6ac45 45%, #a97a1c 55%, #e3bf5e 100%); color: #2a1a05; border: 1px solid #7a560e; box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 2px 0 #5e420a, 0 4px 10px rgba(0,0,0,.55); text-shadow: 0 1px 0 rgba(255,240,200,.6); font-weight: 700; }
+    body.casino .bank-plaque b { color: #2a1a05 !important; }
+    body.casino .menu-ico.felt-surface { background-image: radial-gradient(ellipse at 50% 30%, rgba(255,120,120,.25), transparent 65%), var(--noise), radial-gradient(ellipse at center, #7a1424 0%, #2e050c 100%); }
+
+    /* Felt tables: emerald baize under a lamp, a gold inlay and a padded leather rail */
+    [data-ctable] {
+      background-color: #0e4a2e !important;
+      background-image: radial-gradient(ellipse 80% 55% at 50% 8%, rgba(130,230,170,.22), transparent 70%), var(--noise), radial-gradient(ellipse at 50% 35%, #187047 0%, #0c3f27 55%, #052016 100%) !important;
+      background-size: auto, 140px 140px, auto !important;
+      border: 11px solid #2a0d11 !important;
+      box-shadow: inset 0 0 0 2px #d4af37, inset 0 0 0 3px rgba(0,0,0,.45), inset 0 0 0 9px rgba(212,175,55,0), inset 0 14px 34px rgba(0,0,0,.5),
+        0 0 0 1px #000, 0 0 0 2.5px #c9a13a, 0 0 0 4px #120406, 0 20px 40px rgba(0,0,0,.75) !important;
+    }
+    [data-ctable="blue"] { background-image: radial-gradient(ellipse 80% 55% at 50% 8%, rgba(140,200,255,.22), transparent 70%), var(--noise), radial-gradient(ellipse at 50% 35%, #1d5f95 0%, #0d3358 55%, #061a30 100%) !important; }
+    [data-rtable] { border-width: 8px !important; }
+    [data-ctable] .playing-card { box-shadow: 0 4px 8px rgba(0,0,0,.5), inset 0 0 0 1px rgba(255,255,255,.8); }
+    [data-paytable] {
+      background-image: linear-gradient(180deg, #13214d 0%, #0a1230 100%) !important;
+      border: 2px solid #d4af37 !important;
+      box-shadow: inset 0 0 0 3px #0a1230, inset 0 0 0 4px rgba(212,175,55,.45), 0 10px 26px rgba(0,0,0,.6);
+      font-family: 'Cinzel', serif; letter-spacing: .03em;
+    }
+    [data-wheel] { border: 6px solid #b8902f !important; box-shadow: 0 0 0 2px #2a1a06, 0 0 0 4px #e6c35c, 0 10px 26px rgba(0,0,0,.7), inset 0 0 18px rgba(0,0,0,.6) !important; }
+    /* Slot cabinet: lacquered red, polished brass and a chasing marquee */
+    [data-cabinet] {
+      position: relative;
+      border-color: #c9a227 !important;
+      box-shadow: 0 0 0 2px #3a2706, 0 0 0 4px #e8c766, 0 0 30px rgba(240,180,70,.25), 0 16px 34px rgba(0,0,0,.7), inset 0 2px 0 rgba(255,255,255,.18) !important;
+    }
+    [data-cabinet]::before, [data-cabinet]::after {
+      content: ''; position: absolute; left: 16px; right: 16px; height: 8px; pointer-events: none;
+      background: radial-gradient(circle, #fff7cf 0 1.6px, #f5c53d 2.4px, rgba(245,197,61,0) 3.6px) 0 50% / 14px 8px repeat-x;
+      animation: marquee 1.1s linear infinite; filter: drop-shadow(0 0 3px rgba(255,210,90,.9));
+    }
+    [data-cabinet] .grid { background: linear-gradient(180deg, #1a0507, #3a0f13 50%, #1a0507) !important; box-shadow: inset 0 0 0 2px rgba(212,175,55,.55), inset 0 4px 12px rgba(0,0,0,.7); }
+    [data-cabinet] .grid > * { background: linear-gradient(180deg, #b9ae98 0%, #f3eddf 22%, #fffdf7 50%, #f3eddf 78%, #b9ae98 100%) !important; box-shadow: inset 0 0 0 1px rgba(0,0,0,.25), inset 0 8px 10px -6px rgba(0,0,0,.45), inset 0 -8px 10px -6px rgba(0,0,0,.45); }
+    [data-cabinet] > .font-display { text-shadow: 0 0 10px rgba(255,200,90,.6), 0 1px 0 #5e0f14; }
+    [data-cabinet]::before { top: -7px; }
+    [data-cabinet]::after { bottom: -7px; animation-direction: reverse; }
+    @keyframes marquee { to { background-position: 14px 50%; } }
+    @media (prefers-reduced-motion: reduce) { [data-cabinet]::before, [data-cabinet]::after { animation: none; } }
+    .chip3d:not(span):hover { transform: translateY(-2px); }
+    .chip3d:not(span):active { transform: translateY(1px); }
+  </style>
+
 </head>
 <body class="flex flex-col min-h-screen">
 
@@ -3814,6 +3970,8 @@ const App = {
     { k: 'casino', n: 'Casino', icon: '🎰', blurb: 'Play-chip tables: cards, wheel, dice and slots', ids: ['blackjack', 'holdem', 'threecard', 'roulette', 'videopoker', 'baccarat', 'craps', 'slots'] }
   ],
   catOf(id) { return this.CATS.find(c => c.ids.includes(id)); },
+  /* the Casino shelf and its tables get their own black-and-gold room */
+  theme(k) { document.body.classList.toggle('casino', k === 'casino'); },
   hubChrome(sub) {
     this.teardown();
     ['btn-rules', 'btn-back-hub', 'btn-settings'].forEach(b => document.getElementById(b).classList.add('hidden'));
@@ -3828,7 +3986,7 @@ const App = {
   },
   goHome() {
     this.hubChrome(`${GAME_CATALOG.length} Classic & Esoteric Parlor Games`);
-    this._shelf = ''; this.setHash('');
+    this._shelf = ''; this.setHash(''); this.theme('');
     const lastId = Store.get('last', null), lastSave = lastId && Store.get('save_' + lastId, null), lm = lastSave && this.meta(lastId);
     const recent = Store.get('recent', []).filter(id => this.meta(id) && id !== (lm && lastId)).slice(0, 4);
     const root = document.getElementById('app-root');
@@ -3861,7 +4019,7 @@ const App = {
   openCat(k) {
     const c = this.CATS.find(x => x.k === k); if (!c) return this.goHome();
     this.hubChrome(`${c.icon} ${c.n}`);
-    this._shelf = k; this.setHash(k);
+    this._shelf = k; this.setHash(k); this.theme(k);
     const root = document.getElementById('app-root');
     root.innerHTML = `
       <div class="flex items-center gap-3 pt-2 pb-4">
@@ -3890,7 +4048,7 @@ const App = {
     this.closeRulesModal();
     this.teardown();
     this.current = id;
-    this.setHash(id);
+    this.setHash(id); this.theme((this.catOf(id) || {}).k);
     Store.set('recent', [id].concat(Store.get('recent', []).filter(x => x !== id)).slice(0, 6));
     const m = this.meta(id);
     ['btn-rules', 'btn-back-hub', 'btn-settings'].forEach(b => document.getElementById(b).classList.remove('hidden'));
@@ -3937,9 +4095,15 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.12.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.12.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.12.1', '20 Nov 2026', 'A touch of class', [
+    'A graphics pass: real walnut grain, polished brass buttons, gilt titles and brass-rimmed menu medallions',
+    'Linen-finish cards with a new gilt-framed card back, and baize with a proper nap',
+    'The Casino has its own room: black lacquer, art deco gold, emerald tables with padded leather rails and gold inlay',
+    'Clay casino chips, a gold chip-bank plaque, a brass-rimmed roulette wheel and a slot machine with chasing marquee lights'
+  ]],
   ['1.12.0', '20 Nov 2026', 'Crokinole and Carrom', [
     'Crokinole, our new featured table: flick discs across a round maple board, knock your rival into the ditch and sink the 20',
     'Carrom: strike and pocket, with the red queen to cover',
@@ -11375,13 +11539,17 @@ const Chips = {
   ensure() { if (this.get() < 5) { this.set(500); Util.toast('The house tops you up to 500 chips. On us!', 2600); return true; } return false; }
 };
 const CHIP_VALS = [5, 25, 100, 500];
-const CHIP_COL = { 5: '#c0392b', 25: '#2f8f4e', 100: '#222', 500: '#7b3fb8' };
+const CHIP_COL = { 5: '#c0392b', 25: '#23874a', 100: '#1d1d1f', 500: '#6d35a8' };
+const CHIP_SHADE = { 5: '#6e1a12', 25: '#11502a', 100: '#000', 500: '#3a1660' };
 function chipDisc(v, size = 34, on = false, click = '') {
   const c = CHIP_COL[v] || '#9a7b2f';
   const tag = click ? 'button' : 'span';
-  return `<${tag} ${click ? `onclick="${click}"` : ''} class="shrink-0 rounded-full flex items-center justify-center font-bold text-white ${on ? 'ring-2 ring-amber-300 scale-110' : ''} transition" style="width:${size}px;height:${size}px;background:radial-gradient(circle,${c} 52%,#fff 53%,#fff 60%,${c} 61%);border:2px dashed rgba(255,255,255,.75);font-size:${size * .3}px;box-shadow:0 2px 4px rgba(0,0,0,.5)">${v}</${tag}>`;
+  const sh = CHIP_SHADE[v] || '#4a3a12', lab = v >= 1000 ? (v / 1000) + 'K' : v;
+  // a clay casino chip: edge inserts, inlay ring, a little top sheen and a thick rim
+  const bg = `radial-gradient(circle at 34% 26%,rgba(255,255,255,.42),rgba(255,255,255,0) 40%),radial-gradient(circle,${c} 0 44%,#f6edd2 45% 47%,${c} 48% 61%,rgba(0,0,0,.25) 62% 63%,transparent 64%),repeating-conic-gradient(from 7.5deg,${c} 0 30deg,#f7f1e1 30deg 45deg)`;
+  return `<${tag} ${click ? `onclick="${click}"` : ''} class="chip3d shrink-0 rounded-full flex items-center justify-center font-bold text-white ${on ? 'ring-2 ring-amber-300 scale-110' : ''} transition" style="width:${size}px;height:${size}px;background:${bg};font-size:${size * .3}px;box-shadow:0 2px 0 ${sh},0 3px 0 rgba(0,0,0,.35),0 5px 9px rgba(0,0,0,.55),inset 0 0 0 1px rgba(0,0,0,.35);text-shadow:0 1px 1px rgba(0,0,0,.7)">${lab}</${tag}>`;
 }
-const bankChip = () => `<span class="stat-chip">🪙 <b class="text-amber-200 ml-1">${Chips.get().toLocaleString()}</b></span>`;
+const bankChip = () => `<span class="stat-chip bank-plaque">🪙 <b class="text-amber-200 ml-1">${Chips.get().toLocaleString()}</b></span>`;
 /* add-to-bet chip row used by single-bet games */
 function betRow(ns, bet, extra = '') {
   return `<div class="flex items-center gap-2 flex-wrap justify-center">${CHIP_VALS.map(v => chipDisc(v, 38, false, `${ns}.addBet(${v})`)).join('')}
@@ -11536,7 +11704,7 @@ const Blackjack = (() => {
     else ctrl = '<div class="text-sm text-amber-100/70">Dealer plays…</div>';
     root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:520px">
       <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">Blackjack pays 3 to 2</span></div>
-      <div class="w-full rounded-3xl p-3 flex flex-col items-center gap-3" style="background:radial-gradient(ellipse at 50% 0%,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d;box-shadow:inset 0 0 30px rgba(0,0,0,.5)">
+      <div data-ctable class="w-full rounded-3xl p-3 flex flex-col items-center gap-3" style="background:radial-gradient(ellipse at 50% 0%,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d;box-shadow:inset 0 0 30px rgba(0,0,0,.5)">
         <div class="flex flex-col items-center gap-1"><span class="text-[11px] uppercase tracking-widest text-emerald-100/60">Dealer ${dTot !== '' ? '· ' + dTot : ''}</span>${S.dealer.length ? cardRow(S.dealer, cw, showD ? 99 : 1) : `<div style="height:${cw * 1.4}px"></div>`}</div>
         <div class="text-[10px] uppercase tracking-[.25em] text-amber-200/40">Dealer stands on all 17s</div>
         <div class="flex flex-wrap gap-2 justify-center">${hands || `<div style="height:${cw * 1.4 + 30}px" class="flex items-center text-emerald-100/50 text-sm">${S.msg}</div>`}</div>
@@ -11611,7 +11779,7 @@ const Baccarat = (() => {
     const w = S.phase === 'done' ? S.road[S.road.length - 1] : null;
     root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:520px">
       <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">Banker pays 19 to 20</span></div>
-      <div class="w-full rounded-3xl p-3 flex flex-col gap-3" style="background:radial-gradient(ellipse at 50% 0%,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d">
+      <div data-ctable class="w-full rounded-3xl p-3 flex flex-col gap-3" style="background:radial-gradient(ellipse at 50% 0%,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d">
         <div class="flex gap-2">${side('Player', S.p, w === 'player')}${side('Banker', S.b, w === 'banker')}</div>
         <div class="flex gap-2">${spot('player', 'Player', 'pays 1 to 1', 'rgba(37,99,235,.25)')}${spot('tie', 'Tie', 'pays 8 to 1', 'rgba(22,163,74,.25)')}${spot('banker', 'Banker', 'pays 0.95 to 1', 'rgba(220,38,38,.25)')}</div>
         <div class="flex flex-wrap gap-1 justify-center min-h-[14px]">${S.road.map(r => `<span class="w-3.5 h-3.5 rounded-full" style="background:${r === 'player' ? '#3b82f6' : r === 'banker' ? '#ef4444' : '#22c55e'}" title="${r}"></span>`).join('')}</div>
@@ -11679,7 +11847,7 @@ const VideoPoker = (() => {
     const cards = S.hand.length ? S.hand.map((c, i) => `<div onclick="VideoPoker.hold(${i})" class="flex flex-col items-center gap-1 cursor-pointer" style="--cw:${cw}px"><span class="text-[11px] font-bold h-4 ${S.held[i] ? 'text-amber-300' : 'text-transparent'}">HELD</span><div style="transform:translateY(${S.held[i] ? -6 : 0}px);transition:transform .15s">${Util.card(c, { sel: S.held[i] })}</div></div>`).join('') : Array(5).fill(`<div style="--cw:${cw}px" class="mt-5">${Util.card(null, { down: true })}</div>`).join('');
     root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:520px">
       <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">Jacks or Better</span></div>
-      <div class="w-full rounded-2xl p-2 text-xs text-amber-100 grid grid-cols-1 gap-0" style="background:#101a3a;border:3px solid #c9a227">${table}</div>
+      <div data-paytable class="w-full rounded-2xl p-2 text-xs text-amber-100 grid grid-cols-1 gap-0" style="background:#101a3a;border:3px solid #c9a227">${table}</div>
       <div class="flex gap-1.5 justify-center">${cards}</div>
       <div class="text-sm text-amber-50/90 text-center min-h-[20px] font-display">${S.msg}</div>
       ${Util.panel(`${S.phase === 'bet' ? betRow('VideoPoker', S.bet) : ''}<div class="flex gap-2 justify-center mt-2">${Util.btn(S.phase === 'draw' ? '🔄 Draw' : '🃏 Deal', 'VideoPoker.deal()', 'brass', '!text-base !px-6')}${S.phase === 'draw' && Settings.hints ? Util.btn('💡 Best hold', 'VideoPoker.hint()') : ''}</div>`, 'w-full text-center')}
@@ -11761,14 +11929,14 @@ const Roulette = (() => {
       <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">On the table <b class="ml-1 text-amber-200">${staked()}</b></span></div>
       <div class="flex items-center gap-3">
         <div class="relative" style="width:${wheel}px;height:${wheel}px">
-          <div style="width:${wheel}px;height:${wheel}px;transform:rotate(${S.rot}deg);transition:transform ${S.spinning ? (Settings.fast ? 1.3 : 3.6) : 0}s cubic-bezier(.15,.7,.2,1);border-radius:50%;border:5px solid #4a2e1d;box-shadow:0 8px 20px rgba(0,0,0,.6)">${wheelSvg(wheel - 10)}</div>
+          <div style="width:${wheel}px;height:${wheel}px;transform:rotate(${S.rot}deg);transition:transform ${S.spinning ? (Settings.fast ? 1.3 : 3.6) : 0}s cubic-bezier(.15,.7,.2,1);border-radius:50%;border:5px solid #4a2e1d;box-shadow:0 8px 20px rgba(0,0,0,.6)" data-wheel>${wheelSvg(wheel - 10)}</div>
           <div class="absolute left-1/2 -translate-x-1/2 -top-2 text-xl" style="filter:drop-shadow(0 2px 2px #000)">🔻</div>
           ${S.result !== null && !S.spinning ? `<div class="absolute inset-0 flex items-center justify-center"><span class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl text-white" style="background:${colOf(S.result)};border:2px solid #c9a227">${S.result}</span></div>` : ''}
         </div>
         <div class="flex flex-col gap-1 items-start max-w-[120px]"><span class="text-[10px] uppercase tracking-widest text-amber-100/50">Last spins</span><div class="flex flex-wrap gap-1">${S.hist.map(n => `<span class="w-6 h-6 rounded-full text-[10px] font-bold flex items-center justify-center text-white" style="background:${colOf(n)}">${n}</span>`).join('') || '<span class="text-xs text-amber-100/40">None yet</span>'}</div></div>
       </div>
       <div class="text-sm text-amber-50/90 text-center min-h-[20px] font-display">${S.msg}</div>
-      <div class="rounded-xl p-1.5" style="background:#0f3d27;border:4px solid #4a2e1d">
+      <div data-ctable data-rtable class="rounded-xl p-1.5" style="background:#0f3d27;border:4px solid #4a2e1d">
         <div class="flex">
           <div class="grid" style="grid-template-columns:repeat(3,${cell}px)">
             <button onclick="Roulette.bet('n0')" class="relative col-span-3 flex items-center justify-center font-bold text-white ${S.result === 0 ? 'ring-2 ring-amber-300' : ''}" style="height:${ch}px;background:${colOf(0)};border:1px solid rgba(201,162,39,.5)">0${chipOn('n0')}</button>
@@ -11847,7 +12015,7 @@ const Craps = (() => {
     const pts = [4, 5, 6, 8, 9, 10].map(n => `<div class="flex-1 flex items-center justify-center rounded-lg font-bold text-lg py-1.5 ${S.point === n ? 'bg-white text-stone-900' : 'text-amber-50/80'}" style="border:1px solid rgba(255,255,255,.25)">${n}</div>`).join('');
     root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:500px">
       <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">${S.point ? `Point: <b class="ml-1 text-amber-200">${S.point}</b>` : 'Come-out roll'}</span></div>
-      <div class="w-full rounded-3xl p-3 flex flex-col gap-2" style="background:radial-gradient(ellipse at 50% 0%,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d">
+      <div data-ctable class="w-full rounded-3xl p-3 flex flex-col gap-2" style="background:radial-gradient(ellipse at 50% 0%,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d">
         <div class="flex gap-1">${pts}</div>
         <div class="flex justify-center gap-4 py-2">${Util.die(S.dice[0], 'scale-125')}${Util.die(S.dice[1], 'scale-125')}</div>
         <div class="grid grid-cols-2 gap-2">${spot('field', 'Field', '3,4,9,10,11 pay 1:1 · 2 pays 2:1 · 12 pays 3:1', 'col-span-2')}${spot('pass', 'Pass Line', 'wins on 7/11, then the point')}${spot('dp', "Don't Pass", 'wins on 2/3, then a 7')}${spot('odds', 'Pass Odds', 'true odds, up to 3×')}${spot('any7', 'Any 7', 'one roll, pays 4 to 1')}</div>
@@ -11907,7 +12075,7 @@ const Slots = (() => {
     const pays = SYM.slice().reverse().map(([e, , p]) => `<span class="whitespace-nowrap">${e}${e}${e} ×${p}</span>`).join(' · ');
     root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:460px">
       <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">🏮 Lucky Lantern</span></div>
-      <div class="rounded-[28px] p-3" style="background:linear-gradient(160deg,#b0262d,#5e0f14);border:6px solid #c9a227;box-shadow:0 12px 30px rgba(0,0,0,.6)">
+      <div data-cabinet class="rounded-[28px] p-3" style="background:linear-gradient(160deg,#b0262d,#5e0f14);border:6px solid #c9a227;box-shadow:0 12px 30px rgba(0,0,0,.6)">
         <div class="text-center font-display text-amber-200 tracking-widest text-sm mb-2">✦ LUCKY LANTERN ✦</div>
         <div class="grid grid-cols-3 gap-2 rounded-2xl p-2" style="background:#2a0d0f">${cells}</div>
       </div>
@@ -12123,7 +12291,7 @@ const Holdem = (() => {
     root.innerHTML = `<div class="flex flex-col items-center gap-2 mx-auto w-full" style="max-width:560px">
       <div class="flex gap-2 justify-center flex-wrap">${bankChip()}<span class="stat-chip">Blinds ${SB}/${BB}</span><span class="stat-chip">Hand ${S.hands}</span></div>
       <div class="grid grid-cols-3 gap-1.5 w-full">${opps}</div>
-      <div class="w-full rounded-[40px] py-3 px-2 flex flex-col items-center gap-2" style="background:radial-gradient(ellipse,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d">
+      <div data-ctable class="w-full rounded-[40px] py-3 px-2 flex flex-col items-center gap-2" style="background:radial-gradient(ellipse,#1f6b45,#0f3d27 75%);border:6px solid #4a2e1d">
         <div class="flex gap-1" style="--cw:${bcw}px">${board}</div>
         <div class="flex items-center gap-2"><span class="stat-chip">Pot <b class="ml-1 text-amber-200">${pot()}</b></span>${S.curBet && S.inHand ? `<span class="text-[11px] text-emerald-100/70">to call ${toCall}</span>` : ''}</div>
       </div>
@@ -12224,7 +12392,7 @@ const ThreeCard = (() => {
     else ctrl = `${chipPicker('ThreeCard', S.chip)}<div class="flex gap-2 justify-center mt-2">${B('🃏 Deal', 'ThreeCard.deal()', 'brass', '!text-base !px-6')}${B('Clear bets', 'ThreeCard.clear()')}</div><p class="text-[11px] text-amber-100/50 mt-2">Pick a chip, then tap Ante or Pair Plus. Your bets stay on the table for the next hand.</p>`;
     root.innerHTML = `<div class="flex flex-col items-center gap-3 mx-auto w-full" style="max-width:520px">
       <div class="flex gap-2 justify-center">${bankChip()}<span class="stat-chip">Dealer qualifies with Queen high</span></div>
-      <div class="w-full rounded-[36px] p-3 flex flex-col items-center gap-3" style="background:radial-gradient(ellipse at 50% 0%,#1d5f8a,#0c2f4a 75%);border:6px solid #4a2e1d;box-shadow:inset 0 0 30px rgba(0,0,0,.5)">
+      <div data-ctable="blue" class="w-full rounded-[36px] p-3 flex flex-col items-center gap-3" style="background:radial-gradient(ellipse at 50% 0%,#1d5f8a,#0c2f4a 75%);border:6px solid #4a2e1d;box-shadow:inset 0 0 30px rgba(0,0,0,.5)">
         <div class="flex flex-col items-center gap-1"><span class="text-[11px] uppercase tracking-widest text-sky-100/70">Dealer${dh ? ' · ' + CATS[dh.cat] + (qualifies(dh) ? '' : " (doesn't qualify)") : ''}</span>${S.dealer.length ? cardRow(S.dealer, cw, reveal ? 99 : 0) : `<div style="height:${cw * 1.4}px"></div>`}</div>
         <div class="flex gap-3 justify-center w-full">${spot('pp', 'Pair Plus', 'pair or better')}${spot('ante', 'Ante', 'vs the dealer')}${spot(null, 'Play', 'matches Ante', playAmt || (S.phase === 'decide' ? 0 : 0))}</div>
         <div class="flex flex-col items-center gap-1">${S.you.length ? cardRow(S.you, cw) : `<div style="height:${cw * 1.4}px"></div>`}<span class="text-[11px] uppercase tracking-widest text-sky-100/80">You${yh ? ' · ' + CATS[yh.cat] : ''}</span></div>
