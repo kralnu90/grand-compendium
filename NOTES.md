@@ -10,10 +10,11 @@ At 54 after 1.9.0 (batch 1, the patience pack, is done). Revised plan, original 
 - Puzzles (10): Mines, Nonograms, Killer Sudoku, Kakuro, Bridges, 15 Puzzle, Peg Solitaire, Codebreaker, Lamplighter (lights-out), Hangman
 - Party and casino extras (6): Bingo, Pub Quiz, Keno, Sic Bo, Money Wheel, Scratchcards
 - Card games, capped (3): Hearts, Spades, Crazy Eights
-- Open slots for Kris's own picks: 6 (1 used: Dog Rummy, 5 left)
+- Open slots for Kris's own picks: 6 (2 used: Dog Rummy, Landlords of Larkford; 4 left)
 54 + 14 + 8 + 10 + 6 + 3 + 6 = 101
 
-## Current state: v1.10.1 (19 Nov 2026)
+## Current state: v1.11.0 (20 Nov 2026)
+- 1.11.0: Fifty-six games. Landlords of Larkford (src/g_larkford.js), Kris's request for a Monopoly-style game: kept fully original (fictional town Larkford, own street names, Fortune/Town Hall cards, Lock-up, Village Green, rents from a formula: base = 7% of price, houses x5/14/38/50, hotel x62). Rules: buy or sealed-bid auction, rent doubles on full unimproved sets, even building, mortgage half price / +10% to clear, trades (human panel; AI offers to complete sets, holdValue with set bonus), bankruptcy to creditor. Timed mode = richest net worth after 20 rounds (default); Classic usually lasts 60-80 rounds. On the Family & Party shelf. Counts as one of Kris's open-slot picks (4 left).
 - 1.10.1: Dog Rummy dog swap (Kris's rule): a real card matching the slot a dog fills in a table run (or a missing suit in a set) replaces the dog, and the dog goes to the swapper's hand (canSwap/swap/dogSlots/shown). Human: pick one card, tap the meld (swap preferred over extending). AI swaps when leftoverAfter improves by more than 1.
 - 1.10.0: Fifty-five games. Dog Rummy (src/g_dogrummy.js), Kris's own family game and his first "open slot" pick (6 left -> now 5). His rules: wild ("dog") rank = round number (A..K, 13 rounds; quick option 6), 7 cards, draw top of deck OR take the whole discard pile, sets of 3-4 / same-suit runs of 3+, lay off on anyone's melds, must end with a discard to chip out (0 points), others score hand: A=11, 2-10 face, JQK 10, dogs +15 on top. Table melds never score. Our defaults he didn't specify: Ace low or high in runs (no wrap), pile reshuffled into the stock when it runs out, dogs can be laid off anywhere. AI: bestMelds DFS over candidate melds (6000-node cap), takes the pile when leftover points drop enough.
 - 1.9.1: Spring Mikado was too easy (pulling slowly always won). Now: speed sweet spot [lo, hi] with hi = SPEED(90)/tension and lo = hi*DIFF().lo; below lo strain builds (judder), idle while held builds strain via an rAF watcher, overlap with neighbours in the first 70% of the pull adds strain (rub). DIFF() per Settings.diff. Fault messages name the cause.

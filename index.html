@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fifty-five parlour, patience, family, pub, casino and word games in one: Chess, Go, Shogi, Spider, Pyramid, TriPeaks, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Fifty-six parlour, patience, family, pub, casino and word games in one: Chess, Go, Shogi, Spider, Pyramid, TriPeaks, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-title" content="Compendium">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta property="og:title" content="The Grand Tabletop Compendium">
-  <meta property="og:description" content="Fifty-five games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
+  <meta property="og:description" content="Fifty-six games at one table: royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve.">
   <meta property="og:image" content="https://kralnugames.com/grand-compendium.jpg">
   <title>The Grand Tabletop Compendium</title>
   <style id="tailwind">/* Tailwind CSS v4 (MIT), compiled for this page */
@@ -36,14 +36,17 @@
     --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-500: oklch(76.9% 0.188 70.08);
+    --color-amber-800: oklch(47.3% 0.137 46.201);
     --color-amber-900: oklch(41.4% 0.112 45.904);
     --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-emerald-100: oklch(95% 0.052 163.051);
     --color-emerald-300: oklch(84.5% 0.143 164.978);
     --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
     --color-sky-100: oklch(95.1% 0.026 236.824);
     --color-sky-300: oklch(82.8% 0.111 230.318);
+    --color-sky-800: oklch(44.3% 0.11 240.79);
     --color-fuchsia-400: oklch(74% 0.238 322.16);
     --color-stone-900: oklch(21.6% 0.006 56.043);
     --color-stone-950: oklch(14.7% 0.004 49.25);
@@ -618,6 +621,9 @@
   .min-h-\[26px\] {
     min-height: 26px;
   }
+  .min-h-\[28px\] {
+    min-height: 28px;
+  }
   .min-h-\[44px\] {
     min-height: 44px;
   }
@@ -899,6 +905,11 @@
   .gap-\[4px\] {
     gap: 4px;
   }
+  :where(.space-y-0\.5 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 0.5) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 0.5) * calc(1 - var(--tw-space-y-reverse)));
+  }
   :where(.space-y-1 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
@@ -1021,6 +1032,12 @@
   .\!border-amber-300 {
     border-color: var(--color-amber-300) !important;
   }
+  .border-amber-100\/10 {
+    border-color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-amber-100) 10%, transparent);
+    }
+  }
   .border-amber-100\/25 {
     border-color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 25%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1084,6 +1101,9 @@
       border-color: color-mix(in oklab, var(--color-black) 40%, transparent);
     }
   }
+  .border-white {
+    border-color: var(--color-white);
+  }
   .border-white\/80 {
     border-color: color-mix(in srgb, #fff 80%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1140,6 +1160,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-amber-500) 90%, transparent);
     }
+  }
+  .bg-amber-800 {
+    background-color: var(--color-amber-800);
   }
   .bg-black\/20 {
     background-color: color-mix(in srgb, #000 20%, transparent);
@@ -1219,8 +1242,14 @@
       background-color: color-mix(in oklab, var(--color-emerald-500) 15%, transparent);
     }
   }
+  .bg-emerald-700 {
+    background-color: var(--color-emerald-700);
+  }
   .bg-red-500 {
     background-color: var(--color-red-500);
+  }
+  .bg-sky-800 {
+    background-color: var(--color-sky-800);
   }
   .bg-stone-950\/95 {
     background-color: color-mix(in srgb, oklch(14.7% 0.004 49.25) 95%, transparent);
@@ -3571,6 +3600,24 @@ const GAME_CATALOG = [
         <li><strong>Scoring:</strong> Everyone else scores the cards left in their hand: Ace 11, 2 to 10 face value, Jack/Queen/King 10, and every dog in hand is its value <b>plus 15</b>. Hands on the table never count.</li>
         <li><strong>Game length:</strong> Full (13 rounds, Aces to Kings) or Quick (6 rounds, Aces to 6s).</li>
       </ul>`
+  },
+  {
+    id: 'larkford', title: "Landlords of Larkford", subtitle: "The Property Trading Game", category: 'Board', icon: '🏘️',
+    players: "2-6, people or AI", tagline: "Buy up the streets of a little market town, build houses and hotels, and bankrupt your rivals.",
+    rules: `
+      <p><strong>Objective:</strong> Be the last player left with money, or the richest when time runs out in a Timed game.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Moving:</strong> Roll two dice and move. A double means you roll again, but three doubles in a row and you're caught speeding. Passing Town Square pays £200.</li>
+        <li><strong>Buying:</strong> Land on an unowned street, station or utility and you can buy it. If you pass, it goes to auction: everyone makes one secret bid, and the highest bid buys it.</li>
+        <li><strong>Rent:</strong> Land on someone else's property and pay rent. Rent doubles on empty streets when one player owns the whole colour set. Stations pay more the more you own, and utilities charge a multiple of your roll.</li>
+        <li><strong>Building:</strong> Own a whole colour set to build houses, evenly across the set. After four houses, the fifth building is a hotel. Tap 🏠 My property to build, sell or mortgage.</li>
+        <li><strong>Mortgages:</strong> Mortgage a property for half its price. It earns no rent until you pay it back with 10% interest.</li>
+        <li><strong>Trading:</strong> Use 🤝 Trade on your turn to swap property and cash with anyone. The AI players will make you offers too.</li>
+        <li><strong>The Lock-up:</strong> Caught speeding? Pay £50, use a Get Out Free card, or try to roll a double (three tries, then you pay).</li>
+        <li><strong>Cards:</strong> 🔮 Fortune and 🏛️ Town Hall cards can help or hurt.</li>
+        <li><strong>Bankruptcy:</strong> If you can't pay, sell buildings and mortgage. If that still isn't enough, you're out, and your property goes to whoever you owed.</li>
+        <li><strong>Game length:</strong> Timed (richest after 20 rounds, counting cash, property and buildings) or Classic (last player standing).</li>
+      </ul>`
   }
 ];
 
@@ -3731,7 +3778,7 @@ const App = {
     { k: 'cards', n: 'Cards', icon: '🃏', blurb: 'Pub classics, duels and card crawls', ids: ['dogrummy', 'cribbage', 'gin', 'clash', 'duel', 'scoundrel', 'regicide'] },
     { k: 'patience', n: 'Patience', icon: '🂡', blurb: 'Solitaire card games, from classic to devilish', ids: ['klondike', 'freecell', 'spider', 'yukon', 'scorpion', 'fortythieves', 'canfield', 'pyramid', 'golf', 'tripeaks', 'acesup'] },
     { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'knucklebones', 'liars', 'dominoes', 'mahjong'] },
-    { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
+    { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['larkford', 'snakes', 'ludo', 'manor', 'delve', 'battleships', 'springmikado'] },
     { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] },
     { k: 'casino', n: 'Casino', icon: '🎰', blurb: 'Play-chip tables: cards, wheel, dice and slots', ids: ['blackjack', 'holdem', 'threecard', 'roulette', 'videopoker', 'baccarat', 'craps', 'slots'] }
   ],
@@ -3853,9 +3900,15 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.10.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.11.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.11.0', '20 Nov 2026', 'Landlords of Larkford', [
+    'Landlords of Larkford: an original property-trading board game set in a little English market town',
+    'Buy streets, stations and utilities, build houses and hotels, mortgage, trade and go to auction',
+    'Fortune and Town Hall cards, the Lock-up, and bankruptcy when the rent bites',
+    '2 to 6 players, people or AI. Timed (20 rounds) or Classic (last one standing)'
+  ]],
   ['1.10.1', '19 Nov 2026', 'Dog Rummy: swap the dog', [
     'Hold the real card a dog is standing in for? Swap it into that hand on the table and take the dog',
     'Dogs in runs are now shown in the gap they fill',
@@ -4089,6 +4142,7 @@ const Menu = (() => {
           <li><b>Spring Mikado</b> is a digital take on the classic wooden disc-mikado tray with a spring-loaded bar.</li>
           <li><b>Murder at Marrowgate Manor</b> and <b>Torchlight Delve</b> are original games made for this collection, inspired by classic deduction and dungeon-crawl board games.</li>
           <li><b>Dog Rummy</b> is a family card game shared by Kris.</li>
+          <li><b>Landlords of Larkford</b> is an original property game: its town, street names, cards and rents were made for this collection.</li>
           <li>The Arrow Words clues and Word Search themes were written for this collection.</li>
           <li><b>Conjurers' Duel</b> is an original card game in the collectible-card style; its 100 cards, names and rules text were written for this collection.</li>
           <li><b>Tilecraft, Word Lock, Word Wheel, Word Grid</b> and <b>Colour Clash</b> are original takes on much-loved word and card game ideas. They aren't connected to, or endorsed by, the makers of any other game.</li>
@@ -12821,6 +12875,405 @@ const DogRummy = (() => {
 })();
 Games.dogrummy = DogRummy;
 
+/* ============================================================================
+   LANDLORDS OF LARKFORD: an original property-trading board game
+   (fictional town, original names, cards and rent tables)
+   ============================================================================ */
+const Larkford = (() => {
+  const G = { br: '#8b5a2b', lb: '#7cc8ea', pk: '#d6579b', or: '#ec8a2c', rd: '#d23a3a', yl: '#e8cf3a', gn: '#2f9b52', db: '#2b4fa8' };
+  const HC = { br: 50, lb: 50, pk: 100, or: 100, rd: 150, yl: 150, gn: 200, db: 200 };
+  const st = (n, price, g) => { const b = Math.max(2, Math.round(price * .07)); return { t: 'street', n, price, g, rent: [b, b * 5, b * 14, b * 38, b * 50, b * 62], hc: HC[g] }; };
+  const SQ = [
+    { t: 'start', n: 'Town Square', ic: '🏁' }, st('Mill Lane', 60, 'br'), { t: 'hall', n: 'Town Hall', ic: '🏛️' }, st("Tanner's Row", 60, 'br'), { t: 'tax', n: 'Council Tax', amt: 200, ic: '💷' },
+    { t: 'station', n: 'North Halt', price: 200, ic: '🚂' }, st('Rose Street', 100, 'lb'), { t: 'fortune', n: 'Fortune', ic: '🔮' }, st('Cobble Way', 100, 'lb'), st('Orchard Road', 120, 'lb'),
+    { t: 'jail', n: 'The Lock-up', ic: '🚓' }, st('Bell Street', 140, 'pk'), { t: 'util', n: 'Gasworks', price: 150, ic: '🔥' }, st("Weaver's Walk", 140, 'pk'), st('Chapel Lane', 160, 'pk'),
+    { t: 'station', n: 'Larkford Central', price: 200, ic: '🚂' }, st('Harbour Street', 180, 'or'), { t: 'hall', n: 'Town Hall', ic: '🏛️' }, st('Lantern Lane', 180, 'or'), st('Quayside', 200, 'or'),
+    { t: 'green', n: 'Village Green', ic: '🌳' }, st('Market Street', 220, 'rd'), { t: 'fortune', n: 'Fortune', ic: '🔮' }, st('Guildhall Row', 220, 'rd'), st('Bridge Street', 240, 'rd'),
+    { t: 'station', n: 'Harbour Station', price: 200, ic: '🚂' }, st('Kingsway', 260, 'yl'), st('Regent Parade', 260, 'yl'), { t: 'util', n: 'Waterworks', price: 150, ic: '💧' }, st('Castle Hill', 280, 'yl'),
+    { t: 'gojail', n: 'Caught Speeding!', ic: '🚨' }, st('Larkford Common', 300, 'gn'), st('Park Crescent', 300, 'gn'), { t: 'hall', n: 'Town Hall', ic: '🏛️' }, st('Royal Avenue', 320, 'gn'),
+    { t: 'station', n: 'Hilltop Halt', price: 200, ic: '🚂' }, { t: 'fortune', n: 'Fortune', ic: '🔮' }, st('The Belvedere', 350, 'db'), { t: 'tax', n: 'Luxury Levy', amt: 100, ic: '💎' }, st('Lark Hall', 400, 'db')
+  ];
+  const GROUPS = {}; SQ.forEach((s, i) => { if (s.g) (GROUPS[s.g] = GROUPS[s.g] || []).push(i); });
+  const buyable = i => ['street', 'station', 'util'].includes(SQ[i].t);
+  const FORTUNE = [
+    ['Advance to Town Square. Collect £200.', { to: 0 }], ['Advance to Market Street.', { to: 21 }], ['Advance to the nearest station. If it\'s owned, pay double rent.', { near: 'station' }],
+    ['Advance to the nearest utility. If it\'s owned, pay 10 times your roll.', { near: 'util' }], ['The bank pays you a dividend of £50.', { cash: 50 }], ['Get out of the Lock-up free. Keep this card until needed.', { gojf: 1 }],
+    ['Go back three spaces.', { back: 3 }], ['Caught speeding! Go straight to the Lock-up.', { jail: 1 }], ['Street repairs: pay £25 per house and £100 per hotel.', { repairs: [25, 100] }],
+    ['Parking fine: pay £15.', { cash: -15 }], ['Take a trip to Larkford Central.', { to: 15 }], ['Advance to Lark Hall.', { to: 39 }],
+    ['You\'ve been elected town mayor. Pay each player £50.', { each: -50 }], ['Your building loan matures. Collect £150.', { cash: 150 }], ['You win the Larkford bake-off! Collect £100.', { cash: 100 }], ["Advance to Weaver's Walk.", { to: 13 }]
+  ];
+  const HALL = [
+    ['Advance to Town Square. Collect £200.', { to: 0 }], ['A forgotten savings account turns up. Collect £200.', { cash: 200 }], ['Dentist\'s bill: pay £50.', { cash: -50 }],
+    ['You sell some old shares. Collect £50.', { cash: 50 }], ['Get out of the Lock-up free. Keep this card until needed.', { gojf: 1 }], ['Caught speeding! Go straight to the Lock-up.', { jail: 1 }],
+    ['Village fete: collect £10 from every player.', { each: 10 }], ['Council tax rebate. Collect £20.', { cash: 20 }], ['You inherit £100.', { cash: 100 }],
+    ['Your holiday fund matures. Collect £100.', { cash: 100 }], ['Second prize at the dog show! Collect £10.', { cash: 10 }], ['Vet\'s bill: pay £100.', { cash: -100 }],
+    ['School trip: pay £50.', { cash: -50 }], ['Consultancy fee: collect £25.', { cash: 25 }], ['Roof repairs: pay £40 per house and £115 per hotel.', { repairs: [40, 115] }], ['It\'s your birthday! Collect £10 from every player.', { each: 10 }]
+  ];
+  let S, root, sid = 0, busy = false;
+  const P = () => S.ps[S.turn];
+  const alive = () => S.ps.filter(p => !p.out);
+  const own = i => S.own[i];
+  const owned = pi => Object.keys(S.own).map(Number).filter(i => S.own[i].o === pi);
+  const hasGroup = (pi, g) => GROUPS[g].every(i => own(i) && own(i).o === pi);
+  const YOU = { passes: 'pass', pays: 'pay', buys: 'buy', lands: 'land', rolls: 'roll', stays: 'stay', builds: 'build', sells: 'sell', mortgages: 'mortgage', uses: 'use', wins: 'win', leaves: 'leave', is: 'are', turns: 'turn', walks: 'walk', makes: 'make' };
+  const youify = m => m.replace(/\bYou (\w+)/g, (all, v) => YOU[v] ? 'You ' + YOU[v] : all).replace(/(You [^.]*)\(their own\)/, '$1(your own)').replace(/(You [^.]*)Their property/, '$1Your property').replace('You rolled a double', 'You rolled a double');
+  const log = m => { m = youify(m); S.log.push(m); if (S.log.length > 40) S.log.shift(); S.msg = m; };
+  const money = n => `£${n.toLocaleString()}`;
+  function rent(i, roll) {
+    const o = own(i), s = SQ[i]; if (!o || o.m) return 0;
+    if (s.t === 'street') return o.h ? s.rent[o.h] : s.rent[0] * (hasGroup(o.o, s.g) ? 2 : 1);
+    if (s.t === 'station') { const n = SQ.filter((x, j) => x.t === 'station' && own(j) && own(j).o === o.o).length; return 25 * Math.pow(2, n - 1); }
+    const n = SQ.filter((x, j) => x.t === 'util' && own(j) && own(j).o === o.o).length; return roll * (n === 2 ? 10 : 4);
+  }
+  /* ---------- setup ---------- */
+  function newGame(seats, mode) {
+    sid++; busy = false;
+    S = { ps: seats.map(s => ({ name: s.name, col: s.col.hex, type: s.type, cash: 1500, pos: 0, jail: 0, out: false, gojf: 0 })), own: {}, turn: 0, dice: [1, 1], dbl: 0, phase: 'roll', mode, round: 1, maxRounds: mode === 'timed' ? 20 : 0, fortune: Util.shuffle([...Array(16).keys()]), hall: Util.shuffle([...Array(16).keys()]), log: [], msg: 'Roll the dice to start!' };
+    startTurn();
+  }
+  async function startTurn() {
+    if (S.phase === 'over') return;
+    S.phase = 'roll'; S.dbl = 0; render();
+    const p = P();
+    if (p.type === 'ai') return aiTurn();
+    if (S.ps.filter(x => x.type === 'human' && !x.out).length > 1) { await curtain(p.name, `${p.name}'s turn with ${money(p.cash)}.`); render(); }
+  }
+  /* ---------- moving ---------- */
+  async function roll() {
+    if (busy || S.phase !== 'roll') return;
+    busy = true; const my = sid, p = P();
+    for (let k = 0; k < 7; k++) { S.dice = [Util.d6(), Util.d6()]; render(); await Util.sleep(Util.delay(60)); if (my !== sid) return; }
+    Sfx.play('dice'); const [a, b] = S.dice, d = a === b;
+    if (p.jail) {
+      if (d) { p.jail = 0; log(`${p.name} rolls a double and walks free!`); await move(p, a + b, my); busy = false; return afterLand(false); }
+      p.jail++; if (p.jail > 3) { log(`${p.name} pays ${money(50)} after three tries and leaves the Lock-up.`); charge(p, 50, null); p.jail = 0; await move(p, a + b, my); busy = false; return afterLand(false); }
+      log(`${p.name} stays in the Lock-up (try ${p.jail - 1} of 3).`); busy = false; S.phase = 'end'; render(); if (p.type === 'ai') aiContinue(); return;
+    }
+    if (d) { S.dbl++; if (S.dbl === 3) { log(`Three doubles! ${p.name} is caught speeding.`); toJail(p); busy = false; S.phase = 'end'; render(); if (p.type === 'ai') aiContinue(); return; } }
+    await move(p, a + b, my); busy = false; afterLand(d);
+  }
+  async function move(p, n, my) {
+    for (let k = 0; k < n; k++) { p.pos = (p.pos + 1) % 40; if (p.pos === 0) { p.cash += 200; log(`${p.name} passes Town Square: +${money(200)}.`); } render(); await Util.sleep(Util.delay(110)); if (my !== sid) throw 'abort'; }
+    Sfx.play('place');
+    await land(p, my);
+  }
+  function toJail(p) { p.pos = 10; p.jail = 1; S.dbl = 0; Sfx.play('lose'); }
+  async function land(p, my, mult = 1) {
+    const s = SQ[p.pos], pi = S.ps.indexOf(p), roll = S.dice[0] + S.dice[1];
+    if (buyable(p.pos)) {
+      const o = own(p.pos);
+      if (!o) { S.phase = 'buy'; log(`${p.name} lands on ${s.n} (${money(s.price)}).`); return; }
+      if (o.o !== pi && !o.m) {
+        let r = rent(p.pos, roll); if (mult === 2 && s.t === 'station') r *= 2; if (mult === 10 && s.t === 'util') r = roll * 10;
+        log(`${p.name} pays ${money(r)} rent to ${S.ps[o.o].name} for ${s.n}.`); charge(p, r, S.ps[o.o]); Sfx.play('card');
+      } else log(`${p.name} lands on ${s.n}${o.o === pi ? ' (their own)' : ' (mortgaged)'}.`);
+    }
+    else if (s.t === 'tax') { log(`${p.name} pays ${money(s.amt)} ${s.n}.`); charge(p, s.amt, null); }
+    else if (s.t === 'gojail') { log(`${p.name} is caught speeding! Off to the Lock-up.`); toJail(p); }
+    else if (s.t === 'fortune' || s.t === 'hall') await drawCard(p, s.t, my);
+    else log(`${p.name} lands on ${s.n}.`);
+  }
+  async function drawCard(p, kind, my) {
+    const deck = kind === 'fortune' ? S.fortune : S.hall, k = deck.shift(); deck.push(k);
+    const [text, fx] = (kind === 'fortune' ? FORTUNE : HALL)[k]; log(`${kind === 'fortune' ? '🔮 Fortune' : '🏛️ Town Hall'}: ${text}`);
+    if (p.type === 'human') { busy = false; render(); await Util.choose(kind === 'fortune' ? '🔮 Fortune' : '🏛️ Town Hall', text, [{ label: 'OK', value: 1, primary: true }]); if (my !== sid) throw 'abort'; busy = true; }
+    else { render(); await Util.sleep(Util.delay(900)); if (my !== sid) throw 'abort'; }
+    const pi = S.ps.indexOf(p);
+    if (fx.cash > 0) p.cash += fx.cash;
+    if (fx.cash < 0) charge(p, -fx.cash, null);
+    if (fx.gojf) p.gojf++;
+    if (fx.jail) toJail(p);
+    if (fx.each) for (const q of alive()) if (q !== p) { if (fx.each > 0) charge(q, fx.each, p); else charge(p, -fx.each, q); }
+    if (fx.repairs) { let n = 0; for (const i of owned(pi)) { const h = own(i).h; n += h === 5 ? fx.repairs[1] : h * fx.repairs[0]; } if (n) charge(p, n, null); }
+    if (fx.to !== undefined) { const steps = (fx.to - p.pos + 40) % 40; await move(p, steps, my); }
+    if (fx.near) { let n = 1; while (SQ[(p.pos + n) % 40].t !== fx.near) n++; await moveTo(p, n, my, fx.near === 'station' ? 2 : 10); }
+    if (fx.back) { p.pos = (p.pos - fx.back + 40) % 40; render(); await land(p, my); }
+  }
+  async function moveTo(p, n, my, mult) { for (let k = 0; k < n; k++) { p.pos = (p.pos + 1) % 40; if (p.pos === 0) { p.cash += 200; } render(); await Util.sleep(Util.delay(90)); if (my !== sid) throw 'abort'; } await land(p, my, mult); }
+  function afterLand(d) {
+    if (S.phase === 'over') return;
+    const p = P();
+    if (S.phase === 'buy') { S.again = d && !p.jail; render(); if (p.type === 'ai') aiBuy(); return; }
+    if (p.cash < 0) { S.phase = 'debt'; S.again = d && !p.jail; render(); if (p.type === 'ai') aiDebt(); return; }
+    S.phase = d && !p.jail ? 'roll' : 'end'; if (d && !p.jail) log(`${p.name} rolled a double: roll again!`);
+    render(); if (p.type === 'ai') aiContinue();
+  }
+  function charge(p, amt, to) { p.cash -= amt; if (to) to.cash += amt; p.creditor = to ? S.ps.indexOf(to) : -1; }
+  /* ---------- buying, building, mortgages ---------- */
+  function buy(yes) {
+    if (S.phase !== 'buy') return; const p = P(), i = p.pos, s = SQ[i];
+    if (yes) { if (p.cash < s.price) return Util.toast("You can't afford it. Mortgage something first, or leave it."); p.cash -= s.price; S.own[i] = { o: S.turn, h: 0, m: false }; log(`${p.name} buys ${s.n} for ${money(s.price)}.`); Sfx.play('match'); }
+    else { log(`${p.name} passes on ${s.n}. It goes to auction!`); return auction(i).then(() => { S.phase = S.again ? 'roll' : 'end'; if (S.again) log(`${p.name} rolled a double: roll again!`); render(); if (P().type === 'ai') aiContinue(); }); }
+    S.phase = S.again ? 'roll' : 'end'; if (S.again) log(`${p.name} rolled a double: roll again!`);
+    render(); if (p.type === 'ai') aiContinue();
+  }
+  /* sealed-bid auction: everyone bids once, highest bid buys it */
+  function aiBid(pi, i) {
+    const s = SQ[i], p = S.ps[pi], gr = s.g ? GROUPS[s.g] : null;
+    const completes = gr && gr.every(j => j === i || (own(j) && own(j).o === pi));
+    const blocks = gr && gr.filter(j => own(j)).length && gr.every(j => j === i || !own(j) || own(j).o !== pi) && gr.some(j => own(j));
+    let v = s.price * (completes ? 1.5 : blocks ? .95 : .7) * (.85 + Math.random() * .3);
+    v = Math.min(v, p.cash - (completes ? 20 : 80));
+    return Math.max(0, Math.floor(v / 5) * 5);
+  }
+  async function auction(i) {
+    const s = SQ[i], bids = [], my = sid;
+    for (const [q, k] of S.ps.map((q, k) => [q, k])) {
+      if (q.out) continue;
+      if (q.type === 'ai') { bids.push([k, aiBid(k, i)]); continue; }
+      if (S.ps.filter(x => x.type === 'human' && !x.out).length > 1) await curtain(q.name, `Auction: ${s.n}. Choose your secret bid.`);
+      const opts = [.5, .75, 1, 1.25, 1.5].map(f => Math.floor(s.price * f / 5) * 5).filter(v => v <= q.cash);
+      busy = false; render();
+      const v = await Util.choose(`🔨 Auction: ${s.n}`, `Everyone makes one secret bid. Highest bid buys it (list price ${money(s.price)}). You have ${money(q.cash)}.`, opts.map(v => ({ label: money(v), value: v })).concat([{ label: 'No bid', value: 0, primary: !opts.length }]));
+      if (my !== sid) return;
+      bids.push([k, v || 0]);
+    }
+    bids.sort((a, b) => b[1] - a[1] || Math.random() - .5);
+    const [w, amt] = bids[0];
+    if (amt > 0) { S.ps[w].cash -= amt; S.own[i] = { o: w, h: 0, m: false }; log(`🔨 ${S.ps[w].name} wins ${s.n} at auction for ${money(amt)}.`); Sfx.play('match'); }
+    else log(`🔨 No one bids on ${s.n}. It stays with the bank.`);
+    render(); await Util.sleep(Util.delay(900));
+  }
+  function canBuild(pi, i) {
+    const s = SQ[i], o = own(i); if (s.t !== 'street' || !o || o.o !== pi || o.h >= 5 || !hasGroup(pi, s.g)) return false;
+    const gr = GROUPS[s.g]; if (gr.some(j => own(j).m)) return false;
+    return o.h <= Math.min(...gr.map(j => own(j).h)) && S.ps[pi].cash >= s.hc;
+  }
+  function canSell(pi, i) { const s = SQ[i], o = own(i); if (!o || o.o !== pi || !o.h) return false; return o.h >= Math.max(...GROUPS[s.g].map(j => own(j).h)); }
+  function canMortgage(pi, i) { const o = own(i); if (!o || o.o !== pi || o.m) return false; const s = SQ[i]; return s.t !== 'street' || GROUPS[s.g].every(j => !own(j) || !own(j).h); }
+  const unmortCost = i => Math.round(SQ[i].price / 2 * 1.1);
+  function build(i) { const pi = S.turn; if (!canBuild(pi, i)) return; S.ps[pi].cash -= SQ[i].hc; own(i).h++; Sfx.play('place'); log(`${S.ps[pi].name} builds ${own(i).h === 5 ? 'a hotel' : 'a house'} on ${SQ[i].n}.`); }
+  function sell(i, pi = S.turn) { if (!canSell(pi, i)) return; own(i).h--; S.ps[pi].cash += SQ[i].hc / 2; log(`${S.ps[pi].name} sells a building on ${SQ[i].n}.`); }
+  function mortgage(i, pi = S.turn) { if (!canMortgage(pi, i)) return; own(i).m = true; S.ps[pi].cash += SQ[i].price / 2; log(`${S.ps[pi].name} mortgages ${SQ[i].n} for ${money(SQ[i].price / 2)}.`); }
+  function unmortgage(i, pi = S.turn) { const o = own(i); if (!o || o.o !== pi || !o.m || S.ps[pi].cash < unmortCost(i)) return; S.ps[pi].cash -= unmortCost(i); o.m = false; log(`${S.ps[pi].name} pays off the mortgage on ${SQ[i].n}.`); }
+  function liquid(pi) { let v = S.ps[pi].cash; for (const i of owned(pi)) { const o = own(i); v += o.h * (SQ[i].hc || 0) / 2; if (!o.m) v += SQ[i].price / 2; } return v; }
+  function worth(pi) { let v = S.ps[pi].cash; for (const i of owned(pi)) { const o = own(i); v += (o.m ? SQ[i].price / 2 : SQ[i].price) + o.h * (SQ[i].hc || 0); } return v; }
+  function bankrupt(pi) {
+    const p = S.ps[pi], cr = p.creditor >= 0 ? S.ps[p.creditor] : null;
+    for (const i of owned(pi)) { const o = own(i); if (o.h) { p.cash += o.h * SQ[i].hc / 2; o.h = 0; } if (cr) o.o = p.creditor; else delete S.own[i]; }
+    if (cr) cr.cash += p.cash; // hand over what's left, or take back the part of the debt that couldn't be paid
+    p.cash = 0; p.out = true; p.gojf = 0; Sfx.play('lose');
+    log(`${p.name} is bankrupt${cr ? `! Everything goes to ${cr.name}` : '! Their property goes back to the bank'}.`);
+    if (alive().length === 1) return finish();
+  }
+  function endTurn() {
+    if (busy) return; const p = P();
+    if (S.phase === 'debt') { if (p.cash < 0) return Util.toast('Raise money first: sell buildings or mortgage property.'); }
+    else if (S.phase !== 'end') return;
+    let n = S.turn; do { n = (n + 1) % S.ps.length; } while (S.ps[n].out);
+    if (n <= S.turn) S.round++;
+    if (S.mode === 'timed' && S.round > S.maxRounds) return finish();
+    S.turn = n; startTurn();
+  }
+  function payDebt() { const p = P(); if (p.cash >= 0) { S.phase = S.again ? 'roll' : 'end'; render(); } }
+  function giveUp() { const pi = S.turn; bankrupt(pi); if (S.phase !== 'over') { S.phase = 'end'; endTurn(); } }
+  function payJail(card) {
+    const p = P(); if (!p.jail || S.phase !== 'roll') return;
+    if (card) { if (!p.gojf) return; p.gojf--; log(`${p.name} uses a Get Out Free card.`); }
+    else { if (p.cash < 50) return Util.toast('You need £50.'); p.cash -= 50; log(`${p.name} pays ${money(50)} to leave the Lock-up.`); }
+    p.jail = 0; render();
+  }
+  function finish() {
+    S.phase = 'over'; render();
+    const ranking = S.ps.map((p, i) => ({ p, i, w: p.out ? -1 : worth(i) })).sort((a, b) => b.w - a.w), w = ranking[0].p;
+    Sfx.play(w.type === 'human' ? 'win' : 'lose');
+    App.endGame('larkford', w.type === 'human', `${w.name} ${w.name === 'You' ? 'win' : 'wins'}!`, `<div class="text-left space-y-1">${ranking.map(r => `<div class="flex justify-between gap-4"><span>${r.p.name}</span><b class="text-amber-300">${r.p.out ? 'Bankrupt' : money(r.w)}</b></div>`).join('')}</div>${S.mode === 'timed' ? '<div class="text-xs opacity-70 mt-1">Net worth: cash, property and buildings.</div>' : ''}`, () => newGame(S.ps.map(p => ({ name: p.name, col: { hex: p.col }, type: p.type })), S.mode));
+  }
+  /* ---------- AI ---------- */
+  const reserve = () => S.round < 8 ? 60 : 180;
+  async function aiTurn() {
+    const my = sid, p = P(); await Util.sleep(Util.delay(600)); if (my !== sid) return;
+    if (p.jail) { const early = Object.keys(S.own).length < 16; if (p.gojf) payJail(true); else if (early && p.cash > 300) payJail(false); }
+    aiManage(); await aiMaybeTrade(my); if (my !== sid) return;
+    try { await roll(); } catch (e) { if (e !== 'abort') console.error(e); }
+  }
+  function aiBuy() {
+    const p = P(), s = SQ[p.pos], pi = S.turn, gr = s.g ? GROUPS[s.g] : null;
+    const completes = gr && gr.every(j => j === p.pos || (own(j) && own(j).o === pi));
+    const blocks = gr && gr.some(j => own(j) && own(j).o !== pi);
+    const want = p.cash - s.price >= (completes ? 0 : blocks ? reserve() + 40 : reserve());
+    setTimeout(() => { if (S.phase === 'buy' && P() === p) buy(want); }, Util.delay(600));
+  }
+  function aiDebt() {
+    const pi = S.turn, p = P();
+    while (p.cash < 0) {
+      const sellable = owned(pi).filter(i => canSell(pi, i)); if (sellable.length) { sell(sellable.sort((a, b) => SQ[a].hc - SQ[b].hc)[0], pi); continue; }
+      const mort = owned(pi).filter(i => canMortgage(pi, i)); if (mort.length) { mortgage(mort.sort((a, b) => SQ[a].price - SQ[b].price)[0], pi); continue; }
+      break;
+    }
+    setTimeout(() => { if (P() !== p) return; if (p.cash < 0) giveUp(); else { S.phase = S.again ? 'roll' : 'end'; render(); aiContinue(); } }, Util.delay(500));
+  }
+  function aiManage() {
+    const pi = S.turn, p = P();
+    // pay off mortgages when rich, then build evenly on the best sets
+    for (const i of owned(pi)) if (own(i).m && p.cash - unmortCost(i) > reserve() + 300) unmortgage(i, pi);
+    let built = true, guard = 0;
+    while (built && guard++ < 30) { built = false; const opts = owned(pi).filter(i => canBuild(pi, i) && p.cash - SQ[i].hc >= reserve()); if (opts.length) { opts.sort((a, b) => own(a).h - own(b).h || SQ[b].price - SQ[a].price); build(opts[0]); built = true; } }
+  }
+  function aiContinue() {
+    if (S.phase === 'over') return; const my = sid, p = P();
+    setTimeout(async () => {
+      if (my !== sid || P() !== p) return; aiManage(); render();
+      if (S.phase === 'roll') { try { await roll(); } catch (e) { if (e !== 'abort') console.error(e); } }
+      else if (S.phase === 'end') endTurn();
+    }, Util.delay(700));
+  }
+  /* trades: value of holdings to a player, with a big bonus for complete sets */
+  function holdValue(pi, give = [], take = [], cashDelta = 0) {
+    const mine = new Set(owned(pi).filter(i => !give.includes(i)).concat(take));
+    let v = cashDelta;
+    for (const i of mine) v += SQ[i].price;
+    for (const [g, idx] of Object.entries(GROUPS)) { const n = idx.filter(i => mine.has(i)).length; if (n === idx.length) v += idx.reduce((s, i) => s + SQ[i].price, 0) * 1.2; else if (n === idx.length - 1) v += 40; }
+    return v;
+  }
+  function aiAccepts(ai, from, give, take, cashToAi) { // give: AI's properties going out; take: coming in
+    const gain = holdValue(ai, give, take, cashToAi) - holdValue(ai);
+    const theirGain = holdValue(from, take, give, -cashToAi) - holdValue(from);
+    return gain > 20 && gain >= theirGain * .3 && (S.ps[ai].cash + cashToAi) >= 0;
+  }
+  async function aiMaybeTrade(my) {
+    if (Math.random() > .5) return;
+    const pi = S.turn, p = P();
+    for (const [g, idx] of Object.entries(GROUPS)) {
+      const mineN = idx.filter(i => own(i) && own(i).o === pi).length; if (mineN !== idx.length - 1) continue;
+      const miss = idx.find(i => !own(i) || own(i).o !== pi); const o = own(miss); if (!o || o.h || o.m) continue;
+      const other = S.ps[o.o]; if (other.out) continue;
+      const offer = Math.min(p.cash - reserve(), Math.round(SQ[miss].price * (1.6 + Math.random() * 1.2) / 10) * 10); if (offer < SQ[miss].price * 1.2) continue;
+      if (other.type === 'ai') {
+        if (aiAccepts(o.o, pi, [miss], [], offer)) { doTrade(pi, o.o, [], [miss], offer, 0); log(`${p.name} buys ${SQ[miss].n} from ${other.name} for ${money(offer)}.`); render(); await Util.sleep(Util.delay(800)); }
+      } else {
+        render();
+        const v = await Util.choose(`🤝 Offer from ${p.name}`, `${p.name} offers <b>${money(offer)}</b> for your <b>${SQ[miss].n}</b>. It would complete their set.`, [{ label: 'Accept', value: 1 }, { label: 'Decline', value: 0, primary: true }]);
+        if (my !== sid) return;
+        if (v) { doTrade(pi, o.o, [], [miss], offer, 0); log(`${other.name} sells ${SQ[miss].n} to ${p.name} for ${money(offer)}.`); } else log(`${other.name} turns down ${p.name}'s offer.`);
+        render();
+      }
+      return;
+    }
+  }
+  function doTrade(a, b, aGives, bGives, aCash, bCash) {
+    aGives.forEach(i => own(i).o = b); bGives.forEach(i => own(i).o = a);
+    S.ps[a].cash += bCash - aCash; S.ps[b].cash += aCash - bCash; Sfx.play('match');
+  }
+  /* ---------- human panels ---------- */
+  function overlay(html) {
+    document.getElementById('lk-ov')?.remove();
+    const ov = document.createElement('div'); ov.id = 'lk-ov'; ov.className = 'fixed inset-0 z-[60] flex items-center justify-center bg-black/75 p-3';
+    ov.innerHTML = `<div class="walnut-panel rounded-2xl p-3 w-full max-w-md max-h-[88vh] overflow-y-auto border-2 border-amber-500/40">${html}</div>`;
+    ov.onclick = e => { if (e.target === ov) ov.remove(); };
+    document.body.appendChild(ov);
+  }
+  const closeOv = () => document.getElementById('lk-ov')?.remove();
+  function sqInfo(i) {
+    const s = SQ[i], o = own(i);
+    let body = '';
+    if (s.t === 'street') body = `<div class="text-xs space-y-0.5">${['Rent', 'With 1 house', 'With 2 houses', 'With 3 houses', 'With 4 houses', 'With a hotel'].map((l, k) => `<div class="flex justify-between ${o && o.h === k && !o.m ? 'text-amber-300 font-bold' : ''}"><span>${l}</span><span>${money(s.rent[k])}</span></div>`).join('')}<div class="opacity-70 mt-1">Rent doubles on an empty street when one player owns the whole colour set. Houses cost ${money(s.hc)} each.</div></div>`;
+    else if (s.t === 'station') body = '<div class="text-xs">Rent: £25, £50, £100 or £200 for owning 1, 2, 3 or all 4 stations.</div>';
+    else if (s.t === 'util') body = '<div class="text-xs">Rent: 4 times the dice roll, or 10 times if the same player owns both utilities.</div>';
+    else body = `<div class="text-xs">${{ start: 'Collect £200 every time you pass.', jail: 'Just visiting, unless you were caught speeding!', green: 'A free rest. Nothing happens here.', gojail: 'Go straight to the Lock-up without passing Town Square.', tax: `Pay ${money(s.amt || 0)} to the bank.`, fortune: 'Draw a Fortune card.', hall: 'Draw a Town Hall card.' }[s.t]}</div>`;
+    Util.choose(`${s.ic || ''} ${s.n}`, `${s.price ? `<div class="mb-1">Price ${money(s.price)}${o ? ` · owned by <b style="color:${S.ps[o.o].col}">${S.ps[o.o].name}</b>${o.m ? ' (mortgaged)' : ''}` : ' · for sale'}</div>` : ''}${body}`, [{ label: 'Close', value: 1, primary: true }]);
+  }
+  function managePanel() {
+    const pi = S.turn, p = P(); if (p.type !== 'human' || busy || S.phase === 'over') return;
+    const mine = owned(pi).sort((a, b) => a - b);
+    const rows = mine.map(i => { const s = SQ[i], o = own(i);
+      return `<div class="flex items-center gap-1.5 py-1 border-b border-amber-100/10"><span class="w-2.5 h-6 rounded-sm" style="background:${s.g ? G[s.g] : '#888'}"></span><span class="flex-1 text-sm ${o.m ? 'line-through opacity-60' : ''}">${s.n}<span class="text-[10px] text-amber-200 ml-1">${o.h === 5 ? '🏨' : '🏠'.repeat(o.h)}</span></span>
+        ${s.t === 'street' ? `<button onclick="Larkford.mg('b',${i})" class="px-1.5 py-0.5 rounded text-xs ${canBuild(pi, i) ? 'bg-emerald-700 text-white' : 'bg-black/30 opacity-40'}">+🏠 ${money(s.hc)}</button><button onclick="Larkford.mg('s',${i})" class="px-1.5 py-0.5 rounded text-xs ${canSell(pi, i) ? 'bg-amber-800 text-white' : 'bg-black/30 opacity-40'}">−🏠</button>` : ''}
+        <button onclick="Larkford.mg('${o.m ? 'u' : 'm'}',${i})" class="px-1.5 py-0.5 rounded text-xs ${(o.m ? p.cash >= unmortCost(i) : canMortgage(pi, i)) ? 'bg-sky-800 text-white' : 'bg-black/30 opacity-40'}">${o.m ? `Unmortgage ${money(unmortCost(i))}` : `Mortgage +${money(s.price / 2)}`}</button></div>`; }).join('');
+    overlay(`<div class="flex items-center justify-between mb-2"><span class="font-display text-amber-300 text-lg">Your property</span><span class="stat-chip">${money(p.cash)}</span></div>
+      ${rows || '<div class="text-sm text-amber-100/60">You don\'t own anything yet.</div>'}
+      <p class="text-[11px] text-amber-100/55 mt-2">Build when you own a whole colour set, evenly across it. Mortgaging gives you half the price; paying it off costs 10% more.</p>
+      <div class="text-center mt-2">${Util.btn('Done', 'Larkford.closePanel()', 'brass')}</div>`);
+  }
+  function mg(k, i) { if (k === 'b') build(i); else if (k === 's') sell(i); else if (k === 'm') mortgage(i); else unmortgage(i); render(); managePanel(); }
+  let TR = null;
+  function tradePanel(step) {
+    const pi = S.turn, p = P(); if (p.type !== 'human' || busy || S.phase === 'over') return;
+    if (!TR || step === 'new') TR = { with: null, give: [], take: [], cashGive: 0, cashTake: 0 };
+    if (TR.with === null) {
+      const others = S.ps.map((q, k) => [q, k]).filter(([q, k]) => k !== pi && !q.out);
+      return overlay(`<div class="font-display text-amber-300 text-lg mb-2">Trade with…</div><div class="flex flex-col gap-2">${others.map(([q, k]) => `<button onclick="Larkford.tr('with',${k})" class="btn-wood rounded-xl px-3 py-2 text-left"><span style="color:${q.col}">●</span> ${q.name} <span class="text-xs opacity-70">${money(q.cash)} · ${owned(k).length} properties</span></button>`).join('')}</div><div class="text-center mt-3">${Util.btn('Cancel', 'Larkford.closePanel()')}</div>`);
+    }
+    const q = S.ps[TR.with], chip = (i, side) => { const on = TR[side].includes(i), o = own(i); return `<button onclick="Larkford.tr('${side}',${i})" class="flex items-center gap-1 px-2 py-1 rounded-lg text-xs ${on ? 'bg-amber-400 text-stone-900' : 'bg-black/30 text-amber-100'} ${o.h ? 'opacity-40' : ''}"><span class="w-2 h-3 rounded-sm" style="background:${SQ[i].g ? G[SQ[i].g] : '#888'}"></span>${SQ[i].n}${o.m ? ' (m)' : ''}</button>`; };
+    const cashRow = side => `<div class="flex items-center gap-1 mt-1 text-xs">Cash: ${Util.btn('−50', `Larkford.tr('${side}',-50)`)}<b class="w-14 text-center text-amber-200">${money(TR[side])}</b>${Util.btn('+50', `Larkford.tr('${side}',50)`)}</div>`;
+    overlay(`<div class="font-display text-amber-300 text-lg mb-2">Trade with <span style="color:${q.col}">${q.name}</span></div>
+      <div class="text-xs text-amber-100/70 mb-1">You give</div><div class="flex flex-wrap gap-1">${owned(pi).filter(i => !own(i).h).map(i => chip(i, 'give')).join('') || '<span class="text-xs opacity-50">No tradeable property</span>'}</div>${cashRow('cashGive')}
+      <div class="text-xs text-amber-100/70 mb-1 mt-3">You get</div><div class="flex flex-wrap gap-1">${owned(TR.with).filter(i => !own(i).h).map(i => chip(i, 'take')).join('') || '<span class="text-xs opacity-50">No tradeable property</span>'}</div>${cashRow('cashTake')}
+      <p class="text-[10px] text-amber-100/50 mt-2">Streets with buildings can't be traded until the buildings are sold.</p>
+      <div class="flex gap-2 justify-center mt-3">${Util.btn('🤝 Propose', 'Larkford.tr(\'go\')', 'brass')}${Util.btn('Back', 'Larkford.tr(\'back\')')}${Util.btn('Cancel', 'Larkford.closePanel()')}</div>`);
+  }
+  async function tr(k, v) {
+    const pi = S.turn;
+    if (k === 'with') { TR.with = v; return tradePanel(); }
+    if (k === 'back') { TR.with = null; return tradePanel(); }
+    if (k === 'give' || k === 'take') { if (own(v).h) return; TR[k] = TR[k].includes(v) ? TR[k].filter(x => x !== v) : TR[k].concat(v); return tradePanel(); }
+    if (k === 'cashGive' || k === 'cashTake') { TR[k] = Math.max(0, TR[k] + v); return tradePanel(); }
+    if (k === 'go') {
+      if (!TR.give.length && !TR.take.length) return Util.toast('Pick at least one property.');
+      if (TR.cashGive > S.ps[pi].cash) return Util.toast("You don't have that much cash.");
+      if (TR.cashTake > S.ps[TR.with].cash) return Util.toast(`${S.ps[TR.with].name} doesn't have that much cash.`);
+      const q = S.ps[TR.with], b = TR.with; closeOv();
+      let ok;
+      if (q.type === 'ai') ok = aiAccepts(b, pi, TR.take, TR.give, TR.cashGive - TR.cashTake);
+      else { await curtain(q.name, `${S.ps[pi].name} has a trade offer for you.`); ok = await Util.choose(`🤝 Offer from ${S.ps[pi].name}`, `You get: <b>${TR.give.map(i => SQ[i].n).join(', ') || 'no property'}</b>${TR.cashGive ? ` + ${money(TR.cashGive)}` : ''}<br>You give: <b>${TR.take.map(i => SQ[i].n).join(', ') || 'no property'}</b>${TR.cashTake ? ` + ${money(TR.cashTake)}` : ''}`, [{ label: 'Accept', value: true, primary: true }, { label: 'Decline', value: false }]); await curtain(S.ps[pi].name, 'Back to your turn.'); }
+      if (ok) { doTrade(pi, b, TR.give, TR.take, TR.cashGive, TR.cashTake); log(`${S.ps[pi].name} and ${q.name} make a trade.`); Util.toast('Deal!'); }
+      else { log(`${q.name} turns the deal down.`); Util.toast(`${q.name} says no.`); }
+      TR = null; render();
+    }
+  }
+  /* ---------- board ---------- */
+  function cellPos(i) { if (i <= 10) return [11, 11 - i]; if (i <= 20) return [11 - (i - 10), 1]; if (i <= 30) return [1, i - 19]; return [i - 29, 11]; }
+  function render() {
+    if (!root || !S) return;
+    const W = Math.min(560, (root.clientWidth || 360) - 4), c = Math.floor(W / 11);
+    const cells = SQ.map((s, i) => {
+      const [r, col] = cellPos(i), o = own(i), corner = i % 10 === 0;
+      const here = S.ps.map((p, k) => [p, k]).filter(([p]) => !p.out && p.pos === i);
+      const band = s.g ? `<div style="height:${c * .2}px;background:${G[s.g]}"></div>` : '';
+      const houses = o && o.h ? `<div class="absolute left-0 right-0 text-center leading-none" style="top:${c * .2}px;font-size:${c * .2}px">${o.h === 5 ? '🏨' : '🏠'.repeat(o.h)}</div>` : '';
+      const toks = here.map(([p, k], j) => `<span class="absolute rounded-full border border-white" style="width:${c * .28}px;height:${c * .28}px;background:${p.col};left:${(j % 3) * c * .3 + 2}px;bottom:${Math.floor(j / 3) * c * .3 + 2}px;box-shadow:0 1px 2px #000"></span>`).join('');
+      const label = s.g ? `<div class="text-center leading-none mt-0.5" style="font-size:${c * .2}px">${money(s.price)}</div>` : `<div class="text-center" style="font-size:${c * (corner ? .5 : .42)}px;line-height:1.1">${s.ic}</div>`;
+      return `<button onclick="Larkford.info(${i})" class="relative overflow-hidden text-stone-900 ${o && o.m ? 'opacity-60' : ''}" style="grid-row:${r};grid-column:${col};background:${corner ? '#f2e7cc' : '#fbf5e6'};border:1px solid #a89470;${o ? `box-shadow:inset 0 -${Math.max(3, c * .1)}px 0 ${S.ps[o.o].col}` : ''}">${band}${houses}${label}${toks}</button>`;
+    }).join('');
+    const p = P(), mine = p.type === 'human' && !busy, B = Util.btn;
+    let ctrl = '';
+    if (S.phase === 'over') ctrl = '<div class="text-amber-200">Game over</div>';
+    else if (!mine) ctrl = `<div class="text-xs text-amber-100/80">${busy ? '…' : p.name + ' is thinking…'}</div>`;
+    else if (S.phase === 'buy') ctrl = `<div class="text-xs mb-1">Buy <b>${SQ[p.pos].n}</b> for ${money(SQ[p.pos].price)}?</div><div class="flex gap-1 justify-center">${B('🏷️ Buy', 'Larkford.buy(true)', 'brass')}${B('Leave it', 'Larkford.buy(false)')}</div>`;
+    else if (S.phase === 'debt') ctrl = `<div class="text-xs mb-1 text-red-300">You owe ${money(-p.cash)}! Sell buildings or mortgage.</div><div class="flex gap-1 justify-center flex-wrap">${B('🏠 Property', 'Larkford.manage()', 'brass')}${B('✔ Paid', 'Larkford.payDebt()')}${liquid(S.turn) < 0 ? B('💀 Bankrupt', 'Larkford.giveUp()') : ''}</div>`;
+    else if (S.phase === 'roll') ctrl = `<div class="flex gap-1 justify-center flex-wrap">${B(p.jail ? '🎲 Roll for a double' : '🎲 Roll', 'Larkford.roll()', 'brass')}${p.jail ? B('Pay £50', 'Larkford.payJail(false)') + (p.gojf ? B('Use card', 'Larkford.payJail(true)') : '') : ''}</div>`;
+    else ctrl = `<div class="flex gap-1 justify-center">${B('⏭ End turn', 'Larkford.endTurn()', 'brass')}</div>`;
+    const inner = `<div class="flex flex-col items-center justify-center gap-1.5 p-2 text-center" style="grid-row:2/11;grid-column:2/11;background:radial-gradient(circle,#1f6b45,#0f3d27)">
+      <div class="font-display text-amber-200 leading-tight" style="font-size:${c * .42}px">Landlords of Larkford</div>
+      <div class="flex gap-2">${Util.die(S.dice[0])}${Util.die(S.dice[1])}</div>
+      <div class="text-[11px] text-amber-50/90 leading-tight min-h-[28px] px-1">${S.msg}</div>
+      <div class="text-[11px] font-bold" style="color:${p.col}">${p.name}'s turn${S.mode === 'timed' ? ` · round ${Math.min(S.round, S.maxRounds)}/${S.maxRounds}` : ''}</div>
+      ${ctrl}</div>`;
+    const players = S.ps.map((q, k) => `<div class="flex items-center gap-1.5 rounded-lg px-2 py-1 ${k === S.turn && S.phase !== 'over' ? 'ring-1 ring-amber-300 bg-amber-300/10' : 'bg-black/20'} ${q.out ? 'opacity-40 line-through' : ''}"><span class="w-3 h-3 rounded-full" style="background:${q.col}"></span><span class="text-xs flex-1 truncate">${q.name}${q.jail ? ' 🚓' : ''}${q.gojf ? ' 🎟️' : ''}</span><b class="text-xs text-amber-200">${money(q.cash)}</b><span class="text-[10px] opacity-60">🏘️${owned(k).length}</span></div>`).join('');
+    root.innerHTML = `<div class="flex flex-col gap-2 mx-auto w-full" style="max-width:${W}px">
+      <div class="grid" style="grid-template-columns:repeat(11,${c}px);grid-template-rows:repeat(11,${c}px);border:4px solid #4a2e1d;border-radius:6px;box-shadow:0 10px 24px rgba(0,0,0,.6)">${cells}${inner}</div>
+      <div class="grid grid-cols-2 gap-1.5">${players}</div>
+      ${mine && S.phase !== 'over' ? `<div class="flex gap-2 justify-center">${B('🏠 My property', 'Larkford.manage()')}${B('🤝 Trade', 'Larkford.trade()')}</div>` : ''}
+      <p class="text-[10px] text-amber-100/45 text-center">Tap any square to see its details.</p>
+    </div>`;
+  }
+  return {
+    async setup() {
+      const seats = await Seats.choose({ title: 'Landlords of Larkford', min: 2, max: 6, def: 4, note: 'Buy streets, build houses and hotels, and charge rent. Everyone starts with £1,500.' });
+      if (!seats) return null;
+      const mode = await Util.choose('🏘️ How long a game?', 'A classic game can take a while.', [{ label: '⏱️ Timed: richest after 20 rounds', value: 'timed', primary: true }, { label: '🏆 Classic: last player standing', value: 'classic' }, { label: 'Cancel', value: null }]);
+      return mode ? { seats, mode } : null;
+    },
+    mount(el, o = {}) { root = el; if (o.resume) { S = o.resume; sid++; busy = false; startTurn(); } else newGame(o.seats || [{ name: 'You', col: PCOL[0], type: 'human' }, { name: 'Dusty', col: PCOL[1], type: 'ai' }, { name: 'Queenie', col: PCOL[2], type: 'ai' }], o.mode || 'timed'); },
+    snapshot() { return S && S.phase === 'roll' && !busy && P().type === 'human' && !P().jail ? S : null; },
+    destroy() { sid++; busy = false; root = null; closeOv(); },
+    roll: () => roll().catch(e => { if (e !== 'abort') console.error(e); }), buy, endTurn, payDebt, giveUp, payJail, info: sqInfo, manage: managePanel, mg, closePanel() { closeOv(); render(); }, trade() { tradePanel('new'); }, tr,
+    newGame() { newGame(S.ps.map(p => ({ name: p.name, col: { hex: p.col }, type: p.type })), S.mode); },
+    _test: { get S() { return S; }, SQ, GROUPS, rent, worth, canBuild, holdValue, aiAccepts }
+  };
+})();
+Games.larkford = Larkford;
+
 App.init();
 </script>
 <!-- Kralnu Games install kit: Install button, Android/desktop prompt and iPhone instructions -->
@@ -12873,7 +13326,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.10.1",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.11.0",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

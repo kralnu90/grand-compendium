@@ -1,17 +1,18 @@
 # The Grand Tabletop Compendium
 
-*Fifty-five classic, esoteric, patience, family, pub, casino and word games, one table.*
+*Fifty-six classic, esoteric, patience, family, pub, casino and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.10.1**
+**Current version: 1.11.0**
 
 ## The games
 
 | Game | Type | Players |
 | --- | --- | --- |
+| 🏘️ **Landlords of Larkford** | An original property-trading board game: buy, build, trade, auction and bankrupt your rivals | 2-6, people or AI |
 | 🐶 **Dog Rummy** | Kris's family wild-card rummy: a new wild rank each round, take the whole pile if you dare | 2-4, people or AI |
 | 🂡 **Blackjack** | Hit, stand, double and split against a dealer who stands on 17. Basic strategy hints | Solo (play chips) |
 | ♠️ **Texas Hold'em** | No-limit cash table with blinds, side pots and five AI players | You vs 5 AI (play chips) |
@@ -119,6 +120,9 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.11.0 · Landlords of Larkford (20 November 2026)
+- An original property-trading board game: fictional town, original streets, cards and rents. Auctions, trading, mortgages, Timed or Classic games
 
 ### 1.10.1 · Dog Rummy: swap the dog (19 November 2026)
 - Swap the real card into a table hand to take its dog; dogs shown in the gap they fill
