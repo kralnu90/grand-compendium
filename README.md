@@ -6,7 +6,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.14.0**
+**Current version: 1.14.1**
 
 ## The games
 
@@ -26,7 +26,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | 〰️ **Steady Hand** | The buzz wire: ten twisting wires, three lives, best times saved | Solo |
 | ⚪ **Carrom** | Strike the heavy striker, pocket your nine pieces and cover the red queen | vs AI or 2 players |
 | 🏘️ **Landlords of Larkford** | An original property-trading board game: buy, build, trade, auction and bankrupt your rivals | 2-6, people or AI |
-| 🐶 **Dog Rummy** | Kris's family wild-card rummy: a new wild rank each round, take the whole pile if you dare | 2-4, people or AI |
+| 🐶 **Dog Rummy** | Kris's family wild-card rummy: a new wild rank each round, take the whole pile if you dare. Dedicated to his mum, who inspired it | 2-4, people or AI |
 | 🂡 **Blackjack** | Hit, stand, double and split against a dealer who stands on 17. Basic strategy hints | Solo (play chips) |
 | ♠️ **Texas Hold'em** | No-limit cash table with blinds, side pots and five AI players | You vs 5 AI (play chips) |
 | 🃏 **Three Card Poker** | Ante, Play and Pair Plus against a dealer who needs Queen high, with ante bonuses | Solo (play chips) |
@@ -133,6 +133,9 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.14.1 · For Mum (21 November 2026)
+- Dog Rummy is now dedicated to Kris's mum, who inspired it, in its rules, on the table and in the Credits
 
 ### 1.14.0 · Snooker (21 November 2026)
 - Snooker with 6, 10 or 15 reds against The Whirlwind or a friend: red-colour sequence, the clearance, foul points (minimum 4), in-offs and ball in hand in the D
