@@ -1,18 +1,28 @@
 # The Grand Tabletop Compendium
 
-*Fifty-eight classic, esoteric, patience, family, pub, casino and word games, one table.*
+*Sixty-eight classic, esoteric, patience, family, pub, casino and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.12.1**
+**Current version: 1.13.0**
 
 ## The games
 
 | Game | Type | Players |
 | --- | --- | --- |
 | 🎯 **Crokinole** ★ | The featured table: flick discs across a round maple board, knock your rival into the ditch and sink the 20 | vs AI or 2 players |
+| 🎱 **Pool** | Eight-ball: solids or stripes, ball in hand on a foul, then sink the black | vs AI or 2 players |
+| 🥌 **Curling** | Pick your curl, slide the stone and hold the ice to sweep. Closest to the button scores | vs AI or 2 players |
+| 🛷 **Table Shuffleboard** | Slide weights down a waxed table; furthest scores, hang one off the end for four | vs AI or 2 players |
+| ⚫ **Pétanque** | Point or shoot your boules at the jack in a gravel square | vs AI or 2 players |
+| ⚽ **Penny Football** | Flick a coin between the other two and shoot through the finger goal | vs AI or 2 players |
+| 🎯 **Darts** | 501, 301 and Around the Clock with a swaying aim and a magnifier | vs AI or 2 players |
+| 🪙 **Shove Ha'penny** | The pub slate board: shove coins into the nine beds and chalk up your marks | vs AI or 2 players |
+| 🎳 **Table Skittles** | Devil Among the Tailors: swing the ball round the pole into the pins | vs AI or 2 players |
+| 📍 **Bagatelle** | Fire the ball round the arch and down through the pins into the cups | vs AI or 2 players |
+| 〰️ **Steady Hand** | The buzz wire: ten twisting wires, three lives, best times saved | Solo |
 | ⚪ **Carrom** | Strike the heavy striker, pocket your nine pieces and cover the red queen | vs AI or 2 players |
 | 🏘️ **Landlords of Larkford** | An original property-trading board game: buy, build, trade, auction and bankrupt your rivals | 2-6, people or AI |
 | 🐶 **Dog Rummy** | Kris's family wild-card rummy: a new wild rank each round, take the whole pile if you dare | 2-4, people or AI |
@@ -122,6 +132,11 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.13.0 · Stocking the shelf (21 November 2026)
+- Ten new skill games: Pool, Curling, Table Shuffleboard, Pétanque, Penny Football, Darts, Shove Ha'penny, Table Skittles, Bagatelle and Steady Hand
+- New Pub & Fairground shelf; Flick & Skill now holds eight games
+- Every flick and slide game runs on the shared physics, with AI opponents that rehearse their shots
 
 ### 1.12.1 · A touch of class (20 November 2026)
 - Graphics pass: walnut grain, polished brass, gilt titles, brass-rimmed medallions, linen-finish cards and a gilt-framed card back

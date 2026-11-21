@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fifty-eight parlour, patience, family, pub, casino and word games in one: Crokinole, Carrom, Chess, Go, Shogi, Spider, Pyramid, TriPeaks, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Sixty-eight parlour, patience, family, pub, casino and word games in one: Crokinole, Carrom, Pool, Darts, Curling, Chess, Go, Shogi, Spider, Pyramid, TriPeaks, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -3547,6 +3547,131 @@ const GAME_CATALOG = [
       </ul>`
   },
   {
+    id: 'shoveha', title: "Shove Ha'penny", subtitle: 'The Pub Slate Board', category: 'Pub & Arcade', icon: '🪙',
+    players: 'vs AI or 2 players', tagline: 'Shove brass coins up a slate board into the nine beds. Three chalk marks fill a bed.',
+    rules: `
+      <p><strong>Objective:</strong> Be first to fill all nine beds with chalk marks (three each, or two in a Quick game). An English pub game for over 150 years.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Your turn:</strong> Five coins. Drag along the bottom of the board to line up, then press the coin, pull back and let go.</li>
+        <li><strong>Scoring:</strong> When all five are played, every coin lying inside a bed without touching a line earns a chalk mark in that bed. Your marks are on the left, your rival's on the right.</li>
+        <li><strong>Knock-ons:</strong> Coins stay on the board for the rest of your turn, so you can nudge earlier coins into a bed.</li>
+        <li><strong>Short shoves:</strong> A coin that doesn't reach the first line can be played again.</li>
+        <li><strong>Full beds:</strong> A mark in a bed you've already filled goes to your rival instead, unless it would be their very last mark.</li>
+      </ul>`
+  },
+  {
+    id: 'shuffleboard', title: 'Table Shuffleboard', subtitle: 'Slide to the Edge', category: 'Flick & Skill', icon: '🛷',
+    players: 'vs AI or 2 players', tagline: 'Slide weighted pucks down a waxed table. Furthest scores. Hang one off the end for four.',
+    rules: `
+      <p><strong>Objective:</strong> First to 11 (or 21) points.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Sliding:</strong> Drag along the near end to line up your weight, press it, pull back and let go. Each player slides four weights per frame, taking turns.</li>
+        <li><strong>Foul line:</strong> Weights that stop short of the first red line come off. Weights that fall into the gutters or off the end are out.</li>
+        <li><strong>Scoring:</strong> Only the player with the furthest weight scores: 1, 2 or 3 for each of their weights beyond their rival's best. A weight hanging over the end edge is a hanger and scores 4.</li>
+        <li><strong>Knock-offs:</strong> Knock your rival's weights into the gutter, or shove your own further down.</li>
+        <li><strong>Next frame:</strong> Whoever scored slides first.</li>
+      </ul>`
+  },
+  {
+    id: 'curling', title: 'Curling', subtitle: 'Stones on the Ice', category: 'Flick & Skill', icon: '🥌',
+    players: 'vs AI or 2 players', tagline: 'Slide granite stones down the ice, pick your curl and hold to sweep. Closest to the button scores.',
+    rules: `
+      <p><strong>Objective:</strong> Score the most over all the ends.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Delivering:</strong> Pick a curl (left or right), drag along the bottom to line up, then pull back from the stone and let go. Stones bend more as they slow down.</li>
+        <li><strong>Sweeping:</strong> While your stone is sliding, hold your finger on the ice to sweep. It travels further and curls less.</li>
+        <li><strong>Hog line:</strong> A stone must cross the red hog line, and must stop before the back line, or it's removed.</li>
+        <li><strong>Scoring:</strong> After all stones in an end, the side with the stone nearest the button scores one for each stone closer than the other side's best. Only stones touching the house count.</li>
+        <li><strong>The hammer:</strong> The side that didn't score throws last in the next end, which is a big advantage.</li>
+      </ul>`
+  },
+  {
+    id: 'petanque', title: 'Pétanque', subtitle: 'Boules in the Gravel', category: 'Flick & Skill', icon: '⚫',
+    players: 'vs AI or 2 players', tagline: 'Roll or lob steel boules at the little wooden jack. Closest wins the end.',
+    rules: `
+      <p><strong>Objective:</strong> First to 13 points (or 7 in a Quick game). The game of French village squares.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Throwing:</strong> Choose <b>Point</b> (a short lob that rolls on) or <b>Shoot</b> (a high throw that lands hard and knocks boules away). Press your boule, pull back to aim and set the distance, and let go.</li>
+        <li><strong>Who throws:</strong> After the first boule, the player who is <em>not</em> closest to the jack keeps throwing until they are closest or run out of boules.</li>
+        <li><strong>Scoring:</strong> When all six boules are thrown, the closest player scores one point for each boule nearer the jack than their rival's best.</li>
+        <li><strong>Out of bounds:</strong> Boules that leave the terrain are dead. If the jack is knocked out, a player with boules left scores one for each of them; if both have boules left, the end scores nothing.</li>
+      </ul>`
+  },
+  {
+    id: 'pennyfootball', title: 'Penny Football', subtitle: 'The Playground Classic', category: 'Flick & Skill', icon: '⚽',
+    players: 'vs AI or 2 players', tagline: 'Flick a coin between the other two to keep the ball, and shoot through your rival\'s goal.',
+    rules: `
+      <p><strong>Objective:</strong> First to 5 goals (or 3 in a Quick game).</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Flicking:</strong> Touch any of the three coins, pull back and let go. The flicked coin must pass <em>between</em> the other two to keep possession.</li>
+        <li><strong>Losing the ball:</strong> If the coin misses the gap, hits another coin or goes off the table, your rival takes over with the coins where they lie (or kicks off after it goes off).</li>
+        <li><strong>Goals:</strong> Flick a coin through your rival's goal at the top of the table to score. The shot has to start in their half (past the halfway line). Miss, and it's their ball.</li>
+        <li><strong>Kick-off:</strong> After a goal, the side that conceded kicks off from their own end.</li>
+      </ul>`
+  },
+  {
+    id: 'pool', title: 'Pool', subtitle: 'Eight-Ball', category: 'Flick & Skill', icon: '🎱',
+    players: 'vs AI or 2 players', tagline: 'Spots or stripes. Clear your group, then sink the black to win.',
+    rules: `
+      <p><strong>Objective:</strong> Pocket all of your group (solids or stripes), then the 8-ball.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Aiming:</strong> Press anywhere on the table and drag. The cue points from your finger through the cue ball, and the further you drag, the harder you hit. With move hints on, a ghost ball shows where you'll make contact.</li>
+        <li><strong>Groups:</strong> The table is open after the break. Your first legal pot decides whether you're solids (1–7) or stripes (9–15).</li>
+        <li><strong>Turns:</strong> Pot one of your own and you shoot again. Otherwise the turn passes.</li>
+        <li><strong>Fouls:</strong> Potting the cue ball, missing every ball, or hitting the wrong group first is a foul, and your rival gets <b>ball in hand</b>: they can drag the cue ball anywhere before shooting.</li>
+        <li><strong>The 8-ball:</strong> Pot it after clearing your group to win. Pot it early, or foul while potting it, and you lose.</li>
+      </ul>`
+  },
+  {
+    id: 'darts', title: 'Darts', subtitle: '501 and Around the Clock', category: 'Pub & Arcade', icon: '🎯',
+    players: 'vs AI or 2 players', tagline: 'Hold steady, let fly. Count down from 501 and finish on a double.',
+    rules: `
+      <p><strong>Objective:</strong> In 501 (or 301), be first to score exactly down to zero, finishing on a double or the bullseye. In Around the Clock, hit 1 to 20 in order, then the bull.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Throwing:</strong> Press and hold. The aiming cross appears above your finger and sways like a real arm. Steer it, then let go to throw. Hold too long and your arm gets shaky. A magnifier shows close-up where you're aiming.</li>
+        <li><strong>The board:</strong> The outer thin ring scores double, the inner thin ring treble. The outer bull is 25 and the bullseye is 50 (which counts as a double).</li>
+        <li><strong>Visits:</strong> Three darts each turn.</li>
+        <li><strong>Busts:</strong> In 501, going below zero, leaving 1, or reaching zero without a double is a bust: the visit doesn't count.</li>
+        <li><strong>Checkouts:</strong> With 170 or less left, the game suggests a finish.</li>
+      </ul>`
+  },
+  {
+    id: 'skittles', title: 'Table Skittles', subtitle: 'Devil Among the Tailors', category: 'Pub & Arcade', icon: '🎳',
+    players: 'vs AI or 2 players', tagline: 'Swing the ball on its chain around the pole and scatter the nine pins on the way back.',
+    rules: `
+      <p><strong>Objective:</strong> Knock down the most pins over all the rounds.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Swinging:</strong> Press the ball, pull back and let go. The chain swings it around the pole in a loop. With move hints on, a dotted line shows the swing.</li>
+        <li><strong>The rule:</strong> The ball must go round the back of the pole before it hits a pin. Pins hit on the way out don't count and are stood back up.</li>
+        <li><strong>Turns:</strong> Three balls a turn. Knocked pins stay down for the turn. Clear all nine (a <em>floorer</em>) and they're set up again.</li>
+        <li><strong>Rounds:</strong> 5 or 10 rounds each. Highest total wins.</li>
+      </ul>`
+  },
+  {
+    id: 'bagatelle', title: 'Bagatelle', subtitle: 'The Pin Board', category: 'Pub & Arcade', icon: '📍',
+    players: 'vs AI or 2 players', tagline: 'Fire the ball round the arch and watch it bounce down through the pins into the scoring cups.',
+    rules: `
+      <p><strong>Objective:</strong> Score the most with your balls. Bagatelle is the 18th-century parlour game that pinball grew out of.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Firing:</strong> Pull the plunger down and let go. The ball shoots up the right-hand lane, round the arch and down through the pins.</li>
+        <li><strong>Scoring:</strong> A ball that settles in a cup scores the number on it. The centre cup scores 9. Balls that reach the bottom score nothing.</li>
+        <li><strong>Weak shots:</strong> If the ball doesn't make it round the arch, it rolls back and you fire again.</li>
+        <li><strong>Turns:</strong> Players take turns, one ball each, five or nine balls apiece.</li>
+      </ul>`
+  },
+  {
+    id: 'steadyhand', title: 'Steady Hand', subtitle: 'The Buzz Wire', category: 'Pub & Arcade', icon: '〰️',
+    players: 'Solo', tagline: 'Guide the loop along the twisting wire without touching it. One brush and it buzzes.',
+    rules: `
+      <p><strong>Objective:</strong> Get the loop from the start to the end of the wire. The village fête favourite.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Moving:</strong> Press the loop and drag it along. It sits a little above your finger so you can see it.</li>
+        <li><strong>Buzz:</strong> If the loop touches the wire, it buzzes and you lose a life. You have three, and you carry on from the last flag you passed.</li>
+        <li><strong>Levels:</strong> Ten wires, each twistier and with a tighter loop. Clear a level to unlock the next. Your best time on each is saved.</li>
+        <li><strong>Trophies:</strong> Clear a level without a single buzz to earn a trophy.</li>
+      </ul>`
+  },
+  {
     id: 'knucklebones', title: 'Knucklebones', subtitle: 'The Bone-Dice Duel', category: 'Dice', icon: '🦴',
     players: 'vs AI or 2 players', tagline: 'Roll, pick a column, and knock your rival\'s matching dice clean off the board.',
     rules: `
@@ -3965,7 +4090,8 @@ const App = {
     { k: 'patience', n: 'Patience', icon: '🂡', blurb: 'Solitaire card games, from classic to devilish', ids: ['klondike', 'freecell', 'spider', 'yukon', 'scorpion', 'fortythieves', 'canfield', 'pyramid', 'golf', 'tripeaks', 'acesup'] },
     { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'knucklebones', 'liars', 'dominoes', 'mahjong'] },
     { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['larkford', 'snakes', 'ludo', 'manor', 'delve', 'battleships'] },
-    { k: 'flick', n: 'Flick & Skill', icon: '🎯', blurb: 'Steady hands: flick, strike and lift', ids: ['crokinole', 'carrom', 'springmikado'] },
+    { k: 'flick', n: 'Flick & Skill', icon: '🎯', blurb: 'Flick, slide, roll and strike', ids: ['crokinole', 'carrom', 'pool', 'curling', 'shuffleboard', 'petanque', 'pennyfootball', 'springmikado'] },
+    { k: 'pub', n: 'Pub & Fairground', icon: '🍺', blurb: 'Darts, skittles and steady hands', ids: ['darts', 'shoveha', 'skittles', 'bagatelle', 'steadyhand'] },
     { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] },
     { k: 'casino', n: 'Casino', icon: '🎰', blurb: 'Play-chip tables: cards, wheel, dice and slots', ids: ['blackjack', 'holdem', 'threecard', 'roulette', 'videopoker', 'baccarat', 'craps', 'slots'] }
   ],
@@ -4095,9 +4221,15 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.12.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.13.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.13.0', '21 Nov 2026', 'Stocking the shelf', [
+    'Ten new skill games: Pool, Curling, Table Shuffleboard, Pétanque, Penny Football, Darts, Shove Ha\'penny, Table Skittles, Bagatelle and Steady Hand',
+    'A new Pub & Fairground shelf, and a bigger Flick & Skill shelf',
+    'Real physics for every one of them, and AI opponents that rehearse their shots before they play',
+    'Curling lets you hold the ice to sweep; Darts has a swaying aim and a magnifier; Steady Hand has ten wires to beat'
+  ]],
   ['1.12.1', '20 Nov 2026', 'A touch of class', [
     'A graphics pass: real walnut grain, polished brass buttons, gilt titles and brass-rimmed menu medallions',
     'Linen-finish cards with a new gilt-framed card back, and baize with a proper nap',
@@ -4496,6 +4628,10 @@ const Sfx = (() => {
     clack(v = 1) { knock(0.028, 3800, 0.2 + 0.8 * v); tone(1250 + Math.random() * 300, 0.03, 'triangle', 0.05 + 0.18 * v); },
     thud(v = 1) { knock(0.06, 650, 0.25 + 0.65 * v); tone(130, 0.08, 'sine', 0.1 + 0.25 * v); },
     flick() { knock(0.02, 6500, 0.55); tone(900, 0.025, 'sine', 0.12); },
+    buzz() { tone(110, 0.32, 'sawtooth', 0.35); tone(113, 0.32, 'square', 0.18); },
+    thunk(v = 1) { knock(0.05, 1400, 0.4 + 0.6 * v); tone(220, 0.05, 'triangle', 0.2 * v); },
+    swish() { const t = ctx.currentTime, s = ctx.createBufferSource(), f = ctx.createBiquadFilter(), g = ctx.createGain(); s.buffer = noiseBuf; f.type = 'bandpass'; f.frequency.setValueAtTime(1800, t); f.frequency.exponentialRampToValueAtTime(600, t + 0.25); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.35, t + 0.05); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.28); s.connect(f); f.connect(g); g.connect(sfxGain); s.start(t); s.stop(t + 0.3); },
+    sweep() { knock(0.07, 3000, 0.25); },
     drop() { tone(560, 0.1, 'sine', 0.35, 0, 240); knock(0.08, 900, 0.8, 0.07); tone(170, 0.16, 'triangle', 0.4, 0.08); },
     ditch() { knock(0.1, 500, 0.75); tone(105, 0.14, 'sine', 0.3, 0.03); }
   };
@@ -13502,8 +13638,10 @@ const FlickKit = (() => {
   function step(W) {
     const B = W.b, dt = DT;
     for (const b of B) {
-      if (b.out || (!b.vx && !b.vy)) continue;
-      const sp = Math.hypot(b.vx, b.vy), ns = sp - W.fr * dt;
+      if (b.out) continue;
+      if (W.g && b.g) b.vy += W.g * dt;
+      if (!b.vx && !b.vy) continue;
+      const sp = Math.hypot(b.vx, b.vy), ns = sp - (b.fr !== undefined ? b.fr : W.fr) * dt;
       if (ns < 0.05) { b.vx = b.vy = 0; continue; }
       const k = ns / sp; b.vx *= k; b.vy *= k; b.x += b.vx * dt; b.y += b.vy * dt;
     }
@@ -13532,13 +13670,21 @@ const FlickKit = (() => {
         const vn = A.vx * nx + A.vy * ny;
         if (vn < 0) { A.vx -= (1 + W.ePeg) * vn * nx; A.vy -= (1 + W.ePeg) * vn * ny; if (W.hit) W.hit(A, null, -vn); }
       }
-      if (W.box) {
-        const h = W.box; let v = 0;
-        if (A.x - A.r < -h) { A.x = -h + A.r; if (A.vx < 0) { v = -A.vx; A.vx = -A.vx * W.eWall; } }
-        if (A.x + A.r > h) { A.x = h - A.r; if (A.vx > 0) { v = A.vx; A.vx = -A.vx * W.eWall; } }
-        if (A.y - A.r < -h) { A.y = -h + A.r; if (A.vy < 0) { v = -A.vy; A.vy = -A.vy * W.eWall; } }
-        if (A.y + A.r > h) { A.y = h - A.r; if (A.vy > 0) { v = A.vy; A.vy = -A.vy * W.eWall; } }
+      if (W.box || W.bx) {
+        const hx = W.bx || W.box, hy = W.by || W.box; let v = 0;
+        if (A.x - A.r < -hx) { A.x = -hx + A.r; if (A.vx < 0) { v = -A.vx; A.vx = -A.vx * W.eWall; } }
+        if (A.x + A.r > hx) { A.x = hx - A.r; if (A.vx > 0) { v = A.vx; A.vx = -A.vx * W.eWall; } }
+        if (A.y - A.r < -hy) { A.y = -hy + A.r; if (A.vy < 0) { v = -A.vy; A.vy = -A.vy * W.eWall; } }
+        if (A.y + A.r > hy) { A.y = hy - A.r; if (A.vy > 0) { v = A.vy; A.vy = -A.vy * W.eWall; } }
         if (v && W.wall) W.wall(A, v);
+      }
+      if (W.segs) for (const g of W.segs) { // straight walls
+        const ex = g.x2 - g.x1, ey = g.y2 - g.y1, L2 = ex * ex + ey * ey, t = Math.max(0, Math.min(1, ((A.x - g.x1) * ex + (A.y - g.y1) * ey) / L2));
+        const cx = g.x1 + ex * t, cy = g.y1 + ey * t, dx = A.x - cx, dy = A.y - cy, d2 = dx * dx + dy * dy;
+        if (d2 >= A.r * A.r) continue;
+        const d = Math.sqrt(d2) || 1e-4, nx = dx / d, ny = dy / d; A.x = cx + nx * A.r; A.y = cy + ny * A.r;
+        const vn = A.vx * nx + A.vy * ny, e = g.e !== undefined ? g.e : (W.eSeg !== undefined ? W.eSeg : 0.6);
+        if (vn < 0) { A.vx -= (1 + e) * vn * nx; A.vy -= (1 + e) * vn * ny; if (W.wall) W.wall(A, -vn); }
       }
     }
     if (W.after) W.after(W);
@@ -13550,16 +13696,16 @@ const FlickKit = (() => {
   function ray(x, y, dx, dy, r, circles, box) {
     let best = { t: Infinity, c: null };
     for (const c of circles) {
-      const fx = x - c.x, fy = y - c.y, R = r + c.r, b = fx * dx + fy * dy, q = fx * fx + fy * fy - R * R;
+      const fx = x - c.x, fy = y - c.y, R = r + (c.r || 0), b = fx * dx + fy * dy, q = fx * fx + fy * fy - R * R;
       if (q < 0) continue; const disc = b * b - q; if (disc < 0) continue;
       const t = -b - Math.sqrt(disc); if (t > 0 && t < best.t) best = { t, c };
     }
     if (box) {
-      const h = box - r;
-      if (dx > 1e-6) { const t = (h - x) / dx; if (t < best.t) best = { t, c: null, wall: true }; }
-      if (dx < -1e-6) { const t = (-h - x) / dx; if (t < best.t) best = { t, c: null, wall: true }; }
-      if (dy > 1e-6) { const t = (h - y) / dy; if (t < best.t) best = { t, c: null, wall: true }; }
-      if (dy < -1e-6) { const t = (-h - y) / dy; if (t < best.t) best = { t, c: null, wall: true }; }
+      const hx = (box.x || box) - r, hy = (box.y || box) - r;
+      if (dx > 1e-6) { const t = (hx - x) / dx; if (t < best.t) best = { t, c: null, wall: true }; }
+      if (dx < -1e-6) { const t = (-hx - x) / dx; if (t < best.t) best = { t, c: null, wall: true }; }
+      if (dy > 1e-6) { const t = (hy - y) / dy; if (t < best.t) best = { t, c: null, wall: true }; }
+      if (dy < -1e-6) { const t = (-hy - y) / dy; if (t < best.t) best = { t, c: null, wall: true }; }
     }
     return best;
   }
@@ -14305,6 +14451,1455 @@ const Carrom = (() => {
   };
 })();
 Games.carrom = Carrom;
+
+
+/* ============================================================================
+   TABLE KIT: the shared frame for the two-player flick, slide and roll games.
+   A game describes its table, its pieces and its rules; the kit does the
+   canvas, the slingshot aiming, the AI's shot rehearsal, turns and saving.
+   ============================================================================ */
+const TableKit = (() => {
+  /* glossy disc with a drop shadow; cols = [highlight, body, rim] */
+  function disc(c, x, y, r, cols, o = {}) {
+    c.save(); if (o.alpha !== undefined) c.globalAlpha = o.alpha;
+    if (o.shadow !== false) { c.fillStyle = 'rgba(0,0,0,.35)'; c.beginPath(); c.arc(x + r * .1, y + r * .17, r, 0, 7); c.fill(); }
+    if (o.side) { c.fillStyle = cols[2]; c.beginPath(); c.arc(x, y + o.side, r, 0, 7); c.fill(); }
+    if (o.glow) { c.shadowColor = 'rgba(255,214,120,.95)'; c.shadowBlur = 16; }
+    const g = c.createRadialGradient(x - r * .35, y - r * .4, r * .05, x, y, r);
+    g.addColorStop(0, cols[0]); g.addColorStop(.72, cols[1]); g.addColorStop(1, cols[2]);
+    c.fillStyle = g; c.beginPath(); c.arc(x, y, r, 0, 7); c.fill(); c.shadowBlur = 0;
+    if (o.rings) { c.strokeStyle = o.ringCol || 'rgba(0,0,0,.22)'; c.lineWidth = r * .07; o.rings.forEach(f => { c.beginPath(); c.arc(x, y, r * f, 0, 7); c.stroke(); }); }
+    c.restore();
+  }
+  const wood = (c, x, y, w, h, a = '#6b3d1c', b = '#3a2010', seed = 3) => {
+    const g = c.createLinearGradient(x, y, x + w, y + h); g.addColorStop(0, a); g.addColorStop(.5, b); g.addColorStop(1, a);
+    c.fillStyle = g; c.fillRect(x, y, w, h);
+  };
+  /* faint wood grain lines inside a rect (for table tops) */
+  function grain(c, x, y, w, h, col = 'rgba(120,70,25,', n = 60, vertical = true, seed = 5) {
+    c.save(); c.beginPath(); c.rect(x, y, w, h); c.clip();
+    let sd = seed; const rnd = () => (sd = (sd * 16807) % 2147483647) / 2147483647;
+    for (let i = 0; i < n; i++) {
+      c.strokeStyle = col + (0.04 + rnd() * 0.07) + ')'; c.lineWidth = (vertical ? w : h) / n * (0.2 + rnd() * 0.5); c.beginPath();
+      const f = .15 + rnd() * .3, ph = rnd() * 6, amp = (vertical ? w : h) / n * (0.5 + rnd());
+      if (vertical) { const x0 = x + i * w / n; for (let t = y; t <= y + h; t += h / 40) { const xx = x0 + Math.sin(t * f + ph) * amp; t === y ? c.moveTo(xx, t) : c.lineTo(xx, t); } }
+      else { const y0 = y + i * h / n; for (let t = x; t <= x + w; t += w / 40) { const yy = y0 + Math.sin(t * f + ph) * amp; t === x ? c.moveTo(t, yy) : c.lineTo(t, yy); } }
+      c.stroke();
+    }
+    c.restore();
+  }
+  function sides(S, names, sub, dot) {
+    const side = k => {
+      const me = S.turn === k && !S.over && S.phase !== 'end';
+      return `<div class="walnut-panel rounded-xl px-3 py-2 flex-1 ${me ? 'ring-2 ring-amber-300/70' : ''}" style="min-width:0">
+        <div class="flex items-center gap-1.5">${dot ? `<span style="display:inline-block;width:14px;height:14px;border-radius:50%;flex-shrink:0;background:${dot(k)}"></span>` : ''}
+        <span class="font-display text-sm ${me ? 'text-amber-300' : 'text-amber-100/80'} truncate">${me ? '▶ ' : ''}${names[k]}</span>${sub.score ? `<b class="ml-auto text-amber-200 text-lg">${sub.score(k)}</b>` : ''}</div>
+        ${sub.line ? `<div class="text-[11px] text-amber-100/60 mt-0.5">${sub.line(k)}</div>` : ''}</div>`;
+    };
+    return `<div class="flex gap-2 w-full">${side(1)}${side(0)}</div>`;
+  }
+
+  function make(cfg) {
+    let S, root, hud, cv, ctx, size = { w: 0, h: 0, dpr: 1, s: 1 }, bg = null, sid = 0, live = null, stopAnim = null;
+    let aim = null, slide = null, pend = null, aiShow = null, flying = null, fitted = false;
+    const V = cfg.view, SQ = cfg.squash || 1;
+    const alive = my => () => my === sid && !!root;
+    const names = () => S.mode === 'ai' ? ['You', cfg.aiName] : (cfg.names2p || ['Player 1', 'Player 2']);
+    const view = () => !!cfg.flip2p && S.mode === '2p' && S.turn === 1;
+    const myTurn = () => S && !S.over && S.phase === 'idle' && (S.mode === '2p' || S.turn === 0);
+    function fit() {
+      const wrap = root.querySelector('[data-board]');
+      const top = wrap.getBoundingClientRect().top + (window.scrollY || 0);
+      const aw = Math.min(wrap.clientWidth || 360, 600), ah = Math.max(300, (window.innerHeight || 700) - Math.max(150, Math.min(top, 420)) - (cfg.extraH || 58));
+      const ratio = V.h * SQ / V.w;
+      let w = aw; if (w * ratio > ah) w = ah / ratio;
+      w = Math.max(200, Math.round(w));
+      const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+      if (w === size.w && dpr === size.dpr) return false;
+      const h = Math.round(w * ratio);
+      size = { w, h, dpr, s: w * dpr / V.w };
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); cv.style.width = w + 'px'; cv.style.height = h + 'px';
+      bg = document.createElement('canvas'); bg.width = cv.width; bg.height = cv.height;
+      const b = bg.getContext('2d'); setT(b, false); cfg.paint(b);
+      return true;
+    }
+    function setT(c, flip) {
+      const s = size.s, k = s * SQ;
+      if (flip) c.setTransform(-s, 0, 0, -k, (V.x0 + V.w) * s, (V.y0 + V.h) * k);
+      else c.setTransform(s, 0, 0, k, -V.x0 * s, -V.y0 * k);
+    }
+    function toWorld(e) {
+      const r = cv.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      let x = V.x0 + px * V.w, y = V.y0 + py * V.h;
+      if (view()) { x = V.x0 + V.w - (x - V.x0); y = V.y0 + V.h - (y - V.y0); }
+      return { x, y };
+    }
+    function draw() {
+      if (!root || !S || !ctx) return;
+      ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, cv.width, cv.height);
+      if (view()) { ctx.save(); ctx.translate(cv.width, cv.height); ctx.rotate(Math.PI); ctx.drawImage(bg, 0, 0); ctx.restore(); } else ctx.drawImage(bg, 0, 0);
+      setT(ctx, view());
+      cfg.draw(ctx, S, live, { idle: S.phase === 'idle' && !S.over, flying });
+      if (live || S.over || S.phase !== 'idle') return;
+      const L = cfg.launcher && cfg.launcher(S); if (!L) return;
+      let a = null, pw = 0;
+      if (aim && aim.pw > 0) { a = aim.a; pw = aim.pw; }
+      if (aiShow) { a = aiShow.a; pw = aiShow.pw; }
+      if (a === null) return;
+      const dx = Math.cos(a), dy = Math.sin(a), bad = cfg.validDir && !cfg.validDir(S, dx, dy);
+      if (aim && !aim.free) { ctx.strokeStyle = 'rgba(255,240,210,.35)'; ctx.lineWidth = L.r * .08; ctx.beginPath(); ctx.moveTo(L.x, L.y); ctx.lineTo(aim.fx, aim.fy); ctx.stroke(); }
+      const v = pw * cfg.vmax, travel = cfg.travel ? cfg.travel(v) : v * v / (2 * cfg.fr);
+      let len = Math.min(travel, cfg.maxGuide || 40), hit = null;
+      const h = (Settings.hints || aiShow) && cfg.hint && cfg.hint(S);
+      if (h) { const rr = FlickKit.ray(L.x, L.y, dx, dy, L.r, h.circles || [], h.box); if (rr.t < len) { len = rr.t; hit = rr.c; } }
+      else len = Math.min(len, L.r * (5 + pw * 6));
+      const col = bad ? 'rgba(230,60,40,.95)' : pw > .92 ? 'rgba(255,120,90,.95)' : (cfg.guideCol || 'rgba(255,226,150,.95)');
+      ctx.setLineDash([L.r * .5, L.r * .36]); ctx.strokeStyle = col; ctx.lineWidth = L.r * .15;
+      ctx.beginPath(); ctx.moveTo(L.x, L.y); ctx.lineTo(L.x + dx * len, L.y + dy * len); ctx.stroke(); ctx.setLineDash([]);
+      if (hit && !bad) {
+        const gx = L.x + dx * len, gy = L.y + dy * len;
+        ctx.strokeStyle = 'rgba(255,240,210,.75)'; ctx.lineWidth = L.r * .08; ctx.beginPath(); ctx.arc(gx, gy, L.r, 0, 7); ctx.stroke();
+        if (hit.d) { const nx = hit.x - gx, ny = hit.y - gy, Lh = Math.hypot(nx, ny) || 1; ctx.strokeStyle = 'rgba(120,210,255,.9)'; ctx.lineWidth = L.r * .12; ctx.beginPath(); ctx.moveTo(hit.x, hit.y); ctx.lineTo(hit.x + nx / Lh * L.r * 7, hit.y + ny / Lh * L.r * 7); ctx.stroke(); }
+      }
+      const R = L.r * 1.55;
+      ctx.strokeStyle = 'rgba(0,0,0,.35)'; ctx.lineWidth = L.r * .25; ctx.beginPath(); ctx.arc(L.x, L.y, R, 0, 7); ctx.stroke();
+      ctx.strokeStyle = pw > .92 ? '#ff7a5a' : '#ffd166'; ctx.beginPath(); ctx.arc(L.x, L.y, R, -Math.PI / 2, -Math.PI / 2 + pw * Math.PI * 2); ctx.stroke();
+      if (cfg.drawAim) cfg.drawAim(ctx, S, a, pw);
+    }
+    function render() {
+      if (!root || !S) return;
+      const n = names(), you = S.mode === '2p' || S.turn === 0;
+      const tip = S.over ? 'Game over' : S.phase === 'ai' ? `${cfg.aiName} is lining up a shot…` : S.phase === 'moving' ? (cfg.movingTip ? cfg.movingTip(S) : '…') : S.phase === 'end' ? 'Round over' : you ? cfg.tip(S) : '';
+      hud.innerHTML = cfg.hud(S, n) + `<div class="text-xs text-center text-amber-100/80 mt-1.5" style="min-height:2.4em">${S.msg ? `<span class="text-amber-300">${S.msg}</span><br>` : ''}${tip}</div>` + (cfg.foot ? `<div class="text-[10px] text-center text-amber-100/45">${cfg.foot(S)}</div>` : '');
+      const ex = root.querySelector('[data-extra]'); if (ex) ex.innerHTML = cfg.controls ? cfg.controls(S, myTurn()) : '';
+      if (!fitted) { fitted = true; fit(); }
+      draw();
+    }
+    function newGame(c) {
+      sid++; aim = slide = pend = aiShow = flying = null; stopAnim && stopAnim(); live = null;
+      const mode = (c && c.mode) || (S && S.mode) || 'ai', len = (c && c.len) || (S && S.len) || (cfg.lengths ? cfg.lengths[0].value : null);
+      S = Object.assign({ mode, len, turn: 0, over: false, phase: 'idle', msg: '' }, cfg.init(len, mode));
+      kick();
+    }
+    function kick() {
+      if (!S) return;
+      if (S.phase === 'idle' && !S.over && cfg.onTurn) cfg.onTurn(S);
+      render();
+      if (!S.over && S.phase === 'idle' && S.mode === 'ai' && S.turn === 1) aiTurn();
+    }
+    function plan(p) {
+      const cands = cfg.candidates(S, p), cap = cfg.aiCap || 260;
+      const list = cands.length > cap ? Util.shuffle(cands).slice(0, cap) : cands;
+      const scored = list.map(c => {
+        let shot = Object.assign({ p }, c);
+        if (cfg.flight) shot = cfg.flight(S, shot);
+        const W = FlickKit.run(cfg.world(S, shot, false), cfg.simSteps || 3000);
+        return { c, e: cfg.score(S, W, p, shot) + Math.random() * 0.3 };
+      }).sort((a, b) => b.e - a.e);
+      if (!scored.length) return null;
+      const [, , top] = FlickKit.wobble();
+      return scored[Math.floor(Math.random() * Math.min(top, scored.length))].c;
+    }
+    async function aiTurn() {
+      const my = sid, ok = alive(my); S.phase = 'ai'; render();
+      await Util.sleep(Util.delay(420)); if (!ok()) return;
+      const c = plan(1); if (!ok()) return;
+      if (!c) { S.phase = 'idle'; return; }
+      if (cfg.applyAI) { const from = cfg.launcher(S); const to = { x: c.x, y: c.y }; if (!await FlickKit.tween(400, k => { cfg.applyAI(S, c, k, from, to); draw(); }, ok)) return; }
+      const [sa, sp] = FlickKit.wobble(), v0 = Math.hypot(c.vx, c.vy), ang = Math.atan2(c.vy, c.vx) + FlickKit.gauss() * sa * (cfg.wobbleK || 1), v = Math.min(cfg.vmax, v0 * (1 + FlickKit.gauss() * sp * (cfg.wobbleK || 1)));
+      if (!await FlickKit.tween(500, k => { aiShow = { a: ang, pw: v / cfg.vmax * k }; draw(); }, ok)) return;
+      await Util.sleep(Util.delay(150)); if (!ok()) return;
+      aiShow = null; shoot(Math.cos(ang) * v, Math.sin(ang) * v, c);
+    }
+    async function shoot(vx, vy, extra) {
+      const p = S.turn, L = cfg.launcher(S), my = sid;
+      const chk = cfg.canShoot ? cfg.canShoot(S, vx, vy) : true;
+      if (chk !== true) { Util.toast(chk || "You can't shoot from there."); S.phase = 'idle'; render(); return; }
+      S.phase = 'moving'; Sfx.play(cfg.shootSfx || 'flick');
+      let shot = Object.assign({ p, x: L.x, y: L.y, vx, vy }, extra || {}, { x: L.x, y: L.y, vx, vy });
+      if (cfg.flight) {
+        shot = cfg.flight(S, shot);
+        render();
+        const f = shot.fly, ok = alive(my);
+        if (f && !await FlickKit.tween(f.ms || 600, k => { flying = { x: f.x0 + (f.x1 - f.x0) * k, y: f.y0 + (f.y1 - f.y0) * k, z: Math.sin(k * Math.PI) * f.h, p }; draw(); }, ok)) return;
+        flying = null; if (f) Sfx.play('thunk', 0.8);
+      }
+      live = cfg.world(S, shot, true); live.shot = shot;
+      render();
+      stopAnim = FlickKit.animate(live, draw, () => settle(my), alive(my));
+    }
+    function settle(my) {
+      if (my !== sid) return;
+      const W = live; live = null; stopAnim = null;
+      const r = cfg.settle(S, W) || {};
+      S.msg = r.msg || '';
+      if (r.toast) Util.toast(r.toast, 1300);
+      if (r.next === 'round' || r.next === 'game') return endRound();
+      if (r.next === 'other') S.turn = 1 - S.turn;
+      else if (typeof r.next === 'number') S.turn = r.next;
+      S.phase = 'idle'; kick();
+    }
+    async function endRound() {
+      const my = sid, n = names(), er = cfg.endRound(S, n);
+      S.phase = 'end'; render();
+      await Util.sleep(Util.delay(450)); if (my !== sid) return;
+      if (er.over) {
+        S.over = true; const w = er.winner;
+        Sfx.play(S.mode === '2p' || w === 0 ? 'win' : 'lose');
+        return App.endGame(cfg.id, S.mode === 'ai' && w === 0, w < 0 ? "It's a draw!" : S.mode === 'ai' ? (w === 0 ? 'You win!' : `${cfg.aiName} wins`) : `${n[w]} wins!`, er.html, () => newGame());
+      }
+      await Util.choose(er.title, er.html, [{ label: er.next || 'Next round', value: 1, primary: true }]);
+      if (my !== sid) return;
+      cfg.nextRound(S); S.phase = 'idle'; S.msg = ''; kick();
+    }
+    /* ---------- touch ---------- */
+    function down(e) {
+      if (S && S.phase === 'moving' && cfg.hold) { cv.setPointerCapture && cv.setPointerCapture(e.pointerId); cfg.hold(live, true); e.preventDefault(); return; }
+      if (!myTurn()) return;
+      const q = toWorld(e);
+      cv.setPointerCapture && cv.setPointerCapture(e.pointerId);
+      if (cfg.pick && cfg.pick(S, q)) render();
+      const L = cfg.launcher(S); if (!L) return;
+      const d = Math.hypot(q.x - L.x, q.y - L.y), grab = cfg.grab || L.r * 3.2;
+      if (cfg.canPlace && cfg.canPlace(S) && d < grab) { slide = 'place'; }
+      else if (d < grab && !cfg.freeAim) pend = { x: q.x, y: q.y };
+      else if (cfg.slideZone && cfg.slideZone(S, q)) { slide = true; cfg.slideTo(S, q); draw(); }
+      else if (cfg.freeAim) aim = { free: true, sx: q.x, sy: q.y, a: 0, pw: 0 };
+      e.preventDefault();
+    }
+    function move(e) {
+      if (!myTurn()) return;
+      const q = toWorld(e), L = cfg.launcher(S); if (!L) return;
+      if (slide === 'place') { cfg.place(S, q); draw(); return; }
+      if (pend) {
+        const mx = q.x - pend.x, my = q.y - pend.y, m = Math.hypot(mx, my);
+        if (m < L.r * .8) return;
+        const b = cfg.back ? cfg.back(S) : null; pend = null;
+        if (!b || !cfg.slideTo || (mx * b.x + my * b.y) / m > 0.35) aim = { a: 0, pw: 0, fx: q.x, fy: q.y }; else slide = true;
+      }
+      if (slide) { cfg.slideTo(S, q); draw(); return; }
+      if (!aim) return;
+      if (aim.free) {
+        const dx = L.x - q.x, dy = L.y - q.y; aim.a = Math.atan2(dy, dx);
+        aim.pw = Math.min(1, Math.hypot(q.x - aim.sx, q.y - aim.sy) / cfg.pull);
+      } else {
+        let dx = L.x - q.x, dy = L.y - q.y;
+        if (cfg.fixedDir) { const f = cfg.fixedDir(S), pr = -(dx * f.x + dy * f.y); dx = f.x; dy = f.y; aim.pw = Math.min(1, Math.max(0, (Math.max(0, -pr) - L.r * .4) / cfg.pull)); aim.a = Math.atan2(dy, dx); }
+        else { aim.a = Math.atan2(dy, dx); aim.pw = Math.min(1, Math.max(0, (Math.hypot(dx, dy) - L.r * .6) / cfg.pull)); }
+        aim.fx = q.x; aim.fy = q.y;
+      }
+      draw();
+    }
+    function up() {
+      if (S && S.phase === 'moving' && cfg.hold) { cfg.hold(live, false); return; }
+      pend = null;
+      if (slide) { slide = null; render(); return; }
+      if (!aim) return;
+      const a = aim; aim = null;
+      if (!myTurn() || a.pw < 0.04) { draw(); return; }
+      const dx = Math.cos(a.a), dy = Math.sin(a.a);
+      if (cfg.validDir && !cfg.validDir(S, dx, dy)) { draw(); return Util.toast(cfg.badDirMsg || 'Shoot the other way!'); }
+      const v = a.pw * cfg.vmax; shoot(dx * v, dy * v);
+    }
+    const api = {
+      async setup() {
+        const mode = await Util.choose(`${cfg.icon} ${cfg.title}`, 'Who are you playing?', [{ label: `🤖 vs ${cfg.aiName} (AI)`, value: 'ai', primary: true }, { label: '👥 Pass & Play', value: '2p' }, { label: 'Cancel', value: null }]);
+        if (!mode) return null;
+        if (!cfg.lengths) return { mode };
+        const len = await Util.choose(`${cfg.icon} ${cfg.title}`, 'How long a game?', cfg.lengths.map((l, i) => ({ label: l.label, value: l.value, primary: !i })).concat([{ label: 'Cancel', value: null }]));
+        return len ? { mode, len } : null;
+      },
+      mount(el, o = {}) {
+        root = el; sid++; fitted = false; size = { w: 0, h: 0, dpr: 1, s: 1 };
+        root.innerHTML = `<div class="flex flex-col items-center gap-2 mx-auto w-full" style="max-width:600px"><div class="w-full" data-hud></div><div class="w-full" data-board></div>
+          <div class="flex gap-2 flex-wrap justify-center items-center" data-extra></div>
+          <div class="flex gap-2 flex-wrap justify-center">${Util.btn('🔄 New game', `${cfg.ns}.restart()`, 'brass')}</div></div>`;
+        hud = root.querySelector('[data-hud]');
+        cv = document.createElement('canvas'); cv.style.cssText = 'display:block;margin:0 auto;touch-action:none;border-radius:14px;max-width:100%';
+        root.querySelector('[data-board]').appendChild(cv); ctx = cv.getContext('2d');
+        cv.addEventListener('pointerdown', down); cv.addEventListener('pointermove', move); cv.addEventListener('pointerup', up);
+        cv.addEventListener('pointercancel', () => { if (S && S.phase === 'moving' && cfg.hold) cfg.hold(live, false); aim = slide = pend = null; draw(); });
+        api._resize = () => { if (fit()) draw(); }; window.addEventListener('resize', api._resize);
+        fit();
+        if (o.resume) { S = o.resume.S; S.phase = 'idle'; live = null; kick(); }
+        else newGame(o.mode ? { mode: o.mode, len: o.len } : null);
+      },
+      snapshot() { return S && !S.over && S.phase !== 'end' ? { S: Object.assign({}, S, { phase: 'idle' }) } : null; },
+      destroy() { sid++; stopAnim && stopAnim(); window.removeEventListener('resize', api._resize); root = cv = ctx = null; live = null; aim = slide = pend = null; },
+      newGame() { newGame(); },
+      async restart() { const v = await Util.choose(`${cfg.icon} ${cfg.title}`, 'Start a new game?', [{ label: 'New game', value: 1, primary: true }, { label: 'Cancel', value: 0 }]); if (v) newGame(); },
+      render: () => render(),
+      _test: { get S() { return S; }, plan, shoot: (vx, vy, x) => shoot(vx, vy, x), cfg }
+    };
+    return api;
+  }
+  return { make, disc, wood, grain, sides };
+})();
+
+/* ============================================================================
+   SHOVE HA'PENNY: the pub slate board. Shove five coins a turn into the nine
+   beds; three chalk marks fill a bed, fill all nine to win.
+   ============================================================================ */
+const ShoveHapenny = TableKit.make((() => {
+  const BX = 7, BY = 12, CR = 0.5, SIDE = 5.4, LY = 10.6, FR = 9, LINES = Array.from({ length: 10 }, (_, k) => 3 - k * 1.4);
+  const bedOf = c => { if (Math.abs(c.x) + CR > SIDE) return 0; for (let i = 1; i <= 9; i++) { const lo = LINES[i - 1], hi = LINES[i]; if (c.y + CR < lo && c.y - CR > hi) return i; } return 0; };
+  const need = len => len === 'quick' ? 2 : 3;
+  /* the marks a turn would score; overflow goes to the rival unless it would give them their last mark */
+  function tally(marks, coins, p, tgt) {
+    const m = marks.map(r => r.slice()), log = [];
+    coins.forEach(c => {
+      const b = bedOf(c); if (!b) return;
+      if (m[p][b] < tgt) { m[p][b]++; log.push(b); }
+      else if (m[1 - p][b] < tgt) {
+        const left = m[1 - p].slice(1).reduce((a, v) => a + (tgt - v), 0);
+        if (left > 1) { m[1 - p][b]++; log.push(-b); }
+      }
+    });
+    return { m, log };
+  }
+  const done = (m, tgt) => m.slice(1).every(v => v >= tgt);
+  function world(S, shot, sound) {
+    const W = FlickKit.world({ fr: FR, e: 0.85 });
+    W.b = S.coins.map((c, i) => ({ id: i, x: c.x, y: c.y, vx: 0, vy: 0, r: CR, m: 1 }));
+    W.b.push({ id: 's', x: shot.x, y: shot.y, vx: shot.vx, vy: shot.vy, r: CR, m: 1, shot: true });
+    if (sound) W.hit = (a, c, v) => FlickKit.clack('clack', v / 10);
+    W.after = () => { for (const b of W.b) if (!b.out && (Math.abs(b.x) > BX || b.y < -BY || b.y > BY + 1)) { b.out = 'off'; if (sound) Sfx.play('ditch'); } };
+    return W;
+  }
+  const after = W => W.b.filter(b => !b.out).map(b => ({ x: b.x, y: b.y, shot: !!b.shot }));
+  return {
+    id: 'shoveha', ns: 'ShoveHapenny', title: "Shove Ha'penny", icon: '🪙', aiName: 'Landlord Bill',
+    lengths: [{ label: 'Quick: two marks per bed', value: 'quick' }, { label: 'Classic: three marks per bed', value: 'classic' }],
+    view: { x0: -7.4, y0: -12.4, w: 14.8, h: 24.8 }, vmax: 22, fr: FR, pull: 5.5, maxGuide: 26,
+    init(len) { return { marks: [Array(10).fill(0), Array(10).fill(0)], coins: [], left: 5, x: [0, 0], first: 0 }; },
+    launcher: S => ({ x: S.x[S.turn], y: LY, r: CR }),
+    back: () => ({ x: 0, y: 1 }),
+    validDir: (S, dx, dy) => dy < -0.2, badDirMsg: 'Shove the coin up the board.',
+    slideZone: (S, q) => q.y > 8, slideTo: (S, q) => { S.x[S.turn] = Math.max(-SIDE + CR, Math.min(SIDE - CR, q.x)); },
+    canShoot: S => S.coins.every(c => Math.hypot(c.x - S.x[S.turn], c.y - LY) > 2 * CR + .02) || 'Move the coin clear of the others first.',
+    hint: S => ({ circles: S.coins.map(c => ({ x: c.x, y: c.y, r: CR, d: 1 })) }),
+    applyAI(S, c, k, from) { S.x[S.turn] = from.x + (c.x - from.x) * k; },
+    world,
+    settle(S, W) {
+      const p = S.turn, s = W.b.find(b => b.shot), tgt = need(S.len);
+      if (!s.out && s.y - CR > LINES[0]) { S.coins = after(W).filter(c => !c.shot); return { msg: "Didn't reach the first line: shove it again." }; }
+      S.coins = after(W).map(c => ({ x: c.x, y: c.y })); S.left--;
+      if (S.left > 0) { const b = s.out ? 0 : bedOf(s); return { msg: s.out ? 'Off the board!' : b ? `In bed ${b}` : '' }; }
+      const t = tally(S.marks, S.coins, p, tgt); S.marks = t.m;
+      const got = t.log.filter(v => v > 0).length, gave = t.log.filter(v => v < 0).length;
+      if (done(S.marks[p], tgt)) return { next: 'game' };
+      S.coins = []; S.left = 5;
+      return { next: 'other', msg: `${got ? `${got} mark${got > 1 ? 's' : ''} chalked up` : 'No marks this turn'}${gave ? `, ${gave} given away` : ''}.` };
+    },
+    endRound(S, n) { const w = done(S.marks[0], need(S.len)) ? 0 : 1; return { over: true, winner: w, html: `${n[w]} filled all nine beds.` }; },
+    nextRound() {},
+    candidates(S, p) {
+      const tgt = need(S.len), out = [], beds = [];
+      for (let i = 1; i <= 9; i++) if (S.marks[p][i] < tgt) beds.push(i);
+      const xs = [-3.2, -1.6, 0, 1.6, 3.2].filter(x => S.coins.every(c => Math.hypot(c.x - x, c.y - LY) > 1.05));
+      for (const x of xs) {
+        for (const b of beds) { const ty = (LINES[b - 1] + LINES[b]) / 2; for (const tx of [x * .7, x * .35]) { const dx = tx - x, dy = ty - LY, d = Math.hypot(dx, dy), v = Math.sqrt(2 * FR * d); [0.99, 1, 1.01].forEach(k => out.push({ x, y: LY, vx: dx / d * v * k, vy: dy / d * v * k })); } }
+        for (const c of S.coins) for (const ex of [0.8, 1.6, 2.6]) { const dx = c.x - x, dy = c.y - LY, d = Math.hypot(dx, dy), v = Math.sqrt(2 * FR * (d + ex)); out.push({ x, y: LY, vx: dx / d * v, vy: dy / d * v }); }
+      }
+      return out;
+    },
+    aiCap: 220,
+    score(S, W, p) {
+      const coins = after(W), tgt = need(S.len), t = tally(S.marks, coins, p, tgt);
+      let e = t.log.reduce((a, v) => a + (v > 0 ? 10 : -6), 0);
+      if (done(t.m[p], tgt)) e += 200;
+      coins.forEach(c => { if (!bedOf(c) && c.y < LINES[0]) e -= 0.5; });
+      return e;
+    },
+    paint(c) {
+      TableKit.wood(c, -7.4, -12.4, 14.8, 24.8, '#5b3317', '#2e180a');
+      const g = c.createLinearGradient(0, -BY, 0, BY); g.addColorStop(0, '#3d4148'); g.addColorStop(1, '#2a2d33');
+      c.fillStyle = g; c.fillRect(-BX, -BY, 2 * BX, 2 * BY);           // slate
+      c.fillStyle = 'rgba(255,255,255,.025)'; for (let i = 0; i < 900; i++) { const x = -BX + ((i * 7.13) % (2 * BX)), y = -BY + ((i * 3.77 + Math.sin(i) * 5) % (2 * BY) + 2 * BY) % (2 * BY); c.fillRect(x, y, .05, .05); }
+      c.strokeStyle = 'rgba(235,230,215,.75)'; c.lineWidth = .06;
+      LINES.forEach(y => { c.beginPath(); c.moveTo(-BX, y); c.lineTo(BX, y); c.stroke(); });
+      [-SIDE, SIDE].forEach(x => { c.beginPath(); c.moveTo(x, LINES[0]); c.lineTo(x, LINES[9]); c.stroke(); });
+      c.fillStyle = 'rgba(235,230,215,.5)'; c.font = '0.75px Cinzel, serif'; c.textAlign = 'center'; c.textBaseline = 'middle';
+      for (let i = 1; i <= 9; i++) c.fillText(String(i), 0, (LINES[i - 1] + LINES[i]) / 2);
+      c.setLineDash([.3, .25]); c.strokeStyle = 'rgba(235,230,215,.35)'; c.beginPath(); c.moveTo(-BX, 8.2); c.lineTo(BX, 8.2); c.stroke(); c.setLineDash([]);
+      c.strokeStyle = 'rgba(0,0,0,.5)'; c.lineWidth = .12; c.strokeRect(-BX, -BY, 2 * BX, 2 * BY);
+    },
+    draw(c, S, live, ui) {
+      const tgt = need(S.len);
+      c.lineCap = 'round'; c.lineWidth = .1;                         // chalk marks in the side columns
+      for (let p = 0; p < 2; p++) for (let i = 1; i <= 9; i++) {
+        const y = (LINES[i - 1] + LINES[i]) / 2, n = S.marks[p][i], x0 = p ? SIDE + .35 : -BX + .35;
+        c.strokeStyle = n >= tgt ? (p ? 'rgba(255,170,150,.95)' : 'rgba(255,245,215,.95)') : (p ? 'rgba(255,170,150,.75)' : 'rgba(255,245,215,.75)');
+        for (let k = 0; k < n; k++) { c.beginPath(); c.moveTo(x0 + k * .38, y - .4); c.lineTo(x0 + k * .38, y + .4); c.stroke(); }
+        if (n >= tgt) { c.beginPath(); c.moveTo(x0 - .1, y); c.lineTo(x0 + (n - 1) * .38 + .1, y); c.stroke(); }
+      }
+      c.lineCap = 'butt';
+      const coin = (x, y, glow, alpha) => TableKit.disc(c, x, y, CR, ['#ffe7b0', '#c98f3c', '#7a4f17'], { rings: [.78], ringCol: 'rgba(90,55,15,.5)', glow, alpha });
+      if (live) { live.b.forEach(b => { if (!b.out) coin(b.x, b.y); }); return; }
+      S.coins.forEach(k => coin(k.x, k.y));
+      if (ui.idle) coin(S.x[S.turn], LY, true);
+    },
+    hud(S, n) {
+      const tgt = need(S.len), filled = k => S.marks[k].slice(1).filter(v => v >= tgt).length;
+      return TableKit.sides(S, n, { score: k => `${filled(k)}/9`, line: k => S.turn === k ? `${S.left} coin${S.left === 1 ? '' : 's'} left this turn` : `${S.marks[k].slice(1).reduce((a, v) => a + v, 0)} marks` }, k => k ? '#ffb4a0' : '#fff2d8');
+    },
+    tip: S => 'Drag along the bottom to line up, then pull back from the coin and let go. A coin scores if it sits inside a bed without touching a line.',
+    foot: S => `Your marks on the left, ${S.mode === 'ai' ? 'Landlord Bill' : "Player 2"}'s on the right · ${need(S.len)} per bed`
+  };
+})());
+Games.shoveha = ShoveHapenny;
+
+/* ============================================================================
+   TABLE SHUFFLEBOARD: slide four weights each down a long waxed table.
+   Furthest weight scores; hang one off the end for four.
+   ============================================================================ */
+const Shuffleboard = TableKit.make((() => {
+  const TX = 2, END = -9, FOUL = -3, Z2 = -6, Z3 = -7.8, PR = 0.3, LY = 8.3, FR = 3.6;
+  const zone = y => y < END ? 0 : y - PR < END ? 4 : y < Z3 ? 3 : y < Z2 ? 2 : y < FOUL ? 1 : 0;
+  function frame(pucks) {
+    const on = pucks.filter(k => zone(k.y));
+    if (!on.length) return { w: -1, pts: 0 };
+    const best = on.reduce((a, b) => b.y < a.y ? b : a), w = best.o, opp = on.filter(k => k.o !== w), line = opp.length ? Math.min(...opp.map(k => k.y)) : Infinity;
+    return { w, pts: on.filter(k => k.o === w && k.y < line).reduce((a, k) => a + zone(k.y), 0) };
+  }
+  function world(S, shot, sound) {
+    const W = FlickKit.world({ fr: FR, e: 0.9 });
+    W.b = S.pucks.map((k, i) => ({ id: i, o: k.o, x: k.x, y: k.y, vx: 0, vy: 0, r: PR, m: 1 }));
+    W.b.push({ id: 's', o: shot.p, x: shot.x, y: shot.y, vx: shot.vx, vy: shot.vy, r: PR, m: 1, shot: true });
+    if (sound) W.hit = (a, c, v) => FlickKit.clack('clack', v / 7);
+    W.after = () => { for (const b of W.b) if (!b.out && (Math.abs(b.x) > TX || b.y < END)) { b.out = 'gutter'; if (sound) Sfx.play('ditch'); } };
+    return W;
+  }
+  const left = (W) => W.b.filter(b => !b.out).map(b => ({ o: b.o, x: b.x, y: b.y }));
+  return {
+    id: 'shuffleboard', ns: 'Shuffleboard', title: 'Table Shuffleboard', icon: '🥌', aiName: 'Big Hank', names2p: ['Red', 'Blue'],
+    lengths: [{ label: 'Quick: first to 11', value: 11 }, { label: 'Full: first to 21', value: 21 }],
+    view: { x0: -2.7, y0: -9.6, w: 5.4, h: 19 }, squash: 0.5, vmax: 14, fr: FR, pull: 3, hudH: 230, maxGuide: 20,
+    init(len) { return { pucks: [], thrown: [0, 0], x: [0, 0], tot: [0, 0], frameNo: 1, first: 0 }; },
+    launcher: S => ({ x: S.x[S.turn], y: LY, r: PR }),
+    back: () => ({ x: 0, y: 1 }), validDir: (S, dx, dy) => dy < -0.3, badDirMsg: 'Slide it down the table.',
+    slideZone: (S, q) => q.y > 6.5, slideTo: (S, q) => { S.x[S.turn] = Math.max(-TX + PR + .05, Math.min(TX - PR - .05, q.x)); },
+    hint: S => ({ circles: S.pucks.map(k => ({ x: k.x, y: k.y, r: PR, d: 1 })) }),
+    applyAI(S, c, k, from) { S.x[S.turn] = from.x + (c.x - from.x) * k; },
+    world,
+    settle(S, W) {
+      const p = S.turn, s = W.b.find(b => b.shot);
+      let pucks = left(W);
+      const short = pucks.filter(k => k.y > FOUL); pucks = pucks.filter(k => k.y <= FOUL);
+      S.pucks = pucks; S.thrown[p]++;
+      const msg = s.out ? 'Into the gutter.' : s.y > FOUL ? "Didn't pass the foul line: off it comes." : zone(s.y) === 4 ? 'A hanger! Four points if it holds.' : '';
+      if (S.thrown[0] + S.thrown[1] >= 8) return { next: 'round', msg };
+      const o = 1 - p; return { next: S.thrown[o] < 4 ? o : p, msg: msg + (short.length > 1 ? '' : '') };
+    },
+    endRound(S, n) {
+      const f = frame(S.pucks); if (f.w >= 0) S.tot[f.w] += f.pts;
+      S.lastW = f.w;
+      const tgt = S.len, over = Math.max(...S.tot) >= tgt && S.tot[0] !== S.tot[1];
+      const html = `<p>${f.w < 0 ? 'Nobody stayed on the table: no score.' : `${n[f.w]} ${S.mode === 'ai' && f.w === 0 ? 'score' : 'scores'} <b>${f.pts}</b>.`}</p><p class="mt-1 text-amber-200">${n[0]} ${S.tot[0]} · ${n[1]} ${S.tot[1]} <span class="text-amber-100/60">(first to ${tgt})</span></p>`;
+      return { over, winner: S.tot[0] > S.tot[1] ? 0 : 1, title: `Frame ${S.frameNo}`, html, next: 'Next frame' };
+    },
+    nextRound(S) { S.frameNo++; S.pucks = []; S.thrown = [0, 0]; S.turn = S.lastW >= 0 ? S.lastW : 1 - S.first; S.first = S.turn; },
+    candidates(S, p) {
+      const out = [], xs = [-1.3, -.65, 0, .65, 1.3];
+      for (const x of xs) {
+        for (const ty of [END + .12, END + .25, (Z3 + END) / 2, (Z2 + Z3) / 2]) for (const tx of [-1, -.5, 0, .5, 1]) {
+          const dx = tx - x, dy = ty - LY, d = Math.hypot(dx, dy), v = Math.sqrt(2 * FR * d); out.push({ x, y: LY, vx: dx / d * v, vy: dy / d * v });
+        }
+        for (const k of S.pucks) for (const off of [-.4, 0, .4]) for (const ex of [1.5, 4]) {
+          const tx = k.x + off * PR, dx = tx - x, dy = k.y - LY, d = Math.hypot(dx, dy), v = Math.min(14, Math.sqrt(2 * FR * (d + ex))); out.push({ x, y: LY, vx: dx / d * v, vy: dy / d * v });
+        }
+      }
+      return out;
+    },
+    score(S, W, p) {
+      const pucks = left(W).filter(k => k.y <= FOUL), f = frame(pucks);
+      let e = f.w === p ? f.pts * 10 : f.w === 1 - p ? -f.pts * 10 : 0;
+      e += pucks.filter(k => k.o === p).length * 2 - pucks.filter(k => k.o !== p).length * 2;
+      return e;
+    },
+    paint(c) {
+      TableKit.wood(c, -2.7, -9.6, 5.4, 19, '#4a2a14', '#24130a');
+      c.fillStyle = '#140b06'; c.fillRect(-2.45, -9.6, .45, 19); c.fillRect(2, -9.6, .45, 19);   // gutters
+      const g = c.createLinearGradient(-TX, 0, TX, 0); g.addColorStop(0, '#d9b079'); g.addColorStop(.5, '#f2d6a2'); g.addColorStop(1, '#d9b079');
+      c.fillStyle = g; c.fillRect(-TX, END, 2 * TX, 18.3);
+      TableKit.grain(c, -TX, END, 2 * TX, 18.3, 'rgba(120,70,25,', 24, true, 4);
+      const sh = c.createLinearGradient(0, END, 0, 9); sh.addColorStop(0, 'rgba(255,255,255,.18)'); sh.addColorStop(.5, 'rgba(255,255,255,0)'); c.fillStyle = sh; c.fillRect(-TX, END, 2 * TX, 18.3);
+      c.strokeStyle = '#7a1f1a'; c.lineWidth = .06;
+      [FOUL, Z2, Z3].forEach(y => { c.beginPath(); c.moveTo(-TX, y); c.lineTo(TX, y); c.stroke(); });
+      c.strokeStyle = 'rgba(122,31,26,.5)'; c.setLineDash([.2, .15]); c.beginPath(); c.moveTo(-TX, 6.8); c.lineTo(TX, 6.8); c.stroke(); c.setLineDash([]);
+      c.fillStyle = 'rgba(122,31,26,.85)'; c.font = 'bold 0.9px Cinzel, serif'; c.textAlign = 'center'; c.textBaseline = 'middle';
+      c.save(); c.scale(1, 2); [[1, (FOUL + Z2) / 2], [2, (Z2 + Z3) / 2], [3, (Z3 + END) / 2]].forEach(([t, y]) => c.fillText(String(t), 0, y / 2)); c.restore();
+      c.fillStyle = 'rgba(0,0,0,.25)'; c.fillRect(-TX, END - .02, 2 * TX, .06);
+    },
+    draw(c, S, live, ui) {
+      const puck = (x, y, o, glow) => {
+        const cols = o ? ['#9cc8ff', '#2f63c9', '#122a5c'] : ['#ffaaa0', '#c8352b', '#5c120c'];
+        TableKit.disc(c, x, y, PR, ['#f2f2f2', '#b9bec4', '#5d6369'], { side: PR * .5, shadow: true });
+        TableKit.disc(c, x, y, PR * .78, cols, { shadow: false, glow });
+      };
+      if (live) { live.b.filter(b => !b.out).sort((a, b) => a.y - b.y).forEach(b => puck(b.x, b.y, b.o)); return; }
+      S.pucks.slice().sort((a, b) => a.y - b.y).forEach(k => puck(k.x, k.y, k.o));
+      if (ui.idle) puck(S.x[S.turn], LY, S.turn, true);
+    },
+    hud(S, n) { return TableKit.sides(S, n, { score: k => S.tot[k], line: k => `${4 - S.thrown[k]} weight${4 - S.thrown[k] === 1 ? '' : 's'} left` }, k => k ? '#2f63c9' : '#c8352b'); },
+    tip: S => 'Drag along the near end to line up, pull back from the weight and let go. Furthest weight scores; hang one off the end for 4.',
+    foot: S => `Frame ${S.frameNo} · first to ${S.len} · weights must pass the first line`
+  };
+})());
+Games.shuffleboard = Shuffleboard;
+
+/* ============================================================================
+   CURLING: slide granite stones down the ice, choose the curl, hold to sweep.
+   Closest to the button scores.
+   ============================================================================ */
+const Curling = TableKit.make((() => {
+  const SX = 2.37, TEE = -2, HR = 1.83, SR = 0.16, LY = 5.6, HOG = 3.2, BACK = TEE - HR, FR = 1.15;
+  const dist = s => Math.hypot(s.x, s.y - TEE);
+  function endScore(stones) {
+    const inH = stones.filter(s => dist(s) - SR < HR).sort((a, b) => dist(a) - dist(b));
+    if (!inH.length) return { w: -1, pts: 0 };
+    const w = inH[0].o, k = inH.findIndex(s => s.o !== w);
+    return { w, pts: k < 0 ? inH.length : k };
+  }
+  function world(S, shot, sound) {
+    const W = FlickKit.world({ fr: FR, e: 0.85 });
+    W.b = S.stones.map((s, i) => ({ id: i, o: s.o, x: s.x, y: s.y, vx: 0, vy: 0, r: SR, m: 1 }));
+    const me = { id: 's', o: shot.p, x: shot.x, y: shot.y, vx: shot.vx, vy: shot.vy, r: SR, m: 1, shot: true, spin: shot.spin !== undefined ? shot.spin : S.spin[shot.p] };
+    W.b.push(me); W.sweep = false; W.swept = 0;
+    if (sound) W.hit = (a, c, v) => FlickKit.clack('clack', v / 2.5);
+    W.after = () => {
+      for (const b of W.b) {
+        if (b.out) continue;
+        const sp = Math.hypot(b.vx, b.vy);
+        if (b.shot && sp > 0.05) {
+          const sw = W.sweep && b === me;
+          if (sw) { const k = (sp + FR * 0.4 * FlickKit.DT) / sp; b.vx *= k; b.vy *= k; W.swept++; if (sound && W.swept % 40 === 1) Sfx.play('sweep'); }
+          const a = b.spin * 0.07 * (1 + 1.4 / (sp + 0.3)) * (sw ? 0.5 : 1), vx = b.vx, vy = b.vy;
+          b.vx += -vy / sp * a * FlickKit.DT; b.vy += vx / sp * a * FlickKit.DT;
+        }
+        if (Math.abs(b.x) > SX - SR * .2 || b.y < BACK - SR - .35) { b.out = 'out'; }
+      }
+    };
+    return W;
+  }
+  const remain = W => W.b.filter(b => !b.out && b.y <= HOG && b.y >= BACK - SR).map(b => ({ o: b.o, x: b.x, y: b.y }));
+  return {
+    id: 'curling', ns: 'Curling', title: 'Curling', icon: '🥌', aiName: 'Skip Mhairi', names2p: ['Red', 'Yellow'],
+    lengths: [{ label: 'Quick: 4 stones each, 4 ends', value: 'quick' }, { label: 'Long: 6 stones each, 6 ends', value: 'long' }],
+    view: { x0: -2.6, y0: -4.3, w: 5.2, h: 10.6 }, squash: 0.62, vmax: 5.4, fr: FR, pull: 2.2, hudH: 240, maxGuide: 14,
+    init(len) { return { stones: [], thrown: [0, 0], x: [0, 0], spin: [1, -1], tot: [0, 0], endNo: 1, hammer: 1, per: len === 'long' ? 6 : 4, ends: len === 'long' ? 6 : 4, turn: 0 }; },
+    launcher: S => ({ x: S.x[S.turn], y: LY, r: SR }),
+    back: () => ({ x: 0, y: 1 }), validDir: (S, dx, dy) => dy < -0.5, badDirMsg: 'Send it down the ice.',
+    slideZone: (S, q) => q.y > 4.6, slideTo: (S, q) => { S.x[S.turn] = Math.max(-1.6, Math.min(1.6, q.x)); },
+    hint: S => ({ circles: S.stones.map(s => ({ x: s.x, y: s.y, r: SR, d: 1 })) }),
+    applyAI(S, c, k, from) { S.x[S.turn] = from.x + (c.x - from.x) * k; if (k >= 1) S.spin[S.turn] = c.spin; },
+    hold(W, on) { if (W) W.sweep = on; },
+    movingTip: () => 'Hold your finger on the ice to sweep: the stone runs further and curls less.',
+    world, shootSfx: 'sweep',
+    settle(S, W) {
+      const p = S.turn, s = W.b.find(b => b.shot);
+      S.stones = remain(W); S.thrown[p]++;
+      const msg = s.out ? 'Through the house and out.' : s.y > HOG ? "Hogged: it didn't reach the line." : dist(s) - SR < HR ? 'In the house.' : 'A guard.';
+      if (S.thrown[0] + S.thrown[1] >= 2 * S.per) return { next: 'round', msg };
+      const o = 1 - p; return { next: S.thrown[o] < S.per ? o : p, msg };
+    },
+    endRound(S, n) {
+      const f = endScore(S.stones); if (f.w >= 0) { S.tot[f.w] += f.pts; S.hammer = 1 - f.w; }
+      const last = S.endNo >= S.ends && S.tot[0] !== S.tot[1];
+      const html = `<p>${f.w < 0 ? 'A blank end: nothing in the house.' : `${n[f.w]} ${S.mode === 'ai' && f.w === 0 ? 'score' : 'scores'} <b>${f.pts}</b>.`}</p><p class="mt-1 text-amber-200">${n[0]} ${S.tot[0]} · ${n[1]} ${S.tot[1]} <span class="text-amber-100/60">(end ${S.endNo} of ${S.ends}${S.endNo >= S.ends && !last ? ', extra end' : ''})</span></p>`;
+      return { over: last, winner: S.tot[0] > S.tot[1] ? 0 : 1, title: `End ${S.endNo}`, html, next: 'Next end' };
+    },
+    nextRound(S) { S.endNo++; S.stones = []; S.thrown = [0, 0]; S.turn = 1 - S.hammer; },
+    candidates(S, p) {
+      const out = [];
+      const targets = [[0, TEE], [.4, TEE + .3], [-.4, TEE + .3], [0, TEE + .9], [.5, TEE - .3], [-.5, TEE - .3], [0, TEE + 2.2], [.6, TEE + 2]];
+      S.stones.filter(s => s.o !== p).forEach(s => targets.push([s.x, s.y, 1]));
+      for (const x of [-.8, 0, .8]) for (const spin of [1, -1]) for (const [tx, ty, hit] of targets) for (const off of [-.5, -.25, 0, .25, .5]) {
+        const ax = tx + off - spin * .15, dx = ax - x, dy = ty - LY, d = Math.hypot(dx, dy);
+        const vs = hit ? [Math.sqrt(2 * FR * (d + 1.2)), Math.sqrt(2 * FR * (d + 3))] : [Math.sqrt(2 * FR * d) * 1.0];
+        vs.forEach(v => out.push({ x, y: LY, vx: dx / d * Math.min(5.4, v), vy: dy / d * Math.min(5.4, v), spin }));
+      }
+      return out;
+    },
+    aiCap: 240,
+    score(S, W, p) {
+      const st = remain(W), f = endScore(st);
+      let e = f.w === p ? f.pts * 10 : f.w === 1 - p ? -f.pts * 10 : 0;
+      st.forEach(s => { const d = dist(s); if (d - SR < HR) e += (s.o === p ? 1 : -1) * (HR - d) * 2; else if (s.y < HOG && s.y > TEE + HR && Math.abs(s.x) < .8) e += s.o === p ? .8 : -.3; });
+      return e;
+    },
+    paint(c) {
+      c.fillStyle = '#e9f1f6'; c.fillRect(-2.6, -4.3, 5.2, 10.6);
+      const g = c.createLinearGradient(-SX, 0, SX, 0); g.addColorStop(0, '#dfe9f0'); g.addColorStop(.5, '#f7fbfd'); g.addColorStop(1, '#dfe9f0');
+      c.fillStyle = g; c.fillRect(-SX, -4.3, 2 * SX, 10.6);
+      c.fillStyle = 'rgba(120,150,175,.12)'; for (let i = 0; i < 400; i++) c.fillRect(Math.sin(i * 12.9898) * SX, -4.3 + ((i * 7.31) % 10.6), .03, .03);
+      [[HR, '#1f4fb4'], [1.22, '#f7fbfd'], [.61, '#c62828'], [.15, '#f7fbfd']].forEach(([r, col]) => { c.fillStyle = col; c.beginPath(); c.arc(0, TEE, r, 0, 7); c.fill(); });
+      c.strokeStyle = 'rgba(30,40,60,.5)'; c.lineWidth = .03;
+      c.beginPath(); c.moveTo(-SX, TEE); c.lineTo(SX, TEE); c.moveTo(0, -4.3); c.lineTo(0, 6.3); c.moveTo(-SX, BACK); c.lineTo(SX, BACK); c.stroke();
+      c.strokeStyle = '#c62828'; c.lineWidth = .08; c.beginPath(); c.moveTo(-SX, HOG); c.lineTo(SX, HOG); c.stroke();
+      c.fillStyle = '#5a3a24'; c.fillRect(-2.6, -4.3, .23, 10.6); c.fillRect(2.37, -4.3, .23, 10.6);
+    },
+    draw(c, S, live, ui) {
+      const stone = (x, y, o, spin, glow) => {
+        TableKit.disc(c, x, y, SR, ['#e9e9ee', '#9aa0aa', '#4b5059'], { side: SR * .55, rings: [.82] });
+        TableKit.disc(c, x, y, SR * .62, o ? ['#fff2a0', '#f2c618', '#7f6407'] : ['#ff9a8a', '#d32f2f', '#6b0f0f'], { shadow: false, glow });
+        if (spin) { c.strokeStyle = 'rgba(0,0,0,.6)'; c.lineWidth = .025; c.beginPath(); c.arc(x, y, SR * .35, spin > 0 ? 0 : Math.PI, spin > 0 ? Math.PI * 1.4 : Math.PI * 2.4, spin < 0); c.stroke(); }
+      };
+      if (live) {
+        live.b.filter(b => !b.out).sort((a, b) => a.y - b.y).forEach(b => stone(b.x, b.y, b.o, b.shot ? b.spin : 0));
+        const me = live.b.find(b => b.shot);
+        if (live.sweep && me && !me.out && (me.vx || me.vy)) { c.strokeStyle = 'rgba(80,120,170,.5)'; c.lineWidth = .05; for (let k = 0; k < 4; k++) { const yy = me.y - SR * 2.2 - k * .12; c.beginPath(); c.moveTo(me.x - SR * 1.4, yy); c.lineTo(me.x + SR * 1.4, yy + Math.sin(performance.now() / 60 + k) * .06); c.stroke(); } }
+        return;
+      }
+      S.stones.slice().sort((a, b) => a.y - b.y).forEach(s => stone(s.x, s.y, s.o));
+      if (ui.idle) stone(S.x[S.turn], LY, S.turn, S.spin[S.turn], true);
+    },
+    controls(S, mine) { return mine ? `<span class="text-xs text-amber-100/70">Curl:</span>${Util.btn(`${S.spin[S.turn] < 0 ? '● ' : ''}↺ To the left`, 'Curling.spin(-1)')}${Util.btn(`${S.spin[S.turn] > 0 ? '● ' : ''}↻ To the right`, 'Curling.spin(1)')}` : ''; },
+    hud(S, n) { return TableKit.sides(S, n, { score: k => S.tot[k], line: k => `${S.per - S.thrown[k]} stone${S.per - S.thrown[k] === 1 ? '' : 's'} left${S.hammer === k ? ' · hammer' : ''}` }, k => k ? '#f2c618' : '#d32f2f'); },
+    tip: S => 'Pick a curl, drag along the bottom to line up, then pull back and let go. Hold the ice while it slides to sweep.',
+    foot: S => `End ${S.endNo} of ${S.ends} · must cross the red hog line`
+  };
+})());
+Curling.spin = d => { const S = Curling._test.S; if (!S || S.phase !== 'idle') return; S.spin[S.turn] = d; Curling.render(); };
+Games.curling = Curling;
+
+/* ============================================================================
+   PÉTANQUE: lob steel boules at the jack. The player who isn't closest throws.
+   ============================================================================ */
+const Petanque = TableKit.make((() => {
+  const TX = 5, TY = 9, BR = 0.38, JR = 0.17, SX = 0, SY = 7.4, FR = 6, DMAX = 15.5;
+  const FRAC = { point: 0.55, shoot: 0.9 };
+  const d2j = (b, j) => Math.hypot(b.x - j.x, b.y - j.y);
+  function holder(S, boules, jack) {
+    if (!jack || !boules.length) return -1;
+    return boules.reduce((a, b) => d2j(b, jack) < d2j(a, jack) ? b : a).o;
+  }
+  function flight(S, shot) {
+    const T = Math.hypot(shot.vx, shot.vy), dx = shot.vx / (T || 1), dy = shot.vy / (T || 1), style = shot.style || S.style[shot.p], f = FRAC[style];
+    let lx = shot.x + dx * T * f, ly = shot.y + dy * T * f, v = Math.sqrt(2 * FR * (1 - f) * T);
+    if (style === 'shoot') { // landing on (or just in front of) a boule knocks it hard
+      const tgt = S.boules.concat(S.jack ? [Object.assign({ r: JR }, S.jack)] : []).find(b => Math.hypot(b.x - lx, b.y - ly) < (b.r || BR) + BR + 0.25);
+      if (tgt) { v = 7 + T * 0.25; const k = (tgt.r || BR) + BR + 0.02, ux = lx - tgt.x, uy = ly - tgt.y, L = Math.hypot(ux, uy) || 1; if (L < k) { lx = tgt.x + ux / L * k; ly = tgt.y + uy / L * k; } }
+    }
+    return Object.assign({}, shot, { x: lx, y: ly, vx: dx * v, vy: dy * v, style, fly: { x0: shot.x, y0: shot.y, x1: lx, y1: ly, h: style === 'shoot' ? 3.2 : 2, ms: 380 + T * 22 } });
+  }
+  function world(S, shot, sound) {
+    const W = FlickKit.world({ fr: FR, e: 0.75 });
+    W.b = S.boules.map((b, i) => ({ id: i, o: b.o, x: b.x, y: b.y, vx: 0, vy: 0, r: BR, m: 1 }));
+    if (S.jack) W.b.push({ id: 'j', jack: true, x: S.jack.x, y: S.jack.y, vx: 0, vy: 0, r: JR, m: 0.35 });
+    W.b.push({ id: 's', o: shot.p, x: shot.x, y: shot.y, vx: shot.vx, vy: shot.vy, r: BR, m: 1, shot: true });
+    if (sound) W.hit = (a, c, v) => FlickKit.clack('clack', v / 6);
+    W.after = () => { for (const b of W.b) if (!b.out && (Math.abs(b.x) > TX || Math.abs(b.y) > TY)) b.out = 'dead'; };
+    return W;
+  }
+  const after = W => { const j = W.b.find(b => b.jack); return { boules: W.b.filter(b => !b.out && !b.jack).map(b => ({ o: b.o, x: b.x, y: b.y })), jack: j && !j.out ? { x: j.x, y: j.y } : null }; };
+  function nextThrower(S) {
+    const h = holder(S, S.boules, S.jack);
+    if (h < 0) return S.left[1 - S.turn] > 0 ? 1 - S.turn : S.turn;
+    const o = 1 - h; return S.left[o] > 0 ? o : h;
+  }
+  function placeJack(S) { S.jack = { x: (Math.random() - .5) * 4, y: -2 - Math.random() * 4.5 }; }
+  return {
+    id: 'petanque', ns: 'Petanque', title: 'Pétanque', icon: '⚫', aiName: 'Monsieur Gilles', names2p: ['Silver', 'Bronze'],
+    lengths: [{ label: 'Quick: first to 7', value: 7 }, { label: 'Full: first to 13', value: 13 }],
+    view: { x0: -5.3, y0: -9.3, w: 10.6, h: 18.6 }, squash: 0.8, vmax: DMAX, fr: FR, pull: 3.2, travel: v => v, maxGuide: 20,
+    init(len) { const S = { boules: [], left: [3, 3], style: ['point', 'point'], tot: [0, 0], endNo: 1, first: 0, turn: 0 }; placeJack(S); return S; },
+    launcher: S => ({ x: SX, y: SY, r: BR }),
+    back: () => ({ x: 0, y: 1 }), validDir: (S, dx, dy) => dy < 0, badDirMsg: 'Throw towards the jack.',
+    flight, world, shootSfx: 'swish', hint: () => ({ circles: [] }),
+    applyAI(S, c, k) { if (k >= 1) S.style[S.turn] = c.style; },
+    drawAim(c, S, a, pw) {
+      const T = pw * DMAX, f = FRAC[S.style[S.turn]], lx = SX + Math.cos(a) * T * f, ly = SY + Math.sin(a) * T * f, ex = SX + Math.cos(a) * T, ey = SY + Math.sin(a) * T;
+      c.strokeStyle = 'rgba(255,240,200,.9)'; c.lineWidth = .06; c.beginPath(); c.arc(lx, ly, BR * .9, 0, 7); c.stroke();
+      c.beginPath(); c.moveTo(lx - .25, ly); c.lineTo(lx + .25, ly); c.moveTo(lx, ly - .25); c.lineTo(lx, ly + .25); c.stroke();
+      if (S.style[S.turn] === 'point') { c.setLineDash([.12, .12]); c.beginPath(); c.arc(ex, ey, BR, 0, 7); c.stroke(); c.setLineDash([]); }
+    },
+    settle(S, W) {
+      const p = S.turn, r = after(W), s = W.b.find(b => b.shot);
+      S.boules = r.boules; S.left[p]--;
+      if (!r.jack) {
+        const a = S.left[0], b = S.left[1];
+        S.endRes = a && b ? { w: -1, pts: 0, why: 'The jack went out with boules left on both sides: no score.' } : a || b ? { w: a ? 0 : 1, pts: a || b, why: 'The jack went out: the side with boules left scores one each.' } : { w: -1, pts: 0, why: 'The jack went out.' };
+        S.jack = null; return { next: 'round', msg: 'The jack is out!' };
+      }
+      S.jack = r.jack;
+      if (S.left[0] + S.left[1] === 0) return { next: 'round', msg: s.out ? 'Out of bounds.' : '' };
+      const h = holder(S, S.boules, S.jack), n = nextThrower(S);
+      return { next: n, msg: s.out ? 'Out of bounds: that boule is dead.' : h === p ? 'Holding the point!' : '' };
+    },
+    endRound(S, n) {
+      let res = S.endRes;
+      if (!res) {
+        const h = holder(S, S.boules, S.jack);
+        if (h < 0) res = { w: -1, pts: 0, why: 'No boules left in play.' };
+        else { const opp = S.boules.filter(b => b.o !== h), best = opp.length ? Math.min(...opp.map(b => d2j(b, S.jack))) : Infinity; res = { w: h, pts: S.boules.filter(b => b.o === h && d2j(b, S.jack) < best).length }; }
+      }
+      if (res.w >= 0) S.tot[res.w] += res.pts;
+      S.lastW = res.w; S.endRes = null;
+      const over = Math.max(...S.tot) >= S.len;
+      const html = `<p>${res.why ? res.why + ' ' : ''}${res.w >= 0 ? `${n[res.w]} ${S.mode === 'ai' && res.w === 0 ? 'score' : 'scores'} <b>${res.pts}</b>.` : ''}</p><p class="mt-1 text-amber-200">${n[0]} ${S.tot[0]} · ${n[1]} ${S.tot[1]} <span class="text-amber-100/60">(first to ${S.len})</span></p>`;
+      return { over, winner: S.tot[0] > S.tot[1] ? 0 : 1, title: `End ${S.endNo}`, html, next: 'Next end' };
+    },
+    nextRound(S) { S.endNo++; S.boules = []; S.left = [3, 3]; placeJack(S); S.turn = S.lastW >= 0 ? S.lastW : 1 - S.first; S.first = S.turn; },
+    candidates(S, p) {
+      const out = [], j = S.jack; if (!j) return out;
+      const push = (tx, ty, style, k = 1) => { const dx = tx - SX, dy = ty - SY, d = Math.hypot(dx, dy), T = Math.min(DMAX, d / (style === 'shoot' ? FRAC.shoot : 1) * k); out.push({ x: SX, y: SY, vx: dx / d * T, vy: dy / d * T, style }); };
+      for (let a = 0; a < 12; a++) for (const r of [0.15, 0.5, 0.9]) push(j.x + Math.cos(a * Math.PI / 6) * r, j.y + Math.sin(a * Math.PI / 6) * r, 'point');
+      [0.97, 1, 1.03].forEach(k => push(j.x, j.y + 0.6, 'point', k));
+      S.boules.filter(b => b.o !== p).forEach(b => { for (const off of [-.2, 0, .2]) push(b.x + off, b.y + .15, 'shoot'); });
+      push(j.x, j.y, 'shoot');
+      return out;
+    },
+    score(S, W, p) {
+      const r = after(W), left = S.left.slice(); left[p]--;
+      if (!r.jack) return left[1 - p] ? -20 : left[p] ? 20 : 0;
+      const mine = r.boules.filter(b => b.o === p).map(b => d2j(b, r.jack)).sort((a, b) => a - b), theirs = r.boules.filter(b => b.o !== p).map(b => d2j(b, r.jack)).sort((a, b) => a - b);
+      const best = theirs.length ? theirs[0] : 99;
+      if (mine.length && mine[0] < best) return 10 + mine.filter(d => d < best).length * 6 + (best - mine[0]) * 2;
+      return -(theirs.filter(d => d < (mine[0] || 99)).length * 6) - (mine.length ? mine[0] - best : 4);
+    },
+    paint(c) {
+      c.fillStyle = '#5a4a36'; c.fillRect(-5.3, -9.3, 10.6, 18.6);
+      const g = c.createRadialGradient(0, -2, 1, 0, 0, 12); g.addColorStop(0, '#d8c3a0'); g.addColorStop(1, '#b49a72');
+      c.fillStyle = g; c.fillRect(-TX, -TY, 2 * TX, 2 * TY);
+      let sd = 17; const rnd = () => (sd = (sd * 16807) % 2147483647) / 2147483647;
+      for (let i = 0; i < 2600; i++) { const x = -TX + rnd() * 2 * TX, y = -TY + rnd() * 2 * TY, r = .03 + rnd() * .07; c.fillStyle = `rgba(${rnd() < .5 ? '90,70,45' : '245,235,215'},${.2 + rnd() * .35})`; c.beginPath(); c.arc(x, y, r, 0, 7); c.fill(); }
+      c.strokeStyle = 'rgba(250,245,230,.85)'; c.lineWidth = .07; c.strokeRect(-TX + .05, -TY + .05, 2 * TX - .1, 2 * TY - .1);
+      c.strokeStyle = 'rgba(250,245,230,.9)'; c.lineWidth = .08; c.beginPath(); c.arc(SX, SY, .9, 0, 7); c.stroke();
+    },
+    draw(c, S, live, ui) {
+      const boule = (x, y, o, glow, scale = 1) => {
+        TableKit.disc(c, x, y, BR * scale, o ? ['#e8c79a', '#8c5f30', '#3b2510'] : ['#ffffff', '#b8c0c8', '#4c545c'], { glow, rings: o ? [.55, .82] : [.7], ringCol: 'rgba(0,0,0,.35)' });
+      };
+      const jack = (x, y) => TableKit.disc(c, x, y, JR, ['#ffd27a', '#e0662c', '#7a2a0c']);
+      const items = live ? live.b.filter(b => !b.out) : S.boules.map(b => ({ x: b.x, y: b.y, o: b.o, r: BR })).concat(S.jack ? [{ x: S.jack.x, y: S.jack.y, jack: true }] : []);
+      items.sort((a, b) => a.y - b.y).forEach(b => b.jack ? jack(b.x, b.y) : boule(b.x, b.y, b.o));
+      if (ui.flying) { const f = ui.flying; c.fillStyle = 'rgba(0,0,0,.25)'; c.beginPath(); c.arc(f.x, f.y, BR * .9, 0, 7); c.fill(); boule(f.x, f.y - f.z, f.p, false, 1 + f.z * .12); }
+      if (ui.idle && S.left[S.turn] > 0) boule(SX, SY, S.turn, true);
+    },
+    controls(S, mine) { return mine ? `<span class="text-xs text-amber-100/70">Throw:</span>${Util.btn(`${S.style[S.turn] === 'point' ? '● ' : ''}Point (roll)`, "Petanque.style('point')")}${Util.btn(`${S.style[S.turn] === 'shoot' ? '● ' : ''}Shoot (knock away)`, "Petanque.style('shoot')")}` : ''; },
+    hud(S, n) {
+      const h = holder(S, S.boules, S.jack);
+      return TableKit.sides(S, n, { score: k => S.tot[k], line: k => `${S.left[k]} boule${S.left[k] === 1 ? '' : 's'} left${h === k ? ' · holding' : ''}` }, k => k ? 'radial-gradient(circle at 35% 30%,#e8c79a,#5c3a18)' : 'radial-gradient(circle at 35% 30%,#fff,#7f8790)');
+    },
+    tip: S => 'Pick Point or Shoot, press your boule, pull back to aim and set the distance, then let go. The cross marks where it lands.',
+    foot: S => `End ${S.endNo} · first to ${S.len}`
+  };
+})());
+Petanque.style = st => { const S = Petanque._test.S; if (!S || S.phase !== 'idle') return; S.style[S.turn] = st; Petanque.render(); };
+Games.petanque = Petanque;
+
+/* ============================================================================
+   PENNY FOOTBALL: flick a coin through the gap between the other two.
+   ============================================================================ */
+const PennyFootball = TableKit.make((() => {
+  const TX = 6, TY = 10, GW = 1.5, CR = 0.55, FR = 7;
+  const kick = k => k === 0 ? [{ x: 0, y: 6 }, { x: -1.4, y: 7.9 }, { x: 1.4, y: 7.9 }] : [{ x: 0, y: -6 }, { x: 1.4, y: -7.9 }, { x: -1.4, y: -7.9 }];
+  const dir = p => p === 0 ? -1 : 1;              // the way each side attacks (screen y)
+  const cross = (ax, ay, bx, by, cx, cy, dx, dy) => { const d = (bx - ax) * (dy - cy) - (by - ay) * (dx - cx); if (Math.abs(d) < 1e-9) return false; const t = ((cx - ax) * (dy - cy) - (cy - ay) * (dx - cx)) / d, u = ((cx - ax) * (by - ay) - (cy - ay) * (bx - ax)) / d; return t >= 0 && t <= 1 && u >= 0 && u <= 1; };
+  function world(S, shot, sound) {
+    const W = FlickKit.world({ fr: FR, e: 0.85 }), sel = shot.sel !== undefined ? shot.sel : S.sel;
+    W.b = S.coins.map((c, i) => ({ id: i, x: c.x, y: c.y, vx: i === sel ? shot.vx : 0, vy: i === sel ? shot.vy : 0, r: CR, m: 1, shot: i === sel }));
+    const others = W.b.filter((_, i) => i !== sel), me = W.b[sel];
+    W.fromHalf = me.y * dir(shot.p) > -0.01; W.p = shot.p;
+    W.passed = false; W.touch = false; W.goal = 0; W.offc = false; me.px = me.x; me.py = me.y;
+    W.hit = (a, c, v) => { W.touch = true; if (sound) FlickKit.clack('clack', v / 8); };
+    W.after = () => {
+      if (!W.touch && !W.passed && cross(me.px, me.py, me.x, me.y, others[0].x, others[0].y, others[1].x, others[1].y)) W.passed = true;
+      me.px = me.x; me.py = me.y;
+      for (const b of W.b) {
+        if (b.out) continue;
+        if (b.y < -TY || b.y > TY) { if (Math.abs(b.x) < GW) { W.goal = b.y < 0 ? -1 : 1; b.out = 'goal'; if (sound) Sfx.play('win'); } else { b.out = 'off'; W.offc = true; } b.vx = b.vy = 0; }
+        else if (Math.abs(b.x) > TX) { b.out = 'off'; W.offc = true; b.vx = b.vy = 0; }
+      }
+    };
+    return W;
+  }
+  /* what a finished flick means for player p */
+  function judge(W, p) {
+    if (W.goal) return W.goal === dir(p) ? (W.fromHalf ? 'goal' : 'long') : 'own';
+    if (W.offc) return 'off';
+    if (W.touch) return 'touch';
+    return W.passed ? 'keep' : 'miss';
+  }
+  const progress = (coins, p) => coins.reduce((a, c) => a + c.y * dir(p), 0) / coins.length * -1;
+  return {
+    id: 'pennyfootball', ns: 'PennyFootball', title: 'Penny Football', icon: '⚽', aiName: 'Smudger', names2p: ['Player 1', 'Player 2'], flip2p: true,
+    lengths: [{ label: 'Quick: first to 3', value: 3 }, { label: 'Full: first to 5', value: 5 }],
+    view: { x0: -6.6, y0: -10.9, w: 13.2, h: 21.8 }, vmax: 17, fr: FR, pull: 4, maxGuide: 22, grab: 1.5,
+    init(len) { return { coins: kick(0), sel: 0, goals: [0, 0], turn: 0 }; },
+    onTurn(S) { if (S.sel === undefined || S.sel === null) S.sel = 0; },
+    pick(S, q) { let best = -1, bd = 1.6; S.coins.forEach((c, i) => { const d = Math.hypot(c.x - q.x, c.y - q.y); if (d < bd) { bd = d; best = i; } }); if (best >= 0 && best !== S.sel) { S.sel = best; return true; } return false; },
+    launcher: S => { const c = S.coins[S.sel]; return { x: c.x, y: c.y, r: CR }; },
+    hint: S => ({ circles: S.coins.filter((_, i) => i !== S.sel).map(c => ({ x: c.x, y: c.y, r: CR, d: 1 })) }),
+    applyAI(S, c) { S.sel = c.sel; },
+    world,
+    settle(S, W) {
+      const p = S.turn, j = judge(W, p), coins = W.b.filter(b => !b.out).map(b => ({ x: b.x, y: b.y }));
+      if (j === 'goal' || j === 'own') {
+        const sc = j === 'goal' ? p : 1 - p; S.goals[sc]++;
+        if (S.goals[sc] >= S.len) { S.winner = sc; return { next: 'game', toast: '⚽ GOAL!' }; }
+        S.coins = kick(1 - sc); S.sel = 0; return { next: 1 - sc, msg: j === 'goal' ? 'GOAL! ⚽' : 'Own goal!', toast: '⚽ GOAL!' };
+      }
+      if (j === 'off' || j === 'long') { S.coins = kick(1 - p); S.sel = 0; return { next: 'other', msg: j === 'long' ? "No goal: you can only score from the other half. Their kick-off." : 'Off the table: their kick-off.' }; }
+      S.coins = coins;
+      if (j === 'keep') return { msg: 'Through the gap: go again.' };
+      S.sel = 0; return { next: 'other', msg: j === 'touch' ? 'Coins touched: turnover.' : 'Missed the gap: turnover.' };
+    },
+    endRound(S, n) { return { over: true, winner: S.winner, html: `${n[0]} ${S.goals[0]} · ${n[1]} ${S.goals[1]}` }; },
+    nextRound() {},
+    candidates(S, p) {
+      const out = [];
+      S.coins.forEach((c, i) => {
+        const o = S.coins.filter((_, k) => k !== i);
+        for (const f of [.3, .5, .7]) {
+          const gx = o[0].x + (o[1].x - o[0].x) * f, gy = o[0].y + (o[1].y - o[0].y) * f, dx = gx - c.x, dy = gy - c.y, d = Math.hypot(dx, dy);
+          if (d < .3) continue;
+          for (const ex of [1.4, 2.6, 4.2]) { const v = Math.min(17, Math.sqrt(2 * FR * (d + ex))); out.push({ x: c.x, y: c.y, vx: dx / d * v, vy: dy / d * v, sel: i }); }
+        }
+        if (c.y * dir(p) > 0) for (const gx of [-.9, 0, .9]) { const ty = dir(p) * (TY + .8), dx = gx - c.x, dy = ty - c.y, d = Math.hypot(dx, dy); for (const ex of [1, 3]) { const v = Math.min(17, Math.sqrt(2 * FR * (d + ex))); out.push({ x: c.x, y: c.y, vx: dx / d * v, vy: dy / d * v, sel: i }); } }
+      });
+      return out;
+    },
+    score(S, W, p) {
+      const j = judge(W, p), coins = W.b.filter(b => !b.out);
+      if (j === 'goal') return 100;
+      if (j === 'own') return -100;
+      if (j === 'off' || j === 'long') return -12;
+      const prog = coins.length === 3 ? progress(coins, p) : 0;
+      if (j === 'keep') {
+        const ds = [[0, 1], [1, 2], [0, 2]].map(([a, b]) => Math.hypot(coins[a].x - coins[b].x, coins[a].y - coins[b].y)), gapOk = ds.filter(d => d > 2.6 && d < 6).length;
+        return 15 + prog * 1.5 + gapOk * 2;
+      }
+      return -15 + prog * 1.2;
+    },
+    paint(c) {
+      TableKit.wood(c, -6.6, -10.9, 13.2, 21.8, '#5b3317', '#2e180a');
+      const g = c.createLinearGradient(-TX, 0, TX, 0); g.addColorStop(0, '#caa06a'); g.addColorStop(.5, '#e3c08a'); g.addColorStop(1, '#caa06a');
+      c.fillStyle = g; c.fillRect(-TX, -TY, 2 * TX, 2 * TY);
+      TableKit.grain(c, -TX, -TY, 2 * TX, 2 * TY, 'rgba(110,65,25,', 30, true, 8);
+      c.strokeStyle = 'rgba(255,255,255,.55)'; c.lineWidth = .07;
+      c.beginPath(); c.moveTo(-TX, 0); c.lineTo(TX, 0); c.stroke(); c.beginPath(); c.arc(0, 0, 2, 0, 7); c.stroke();
+      [-1, 1].forEach(s => { c.strokeRect(-3, s > 0 ? TY - 3 : -TY, 6, 3); });
+      [-1, 1].forEach(s => { // finger goalposts
+        [-GW, GW].forEach(x => { TableKit.disc(c, x, s * (TY + .25), .28, ['#ffe0c8', '#e9b08c', '#9a6046']); });
+        c.strokeStyle = 'rgba(255,255,255,.9)'; c.lineWidth = .1; c.beginPath(); c.moveTo(-GW, s * TY); c.lineTo(GW, s * TY); c.stroke();
+      });
+    },
+    draw(c, S, live, ui) {
+      const coin = (x, y, glow, sel) => TableKit.disc(c, x, y, CR, sel ? ['#fff4c8', '#d9a84a', '#7a5414'] : ['#f2d6b0', '#b9783e', '#5e3412'], { rings: [.8], ringCol: 'rgba(80,45,10,.45)', glow });
+      if (live) { live.b.forEach(b => { if (!b.out) coin(b.x, b.y); }); return; }
+      S.coins.forEach((k, i) => coin(k.x, k.y, ui.idle && i === S.sel, ui.idle && i === S.sel));
+      if (ui.idle) { const o = S.coins.filter((_, i) => i !== S.sel); c.setLineDash([.15, .15]); c.strokeStyle = 'rgba(255,255,255,.45)'; c.lineWidth = .05; c.beginPath(); c.moveTo(o[0].x, o[0].y); c.lineTo(o[1].x, o[1].y); c.stroke(); c.setLineDash([]); }
+    },
+    hud(S, n) { return TableKit.sides(S, n, { score: k => S.goals[k], line: k => S.turn === k ? 'On the ball' : (S.mode === '2p' ? (k ? 'Attacks downwards' : 'Attacks upwards') : '') }, k => k ? '#5e8fd8' : '#e0b04a'); },
+    tip: S => 'Touch a coin to pick it, pull back and let go. Go between the other two (the dotted line) to keep the ball. Score through the goal at the top.',
+    foot: S => `First to ${S.len}`
+  };
+})());
+Games.pennyfootball = PennyFootball;
+
+/* ============================================================================
+   TABLE SKITTLES (Devil Among the Tailors): swing the ball round the pole.
+   ============================================================================ */
+const Skittles = TableKit.make((() => {
+  const TX = 4.6, TY = 6.2, BR = 0.32, PR = 0.24, OM = 2.6, START = { x: 0, y: 5 }, POLE = { x: 0, y: 0, r: 0.22 };
+  const SPOTS = (() => { const s = [], cx = 3.1, cy = 0, d = 1.3; for (let r = -1; r <= 1; r++) for (let c = -1; c <= 1; c++) s.push({ x: cx + (r + c) * d * .72, y: cy + (r - c) * d * .72 }); return s; })();
+  function world(S, shot, sound) {
+    const W = FlickKit.world({ fr: 10, e: 0.5, ePeg: 0.5, pegs: [POLE], bx: TX, by: TY, eWall: 0.5 });
+    W.b = SPOTS.map((p, i) => S.pins[i] ? { id: i, pin: true, x: p.x, y: p.y, vx: 0, vy: 0, r: PR, m: 0.8, sx: p.x, sy: p.y } : null).filter(Boolean);
+    const ball = { id: 'b', ball: true, x: shot.x, y: shot.y, vx: shot.vx, vy: shot.vy, r: BR, m: 1.3, fr: 0.2 };
+    W.b.push(ball);
+    W.swept = 0; W.lastA = Math.atan2(ball.y - POLE.y, ball.x - POLE.x); W.foul = false; W.t = 0;
+    W.hit = (a, c, v) => {
+      const pins = [a, c].filter(x => x && x.pin);
+      if (v > 1.1 || a.ball || (c && c.ball)) pins.forEach(x => { x.down = true; });
+      if (pins.length && (a.ball || (c && c.ball)) && Math.abs(W.swept) < Math.PI * 1.25) W.foul = true;
+      if (sound) FlickKit.clack(c ? 'clack' : 'thud', v / 8);
+    };
+    W.after = () => {
+      W.t += FlickKit.DT;
+      if (!ball.out) {
+        ball.vx += -OM * OM * (ball.x - POLE.x) * FlickKit.DT; ball.vy += -OM * OM * (ball.y - POLE.y) * FlickKit.DT;
+        const a = Math.atan2(ball.y - POLE.y, ball.x - POLE.x); let da = a - W.lastA; da = Math.atan2(Math.sin(da), Math.cos(da)); W.swept += da; W.lastA = a;
+        if (Math.abs(W.swept) > Math.PI * 2.1 || W.t > 4.5) { ball.out = 'caught'; ball.vx = ball.vy = 0; }
+      }
+      for (const b of W.b) if (b.pin && !b.down && Math.hypot(b.x - b.sx, b.y - b.sy) > 0.3) b.down = true;
+    };
+    return W;
+  }
+  function knocked(W) { return W.b.filter(b => b.pin && b.down).map(b => b.id); }
+  return {
+    id: 'skittles', ns: 'Skittles', title: 'Table Skittles', icon: '🎳', aiName: 'Old Jack', names2p: ['Player 1', 'Player 2'],
+    lengths: [{ label: 'Quick: 5 rounds', value: 5 }, { label: 'Full: 10 rounds', value: 10 }],
+    view: { x0: -5, y0: -6.6, w: 10, h: 13.2 }, vmax: 13, fr: 0.2, pull: 3, maxGuide: 3,
+    init(len) { return { pins: Array(9).fill(true), balls: 3, tot: [0, 0], rnd: 1, turn: 0, turnPins: 0 }; },
+    launcher: S => ({ x: START.x, y: START.y, r: BR }),
+    world, simSteps: 1400,
+    drawAim(c, S, a, pw) {
+      const v = pw * 13, vx = Math.cos(a) * v, vy = Math.sin(a) * v, rx = START.x - POLE.x, ry = START.y - POLE.y;
+      c.setLineDash([.12, .14]); c.strokeStyle = 'rgba(255,230,160,.6)'; c.lineWidth = .05; c.beginPath();
+      for (let t = 0; t <= 2 * Math.PI / OM * 1.02; t += .02) { const x = POLE.x + rx * Math.cos(OM * t) + vx / OM * Math.sin(OM * t), y = POLE.y + ry * Math.cos(OM * t) + vy / OM * Math.sin(OM * t); t ? c.lineTo(x, y) : c.moveTo(x, y); }
+      c.stroke(); c.setLineDash([]);
+    },
+    settle(S, W) {
+      const p = S.turn, k = W.foul ? [] : knocked(W);
+      if (W.foul) { S.msg = ''; S.balls--; }
+      else { k.forEach(i => { S.pins[i] = false; }); S.tot[p] += k.length; S.turnPins += k.length; S.balls--; }
+      let msg = W.foul ? 'Hit before going round the pole: no score, pins stood back up.' : k.length ? `${k.length} pin${k.length > 1 ? 's' : ''} down!` : 'Missed them all.';
+      if (S.pins.every(x => !x)) { S.pins = Array(9).fill(true); msg = 'A FLOORER! All nine down, setting them up again.'; }
+      if (S.balls > 0) return { msg };
+      const done = p === 1 && S.rnd >= S.len;
+      msg += ` That's ${S.turnPins} this turn.`;
+      S.balls = 3; S.pins = Array(9).fill(true); S.turnPins = 0;
+      if (done) return { next: 'game', msg };
+      if (p === 1) S.rnd++;
+      return { next: 'other', msg };
+    },
+    endRound(S, n) { const w = S.tot[0] === S.tot[1] ? -1 : S.tot[0] > S.tot[1] ? 0 : 1; return { over: true, winner: w, html: `${n[0]} ${S.tot[0]} · ${n[1]} ${S.tot[1]} pins` }; },
+    nextRound() {},
+    candidates(S, p) {
+      const out = [];
+      for (let a = 0; a < 360; a += 7.5) for (const v of [5, 6.5, 7.5, 8.5, 9.5, 11]) { const r = a * Math.PI / 180; out.push({ x: START.x, y: START.y, vx: Math.cos(r) * v, vy: Math.sin(r) * v }); }
+      return out;
+    },
+    aiCap: 230,
+    score(S, W) { return W.foul ? -3 : knocked(W).length * 10; },
+    paint(c) {
+      TableKit.wood(c, -5, -6.6, 10, 13.2, '#5b3317', '#2a1609');
+      const g = c.createRadialGradient(0, 0, 1, 0, 0, 8); g.addColorStop(0, '#2c6b48'); g.addColorStop(1, '#173d29');
+      c.fillStyle = g; c.fillRect(-TX, -TY, 2 * TX, 2 * TY);
+      c.fillStyle = 'rgba(255,255,255,.03)'; for (let i = 0; i < 600; i++) c.fillRect(-TX + ((i * 7.7) % (2 * TX)), -TY + ((i * 3.3) % (2 * TY)), .05, .05);
+      c.strokeStyle = 'rgba(255,230,160,.25)'; c.lineWidth = .04;
+      SPOTS.forEach(s => { c.beginPath(); c.arc(s.x, s.y, PR * .9, 0, 7); c.stroke(); });
+      c.fillStyle = 'rgba(0,0,0,.35)'; c.beginPath(); c.arc(POLE.x + .12, POLE.y + .2, POLE.r * 1.4, 0, 7); c.fill();
+      TableKit.disc(c, POLE.x, POLE.y, POLE.r, ['#fff2b8', '#c99a33', '#5e420c']);
+      c.strokeStyle = 'rgba(255,240,200,.35)'; c.beginPath(); c.arc(START.x, START.y, BR * 1.3, 0, 7); c.stroke();
+    },
+    draw(c, S, live, ui) {
+      const pin = (x, y, down) => { if (down) return; TableKit.disc(c, x, y, PR, ['#fffaf0', '#e8d9b8', '#8a7550'], { rings: [.45], ringCol: 'rgba(160,30,30,.75)' }); };
+      const ball = (x, y, glow) => TableKit.disc(c, x, y, BR, ['#e6b08a', '#8a4a22', '#3a1a08'], { glow });
+      if (live) {
+        const b = live.b.find(x => x.ball);
+        live.b.forEach(x => { if (x.pin) { if (x.down) { c.save(); c.globalAlpha = .7; TableKit.disc(c, x.x, x.y, PR * .9, ['#f2e6cc', '#cdbb94', '#7a6644']); c.restore(); } else pin(x.x, x.y); } });
+        if (b && !b.out) { c.strokeStyle = 'rgba(210,200,180,.7)'; c.lineWidth = .05; c.setLineDash([.12, .06]); c.beginPath(); c.moveTo(POLE.x, POLE.y); c.lineTo(b.x, b.y); c.stroke(); c.setLineDash([]); ball(b.x, b.y); }
+        return;
+      }
+      SPOTS.forEach((s, i) => pin(s.x, s.y, !S.pins[i]));
+      if (ui.idle) { c.strokeStyle = 'rgba(210,200,180,.6)'; c.lineWidth = .05; c.setLineDash([.12, .06]); c.beginPath(); c.moveTo(POLE.x, POLE.y); c.lineTo(START.x, START.y); c.stroke(); c.setLineDash([]); ball(START.x, START.y, true); }
+    },
+    hud(S, n) { return TableKit.sides(S, n, { score: k => S.tot[k], line: k => S.turn === k ? `${S.balls} ball${S.balls === 1 ? '' : 's'} left · ${S.turnPins} this turn` : '' }, null); },
+    tip: S => 'Press the ball, pull back and let go. It must swing round the back of the pole before it hits a pin.',
+    foot: S => `Round ${S.rnd} of ${S.len}`
+  };
+})());
+Games.skittles = Skittles;
+
+/* ============================================================================
+   BAGATELLE: fire the ball round the arch and into the scoring cups.
+   ============================================================================ */
+const Bagatelle = TableKit.make((() => {
+  const BX = 4, BOT = 7.6, AC = -4, AR = 4, LANE = 3.2, LTOP = -3.2, R = 0.26, G = 7, START = { x: 3.6, y: 7.1 };
+  const CUPS = [[0, -1.3, 9], [-1.9, -.3, 7], [1.8, -.3, 8], [-2.5, 1.9, 5], [2.3, 1.9, 6], [-1.1, 2.9, 3], [.9, 3.1, 4], [-2, 4.9, 1], [1.4, 5, 2]].map(([x, y, v]) => ({ x, y, v }));
+  const PEGS = (() => {
+    const p = []; CUPS.forEach(c => { for (let k = 0; k <= 6; k++) { const a = k * Math.PI / 6; p.push({ x: c.x + Math.cos(a) * .52, y: c.y + Math.sin(a) * .52, r: .07 }); } });
+    for (let i = 0; i < 6; i++) p.push({ x: -2.6 + i * 1.05 + (i % 2) * .2, y: -3.1 + (i % 2) * .5, r: .07 });
+    for (let i = 0; i < 4; i++) p.push({ x: -1.6 + i * 1.1, y: 6.4, r: .07 });
+    return p;
+  })();
+  const SEGS = [{ x1: -BX, y1: AC, x2: -BX, y2: BOT }, { x1: BX, y1: AC, x2: BX, y2: BOT }, { x1: -BX, y1: BOT, x2: BX, y2: BOT, e: .25 }, { x1: LANE, y1: LTOP, x2: LANE, y2: BOT }];
+  function world(S, shot, sound) {
+    const W = FlickKit.world({ fr: 0.35, e: 0.6, ePeg: 0.45, pegs: PEGS, segs: SEGS, eSeg: .45, g: G });
+    const b = { id: 'b', x: shot.x, y: shot.y, vx: shot.vx, vy: shot.vy, r: R, m: 1, g: true };
+    W.b = [b]; W.t = 0; W.left = false; W.slow = 0; W.res = null;
+    if (sound) { W.hit = (a, c, v) => FlickKit.clack('clack', v / 8); W.wall = (a, v) => { if (v > 1) FlickKit.clack('thud', v / 10); }; }
+    W.after = () => {
+      W.t += FlickKit.DT;
+      if (b.out) return;
+      if (b.y < AC) { const dx = b.x, dy = b.y - AC, d = Math.hypot(dx, dy); if (d > AR - R) { const nx = dx / d, ny = dy / d; b.x = nx * (AR - R); b.y = AC + ny * (AR - R); const vn = b.vx * nx + b.vy * ny; if (vn > 0) { b.vx -= 1.4 * vn * nx; b.vy -= 1.4 * vn * ny; } } }
+      if (b.x < LANE - R) W.left = true;
+      const sp = Math.hypot(b.vx, b.vy);
+      for (const c of CUPS) if (Math.hypot(b.x - c.x, b.y - c.y) < .27 && sp < 3.6) { W.res = c.v; b.out = 'cup'; b.x = c.x; b.y = c.y; b.vx = b.vy = 0; if (sound) Sfx.play('drop'); return; }
+      if (b.y > BOT - R - .04 && sp < .9) W.slow++; else W.slow = 0;
+      if (W.slow > 30 || W.t > 14) { W.res = W.left ? 0 : -1; b.out = 'rest'; b.vx = b.vy = 0; }
+    };
+    return W;
+  }
+  return {
+    id: 'bagatelle', ns: 'Bagatelle', title: 'Bagatelle', icon: '📍', aiName: 'The Colonel', names2p: ['Player 1', 'Player 2'],
+    lengths: [{ label: 'Quick: 5 balls each', value: 5 }, { label: 'Full: 9 balls each', value: 9 }],
+    view: { x0: -4.6, y0: -8.6, w: 9.2, h: 16.8 }, vmax: 17.5, fr: 0.35, pull: 2.4, maxGuide: 3, simSteps: 3000,
+    init(len) { return { left: [len, len], tot: [0, 0], cups: [], turn: 0 }; },
+    launcher: S => ({ x: START.x, y: START.y, r: R }),
+    back: () => ({ x: 0, y: 1 }), fixedDir: () => ({ x: 0, y: -1 }), validDir: () => true,
+    world, shootSfx: 'thud',
+    drawAim(c, S, a, pw) { const y = START.y + R + pw * 1.1; c.strokeStyle = '#c8c8c8'; c.lineWidth = .05; c.beginPath(); for (let k = 0; k <= 10; k++) c.lineTo(START.x + (k % 2 ? .15 : -.15), START.y + R + k * (y - START.y - R) / 10); c.stroke(); },
+    settle(S, W) {
+      const p = S.turn, v = W.res;
+      if (v === -1) return { msg: "Didn't make it round the arch: fire again." };
+      S.left[p]--; S.tot[p] += v; if (v) S.cups.push({ v, p });
+      const msg = v ? `Into the ${v}! 🎯` : 'Down to the bottom: no score.';
+      if (S.left[0] + S.left[1] === 0) return { next: 'game', msg };
+      return { next: S.left[1 - p] > 0 ? 1 - p : p, msg };
+    },
+    endRound(S, n) { const w = S.tot[0] === S.tot[1] ? -1 : S.tot[0] > S.tot[1] ? 0 : 1; return { over: true, winner: w, html: `${n[0]} ${S.tot[0]} · ${n[1]} ${S.tot[1]}` }; },
+    nextRound() {},
+    candidates(S, p) { const out = []; for (let v = 11.6; v <= 17.5; v += 0.12) out.push({ x: START.x, y: START.y, vx: 0, vy: -v }); return out; },
+    aiCap: 60, wobbleK: 1,
+    score(S, W) { return W.res === -1 ? -5 : W.res * 10; },
+    paint(c) {
+      TableKit.wood(c, -4.6, -8.6, 9.2, 16.8, '#4b2410', '#220f05');
+      c.save(); c.beginPath(); c.moveTo(-BX, BOT); c.lineTo(-BX, AC); c.arc(0, AC, AR, Math.PI, 0); c.lineTo(BX, BOT); c.closePath(); c.clip();
+      const g = c.createLinearGradient(0, -8, 0, 8); g.addColorStop(0, '#2a6a47'); g.addColorStop(1, '#14402a'); c.fillStyle = g; c.fillRect(-5, -9, 10, 18);
+      c.fillStyle = 'rgba(255,255,255,.03)'; for (let i = 0; i < 700; i++) c.fillRect(-4 + ((i * 7.7) % 8), -8 + ((i * 3.3) % 16), .04, .04);
+      c.restore();
+      c.strokeStyle = '#c9a13a'; c.lineWidth = .08; c.beginPath(); c.moveTo(-BX, BOT); c.lineTo(-BX, AC); c.arc(0, AC, AR, Math.PI, 0); c.lineTo(BX, BOT); c.stroke();
+      c.strokeStyle = '#6b4a1a'; c.lineWidth = .1; c.beginPath(); c.moveTo(LANE, LTOP); c.lineTo(LANE, BOT); c.stroke();
+      CUPS.forEach(k => {
+        const gg = c.createRadialGradient(k.x, k.y, 0, k.x, k.y, .34); gg.addColorStop(0, '#000'); gg.addColorStop(1, '#3a2a10');
+        c.fillStyle = gg; c.beginPath(); c.arc(k.x, k.y, .34, 0, 7); c.fill(); c.strokeStyle = '#d4af37'; c.lineWidth = .05; c.stroke();
+        c.fillStyle = '#f3d266'; c.font = 'bold .5px Cinzel, serif'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(String(k.v), k.x, k.y - .78);
+      });
+      PEGS.forEach(q => { c.fillStyle = 'rgba(0,0,0,.4)'; c.beginPath(); c.arc(q.x + .03, q.y + .05, q.r, 0, 7); c.fill(); TableKit.disc(c, q.x, q.y, q.r, ['#fff', '#d0d4d8', '#6e757c'], { shadow: false }); });
+    },
+    draw(c, S, live, ui) {
+      const ball = (x, y, glow) => TableKit.disc(c, x, y, R, ['#ffffff', '#d8dde2', '#6b737b'], { glow });
+      S.cups.slice(-12).forEach(k => { const cp = CUPS.find(q => q.v === k.v); c.fillStyle = k.p ? 'rgba(120,170,255,.8)' : 'rgba(255,200,120,.8)'; c.beginPath(); c.arc(cp.x + (Math.random() - .5) * 0, cp.y, .12, 0, 7); c.fill(); });
+      if (live) { const b = live.b[0]; if (!b.out) ball(b.x, b.y); return; }
+      if (ui.idle) ball(START.x, START.y, true);
+      c.fillStyle = '#9a9a9a'; c.fillRect(START.x - .14, START.y + R, .28, .3); c.fillStyle = '#3a2412'; c.fillRect(START.x - .25, START.y + R + .3, .5, .2);
+    },
+    hud(S, n) { return TableKit.sides(S, n, { score: k => S.tot[k], line: k => `${S.left[k]} ball${S.left[k] === 1 ? '' : 's'} left` }, k => k ? '#78aaff' : '#ffc878'); },
+    tip: S => 'Press the plunger at the bottom right, pull it down and let go.',
+    foot: S => 'Cups score their number · the centre cup is 9'
+  };
+})());
+Games.bagatelle = Bagatelle;
+
+/* ============================================================================
+   POOL (EIGHT-BALL): solids or stripes, then the black.
+   ============================================================================ */
+const Pool = TableKit.make((() => {
+  const HX = 2.5, HY = 5, BR = 0.17, FR = 1.15, HEAD = 2.5, FOOT = -2.5;
+  const POCKETS = [[-HX + .07, -HY + .07, .36], [HX - .07, -HY + .07, .36], [-HX + .07, HY - .07, .36], [HX - .07, HY - .07, .36], [-HX - .12, 0, .34], [HX + .12, 0, .34]];
+  const COL = { 1: '#f2c312', 2: '#1f4fb8', 3: '#d42a22', 4: '#5b2a8c', 5: '#ef6c13', 6: '#1c7a3a', 7: '#7a1f1a', 8: '#111' };
+  const colOf = n => COL[n > 8 ? n - 8 : n];
+  const groupOf = n => n === 8 ? 'eight' : n < 8 ? 'solid' : 'stripe';
+  function rack() {
+    // standard look: 1 at the front, 8 in the middle, a stripe and a solid in the back corners
+    const ids = Util.shuffle([2, 3, 4, 5, 6, 9, 10, 11, 12, 13, 14]), d = BR * 2.02;
+    let k = 0; const pick = () => ids[k++];
+    const layout = [[1], [null, null], [null, 8, null], [null, null, null, null], [15, null, null, null, 7]];
+    const balls = [];
+    for (let r = 0; r < 5; r++) for (let c = 0; c <= r; c++) { let n = layout[r][c]; if (n == null) n = pick(); balls.push({ n, x: (c - r / 2) * d, y: FOOT - r * d * .87 }); }
+    return balls;
+  }
+  const validSpot = (S, x, y, region) => Math.abs(x) < HX - BR && Math.abs(y) < HY - BR && (region !== 'kitchen' || y > HEAD) && S.balls.every(b => Math.hypot(b.x - x, b.y - y) > 2 * BR + .01);
+  function world(S, shot, sound) {
+    const W = FlickKit.world({ fr: FR, e: 0.94, bx: HX, by: HY, eWall: 0.75 });
+    W.b = S.balls.map(b => ({ id: b.n, n: b.n, x: b.x, y: b.y, vx: 0, vy: 0, r: BR, m: 1 }));
+    W.b.push({ id: 0, n: 0, cue: true, x: shot.x, y: shot.y, vx: shot.vx, vy: shot.vy, r: BR, m: 1 });
+    W.first = null; W.pots = [];
+    W.hit = (a, c, v) => { if (W.first === null && (a.cue || c.cue)) W.first = a.cue ? c.n : a.n; if (sound) FlickKit.clack('clack', v / 5); };
+    if (sound) W.wall = (a, v) => FlickKit.clack('thud', v / 7);
+    W.after = () => { for (const b of W.b) if (!b.out) for (const [px, py, pr] of POCKETS) if (Math.hypot(b.x - px, b.y - py) < pr) { b.out = 'pot'; b.vx = b.vy = 0; W.pots.push(b.n); if (sound) Sfx.play('drop'); break; } };
+    return W;
+  }
+  /* the rules of a finished shot (pure, used by the AI too) */
+  function judge(S, W, p) {
+    const mine = S.group[p], left = n => S.balls.filter(b => groupOf(b.n) === n).length;
+    const pots = W.pots.filter(n => n), scratch = W.pots.includes(0), eight = pots.includes(8);
+    const cleared = mine && left(mine) === 0;
+    let foul = scratch || W.first === null;
+    if (!foul) {
+      if (!mine) foul = W.first === 8;
+      else foul = cleared ? W.first !== 8 : groupOf(W.first) !== mine;
+    }
+    if (eight) return { end: true, win: cleared && !foul && !S.brk, lose: !(cleared && !foul && !S.brk), foul, pots, respot: S.brk };
+    let assign = null;
+    const legal = pots.filter(n => n !== 8);
+    if (!mine && !foul && legal.length && !S.brk) assign = groupOf(legal[0]);
+    const g = mine || assign;
+    const ownPots = foul ? 0 : legal.filter(n => !g || groupOf(n) === g || (S.brk && !g)).length;
+    return { foul, scratch, pots, assign, cont: !foul && ownPots > 0, ownPots };
+  }
+  return {
+    id: 'pool', ns: 'Pool', title: 'Pool', icon: '🎱', aiName: 'Fast Eddie', names2p: ['Player 1', 'Player 2'],
+    view: { x0: -2.95, y0: -5.45, w: 5.9, h: 10.9 }, vmax: 9.5, fr: FR, pull: 3.2, maxGuide: 12, grab: .9, freeAim: true, extraH: 52,
+    init() { return { balls: rack(), cue: { x: 0, y: 3.4 }, inHand: 'kitchen', group: [null, null], brk: true, turn: 0, potted: [] }; },
+    launcher: S => ({ x: S.cue.x, y: S.cue.y, r: BR }),
+    canPlace: S => !!S.inHand,
+    place(S, q) { const x = Math.max(-HX + BR, Math.min(HX - BR, q.x)), y = Math.max(S.inHand === 'kitchen' ? HEAD + .01 : -HY + BR, Math.min(HY - BR, q.y)); if (validSpot(S, x, y, S.inHand)) S.cue = { x, y }; },
+    hint: S => ({ circles: S.balls.map(b => ({ x: b.x, y: b.y, r: BR, d: 1 })), box: { x: HX, y: HY } }),
+    applyAI(S, c, k, from) { if (c.place) S.cue = { x: from.x + (c.x - from.x) * k, y: from.y + (c.y - from.y) * k }; },
+    world, shootSfx: 'clack',
+    settle(S, W) {
+      const p = S.turn, j = judge(S, W, p), n = S.mode === 'ai' ? ['You', 'Fast Eddie'] : ['Player 1', 'Player 2'];
+      S.balls = W.b.filter(b => !b.out && !b.cue).map(b => ({ n: b.n, x: b.x, y: b.y }));
+      S.potted = S.potted.concat(j.pots.filter(x => x !== 8 || !j.respot));
+      const cue = W.b.find(b => b.cue);
+      if (j.end && j.respot) { // black down on the break: spot it again and carry on
+        let y = FOOT; while (!validSpot(S, 0, y)) y -= .05; S.balls.push({ n: 8, x: 0, y }); S.potted = S.potted.filter(x => x !== 8);
+        S.brk = false; S.cue = cue.out ? { x: 0, y: 3.4 } : { x: cue.x, y: cue.y }; S.inHand = cue.out ? 'any' : null;
+        return { msg: 'The black went down on the break: it comes back to the spot.' };
+      }
+      if (j.end) { S.winner = j.win ? p : 1 - p; S.endWhy = j.win ? `${n[p]} sank the black to win.` : j.foul ? `${n[p]} fouled on the black.` : `${n[p]} sank the black too early.`; return { next: 'game' }; }
+      S.brk = false;
+      if (j.assign) { S.group[p] = j.assign; S.group[1 - p] = j.assign === 'solid' ? 'stripe' : 'solid'; }
+      if (j.foul) { S.inHand = 'any'; S.cue = cue.out ? { x: 0, y: 3.4 } : { x: cue.x, y: cue.y }; if (!validSpot(S, S.cue.x, S.cue.y)) S.cue = { x: 0, y: 3.4 }; return { next: 'other', msg: `Foul${j.scratch ? ': the cue ball went in' : W.first === null ? ': no ball hit' : ': wrong ball first'}. Ball in hand for ${n[1 - p]}.` }; }
+      S.inHand = null; S.cue = { x: cue.x, y: cue.y };
+      if (j.assign) return { msg: `${n[p]} ${S.mode === 'ai' && p === 0 ? 'are' : 'is'} ${j.assign === 'solid' ? 'solids' : 'stripes'}.` + (j.cont ? ' Shoot again.' : '') , next: j.cont ? undefined : 'other' };
+      return j.cont ? { msg: j.ownPots > 1 ? `${j.ownPots} down! Shoot again.` : 'Shoot again.' } : { next: 'other', msg: j.pots.length ? "Only the rival's balls went down." : '' };
+    },
+    endRound(S, n) { return { over: true, winner: S.winner, html: S.endWhy }; },
+    nextRound() {},
+    candidates(S, p) {
+      const out = [], mine = S.group[p], left = S.balls.filter(b => mine ? groupOf(b.n) === mine : b.n !== 8);
+      const targets = mine && !left.length ? S.balls.filter(b => b.n === 8) : left;
+      if (S.brk) { for (const x of [-.6, -.3, 0, .3, .6]) out.push({ x, y: 3.4, vx: (0 - x) / 6 * 9.4, vy: -9.4 * .99, place: true }); return out; }
+      const others = t => S.balls.filter(b => b !== t).map(b => ({ x: b.x, y: b.y, r: BR }));
+      for (const t of targets) for (const [px, py] of POCKETS) {
+        const tx = px - t.x, ty = py - t.y, tl = Math.hypot(tx, ty), ux = tx / tl, uy = ty / tl, gx = t.x - ux * 2 * BR, gy = t.y - uy * 2 * BR;
+        if (FlickKit.ray(t.x, t.y, ux, uy, BR, others(t)).t < tl - .3) continue;
+        const starts = [];
+        if (S.inHand) { for (const back of [1.2, 2.2]) { const sx = gx - ux * back, sy = gy - uy * back; if (validSpot(S, sx, sy, S.inHand)) starts.push({ x: sx, y: sy, place: true }); } }
+        else starts.push({ x: S.cue.x, y: S.cue.y });
+        for (const st of starts) {
+          const dx = gx - st.x, dy = gy - st.y, dl = Math.hypot(dx, dy), vx = dx / dl, vy = dy / dl, cos = vx * ux + vy * uy;
+          if (cos < .3) continue;
+          if (FlickKit.ray(st.x, st.y, vx, vy, BR, others(t).concat([])).t < dl - .02) continue;
+          const vHit = Math.sqrt(2 * FR * tl * 1.4 + .6) / (0.97 * cos), v0 = Math.sqrt(vHit * vHit + 2 * FR * dl);
+          [1, 1.25, 1.6].forEach(k => out.push({ x: st.x, y: st.y, vx: vx * Math.min(9.5, v0 * k), vy: vy * Math.min(9.5, v0 * k), place: st.place }));
+        }
+      }
+      if (out.length < 12) for (const t of targets) { const st = S.cue, dx = t.x - st.x, dy = t.y - st.y, d = Math.hypot(dx, dy); [3, 5, 7.5].forEach(v => out.push({ x: st.x, y: st.y, vx: dx / d * v, vy: dy / d * v })); }
+      return out;
+    },
+    aiCap: 150,
+    score(S, W, p) {
+      const j = judge(S, W, p);
+      if (j.end) return j.respot ? 0 : j.win ? 1000 : -1000;
+      return (j.foul ? -20 : 0) + j.ownPots * 12 + (j.cont ? 4 : 0) - (j.foul ? 0 : j.pots.filter(n => S.group[p] && groupOf(n) !== S.group[p] && n !== 8).length * 4);
+    },
+    paint(c) {
+      const F = .45;
+      c.fillStyle = '#3a1f0e'; c.beginPath(); c.roundRect ? c.roundRect(-HX - F, -HY - F, 2 * (HX + F), 2 * (HY + F), .35) : c.rect(-HX - F, -HY - F, 2 * (HX + F), 2 * (HY + F)); c.fill();
+      TableKit.grain(c, -HX - F, -HY - F, 2 * (HX + F), 2 * (HY + F), 'rgba(200,140,80,', 40, true, 12);
+      c.fillStyle = '#0d5a4a'; c.fillRect(-HX - .12, -HY - .12, 2 * HX + .24, 2 * HY + .24);
+      const g = c.createRadialGradient(0, -1, .5, 0, 0, 7); g.addColorStop(0, '#1f8a6c'); g.addColorStop(1, '#0f5a46');
+      c.fillStyle = g; c.fillRect(-HX, -HY, 2 * HX, 2 * HY);
+      c.fillStyle = 'rgba(255,255,255,.035)'; for (let i = 0; i < 900; i++) c.fillRect(-HX + ((i * 7.7) % (2 * HX)), -HY + ((i * 3.31) % (2 * HY)), .03, .03);
+      c.strokeStyle = 'rgba(255,255,255,.18)'; c.lineWidth = .025; c.beginPath(); c.moveTo(-HX, HEAD); c.lineTo(HX, HEAD); c.stroke();
+      c.fillStyle = 'rgba(255,255,255,.3)'; c.beginPath(); c.arc(0, FOOT, .05, 0, 7); c.fill();
+      c.fillStyle = '#e8dcc0'; for (let i = 1; i < 4; i++) [-1, 1].forEach(s => { c.beginPath(); c.arc(s * (HX + .26), -HY + i * HY / 2, .045, 0, 7); c.fill(); }); for (let i = 1; i < 8; i++) if (i !== 4) [-1, 1].forEach(s => { c.beginPath(); c.arc(s * (HX + .26), -HY + i * HY / 4, .045, 0, 7); c.fill(); });
+      [-1, 1].forEach(s => [1, 2, 3].forEach(i => { c.beginPath(); c.arc(-HX + i * HX / 2, s * (HY + .26), .045, 0, 7); c.fill(); }));
+      POCKETS.forEach(([x, y, r]) => { const gg = c.createRadialGradient(x, y, 0, x, y, r); gg.addColorStop(0, '#000'); gg.addColorStop(.8, '#0a0a0a'); gg.addColorStop(1, '#2a1a0c'); c.fillStyle = gg; c.beginPath(); c.arc(x, y, r, 0, 7); c.fill(); });
+    },
+    draw(c, S, live, ui) {
+      const ball = (x, y, n, glow) => {
+        if (n === 0) return TableKit.disc(c, x, y, BR, ['#ffffff', '#f2efe6', '#a8a196'], { glow });
+        const col = colOf(n);
+        if (n > 8) { TableKit.disc(c, x, y, BR, ['#ffffff', '#f2efe6', '#a8a196']); c.save(); c.beginPath(); c.arc(x, y, BR, 0, 7); c.clip(); c.fillStyle = col; c.fillRect(x - BR, y - BR * .5, BR * 2, BR); c.restore(); }
+        else TableKit.disc(c, x, y, BR, ['#ffffff', col, '#000'], {});
+        c.fillStyle = 'rgba(255,255,255,.95)'; c.beginPath(); c.arc(x, y, BR * .45, 0, 7); c.fill();
+        c.fillStyle = '#111'; c.font = `bold ${BR * .62}px Inter, sans-serif`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(String(n), x, y + BR * .03);
+        c.fillStyle = 'rgba(255,255,255,.45)'; c.beginPath(); c.arc(x - BR * .38, y - BR * .42, BR * .18, 0, 7); c.fill();
+      };
+      if (live) { live.b.forEach(b => { if (!b.out) ball(b.x, b.y, b.n); }); return; }
+      S.balls.forEach(b => ball(b.x, b.y, b.n));
+      ball(S.cue.x, S.cue.y, 0, ui.idle && S.inHand);
+      if (ui.idle && S.inHand) { c.strokeStyle = 'rgba(255,255,255,.55)'; c.lineWidth = .03; c.setLineDash([.08, .08]); c.beginPath(); c.arc(S.cue.x, S.cue.y, BR * 2.2, 0, 7); c.stroke(); c.setLineDash([]); }
+    },
+    hud(S, n) {
+      const tray = k => { const g = S.group[k]; if (!g) return 'Table open'; const bs = S.potted.filter(x => groupOf(x) === g); return `${g === 'solid' ? 'Solids' : 'Stripes'} · ${bs.length}/7 ${bs.map(x => `<span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${colOf(x)};${x > 8 ? 'box-shadow:inset 0 0 0 2px #fff' : ''}"></span>`).join('')}`; };
+      return TableKit.sides(S, n, { line: tray }, null);
+    },
+    tip: S => S.inHand ? `Ball in hand: drag the cue ball${S.inHand === 'kitchen' ? ' (behind the line)' : ''}, then press anywhere else and drag to aim and power up.` : 'Press anywhere and drag: the cue points through the white. Drag further for more power.',
+    foot: S => S.brk ? 'Break: hit the rack hard' : ''
+  };
+})());
+Games.pool = Pool;
+
+/* ============================================================================
+   DARTS: 501 / 301 (double out) and Around the Clock.
+   ============================================================================ */
+const Darts = (() => {
+  const ORDER = [20, 1, 18, 4, 13, 6, 10, 15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5];
+  const RB = 6.35, ROB = 15.9, T1 = 99, T2 = 107, D1 = 162, D2 = 170, R = 225;
+  let S, root, cv, ctx, K = { s: 1, dpr: 1, w: 0 }, sid = 0, hold = null, raf = 0, bgc = null;
+  const names = () => S.mode === 'ai' ? ['You', 'Dead-Eye Dot'] : ['Player 1', 'Player 2'];
+  function hitAt(x, y) {
+    const r = Math.hypot(x, y); if (r <= RB) return { n: 25, m: 2, v: 50, lab: 'Bull' }; if (r <= ROB) return { n: 25, m: 1, v: 25, lab: '25' }; if (r > D2) return { n: 0, m: 0, v: 0, lab: 'Miss' };
+    let a = Math.atan2(x, -y) * 180 / Math.PI; a = (a + 360 + 9) % 360; const n = ORDER[Math.floor(a / 18)];
+    const m = r >= D1 ? 2 : (r >= T1 && r <= T2) ? 3 : 1; return { n, m, v: n * m, lab: (m === 2 ? 'D' : m === 3 ? 'T' : '') + n };
+  }
+  function centreOf(n, m) {
+    if (n === 25) return { x: 0, y: 0, r: m === 2 ? 0 : 11 };
+    const a = (ORDER.indexOf(n) * 18) * Math.PI / 180, r = m === 2 ? (D1 + D2) / 2 : m === 3 ? (T1 + T2) / 2 : m === 1.5 ? 135 : 60;
+    return { x: Math.sin(a) * r, y: -Math.cos(a) * r };
+  }
+  /* where to aim with rem left (501 double out) */
+  function plan(rem) {
+    if (rem === 50) return [25, 2];
+    if (rem <= 40 && rem % 2 === 0) return [rem / 2, 2];
+    if (rem <= 40) return [1, 1];
+    if (rem <= 60) { const s = rem - 40 <= 20 ? rem - 40 : rem - 32; return [s, 1]; }
+    if (rem <= 100) { for (let t = 20; t >= 10; t--) { const l = rem - 3 * t; if (l >= 2 && l <= 40 && l % 2 === 0) return [t, 3]; } return [20, 3]; }
+    if (rem <= 170) { for (let t = 20; t >= 13; t--) { const l = rem - 3 * t; if (l <= 100 && l > 40) { for (let t2 = 20; t2 >= 10; t2--) { const l2 = l - 3 * t2; if (l2 >= 2 && l2 <= 40 && l2 % 2 === 0) return [t, 3]; } } if (l === 50) return [t, 3]; } }
+    return [20, 3];
+  }
+  function checkout(rem, darts) { // a suggested finish
+    const seq = []; let r = rem;
+    for (let d = 0; d < darts; d++) { const [n, m] = plan(r); const v = n === 25 ? (m === 2 ? 50 : 25) : n * m; seq.push((m === 2 ? (n === 25 ? 'Bull' : 'D') : m === 3 ? 'T' : '') + (n === 25 ? '' : n)); r -= v; if (r === 0 && m === 2) return seq.join(' · '); if (r < 2) return ''; }
+    return '';
+  }
+  function newGame(c) {
+    sid++; cancelAnimationFrame(raf); hold = null;
+    const mode = (c && c.mode) || (S && S.mode) || 'ai', type = (c && c.type) || (S && S.type) || '501';
+    S = { mode, type, rem: [+type || 0, +type || 0], clock: [1, 1], turn: 0, darts: [], visit: [], start: null, over: false, busy: false, msg: '' };
+    S.start = S.rem.slice(); render(); if (S.mode === 'ai' && S.turn === 1) aiVisit();
+  }
+  function score(h) {
+    const p = S.turn;
+    if (S.type === 'clock') {
+      const want = S.clock[p];
+      if ((want <= 20 && h.n === want) || (want === 21 && h.n === 25)) { S.clock[p]++; if (S.clock[p] > 21) return 'win'; return 'hit'; }
+      return 'miss';
+    }
+    const left = S.rem[p] - h.v;
+    if (left < 0 || left === 1 || (left === 0 && h.m !== 2)) return 'bust';
+    S.rem[p] = left; return left === 0 ? 'win' : 'ok';
+  }
+  async function throwAt(x, y) {
+    const my = sid, h = hitAt(x, y); S.darts.push({ x, y }); S.visit.push(h.lab); Sfx.play(h.v ? 'thunk' : 'thud', 0.9);
+    const r = score(h);
+    if (r === 'bust') { S.rem[S.turn] = S.visitStart; S.msg = `Bust! Back to ${S.visitStart}.`; Sfx.play('lose'); render(); await Util.sleep(Util.delay(900)); if (my !== sid) return; return endVisit(); }
+    if (r === 'win') { S.over = true; render(); const n = names(), w = S.turn; Sfx.play(S.mode === '2p' || w === 0 ? 'win' : 'lose'); return App.endGame('darts', S.mode === 'ai' && w === 0, S.mode === 'ai' ? (w === 0 ? 'Game shot! 🎯' : 'Dead-Eye Dot wins') : `${n[w]} wins!`, S.type === 'clock' ? 'Round the clock and into the bull.' : `Checked out on ${h.lab}.`, () => newGame()); }
+    S.msg = h.lab === 'Miss' ? 'Missed the board!' : `${h.lab}${h.v ? ` (${h.v})` : ''}`;
+    render();
+    if (S.darts.length >= 3) { await Util.sleep(Util.delay(800)); if (my !== sid) return; endVisit(); }
+  }
+  function endVisit() {
+    S.darts = []; S.visit = []; S.turn = 1 - S.turn; S.visitStart = S.rem[S.turn]; S.msg = ''; render();
+    if (S.mode === 'ai' && S.turn === 1) aiVisit();
+  }
+  async function aiVisit() {
+    const my = sid; S.busy = true; render();
+    const sd = { easy: 24, normal: 14, hard: 8.5 }[Settings.diff] || 14;
+    for (let k = 0; k < 3 && !S.over && S.turn === 1; k++) {
+      await Util.sleep(Util.delay(650)); if (my !== sid) return;
+      let tgt;
+      if (S.type === 'clock') { const w = S.clock[1]; tgt = w === 21 ? { x: 0, y: 0 } : centreOf(w, 1.5); }
+      else { const [n, m] = plan(S.rem[1]); tgt = centreOf(n, m); }
+      const x = tgt.x + FlickKit.gauss() * sd, y = tgt.y + FlickKit.gauss() * sd;
+      hold = { ax: tgt.x, ay: tgt.y, ai: true }; draw(); await Util.sleep(Util.delay(300)); if (my !== sid) return; hold = null;
+      const before = S.turn; await throwAt(x, y); if (my !== sid || S.turn !== before) break;
+    }
+    S.busy = false; render();
+  }
+  /* ---------- canvas ---------- */
+  function fit() {
+    const wrap = root.querySelector('[data-board]'), top = wrap.getBoundingClientRect().top + (window.scrollY || 0);
+    const w = Math.max(240, Math.min(wrap.clientWidth || 360, 560, (window.innerHeight || 700) - Math.max(150, Math.min(top, 420)) - 70)), dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+    if (w === K.w && dpr === K.dpr) return;
+    K = { w, dpr, s: w * dpr / (2 * R) }; cv.width = cv.height = Math.round(w * dpr); cv.style.width = cv.style.height = w + 'px';
+    bgc = document.createElement('canvas'); bgc.width = bgc.height = cv.width; const c = bgc.getContext('2d'); c.setTransform(K.s, 0, 0, K.s, cv.width / 2, cv.height / 2); paint(c);
+  }
+  function paint(c) {
+    const g0 = c.createRadialGradient(0, 0, 150, 0, 0, R); g0.addColorStop(0, '#2a1a10'); g0.addColorStop(1, '#120a06'); c.fillStyle = g0; c.beginPath(); c.arc(0, 0, R, 0, 7); c.fill();
+    c.fillStyle = '#111'; c.beginPath(); c.arc(0, 0, D2 + 34, 0, 7); c.fill();
+    for (let i = 0; i < 20; i++) {
+      const a0 = (i * 18 - 9 - 90) * Math.PI / 180, a1 = a0 + 18 * Math.PI / 180, dark = i % 2 === 0;
+      const ring = (r0, r1, col) => { c.fillStyle = col; c.beginPath(); c.arc(0, 0, r1, a0, a1); c.arc(0, 0, r0, a1, a0, true); c.closePath(); c.fill(); };
+      ring(ROB, T1, dark ? '#1a1a1a' : '#efe3c4'); ring(T1, T2, dark ? '#c8261e' : '#1e8a3c'); ring(T2, D1, dark ? '#1a1a1a' : '#efe3c4'); ring(D1, D2, dark ? '#c8261e' : '#1e8a3c');
+    }
+    c.fillStyle = '#1e8a3c'; c.beginPath(); c.arc(0, 0, ROB, 0, 7); c.fill(); c.fillStyle = '#c8261e'; c.beginPath(); c.arc(0, 0, RB, 0, 7); c.fill();
+    c.strokeStyle = '#c0c4c8'; c.lineWidth = 1.1; [RB, ROB, T1, T2, D1, D2].forEach(r => { c.beginPath(); c.arc(0, 0, r, 0, 7); c.stroke(); });
+    for (let i = 0; i < 20; i++) { const a = (i * 18 - 9 - 90) * Math.PI / 180; c.beginPath(); c.moveTo(Math.cos(a) * ROB, Math.sin(a) * ROB); c.lineTo(Math.cos(a) * D2, Math.sin(a) * D2); c.stroke(); }
+    c.fillStyle = '#f2f2f2'; c.font = 'bold 20px Inter, sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle';
+    ORDER.forEach((n, i) => { const a = (i * 18 - 90) * Math.PI / 180; c.fillText(String(n), Math.cos(a) * (D2 + 18), Math.sin(a) * (D2 + 18)); });
+    // sisal texture
+    c.fillStyle = 'rgba(255,255,255,.035)'; for (let i = 0; i < 1500; i++) { const a = i * 2.39996, r = Math.sqrt(i / 1500) * D2; c.fillRect(Math.cos(a) * r, Math.sin(a) * r, 1.2, 1.2); }
+  }
+  function sway(t) { const A = 3.5 + Math.max(0, t - 1.3) * 11; return { x: A * Math.sin(t * 2.1 + 1), y: A * Math.sin(t * 2.9) }; }
+  function draw() {
+    if (!ctx) return;
+    const c = ctx; c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, cv.width, cv.height); c.drawImage(bgc, 0, 0);
+    c.setTransform(K.s, 0, 0, K.s, cv.width / 2, cv.height / 2);
+    S.darts.forEach(d => { c.fillStyle = 'rgba(0,0,0,.4)'; c.beginPath(); c.ellipse(d.x + 5, d.y + 9, 3, 7, .4, 0, 7); c.fill(); c.strokeStyle = '#d8d8d8'; c.lineWidth = 2.2; c.beginPath(); c.moveTo(d.x, d.y); c.lineTo(d.x + 7, d.y + 14); c.stroke(); c.fillStyle = S.turn ? '#3a7be0' : '#e0433a'; c.beginPath(); c.moveTo(d.x + 6, d.y + 12); c.lineTo(d.x + 15, d.y + 16); c.lineTo(d.x + 10, d.y + 24); c.closePath(); c.fill(); c.fillStyle = '#ffd34d'; c.beginPath(); c.arc(d.x, d.y, 1.8, 0, 7); c.fill(); });
+    if (hold) {
+      const t = (performance.now() - (hold.t0 || 0)) / 1000, sw = hold.ai ? { x: 0, y: 0 } : sway(t), x = hold.ax + sw.x, y = hold.ay + sw.y;
+      hold.x = x; hold.y = y;
+      c.strokeStyle = 'rgba(255,255,255,.95)'; c.lineWidth = 1.6; c.beginPath(); c.moveTo(x - 9, y); c.lineTo(x + 9, y); c.moveTo(x, y - 9); c.lineTo(x, y + 9); c.stroke();
+      c.strokeStyle = 'rgba(255,215,90,.9)'; c.beginPath(); c.arc(x, y, 5, 0, 7); c.stroke();
+      if (!hold.ai) { // magnifier
+        const z = 3.2, Rz = 52, cx = -R + Rz + 6, cy = -R + Rz + 6;
+        c.save(); c.beginPath(); c.arc(cx, cy, Rz, 0, 7); c.clip();
+        c.setTransform(K.s * z, 0, 0, K.s * z, cv.width / 2 + (cx - x * z) * K.s, cv.height / 2 + (cy - y * z) * K.s);
+        c.drawImage(bgc, -R, -R, 2 * R, 2 * R);
+        c.setTransform(K.s, 0, 0, K.s, cv.width / 2, cv.height / 2);
+        c.strokeStyle = '#fff'; c.lineWidth = 1.4; c.beginPath(); c.moveTo(cx - 10, cy); c.lineTo(cx + 10, cy); c.moveTo(cx, cy - 10); c.lineTo(cx, cy + 10); c.stroke();
+        c.restore(); c.strokeStyle = '#d4af37'; c.lineWidth = 2.5; c.beginPath(); c.arc(cx, cy, Rz, 0, 7); c.stroke();
+      }
+    }
+  }
+  function loop() { if (!hold || hold.ai || !root) return; draw(); raf = requestAnimationFrame(loop); }
+  const myTurn = () => S && !S.over && !S.busy && (S.mode === '2p' || S.turn === 0) && S.darts.length < 3;
+  function toBoard(e) { const r = cv.getBoundingClientRect(), s = r.width / (2 * R); return { x: (e.clientX - r.left - r.width / 2) / s, y: (e.clientY - r.top - r.height / 2) / s - 30 * (2 * R) / r.width * 1.6 }; }
+  function down(e) { if (!myTurn()) return; cv.setPointerCapture && cv.setPointerCapture(e.pointerId); const q = toBoard(e); hold = { ax: q.x, ay: q.y, t0: performance.now() }; Sfx.ensure(); loop(); e.preventDefault(); }
+  function move(e) { if (!hold || hold.ai) return; const q = toBoard(e); hold.ax = q.x; hold.ay = q.y; }
+  function up() { if (!hold || hold.ai) return; const h = hold; hold = null; cancelAnimationFrame(raf); if (!myTurn()) { draw(); return; } Sfx.play('swish'); throwAt(h.x + FlickKit.gauss() * 2.5, h.y + FlickKit.gauss() * 2.5); }
+  function render() {
+    if (!root || !S) return;
+    const n = names(), p = S.turn;
+    const side = k => { const me = k === p && !S.over; const val = S.type === 'clock' ? (S.clock[k] > 20 ? 'Bull' : S.clock[k]) : S.rem[k];
+      const co = S.type !== 'clock' && S.rem[k] <= 170 ? checkout(S.rem[k], k === p ? 3 - S.darts.length : 3) : '';
+      return `<div class="walnut-panel rounded-xl px-3 py-2 flex-1 ${me ? 'ring-2 ring-amber-300/70' : ''}" style="min-width:0"><div class="flex items-center gap-1.5"><span class="font-display text-sm ${me ? 'text-amber-300' : 'text-amber-100/80'} truncate">${me ? '▶ ' : ''}${n[k]}</span><b class="ml-auto text-amber-200 text-xl">${val}</b></div>
+        <div class="text-[11px] text-amber-100/60 mt-0.5">${S.type === 'clock' ? (S.clock[k] > 20 ? 'Needs the bull' : `Needs ${S.clock[k]}`) : co ? `Out: ${co}` : '&nbsp;'}</div></div>`; };
+    root.querySelector('[data-hud]').innerHTML = `<div class="flex gap-2 w-full">${side(1)}${side(0)}</div>
+      <div class="flex justify-center gap-1.5 mt-1.5">${[0, 1, 2].map(i => `<span class="stat-chip">${S.visit[i] || '·'}</span>`).join('')}</div>
+      <div class="text-xs text-center text-amber-100/80 mt-1" style="min-height:2.4em">${S.msg ? `<span class="text-amber-300">${S.msg}</span><br>` : ''}${S.busy ? 'Dead-Eye Dot is throwing…' : myTurn() ? 'Press and hold to aim (the cross sits above your finger), steer it, let go to throw.' : ''}</div>`;
+    fit(); draw();
+  }
+  return {
+    async setup() {
+      const type = await Util.choose('🎯 Darts', 'Which game?', [{ label: '501 (double out)', value: '501', primary: true }, { label: '301 (quicker)', value: '301' }, { label: 'Around the Clock', value: 'clock' }, { label: 'Cancel', value: null }]);
+      if (!type) return null;
+      const mode = await Util.choose('🎯 Darts', 'Who are you playing?', [{ label: '🤖 vs Dead-Eye Dot (AI)', value: 'ai', primary: true }, { label: '👥 Pass & Play', value: '2p' }, { label: 'Cancel', value: null }]);
+      return mode ? { mode, type } : null;
+    },
+    mount(el, o = {}) {
+      root = el; sid++; K = { s: 1, dpr: 1, w: 0 };
+      root.innerHTML = `<div class="flex flex-col items-center gap-2 mx-auto w-full" style="max-width:560px"><div class="w-full" data-hud></div><div class="w-full" data-board></div><div class="flex gap-2 justify-center">${Util.btn('🔄 New game', 'Darts.restart()', 'brass')}</div></div>`;
+      cv = document.createElement('canvas'); cv.style.cssText = 'display:block;margin:0 auto;touch-action:none;border-radius:50%';
+      root.querySelector('[data-board]').appendChild(cv); ctx = cv.getContext('2d');
+      cv.addEventListener('pointerdown', down); cv.addEventListener('pointermove', move); cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', () => { hold = null; draw(); });
+      this._rs = () => { K.w = 0; fit(); draw(); }; window.addEventListener('resize', this._rs);
+      if (o.resume) { S = o.resume.S; S.busy = false; S.darts = []; S.visit = []; S.visitStart = S.rem[S.turn]; render(); if (S.mode === 'ai' && S.turn === 1) aiVisit(); }
+      else { newGame(o.mode ? o : null); S.visitStart = S.rem[S.turn]; }
+    },
+    snapshot() { return S && !S.over ? { S: Object.assign({}, S, { busy: false, darts: [], visit: [], rem: S.darts.length ? [S.turn === 0 ? S.visitStart : S.rem[0], S.turn === 1 ? S.visitStart : S.rem[1]] : S.rem.slice() }) } : null; },
+    destroy() { sid++; cancelAnimationFrame(raf); window.removeEventListener('resize', this._rs); root = cv = ctx = null; hold = null; },
+    newGame() { newGame(); S.visitStart = S.rem[S.turn]; },
+    async restart() { const v = await Util.choose('🎯 Darts', 'Start a new game?', [{ label: 'New game', value: 1, primary: true }, { label: 'Cancel', value: 0 }]); if (v) { newGame(); S.visitStart = S.rem[S.turn]; } },
+    _test: { get S() { return S; }, hitAt, plan, checkout, throwAt: (x, y) => throwAt(x, y), centreOf }
+  };
+})();
+Games.darts = Darts;
+
+/* ============================================================================
+   STEADY HAND: the buzz wire. Guide the loop along without touching.
+   ============================================================================ */
+const SteadyHand = (() => {
+  const W = 10, H = 16;
+  let S, root, cv, ctx, K = { w: 0, s: 1, dpr: 1 }, drag = null, sid = 0, timer = 0, flash = 0;
+  const best = () => Store.get('sh_best', {}), unlocked = () => Store.get('sh_unlocked', 1);
+  function wire(level) {
+    let sd = level * 7919 + 13; const rnd = () => (sd = (sd * 16807) % 2147483647) / 2147483647;
+    const n = 6 + level, pts = [];
+    for (let i = 0; i <= n; i++) { const t = i / n, amp = 1.6 + level * .28; pts.push({ x: i === 0 || i === n ? 0 : Math.max(-3.8, Math.min(3.8, (rnd() * 2 - 1) * amp)), y: 6.8 - t * 13.6 }); }
+    const out = []; // Catmull-Rom through the points
+    for (let i = 0; i < pts.length - 1; i++) {
+      const p0 = pts[Math.max(0, i - 1)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(pts.length - 1, i + 2)];
+      for (let k = 0; k < 24; k++) { const t = k / 24, t2 = t * t, t3 = t2 * t; out.push({ x: .5 * (2 * p1.x + (-p0.x + p2.x) * t + (2 * p0.x - 5 * p1.x + 4 * p2.x - p3.x) * t2 + (-p0.x + 3 * p1.x - 3 * p2.x + p3.x) * t3), y: .5 * (2 * p1.y + (-p0.y + p2.y) * t + (2 * p0.y - 5 * p1.y + 4 * p2.y - p3.y) * t2 + (-p0.y + 3 * p1.y - 3 * p2.y + p3.y) * t3) }); }
+    }
+    out.push(pts[pts.length - 1]);
+    let L = 0; out.forEach((p, i) => { if (i) L += Math.hypot(p.x - out[i - 1].x, p.y - out[i - 1].y); p.s = L; });
+    return out;
+  }
+  const ringR = lv => Math.max(.34, .62 - lv * .028), WR = .07;
+  function nearest(pts, x, y, from, to) { let b = { d: 1e9, i: 0 }; for (let i = Math.max(0, from); i <= Math.min(pts.length - 1, to); i++) { const d = Math.hypot(pts[i].x - x, pts[i].y - y); if (d < b.d) b = { d, i }; } return b; }
+  function start(level) {
+    sid++; S = { level, pts: wire(level), idx: 0, pos: null, lives: 3, buzz: 0, t0: 0, t: 0, done: false, flags: [], last: 0 };
+    const L = S.pts[S.pts.length - 1].s; [0.25, 0.5, 0.75].forEach(f => S.flags.push(S.pts.findIndex(p => p.s >= L * f)));
+    S.pos = { x: S.pts[0].x, y: S.pts[0].y }; S.msg = 'Press the loop and drag it to the far end.'; render();
+  }
+  function fit() {
+    const wrap = root.querySelector('[data-board]'), top = wrap.getBoundingClientRect().top + (window.scrollY || 0);
+    const ah = Math.max(300, (window.innerHeight || 700) - Math.max(150, Math.min(top, 420)) - 60), w0 = Math.min(wrap.clientWidth || 360, 520), w = Math.round(Math.min(w0, ah * W / H)), dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+    if (w === K.w && dpr === K.dpr) return;
+    K = { w, dpr, s: w * dpr / W }; cv.width = Math.round(w * dpr); cv.height = Math.round(w * H / W * dpr); cv.style.width = w + 'px'; cv.style.height = Math.round(w * H / W) + 'px';
+  }
+  function draw() {
+    if (!ctx || !S) return;
+    const c = ctx; c.setTransform(1, 0, 0, 1, 0, 0);
+    const g = c.createLinearGradient(0, 0, 0, cv.height); g.addColorStop(0, '#1d3b2c'); g.addColorStop(1, '#0d2219'); c.fillStyle = g; c.fillRect(0, 0, cv.width, cv.height);
+    if (flash > performance.now()) { c.fillStyle = 'rgba(255,60,40,.25)'; c.fillRect(0, 0, cv.width, cv.height); }
+    c.setTransform(K.s, 0, 0, K.s, cv.width / 2, cv.height / 2);
+    const P = S.pts;
+    c.lineCap = 'round'; c.lineJoin = 'round';
+    c.strokeStyle = 'rgba(0,0,0,.45)'; c.lineWidth = WR * 2.6; c.beginPath(); P.forEach((p, i) => i ? c.lineTo(p.x + .08, p.y + .12) : c.moveTo(p.x + .08, p.y + .12)); c.stroke();
+    c.strokeStyle = '#b87333'; c.lineWidth = WR * 2; c.beginPath(); P.forEach((p, i) => i ? c.lineTo(p.x, p.y) : c.moveTo(p.x, p.y)); c.stroke();
+    c.strokeStyle = 'rgba(255,220,170,.6)'; c.lineWidth = WR * .7; c.beginPath(); P.forEach((p, i) => i ? c.lineTo(p.x - .02, p.y - .02) : c.moveTo(p.x - .02, p.y - .02)); c.stroke();
+    if (S.idx > 0) { c.strokeStyle = 'rgba(255,215,90,.55)'; c.lineWidth = WR * 2.4; c.beginPath(); for (let i = 0; i <= S.idx; i++) i ? c.lineTo(P[i].x, P[i].y) : c.moveTo(P[i].x, P[i].y); c.stroke(); }
+    [P[0], P[P.length - 1]].forEach((p, k) => { TableKit.disc(c, p.x, p.y + (k ? -.35 : .35), .32, k ? ['#fff3b0', '#d4af37', '#6b4a0c'] : ['#e0e0e0', '#8a8f96', '#33383d']); });
+    S.flags.forEach(i => { const p = P[i]; const got = S.last >= i; c.fillStyle = got ? '#7ee2a8' : '#e8e2d0'; c.beginPath(); c.moveTo(p.x + .25, p.y); c.lineTo(p.x + .25, p.y - .7); c.lineTo(p.x + .75, p.y - .55); c.lineTo(p.x + .25, p.y - .4); c.fill(); });
+    const r = ringR(S.level), q = S.pos;
+    c.strokeStyle = 'rgba(0,0,0,.4)'; c.lineWidth = .1; c.beginPath(); c.arc(q.x + .06, q.y + .1, r, 0, 7); c.stroke();
+    c.strokeStyle = flash > performance.now() ? '#ff5a3c' : '#e6e9ec'; c.lineWidth = .09; c.beginPath(); c.arc(q.x, q.y, r, 0, 7); c.stroke();
+    c.strokeStyle = '#6b4a24'; c.lineWidth = .16; c.beginPath(); c.moveTo(q.x, q.y + r); c.lineTo(q.x, q.y + r + .9); c.stroke();
+  }
+  function render() {
+    if (!root || !S) return;
+    const b = best()[S.level];
+    root.querySelector('[data-hud]').innerHTML = `<div class="flex gap-2 justify-center flex-wrap"><span class="stat-chip">Level <b class="ml-1 text-amber-200">${S.level}</b>/10</span><span class="stat-chip">Lives <b class="ml-1 text-amber-200">${'❤️'.repeat(S.lives)}${'🖤'.repeat(3 - S.lives)}</b></span><span class="stat-chip">⏱ <b class="ml-1 text-amber-200" data-time>${S.t.toFixed(1)}s</b></span>${b ? `<span class="stat-chip">Best ${b.toFixed(1)}s</span>` : ''}</div>
+      <div class="text-xs text-center text-amber-100/80 mt-1.5" style="min-height:2.4em">${S.msg || ''}</div>`;
+    root.querySelector('[data-levels]').innerHTML = Array.from({ length: 10 }, (_, i) => i + 1).map(l => `<button ${l <= unlocked() ? `onclick="SteadyHand.level(${l})"` : 'disabled'} class="${l === S.level ? 'btn-brass' : 'btn-wood'} w-8 h-8 rounded-lg text-xs font-bold">${l <= unlocked() ? l : '🔒'}</button>`).join('');
+    fit(); draw();
+  }
+  function toW(e) { const r = cv.getBoundingClientRect(), s = r.width / W; return { x: (e.clientX - r.left - r.width / 2) / s, y: (e.clientY - r.top - r.height / 2) / s - 1.1 }; }
+  function tick() { if (!S || S.done || !S.t0 || !root) return; S.t = (performance.now() - S.t0) / 1000; const el = root.querySelector('[data-time]'); if (el) el.textContent = S.t.toFixed(1) + 's'; timer = requestAnimationFrame(tick); }
+  function down(e) {
+    if (!S || S.done) return;
+    const q = toW(e); if (Math.hypot(q.x - S.pos.x, q.y - S.pos.y) > 1.6) return;
+    cv.setPointerCapture && cv.setPointerCapture(e.pointerId); drag = { ox: S.pos.x - q.x, oy: S.pos.y - q.y };
+    if (!S.t0) { S.t0 = performance.now(); tick(); S.msg = ''; render(); }
+    e.preventDefault();
+  }
+  function move(e) {
+    if (!drag || !S || S.done) return;
+    const q = toW(e), nx = q.x + drag.ox, ny = q.y + drag.oy, r = ringR(S.level), steps = Math.max(1, Math.ceil(Math.hypot(nx - S.pos.x, ny - S.pos.y) / .05));
+    for (let k = 1; k <= steps; k++) {
+      const x = S.pos.x + (nx - S.pos.x) * k / steps, y = S.pos.y + (ny - S.pos.y) * k / steps, near = nearest(S.pts, x, y, S.idx - 30, S.idx + 30);
+      if (near.d > r - WR) return buzz();
+      S.pos = { x, y }; if (near.i > S.idx) S.idx = near.i;
+      S.flags.forEach(i => { if (S.idx >= i && S.last < i) { S.last = i; Sfx.play('tap'); } });
+      if (S.idx >= S.pts.length - 2) return finish();
+    }
+    draw();
+  }
+  function buzz() {
+    drag = null; S.lives--; S.buzz++; Sfx.play('buzz'); flash = performance.now() + 350; if (navigator.vibrate) try { navigator.vibrate(120); } catch (e) {}
+    if (S.lives <= 0) { S.done = true; cancelAnimationFrame(timer); S.msg = 'BZZZT! Out of lives.'; render(); setTimeout(() => { if (root) Util.choose('〰️ Bzzzt!', `You reached ${Math.round(S.idx / (S.pts.length - 1) * 100)}% of the way on level ${S.level}.`, [{ label: 'Try again', value: 1, primary: true }, { label: 'Close', value: 0 }]).then(v => { if (v) start(S.level); }); }, 400); return; }
+    const back = S.pts[S.last]; S.idx = S.last; S.pos = { x: back.x, y: back.y }; S.msg = `BZZZT! Back to the last flag. ${S.lives} ${S.lives === 1 ? 'life' : 'lives'} left.`; render();
+    const my = sid; setTimeout(() => { if (my === sid) draw(); }, 360);
+  }
+  function finish() {
+    drag = null; S.done = true; cancelAnimationFrame(timer); S.t = (performance.now() - S.t0) / 1000;
+    const bs = best(), prev = bs[S.level]; if (!prev || S.t < prev) { bs[S.level] = S.t; Store.set('sh_best', bs); }
+    if (S.level >= unlocked() && S.level < 10) Store.set('sh_unlocked', S.level + 1);
+    if (!S.buzz) App.recordWin('steadyhand');
+    Sfx.play('win'); S.msg = `Made it in ${S.t.toFixed(1)}s${S.buzz ? ` with ${S.buzz} buzz${S.buzz > 1 ? 'es' : ''}.` : ', not a single buzz! 🏆'}`; render();
+    setTimeout(() => { if (root) Util.choose('〰️ Made it!', S.msg + (prev && S.t < prev ? '<br>A new best time!' : ''), S.level < 10 ? [{ label: `Level ${S.level + 1}`, value: 'next', primary: true }, { label: 'Again', value: 'again' }, { label: 'Close', value: 0 }] : [{ label: 'Again', value: 'again', primary: true }, { label: 'Close', value: 0 }]).then(v => { if (v === 'next') start(S.level + 1); else if (v === 'again') start(S.level); }); }, 300);
+  }
+  return {
+    mount(el) {
+      root = el; K = { w: 0, s: 1, dpr: 1 };
+      root.innerHTML = `<div class="flex flex-col items-center gap-2 mx-auto w-full" style="max-width:520px"><div class="w-full" data-hud></div><div class="w-full" data-board></div><div class="flex gap-1 flex-wrap justify-center" data-levels></div></div>`;
+      cv = document.createElement('canvas'); cv.style.cssText = 'display:block;margin:0 auto;touch-action:none;border-radius:16px;box-shadow:0 0 0 3px #4a2e1d,0 0 0 4px rgba(212,175,55,.5),0 12px 26px rgba(0,0,0,.6)';
+      root.querySelector('[data-board]').appendChild(cv); ctx = cv.getContext('2d');
+      cv.addEventListener('pointerdown', down); cv.addEventListener('pointermove', move); cv.addEventListener('pointerup', () => { drag = null; }); cv.addEventListener('pointercancel', () => { drag = null; });
+      this._rs = () => { K.w = 0; fit(); draw(); }; window.addEventListener('resize', this._rs);
+      start(Math.min(10, unlocked()));
+    },
+    snapshot() { return null; },
+    destroy() { sid++; cancelAnimationFrame(timer); window.removeEventListener('resize', this._rs); root = cv = ctx = null; drag = null; },
+    newGame() { start(S ? S.level : 1); },
+    level(l) { start(l); },
+    _test: { get S() { return S; }, wire, ringR, nearest }
+  };
+})();
+Games.steadyhand = SteadyHand;
 
 
 App.init();
