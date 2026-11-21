@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sixty-eight parlour, patience, family, pub, casino and word games in one: Crokinole, Carrom, Pool, Darts, Curling, Chess, Go, Shogi, Spider, Pyramid, TriPeaks, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
+  <meta name="description" content="Sixty-nine parlour, patience, family, pub, casino and word games in one: Crokinole, Carrom, Pool, Snooker, Darts, Curling, Chess, Go, Shogi, Spider, Pyramid, TriPeaks, Reversi, Four in a Row, Backgammon, Yacht, Knucklebones, Cribbage, Gin Rummy, Sudoku, Arrow Words, Codeword, Fill-Ins, Word Search, a collectible-style card duel, Blackjack, Texas Hold'em, Three Card Poker, Roulette, Battleships, Snakes &amp; Ladders, Ludo, a murder mystery, a dungeon crawl, crossword tiles and more. Free, from Kralnu Games.">
   <meta name="theme-color" content="#1d120c">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/favicon.png">
@@ -3672,6 +3672,20 @@ const GAME_CATALOG = [
       </ul>`
   },
   {
+    id: 'snooker', title: 'Snooker', subtitle: 'Reds and Colours', category: 'Flick & Skill', icon: '🔴',
+    players: 'vs AI, 2 players or solo', tagline: 'Red, colour, red, colour… then clear yellow to black. Or go solo and chase your highest break.',
+    rules: `
+      <p><strong>Objective:</strong> Score more points than your opponent in the frame. Solo: make the highest break you can.</p>
+      <ul class="list-disc pl-5 space-y-1.5">
+        <li><strong>Aiming:</strong> Press anywhere and drag. The cue points from your finger through the white, and the further you drag, the harder you hit. With move hints on, a ghost ball shows the contact and a blue line shows where the object ball goes.</li>
+        <li><strong>Reds then colours:</strong> While reds remain, pot a red (1 point), then any colour, then a red, and so on. The colour you hit first is the one you're going for. Colours come back to their spots.</li>
+        <li><strong>The clearance:</strong> Once the reds are gone, pot the colours in order: yellow 2, green 3, brown 4, blue 5, pink 6, black 7. Potting the black ends the frame.</li>
+        <li><strong>Fouls:</strong> Hitting the wrong ball first, missing everything, potting the wrong ball or going in-off gives your opponent at least 4 points (more if a higher ball was involved). After an in-off, the next player has ball in hand in the D.</li>
+        <li><strong>Frames:</strong> Short (6 reds), Medium (10) or Full (15). A smaller-scale table keeps the balls big enough for a phone.</li>
+        <li><strong>Solo high break:</strong> Keep potting until you miss or foul. Your best break for each frame size is saved; make 20+ (6 reds) or 30+ for a trophy.</li>
+      </ul>`
+  },
+  {
     id: 'knucklebones', title: 'Knucklebones', subtitle: 'The Bone-Dice Duel', category: 'Dice', icon: '🦴',
     players: 'vs AI or 2 players', tagline: 'Roll, pick a column, and knock your rival\'s matching dice clean off the board.',
     rules: `
@@ -4090,7 +4104,7 @@ const App = {
     { k: 'patience', n: 'Patience', icon: '🂡', blurb: 'Solitaire card games, from classic to devilish', ids: ['klondike', 'freecell', 'spider', 'yukon', 'scorpion', 'fortythieves', 'canfield', 'pyramid', 'golf', 'tripeaks', 'acesup'] },
     { k: 'dice', n: 'Dice & Tiles', icon: '🎲', blurb: 'Roll, bluff and match', ids: ['backgammon', 'yacht', 'knucklebones', 'liars', 'dominoes', 'mahjong'] },
     { k: 'family', n: 'Family & Party', icon: '🎉', blurb: 'Gather round: races, mysteries and adventures', ids: ['larkford', 'snakes', 'ludo', 'manor', 'delve', 'battleships'] },
-    { k: 'flick', n: 'Flick & Skill', icon: '🎯', blurb: 'Flick, slide, roll and strike', ids: ['crokinole', 'carrom', 'pool', 'curling', 'shuffleboard', 'petanque', 'pennyfootball', 'springmikado'] },
+    { k: 'flick', n: 'Flick & Skill', icon: '🎯', blurb: 'Flick, slide, roll and strike', ids: ['crokinole', 'carrom', 'pool', 'snooker', 'curling', 'shuffleboard', 'petanque', 'pennyfootball', 'springmikado'] },
     { k: 'pub', n: 'Pub & Fairground', icon: '🍺', blurb: 'Darts, skittles and steady hands', ids: ['darts', 'shoveha', 'skittles', 'bagatelle', 'steadyhand'] },
     { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] },
     { k: 'casino', n: 'Casino', icon: '🎰', blurb: 'Play-chip tables: cards, wheel, dice and slots', ids: ['blackjack', 'holdem', 'threecard', 'roulette', 'videopoker', 'baccarat', 'craps', 'slots'] }
@@ -4221,9 +4235,14 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.13.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.14.0'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.14.0', '21 Nov 2026', 'Snooker', [
+    'Snooker: reds and colours, the clearance from yellow to black, foul points and running breaks',
+    'Short (6 reds), Medium (10) or Full (15) frames against The Whirlwind or a friend',
+    'Solo high-break challenge with the reds spread round the table; your best break for each size is saved'
+  ]],
   ['1.13.0', '21 Nov 2026', 'Stocking the shelf', [
     'Ten new skill games: Pool, Curling, Table Shuffleboard, Pétanque, Penny Football, Darts, Shove Ha\'penny, Table Skittles, Bagatelle and Steady Hand',
     'A new Pub & Fairground shelf, and a bigger Flick & Skill shelf',
@@ -14504,7 +14523,7 @@ const TableKit = (() => {
     let aim = null, slide = null, pend = null, aiShow = null, flying = null, fitted = false;
     const V = cfg.view, SQ = cfg.squash || 1;
     const alive = my => () => my === sid && !!root;
-    const names = () => S.mode === 'ai' ? ['You', cfg.aiName] : (cfg.names2p || ['Player 1', 'Player 2']);
+    const names = () => S.mode === 'ai' ? ['You', cfg.aiName] : S.mode === 'solo' ? ['You', ''] : (cfg.names2p || ['Player 1', 'Player 2']);
     const view = () => !!cfg.flip2p && S.mode === '2p' && S.turn === 1;
     const myTurn = () => S && !S.over && S.phase === 'idle' && (S.mode === '2p' || S.turn === 0);
     function fit() {
@@ -14635,7 +14654,7 @@ const TableKit = (() => {
       S.msg = r.msg || '';
       if (r.toast) Util.toast(r.toast, 1300);
       if (r.next === 'round' || r.next === 'game') return endRound();
-      if (r.next === 'other') S.turn = 1 - S.turn;
+      if (r.next === 'other' && S.mode !== 'solo') S.turn = 1 - S.turn;
       else if (typeof r.next === 'number') S.turn = r.next;
       S.phase = 'idle'; kick();
     }
@@ -14645,8 +14664,8 @@ const TableKit = (() => {
       await Util.sleep(Util.delay(450)); if (my !== sid) return;
       if (er.over) {
         S.over = true; const w = er.winner;
-        Sfx.play(S.mode === '2p' || w === 0 ? 'win' : 'lose');
-        return App.endGame(cfg.id, S.mode === 'ai' && w === 0, w < 0 ? "It's a draw!" : S.mode === 'ai' ? (w === 0 ? 'You win!' : `${cfg.aiName} wins`) : `${n[w]} wins!`, er.html, () => newGame());
+        Sfx.play(er.won !== undefined ? (er.won ? 'win' : 'lose') : S.mode === '2p' || w === 0 ? 'win' : 'lose');
+        return App.endGame(cfg.id, er.won !== undefined ? er.won : S.mode === 'ai' && w === 0, er.final || (w < 0 ? "It's a draw!" : S.mode === 'ai' ? (w === 0 ? 'You win!' : `${cfg.aiName} wins`) : `${n[w]} wins!`), er.html, () => newGame());
       }
       await Util.choose(er.title, er.html, [{ label: er.next || 'Next round', value: 1, primary: true }]);
       if (my !== sid) return;
@@ -14703,7 +14722,7 @@ const TableKit = (() => {
     }
     const api = {
       async setup() {
-        const mode = await Util.choose(`${cfg.icon} ${cfg.title}`, 'Who are you playing?', [{ label: `🤖 vs ${cfg.aiName} (AI)`, value: 'ai', primary: true }, { label: '👥 Pass & Play', value: '2p' }, { label: 'Cancel', value: null }]);
+        const mode = await Util.choose(`${cfg.icon} ${cfg.title}`, 'Who are you playing?', [{ label: `🤖 vs ${cfg.aiName} (AI)`, value: 'ai', primary: true }, { label: '👥 Pass & Play', value: '2p' }].concat(cfg.solo ? [{ label: `🎯 Solo: ${cfg.solo}`, value: 'solo' }] : []).concat([{ label: 'Cancel', value: null }]));
         if (!mode) return null;
         if (!cfg.lengths) return { mode };
         const len = await Util.choose(`${cfg.icon} ${cfg.title}`, 'How long a game?', cfg.lengths.map((l, i) => ({ label: l.label, value: l.value, primary: !i })).concat([{ label: 'Cancel', value: null }]));
@@ -15619,6 +15638,201 @@ const Pool = TableKit.make((() => {
   };
 })());
 Games.pool = Pool;
+
+/* ============================================================================
+   SNOOKER: red, colour, red... then the colours in order. Solo high-break
+   challenge, vs AI or pass and play. Scaled table so the balls stay tappable.
+   ============================================================================ */
+const Snooker = TableKit.make((() => {
+  const HX = 2.5, HY = 5, BR = 0.135, FR = 1.1, BAULK = 2.94, DR = 0.82;
+  const POCKETS = [[-HX + .06, -HY + .06, .27], [HX - .06, -HY + .06, .27], [-HX + .06, HY - .06, .27], [HX - .06, HY - .06, .27], [-HX - .1, 0, .25], [HX + .1, 0, .25]];
+  const SPOT = { 2: [DR, BAULK], 3: [-DR, BAULK], 4: [0, BAULK], 5: [0, 0], 6: [0, -2.5], 7: [0, -4.09] };
+  const NAME = { 1: 'red', 2: 'yellow', 3: 'green', 4: 'brown', 5: 'blue', 6: 'pink', 7: 'black' };
+  const COL = { 1: ['#ff8a80', '#c8102e', '#5a0612'], 2: ['#fff6a8', '#f2c80f', '#7a6200'], 3: ['#9be3b0', '#1e7a3c', '#0a3318'], 4: ['#e0b48a', '#7a4a22', '#2e1a08'], 5: ['#9cc4ff', '#1f55c8', '#0a1f52'], 6: ['#ffd0e0', '#f07aa0', '#7a2a48'], 7: ['#777', '#151515', '#000'] };
+  const inD = (x, y) => y >= BAULK && Math.hypot(x, y - BAULK) <= DR;
+  const free = (balls, x, y, skip) => balls.every(b => b === skip || Math.hypot(b.x - x, b.y - y) > 2 * BR + .005);
+  function rack(n) {
+    const balls = [], d = BR * 2.02, rows = n === 6 ? 3 : n === 10 ? 4 : 5; let id = 1;
+    for (let r = 0; r < rows; r++) for (let c = 0; c <= r; c++) balls.push({ id: id++, v: 1, x: (c - r / 2) * d, y: -2.5 - 2 * BR - .01 - r * d * .87 });
+    for (const v of [2, 3, 4, 5, 6, 7]) balls.push({ id: 100 + v, v, x: SPOT[v][0], y: SPOT[v][1] });
+    return balls;
+  }
+  /* solo: reds spread round the table so a break can get going straight away */
+  function scatter(n) {
+    const balls = []; for (const v of [2, 3, 4, 5, 6, 7]) balls.push({ id: 100 + v, v, x: SPOT[v][0], y: SPOT[v][1] });
+    let id = 1, guard = 0;
+    while (id <= n && guard++ < 5000) {
+      const x = (Math.random() * 2 - 1) * (HX - .45), y = -HY + .5 + Math.random() * (BAULK - .4 + HY - .5);
+      if (balls.every(b => Math.hypot(b.x - x, b.y - y) > 4 * BR) && POCKETS.every(([px, py]) => Math.hypot(px - x, py - y) > .7)) balls.push({ id: id++, v: 1, x, y });
+    }
+    return balls;
+  }
+  /* put a colour back on its spot, or the highest free one, or as close below it as possible */
+  function respot(balls, v) {
+    const tries = [v, 7, 6, 5, 4, 3, 2].map(k => SPOT[k]);
+    for (const [x, y] of tries) if (free(balls, x, y)) return { id: 100 + v, v, x, y };
+    for (let y = SPOT[v][1]; y < HY - BR; y += .02) if (free(balls, SPOT[v][0], y)) return { id: 100 + v, v, x: SPOT[v][0], y };
+    return { id: 100 + v, v, x: SPOT[v][0], y: SPOT[v][1] };
+  }
+  const redsLeft = balls => balls.filter(b => b.v === 1).length;
+  const lowestColour = balls => Math.min(...balls.filter(b => b.v > 1).map(b => b.v));
+  const onBall = S => S.on === 'red' ? 'red' : S.on === 'colour' ? 'any colour' : NAME[S.on];
+  const ptsLeft = S => { const r = redsLeft(S.balls); const cols = S.balls.filter(b => b.v > 1).reduce((a, b) => a + b.v, 0); return r * 8 + (S.on === 'colour' ? 7 : 0) + cols; };
+  function world(S, shot, sound) {
+    const W = FlickKit.world({ fr: FR, e: 0.95, bx: HX, by: HY, eWall: 0.72 });
+    W.b = S.balls.map(b => ({ id: b.id, v: b.v, x: b.x, y: b.y, vx: 0, vy: 0, r: BR, m: 1 }));
+    W.b.push({ id: 0, v: 0, cue: true, x: shot.x, y: shot.y, vx: shot.vx, vy: shot.vy, r: BR, m: 1 });
+    W.first = null; W.pots = [];
+    W.hit = (a, c, v) => { if (W.first === null && (a.cue || c.cue)) W.first = a.cue ? c.v : a.v; if (sound) FlickKit.clack('clack', v / 5); };
+    if (sound) W.wall = (a, v) => FlickKit.clack('thud', v / 7);
+    W.after = () => { for (const b of W.b) if (!b.out) for (const [px, py, pr] of POCKETS) if (Math.hypot(b.x - px, b.y - py) < pr) { b.out = 'pot'; b.vx = b.vy = 0; W.pots.push(b.v); if (sound) Sfx.play('drop'); break; } };
+    return W;
+  }
+  /* rules of a finished shot: pure, so the AI can use it */
+  function judge(S, W) {
+    const on = S.on, pots = W.pots.filter(v => v > 0), scratch = W.pots.includes(0), first = W.first;
+    const okFirst = first !== null && (on === 'red' ? first === 1 : on === 'colour' ? first > 1 : first === on);
+    let foul = scratch || !okFirst, scored = 0;
+    if (!foul) {
+      if (on === 'red') { if (pots.some(v => v > 1)) foul = true; else scored = pots.length; }
+      else if (on === 'colour') { if (pots.some(v => v !== first)) foul = true; else scored = pots.length ? first : 0; }
+      else { if (pots.some(v => v !== on)) foul = true; else scored = pots.length ? on : 0; }
+    }
+    const onVal = on === 'red' ? 1 : on === 'colour' ? 0 : on;
+    const fv = foul ? Math.max(4, onVal, first || 0, ...pots, on === 'colour' && first > 1 ? first : 0) : 0;
+    return { foul, scratch, scored, fv, pots, first, cont: !foul && scored > 0 };
+  }
+  function applyShot(S, W) {
+    const j = judge(S, W), p = S.turn, cue = W.b.find(b => b.cue);
+    let balls = W.b.filter(b => !b.out && !b.cue).map(b => ({ id: b.id, v: b.v, x: b.x, y: b.y }));
+    const reds = redsLeft(balls);
+    // colours come back while reds remain, after a foul, or in the colour phase
+    const clearing = typeof S.on === 'number';
+    j.pots.filter(v => v > 1).forEach(v => { if (!clearing || j.foul || v !== S.on) balls.push(respot(balls, v)); });
+    S.balls = balls;
+    if (cue.out) { S.cue = { x: 0, y: BAULK + DR * .5 }; S.inHand = true; } else { S.cue = { x: cue.x, y: cue.y }; S.inHand = false; }
+    // what's on next
+    let next;
+    if (S.on === 'red') next = j.cont ? 'colour' : reds > 0 ? 'red' : lowestColour(S.balls);
+    else if (S.on === 'colour') next = reds > 0 ? 'red' : lowestColour(S.balls);
+    else next = j.cont ? (S.balls.some(b => b.v > 1) ? lowestColour(S.balls) : null) : S.on;
+    S.on = next;
+    return j;
+  }
+  return {
+    id: 'snooker', ns: 'Snooker', title: 'Snooker', icon: '🔴', aiName: 'The Whirlwind', names2p: ['Player 1', 'Player 2'], solo: 'high-break challenge',
+    lengths: [{ label: 'Short: 6 reds', value: 6 }, { label: 'Medium: 10 reds', value: 10 }, { label: 'Full: 15 reds', value: 15 }],
+    view: { x0: -2.9, y0: -5.4, w: 5.8, h: 10.8 }, vmax: 9, fr: FR, pull: 3.2, maxGuide: 12, grab: .8, freeAim: true, extraH: 52,
+    init(len, mode) { return { balls: mode === 'solo' ? scatter(len) : rack(len), cue: { x: -DR * .5, y: BAULK + DR * .4 }, inHand: true, on: 'red', score: [0, 0], brk: 0, best: 0, turn: 0, hi: Store.get('snooker_hi', {}) }; },
+    launcher: S => ({ x: S.cue.x, y: S.cue.y, r: BR }),
+    canPlace: S => !!S.inHand,
+    place(S, q) { let x = q.x, y = Math.max(BAULK + .001, q.y); const d = Math.hypot(x, y - BAULK); if (d > DR) { x = x / d * DR; y = BAULK + (y - BAULK) / d * DR; } if (free(S.balls, x, y)) S.cue = { x, y }; },
+    hint: S => ({ circles: S.balls.map(b => ({ x: b.x, y: b.y, r: BR, d: 1 })), box: { x: HX, y: HY } }),
+    applyAI(S, c, k, from) { if (c.place) S.cue = { x: from.x + (c.x - from.x) * k, y: from.y + (c.y - from.y) * k }; },
+    world, shootSfx: 'clack',
+    settle(S, W) {
+      const p = S.turn, n = S.mode === 'ai' ? ['You', 'The Whirlwind'] : ['Player 1', 'Player 2'], j = applyShot(S, W);
+      if (S.mode === 'solo') {
+        if (j.cont) { S.brk += j.scored; if (S.on === null) return { next: 'game', msg: 'Total clearance!' }; return { msg: `+${j.scored} · break ${S.brk}` }; }
+        S.endWhy = j.foul ? `Foul: that ends the break.` : 'Missed: that ends the break.';
+        return { next: 'game' };
+      }
+      if (j.foul) {
+        S.score[1 - p] += j.fv; const b = S.brk; S.brk = 0;
+        if (S.on === null) return { next: 'game' };
+        return { next: 'other', msg: `Foul${j.scratch ? ' (in-off)' : j.first === null ? ' (missed everything)' : ''}: ${j.fv} to ${n[1 - p]}.${b >= 10 ? ` Break of ${b}.` : ''}` };
+      }
+      if (j.cont) {
+        S.score[p] += j.scored; S.brk += j.scored;
+        if (S.on === null) return { next: 'game', msg: `Black potted: break of ${S.brk}.` };
+        return { msg: `${j.scored === 1 && j.pots.length === 1 ? 'Red' : NAME[j.first] && j.first > 1 ? NAME[j.first][0].toUpperCase() + NAME[j.first].slice(1) : `${j.pots.length} reds`} · break ${S.brk}` };
+      }
+      const b = S.brk; S.brk = 0;
+      return { next: 'other', msg: b >= 10 ? `Break of ${b} ends.` : '' };
+    },
+    endRound(S, n) {
+      if (S.mode === 'solo') {
+        const key = 'r' + S.len, prev = S.hi[key] || 0, b = S.brk;
+        if (b > prev) { S.hi[key] = b; Store.set('snooker_hi', S.hi); }
+        const ok = b >= (S.len === 6 ? 20 : 30);
+        return { over: true, won: ok, final: S.on === null ? `Total clearance! ${b}` : `Break of ${b}`, html: `${S.endWhy || ''}<br>${b > prev ? '<b class="text-amber-300">A new high break!</b>' : `Your best with ${S.len} reds: <b>${Math.max(prev, b)}</b>.`}<br><span class="text-xs text-amber-100/60">Make ${S.len === 6 ? 20 : 30}+ for a trophy.</span>` };
+      }
+      const w = S.score[0] === S.score[1] ? -1 : S.score[0] > S.score[1] ? 0 : 1;
+      return { over: true, winner: w, html: `${n[0]} ${S.score[0]} · ${n[1]} ${S.score[1]}` };
+    },
+    nextRound() {},
+    candidates(S, p) {
+      const out = [], targets = S.balls.filter(b => S.on === 'red' ? b.v === 1 : S.on === 'colour' ? b.v > 1 : b.v === S.on);
+      const others = t => S.balls.filter(b => b !== t).map(b => ({ x: b.x, y: b.y, r: BR }));
+      for (const t of targets) for (const [px, py] of POCKETS) {
+        const tx = px - t.x, ty = py - t.y, tl = Math.hypot(tx, ty), ux = tx / tl, uy = ty / tl, gx = t.x - ux * 2 * BR, gy = t.y - uy * 2 * BR;
+        if (FlickKit.ray(t.x, t.y, ux, uy, BR, others(t)).t < tl - .25) continue;
+        const starts = [];
+        if (S.inHand) { for (const back of [.6, 1.2, 2]) { const sx = gx - ux * back, sy = gy - uy * back; if (inD(sx, sy) && free(S.balls, sx, sy)) starts.push({ x: sx, y: sy, place: true }); } if (!starts.length) starts.push({ x: S.cue.x, y: S.cue.y, place: true }); }
+        else starts.push({ x: S.cue.x, y: S.cue.y });
+        for (const st of starts) {
+          const dx = gx - st.x, dy = gy - st.y, dl = Math.hypot(dx, dy), vx = dx / dl, vy = dy / dl, cos = vx * ux + vy * uy;
+          if (cos < .3) continue;
+          if (FlickKit.ray(st.x, st.y, vx, vy, BR, others(t)).t < dl - .02) continue;
+          const vHit = Math.sqrt(2 * FR * tl * 1.35 + .5) / (0.975 * cos), v0 = Math.sqrt(vHit * vHit + 2 * FR * dl);
+          [1, 1.3, 1.7].forEach(k => out.push({ x: st.x, y: st.y, vx: vx * Math.min(9, v0 * k), vy: vy * Math.min(9, v0 * k), place: st.place }));
+        }
+      }
+      // safeties: thin and thick contacts on balls that are on
+      const st = S.cue;
+      for (const t of targets.slice(0, 6)) for (const off of [-.85, -.4, 0, .4, .85]) {
+        const dx = t.x - st.x, dy = t.y - st.y, d = Math.hypot(dx, dy), px = -dy / d, py = dx / d, ax = t.x + px * off * 2 * BR - st.x, ay = t.y + py * off * 2 * BR - st.y, a = Math.hypot(ax, ay);
+        [2.2, 3.5, 5].forEach(v => out.push({ x: st.x, y: st.y, vx: ax / a * v, vy: ay / a * v, place: S.inHand }));
+      }
+      return out;
+    },
+    aiCap: 170,
+    score(S, W, p) {
+      const T = Object.assign({}, S, { balls: S.balls.map(b => Object.assign({}, b)) }), j = judge(T, W);
+      if (j.foul) return -j.fv * 3;
+      if (j.cont) return j.scored * 7 + 4;
+      const cue = W.b.find(b => b.cue), reds = W.b.filter(b => !b.out && b.v === 1);
+      const near = reds.length ? Math.min(...reds.map(b => Math.hypot(b.x - cue.x, b.y - cue.y))) : 2;
+      return 1 + Math.min(4, near) * .6 + (cue.y > BAULK ? 1 : 0);
+    },
+    paint(c) {
+      const F = .4;
+      c.fillStyle = '#2a1508'; c.beginPath(); c.roundRect ? c.roundRect(-HX - F, -HY - F, 2 * (HX + F), 2 * (HY + F), .3) : c.rect(-HX - F, -HY - F, 2 * (HX + F), 2 * (HY + F)); c.fill();
+      TableKit.grain(c, -HX - F, -HY - F, 2 * (HX + F), 2 * (HY + F), 'rgba(190,120,60,', 40, true, 21);
+      c.fillStyle = '#145a2c'; c.fillRect(-HX - .1, -HY - .1, 2 * HX + .2, 2 * HY + .2);
+      const g = c.createRadialGradient(0, -1, .5, 0, 0, 7); g.addColorStop(0, '#2a8a46'); g.addColorStop(1, '#14582c');
+      c.fillStyle = g; c.fillRect(-HX, -HY, 2 * HX, 2 * HY);
+      c.fillStyle = 'rgba(255,255,255,.03)'; for (let i = 0; i < 1000; i++) c.fillRect(-HX + ((i * 7.7) % (2 * HX)), -HY + ((i * 3.31) % (2 * HY)), .025, .025);
+      c.strokeStyle = 'rgba(255,255,255,.55)'; c.lineWidth = .02;
+      c.beginPath(); c.moveTo(-HX, BAULK); c.lineTo(HX, BAULK); c.stroke();
+      c.beginPath(); c.arc(0, BAULK, DR, 0, Math.PI); c.stroke();
+      c.fillStyle = 'rgba(255,255,255,.6)'; Object.values(SPOT).forEach(([x, y]) => { c.beginPath(); c.arc(x, y, .025, 0, 7); c.fill(); });
+      POCKETS.forEach(([x, y, r]) => { const gg = c.createRadialGradient(x, y, 0, x, y, r); gg.addColorStop(0, '#000'); gg.addColorStop(.85, '#0b0b0b'); gg.addColorStop(1, '#3a220c'); c.fillStyle = gg; c.beginPath(); c.arc(x, y, r, 0, 7); c.fill(); });
+    },
+    draw(c, S, live, ui) {
+      const ball = (x, y, v, glow) => {
+        TableKit.disc(c, x, y, BR, v ? COL[v] : ['#ffffff', '#f4f1e8', '#a8a196'], { glow });
+        c.fillStyle = 'rgba(255,255,255,.5)'; c.beginPath(); c.arc(x - BR * .38, y - BR * .42, BR * .2, 0, 7); c.fill();
+      };
+      if (live) { live.b.forEach(b => { if (!b.out) ball(b.x, b.y, b.v); }); return; }
+      S.balls.forEach(b => ball(b.x, b.y, b.v, false));
+      ball(S.cue.x, S.cue.y, 0, ui.idle && S.inHand);
+      if (ui.idle && S.inHand) { c.strokeStyle = 'rgba(255,255,255,.55)'; c.lineWidth = .025; c.setLineDash([.07, .07]); c.beginPath(); c.arc(S.cue.x, S.cue.y, BR * 2.2, 0, 7); c.stroke(); c.setLineDash([]); }
+    },
+    hud(S, n) {
+      const onChip = `<span class="stat-chip">On: <b class="ml-1 text-amber-200">${onBall(S)}</b></span>`;
+      if (S.mode === 'solo') {
+        const best = S.hi['r' + S.len] || 0;
+        return `<div class="flex gap-2 justify-center flex-wrap"><span class="stat-chip">Break <b class="ml-1 text-amber-200 text-base">${S.brk}</b></span>${onChip}<span class="stat-chip">Reds <b class="ml-1 text-amber-200">${redsLeft(S.balls)}</b></span><span class="stat-chip">Best <b class="ml-1 text-amber-200">${best}</b></span></div>`;
+      }
+      return TableKit.sides(S, n, { score: k => S.score[k], line: k => S.turn === k ? `Break ${S.brk}` : '' }, null) +
+        `<div class="flex gap-2 justify-center flex-wrap mt-1.5">${onChip}<span class="stat-chip">Reds <b class="ml-1 text-amber-200">${redsLeft(S.balls)}</b></span><span class="stat-chip">Left on table <b class="ml-1 text-amber-200">${ptsLeft(S)}</b></span></div>`;
+    },
+    tip: S => S.inHand ? 'Ball in hand: drag the cue ball anywhere in the D, then press elsewhere and drag to aim and power up.' : `You're on ${onBall(S)}. Press anywhere and drag: the cue points through the white, further for more power.`,
+    foot: S => S.mode === 'solo' ? `High-break challenge · ${S.len} reds · a miss or foul ends the break` : `${S.len} reds`
+  };
+})());
+Games.snooker = Snooker;
 
 /* ============================================================================
    DARTS: 501 / 301 (double out) and Around the Clock.

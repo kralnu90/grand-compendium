@@ -1,12 +1,12 @@
 # The Grand Tabletop Compendium
 
-*Sixty-eight classic, esoteric, patience, family, pub, casino and word games, one table.*
+*Sixty-nine classic, esoteric, patience, family, pub, casino and word games, one table.*
 
 Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal strategy, tumbling dice, pub cards, quiet puzzles, word games, family favourites, a murder to solve and a dungeon to delve. A free game from Kralnu Games.
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.13.0**
+**Current version: 1.14.0**
 
 ## The games
 
@@ -14,6 +14,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | --- | --- | --- |
 | 🎯 **Crokinole** ★ | The featured table: flick discs across a round maple board, knock your rival into the ditch and sink the 20 | vs AI or 2 players |
 | 🎱 **Pool** | Eight-ball: solids or stripes, ball in hand on a foul, then sink the black | vs AI or 2 players |
+| 🔴 **Snooker** | Reds and colours, then clear yellow to black. Short, medium or full frames, plus a solo high-break challenge | vs AI, 2 players or solo |
 | 🥌 **Curling** | Pick your curl, slide the stone and hold the ice to sweep. Closest to the button scores | vs AI or 2 players |
 | 🛷 **Table Shuffleboard** | Slide weights down a waxed table; furthest scores, hang one off the end for four | vs AI or 2 players |
 | ⚫ **Pétanque** | Point or shoot your boules at the jack in a gravel square | vs AI or 2 players |
@@ -132,6 +133,10 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.14.0 · Snooker (21 November 2026)
+- Snooker with 6, 10 or 15 reds against The Whirlwind or a friend: red-colour sequence, the clearance, foul points (minimum 4), in-offs and ball in hand in the D
+- Solo high-break challenge: reds spread round the table, keep going until you miss or foul, best break saved per frame size
 
 ### 1.13.0 · Stocking the shelf (21 November 2026)
 - Ten new skill games: Pool, Curling, Table Shuffleboard, Pétanque, Penny Football, Darts, Shove Ha'penny, Table Skittles, Bagatelle and Steady Hand
