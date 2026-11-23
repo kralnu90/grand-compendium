@@ -4236,9 +4236,12 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.14.1'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.14.2'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.14.2', '23 Nov 2026', 'Card fix', [
+    'Cribbage and Gin Rummy: tapping cards in your hand works again (taps were being ignored after drawing from the stock)'
+  ]],
   ['1.14.1', '21 Nov 2026', 'For Mum', [
     'Dog Rummy is now dedicated to my mum, who inspired it ♥'
   ]],
@@ -9309,7 +9312,7 @@ const Cribbage = (() => {
       const h = hand(i);
       if (!h) return `<div class="flex gap-1 justify-center">${S.hands[i].map(() => Util.card({ r: 1, s: 'S' }, { down: true })).join('')}</div>`;
       const active = (S.phase === 'discard' && S.discarder === i) || (S.phase === 'peg' && P.turn === i);
-      return `<div class="flex gap-1 justify-center flex-wrap">${h.map(c => Util.card(c, { sel: picked.includes(c.id), cls: active && S.phase === 'peg' && P.count + val(c) > 31 ? 'dim' : '', attrs: `onclick="Cribbage.tap(${c.id})"` })).join('')}</div>`;
+      return `<div class="flex gap-1 justify-center flex-wrap">${h.map(c => Util.card(c, { sel: picked.includes(c.id), cls: active && S.phase === 'peg' && P.count + val(c) > 31 ? 'dim' : '', attrs: `onclick="Cribbage.tap('${c.id}')"` })).join('')}</div>`;
     };
     const me = mode === 'ai' ? 0 : (viewer >= 0 ? viewer : (S.phase === 'peg' ? P.turn : S.discarder ?? 0));
     const opp = 1 - me;
@@ -9463,7 +9466,7 @@ const Gin = (() => {
     const handHTML = i => {
       if (!visible(i)) return `<div class="flex justify-center" style="padding-left:12px">${S.hands[i].map(() => `<div style="margin-left:-12px">${Util.card({ r: 1, s: 'S' }, { down: true })}</div>`).join('')}</div>`;
       const a = arrange(S.hands[i]);
-      const grp = (cards, meld) => `<div class="flex rounded-lg p-1 ${meld ? 'bg-emerald-500/15 ring-1 ring-emerald-400/40' : ''}" style="padding-left:${meld ? 'calc(var(--cw)*.35 + 4px)' : 'calc(var(--cw)*.35)'}">${cards.map(c => `<div style="margin-left:calc(var(--cw)*-.35)">${Util.card(c, { sel: sel === c.id, attrs: `onclick="Gin.pick(${c.id})"` })}</div>`).join('')}</div>`;
+      const grp = (cards, meld) => `<div class="flex rounded-lg p-1 ${meld ? 'bg-emerald-500/15 ring-1 ring-emerald-400/40' : ''}" style="padding-left:${meld ? 'calc(var(--cw)*.35 + 4px)' : 'calc(var(--cw)*.35)'}">${cards.map(c => `<div style="margin-left:calc(var(--cw)*-.35)">${Util.card(c, { sel: sel === c.id, attrs: `onclick="Gin.pick('${c.id}')"` })}</div>`).join('')}</div>`;
       return `<div class="flex flex-wrap gap-2 justify-center items-end">${a.melds.map(m => grp(m.sort((x, y) => x.r - y.r), true)).join('')}${a.dead.length ? grp(a.dead, false) : ''}</div><div class="text-center text-xs text-amber-100/70 mt-1">Deadwood: <b class="${a.dw <= 10 ? 'text-emerald-300' : 'text-amber-200'}">${a.dw}</b></div>`;
     };
     const top = S.discard[S.discard.length - 1], mine = isHuman(S.turn) && shownFor === S.turn && !S.over && S.phase !== 'show';

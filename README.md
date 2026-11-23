@@ -6,7 +6,7 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 
 ## [▶ Play it](https://kralnugames.com/grand-compendium/)
 
-**Current version: 1.14.1**
+**Current version: 1.14.2**
 
 ## The games
 
@@ -133,6 +133,9 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.14.2 · Card fix (23 November 2026)
+- Cribbage and Gin Rummy: hand cards respond to taps again. Their card buttons passed the card id unquoted (e.g. `Gin.pick(S13)`), which threw an error so the tap did nothing
 
 ### 1.14.1 · For Mum (21 November 2026)
 - Dog Rummy is now dedicated to Kris's mum, who inspired it, in its rules, on the table and in the Credits
