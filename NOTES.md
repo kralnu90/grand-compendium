@@ -73,3 +73,7 @@ At 54 after 1.9.0 (batch 1, the patience pack, is done). Revised plan, original 
 - Chess and shogi don't detect draws by repetition
 - Torchlight Delve: one dungeon floor per run; could add more floors, more monsters and hero levelling
 - No proper music tracks yet: the music-box tune is generated
+
+## 26 November 2026 · 1.14.3
+- **K-Buks (Kb)** is now the shared Kralnu Games currency. Converted: the casino bank (`Chips` / `Store` key `chips` unchanged, so banks carry over), Landlords of Larkford money (was £; `p.cash` unchanged) and Torchlight Delve gold (`S.gold` unchanged). Player-facing wording and icons only. "Pick a chip" still refers to physical chip denominations.
+- A `.kb` CSS class shows Kris's hand-drawn 16×16 K coin (data URI). Use `<i class="kb"></i>` before an amount.

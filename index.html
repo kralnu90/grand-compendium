@@ -2463,7 +2463,8 @@
   }
 }
 
-  </style>
+  .kb{display:inline-block;width:1.1em;height:1.1em;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnUlEQVR4XmNgGGjAiMsB/89Y/keXYzQ5jqEeQwCbRnwGMSFLEqMZBL6vUYW7DsUAZHDp2h+s/B8P3qCIww3AZzvIMD0tFhSNMFfgdAEMIGtGtx0E8BpASDNBA0DOBhmCzWYYIOgFmCG4ANwAbIkEZDMIYzOEM+Q2OA2hBi0UgDSpcaHaiR4LMICREpETCS4Asx0EcOYFbAYha6QaAAD/mUkTj0WiJAAAAABJRU5ErkJggg==) center/contain no-repeat;image-rendering:pixelated;vertical-align:-0.2em;margin-right:3px}
+</style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
@@ -3223,10 +3224,10 @@ const GAME_CATALOG = [
     rules: `
       <p><strong>Objective:</strong> Defeat the <em>Bone King</em> 👑 in the deepest room, then step onto the stairs to escape.</p>
       <ul class="list-disc pl-5 space-y-1.5">
-        <li><strong>The party:</strong> Warrior (tough, 3 attack dice), Mage (frail, 3 Fireballs that hit from up to 6 squares), Rogue (moves 2 extra, disarms traps, finds more gold) and Cleric (3 Heals of 4 HP).</li>
+        <li><strong>The party:</strong> Warrior (tough, 3 attack dice), Mage (frail, 3 Fireballs that hit from up to 6 squares), Rogue (moves 2 extra, disarms traps, finds more K-Buks) and Cleric (3 Heals of 4 HP).</li>
         <li><strong>Your turn:</strong> Each hero rolls 2 dice to move, and takes one action: attack, cast, search the room or drink a potion. Tap a monster next to you to attack it.</li>
         <li><strong>Combat dice:</strong> Attackers count 💀 skulls. Heroes block with 🛡️ white shields, monsters only with rarer ⚫ black shields.</li>
-        <li><strong>Exploring:</strong> Rooms light up as you enter them, and any monsters there wake up. Search a cleared room once for gold, potions or a better weapon, but beware of traps.</li>
+        <li><strong>Exploring:</strong> Rooms light up as you enter them, and any monsters there wake up. Search a cleared room once for K-Buks, potions or a better weapon, but beware of traps.</li>
         <li><strong>Monsters:</strong> After every hero has gone, each awake monster moves towards the nearest hero and attacks.</li>
         <li><strong>Defeat:</strong> If every hero falls, the delve is over.</li>
       </ul>`
@@ -3707,7 +3708,7 @@ const GAME_CATALOG = [
         <li><strong>Play:</strong> Hit for another card, Stand to stop, Double to double your bet for exactly one more card, or Split a pair into two hands.</li>
         <li><strong>Dealer:</strong> Draws to 16 and stands on every 17. A win pays 1 to 1, a two-card 21 (Blackjack) pays 3 to 2, and ties push.</li>
         <li><strong>Help:</strong> With hints on, the basic strategy move is shown under the buttons.</li>
-        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+        <li><strong>K-Buks:</strong> All casino games share one bank of K-Buks (Kb), the Kralnu Games currency. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
       </ul>`
   },
   {
@@ -3719,7 +3720,7 @@ const GAME_CATALOG = [
         <li><strong>Betting:</strong> Pick a chip, then tap numbers or outside bets. Tap again to stack more.</li>
         <li><strong>Payouts:</strong> A single number pays 35 to 1. Dozens and columns pay 2 to 1. Red/black, odd/even and 1-18/19-36 pay 1 to 1. Zero loses every outside bet.</li>
         <li><strong>Rebet:</strong> Repeats your last spin's bets.</li>
-        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+        <li><strong>K-Buks:</strong> All casino games share one bank of K-Buks (Kb), the Kralnu Games currency. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
       </ul>`
   },
   {
@@ -3731,7 +3732,7 @@ const GAME_CATALOG = [
         <li><strong>Play:</strong> Set your bet and Deal. Tap cards to hold them, then Draw to replace the rest.</li>
         <li><strong>Payouts:</strong> Shown in the table at the top, from a pair of Jacks or better (your bet back) up to a royal flush (800 times your bet).</li>
         <li><strong>Help:</strong> Best hold works out which cards give the best average return.</li>
-        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+        <li><strong>K-Buks:</strong> All casino games share one bank of K-Buks (Kb), the Kralnu Games currency. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
       </ul>`
   },
   {
@@ -3743,7 +3744,7 @@ const GAME_CATALOG = [
         <li><strong>Values:</strong> Aces are 1, 2 to 9 count as shown, 10s and face cards are 0. Only the last digit counts (7 + 8 = 5).</li>
         <li><strong>Drawing:</strong> Both hands get two cards. A third card is drawn automatically by the fixed baccarat rules, so there are no decisions after betting.</li>
         <li><strong>Payouts:</strong> Player pays 1 to 1, Banker pays 0.95 to 1, Tie pays 8 to 1 (Player and Banker bets push on a tie).</li>
-        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+        <li><strong>K-Buks:</strong> All casino games share one bank of K-Buks (Kb), the Kralnu Games currency. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
       </ul>`
   },
   {
@@ -3757,7 +3758,7 @@ const GAME_CATALOG = [
         <li><strong>Don't Pass:</strong> The opposite of the Pass Line (12 on the come-out is a push).</li>
         <li><strong>Odds:</strong> Once a point is set, add up to 3 times your Pass bet. Pays true odds (2:1 on 4/10, 3:2 on 5/9, 6:5 on 6/8).</li>
         <li><strong>One-roll bets:</strong> Field wins on 2, 3, 4, 9, 10, 11 or 12. Any 7 pays 4 to 1.</li>
-        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+        <li><strong>K-Buks:</strong> All casino games share one bank of K-Buks (Kb), the Kralnu Games currency. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
       </ul>`
   },
   {
@@ -3768,21 +3769,21 @@ const GAME_CATALOG = [
       <ul class="list-disc pl-5 space-y-1.5">
         <li><strong>Lines:</strong> The three rows and two diagonals all pay. Your bet is split evenly across the five lines.</li>
         <li><strong>Pays:</strong> Three of a kind on a line, from cherries (12x the line bet) up to lanterns (600x). Two cherries on the left of a line pay 2x.</li>
-        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+        <li><strong>K-Buks:</strong> All casino games share one bank of K-Buks (Kb), the Kralnu Games currency. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
       </ul>`
   },
   {
     id: 'holdem', title: "Texas Hold'em", subtitle: "No-Limit Poker", category: 'Casino', icon: '♠️',
     players: "You vs 5 AI players", tagline: "Sit down at a no-limit table and outplay five AI regulars.",
     rules: `
-      <p><strong>Objective:</strong> Win chips by holding the best hand at showdown, or by making everyone else fold.</p>
+      <p><strong>Objective:</strong> Win K-Buks by holding the best hand at showdown, or by making everyone else fold.</p>
       <ul class="list-disc pl-5 space-y-1.5">
         <li><strong>The deal:</strong> Everyone gets two private cards. Five shared cards come out in stages: the flop (3), the turn (1) and the river (1).</li>
         <li><strong>Betting:</strong> Rounds happen before the flop and after each new card. Fold, Check or Call, or Raise (min, half pot, pot or all in).</li>
         <li><strong>Blinds:</strong> 2 and 4 chips, moving round the table with the dealer button.</li>
         <li><strong>Showdown:</strong> The best five-card hand from your two cards plus the board wins. All-ins create side pots automatically.</li>
-        <li><strong>Table chips:</strong> You buy in for 200 from your bank. Cash out to put your stack back in the bank (it also goes back if you leave).</li>
-        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+        <li><strong>Table chips:</strong> You buy in for 200 Kb from your bank. Cash out to put your stack back in the bank (it also goes back if you leave).</li>
+        <li><strong>K-Buks:</strong> All casino games share one bank of K-Buks (Kb), the Kralnu Games currency. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
       </ul>`
   },
   {
@@ -3798,7 +3799,7 @@ const GAME_CATALOG = [
         <li><strong>Ante bonus:</strong> Paid whenever you Play, even if the dealer wins: straight 1 to 1, three of a kind 4 to 1, straight flush 5 to 1.</li>
         <li><strong>Pair Plus:</strong> Pays on your hand alone: pair 1, flush 3, straight 6, three of a kind 30, straight flush 40 (to 1).</li>
         <li><strong>Tip:</strong> The standard strategy is to play Queen-6-4 or better. With hints on, the table tells you.</li>
-        <li><strong>Chips:</strong> All casino games share one bank of play chips. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
+        <li><strong>K-Buks:</strong> All casino games share one bank of K-Buks (Kb), the Kralnu Games currency. They can't be bought or cashed out, and if you run dry the house tops you back up.</li>
       </ul>`
   },
   {
@@ -3931,18 +3932,18 @@ const GAME_CATALOG = [
     id: 'larkford', title: "Landlords of Larkford", subtitle: "The Property Trading Game", category: 'Board', icon: '🏘️',
     players: "2-6, people or AI", tagline: "Buy up the streets of a little market town, build houses and hotels, and bankrupt your rivals.",
     rules: `
-      <p><strong>Objective:</strong> Be the last player left with money, or the richest when time runs out in a Timed game.</p>
+      <p><strong>Objective:</strong> Be the last player left with K-Buks, or the richest when time runs out in a Timed game.</p>
       <ul class="list-disc pl-5 space-y-1.5">
-        <li><strong>Moving:</strong> Roll two dice and move. A double means you roll again, but three doubles in a row and you're caught speeding. Passing Town Square pays £200.</li>
+        <li><strong>Moving:</strong> Roll two dice and move. A double means you roll again, but three doubles in a row and you're caught speeding. Passing Town Square pays 200 Kb.</li>
         <li><strong>Buying:</strong> Land on an unowned street, station or utility and you can buy it. If you pass, it goes to auction: everyone makes one secret bid, and the highest bid buys it.</li>
         <li><strong>Rent:</strong> Land on someone else's property and pay rent. Rent doubles on empty streets when one player owns the whole colour set. Stations pay more the more you own, and utilities charge a multiple of your roll.</li>
         <li><strong>Building:</strong> Own a whole colour set to build houses, evenly across the set. After four houses, the fifth building is a hotel. Tap 🏠 My property to build, sell or mortgage.</li>
         <li><strong>Mortgages:</strong> Mortgage a property for half its price. It earns no rent until you pay it back with 10% interest.</li>
-        <li><strong>Trading:</strong> Use 🤝 Trade on your turn to swap property and cash with anyone. The AI players will make you offers too.</li>
-        <li><strong>The Lock-up:</strong> Caught speeding? Pay £50, use a Get Out Free card, or try to roll a double (three tries, then you pay).</li>
+        <li><strong>Trading:</strong> Use 🤝 Trade on your turn to swap property and K-Buks with anyone. The AI players will make you offers too.</li>
+        <li><strong>The Lock-up:</strong> Caught speeding? Pay 50 Kb, use a Get Out Free card, or try to roll a double (three tries, then you pay).</li>
         <li><strong>Cards:</strong> 🔮 Fortune and 🏛️ Town Hall cards can help or hurt.</li>
         <li><strong>Bankruptcy:</strong> If you can't pay, sell buildings and mortgage. If that still isn't enough, you're out, and your property goes to whoever you owed.</li>
-        <li><strong>Game length:</strong> Timed (richest after 20 rounds, counting cash, property and buildings) or Classic (last player standing).</li>
+        <li><strong>Game length:</strong> Timed (richest after 20 rounds, counting K-Buks, property and buildings) or Classic (last player standing).</li>
       </ul>`
   }
 ];
@@ -4108,7 +4109,7 @@ const App = {
     { k: 'flick', n: 'Flick & Skill', icon: '🎯', blurb: 'Flick, slide, roll and strike', ids: ['crokinole', 'carrom', 'pool', 'snooker', 'curling', 'shuffleboard', 'petanque', 'pennyfootball', 'springmikado'] },
     { k: 'pub', n: 'Pub & Fairground', icon: '🍺', blurb: 'Darts, skittles and steady hands', ids: ['darts', 'shoveha', 'skittles', 'bagatelle', 'steadyhand'] },
     { k: 'words', n: 'Words & Puzzles', icon: '🔤', blurb: 'Crosswords, word searches and daily puzzles', ids: ['tilecraft', 'arrowwords', 'codeword', 'fillin', 'wordsearch', 'wordlock', 'wordwheel', 'wordgrid', 'sudoku'] },
-    { k: 'casino', n: 'Casino', icon: '🎰', blurb: 'Play-chip tables: cards, wheel, dice and slots', ids: ['blackjack', 'holdem', 'threecard', 'roulette', 'videopoker', 'baccarat', 'craps', 'slots'] }
+    { k: 'casino', n: 'Casino', icon: '🎰', blurb: 'K-Buks tables: cards, wheel, dice and slots', ids: ['blackjack', 'holdem', 'threecard', 'roulette', 'videopoker', 'baccarat', 'craps', 'slots'] }
   ],
   catOf(id) { return this.CATS.find(c => c.ids.includes(id)); },
   /* the Casino shelf and its tables get their own black-and-gold room */
@@ -4236,9 +4237,12 @@ const App = {
 /* ============================================================================
    KRALNU GAMES BASICS: settings, main-menu tiles, review, credits, what's new
    ============================================================================ */
-const GAME_VERSION = '1.14.2'; window.kgBuild = GAME_VERSION; // the update notice reads this
+const GAME_VERSION = '1.14.3'; window.kgBuild = GAME_VERSION; // the update notice reads this
 const KOFI = 'https://ko-fi.com/kralnu90';
 const CHANGES = [
+  ['1.14.3', '26 Nov 2026', 'K-Buks', [
+    'The casino bank, Landlords of Larkford money and Torchlight Delve\'s gold are now K-Buks (Kb), the Kralnu Games currency, with a new hand-drawn gold coin icon. Your casino bank carries over exactly as it was'
+  ]],
   ['1.14.2', '23 Nov 2026', 'Card fix', [
     'Cribbage and Gin Rummy: tapping cards in your hand works again (taps were being ignored after drawing from the stock)'
   ]],
@@ -7612,7 +7616,7 @@ const Delve = (() => {
     Sfx.play(res.dmg ? 'hit' : 'card');
     if (m.hp <= 0) {
       log(`☠️ The ${M.n} falls!`); Sfx.play('capture');
-      if (m.t === 'boss') { S.bossDead = true; S.gold += 200; log('👑 The Bone King crumbles! The iron grate over the stairs grinds open. (+200 gold)'); Sfx.play('win'); }
+      if (m.t === 'boss') { S.bossDead = true; S.gold += 200; log('👑 The Bone King crumbles! The iron grate over the stairs grinds open. (+200 Kb)'); Sfx.play('win'); }
       else S.gold += 10;
     }
     render();
@@ -7644,10 +7648,10 @@ const Delve = (() => {
     if (S.mons.some(m => m.hp > 0 && m.awake && S.roomOf[key(m.x, m.y)] === ri)) return Util.toast("You can't search with monsters in the room!");
     S.searched[ri] = true; S.acted = true; mode = null;
     const r = Util.d6();
-    if (r === 1) { if (h.k === 'rogue') log('🗡️ The Rogue spots a pressure plate and disarms it. Inside: 30 gold.'), S.gold += 30; else { h.hp -= 2; log(`💥 A trap! Darts hit the ${h.n} for 2 damage.`); Sfx.play('hit'); } }
-    else if (r <= 3) { const g = 15 + Util.d6() * 10 + (h.k === 'rogue' ? 20 : 0); S.gold += g; log(`💰 The ${h.n} finds ${g} gold.`); Sfx.play('match'); }
+    if (r === 1) { if (h.k === 'rogue') log('🗡️ The Rogue spots a pressure plate and disarms it. Inside: 30 Kb.'), S.gold += 30; else { h.hp -= 2; log(`💥 A trap! Darts hit the ${h.n} for 2 damage.`); Sfx.play('hit'); } }
+    else if (r <= 3) { const g = 15 + Util.d6() * 10 + (h.k === 'rogue' ? 20 : 0); S.gold += g; log(`The ${h.n} finds ${g} Kb.`); Sfx.play('match'); }
     else if (r === 4) { h.potions++; log(`🧪 The ${h.n} finds a healing potion.`); Sfx.play('potion'); }
-    else if (r === 5) { S.gold += 50; log(`💎 A hidden gem! +50 gold.`); Sfx.play('match'); }
+    else if (r === 5) { S.gold += 50; log(`💎 A hidden gem! +50 Kb.`); Sfx.play('match'); }
     else { h.atk++; log(`🗡️ A fine weapon! The ${h.n} now rolls ${h.atk} attack dice.`); Sfx.play('win'); }
     if (h.hp <= 0) heroDown(h);
     render();
@@ -7708,11 +7712,11 @@ const Delve = (() => {
   function victory() {
     S.over = 'Victory!'; Sfx.play('win'); render();
     const alive = S.heroes.filter(h => h.hp > 0).length;
-    App.endGame('delve', true, 'The party escapes!', `You slew the Bone King and descended the stairs with <b>${S.gold} gold</b> in ${S.round} rounds. ${alive} of ${S.heroes.length} heroes made it out.`, () => newGame(S.heroes.map(h => h.k)));
+    App.endGame('delve', true, 'The party escapes!', `You slew the Bone King and descended the stairs with <b>${S.gold} Kb</b> in ${S.round} rounds. ${alive} of ${S.heroes.length} heroes made it out.`, () => newGame(S.heroes.map(h => h.k)));
   }
   function defeat() {
     S.over = 'The party has fallen.'; busy = false; render();
-    App.endGame('delve', false, 'The torches gutter out…', `Your whole party fell in the dark on round ${S.round}, carrying ${S.gold} gold.`, () => newGame(S.heroes.map(h => h.k)));
+    App.endGame('delve', false, 'The torches gutter out…', `Your whole party fell in the dark on round ${S.round}, carrying ${S.gold} Kb.`, () => newGame(S.heroes.map(h => h.k)));
   }
 
   /* ---------- render ---------- */
@@ -7752,7 +7756,7 @@ const Delve = (() => {
           ${Util.panel(`
             <div class="flex items-center gap-2 mb-2">
               <span class="w-8 h-8 rounded-full flex items-center justify-center text-lg" style="background:${h.c}">${h.i}</span>
-              <div><div class="font-display text-amber-200">${busy ? 'The monsters move…' : S.over || `The ${h.n}'s turn`}</div><div class="text-[11px] text-amber-100/60">Round ${S.round} · 💰 ${S.gold} gold${S.mv !== null ? ` · 👣 ${S.mv} moves left` : ''}</div></div>
+              <div><div class="font-display text-amber-200">${busy ? 'The monsters move…' : S.over || `The ${h.n}'s turn`}</div><div class="text-[11px] text-amber-100/60">Round ${S.round} · <i class="kb"></i>${S.gold} Kb${S.mv !== null ? ` · 👣 ${S.mv} moves left` : ''}</div></div>
               ${S.dice ? `<div class="ml-auto flex gap-1 scale-75 origin-right">${S.dice.map(v => Util.die(v)).join('')}</div>` : ''}
             </div>
             <div class="grid grid-cols-3 gap-1.5">
@@ -11698,7 +11702,7 @@ const Chips = {
   set(n) { Store.set('chips', Math.max(0, Math.round(n))); },
   add(n) { this.set(this.get() + n); },
   /* top the player up when they run dry, so the fun never stops */
-  ensure() { if (this.get() < 5) { this.set(500); Util.toast('The house tops you up to 500 chips. On us!', 2600); return true; } return false; }
+  ensure() { if (this.get() < 5) { this.set(500); Util.toast('The house tops you up to 500 Kb. On us!', 2600); return true; } return false; }
 };
 const CHIP_VALS = [5, 25, 100, 500];
 const CHIP_COL = { 5: '#c0392b', 25: '#23874a', 100: '#1d1d1f', 500: '#6d35a8' };
@@ -11711,7 +11715,7 @@ function chipDisc(v, size = 34, on = false, click = '') {
   const bg = `radial-gradient(circle at 34% 26%,rgba(255,255,255,.42),rgba(255,255,255,0) 40%),radial-gradient(circle,${c} 0 44%,#f6edd2 45% 47%,${c} 48% 61%,rgba(0,0,0,.25) 62% 63%,transparent 64%),repeating-conic-gradient(from 7.5deg,${c} 0 30deg,#f7f1e1 30deg 45deg)`;
   return `<${tag} ${click ? `onclick="${click}"` : ''} class="chip3d shrink-0 rounded-full flex items-center justify-center font-bold text-white ${on ? 'ring-2 ring-amber-300 scale-110' : ''} transition" style="width:${size}px;height:${size}px;background:${bg};font-size:${size * .3}px;box-shadow:0 2px 0 ${sh},0 3px 0 rgba(0,0,0,.35),0 5px 9px rgba(0,0,0,.55),inset 0 0 0 1px rgba(0,0,0,.35);text-shadow:0 1px 1px rgba(0,0,0,.7)">${lab}</${tag}>`;
 }
-const bankChip = () => `<span class="stat-chip bank-plaque">🪙 <b class="text-amber-200 ml-1">${Chips.get().toLocaleString()}</b></span>`;
+const bankChip = () => `<span class="stat-chip bank-plaque"><i class="kb"></i> <b class="text-amber-200 ml-1">${Chips.get().toLocaleString()}</b></span>`;
 /* add-to-bet chip row used by single-bet games */
 function betRow(ns, bet, extra = '') {
   return `<div class="flex items-center gap-2 flex-wrap justify-center">${CHIP_VALS.map(v => chipDisc(v, 38, false, `${ns}.addBet(${v})`)).join('')}
@@ -11764,12 +11768,12 @@ const Blackjack = (() => {
   function draw() { if (S.shoe.length < 80) { S.shoe = shoe(6); Util.toast('Fresh shoe shuffled.', 1200); } return S.shoe.pop(); }
   function newGame() { sid++; S = { shoe: shoe(6), bet: Math.min(25, Chips.get()), phase: 'bet', hands: [], cur: 0, dealer: [], msg: 'Place your bet and deal.', res: [] }; Chips.ensure(); render(); }
   const open = () => S.phase === 'bet' || S.phase === 'done';
-  function addBet(v) { if (!open()) return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many chips."); S.bet += v; Sfx.play('place'); render(); }
+  function addBet(v) { if (!open()) return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many K-Buks."); S.bet += v; Sfx.play('place'); render(); }
   function clearBet() { if (open()) { S.bet = 0; render(); } }
   async function deal() {
     if (!open()) return;
     if (Chips.ensure()) { S.bet = Math.min(S.bet, Chips.get()); }
-    if (!S.bet) return Util.toast('Add some chips to your bet first.');
+    if (!S.bet) return Util.toast('Add some K-Buks to your bet first.');
     if (S.bet > Chips.get()) S.bet = Chips.get();
     Chips.add(-S.bet);
     S.hands = [{ c: [draw(), draw()], bet: S.bet, done: false }]; S.dealer = [draw(), draw()]; S.cur = 0; S.phase = 'play'; S.res = [];
@@ -11819,7 +11823,7 @@ const Blackjack = (() => {
       Chips.add(pay); net += pay - h.bet; return r;
     });
     S.phase = 'done';
-    S.msg = net > 0 ? `You win ${net} chips!` : net < 0 ? `You lose ${-net} chips.` : 'Push: your bet comes back.';
+    S.msg = net > 0 ? `You win ${net} Kb!` : net < 0 ? `You lose ${-net} Kb.` : 'Push: your bet comes back.';
     Sfx.play(net > 0 ? 'win' : net < 0 ? 'lose' : 'flip');
     if (net > 0) App.recordWin('blackjack');
     S.bet = Math.min(S.hands[0].dbl ? S.hands[0].bet / 2 : S.hands[0].bet, Chips.get()) || Math.min(25, Chips.get());
@@ -11896,14 +11900,14 @@ const Baccarat = (() => {
     if (S.phase === 'deal') return;
     if (S.phase === 'done') { S.phase = 'bet'; S.p = []; S.b = []; }
     const staked = S.bets.player + S.bets.banker + S.bets.tie;
-    if (staked + S.chip > Chips.get()) return Util.toast("You don't have that many chips.");
+    if (staked + S.chip > Chips.get()) return Util.toast("You don't have that many K-Buks.");
     S.bets[k] += S.chip; Sfx.play('place'); render();
   }
   async function deal() {
     if (S.phase === 'deal') return;
     const staked = S.bets.player + S.bets.banker + S.bets.tie;
     if (!staked) return Util.toast('Place a bet first: tap Player, Banker or Tie.');
-    if (staked > Chips.get()) return Util.toast("You don't have enough chips for those bets.");
+    if (staked > Chips.get()) return Util.toast("You don't have enough K-Buks for those bets.");
     Chips.add(-staked);
     if (S.shoe.length < 30) S.shoe = shoe(8);
     S.phase = 'deal'; S.p = []; S.b = []; const my = sid;
@@ -11927,7 +11931,7 @@ const Baccarat = (() => {
     pay = Math.round(pay); Chips.add(pay);
     const net = pay - (S.bets.player + S.bets.banker + S.bets.tie);
     S.road.push(w); if (S.road.length > 30) S.road.shift();
-    S.msg = `${w === 'tie' ? 'Tie' : w === 'player' ? 'Player wins' : 'Banker wins'} ${pt}–${bt}. ${net > 0 ? `You win ${net}!` : net < 0 ? `You lose ${-net}.` : 'Your chips come back.'}`;
+    S.msg = `${w === 'tie' ? 'Tie' : w === 'player' ? 'Player wins' : 'Banker wins'} ${pt}–${bt}. ${net > 0 ? `You win ${net}!` : net < 0 ? `You lose ${-net}.` : 'Your K-Buks come back.'}`;
     Sfx.play(net > 0 ? 'win' : net < 0 ? 'lose' : 'flip'); if (net > 0) App.recordWin('baccarat');
     S.phase = 'done'; render();
   }
@@ -11973,7 +11977,7 @@ const VideoPoker = (() => {
   function newGame() { S = { bet: Math.min(25, Chips.get()), hand: [], held: [false, false, false, false, false], phase: 'bet', deck: [], res: -1, msg: 'Set your bet and deal.' }; Chips.ensure(); render(); }
   function deal() {
     if (S.phase === 'draw') return draw();
-    Chips.ensure(); if (!S.bet) return Util.toast('Add chips to your bet first.'); if (S.bet > Chips.get()) S.bet = Chips.get();
+    Chips.ensure(); if (!S.bet) return Util.toast('Add K-Buks to your bet first.'); if (S.bet > Chips.get()) S.bet = Chips.get();
     Chips.add(-S.bet); S.deck = Util.shuffle(Util.deck()); S.hand = S.deck.splice(0, 5); S.held = [false, false, false, false, false]; S.phase = 'draw'; S.res = payout(S.hand); S.msg = 'Tap the cards you want to keep, then Draw.'; Sfx.play('card'); render();
   }
   function hold(i) { if (S.phase !== 'draw') return; S.held[i] = !S.held[i]; Sfx.play('tap'); render(); }
@@ -11981,7 +11985,7 @@ const VideoPoker = (() => {
     S.hand = S.hand.map((c, i) => S.held[i] ? c : S.deck.pop()); S.phase = 'bet';
     S.res = payout(S.hand); const win = S.res >= 0 ? S.bet * PAYS[S.res][1] : 0;
     Chips.add(win);
-    S.msg = S.res >= 0 ? `${PAYS[S.res][0]}! You win ${win} chips.` : 'No win this time.';
+    S.msg = S.res >= 0 ? `${PAYS[S.res][0]}! You win ${win} Kb.` : 'No win this time.';
     Sfx.play(S.res >= 0 ? (S.res <= 3 ? 'win' : 'match') : 'flip'); if (S.res >= 0) App.recordWin('videopoker');
     if (S.bet > Chips.get()) S.bet = Math.min(25, Chips.get());
     render();
@@ -12018,7 +12022,7 @@ const VideoPoker = (() => {
   return {
     mount(el) { root = el; newGame(); }, snapshot() { return null; }, destroy() { root = null; },
     deal, hold, hint, newGame,
-    addBet(v) { if (S.phase !== 'bet') return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many chips."); S.bet += v; Sfx.play('place'); render(); },
+    addBet(v) { if (S.phase !== 'bet') return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many K-Buks."); S.bet += v; Sfx.play('place'); render(); },
     clearBet() { if (S.phase === 'bet') { S.bet = 0; render(); } },
     _test: { get S() { return S; }, payout, bestHold }
   };
@@ -12037,7 +12041,7 @@ const Roulette = (() => {
   const staked = () => Object.values(S.bets).reduce((a, b) => a + b, 0);
   function bet(k) {
     if (S.spinning) return;
-    if (staked() + S.chip > Chips.get()) return Util.toast("You don't have that many chips.");
+    if (staked() + S.chip > Chips.get()) return Util.toast("You don't have that many K-Buks.");
     S.bets[k] = (S.bets[k] || 0) + S.chip; Sfx.play('place'); render();
   }
   function wins(k, n) {
@@ -12055,7 +12059,7 @@ const Roulette = (() => {
   async function spin() {
     if (S.spinning) return;
     const st = staked(); if (!st) return Util.toast('Place a bet first.');
-    if (st > Chips.get()) return Util.toast("You don't have enough chips.");
+    if (st > Chips.get()) return Util.toast("You don't have enough K-Buks.");
     Chips.add(-st); S.last = { ...S.bets }; S.spinning = true; S.result = null; S.msg = 'No more bets!';
     const n = ORDER[Math.floor(Math.random() * 37)], i = ORDER.indexOf(n), seg = 360 / 37;
     const target = -(i * seg); const cur = ((S.rot % 360) + 360) % 360;
@@ -12117,7 +12121,7 @@ const Roulette = (() => {
     mount(el) { root = el; newGame(); }, snapshot() { return null; }, destroy() { sid++; root = null; },
     bet, spin, newGame, pickChip(v) { S.chip = v; render(); },
     clear() { if (!S.spinning) { S.bets = {}; render(); } },
-    rebet() { if (S.spinning) return; const t = Object.values(S.last).reduce((a, b) => a + b, 0); if (!t) return Util.toast('No previous bets yet.'); if (t > Chips.get()) return Util.toast("You don't have enough chips to repeat that."); S.bets = { ...S.last }; render(); },
+    rebet() { if (S.spinning) return; const t = Object.values(S.last).reduce((a, b) => a + b, 0); if (!t) return Util.toast('No previous bets yet.'); if (t > Chips.get()) return Util.toast("You don't have enough K-Buks to repeat that."); S.bets = { ...S.last }; render(); },
     _test: { get S() { return S; }, wins }
   };
 })();
@@ -12135,7 +12139,7 @@ const Craps = (() => {
     if ((k === 'pass' || k === 'dp') && S.point) return Util.toast('Pass and Don\'t Pass bets go down before the come-out roll.');
     if (k === 'odds' && (!S.point || !S.bets.pass)) return Util.toast('Odds can be added behind a Pass bet once a point is set.');
     if (k === 'odds' && S.bets.odds + S.chip > S.bets.pass * 3) return Util.toast('Odds are limited to 3 times your Pass bet.');
-    if (S.chip > Chips.get()) return Util.toast("You don't have that many chips.");
+    if (S.chip > Chips.get()) return Util.toast("You don't have that many K-Buks.");
     Chips.add(-S.chip); S.bets[k] += S.chip; Sfx.play('place'); render();
   }
   function clear() {
@@ -12211,7 +12215,7 @@ const Slots = (() => {
   }
   async function spin() {
     if (S.spinning) return; Chips.ensure();
-    if (S.bet < 5) return Util.toast('Bet at least 5 chips.'); if (S.bet > Chips.get()) S.bet = Chips.get() - Chips.get() % 5;
+    if (S.bet < 5) return Util.toast('Bet at least 5 Kb.'); if (S.bet > Chips.get()) S.bet = Chips.get() - Chips.get() % 5;
     Chips.add(-S.bet); S.spinning = true; S.wins = []; S.msg = ''; const my = sid;
     const final = [[pick(), pick(), pick()], [pick(), pick(), pick()], [pick(), pick(), pick()]];
     for (S.stop = 0; S.stop < 3; S.stop++) {
@@ -12248,7 +12252,7 @@ const Slots = (() => {
   return {
     mount(el) { root = el; newGame(); }, snapshot() { return null; }, destroy() { sid++; root = null; },
     spin, newGame,
-    addBet(v) { if (S.spinning) return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many chips."); S.bet += v; Sfx.play('place'); render(); },
+    addBet(v) { if (S.spinning) return; if (S.bet + v > Chips.get()) return Util.toast("You don't have that many K-Buks."); S.bet += v; Sfx.play('place'); render(); },
     clearBet() { if (!S.spinning) { S.bet = 0; render(); } },
     _test: { get S() { return S; }, score, pick, SYM, LINES }
   };
@@ -12280,8 +12284,8 @@ const Holdem = (() => {
   const nextSeat = (i, f) => { for (let k = 1; k <= S.p.length; k++) { const j = (i + k) % S.p.length; if (f(S.p[j])) return j; } return -1; };
   async function nextHand() {
     const my = sid;
-    // replace broke AI players, stop if the human is out of chips
-    S.p.forEach((x, k) => { if (k > 0 && x.chips <= 0) { const n = newAI(S.p.map(y => y.name)); S.p[k] = n; log(`${n.name} sits down with ${BUYIN} chips.`); } });
+    // replace broke AI players, stop if the human is out of K-Buks
+    S.p.forEach((x, k) => { if (k > 0 && x.chips <= 0) { const n = newAI(S.p.map(y => y.name)); S.p[k] = n; log(`${n.name} sits down with ${BUYIN} Kb.`); } });
     if (S.p[0].chips <= 0) { S.phase = 'broke'; render(); return; }
     S.p.forEach(x => Object.assign(x, { cards: [], bet: 0, total: 0, folded: false, allin: false, acted: false, show: false, out: false }));
     S.deck = Util.shuffle(Util.deck()); S.board = []; S.res = null; S.hands++; S.inHand = true;
@@ -12380,7 +12384,7 @@ const Holdem = (() => {
   function award() {
     S.p.forEach(x => { x.total += x.bet; x.bet = 0; });
     const w = live()[0], amt = pot(); w.chips += amt; S.p.forEach(x => x.total = 0);
-    S.res = { lines: [`${w.name} wins ${amt} chips.`], winners: [S.p.indexOf(w)] };
+    S.res = { lines: [`${w.name} wins ${amt} Kb.`], winners: [S.p.indexOf(w)] };
     log(S.res.lines[0]); endHand(w === S.p[0]);
   }
   function showdown() {
@@ -12421,7 +12425,7 @@ const Holdem = (() => {
   }
   function cashOut() {
     if (S && S.inHand) return Util.toast('Finish this hand first.');
-    if (S) { Chips.add(S.p[0].chips); Util.toast(`You cash out ${S.p[0].chips} chips.`); S.p[0].chips = 0; Store.set(stackKey, 0); }
+    if (S) { Chips.add(S.p[0].chips); Util.toast(`You cash out ${S.p[0].chips} Kb.`); S.p[0].chips = 0; Store.set(stackKey, 0); }
     sid++; S = null; App.backToShelf();
   }
   function rebuy() { Chips.ensure(); const b = Math.min(BUYIN, Chips.get()); Chips.add(-b); S.p[0].chips = b; saveStack(); nextHand(); }
@@ -12431,7 +12435,7 @@ const Holdem = (() => {
     const cards = x.cards.length ? `<div class="flex gap-0.5" style="--cw:${cw}px">${x.cards.map(c => Util.card(c, { down: !(x.show && !x.folded) })).join('')}</div>` : '';
     return `<div class="flex flex-col items-center gap-0.5 rounded-xl px-1.5 py-1 ${turn ? 'ring-2 ring-amber-300 bg-amber-300/10' : ''} ${win ? 'ring-2 ring-emerald-400 bg-emerald-400/10' : ''} ${x.folded ? 'opacity-45' : ''}" style="background-color:rgba(0,0,0,.25)">
       <div class="flex items-center gap-1 text-[11px]"><span class="font-semibold text-amber-100">${x.name}</span>${S.dealer === i ? '<span class="w-4 h-4 rounded-full bg-white text-stone-900 text-[9px] font-bold flex items-center justify-center">D</span>' : ''}</div>
-      ${cards}<div class="text-[11px] text-amber-200">🪙${x.chips}</div>
+      ${cards}<div class="text-[11px] text-amber-200"><i class="kb"></i>${x.chips}</div>
       <div class="text-[10px] h-3.5 ${x.allin ? 'text-red-300 font-bold' : 'text-amber-100/70'}">${x.folded ? 'Folded' : x.allin ? 'ALL IN' : x.bet ? 'Bet ' + x.bet : ''}</div></div>`;
   }
   function render() {
@@ -12442,7 +12446,7 @@ const Holdem = (() => {
     const board = Array.from({ length: 5 }, (_, k) => S.board[k] ? Util.card(S.board[k]) : Util.card(null)).join('');
     const best = me.cards.length && !me.folded && S.board.length >= 3 ? PK_NAMES[pkCat(pkBest(me.cards.concat(S.board)))] : '';
     let ctrl;
-    if (S.phase === 'broke') ctrl = `<div class="text-sm text-amber-50/90 mb-2">You're out of chips at this table.</div><div class="flex gap-2 justify-center">${Util.btn(`🪙 Buy in again (${Math.min(BUYIN, Math.max(Chips.get(), 500))})`, 'Holdem.rebuy()', 'brass')}${Util.btn('Leave table', 'Holdem.cashOut()')}</div>`;
+    if (S.phase === 'broke') ctrl = `<div class="text-sm text-amber-50/90 mb-2">You're out of K-Buks at this table.</div><div class="flex gap-2 justify-center">${Util.btn(`<i class="kb"></i> Buy in again (${Math.min(BUYIN, Math.max(Chips.get(), 500))})`, 'Holdem.rebuy()', 'brass')}${Util.btn('Leave table', 'Holdem.cashOut()')}</div>`;
     else if (!S.inHand) ctrl = `<div class="text-sm text-amber-50/90 mb-2">${S.res ? S.res.lines.join('<br>') : ''}</div><div class="flex gap-2 justify-center">${Util.btn('🃏 Next hand', 'Holdem.next()', 'brass', '!px-6')}${Util.btn('💰 Cash out', 'Holdem.cashOut()')}</div>`;
     else if (myTurn && ui.raise) {
       const P = pot(), mx = me.bet + me.chips, minTo = Math.min(S.curBet + S.minRaise, mx), opt = (l, f) => Util.btn(l, `Holdem.act('raise',${typeof f === 'string' ? `'${f}'` : f})`);
@@ -12459,7 +12463,7 @@ const Holdem = (() => {
       </div>
       <div class="flex items-end gap-3">
         <div class="flex gap-1 ${me.folded ? 'opacity-40' : ''}" style="--cw:${mcw}px">${me.cards.map(c => Util.card(c)).join('')}</div>
-        <div class="flex flex-col items-start gap-0.5 pb-1"><span class="font-display text-amber-200 ${S.cur === 0 && S.inHand ? 'animate-pulse' : ''}">You ${S.dealer === 0 ? '🔘' : ''}</span><span class="text-amber-100 text-sm">🪙 ${me.chips} at the table</span>${me.bet ? `<span class="text-[11px] text-amber-100/70">Bet ${me.bet}</span>` : ''}${best ? `<span class="text-[11px] text-emerald-300">${best}</span>` : ''}</div>
+        <div class="flex flex-col items-start gap-0.5 pb-1"><span class="font-display text-amber-200 ${S.cur === 0 && S.inHand ? 'animate-pulse' : ''}">You ${S.dealer === 0 ? '🔘' : ''}</span><span class="text-amber-100 text-sm"><i class="kb"></i> ${me.chips} at the table</span>${me.bet ? `<span class="text-[11px] text-amber-100/70">Bet ${me.bet}</span>` : ''}${best ? `<span class="text-[11px] text-emerald-300">${best}</span>` : ''}</div>
       </div>
       ${Util.panel(ctrl, 'w-full text-center')}
       <div class="text-[11px] text-amber-100/50 w-full text-center leading-tight">${S.log.slice(-2).join('<br>')}</div>
@@ -12501,16 +12505,16 @@ const ThreeCard = (() => {
   function addTo(k) {
     if (!open()) return;
     if (S.phase === 'done') { S.phase = 'bet'; S.you = []; S.dealer = []; S.res = null; }
-    if (S.ante + S.pp + S.chip > Chips.get()) return Util.toast("You don't have that many chips.");
+    if (S.ante + S.pp + S.chip > Chips.get()) return Util.toast("You don't have that many K-Buks.");
     S[k] += S.chip; Sfx.play('place'); render();
   }
   function clear() { if (!open()) return; S.ante = 0; S.pp = 0; if (S.phase === 'done') { S.phase = 'bet'; S.you = []; S.dealer = []; S.res = null; } render(); }
   function deal() {
     if (!open()) return;
     if (Chips.ensure()) { S.ante = Math.min(S.ante || 25, Chips.get()); S.pp = 0; }
-    if (!S.ante) return Util.toast('Put chips on the Ante first.');
+    if (!S.ante) return Util.toast('Put K-Buks on the Ante first.');
     // you need enough left to match the ante with a Play bet
-    if (S.ante * 2 + S.pp > Chips.get()) { S.pp = 0; S.ante = Math.floor(Chips.get() / 2 / 5) * 5; if (S.ante < 5) return Util.toast('Not enough chips to cover the Play bet.'); Util.toast('Bet lowered so you can still match it with a Play bet.'); }
+    if (S.ante * 2 + S.pp > Chips.get()) { S.pp = 0; S.ante = Math.floor(Chips.get() / 2 / 5) * 5; if (S.ante < 5) return Util.toast('Not enough K-Buks to cover the Play bet.'); Util.toast('Bet lowered so you can still match it with a Play bet.'); }
     Chips.add(-(S.ante + S.pp));
     const d = Util.shuffle(Util.deck()); S.you = d.splice(0, 3); S.dealer = d.splice(0, 3);
     S.phase = 'decide'; S.res = null; S.msg = 'Play (match your Ante) or Fold?'; Sfx.play('card'); render();
@@ -12535,7 +12539,7 @@ const ThreeCard = (() => {
     }
     Chips.add(back); const net = back - staked;
     S.res = { yh, dh, lines, net, play }; S.phase = 'done';
-    S.msg = net > 0 ? `You win ${net} chips!` : net < 0 ? `You lose ${-net} chips.` : 'You break even.';
+    S.msg = net > 0 ? `You win ${net} Kb!` : net < 0 ? `You lose ${-net} Kb.` : 'You break even.';
     Sfx.play(net > 0 ? 'win' : net < 0 ? 'lose' : 'flip'); if (net > 0) App.recordWin('threecard');
     if (S.ante * 2 + S.pp > Chips.get()) { S.pp = 0; S.ante = Math.min(S.ante, Math.floor(Chips.get() / 2 / 5) * 5); }
     render();
@@ -13276,18 +13280,18 @@ const Larkford = (() => {
   const GROUPS = {}; SQ.forEach((s, i) => { if (s.g) (GROUPS[s.g] = GROUPS[s.g] || []).push(i); });
   const buyable = i => ['street', 'station', 'util'].includes(SQ[i].t);
   const FORTUNE = [
-    ['Advance to Town Square. Collect £200.', { to: 0 }], ['Advance to Market Street.', { to: 21 }], ['Advance to the nearest station. If it\'s owned, pay double rent.', { near: 'station' }],
-    ['Advance to the nearest utility. If it\'s owned, pay 10 times your roll.', { near: 'util' }], ['The bank pays you a dividend of £50.', { cash: 50 }], ['Get out of the Lock-up free. Keep this card until needed.', { gojf: 1 }],
-    ['Go back three spaces.', { back: 3 }], ['Caught speeding! Go straight to the Lock-up.', { jail: 1 }], ['Street repairs: pay £25 per house and £100 per hotel.', { repairs: [25, 100] }],
-    ['Parking fine: pay £15.', { cash: -15 }], ['Take a trip to Larkford Central.', { to: 15 }], ['Advance to Lark Hall.', { to: 39 }],
-    ['You\'ve been elected town mayor. Pay each player £50.', { each: -50 }], ['Your building loan matures. Collect £150.', { cash: 150 }], ['You win the Larkford bake-off! Collect £100.', { cash: 100 }], ["Advance to Weaver's Walk.", { to: 13 }]
+    ['Advance to Town Square. Collect 200 Kb.', { to: 0 }], ['Advance to Market Street.', { to: 21 }], ['Advance to the nearest station. If it\'s owned, pay double rent.', { near: 'station' }],
+    ['Advance to the nearest utility. If it\'s owned, pay 10 times your roll.', { near: 'util' }], ['The bank pays you a dividend of 50 Kb.', { cash: 50 }], ['Get out of the Lock-up free. Keep this card until needed.', { gojf: 1 }],
+    ['Go back three spaces.', { back: 3 }], ['Caught speeding! Go straight to the Lock-up.', { jail: 1 }], ['Street repairs: pay 25 Kb per house and 100 Kb per hotel.', { repairs: [25, 100] }],
+    ['Parking fine: pay 15 Kb.', { cash: -15 }], ['Take a trip to Larkford Central.', { to: 15 }], ['Advance to Lark Hall.', { to: 39 }],
+    ['You\'ve been elected town mayor. Pay each player 50 Kb.', { each: -50 }], ['Your building loan matures. Collect 150 Kb.', { cash: 150 }], ['You win the Larkford bake-off! Collect 100 Kb.', { cash: 100 }], ["Advance to Weaver's Walk.", { to: 13 }]
   ];
   const HALL = [
-    ['Advance to Town Square. Collect £200.', { to: 0 }], ['A forgotten savings account turns up. Collect £200.', { cash: 200 }], ['Dentist\'s bill: pay £50.', { cash: -50 }],
-    ['You sell some old shares. Collect £50.', { cash: 50 }], ['Get out of the Lock-up free. Keep this card until needed.', { gojf: 1 }], ['Caught speeding! Go straight to the Lock-up.', { jail: 1 }],
-    ['Village fete: collect £10 from every player.', { each: 10 }], ['Council tax rebate. Collect £20.', { cash: 20 }], ['You inherit £100.', { cash: 100 }],
-    ['Your holiday fund matures. Collect £100.', { cash: 100 }], ['Second prize at the dog show! Collect £10.', { cash: 10 }], ['Vet\'s bill: pay £100.', { cash: -100 }],
-    ['School trip: pay £50.', { cash: -50 }], ['Consultancy fee: collect £25.', { cash: 25 }], ['Roof repairs: pay £40 per house and £115 per hotel.', { repairs: [40, 115] }], ['It\'s your birthday! Collect £10 from every player.', { each: 10 }]
+    ['Advance to Town Square. Collect 200 Kb.', { to: 0 }], ['A forgotten savings account turns up. Collect 200 Kb.', { cash: 200 }], ['Dentist\'s bill: pay 50 Kb.', { cash: -50 }],
+    ['You sell some old shares. Collect 50 Kb.', { cash: 50 }], ['Get out of the Lock-up free. Keep this card until needed.', { gojf: 1 }], ['Caught speeding! Go straight to the Lock-up.', { jail: 1 }],
+    ['Village fete: collect 10 Kb from every player.', { each: 10 }], ['Council tax rebate. Collect 20 Kb.', { cash: 20 }], ['You inherit 100 Kb.', { cash: 100 }],
+    ['Your holiday fund matures. Collect 100 Kb.', { cash: 100 }], ['Second prize at the dog show! Collect 10 Kb.', { cash: 10 }], ['Vet\'s bill: pay 100 Kb.', { cash: -100 }],
+    ['School trip: pay 50 Kb.', { cash: -50 }], ['Consultancy fee: collect 25 Kb.', { cash: 25 }], ['Roof repairs: pay 40 Kb per house and 115 Kb per hotel.', { repairs: [40, 115] }], ['It\'s your birthday! Collect 10 Kb from every player.', { each: 10 }]
   ];
   let S, root, sid = 0, busy = false;
   const P = () => S.ps[S.turn];
@@ -13298,7 +13302,7 @@ const Larkford = (() => {
   const YOU = { passes: 'pass', pays: 'pay', buys: 'buy', lands: 'land', rolls: 'roll', stays: 'stay', builds: 'build', sells: 'sell', mortgages: 'mortgage', uses: 'use', wins: 'win', leaves: 'leave', is: 'are', turns: 'turn', walks: 'walk', makes: 'make' };
   const youify = m => m.replace(/\bYou (\w+)/g, (all, v) => YOU[v] ? 'You ' + YOU[v] : all).replace(/(You [^.]*)\(their own\)/, '$1(your own)').replace(/(You [^.]*)Their property/, '$1Your property').replace('You rolled a double', 'You rolled a double');
   const log = m => { m = youify(m); S.log.push(m); if (S.log.length > 40) S.log.shift(); S.msg = m; };
-  const money = n => `£${n.toLocaleString()}`;
+  const money = n => `${n.toLocaleString()} Kb`;
   function rent(i, roll) {
     const o = own(i), s = SQ[i]; if (!o || o.m) return 0;
     if (s.t === 'street') return o.h ? s.rent[o.h] : s.rent[0] * (hasGroup(o.o, s.g) ? 2 : 1);
@@ -13438,7 +13442,7 @@ const Larkford = (() => {
   }
   function endTurn() {
     if (busy) return; const p = P();
-    if (S.phase === 'debt') { if (p.cash < 0) return Util.toast('Raise money first: sell buildings or mortgage property.'); }
+    if (S.phase === 'debt') { if (p.cash < 0) return Util.toast('Raise K-Buks first: sell buildings or mortgage property.'); }
     else if (S.phase !== 'end') return;
     let n = S.turn; do { n = (n + 1) % S.ps.length; } while (S.ps[n].out);
     if (n <= S.turn) S.round++;
@@ -13450,14 +13454,14 @@ const Larkford = (() => {
   function payJail(card) {
     const p = P(); if (!p.jail || S.phase !== 'roll') return;
     if (card) { if (!p.gojf) return; p.gojf--; log(`${p.name} uses a Get Out Free card.`); }
-    else { if (p.cash < 50) return Util.toast('You need £50.'); p.cash -= 50; log(`${p.name} pays ${money(50)} to leave the Lock-up.`); }
+    else { if (p.cash < 50) return Util.toast('You need 50 Kb.'); p.cash -= 50; log(`${p.name} pays ${money(50)} to leave the Lock-up.`); }
     p.jail = 0; render();
   }
   function finish() {
     S.phase = 'over'; render();
     const ranking = S.ps.map((p, i) => ({ p, i, w: p.out ? -1 : worth(i) })).sort((a, b) => b.w - a.w), w = ranking[0].p;
     Sfx.play(w.type === 'human' ? 'win' : 'lose');
-    App.endGame('larkford', w.type === 'human', `${w.name} ${w.name === 'You' ? 'win' : 'wins'}!`, `<div class="text-left space-y-1">${ranking.map(r => `<div class="flex justify-between gap-4"><span>${r.p.name}</span><b class="text-amber-300">${r.p.out ? 'Bankrupt' : money(r.w)}</b></div>`).join('')}</div>${S.mode === 'timed' ? '<div class="text-xs opacity-70 mt-1">Net worth: cash, property and buildings.</div>' : ''}`, () => newGame(S.ps.map(p => ({ name: p.name, col: { hex: p.col }, type: p.type })), S.mode));
+    App.endGame('larkford', w.type === 'human', `${w.name} ${w.name === 'You' ? 'win' : 'wins'}!`, `<div class="text-left space-y-1">${ranking.map(r => `<div class="flex justify-between gap-4"><span>${r.p.name}</span><b class="text-amber-300">${r.p.out ? 'Bankrupt' : money(r.w)}</b></div>`).join('')}</div>${S.mode === 'timed' ? '<div class="text-xs opacity-70 mt-1">Net worth: K-Buks, property and buildings.</div>' : ''}`, () => newGame(S.ps.map(p => ({ name: p.name, col: { hex: p.col }, type: p.type })), S.mode));
   }
   /* ---------- AI ---------- */
   const reserve = () => S.round < 8 ? 60 : 180;
@@ -13548,9 +13552,9 @@ const Larkford = (() => {
     const s = SQ[i], o = own(i);
     let body = '';
     if (s.t === 'street') body = `<div class="text-xs space-y-0.5">${['Rent', 'With 1 house', 'With 2 houses', 'With 3 houses', 'With 4 houses', 'With a hotel'].map((l, k) => `<div class="flex justify-between ${o && o.h === k && !o.m ? 'text-amber-300 font-bold' : ''}"><span>${l}</span><span>${money(s.rent[k])}</span></div>`).join('')}<div class="opacity-70 mt-1">Rent doubles on an empty street when one player owns the whole colour set. Houses cost ${money(s.hc)} each.</div></div>`;
-    else if (s.t === 'station') body = '<div class="text-xs">Rent: £25, £50, £100 or £200 for owning 1, 2, 3 or all 4 stations.</div>';
+    else if (s.t === 'station') body = '<div class="text-xs">Rent: 25 Kb, 50 Kb, 100 Kb or 200 Kb for owning 1, 2, 3 or all 4 stations.</div>';
     else if (s.t === 'util') body = '<div class="text-xs">Rent: 4 times the dice roll, or 10 times if the same player owns both utilities.</div>';
-    else body = `<div class="text-xs">${{ start: 'Collect £200 every time you pass.', jail: 'Just visiting, unless you were caught speeding!', green: 'A free rest. Nothing happens here.', gojail: 'Go straight to the Lock-up without passing Town Square.', tax: `Pay ${money(s.amt || 0)} to the bank.`, fortune: 'Draw a Fortune card.', hall: 'Draw a Town Hall card.' }[s.t]}</div>`;
+    else body = `<div class="text-xs">${{ start: 'Collect 200 Kb every time you pass.', jail: 'Just visiting, unless you were caught speeding!', green: 'A free rest. Nothing happens here.', gojail: 'Go straight to the Lock-up without passing Town Square.', tax: `Pay ${money(s.amt || 0)} to the bank.`, fortune: 'Draw a Fortune card.', hall: 'Draw a Town Hall card.' }[s.t]}</div>`;
     Util.choose(`${s.ic || ''} ${s.n}`, `${s.price ? `<div class="mb-1">Price ${money(s.price)}${o ? ` · owned by <b style="color:${S.ps[o.o].col}">${S.ps[o.o].name}</b>${o.m ? ' (mortgaged)' : ''}` : ' · for sale'}</div>` : ''}${body}`, [{ label: 'Close', value: 1, primary: true }]);
   }
   function managePanel() {
@@ -16176,7 +16180,7 @@ html:not(.kg-can-install) [data-install]{display:none!important}
 // Kralnu Games update check. When you push an update, change the game's version
 // AND version.json to the same new value; players then get a "new version" notice.
 (function(){
-  var NAME="The Grand Tabletop Compendium",BUILD="1.11.0",CACHES=["gtc-"],CHECK=true;
+  var NAME="The Grand Tabletop Compendium",BUILD="1.14.3",CACHES=["gtc-"],CHECK=true;
   var path=location.pathname,dir=path.replace(/[^/]*$/,''),last=0,bar=null,busy=false;
   if(/^\?v=\d+$/.test(location.search)){try{history.replaceState(history.state,'',path+location.hash)}catch(e){}}
   function build(){return String(window.kgBuild!=null?window.kgBuild:BUILD)}

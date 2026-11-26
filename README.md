@@ -27,14 +27,14 @@ Pull up a chair in a candlelit parlour of walnut, green baize and brass. Royal s
 | ⚪ **Carrom** | Strike the heavy striker, pocket your nine pieces and cover the red queen | vs AI or 2 players |
 | 🏘️ **Landlords of Larkford** | An original property-trading board game: buy, build, trade, auction and bankrupt your rivals | 2-6, people or AI |
 | 🐶 **Dog Rummy** | Kris's family wild-card rummy: a new wild rank each round, take the whole pile if you dare. Dedicated to his mum, who inspired it | 2-4, people or AI |
-| 🂡 **Blackjack** | Hit, stand, double and split against a dealer who stands on 17. Basic strategy hints | Solo (play chips) |
-| ♠️ **Texas Hold'em** | No-limit cash table with blinds, side pots and five AI players | You vs 5 AI (play chips) |
-| 🃏 **Three Card Poker** | Ante, Play and Pair Plus against a dealer who needs Queen high, with ante bonuses | Solo (play chips) |
-| 🎡 **Roulette** | Single-zero wheel with numbers, dozens, columns and even-money bets | Solo (play chips) |
-| 🎴 **Video Poker** | Jacks or Better with a best-hold helper | Solo (play chips) |
-| 💠 **Baccarat** | Player, Banker or Tie with the standard drawing rules | Solo (play chips) |
-| 🎲 **Craps** | Pass line, don't pass, true odds, field and any seven | Solo (play chips) |
-| 🎰 **Lucky Lantern** | A 3-reel, five-line slot machine | Solo (play chips) |
+| 🂡 **Blackjack** | Hit, stand, double and split against a dealer who stands on 17. Basic strategy hints | Solo (K-Buks) |
+| ♠️ **Texas Hold'em** | No-limit cash table with blinds, side pots and five AI players | You vs 5 AI (K-Buks) |
+| 🃏 **Three Card Poker** | Ante, Play and Pair Plus against a dealer who needs Queen high, with ante bonuses | Solo (K-Buks) |
+| 🎡 **Roulette** | Single-zero wheel with numbers, dozens, columns and even-money bets | Solo (K-Buks) |
+| 🎴 **Video Poker** | Jacks or Better with a best-hold helper | Solo (K-Buks) |
+| 💠 **Baccarat** | Player, Banker or Tie with the standard drawing rules | Solo (K-Buks) |
+| 🎲 **Craps** | Pass line, don't pass, true odds, field and any seven | Solo (K-Buks) |
+| 🎰 **Lucky Lantern** | A 3-reel, five-line slot machine | Solo (K-Buks) |
 | ♞ **Chess** | Castling, en passant and your choice of promotion piece. Legal moves are highlighted | vs AI or 2 players |
 | ☖ **Shogi (将棋)** | Japanese chess on a 9×9 board. Captured pieces join your hand and can be dropped back in | vs AI or 2 players |
 | ⛃ **Checkers** | Captures are forced and multi-jump chains are played one tap at a time | vs AI or 2 players |
@@ -133,6 +133,9 @@ If you'd like to support development, you can buy me a coffee on **Ko-fi:** http
 More games: https://kralnugames.com
 
 ## Changelog
+
+### 1.14.3 · K-Buks (26 November 2026)
+- The casino bank, Landlords of Larkford money and Torchlight Delve's gold are now K-Buks (Kb), the Kralnu Games currency, with a new hand-drawn gold coin icon. Your casino bank carries over exactly as it was.
 
 ### 1.14.2 · Card fix (23 November 2026)
 - Cribbage and Gin Rummy: hand cards respond to taps again. Their card buttons passed the card id unquoted (e.g. `Gin.pick(S13)`), which threw an error so the tap did nothing
